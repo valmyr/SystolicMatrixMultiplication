@@ -41,16 +41,16 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     input  logic [WIDTH-1:0] Min[SIZE-1:0][SIZE-1:0]    ,
     output logic [SIZE*WIDTH-1:0] shiftMatrixOut 
 );
-    logic [(SIZE*WIDTH)-1    :0]                 UnpackVec        [SIZE-1:0];
-    logic [(SIZE*WIDTH)-1    :0]                 UnpackVec2       [SIZE-1:0];
-    logic [((2*SIZE-1)*WIDTH)-1:0]               shiftVec         [SIZE-1:0];
-    logic [((2*SIZE-1)*WIDTH)-1:0]               shiftVec2        [SIZE-1:0];
-    logic [WIDTH-1           :0]                 Mout             [(((2*SIZE-1)))-1:0][SIZE-1:0];  
-    logic [WIDTH*SIZE-1:0]                       UnpackVecMout    [(((2*SIZE-1)))-1:0] ;
-    logic [WIDTH*SIZE-1:0]                       UnpackVecMout2   [(((2*SIZE-1)))-1:0] ;
+    logic [(SIZE*WIDTH)-1      :0]               UnpackVec        [SIZE-1:0]              ;
+    logic [(SIZE*WIDTH)-1      :0]               UnpackVec2       [SIZE-1:0]              ;
+    logic [(2*SIZE-1)*WIDTH-1  :0]               shiftVec         [SIZE-1:0]              ;
+    logic [(2*SIZE-1)*WIDTH-1  :0]               shiftVec2        [SIZE-1:0]              ;
+    logic [WIDTH-1             :0]               Mout             [2*(SIZE-1):0][SIZE-1:0];  
+    logic [WIDTH*SIZE-1:0]                       UnpackVecMout    [2*(SIZE-1):0]          ;
+    logic [WIDTH*SIZE-1:0]                       UnpackVecMout2   [2*(SIZE-1):0]          ;
    // logic [SIZE-1:0][((2*SIZE-1)*WIDTH)-1:0] shiftVec2;
     logic [SIZE:0]               next_counter, current_counter;
-    logic [SIZE-1:0][(((2*SIZE-1)*WIDTH))-1:0] A26 ;
+    logic [SIZE-1:0][(2*SIZE-1)*WIDTH-1:0] A26 ;
 
   //  assign shiftVec2 ={>>{shiftVec}};
 

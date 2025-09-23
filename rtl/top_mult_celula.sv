@@ -1,11 +1,11 @@
 module top_mult_celula#(
     parameter WIDTH = 16, SIZE=4, WIDTHx = 4
 )(
-    input  logic             clock                                  ,
-    input  logic             nreset                                 ,
+    input  logic                  clock                                  ,
+    input  logic                  nreset                                 ,
     input  logic [WIDTHx-1:0]     a_input [SIZE-1:0][SIZE-1:0]           ,
     input  logic [WIDTHx-1:0]     b_input [SIZE-1:0][SIZE-1:0]           ,
-    output logic [WIDTH-1:0] output_produc_a_b [SIZE-1:0][SIZE-1:0]
+    output logic [WIDTH-1:0]      output_produc_a_b [SIZE-1:0][SIZE-1:0]
 );
 
 logic [SIZE*WIDTHx-1:0] a,b;
