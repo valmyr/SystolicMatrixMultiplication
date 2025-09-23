@@ -1,4 +1,4 @@
-# Implementação em Hardware de um Multiplicação de Matrizes de Ordem N Systólica
+# Implementação em Hardware de um módulo de Multiplicação de Matrizes de Ordem N Systólica
 
 
 
