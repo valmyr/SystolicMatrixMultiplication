@@ -8,12 +8,15 @@ sims:
 		
 sim-gui:
 	cd ${dir} &&\
-	xrun ${TB} ${RTL} -gui -access +rw &
+	xrun ${TB} ${RTL}  -mce -mce_build_cpu_configuration all-cores -mce_build_thread_count 32 -access +rw &
 rest:
 	xrun .${TB} ${RTL} -access +rw -s -input restore.tcl
+waves: 
+	cd ${dir} &&\
+	simvision waves.shm &
 clean:
 	cd ${dir} &&\
-	rm -rf waves.shm xcelium.d xrun.* *.log .simvision
+	rm -rf waves.shm xcelium.d xrun.* *.log .simvision *
 
 help:
 	@echo "Arguments to make:"
