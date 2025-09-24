@@ -1,10 +1,10 @@
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =5,SIZE = 5;
+    parameter WIDTHx =5,SIZE = 3;
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
     logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0];
 
-    top_mult_celula  #(.WIDTH(16),.WIDTHx(WIDTHx),.SIZE(SIZE)) m1(
+    systolicMatrixMultiply  #(.WIDTH(16),.WIDTHx(WIDTHx),.SIZE(SIZE)) m1(
     .clock  (clock)                                ,
     .nreset (nreset)                               ,
     .a_input(A1),
