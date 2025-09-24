@@ -7,8 +7,8 @@
 -RUNMODE
 ../tb/tb.sv
 ../rtl/ShiftMatrix.sv
-../rtl/celula_base.sv
-../rtl/top_mult_celula.sv
+../rtl/accumulator.sv
+../rtl/systolicMatrixMultiply.sv
 -CDSLIB
 ./xcelium.d/run.lnx8664.23.09.d/cdsrun.lib
 -HDLVAR

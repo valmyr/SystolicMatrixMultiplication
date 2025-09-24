@@ -50,7 +50,7 @@ generate
             assign a_vec[0][i] = {{WIDTH{1'b0}},a[(i+1)*WIDTHx-1:(i+1)*WIDTHx-WIDTHx]};
             assign b_vec[0][i] = {{WIDTH{1'b0}},b[(i+1)*WIDTHx-1:(i+1)*WIDTHx-WIDTHx]};
             for(j =0; j < SIZE;j++)begin:CELULA_COLUMNS
-                accumulator #(.WIDTH(WIDTH)) cells_accs(    
+                accumulator_cells #(.WIDTH(WIDTH)) cells_accs(    
                     .clock    (     clock                            ),
                     .nreset   (     nreset                           ),
                     .a        (     a_vec[i][j]                      ),

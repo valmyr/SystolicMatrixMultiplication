@@ -37,7 +37,6 @@
 module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     input  logic nreset                                 ,
     input  logic clock                                  ,
-    input logic rvs                                     ,
     input  logic [WIDTH-1:0] Min[SIZE-1:0][SIZE-1:0]    ,
     output logic [SIZE*WIDTH-1:0] shiftMatrixOut 
 );
@@ -76,7 +75,7 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     endgenerate
     generate
         genvar idvec3;
-        for(idvec3 =0; idvec3 < (((2*SIZE-1))); idvec3++)
+        for(idvec3 =0; idvec3 < 2*SIZE-1; idvec3++)
            assign {>>{UnpackVecMout[idvec3]}} =Mout[idvec3] ;//{>>{unpacked_array}} = packed_array;
     endgenerate
     always_ff@(posedge clock, negedge nreset ) begin
