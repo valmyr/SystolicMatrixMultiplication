@@ -67,7 +67,7 @@ SIZE : Dimensão da matriz
 
 Entradas:
     clock
-    nreset -> Reset Sincrôno
+    nreset -> Reset síncrono
     Min    -> Matriz de Entrada
 Sáida 
     ShiftMatrixOut -> Matriz de sáida da forma Coluna_j de M
@@ -106,7 +106,7 @@ module accumulator_cells#(
 WIDTH: Quantidade de bits do acumulador
 Entradas:
     clock
-    nreset -> Reset Sincrôno
+    nreset -> Reset síncrono
     a      -> operando 1
     b      -> operando 2
 Sáida 
@@ -151,7 +151,7 @@ SIZE  : Dimensão da matriz
 
 Entradas:
     clock
-    nreset  -> Reset Sincrôno
+    nreset  -> Reset síncrono
     a_input -> Operando 1
     b_input -> Operando 2
 Sáida 
