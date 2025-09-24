@@ -57,7 +57,7 @@ Sáida
 ## Símbolo do Bloco ShiftMatrix
 
 <p align="center">
-<img title="Entrada da Rede" alt="Alt text" src="images/shiftmatrix.png" width="50%" height="50%">
+<img title="Entrada da Rede" alt="Alt text" src="images/shiftmatrix.png" width="90%" height="90%">
 </p>
 
 
@@ -98,13 +98,13 @@ Sáida
 ## Símbolo do Bloco Accumulator
 
 <p align="center">
-<img title="Entrada da Rede" alt="Alt text" src="images/accumulator.png" width="50%" height="50%">
+<img title="Entrada da Rede" alt="Alt text" src="images/accumulator.png" width="90%" height="90%">
 </p>
 
 ## Visão Interna do Bloco
 
 <p align="center">
-<img title="Entrada da Rede" alt="Alt text" src="images/accumulator_nivel_rtl.png" width="50%" height="50%">
+<img title="Entrada da Rede" alt="Alt text" src="images/accumulator_nivel_rtl.png" width="90%" height="90%">
 </p>
 
 
@@ -141,24 +141,21 @@ Sáida
 ## Símbolo do Bloco SystolicMatrixMultiply
 
 <p align="center">
-<img title="Entrada da Rede" alt="Alt text" src="images/SystolicMatrixMultply.png" width="50%" height="50%">
+<img title="Entrada da Rede" alt="Alt text" src="images/SystolicMatrixMultply.png" width="90%" height="90%">
 </p>
 
 ## Teste Funcional de uma multiplicação Matricial de Ordem 5
 
 Dada a matriz:
 
-$$
-M = \begin{pmatrix}
+$$ M = \begin{pmatrix}
 
    & 1 & 2 & 3 & 4 & 5 \\
    & 6 & 6 & 8 & 9 & 10 \\
    & 11 & 12 & 13 & 14 & 15 \\
    & 16 & 17 & 18 & 19 & 20 \\
    & 21 & 22 & 23 & 24 & 25 \\
-\end{pmatrix}
-
-$$
+\end{pmatrix}\ $$
 
 $$Calcule: M^2 $$
 
