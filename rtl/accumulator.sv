@@ -1,3 +1,15 @@
+//============================================================
+// Nome do Bloco    : Accumulator_Cells
+// Versão           : 1.0
+// Autor(a)         : Valmir Ferreira
+// Data de Criação  : --/--/--
+// Última Modificação: 20/09/2025
+//
+// Descrição:
+//   Acumulador de Multiplicações 
+    
+//============================================================
+
 module accumulator_cells#(
     parameter WIDTH = 16
 )(
