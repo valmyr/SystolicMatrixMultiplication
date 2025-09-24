@@ -28,6 +28,36 @@ Este algoritmo leva tempo O(n) , para   matrizes n xn .
 <img title="Entrada da Rede" alt="Alt text" src="images/RefFig2.png" width="90%" height="90%">
 </p>
 
+## SystolicArrayImplementation
+
+<p align="center">
+<img title="Entrada da Rede" alt="Alt text" src="images/SystolicArrayImplementation.png" width="90%" height="90%">
+</p>
+
+## Estrutura de Diretórios
+```
+.
+├── Makefile
+├── README.md
+├── images
+│   ├── RefFig1.png
+│   ├── RefFig2.png
+│   ├── SystolicMatrixMultply.png
+│   ├── accumulator.png
+│   ├── accumulator_nivel_rtl.png
+│   ├── shiftmatrix.png
+│   ├── testMatrix5x5wolframAlpha.png
+│   └── testeMatrix5x5.png
+├── rtl
+│   ├── ShiftMatrix.sv
+│   ├── accumulator.sv
+│   └── systolicMatrixMultiply.sv
+└── tb
+    └── tb.sv
+
+4 directories, 14 files
+```
+
 ## Descrição do Bloco ShiftMatrix
 Este módulo estrutura as matrizes de acordo com a topologia do acelerador.
 
