@@ -163,6 +163,5 @@ $$Calcule: M^2 $$
 
 
 <p align="center">
-<img title="Entrada da Rede" alt="Alt text" src="images/
-testeMatrix5x5.png" width="90%" height="90%">
+<img title="Entrada da Rede" alt="Alt text" src="images/testeMatrix5x5.png" width="90%" height="90%">
 </p>
