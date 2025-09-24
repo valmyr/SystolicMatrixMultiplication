@@ -6,6 +6,27 @@
 A multiplicação de matrizes é uma operação muito comum em problemas científicos e de engenharia. A implementação sequencial dessa operação consome muito tempo para matrizes grandes; a solução de força bruta resulta em um tempo computacional O(n^3) , para matrizes nxn ...
 
 
+## Introdução 
+
+Computadores paralelos bidimensionais conectados em malha são frequentemente utilizados em configuração de matriz sistólica para a multiplicação de matrizes. Para simplificar, assumimos matrizes de entrada de tamanho 4 x 4 contendo elementos inteiros de um bit. A Figura 3.1 mostra as operações a serem realizadas. Os símbolos ● e + representam as operações inteiras de multiplicação e adição, respectivamente.
+
+<p align="center">
+<img title="Entrada da Rede" alt="Alt text" src="images/RefFig1.png" width="90%" height="90%">
+</p>
+
+As duas matrizes A e B são deslocadas para os processadores de contorno na coluna 1 e linha 1, respectivamente, conforme mostrado na Figura. Os 0s à esquerda e à direita nas linhas e colunas são empregados para que os elementos air e Brj cheguem ao núcleo Pij simultaneamente para que a operação Air ● Brj seja executada. Cij é inicializado como 0 em Pij , para todos os i, j = 1, 2, 3, 4. No final, o núcleo Pij conterá cij , para 1 ≤ i, j ≤ 4
+
+Sempre que um processador Pij recebe duas entradas b e a do norte e do oeste, respectivamente, ele executa o seguinte conjunto de operações, nesta ordem:
+
+ele calcula a ● b ;
+ele adiciona o resultado ao valor anterior Cij e armazena o resultado em Cij ;
+ele envia a para Pi,j+1 , a menos que j = 4 ; e
+ele envia   b para Pi+1, j , a menos que i = 4 .
+Este algoritmo leva tempo O(n) , para   matrizes n xn .
+
+<p align="center">
+<img title="Entrada da Rede" alt="Alt text" src="images/RefFig2.png" width="90%" height="90%">
+</p>
 
 ## Descrição do Bloco ShiftMatrix
 Este módulo estrutura as matrizes de acordo com a topologia do acelerador.
@@ -165,3 +186,6 @@ $$Calcule: M^2 $$
 <p align="center">
 <img title="Entrada da Rede" alt="Alt text" src="images/testeMatrix5x5.png" width="90%" height="90%">
 </p>
+
+## Referências
+[Systolic-Array Implementation of Matrix-By-Matrix Multiplication](https://ecelabs.njit.edu/ece459/lab3.php).
