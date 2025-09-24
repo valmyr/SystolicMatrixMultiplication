@@ -85,8 +85,8 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
             current_counter  <= next_counter;
         end
     end
-    assign next_counter = current_counter < SIZE+10 ? current_counter +1: 0 ;
-    assign shiftMatrixOut =  UnpackVecMout[current_counter];
+    assign next_counter = current_counter +1;
+    assign shiftMatrixOut =  current_counter < 2*SIZE -1? UnpackVecMout[current_counter] : 0; 
     // assign shiftMatrixOut =  rvs ? UnpackVecMout[SIZE-current_counter]: {UnpackVecMout[SIZE-current_counter][3:0],UnpackVecMout[SIZE - current_counter][7:4]};
     assign A26 = {>>{shiftVec}};
 
