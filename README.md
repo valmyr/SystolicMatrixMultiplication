@@ -15,9 +15,9 @@ Este módulo estrutura as matrizes de acordo com a topologia do acelerador.
 
 $$
 M = \begin{pmatrix}
-  A_{00} & A_{01} & A_{02} \\
-  A_{10} & A_{11} & A_{12} \\
-  A_{20} & A_{21} & A_{22} \\
+A_{00} & A_{01} & A_{02} \\
+A_{10} & A_{11} & A_{12} \\
+A_{20} & A_{21} & A_{22} \\
 \end{pmatrix}
 $$
 
