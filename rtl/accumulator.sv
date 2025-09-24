@@ -1,4 +1,4 @@
-module accumulator#(
+module accumulator_cells#(
     parameter WIDTH = 16
 )(
 
