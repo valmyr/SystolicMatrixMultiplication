@@ -1,6 +1,6 @@
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =5,SIZE = 3;
+    parameter WIDTHx =5,SIZE = 30;
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
     logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0];
 
@@ -22,8 +22,8 @@ module tb;
         integer k = 1;
         for(integer i = 0; i < SIZE; i++)
             for(integer j = 0; j < SIZE; j++)begin
-                A1[i][j] = k;
-                A2[i][j] = k;
+                A1[i][j] = $urandom_range(0,32);
+                A2[i][j] = $urandom_range(0,32);
                 k++;
             end
 
@@ -33,7 +33,12 @@ module tb;
          nreset = 0;
          #1
          nreset = 1;
-         #100 $finish;
+          $shm_open("waves.shm");
+          $shm_probe("AS");
+
+         $dumpfile("waves.vcd");
+         $dumpvars(0,m1);
+        #10000 $finish;
     end
     always #1clock=~clock;
 endmodule
