@@ -1,3 +1,14 @@
+//============================================================
+// Nome do Bloco    : SystolicMatrixMultiply
+// Versão           : 1.0
+// Autor(a)         : Valmir Ferreira
+// Data de Criação  : --/--/--
+// Última Modificação: 20/09/2025
+//
+// Descrição:
+//   Dada duas matrizes de ordem N, M1 e M2 cálcula a multplicação matricial delas
+//============================================================
+
 module systolicMatrixMultiply#(
     parameter WIDTH = 16, SIZE=3, WIDTHx = 4
 )(
