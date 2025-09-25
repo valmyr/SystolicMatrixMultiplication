@@ -8,7 +8,7 @@ sims:
 		
 sim-gui:
 	cd ${dir} &&\
-	xrun ${TB} ${RTL}  -mce -mce_build_cpu_configuration all-cores -mce_build_thread_count 32 -access +rw &
+	xrun ${TB} ${RTL} -mce -mce_build_cpu_configuration single-socket -mce_build_thread_count 32 -access -access +rw &
 rest:
 	xrun .${TB} ${RTL} -access +rw -s -input restore.tcl
 waves: 

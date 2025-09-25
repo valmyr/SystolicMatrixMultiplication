@@ -3,12 +3,12 @@ module tb;
     parameter WIDTHx =5,SIZE = 30;
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
     logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0];
-
+    integer k;
     systolicMatrixMultiply  #(.WIDTH(16),.WIDTHx(WIDTHx),.SIZE(SIZE)) m1(
     .clock  (clock)                                ,
     .nreset (nreset)                               ,
-    .a_input(A1),
-    .b_input(A2),
+    .a_input(A1)                                   ,
+    .b_input(A2)                                   ,
     .output_produc_a_b()
 );
 
@@ -19,11 +19,11 @@ module tb;
                 A[i][j] = $urandom_range(1,9);
             end
 */  
-        integer k = 1;
+        k = 1;
         for(integer i = 0; i < SIZE; i++)
             for(integer j = 0; j < SIZE; j++)begin
-                A1[i][j] = $urandom_range(0,32);
-                A2[i][j] = $urandom_range(0,32);
+                A1[i][j] = $urandom_range(1,32);
+                A2[i][j] = $urandom_range(1,32);
                 k++;
             end
 
@@ -35,9 +35,9 @@ module tb;
          nreset = 1;
           $shm_open("waves.shm");
           $shm_probe("AS");
-
-         $dumpfile("waves.vcd");
-         $dumpvars(0,m1);
+          $shm_probe(m1.output_produc_a_b);
+          $shm_probe(m1.a_input);
+          $shm_probe(m1.b_input);
         #10000 $finish;
     end
     always #1clock=~clock;

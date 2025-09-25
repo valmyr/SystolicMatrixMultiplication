@@ -48,7 +48,7 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     logic [WIDTH*SIZE-1:0]                       UnpackVecMout    [2*(SIZE-1):0]          ;
     logic [WIDTH*SIZE-1:0]                       UnpackVecMout2   [2*(SIZE-1):0]          ;
    // logic [SIZE-1:0][((2*SIZE-1)*WIDTH)-1:0] shiftVec2;
-    logic [SIZE:0]               next_counter, current_counter;
+    logic [WIDTH*SIZE-1:0]               next_counter, current_counter;
     logic [SIZE-1:0][(2*SIZE-1)*WIDTH-1:0] A26 ;
 
   //  assign shiftVec2 ={>>{shiftVec}};
@@ -56,7 +56,7 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     generate
         genvar idvec;
         for(idvec =0; idvec < SIZE; idvec++)begin
-           assign {>>{UnpackVec[idvec]}} =Min[SIZE-idvec-1] ;//{>>{unpacked_array}} = packed_array;
+           assign {>>{UnpackVec[idvec]}} =Min[SIZE-idvec-1'b1] ;//{>>{unpacked_array}} = packed_array;
           // assign {>>{UnpackVec[idvec]}} =Min[SIZE-idvec-1] ;//{>>{unpacked_array}} = packed_array;
         end
     endgenerate
@@ -71,7 +71,7 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
         genvar t,m;
         for(t =0; t < SIZE; t++)
             for(m = 0; m < 2*SIZE-1; m++)
-                assign Mout[m][t]= A26[t][(m+1)*WIDTH-1:(m+1)*WIDTH-WIDTH];
+                assign Mout[m][t]= A26[t][(m+1'b1)*WIDTH-1:(m+1'b1)*WIDTH-WIDTH];
     endgenerate
     generate
         genvar idvec3;
@@ -84,7 +84,7 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
             current_counter  <= next_counter;
         end
     end
-    assign next_counter = current_counter +1;
+    assign next_counter = current_counter +1'b1;
     assign shiftMatrixOut =  current_counter < 2*SIZE -1? UnpackVecMout[current_counter] : 0; 
     // assign shiftMatrixOut =  rvs ? UnpackVecMout[SIZE-current_counter]: {UnpackVecMout[SIZE-current_counter][3:0],UnpackVecMout[SIZE - current_counter][7:4]};
     assign A26 = {>>{shiftVec}};
