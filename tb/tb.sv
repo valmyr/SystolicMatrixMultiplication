@@ -114,7 +114,6 @@ module tb;
         $writememh("../sim/b_input.txt",A2);
         $writememh("../sim/Cout_ref.txt",Cout_ref);
         $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-
         $display();
         MatrixPrint(.A1(A1));
         $display();
