@@ -2,18 +2,16 @@ TB = ../tb/tb.sv
 RTL = ../rtl/*.sv
 dir = ./sim/
 
-sims:
+simi:
 	cd ${dir} &&\
-	xrun ${TB} ${RTL} &
-		
-sim-gui:
-	cd ${dir} &&\
-	xrun ${TB} ${RTL} -mce -mce_build_cpu_configuration single-socket -mce_build_thread_count 32 -access -access +rw &
-rest:
-	xrun .${TB} ${RTL} -access +rw -s -input restore.tcl
+	xrun ${TB} ${RTL} -mce_build_thread_count 32 -access +rw &
+#	xrun ${TB} ${RTL} -mce -mce_build_cpu_configuration single-socket -mce_build_thread_count 32 -access +rw &
+restore:
+	 simvision -input simvision.svcf
 waves: 
 	cd ${dir} &&\
-	simvision waves.shm &
+	simvision -waves waves.shm &
+	
 clean:
 	cd ${dir} &&\
 	rm -rf waves.shm xcelium.d xrun.* *.log .simvision *
