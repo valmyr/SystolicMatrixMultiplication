@@ -1,7 +1,10 @@
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =5,SIZE = 100;
-    parameter WIDTH =32;
+    parameter WIDTHx =3,SIZE = 11;
+    parameter WIDTH =16;
+    parameter TsClock = 1;
+    parameter delay = 11*TsClock + 2*SIZE-1;
+    
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
     logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0];
     logic [WIDTH-1:0] Cout_DUT[SIZE-1:0][SIZE-1:0];
@@ -98,16 +101,20 @@ module tb;
     endtask  
  
   initial begin
+    $shm_open("waves.shm");
+    $shm_probe(Cout_DUT);
+    $shm_probe(Cout_ref);
     MatrixCreate(.A1(A1),.A2(A2));
     #10;
     MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
     clock = 0;
     nreset =1;
-     #1
+     #(10*TsClock) 
     nreset = 0;
-     #1
+     #(TsClock )
     nreset = 1;
-     #1000
+    
+    #(3*delay)
     MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
     $writememh("../sim/a_input.txt",A1);
     $writememh("../sim/b_input.txt",A2);
@@ -129,10 +136,8 @@ module tb;
     $display("");
     $display("Sucess:   %d  %%",(counterPassTest/(SIZE*SIZE))*100);
     $display("Fail  : %d  %%",((SIZE*SIZE-counterPassTest)/(SIZE*SIZE))*100);
-    $shm_open("waves.shm");
-    $shm_probe(Cout_DUT);
-    $shm_probe(Cout_ref);
+
     #1$finish;
   end
-  always #1clock=~clock;
+  always #(TsClock)clock=~clock;
 endmodule
