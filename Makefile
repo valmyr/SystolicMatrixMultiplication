@@ -4,7 +4,7 @@ dir = ./sim/
 
 simi:
 	cd ${dir} &&\
-	xrun ${TB} ${RTL} -mce_build_thread_count 32 -access +rw &
+	xrun ${TB} ${RTL} -mce_sim_thread_count 6 -mce_build_thread_count 32 -access +rw &
 #	xrun ${TB} ${RTL} -mce -mce_build_cpu_configuration single-socket -mce_build_thread_count 32 -access +rw &
 restore:
 	 simvision -input simvision.svcf
