@@ -62,13 +62,13 @@ generate
             assign b_vec[0][i] = {{WIDTH{1'b0}},b[(i+1)*WIDTHx-1:(i+1)*WIDTHx-WIDTHx]};
             for(j =0; j < SIZE;j++)begin:CELULA_COLUMNS
                 accumulator_cells #(.WIDTH(WIDTH)) cells_accs(    
-                    .clock    (     clock                            ),
-                    .nreset   (     nreset                           ),
-                    .a        (     a_vec[i][j]                      ),
-                    .b        (     b_vec[j][i]                      ),
-                    .x        (     a_vec[i+1][j]                    ), //Ajuda de Ewerton
-                    .y        (     b_vec[j+1][i]                    ), //Ajuda de Ewerton
-                    .z        (     output_produc_a_b[i][j]          )
+                    .clock    (     clock                                          ),
+                    .nreset   (     nreset                                         ),
+                    .a        (     a_vec[i][j]                                    ),
+                    .b        (     b_vec[j][i]                                    ),
+                    .x        (     a_vec[i+1][j]                                  ), //Ajuda de Ewerton
+                    .y        (     b_vec[j+1][i]                                  ), //Ajuda de Ewerton
+                    .z        (     output_produc_a_b[SIZE-j-1][SIZE-i-1]          )
                 );
             end
         end
