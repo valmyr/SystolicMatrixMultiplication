@@ -1,7 +1,7 @@
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =5,SIZE = 20;
-    parameter WIDTH =16;
+    parameter WIDTHx =5,SIZE = 100;
+    parameter WIDTH =32;
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
     logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0];
     logic [WIDTH-1:0] Cout_DUT[SIZE-1:0][SIZE-1:0];
@@ -9,13 +9,13 @@ module tb;
     logic [WIDTH-1:0] counterPassTest;
     integer k;
     integer sumC;
-    systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) MatrixMultiplyM0(
-    .clock  (clock)                                ,
-    .nreset (nreset)                               ,
-    .a_input(A1)                                   ,
-    .b_input(A2)                                   ,
-    .output_produc_a_b(Cout_DUT)
-);
+    systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
+        .clock  (clock)                                ,
+        .nreset (nreset)                               ,
+        .a_input(A1)                                   ,
+        .b_input(A2)                                   ,
+        .output_produc_a_b(Cout_DUT)
+    );
     task MatrixCreate(
             output logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0],
             output logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0]
@@ -23,10 +23,10 @@ module tb;
         begin
             for(integer i = 0; i < SIZE; i++)begin
                 for(integer j = 0; j < SIZE; j++)begin
-                    // A1[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);                    
-                    // A2[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);
-                    A1[i][j] = $urandom_range(1,(1'b1 << 4)-1);                    
-                    A2[i][j] = $urandom_range(1,(1'b1 << 4)-1);
+                    A1[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);                    
+                    A2[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);
+                    // A1[i][j] = $urandom_range(1,(1'b1 << 4)-1);                    
+                    // A2[i][j] = $urandom_range(1,(1'b1 << 4)-1);
                 end
         end
 
@@ -34,12 +34,11 @@ module tb;
     endtask 
 
     task MatrixMultiplySoftware(
-        input logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0],
-        input logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0],
+        input  logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0],
+        input  logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0],
         output logic [WIDTH-1:0] Out_ref[SIZE-1:0][SIZE-1:0]  
     );
     begin
-  
             for(integer i = 0; i < SIZE; i++)begin
                 for(integer j = 0; j < SIZE; j++)begin
                     sumC = 0;
@@ -54,8 +53,8 @@ module tb;
     endtask   
 
     task MatrixComparatorHardware_VS_Software(
-        input logic [WIDTH-1:0] A1[SIZE-1:0][SIZE-1:0],
-        input logic [WIDTH-1:0] A2[SIZE-1:0][SIZE-1:0],
+        input  logic [WIDTH-1:0] A1[SIZE-1:0][SIZE-1:0],
+        input  logic [WIDTH-1:0] A2[SIZE-1:0][SIZE-1:0],
         output logic [WIDTH-1:0]counterPassTest
     );
         begin
@@ -99,35 +98,41 @@ module tb;
     endtask  
  
   initial begin
-        MatrixCreate(.A1(A1),.A2(A2));
-        #10;
-        MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
-        clock = 0;
-        nreset =1;
-         #1
-        nreset = 0;
-         #1
-        nreset = 1;
-         #1000
-        MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
-        $writememh("../sim/a_input.txt",A1);
-        $writememh("../sim/b_input.txt",A2);
-        $writememh("../sim/Cout_ref.txt",Cout_ref);
-        $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-        $display();
-        MatrixPrint(.A1(A1));
-        $display();
-        MatrixPrint(.A1(A2));
-        $display();
-        MatrixPrint1(.A1(Cout_DUT));
-        $display();
-        MatrixPrint1(.A1(Cout_ref));
-        $display("Test Pass:%d",counterPassTest);
-        $display("Test Fail: %d",SIZE*SIZE-counterPassTest);
-        $shm_open("waves.shm");
-        $shm_probe(Cout_DUT);
-        $shm_probe(Cout_ref);
-        #1$finish;
-    end
-    always #1clock=~clock;
+    MatrixCreate(.A1(A1),.A2(A2));
+    #10;
+    MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
+    clock = 0;
+    nreset =1;
+     #1
+    nreset = 0;
+     #1
+    nreset = 1;
+     #1000
+    MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
+    $writememh("../sim/a_input.txt",A1);
+    $writememh("../sim/b_input.txt",A2);
+    $writememh("../sim/Cout_ref.txt",Cout_ref);
+    $writememh("../sim/Cout_Dut.txt",Cout_DUT);
+    $display("Operadorando 1");
+    $display("");
+    MatrixPrint(.A1(A1));
+    $display("Operadorando 2");
+    $display("");
+    MatrixPrint(.A1(A2));
+    $display("Resultado DUT");
+    $display("");
+    MatrixPrint1(.A1(Cout_DUT));
+    $display("Resultado REFMOD");
+    $display("");
+    MatrixPrint1(.A1(Cout_ref));
+    $display("Test(%%)");
+    $display("");
+    $display("Sucess:   %d  %%",(counterPassTest/(SIZE*SIZE))*100);
+    $display("Fail  : %d  %%",((SIZE*SIZE-counterPassTest)/(SIZE*SIZE))*100);
+    $shm_open("waves.shm");
+    $shm_probe(Cout_DUT);
+    $shm_probe(Cout_ref);
+    #1$finish;
+  end
+  always #1clock=~clock;
 endmodule
