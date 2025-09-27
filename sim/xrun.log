@@ -1,5 +1,5 @@
 xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.03-s005: Started on Sep 25, 2025 at 17:48:27 -03
+TOOL:	xrun(64)	24.03-s005: Started on Sep 27, 2025 at 17:47:29 -03
 xrun
 	../tb/tb.sv
 	../rtl/ShiftMatrix.sv
@@ -9,8 +9,8 @@ xrun
 	-mce_build_thread_count 32
 	-access +rw
 Recompiling... reason: file '../tb/tb.sv' is newer than expected.
-	expected: Thu Sep 25 17:47:58 2025
-	actual:   Thu Sep 25 17:48:26 2025
+	expected: Sat Sep 27 17:42:36 2025
+	actual:   Sat Sep 27 17:47:27 2025
 file: ../tb/tb.sv
 	module worklib.tb:sv
 		errors: 0, warnings: 0
@@ -20,25 +20,21 @@ file: ../tb/tb.sv
 		tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.tb:sv <0x3df0c218>
-			streams:  12, words: 21510
-		worklib.shiftMatrix:sv <0x14f74d1f>
-			streams:  29, words: 21763
-		worklib.systolicMatrixMultiply:sv <0x475e0ac9>
-			streams:  82, words: 32291
+		worklib.tb:sv <0x4a8007d9>
+			streams:  15, words: 23897
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
-		Modules:               125       4
-		Registers:             788      56
-		Scalar wires:            2       -
-		Vectored wires:      2,037       -
-		Always blocks:         124       3
+		Modules:               104       4
+		Registers:             770      64
+		Scalar wires:          108       -
+		Vectored wires:      1,694       -
+		Always blocks:         105       5
 		Initial blocks:          1       1
-		Cont. assignments:   1,060      13
-		Pseudo assignments:    614       -
-		Process Clocks:        123       2
+		Cont. assignments:     886      15
+		Pseudo assignments:    612       -
+		Process Clocks:        103       2
 	Writing initial simulation snapshot: worklib.tb:sv
 Loading snapshot worklib.tb:sv .................... Done
 SVSEED default: 1
@@ -46,105 +42,97 @@ xcelium> source /usr/local/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
 xcelium> run
 Operadorando 1
 
-2  7  7  1  7  7  2  7  6  1  7  
+10  13  12   2  14   8   2   7  15   9  
 
-4  3  3  1  2  6  1  6  6  1  6  
+11   4  13  10   4   9  14   1   1  11  
 
-1  4  2  3  7  2  6  2  4  4  7  
+14  10  15  13   3  10   1   1  10  14  
 
-3  2  7  1  1  7  4  3  4  3  4  
+ 7   7  13  11  15   1  13   6   5   3  
 
-6  4  6  1  5  7  3  6  5  2  4  
+11  12  13   7   2  10   5   9   4   3  
 
-4  7  4  1  4  7  4  4  6  1  7  
+13   5   1   6   6   9   5  12  14   9  
 
-1  2  4  3  5  7  4  2  6  6  6  
+ 5  15   6   1  13   2  10  15   4   7  
 
-4  4  1  1  2  1  2  2  4  6  2  
+ 7   9   1  13  12   5   1   8  13  14  
 
-7  6  5  2  3  2  2  6  5  3  1  
+14   9  10  15   1   6   7  11   7   6  
 
-4  5  1  4  1  2  2  4  6  5  5  
-
-7  4  4  3  2  3  7  5  2  2  7  
+ 4   8   1   6   3   1   9  12   4   4  
 
 Operadorando 2
 
-3  6  1  3  6  3  4  7  2  3  6  
+ 4   9   9  13   8   7   1  13   4   1  
 
-5  2  6  5  1  4  2  3  7  7  3  
+ 1  11   8   2  12   2   9   3   8  15  
 
-2  2  6  1  3  4  1  2  6  4  4  
+12   1  13  15   3  13  11   5   6  12  
 
-7  4  5  5  7  1  6  3  2  4  7  
+ 7   3  11   1  14  15   5   4  14   8  
 
-6  3  4  5  7  1  1  2  4  3  1  
+ 1  13   5  14  15  14   8   2   2   3  
 
-3  1  2  5  6  7  6  7  1  1  4  
+12  13   5   7  12   1   7   2   1   6  
 
-3  7  4  4  6  2  3  1  3  2  6  
+ 1   7  10   9   1  12   8   6   7   3  
 
-7  6  1  4  6  7  7  7  4  6  4  
+10  15   7   6   5  13   8  11   5  11  
 
-5  2  6  1  7  7  5  1  3  1  7  
+13  15  12  12   3   6  15   6  13   7  
 
-2  3  4  6  1  5  4  4  3  1  5  
-
-6  7  1  7  2  3  1  2  1  6  5  
+ 4   2   5  13   4   5   6  14  13   3  
 
 Resultado DUT
 
-  254    192    195    220    249    240    180    190    194    210    225  
+  624    899    776    947    724    736    788    586    641    670  
 
-  183    152    121    157    190    190    154    157    117    142    185  
+  467    505    689    762    549    711    536    541    570    466  
 
-  198    176    157    194    192    146    126    114    135    148    189  
+  657    659    816    869    716    715    678    638    748    643  
 
-  150    141    139    149    178    180    141    144    124    122    187  
+  445    656    736    780    640    887    640    469    572    556  
 
-  212    183    165    190    241    218    179    194    163    169    219  
+  542    657    677    653    593    629    573    491    501    620  
 
-  221    185    172    204    225    214    167    173    162    181    222  
+  568    829    658    749    592    642    610    615    597    492  
 
-  197    164    170    200    214    196    163    149    135    135    216  
+  391    783    617    701    596    716    631    521    506    605  
 
-  120    111    109    123    120    124    105    104     99     93    141  
+  518    773    668    735    725    712    646    577    715    548  
 
-  184    159    156    153    198    183    158    166    159    156    196  
+  595    702    789    712    654    790    615    622    679    637  
 
-  183    157    141    168    172    169    153    139    123    141    200  
-
-  203    217    144    196    213    173    159    169    143    176    226  
+  290    506    441    391    369    498    400    379    404    398  
 
 Resultado REFMOD
 
-  254    192    195    220    249    240    180    190    194    210    225  
+  624    899    776    947    724    736    788    586    641    670  
 
-  183    152    121    157    190    190    154    157    117    142    185  
+  467    505    689    762    549    711    536    541    570    466  
 
-  198    176    157    194    192    146    126    114    135    148    189  
+  657    659    816    869    716    715    678    638    748    643  
 
-  150    141    139    149    178    180    141    144    124    122    187  
+  445    656    736    780    640    887    640    469    572    556  
 
-  212    183    165    190    241    218    179    194    163    169    219  
+  542    657    677    653    593    629    573    491    501    620  
 
-  221    185    172    204    225    214    167    173    162    181    222  
+  568    829    658    749    592    642    610    615    597    492  
 
-  197    164    170    200    214    196    163    149    135    135    216  
+  391    783    617    701    596    716    631    521    506    605  
 
-  120    111    109    123    120    124    105    104     99     93    141  
+  518    773    668    735    725    712    646    577    715    548  
 
-  184    159    156    153    198    183    158    166    159    156    196  
+  595    702    789    712    654    790    615    622    679    637  
 
-  183    157    141    168    172    169    153    139    123    141    200  
-
-  203    217    144    196    213    173    159    169    143    176    226  
+  290    506    441    391    369    498    400    379    404    398  
 
 Test(%)
 
 Sucess:          100  %
 Fail  :          0  %
-Simulation complete via $finish(1) at time 118 NS + 0
-../tb/tb.sv:140     #1$finish;
+Simulation complete via $finish(1) at time 112 NS + 0
+../tb/tb.sv:124     #1$finish;
 xcelium> exit
-TOOL:	xrun(64)	24.03-s005: Exiting on Sep 25, 2025 at 17:48:37 -03  (total: 00:00:10)
+TOOL:	xrun(64)	24.03-s005: Exiting on Sep 27, 2025 at 17:47:39 -03  (total: 00:00:10)

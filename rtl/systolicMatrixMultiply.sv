@@ -14,17 +14,19 @@ module systolicMatrixMultiply#(
 )(
     input  logic                  clock                                  ,
     input  logic                  nreset                                 ,
+    input  logic                  valid_i                                  ,
     input  logic [WIDTHx-1:0]     a_input [SIZE-1:0][SIZE-1:0]           ,
     input  logic [WIDTHx-1:0]     b_input [SIZE-1:0][SIZE-1:0]           ,
+    output logic                  ready                                  ,
     output logic [WIDTH-1:0]      output_produc_a_b [SIZE-1:0][SIZE-1:0]
 );
 
 logic [SIZE*WIDTHx-1:0] a,b;
 logic [WIDTH-1:0] a_vec[SIZE:0][SIZE:0];
 logic [WIDTH-1:0] b_vec[SIZE:0][SIZE:0];
-
+logic [WIDTH-1:0] counter, next_counter;
 logic [WIDTHx-1:0] b_input_transpost [SIZE-1:0][SIZE-1:0];
-
+logic valid;
 generate 
     genvar i_trs, j_trs;
     for(i_trs =0; i_trs < SIZE; i_trs++)
@@ -36,6 +38,7 @@ endgenerate
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))aa_shiftM(
                                                 .nreset(nreset)     ,
                                                 .clock(clock)       ,
+                                                .valid_i(valid)       ,
                                                 .Min(a_input)       ,
                                                 .shiftMatrixOut(a)  
     );  
@@ -43,6 +46,7 @@ endgenerate
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))bb_shiftM(
                                                 .nreset(nreset)         ,
                                                 .clock(clock)           ,
+                                                .valid_i(valid)       ,
                                                 .Min(b_input_transpost) ,
                                                 .shiftMatrixOut(b)      
     );  
@@ -64,6 +68,7 @@ generate
                 accumulator_cells #(.WIDTH(WIDTH)) cells_accs(    
                     .clock    (     clock                                          ),
                     .nreset   (     nreset                                         ),
+                    .valid_i  (     valid                                          ),
                     .a        (     a_vec[i][j]                                    ),
                     .b        (     b_vec[j][i]                                    ),
                     .x        (     a_vec[i+1][j]                                  ), //Ajuda de Ewerton
@@ -74,4 +79,15 @@ generate
         end
 
 endgenerate
+
+always_ff@(posedge clock, negedge nreset ) begin
+    if(!nreset)begin counter <=0 ;
+                     valid <=0;
+    end
+    else begin  counter <= next_counter;
+                valid   <= valid_i ? valid_i : valid;
+    end
+end
+assign next_counter = (valid & !ready) ? counter + 1'b1 : 1'b0;
+assign ready = counter == 3*SIZE -1;
 endmodule
