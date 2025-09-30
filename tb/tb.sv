@@ -1,9 +1,10 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 32;
+    parameter WIDTHx =4,SIZE = 40;
     parameter WIDTH =16;
     parameter TsClock = 1;
+    parameter sim_size = 2;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
@@ -33,8 +34,6 @@ module tb;
                 for(integer j = 0; j < SIZE; j++)begin
                     A1[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);                    
                     A2[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);
-                    // A1[i][j] = $urandom_range(1,(1'b1 << 4)-1);                    
-                    // A2[i][j] = $urandom_range(1,(1'b1 << 4)-1);
                 end
         end
 
@@ -68,8 +67,8 @@ module tb;
         begin
         counterPassTest = 0;
             for(integer i = 0; i < SIZE; i++)begin
-                for(integer j = 1; j < SIZE; j++)begin
-                    if(A1== A2)
+                for(integer j = 0; j < SIZE; j++)begin
+                    if(A1[i][j]== A2[i][j])
                         counterPassTest+=1;
                 end
             end
@@ -118,54 +117,51 @@ module tb;
     nreset =0;
     #1
     nreset =1;
+    #1
+    repeat(sim_size)begin
+        @(negedge ready)begin
+            $writememh("../sim/a_input.txt",A1);
+            $writememh("../sim/b_input.txt",A2);
+            $writememh("../sim/Cout_ref.txt",Cout_ref);
+            $writememh("../sim/Cout_Dut.txt",Cout_DUT);
+            MatrixMultiplySoftware(.A1(DUT_MatrixMultiplyM0.a_input),.A2(DUT_MatrixMultiplyM0.b_input),.Out_ref(Cout_ref));
+            MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
+            $display("Operadorando 1");
+            $display("");
+            MatrixPrint(.A1(DUT_MatrixMultiplyM0.a_input));
+            $display("Operadorando 2");
+            $display("");
+            MatrixPrint(.A1(DUT_MatrixMultiplyM0.b_input));
+            $display("Resultado DUT");
+            $display("");
+            MatrixPrint1(.A1(Cout_DUT));
+            $display("Resultado REFMOD");
+            $display("");
+            MatrixPrint1(.A1(Cout_ref));
+            $display("Test(%%) %d %d ",counterPassTest, SIZE*SIZE - counterPassTest);
+            $display("");
+            $display("Sucess: %f  %%",(counterPassTest/(SIZE*SIZE))*100.0);
+            $display("Fail  : %f  %%",((SIZE*SIZE-counterPassTest)/(SIZE*SIZE))*100.0);
+        end
+    end
     #(1000*TsClock)$finish;
   end
   always #(TsClock)clock=~clock;
 
     always_ff@(posedge clock, negedge nreset)begin
-        if(!nreset) $display("Resetando...");
+        if(!nreset)begin $display("Resetando...");
+            current_state <= LOAD;
+        end
         else begin
             current_state <= next_state;
-            case(current_state)
-                LOAD:
-                    MatrixCreate(.A1(A1),.A2(A2));
-                CALC:begin
-                    if(ready)begin
-                        $writememh("../sim/a_input.txt",A1);
-                        $writememh("../sim/b_input.txt",A2);
-                        $writememh("../sim/Cout_ref.txt",Cout_ref);
-                        $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-                        $display("Operadorando 1");
-                        $display("");
-                        MatrixPrint(.A1(DUT_MatrixMultiplyM0.a_input));
-                        $display("Operadorando 2");
-                        $display("");
-                        MatrixPrint(.A1(DUT_MatrixMultiplyM0.b_input));
-                        $display("Resultado DUT");
-                        $display("");
-                        MatrixPrint1(.A1(Cout_DUT));
-                        $display("Resultado REFMOD");
-                        $display("");
-                        MatrixPrint1(.A1(Cout_ref));
-                        $display("Test(%%)");
-                        $display("");
-
-                        MatrixMultiplySoftware(.A1(DUT_MatrixMultiplyM0.a_input),.A2(DUT_MatrixMultiplyM0.b_input),.Out_ref(Cout_ref));
-
-                        //MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
-
-                       // $display("Sucess:   %d  %%",(counterPassTest/(SIZE*SIZE))*100);
-                       // $display("Fail  : %d  %%",((SIZE*SIZE-counterPassTest)/(SIZE*SIZE))*100);
-                    end
-                end
-        endcase
+            if(current_state == LOAD) MatrixCreate(.A1(A1),.A2(A2));
         end
     end
     always_comb begin
         case(current_state)    
             LOAD:begin
                 next_state = CALC;
-                valid_i= 0;
+                valid_i= 1;
             end
             CALC:begin
                 next_state = ready ? LOAD :CALC;
@@ -176,6 +172,5 @@ module tb;
                 valid_i = 0;
             end
         endcase
-        
     end
 endmodule
