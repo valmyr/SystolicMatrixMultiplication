@@ -38,7 +38,6 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     input  logic nreset                                 ,
     input  logic clock                                  ,
     input  logic ena                                    ,
-    input  logic ena_cells                              ,
     input  logic [WIDTH-1:0] Min[SIZE-1:0][SIZE-1:0]    ,
     output logic [SIZE*WIDTH-1:0] shiftMatrixOut 
 );
@@ -52,7 +51,6 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
    // logic [SIZE-1:0][((2*SIZE-1)*WIDTH)-1:0] shiftVec2;
     logic [2*(SIZE-1):0]               next_counter, current_counter;
     logic [SIZE-1:0][(2*SIZE-1)*WIDTH-1:0] A26 ;
-    logic current_ena, next_ena;
   //  assign shiftVec2 ={>>{shiftVec}};
 
     generate
@@ -83,16 +81,13 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     always_ff@(posedge clock, negedge nreset ) begin
         if(!nreset)begin 
             current_counter <=  0;
-            current_ena     <=  0;
         end
         else begin
-            current_ena <= next_ena;
             current_counter  <= next_counter;
         end
     end
-    assign next_ena         =   ena ? ena : current_ena;
-    assign next_counter     =   ena & ena_cells ? current_counter +1'b1:0;
-    assign shiftMatrixOut   =   (current_counter < 2*SIZE-1 ) & ena &ena_cells ? UnpackVecMout[current_counter] : 0; 
+    assign next_counter     =   ena  ? current_counter +1'b1:0;
+    assign shiftMatrixOut   =   (current_counter < 2*SIZE-1 ) & ena  ? UnpackVecMout[current_counter] : 0; 
     // assign shiftMatrixOut =  rvs ? UnpackVecMout[SIZE-current_counter]: {UnpackVecMout[SIZE-current_counter][3:0],UnpackVecMout[SIZE - current_counter][7:4]};
     assign A26 = {>>{shiftVec}};
 

@@ -40,20 +40,18 @@ endgenerate
 
 
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))aa_shiftM(
-                                                .nreset(nreset)         ,
-                                                .clock(clock)           ,
-                                                .ena_cells(ena_cells)   ,  
-                                                .ena(ena_shift)         ,
-                                                .Min(a_load)            ,
+                                                .nreset(nreset)                     ,
+                                                .clock(clock)                       ,
+                                                .ena(ena_shift & ena_cells)         ,
+                                                .Min(a_load)                        ,
                                                 .shiftMatrixOut(a)  
     );  
 
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))bb_shiftM(
-                                                .nreset(nreset)         ,
-                                                .clock(clock)           ,
-                                                .ena(ena_shift)         ,
-                                                .ena_cells(ena_cells)   ,  
-                                                .Min(b_input_transpost) ,
+                                                .nreset(nreset)                    ,
+                                                .clock(clock)                      ,
+                                                .ena(ena_shift& ena_cells)         , 
+                                                .Min(b_input_transpost)            ,
                                                 .shiftMatrixOut(b)      
     );  
 // Ajustar o módulo de deslocamento de matrizes adicionando um habilitador
@@ -77,7 +75,7 @@ generate
                 accumulator_cells #(.WIDTH(WIDTH)) cells_accs(    
                     .clock    (     clock                                          ),
                     .nreset   (     nreset                                         ),
-                    .ena      (     ena_cells                                      ),
+                    .ena      (     ena_shift                                      ),
                     .a        (     a_vec[i][j]                                    ),
                     .b        (     b_vec[j][i]                                    ),
                     .x        (     a_vec[i+1][j]                                  ), //Ajuda de Ewerton
@@ -133,10 +131,10 @@ always_comb begin
             next_ena_shift               = 1                                                    ;         
         end
         MUILTIPLICATION_CALC:begin
-            nextStateSystolicControlUnit = (counter < 2*SIZE) ? MUILTIPLICATION_CALC : READY    ;
+            nextStateSystolicControlUnit = counter < 3*(SIZE+1) ? MUILTIPLICATION_CALC : READY  ;
             next_counter                 = counter + 1'b1                                       ;
             next_ena_load                = 0                                                    ;
-            next_ena_cells               = (counter < 2*SIZE)                                   ;
+            next_ena_cells               = counter < 3*(SIZE+1)                                 ;
             next_ena_shift               = 1                                                    ;     
         end
         READY:begin
