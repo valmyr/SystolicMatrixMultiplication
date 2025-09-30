@@ -16,28 +16,25 @@ module accumulator_cells#(
 
     input  logic             clock   ,
     input  logic             nreset  ,
-    input  logic             valid_i   ,
+    input  logic             ena     ,
     input  logic [WIDTH-1:0] a       ,
     input  logic [WIDTH-1:0] b       ,
     output logic [WIDTH-1:0] x       ,
     output logic [WIDTH-1:0] y       ,
     output logic [WIDTH-1:0] z       
 );
-    logic [WIDTH-1:0] accumulator, product, sum_product; 
-    logic valid;
-    assign product = a * b;
-    assign sum_product = valid ? product + accumulator :0;
+    logic [WIDTH-1:0] accumulator, product, sum_product;
+    assign product      = ena ? (a * b) : 0                   ;
+    assign sum_product  = ena ? (product + accumulator) : 0   ;
     always_ff@(negedge nreset, posedge clock)begin
         if(!nreset)begin
-            x <= 0;
-            y <= 0;
+            x           <= 0;
+            y           <= 0;
             accumulator <= 0;
-            valid <= 0;
         end else begin
-            x <= a;
-            y <= b;
+            x           <= a;
+            y           <= b;
             accumulator <= sum_product;
-            valid <= valid_i ? valid_i : valid;
         end
     end
     assign z = accumulator;

@@ -1,5 +1,5 @@
 xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.03-s005: Started on Sep 27, 2025 at 17:47:29 -03
+TOOL:	xrun(64)	24.03-s005: Started on Sep 29, 2025 at 21:05:30 -03
 xrun
 	../tb/tb.sv
 	../rtl/ShiftMatrix.sv
@@ -9,8 +9,8 @@ xrun
 	-mce_build_thread_count 32
 	-access +rw
 Recompiling... reason: file '../tb/tb.sv' is newer than expected.
-	expected: Sat Sep 27 17:42:36 2025
-	actual:   Sat Sep 27 17:47:27 2025
+	expected: Mon Sep 29 21:03:23 2025
+	actual:   Mon Sep 29 21:05:12 2025
 file: ../tb/tb.sv
 	module worklib.tb:sv
 		errors: 0, warnings: 0
@@ -20,21 +20,21 @@ file: ../tb/tb.sv
 		tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.tb:sv <0x4a8007d9>
-			streams:  15, words: 23897
+		worklib.tb:sv <0x1b12f0cf>
+			streams:  18, words: 25767
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
-		                 Instances  Unique
-		Modules:               104       4
-		Registers:             770      64
-		Scalar wires:          108       -
-		Vectored wires:      1,694       -
-		Always blocks:         105       5
-		Initial blocks:          1       1
-		Cont. assignments:     886      15
-		Pseudo assignments:    612       -
-		Process Clocks:        103       2
+		               Instances  Unique
+		Modules:              13       4
+		Registers:           142      80
+		Scalar wires:         22       -
+		Vectored wires:      183       -
+		Always blocks:        17       8
+		Initial blocks:        1       1
+		Cont. assignments:   106      18
+		Pseudo assignments:   67       -
+		Process Clocks:       12       2
 	Writing initial simulation snapshot: worklib.tb:sv
 Loading snapshot worklib.tb:sv .................... Done
 SVSEED default: 1
@@ -42,97 +42,833 @@ xcelium> source /usr/local/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
 xcelium> run
 Operadorando 1
 
-10  13  12   2  14   8   2   7  15   9  
+10   5   9  
 
-11   4  13  10   4   9  14   1   1  11  
+ 4   3  13  
 
-14  10  15  13   3  10   1   1  10  14  
-
- 7   7  13  11  15   1  13   6   5   3  
-
-11  12  13   7   2  10   5   9   4   3  
-
-13   5   1   6   6   9   5  12  14   9  
-
- 5  15   6   1  13   2  10  15   4   7  
-
- 7   9   1  13  12   5   1   8  13  14  
-
-14   9  10  15   1   6   7  11   7   6  
-
- 4   8   1   6   3   1   9  12   4   4  
+ 5   1   6  
 
 Operadorando 2
 
- 4   9   9  13   8   7   1  13   4   1  
+14   8   2  
 
- 1  11   8   2  12   2   9   3   8  15  
+ 2   3  12  
 
-12   1  13  15   3  13  11   5   6  12  
-
- 7   3  11   1  14  15   5   4  14   8  
-
- 1  13   5  14  15  14   8   2   2   3  
-
-12  13   5   7  12   1   7   2   1   6  
-
- 1   7  10   9   1  12   8   6   7   3  
-
-10  15   7   6   5  13   8  11   5  11  
-
-13  15  12  12   3   6  15   6  13   7  
-
- 4   2   5  13   4   5   6  14  13   3  
+13   5   7  
 
 Resultado DUT
 
-  624    899    776    947    724    736    788    586    641    670  
+  267    140    143  
 
-  467    505    689    762    549    711    536    541    570    466  
+  231    106    135  
 
-  657    659    816    869    716    715    678    638    748    643  
-
-  445    656    736    780    640    887    640    469    572    556  
-
-  542    657    677    653    593    629    573    491    501    620  
-
-  568    829    658    749    592    642    610    615    597    492  
-
-  391    783    617    701    596    716    631    521    506    605  
-
-  518    773    668    735    725    712    646    577    715    548  
-
-  595    702    789    712    654    790    615    622    679    637  
-
-  290    506    441    391    369    498    400    379    404    398  
+  150     73     64  
 
 Resultado REFMOD
 
-  624    899    776    947    724    736    788    586    641    670  
+    x      x      x  
 
-  467    505    689    762    549    711    536    541    570    466  
+    x      x      x  
 
-  657    659    816    869    716    715    678    638    748    643  
-
-  445    656    736    780    640    887    640    469    572    556  
-
-  542    657    677    653    593    629    573    491    501    620  
-
-  568    829    658    749    592    642    610    615    597    492  
-
-  391    783    617    701    596    716    631    521    506    605  
-
-  518    773    668    735    725    712    646    577    715    548  
-
-  595    702    789    712    654    790    615    622    679    637  
-
-  290    506    441    391    369    498    400    379    404    398  
+    x      x      x  
 
 Test(%)
 
-Sucess:          100  %
-Fail  :          0  %
-Simulation complete via $finish(1) at time 112 NS + 0
-../tb/tb.sv:124     #1$finish;
+Sucess:             x  %
+Fail  :           x  %
+Operadorando 1
+
+14   3   7  
+
+ 5   4  11  
+
+ 9  12   2  
+
+Operadorando 2
+
+ 7   1   1  
+
+ 3  15  15  
+
+15   3   6  
+
+Resultado DUT
+
+  267    140    143  
+
+  231    106    135  
+
+  150     73     64  
+
+Resultado REFMOD
+
+  267    140    143  
+
+  231    106    135  
+
+  150     73     64  
+
+Test(%)
+
+Sucess:           100  %
+Fail  :           0  %
+Operadorando 1
+
+ 1  12  12  
+
+13  15   2  
+
+14   6  12  
+
+Operadorando 2
+
+14   3  12  
+
+11  12   2  
+
+ 4   3   3  
+
+Resultado DUT
+
+  212     80    101  
+
+  212     98    131  
+
+  129    195    201  
+
+Resultado REFMOD
+
+  212     80    101  
+
+  212     98    131  
+
+  129    195    201  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 3   1   8  
+
+ 2   3  15  
+
+ 7   8  14  
+
+Operadorando 2
+
+ 4  15  14  
+
+10   5  15  
+
+ 9  11   2  
+
+Resultado DUT
+
+  194    183     72  
+
+  355    225    192  
+
+  310    150    216  
+
+Resultado REFMOD
+
+  194    183     72  
+
+  355    225    192  
+
+  310    150    216  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 5  13   8  
+
+ 1  11   7  
+
+15   3  14  
+
+Operadorando 2
+
+10   1   7  
+
+ 2   8   7  
+
+ 1   3   1  
+
+Resultado DUT
+
+   94    138     73  
+
+  173    210    103  
+
+  234    299    246  
+
+Resultado REFMOD
+
+   94    138     73  
+
+  173    210    103  
+
+  234    299    246  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 9   9   9  
+
+ 8   1   9  
+
+ 1  15   7  
+
+Operadorando 2
+
+13  15   3  
+
+11   4  15  
+
+ 9   1   1  
+
+Resultado DUT
+
+   84    133    134  
+
+   39    110     91  
+
+  170     81    140  
+
+Resultado REFMOD
+
+   84    133    134  
+
+   39    110     91  
+
+  170     81    140  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 6   2   3  
+
+14   5   2  
+
+13   1   4  
+
+Operadorando 2
+
+10   8  13  
+
+ 8   8   7  
+
+ 9   8   9  
+
+Resultado DUT
+
+  297    180    171  
+
+  196    133     48  
+
+  241     82    235  
+
+Resultado REFMOD
+
+  297    180    171  
+
+  196    133     48  
+
+  241     82    235  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 1   4   8  
+
+ 9  14   4  
+
+11   1   2  
+
+Operadorando 2
+
+ 4   9   9  
+
+ 4   1  15  
+
+15  14   3  
+
+Resultado DUT
+
+  103     88    119  
+
+  198    168    235  
+
+  174    144    212  
+
+Resultado REFMOD
+
+  103     88    119  
+
+  198    168    235  
+
+  174    144    212  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+13  14  15  
+
+ 1   6  13  
+
+ 6   3  15  
+
+Operadorando 2
+
+ 5   8   3  
+
+ 9   4   5  
+
+14   5   2  
+
+Resultado DUT
+
+  140    125     93  
+
+  152    151    303  
+
+   78    128    120  
+
+Resultado REFMOD
+
+  140    125     93  
+
+  152    151    303  
+
+   78    128    120  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+15  13   9  
+
+ 4  12   3  
+
+13   4   6  
+
+Operadorando 2
+
+ 2   6  11  
+
+ 6   2   4  
+
+ 2   8   4  
+
+Resultado DUT
+
+  401    235    139  
+
+  241     97     59  
+
+  267    135     63  
+
+Resultado REFMOD
+
+  401    235    139  
+
+  241     97     59  
+
+  267    135     63  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 7   3  12  
+
+ 5  13  14  
+
+ 6   7  10  
+
+Operadorando 2
+
+13   6   5  
+
+15   1  15  
+
+ 6   9   8  
+
+Resultado DUT
+
+  126    188    253  
+
+   86     72    104  
+
+   62    134    183  
+
+Resultado REFMOD
+
+  126    188    253  
+
+   86     72    104  
+
+   62    134    183  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+10   6  14  
+
+ 4  12   6  
+
+ 1   7   6  
+
+Operadorando 2
+
+10   5   8  
+
+11   9   9  
+
+ 5   4   2  
+
+Resultado DUT
+
+  208    153    176  
+
+  344    169    332  
+
+  243    133    215  
+
+Resultado REFMOD
+
+  208    153    176  
+
+  344    169    332  
+
+  243    133    215  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 3   2  11  
+
+ 8   6  12  
+
+ 5   4  11  
+
+Operadorando 2
+
+ 6   1   7  
+
+15   1   1  
+
+ 6  13  13  
+
+Resultado DUT
+
+  236    160    162  
+
+  202    152    152  
+
+  117     92     83  
+
+Resultado REFMOD
+
+  236    160    162  
+
+  202    152    152  
+
+  117     92     83  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 6   3   1  
+
+12   3   1  
+
+ 9   1  11  
+
+Operadorando 2
+
+13   6  12  
+
+ 7  12   7  
+
+ 3  13  13  
+
+Resultado DUT
+
+  114    148    166  
+
+  210    170    218  
+
+  156    152    182  
+
+Resultado REFMOD
+
+  114    148    166  
+
+  210    170    218  
+
+  156    152    182  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 1   1   9  
+
+14   9   7  
+
+ 3   8   7  
+
+Operadorando 2
+
+ 7   5  11  
+
+ 4   5   5  
+
+ 7   4   4  
+
+Resultado DUT
+
+  102     85    106  
+
+  180    121    178  
+
+  157    209    258  
+
+Resultado REFMOD
+
+  102     85    106  
+
+  180    121    178  
+
+  157    209    258  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 9  13   7  
+
+ 7   2  11  
+
+ 5   2   1  
+
+Operadorando 2
+
+ 7   1  12  
+
+13   5   7  
+
+ 2   8   5  
+
+Resultado DUT
+
+   74     46     52  
+
+  183    143    227  
+
+  102     83    101  
+
+Resultado REFMOD
+
+   74     46     52  
+
+  183    143    227  
+
+  102     83    101  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 6  13  12  
+
+13  10   7  
+
+ 4   2   6  
+
+Operadorando 2
+
+ 5  12   9  
+
+ 2   5  13  
+
+ 8  14   8  
+
+Resultado DUT
+
+  246    130    234  
+
+   97    105    153  
+
+   63     23     79  
+
+Resultado REFMOD
+
+  246    130    234  
+
+   97    105    153  
+
+   63     23     79  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 8   5  10  
+
+ 2  13  10  
+
+ 9   1  15  
+
+Operadorando 2
+
+ 2   7  10  
+
+ 2   9   1  
+
+ 8   9  13  
+
+Resultado DUT
+
+  152    305    319  
+
+  141    304    303  
+
+   72    142    110  
+
+Resultado REFMOD
+
+  152    305    319  
+
+  141    304    303  
+
+   72    142    110  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+11   2  12  
+
+ 9  13   3  
+
+14   1   7  
+
+Operadorando 2
+
+ 8   8   6  
+
+15   7   8  
+
+11   2   7  
+
+Resultado DUT
+
+  106    191    215  
+
+  110    221    163  
+
+  140    207    286  
+
+Resultado REFMOD
+
+  106    191    215  
+
+  110    221    163  
+
+  140    207    286  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+13  13  10  
+
+15  12  10  
+
+ 9  15   4  
+
+Operadorando 2
+
+ 9   4  11  
+
+ 4  15   9  
+
+ 3   4   2  
+
+Resultado DUT
+
+  250    126    166  
+
+  300    169    179  
+
+  204    133    141  
+
+Resultado REFMOD
+
+  250    126    166  
+
+  300    169    179  
+
+  204    133    141  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 7  10   7  
+
+14   2  14  
+
+ 9   2   5  
+
+Operadorando 2
+
+10   8   8  
+
+ 4   8   6  
+
+ 8   3   8  
+
+Resultado DUT
+
+  199    287    280  
+
+  213    280    293  
+
+  153    277    242  
+
+Resultado REFMOD
+
+  199    287    280  
+
+  213    280    293  
+
+  153    277    242  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+ 1  14   7  
+
+ 1  10  14  
+
+ 1   1   8  
+
+Operadorando 2
+
+11  13   7  
+
+ 6  11   4  
+
+ 3   1   9  
+
+Resultado DUT
+
+  166    157    172  
+
+  260    170    236  
+
+  138    103    124  
+
+Resultado REFMOD
+
+  166    157    172  
+
+  260    170    236  
+
+  138    103    124  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Operadorando 1
+
+11   9   2  
+
+14   8   1  
+
+ 7  15   8  
+
+Operadorando 2
+
+ 1  12  14  
+
+ 3   1  10  
+
+ 6  12  13  
+
+Resultado DUT
+
+  116    174    126  
+
+  113    137    173  
+
+   41     32     83  
+
+Resultado REFMOD
+
+  116    174    126  
+
+  113    137    173  
+
+   41     32     83  
+
+Test(%)
+
+Sucess:             0  %
+Fail  :         100  %
+Simulation complete via $finish(1) at time 494 NS + 0
+../tb/tb.sv:129     #1$finish;
 xcelium> exit
-TOOL:	xrun(64)	24.03-s005: Exiting on Sep 27, 2025 at 17:47:39 -03  (total: 00:00:10)
+TOOL:	xrun(64)	24.03-s005: Exiting on Sep 29, 2025 at 21:05:41 -03  (total: 00:00:11)
