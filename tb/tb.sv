@@ -1,10 +1,10 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 40;
+    parameter WIDTHx =4,SIZE = 128;
     parameter WIDTH =16;
     parameter TsClock = 1;
-    parameter sim_size = 2;
+    parameter sim_size = 10;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
@@ -15,6 +15,7 @@ module tb;
     logic valid_i, ready;
     integer k;
     integer sumC;
+    integer sim_iterac;
     enum {LOAD,CALC,PRINT} current_state, next_state;
     systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
         .clock  (clock)                                ,
@@ -105,10 +106,10 @@ module tb;
     endtask  
  
   initial begin
-    $shm_open("waves.shm");
-    $shm_probe(Cout_DUT);
-    $shm_probe(Cout_ref);
-    $shm_probe("AS");
+     $shm_open("waves.shm");
+     $shm_probe(Cout_DUT);
+     $shm_probe(Cout_ref);
+     $shm_probe("AS");
     
     
     clock = 0;
@@ -118,6 +119,7 @@ module tb;
     #1
     nreset =1;
     #1
+    sim_iterac =0;
     repeat(sim_size)begin
         @(negedge ready)begin
             $writememh("../sim/a_input.txt",A1);
@@ -126,10 +128,10 @@ module tb;
             $writememh("../sim/Cout_Dut.txt",Cout_DUT);
             MatrixMultiplySoftware(.A1(DUT_MatrixMultiplyM0.a_input),.A2(DUT_MatrixMultiplyM0.b_input),.Out_ref(Cout_ref));
             MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
-            $display("Operadorando 1");
+            $display("Operando  1");
             $display("");
             MatrixPrint(.A1(DUT_MatrixMultiplyM0.a_input));
-            $display("Operadorando 2");
+            $display("Operando  2");
             $display("");
             MatrixPrint(.A1(DUT_MatrixMultiplyM0.b_input));
             $display("Resultado DUT");
@@ -142,9 +144,10 @@ module tb;
             $display("");
             $display("Sucess: %f  %%",(counterPassTest/(SIZE*SIZE))*100.0);
             $display("Fail  : %f  %%",((SIZE*SIZE-counterPassTest)/(SIZE*SIZE))*100.0);
+            sim_iterac +=1;
+            if(sim_size == sim_iterac)     $finish;
         end
     end
-    #(1000*TsClock)$finish;
   end
   always #(TsClock)clock=~clock;
 
