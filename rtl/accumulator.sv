@@ -11,21 +11,21 @@
 //============================================================
 
 module accumulator_cells#(
-    parameter WIDTH = 16
+    parameter WIDTH = 16,
+    parameter WIDTHx = 8
 )(
 
     input  logic             clock   ,
     input  logic             nreset  ,
     input  logic             ena     ,
-    input  logic [WIDTH-1:0] a       ,
-    input  logic [WIDTH-1:0] b       ,
-    output logic [WIDTH-1:0] x       ,
-    output logic [WIDTH-1:0] y       ,
-    output logic [WIDTH-1:0] z       
+    input  logic             valid   ,
+    input  logic [WIDTHx-1:0] a      ,
+    input  logic [WIDTHx-1:0] b      ,
+    output logic [WIDTHx-1:0] x      ,
+    output logic [WIDTHx-1:0] y      ,
+    output logic [WIDTH-1:0]  z       
 );
     logic [WIDTH-1:0] accumulator, product, sum_product;
-    assign product      = ena ? (a * b) : 0                   ;
-    assign sum_product  = ena ? (product + accumulator) : 0   ;
     always_ff@(negedge nreset, posedge clock)begin
         if(!nreset)begin
             x           <= 0;
@@ -38,4 +38,18 @@ module accumulator_cells#(
         end
     end
     assign z = accumulator;
+    always_comb case({ena,valid})
+        2'b11:begin
+            product      = a * b                ;
+            sum_product  = product + accumulator;
+        end
+        2'b01:begin
+            product     = 0                     ;
+            sum_product = accumulator           ;
+        end
+        default:begin
+            product     = 0                     ;
+            sum_product = 0                     ;
+        end
+    endcase
 endmodule

@@ -16,6 +16,9 @@ waves:
 clean:
 	cd ${dir} &&\
 	rm -rf waves.shm xcelium.d xrun.* *.log .simvision *
+simplify:
+	cd ${dir} &&\
+	xrun   ../rtl/accumulator.sv ../rtl/systolicMatrixMultiply.sv -access +rw +gui &
 
 help:
 	@echo "Arguments to make:"
