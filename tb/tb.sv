@@ -1,31 +1,67 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 128;
-    parameter WIDTH =16;
+    parameter WIDTHx =4,SIZE = 3;
+    parameter WIDTH =8;
     parameter TsClock = 1;
-    parameter sim_size = 10;
+    parameter sim_size = 2;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
     logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0];
     logic [WIDTH-1:0] Cout_DUT[SIZE-1:0][SIZE-1:0];
     logic [WIDTH-1:0] Cout_ref[SIZE-1:0][SIZE-1:0];
+
+    logic [WIDTHx-1:0]a_load[SIZE-1:0][SIZE-1:0];
+    logic [WIDTHx-1:0]b_load[SIZE-1:0][SIZE-1:0];
+    logic [WIDTHx-1:0]b_input_transpost[SIZE-1:0][SIZE-1:0];
+
+    logic [SIZE*WIDTHx-1:0] a; 
+    logic [SIZE*WIDTHx-1:0] b; 
+
+
     logic [WIDTH-1:0] counterPassTest;
     logic valid_i, ready;
     integer k;
     integer sumC;
     integer sim_iterac;
     enum {LOAD,CALC,PRINT} current_state, next_state;
-    systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
-        .clock  (clock)                                ,
-        .nreset (nreset)                               ,
-        .valid_i(valid_i)                              ,
-        .ready_o  (ready)                                ,
-        .a_input(A1)                                   ,
-        .b_input(A2)                                   ,
-        .output_produc_a_b(Cout_DUT)
-    );
+    // systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
+    //     .clock          (clock      )                              ,
+    //     .nreset         (nreset     )                              ,
+    //     .valid_i        (valid_i    )                              ,
+    //     .ready_o        (ready      )                              ,
+    //     .a_input        (A1         )                              ,
+    //     .b_input        (A2         )                              ,
+    //     .output_produc_a_b(Cout_DUT )
+    // );
+    assign a_load = A1;
+    assign b_load = A2;
+    generate 
+        genvar i_trs, j_trs;
+        for(i_trs =0; i_trs < SIZE; i_trs++)
+            for(j_trs =0; j_trs < SIZE; j_trs++)
+            assign b_input_transpost[i_trs][j_trs] = b_load[j_trs][i_trs];
+    endgenerate
+
+
+    shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))aa_shiftM(
+                                                .nreset(nreset)                     ,
+                                                .clock(clock)                       ,
+                                                .ena(1'b1)                          ,
+                                                .ready(ready),
+                                                .Min(a_load)                        ,
+                                                .shiftMatrixOut(a)  
+    );  
+
+    // shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))bb_shiftM(
+    //                                             .nreset(nreset)                    ,
+    //                                             .clock(clock)                      ,
+    //                                             .ena(1'b1)         , 
+    //                                             .Min(b_input_transpost)            ,
+    //                                             .shiftMatrixOut(b)      
+    // );  
+
     task MatrixCreate(
             output logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0],
             output logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0]
@@ -33,8 +69,8 @@ module tb;
         begin
             for(integer i = 0; i < SIZE; i++)begin
                 for(integer j = 0; j < SIZE; j++)begin
-                    A1[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);                    
-                    A2[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);
+                    A1[i][j] = $urandom_range(1,(1'b1 << WIDTHx -1)-1);                    
+                    A2[i][j] = $urandom_range(1,(1'b1 << WIDTHx-1)-1);
                 end
         end
 
@@ -126,14 +162,14 @@ module tb;
             $writememh("../sim/b_input.txt",A2);
             $writememh("../sim/Cout_ref.txt",Cout_ref);
             $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-            MatrixMultiplySoftware(.A1(DUT_MatrixMultiplyM0.a_input),.A2(DUT_MatrixMultiplyM0.b_input),.Out_ref(Cout_ref));
+            // MatrixMultiplySoftware(.A1(DUT_MatrixMultiplyM0.a_input),.A2(DUT_MatrixMultiplyM0.b_input),.Out_ref(Cout_ref));
             MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
             $display("Operando  1");
             $display("");
-            MatrixPrint(.A1(DUT_MatrixMultiplyM0.a_input));
+            // MatrixPrint(.A1(DUT_MatrixMultiplyM0.a_input));
             $display("Operando  2");
             $display("");
-            MatrixPrint(.A1(DUT_MatrixMultiplyM0.b_input));
+            // MatrixPrint(.A1(DUT_MatrixMultiplyM0.b_input));
             $display("Resultado DUT");
             $display("");
             MatrixPrint1(.A1(Cout_DUT));
