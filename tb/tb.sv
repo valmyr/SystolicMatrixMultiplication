@@ -1,7 +1,7 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 3;
+    parameter WIDTHx =4,SIZE = 2**8;
     parameter WIDTH =8;
     parameter TsClock = 1;
     parameter sim_size = 2;
@@ -26,15 +26,15 @@ module tb;
     integer sumC;
     integer sim_iterac;
     enum {LOAD,CALC,PRINT} current_state, next_state;
-    // systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
-    //     .clock          (clock      )                              ,
-    //     .nreset         (nreset     )                              ,
-    //     .valid_i        (valid_i    )                              ,
-    //     .ready_o        (ready      )                              ,
-    //     .a_input        (A1         )                              ,
-    //     .b_input        (A2         )                              ,
-    //     .output_produc_a_b(Cout_DUT )
-    // );
+    systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
+        .clock          (clock      )                              ,
+        .nreset         (nreset     )                              ,
+        .valid_i        (valid_i    )                              ,
+        .a_input        (a         )                              ,
+        .b_input        (b         )                              ,
+        .ready_o          (ready),
+        .output_produc_a_b(Cout_DUT )
+    );
     assign a_load = A1;
     assign b_load = A2;
     generate 
@@ -49,18 +49,19 @@ module tb;
                                                 .nreset(nreset)                     ,
                                                 .clock(clock)                       ,
                                                 .ena(1'b1)                          ,
-                                                .ready(ready),
+                                                .ready(),
                                                 .Min(a_load)                        ,
                                                 .shiftMatrixOut(a)  
     );  
 
-    // shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))bb_shiftM(
-    //                                             .nreset(nreset)                    ,
-    //                                             .clock(clock)                      ,
-    //                                             .ena(1'b1)         , 
-    //                                             .Min(b_input_transpost)            ,
-    //                                             .shiftMatrixOut(b)      
-    // );  
+    shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))bb_shiftM(
+                                                .nreset(nreset)                    ,
+                                                .clock(clock)                      ,
+                                                .ena(1'b1)         , 
+                                                .ready(),
+                                                .Min(b_input_transpost)            ,
+                                                .shiftMatrixOut(b)      
+    );  
 
     task MatrixCreate(
             output logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0],

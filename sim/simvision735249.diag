@@ -1,0 +1,21 @@
+*** Message Type: error ***
+When: Thu Oct 02 05:24:23 PM -03 2025
+couldn't open "/home/xmen/Desktop/SystolicMatrixMultiplication/sim/.simvision/735249_xmen__autosave.tcl.svcf": no such file or directory
+    while executing
+"# Compiled -- no source code available
+error "called a copy of a compiled script""
+    (procedure "::savescript::autosave" line 1)
+    invoked from within
+"::savescript::autosave $filename"
+    (object "::application" method "::Application::auto-save" body line 18)
+    invoked from within
+"::application auto-save"
+    (in namespace inscope "::Application" script line 1)
+    invoked from within
+"namespace inscope ::Application {::application auto-save}"
+    ("after" script)
+ 
+*** Message Type: info ***
+When: Thu Oct 02 05:24:23 PM -03 2025
+SimVision Exit.
+ 
