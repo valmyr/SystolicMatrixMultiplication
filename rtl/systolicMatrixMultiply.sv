@@ -72,8 +72,8 @@ always_ff@(posedge clock, negedge nreset)begin
         currentStateSystolicControlUnit <= nextStateSystolicControlUnit                                         ;
         counter_mult                    <= next_counter_mult                                                    ; 
         ena_cells                       <= next_ena_cells                                                       ;
-        a_load                          <= (currentStateSystolicControlUnit != MULTI_MATRIX) ? a_input : 0      ;
-        b_load                          <= (currentStateSystolicControlUnit != MULTI_MATRIX) ? b_input : 0      ;
+        a_load                          <=  a_input      ;
+        b_load                          <=  b_input      ;
     end
 end
 always_comb begin
@@ -81,26 +81,26 @@ always_comb begin
         IDLE:begin
             nextStateSystolicControlUnit = valid ? LOAD_MULTI_MATRIX : IDLE                                     ;
             next_counter_mult            = 0                                                                    ;
-            next_ena_cells               = valid                                                                ;
+            next_ena_cells               = 0                                                                ;
             next_counter_concat          = 0;
         end
        LOAD_MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_concat < SIZE ) ? LOAD_MULTI_MATRIX :MULTI_MATRIX          ;
+            nextStateSystolicControlUnit = (counter_concat < SIZE+1) ? LOAD_MULTI_MATRIX :MULTI_MATRIX          ;
             next_counter_concat          = counter_concat  +    1                                              ;                  
             next_counter_mult            = 0                                                                   ;
             next_ena_cells               = 1                                                                   ;                                                                 
         end
         MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_mult < SIZE) ? MULTI_MATRIX : READY                        ;
+            nextStateSystolicControlUnit = (counter_mult < SIZE+1) ? MULTI_MATRIX : READY                        ;
             next_counter_concat          = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
-            next_ena_cells               = 1                                                                   ;
+            next_ena_cells               = (counter_mult < SIZE) ? 1:0                                                                   ;
         end
         READY:begin
-            nextStateSystolicControlUnit = valid ? LOAD_MULTI_MATRIX :  IDLE                                   ;
+            nextStateSystolicControlUnit =   IDLE                                   ;
             next_counter_mult            = 0                                                                   ;
             next_counter_concat          = 0                                                                   ;                  
-            next_ena_cells               = valid                                                               ;
+            next_ena_cells               = 0                                                               ;
         end
         
     endcase

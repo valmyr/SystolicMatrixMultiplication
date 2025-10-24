@@ -1,10 +1,10 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 2**8;
+    parameter WIDTHx =4,SIZE = 2**2;
     parameter WIDTH =8;
     parameter TsClock = 1;
-    parameter sim_size = 2;
+    parameter sim_size = 5;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
@@ -48,7 +48,7 @@ module tb;
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))aa_shiftM(
                                                 .nreset(nreset)                     ,
                                                 .clock(clock)                       ,
-                                                .ena(1'b1)                          ,
+                                                .ena(1)                          ,
                                                 .ready(),
                                                 .Min(a_load)                        ,
                                                 .shiftMatrixOut(a)  
@@ -57,7 +57,7 @@ module tb;
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))bb_shiftM(
                                                 .nreset(nreset)                    ,
                                                 .clock(clock)                      ,
-                                                .ena(1'b1)         , 
+                                                .ena(1)         , 
                                                 .ready(),
                                                 .Min(b_input_transpost)            ,
                                                 .shiftMatrixOut(b)      
@@ -158,19 +158,19 @@ module tb;
     #1
     sim_iterac =0;
     repeat(sim_size)begin
-        @(negedge ready)begin
+        @(posedge ready,negedge nreset)begin
             $writememh("../sim/a_input.txt",A1);
             $writememh("../sim/b_input.txt",A2);
             $writememh("../sim/Cout_ref.txt",Cout_ref);
             $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-            // MatrixMultiplySoftware(.A1(DUT_MatrixMultiplyM0.a_input),.A2(DUT_MatrixMultiplyM0.b_input),.Out_ref(Cout_ref));
+            MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
             MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
             $display("Operando  1");
             $display("");
-            // MatrixPrint(.A1(DUT_MatrixMultiplyM0.a_input));
+            MatrixPrint(.A1(A1));
             $display("Operando  2");
             $display("");
-            // MatrixPrint(.A1(DUT_MatrixMultiplyM0.b_input));
+            MatrixPrint(.A1(A2));
             $display("Resultado DUT");
             $display("");
             MatrixPrint1(.A1(Cout_DUT));
@@ -186,15 +186,17 @@ module tb;
         end
     end
   end
+  
   always #(TsClock)clock=~clock;
 
-    always_ff@(posedge clock, negedge nreset)begin
+    always_ff@(negedge nreset,posedge ready)begin
         if(!nreset)begin $display("Resetando...");
             current_state <= LOAD;
+            //MatrixCreate(.A1(A1),.A2(A2));
         end
         else begin
             current_state <= next_state;
-            if(current_state == LOAD) MatrixCreate(.A1(A1),.A2(A2));
+            if(ready) MatrixCreate(.A1(A1),.A2(A2));
         end
     end
     always_comb begin
