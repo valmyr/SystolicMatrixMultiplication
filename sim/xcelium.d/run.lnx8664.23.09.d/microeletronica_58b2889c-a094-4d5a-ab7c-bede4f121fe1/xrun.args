@@ -6,9 +6,7 @@
 ../rtl/accumulator.sv
 ../rtl/ShiftMatrix.sv
 ../rtl/systolicMatrixMultiply.sv
--mce_sim_thread_count
-32
--mce_build_thread_count
-32
 -access
 +rw
+-gui
+-s

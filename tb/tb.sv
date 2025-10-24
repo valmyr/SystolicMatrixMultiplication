@@ -160,19 +160,18 @@ module tb;
         a_load = A1;
         b_load = A2;
         MatrixMultiplySoftware(.A1(a_load),.A2(b_load),.Out_ref(Cout_ref));
-        MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
         @(posedge ready)begin
-            
-            $writememh("../sim/a_input.txt",A1);
-            $writememh("../sim/b_input.txt",A2);
+            MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));    
+            $writememh("../sim/a_input.txt",a_load);
+            $writememh("../sim/b_input.txt",b_load);
             $writememh("../sim/Cout_ref.txt",Cout_ref);
             $writememh("../sim/Cout_Dut.txt",Cout_DUT);
             $display("Operando  1");
             $display("");
-            MatrixPrint(.A1(A1));
+            MatrixPrint(.A1(a_load));
             $display("Operando  2");
             $display("");
-            MatrixPrint(.A1(A2));
+            MatrixPrint(.A1(b_load));
             $display("Resultado DUT");
             $display("");
             MatrixPrint1(.A1(Cout_DUT));

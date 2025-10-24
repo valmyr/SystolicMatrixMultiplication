@@ -1,16 +1,16 @@
 xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s003: Started on Oct 24, 2025 at 10:26:04 -03
+TOOL:	xrun(64)	23.09-s003: Started on Oct 24, 2025 at 10:35:56 -03
 xrun
 	../tb/tb.sv
 	../rtl/accumulator.sv
 	../rtl/ShiftMatrix.sv
 	../rtl/systolicMatrixMultiply.sv
+	-mce_sim_thread_count 32
+	-mce_build_thread_count 32
 	-access +rw
-	-gui
-	-s
 Recompiling... reason: file '../tb/tb.sv' is newer than expected.
-	expected: Fri Oct 24 10:25:35 2025
-	actual:   Fri Oct 24 10:26:00 2025
+	expected: Fri Oct 24 10:26:00 2025
+	actual:   Fri Oct 24 10:35:53 2025
 file: ../tb/tb.sv
 	module worklib.tb:sv
 		errors: 0, warnings: 0
@@ -27,7 +27,7 @@ xmelab: *W,CUVMPW (../tb/tb.sv,59|53): port sizes differ in port connection(32/1
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
 		worklib.tb:sv <0x0d5f16e9>
-			streams:  23, words: 30254
+			streams:  23, words: 30265
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -42,38 +42,55 @@ xmelab: *W,CUVMPW (../tb/tb.sv,59|53): port sizes differ in port connection(32/1
 		Pseudo assignments:  124       -
 		Process Clocks:       19       4
 	Writing initial simulation snapshot: worklib.tb:sv
-xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+Loading snapshot worklib.tb:sv .................... Done
 SVSEED default: 1
-xcelium> 
 xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
-xcelium> 
--------------------------------------
-Relinquished control to SimVision...
-# Restoring simulation environment...
-xcelium> input -quiet .reinvoke.sim
-xcelium> file delete .reinvoke.sim
 xcelium> run
-xmsim: *W,SHMOFU: $shm_open - file waves.shm already in use (SHM database).
-            File: ../tb/tb.sv, line = 145, pos = 13
-           Scope: tb
-            Time: 0 FS + 0
-
-xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
-            File: ../tb/tb.sv, line = 146, pos = 14
-           Scope: tb
-            Time: 0 FS + 0
-
-xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
-            File: ../tb/tb.sv, line = 147, pos = 14
-           Scope: tb
-            Time: 0 FS + 0
-
-xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
-            File: ../tb/tb.sv, line = 148, pos = 14
-           Scope: tb
-            Time: 0 FS + 0
-
 Resetando...
+Operando  1
+
+ 2   1   7   1  
+
+ 3   2   7   4  
+
+ 5   5   7   7  
+
+ 1   2   2   5  
+
+Operando  2
+
+ 3   3   1   5  
+
+ 5   7   2   5  
+
+ 4   6   4   5  
+
+ 5   7   1   2  
+
+Resultado DUT
+
+ 44   62   33   52  
+
+ 67   93   39   68  
+
+103  141   50   99  
+
+ 46   64   18   35  
+
+Resultado REFMOD
+
+ 44   62   33   52  
+
+ 67   93   39   68  
+
+103  141   50   99  
+
+ 46   64   18   35  
+
+Test(%)  16          0 
+
+Sucess: 100.000000  %
+Fail  : 0.000000  %
 Operando  1
 
  2   2   6   5  
@@ -96,50 +113,6 @@ Operando  2
 
 Resultado DUT
 
- 44   62   33   52  
-
- 67   93   39   68  
-
-103  141   50   99  
-
- 46   64   18   35  
-
-Resultado REFMOD
-
- 44   62   33   52  
-
- 67   93   39   68  
-
-103  141   50   99  
-
- 46   64   18   35  
-
-Test(%)   0         16 
-
-Sucess: 0.000000  %
-Fail  : 100.000000  %
-Operando  1
-
- 2   3   1   5  
-
- 3   4   5   2  
-
- 3   7   5   4  
-
- 2   5   2   7  
-
-Operando  2
-
- 4   6   1   1  
-
- 4   1   2   2  
-
- 1   4   5   1  
-
- 3   3   6   4  
-
-Resultado DUT
-
  67   82   73   64  
 
  35   59   38   51  
@@ -158,14 +131,11 @@ Resultado REFMOD
 
  59   65   68   47  
 
-Test(%)   0         16 
+Test(%)  16          0 
 
-Sucess: 0.000000  %
-Fail  : 100.000000  %
+Sucess: 100.000000  %
+Fail  : 0.000000  %
 Simulation complete via $finish(1) at time 63 NS + 3
 ../tb/tb.sv:187             if(sim_size == sim_iterac)     $finish;
-xcelium> ^C
 xcelium> exit
-...Regained control from SimVision
--------------------------------------
-TOOL:	xrun(64)	23.09-s003: Exiting on Oct 24, 2025 at 10:26:35 -03  (total: 00:00:31)
+TOOL:	xrun(64)	23.09-s003: Exiting on Oct 24, 2025 at 10:35:57 -03  (total: 00:00:01)

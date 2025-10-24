@@ -106,5 +106,5 @@ always_comb begin
     endcase
 end
 assign next_valid  = (valid_i) ? valid_i : valid;
-assign ready_o     = currentStateSystolicControlUnit == READY;
+assign ready_o     = (counter_mult >= SIZE+2) ;
 endmodule
