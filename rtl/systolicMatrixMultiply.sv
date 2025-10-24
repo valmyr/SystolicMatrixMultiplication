@@ -91,10 +91,10 @@ always_comb begin
             next_ena_cells               = 1                                                                   ;                                                                 
         end
         MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_mult < SIZE+1) ? MULTI_MATRIX : READY                        ;
+            nextStateSystolicControlUnit = (counter_mult < SIZE+2) ? MULTI_MATRIX : READY                        ;
             next_counter_concat          = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
-            next_ena_cells               = (counter_mult < SIZE) ? 1:0                                                                   ;
+            next_ena_cells               = (counter_mult < SIZE+2) ? 1:0                                                                   ;
         end
         READY:begin
             nextStateSystolicControlUnit =   IDLE                                   ;
