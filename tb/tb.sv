@@ -4,7 +4,7 @@ module tb;
     parameter WIDTHx =4,SIZE = 2**2;
     parameter WIDTH =8;
     parameter TsClock = 1;
-    parameter sim_size = 5;
+    parameter sim_size = 2;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
@@ -32,11 +32,10 @@ module tb;
         .valid_i        (valid_i    )                              ,
         .a_input        (a         )                              ,
         .b_input        (b         )                              ,
-        .ready_o          (ready),
+        .ready_o          (),
         .output_produc_a_b(Cout_DUT )
     );
-    assign a_load = A1;
-    assign b_load = A2;
+
     generate 
         genvar i_trs, j_trs;
         for(i_trs =0; i_trs < SIZE; i_trs++)
@@ -49,7 +48,7 @@ module tb;
                                                 .nreset(nreset)                     ,
                                                 .clock(clock)                       ,
                                                 .ena(1)                          ,
-                                                .ready(),
+                                                .ready(ready),
                                                 .Min(a_load)                        ,
                                                 .shiftMatrixOut(a)  
     );  
@@ -158,13 +157,16 @@ module tb;
     #1
     sim_iterac =0;
     repeat(sim_size)begin
-        @(posedge ready,negedge nreset)begin
+        a_load = A1;
+        b_load = A2;
+        MatrixMultiplySoftware(.A1(a_load),.A2(b_load),.Out_ref(Cout_ref));
+        MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
+        @(posedge ready)begin
+            
             $writememh("../sim/a_input.txt",A1);
             $writememh("../sim/b_input.txt",A2);
             $writememh("../sim/Cout_ref.txt",Cout_ref);
             $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-            MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
-            MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
             $display("Operando  1");
             $display("");
             MatrixPrint(.A1(A1));
@@ -189,14 +191,14 @@ module tb;
   
   always #(TsClock)clock=~clock;
 
-    always_ff@(negedge nreset,posedge ready)begin
+    always_ff@(negedge nreset,posedge clock)begin
         if(!nreset)begin $display("Resetando...");
             current_state <= LOAD;
-            //MatrixCreate(.A1(A1),.A2(A2));
+            MatrixCreate(.A1(A1),.A2(A2));
         end
         else begin
             current_state <= next_state;
-            if(ready) MatrixCreate(.A1(A1),.A2(A2));
+            MatrixCreate(.A1(A1),.A2(A2));
         end
     end
     always_comb begin

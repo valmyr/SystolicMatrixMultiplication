@@ -1,5 +1,5 @@
 xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s003: Started on Oct 23, 2025 at 22:02:16 -03
+TOOL:	xrun(64)	23.09-s003: Started on Oct 24, 2025 at 10:26:04 -03
 xrun
 	../tb/tb.sv
 	../rtl/accumulator.sv
@@ -9,8 +9,8 @@ xrun
 	-gui
 	-s
 Recompiling... reason: file '../tb/tb.sv' is newer than expected.
-	expected: Thu Oct 23 22:00:15 2025
-	actual:   Thu Oct 23 22:01:53 2025
+	expected: Fri Oct 24 10:25:35 2025
+	actual:   Fri Oct 24 10:26:00 2025
 file: ../tb/tb.sv
 	module worklib.tb:sv
 		errors: 0, warnings: 0
@@ -20,14 +20,14 @@ file: ../tb/tb.sv
 		tb
                                                 .ena(1)                          ,
                                                      |
-xmelab: *W,CUVMPW (../tb/tb.sv,51|53): port sizes differ in port connection(32/1) for the instance(tb) .
+xmelab: *W,CUVMPW (../tb/tb.sv,50|53): port sizes differ in port connection(32/1) for the instance(tb) .
                                                 .ena(1)         , 
                                                      |
-xmelab: *W,CUVMPW (../tb/tb.sv,60|53): port sizes differ in port connection(32/1) for the instance(tb) .
+xmelab: *W,CUVMPW (../tb/tb.sv,59|53): port sizes differ in port connection(32/1) for the instance(tb) .
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.tb:sv <0x0a05abac>
-			streams:  25, words: 30281
+		worklib.tb:sv <0x0d5f16e9>
+			streams:  23, words: 30254
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -35,10 +35,10 @@ xmelab: *W,CUVMPW (../tb/tb.sv,60|53): port sizes differ in port connection(32/1
 		Modules:              20       4
 		Registers:           184      79
 		Scalar wires:         47       -
-		Vectored wires:      271       -
+		Vectored wires:      269       -
 		Always blocks:        39       8
 		Initial blocks:        1       1
-		Cont. assignments:   138      16
+		Cont. assignments:   136      14
 		Pseudo assignments:  124       -
 		Process Clocks:       19       4
 	Writing initial simulation snapshot: worklib.tb:sv
@@ -54,7 +54,12 @@ xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
 xcelium> run
 xmsim: *W,SHMOFU: $shm_open - file waves.shm already in use (SHM database).
-            File: ../tb/tb.sv, line = 146, pos = 13
+            File: ../tb/tb.sv, line = 145, pos = 13
+           Scope: tb
+            Time: 0 FS + 0
+
+xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
+            File: ../tb/tb.sv, line = 146, pos = 14
            Scope: tb
             Time: 0 FS + 0
 
@@ -68,41 +73,36 @@ xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
            Scope: tb
             Time: 0 FS + 0
 
-xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
-            File: ../tb/tb.sv, line = 149, pos = 14
-           Scope: tb
-            Time: 0 FS + 0
-
 Resetando...
 Operando  1
 
- 2   1   7   1  
+ 2   2   6   5  
 
- 3   2   7   4  
+ 2   1   6   1  
 
- 5   5   7   7  
+ 3   3   4   5  
 
- 1   2   2   5  
+ 1   3   3   5  
 
 Operando  2
 
- 3   3   1   5  
+ 3   6   6   1  
 
- 5   7   2   5  
+ 4   7   7   5  
 
- 4   6   4   5  
+ 3   6   2   7  
 
- 5   7   1   2  
+ 7   4   7   2  
 
 Resultado DUT
 
-  0    0    0    0  
+ 44   62   33   52  
 
-  0    0    0    0  
+ 67   93   39   68  
 
-  0    0    0    0  
+103  141   50   99  
 
-  0    0    0    0  
+ 46   64   18   35  
 
 Resultado REFMOD
 
@@ -120,180 +120,52 @@ Sucess: 0.000000  %
 Fail  : 100.000000  %
 Operando  1
 
- 7   2   5   2  
+ 2   3   1   5  
 
- 4   3   6   1  
+ 3   4   5   2  
 
- 6   7   5   1  
+ 3   7   5   4  
 
- 4   4   3   1  
+ 2   5   2   7  
 
 Operando  2
 
- 1   3   1   2  
+ 4   6   1   1  
 
- 2   2   2   6  
+ 4   1   2   2  
 
- 6   6   6   5  
+ 1   4   5   1  
 
- 6   3   4   7  
+ 3   3   6   4  
 
 Resultado DUT
 
-  0    0    0    0  
+ 67   82   73   64  
 
-  0    0    0    0  
+ 35   59   38   51  
 
-  0    0    0    0  
+ 68   83   82   56  
 
-  0    0    0    0  
+ 59   65   68   47  
 
 Resultado REFMOD
 
- 53   61   49   65  
+ 67   82   73   64  
 
- 52   57   50   63  
+ 35   59   38   51  
 
- 56   65   54   86  
+ 68   83   82   56  
 
- 36   41   34   54  
+ 59   65   68   47  
 
 Test(%)   0         16 
 
 Sucess: 0.000000  %
 Fail  : 100.000000  %
-Operando  1
-
- 3   2   5   7  
-
- 5   7   6   4  
-
- 3   6   1   1  
-
- 6   5   6   3  
-
-Operando  2
-
- 2   6   5   6  
-
- 6   6   6   7  
-
- 7   2   2   2  
-
- 4   4   5   4  
-
-Resultado DUT
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-Resultado REFMOD
-
- 81   68   72   70  
-
-110  100   99  107  
-
- 53   60   58   66  
-
- 96   90   87   95  
-
-Test(%)   0         16 
-
-Sucess: 0.000000  %
-Fail  : 100.000000  %
-Operando  1
-
- 2   2   1   6  
-
- 7   3   1   3  
-
- 4   2   7   6  
-
- 6   4   3   5  
-
-Operando  2
-
- 7   2   5   7  
-
- 6   2   4   5  
-
- 1   4   1   4  
-
- 4   5   5   4  
-
-Resultado DUT
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-Resultado REFMOD
-
- 51   42   49   52  
-
- 80   39   63   80  
-
- 71   70   65   90  
-
- 89   57   74   94  
-
-Test(%)   0         16 
-
-Sucess: 0.000000  %
-Fail  : 100.000000  %
-Operando  1
-
- 4   7   6   7  
-
- 5   4   4   7  
-
- 1   3   5   1  
-
- 2   2   5   2  
-
-Operando  2
-
- 1   4   6   4  
-
- 2   6   7   3  
-
- 3   5   6   7  
-
- 6   7   2   1  
-
-Resultado DUT
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-  0    0    0    0  
-
-Resultado REFMOD
-
- 78  137  123   86  
-
- 67  113   96   67  
-
- 28   54   59   49  
-
- 33   59   60   51  
-
-Test(%)   0         16 
-
-Sucess: 0.000000  %
-Fail  : 100.000000  %
-Simulation complete via $finish(1) at time 141 NS + 3
-../tb/tb.sv:185             if(sim_size == sim_iterac)     $finish;
-xcelium> 
+Simulation complete via $finish(1) at time 63 NS + 3
+../tb/tb.sv:187             if(sim_size == sim_iterac)     $finish;
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	23.09-s003: Exiting on Oct 24, 2025 at 10:26:35 -03  (total: 00:00:31)

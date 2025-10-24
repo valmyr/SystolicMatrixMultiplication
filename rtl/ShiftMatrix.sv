@@ -94,10 +94,10 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     end
 
     assign shiftMatrixOut2 =  (current_counter < 2*SIZE -1) &ena_int   ? UnpackVecMout[current_counter] : 0;
-    assign next_counter     =    (current_counter < 2*SIZE+3 ) &ena_int   ? current_counter +1'b1:0;
+    assign next_counter     =    (current_counter < 2*SIZE+6) &ena_int   ? current_counter +1'b1:0;
     //assign shiftMatrixOut   =   (current_counter < 2*SIZE -1) &ena_int   ? UnpackVecMout[current_counter] : 0; 
     // assign shiftMatrixOut =  rvs ? UnpackVecMout[SIZE-current_counter]: {UnpackVecMout[SIZE-current_counter][3:0],UnpackVecMout[SIZE - current_counter][7:4]};
     assign A26 = {>>{shiftVec}};
-    assign ready = (current_counter == 2*SIZE-1 );
+    assign ready = (current_counter < 2*SIZE+3 );
 
 endmodule 
