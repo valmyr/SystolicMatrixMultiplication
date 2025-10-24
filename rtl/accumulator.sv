@@ -45,7 +45,7 @@ module accumulator_cells#(
         end
         2'b01:begin
             product     = 0                     ;
-            sum_product = accumulator           ;
+            sum_product = 0           ;
         end
         default:begin
             product     = 0                     ;

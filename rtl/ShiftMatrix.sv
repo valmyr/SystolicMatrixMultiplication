@@ -51,10 +51,10 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     logic [WIDTH*SIZE-1:0]                       UnpackVecMout    [2*(SIZE-1):0]          ;
     logic [WIDTH*SIZE-1:0]                       UnpackVecMout2   [2*(SIZE-1):0]          ;
    // logic [SIZE-1:0][((2*SIZE-1)*WIDTH)-1:0] shiftVec2;
-    logic [2*(SIZE-1):0]               next_counter, current_counter;
+    logic [3*(SIZE-1):0]               next_counter, current_counter;
     logic [SIZE-1:0][(2*SIZE-1)*WIDTH-1:0] A26 ;
   //  assign shiftVec2 ={>>{shiftVec}};
-
+    logic [SIZE*WIDTH-1:0] shiftMatrixOut2;
     generate
         genvar idvec;
         for(idvec =0; idvec < SIZE; idvec++)begin
@@ -84,14 +84,18 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
         if(!nreset)begin 
             current_counter <=  0;
             ena_int  <= 0;
+            shiftMatrixOut <= 0;
         end
         else begin
             ena_int <= ena;
             current_counter  <= next_counter;
+            shiftMatrixOut   <=   shiftMatrixOut2; 
         end
     end
-    assign next_counter     =    (current_counter < 2*SIZE-1 ) &ena_int   ? current_counter +1'b1:0;
-    assign shiftMatrixOut   =   (current_counter < 2*SIZE-1 ) &ena_int   ? UnpackVecMout[current_counter] : 0; 
+
+    assign shiftMatrixOut2 =  (current_counter < 2*SIZE -1) &ena_int   ? UnpackVecMout[current_counter] : 0;
+    assign next_counter     =    (current_counter < 2*SIZE+3 ) &ena_int   ? current_counter +1'b1:0;
+    //assign shiftMatrixOut   =   (current_counter < 2*SIZE -1) &ena_int   ? UnpackVecMout[current_counter] : 0; 
     // assign shiftMatrixOut =  rvs ? UnpackVecMout[SIZE-current_counter]: {UnpackVecMout[SIZE-current_counter][3:0],UnpackVecMout[SIZE - current_counter][7:4]};
     assign A26 = {>>{shiftVec}};
     assign ready = (current_counter == 2*SIZE-1 );
