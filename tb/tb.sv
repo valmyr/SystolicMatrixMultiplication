@@ -1,10 +1,10 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 2**2;
+    parameter WIDTHx =4,SIZE = 2**4;
     parameter WIDTH =8;
     parameter TsClock = 1;
-    parameter sim_size = 2;
+    parameter sim_size = 3;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];

@@ -22,8 +22,8 @@ module systolicMatrixMultiply#(
 );
 
 
-logic [$clog2(SIZE) :0]       counter_mult    , next_counter_mult             ;
-logic [$clog2(SIZE) :0]       counter_concat  , next_counter_concat           ;
+logic [$clog2(2*SIZE) :0]       counter_mult    , next_counter_mult             ;
+logic [$clog2(2*SIZE) :0]       counter_concat  , next_counter_concat           ;
 logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
 logic [WIDTHx-1:0]                      a_vec           [SIZE:0][SIZE:0]                ;
 logic [WIDTHx-1:0]                      b_vec           [SIZE:0][SIZE:0]                ;
@@ -91,10 +91,10 @@ always_comb begin
             next_ena_cells               = 1                                                                   ;                                                                 
         end
         MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_mult < SIZE+2) ? MULTI_MATRIX : READY                        ;
+            nextStateSystolicControlUnit = (counter_mult < 2*SIZE) ? MULTI_MATRIX : READY                        ;
             next_counter_concat          = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
-            next_ena_cells               = (counter_mult < SIZE+2) ? 1:0                                                                   ;
+            next_ena_cells               = (counter_mult < 2*SIZE) ? 1:0                                                                   ;
         end
         READY:begin
             nextStateSystolicControlUnit =   IDLE                                   ;
@@ -106,5 +106,5 @@ always_comb begin
     endcase
 end
 assign next_valid  = (valid_i) ? valid_i : valid;
-assign ready_o     = (counter_mult >= SIZE+2) ;
+assign ready_o     = (counter_mult >= 2*SIZE) ;
 endmodule
