@@ -40,6 +40,7 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     input  logic ena                                    ,
     output logic ready                                  ,
     input  logic [WIDTH-1:0] Min[SIZE-1:0][SIZE-1:0]    ,
+    output logic [WIDTH*SIZE-1:0]                       UnpackVecMout    [2*(SIZE-1):0]          ,
     output logic [SIZE*WIDTH-1:0] shiftMatrixOut 
 );
     logic ena_int;
@@ -48,10 +49,9 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
     logic [(2*SIZE-1)*WIDTH-1  :0]               shiftVec         [SIZE-1:0]              ;
     logic [(2*SIZE-1)*WIDTH-1  :0]               shiftVec2        [SIZE-1:0]              ;
     logic [WIDTH-1             :0]               Mout             [2*(SIZE-1):0][SIZE-1:0];  
-    logic [WIDTH*SIZE-1:0]                       UnpackVecMout    [2*(SIZE-1):0]          ;
     logic [WIDTH*SIZE-1:0]                       UnpackVecMout2   [2*(SIZE-1):0]          ;
    // logic [SIZE-1:0][((2*SIZE-1)*WIDTH)-1:0] shiftVec2;
-    logic [3*(SIZE-1):0]               next_counter, current_counter;
+    logic [3*(SIZE):0]               next_counter, current_counter;
     logic [SIZE-1:0][(2*SIZE-1)*WIDTH-1:0] A26 ;
   //  assign shiftVec2 ={>>{shiftVec}};
     logic [SIZE*WIDTH-1:0] shiftMatrixOut2;
@@ -84,20 +84,20 @@ module shiftMatrix#(parameter WIDTH = 4, SIZE = 3)(
         if(!nreset)begin 
             current_counter <=  0;
             ena_int  <= 0;
-            shiftMatrixOut <= 0;
+            //shiftMatrixOut <= 0;
         end
         else begin
             ena_int <= ena;
             current_counter  <= next_counter;
-            shiftMatrixOut   <=   shiftMatrixOut2; 
+           // shiftMatrixOut   <=   shiftMatrixOut2; 
         end
     end
 
-    assign shiftMatrixOut2 =  (current_counter < 2*SIZE -1) &ena_int   ? UnpackVecMout[current_counter] : 0;
-    assign next_counter     =    (current_counter < 2*SIZE+6) &ena_int   ? current_counter +1'b1:0;
+    assign shiftMatrixOut =  (current_counter <= 2*(SIZE-1)) &ena   ? UnpackVecMout[current_counter] : 0;
+    assign next_counter     =    ena ? current_counter +1'b1: 0;
     //assign shiftMatrixOut   =   (current_counter < 2*SIZE -1) &ena_int   ? UnpackVecMout[current_counter] : 0; 
     // assign shiftMatrixOut =  rvs ? UnpackVecMout[SIZE-current_counter]: {UnpackVecMout[SIZE-current_counter][3:0],UnpackVecMout[SIZE - current_counter][7:4]};
     assign A26 = {>>{shiftVec}};
-    assign ready = (current_counter < 2*SIZE+3 );
+    assign ready = (current_counter < 3*SIZE );
 
 endmodule 

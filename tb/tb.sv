@@ -1,7 +1,7 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 2**4;
+    parameter WIDTHx =4,SIZE = 2**3;
     parameter WIDTH =8;
     parameter TsClock = 1;
     parameter sim_size = 3;
@@ -20,7 +20,7 @@ module tb;
     logic [SIZE*WIDTHx-1:0] b; 
 
 
-    logic [WIDTH-1:0] counterPassTest;
+    real counterPassTest;
     logic valid_i, ready;
     integer k;
     integer sumC;
@@ -29,7 +29,7 @@ module tb;
     systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
         .clock          (clock      )                              ,
         .nreset         (nreset     )                              ,
-        .valid_i        (valid_i    )                              ,
+        .valid_i        (1    )                              ,
         .a_input        (a         )                              ,
         .b_input        (b         )                              ,
         .ready_o          (),
@@ -47,7 +47,7 @@ module tb;
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))aa_shiftM(
                                                 .nreset(nreset)                     ,
                                                 .clock(clock)                       ,
-                                                .ena(1)                          ,
+                                                .ena(DUT_MatrixMultiplyM0.currentStateSystolicControlUnit ==DUT_MatrixMultiplyM0.LOAD_MULTI_MATRIX | DUT_MatrixMultiplyM0.currentStateSystolicControlUnit ==DUT_MatrixMultiplyM0.MULTI_MATRIX)                          ,
                                                 .ready(ready),
                                                 .Min(a_load)                        ,
                                                 .shiftMatrixOut(a)  
@@ -56,21 +56,22 @@ module tb;
     shiftMatrix #(.WIDTH(WIDTHx),.SIZE(SIZE))bb_shiftM(
                                                 .nreset(nreset)                    ,
                                                 .clock(clock)                      ,
-                                                .ena(1)         , 
+                                                .ena(DUT_MatrixMultiplyM0.currentStateSystolicControlUnit ==1 | DUT_MatrixMultiplyM0.currentStateSystolicControlUnit ==2)         , 
                                                 .ready(),
                                                 .Min(b_input_transpost)            ,
                                                 .shiftMatrixOut(b)      
     );  
 
     task MatrixCreate(
+            input logic ena,
             output logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0],
             output logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0]
         );
         begin
             for(integer i = 0; i < SIZE; i++)begin
                 for(integer j = 0; j < SIZE; j++)begin
-                    A1[i][j] = $urandom_range(1,(1'b1 << WIDTHx -1)-1);                    
-                    A2[i][j] = $urandom_range(1,(1'b1 << WIDTHx-1)-1);
+                    A1[i][j] = ena ? $urandom_range(1,(1'b1 << WIDTHx -1)-1):0;                    
+                    A2[i][j] = ena ? $urandom_range(1,(1'b1 << WIDTHx-1)-1) :0;
                 end
         end
 
@@ -99,7 +100,7 @@ module tb;
     task MatrixComparatorHardware_VS_Software(
         input  logic [WIDTH-1:0] A1[SIZE-1:0][SIZE-1:0],
         input  logic [WIDTH-1:0] A2[SIZE-1:0][SIZE-1:0],
-        output logic [WIDTH-1:0]counterPassTest
+       output  real counterPassTest
     );
         begin
         counterPassTest = 0;
@@ -157,10 +158,11 @@ module tb;
     #1
     sim_iterac =0;
     repeat(sim_size)begin
+        MatrixCreate(.A1(A1),.A2(A2), .ena(sim_iterac!=0));
         a_load = A1;
         b_load = A2;
         MatrixMultiplySoftware(.A1(a_load),.A2(b_load),.Out_ref(Cout_ref));
-        @(posedge ready)begin
+        @(negedge DUT_MatrixMultiplyM0.currentStateSystolicControlUnit ==DUT_MatrixMultiplyM0.MULTI_MATRIX)begin
             MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));    
             $writememh("../sim/a_input.txt",a_load);
             $writememh("../sim/b_input.txt",b_load);
@@ -178,7 +180,7 @@ module tb;
             $display("Resultado REFMOD");
             $display("");
             MatrixPrint1(.A1(Cout_ref));
-            $display("Test(%%) %d %d ",counterPassTest, SIZE*SIZE - counterPassTest);
+            $display("Test(%%) %f %f ",counterPassTest, SIZE*SIZE - counterPassTest);
             $display("");
             $display("Sucess: %f  %%",(counterPassTest/(SIZE*SIZE))*100.0);
             $display("Fail  : %f  %%",((SIZE*SIZE-counterPassTest)/(SIZE*SIZE))*100.0);
@@ -189,31 +191,4 @@ module tb;
   end
   
   always #(TsClock)clock=~clock;
-
-    always_ff@(negedge nreset,posedge clock)begin
-        if(!nreset)begin $display("Resetando...");
-            current_state <= LOAD;
-            MatrixCreate(.A1(A1),.A2(A2));
-        end
-        else begin
-            current_state <= next_state;
-            MatrixCreate(.A1(A1),.A2(A2));
-        end
-    end
-    always_comb begin
-        case(current_state)    
-            LOAD:begin
-                next_state = CALC;
-                valid_i= 1;
-            end
-            CALC:begin
-                next_state = ready ? LOAD :CALC;
-                valid_i =1;
-            end
-            default:begin
-                next_state = LOAD;
-                valid_i = 0;
-            end
-        endcase
-    end
 endmodule

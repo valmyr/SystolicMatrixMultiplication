@@ -81,23 +81,23 @@ always_comb begin
         IDLE:begin
             nextStateSystolicControlUnit = valid ? LOAD_MULTI_MATRIX : IDLE                                     ;
             next_counter_mult            = 0                                                                    ;
-            next_ena_cells               = 0                                                                ;
+            next_ena_cells               = 0                                                                    ;
             next_counter_concat          = 0;
         end
        LOAD_MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_concat < SIZE+1) ? LOAD_MULTI_MATRIX :MULTI_MATRIX          ;
+            nextStateSystolicControlUnit = (counter_concat < SIZE+1) ? LOAD_MULTI_MATRIX :MULTI_MATRIX         ;
             next_counter_concat          = counter_concat  +    1                                              ;                  
             next_counter_mult            = 0                                                                   ;
             next_ena_cells               = 1                                                                   ;                                                                 
         end
         MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_mult < 2*SIZE) ? MULTI_MATRIX : READY                        ;
+            nextStateSystolicControlUnit = (counter_mult < 2*SIZE) ? MULTI_MATRIX : READY                      ;
             next_counter_concat          = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
-            next_ena_cells               = (counter_mult < 2*SIZE) ? 1:0                                                                   ;
+            next_ena_cells               = (counter_mult < 2*SIZE) ? 1:0                                       ;
         end
         READY:begin
-            nextStateSystolicControlUnit =   IDLE                                   ;
+            nextStateSystolicControlUnit =   IDLE                                                              ;
             next_counter_mult            = 0                                                                   ;
             next_counter_concat          = 0                                                                   ;                  
             next_ena_cells               = 0                                                               ;
