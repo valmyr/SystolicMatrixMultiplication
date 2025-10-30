@@ -1,10 +1,10 @@
 
 module tb;    
     logic clock   , nreset;
-    parameter WIDTHx =4,SIZE = 128;
+    parameter WIDTHx =4,SIZE = 2**3;
     parameter WIDTH =16;
     parameter TsClock = 1;
-    parameter sim_size = 10;
+    parameter sim_size = 3;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
@@ -20,21 +20,22 @@ module tb;
     systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
         .clock  (clock)                                ,
         .nreset (nreset)                               ,
-        .valid_i(valid_i)                              ,
+        .valid_i(1)                              ,
         .ready_o  (ready)                                ,
         .a_input(A1)                                   ,
         .b_input(A2)                                   ,
         .output_produc_a_b(Cout_DUT)
     );
     task MatrixCreate(
+            input logic ena,
             output logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0],
             output logic [WIDTHx-1:0] A2[SIZE-1:0][SIZE-1:0]
         );
         begin
             for(integer i = 0; i < SIZE; i++)begin
                 for(integer j = 0; j < SIZE; j++)begin
-                    A1[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);                    
-                    A2[i][j] = $urandom_range(1,(1'b1 << WIDTHx)-1);
+                    A1[i][j] = ena ? $urandom_range(1,(1'b1 << WIDTHx)-1):0;                    
+                    A2[i][j] = ena ? $urandom_range(1,(1'b1 << WIDTHx)-1):0;
                 end
         end
 
@@ -121,19 +122,21 @@ module tb;
     #1
     sim_iterac =0;
     repeat(sim_size)begin
-        @(negedge ready)begin
+        MatrixCreate(.A1(A1),.A2(A2), .ena(sim_iterac!=0));
+        MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
+
+        @(negedge DUT_MatrixMultiplyM0.currentStateSystolicControlUnit ==DUT_MatrixMultiplyM0.READY)begin
             $writememh("../sim/a_input.txt",A1);
             $writememh("../sim/b_input.txt",A2);
             $writememh("../sim/Cout_ref.txt",Cout_ref);
             $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-            MatrixMultiplySoftware(.A1(DUT_MatrixMultiplyM0.a_input),.A2(DUT_MatrixMultiplyM0.b_input),.Out_ref(Cout_ref));
             MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
             $display("Operando  1");
             $display("");
-            MatrixPrint(.A1(DUT_MatrixMultiplyM0.a_input));
+            MatrixPrint(.A1(A1));
             $display("Operando  2");
             $display("");
-            MatrixPrint(.A1(DUT_MatrixMultiplyM0.b_input));
+            MatrixPrint(.A1(A2));
             $display("Resultado DUT");
             $display("");
             MatrixPrint1(.A1(Cout_DUT));
@@ -150,30 +153,4 @@ module tb;
     end
   end
   always #(TsClock)clock=~clock;
-
-    always_ff@(posedge clock, negedge nreset)begin
-        if(!nreset)begin $display("Resetando...");
-            current_state <= LOAD;
-        end
-        else begin
-            current_state <= next_state;
-            if(current_state == LOAD) MatrixCreate(.A1(A1),.A2(A2));
-        end
-    end
-    always_comb begin
-        case(current_state)    
-            LOAD:begin
-                next_state = CALC;
-                valid_i= 1;
-            end
-            CALC:begin
-                next_state = ready ? LOAD :CALC;
-                valid_i =1;
-            end
-            default:begin
-                next_state = LOAD;
-                valid_i = 0;
-            end
-        endcase
-    end
 endmodule
