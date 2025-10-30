@@ -2,9 +2,9 @@
 module tb;    
     logic clock   , nreset;
     parameter WIDTHx =4,SIZE = 2**3;
-    parameter WIDTH =16;
+    parameter WIDTH =8;
     parameter TsClock = 1;
-    parameter sim_size = 3;
+    parameter sim_size = 10;
     parameter delay = 11*TsClock + 2*SIZE-1;
     
     logic [WIDTHx-1:0] A1[SIZE-1:0][SIZE-1:0];
@@ -123,14 +123,13 @@ module tb;
     sim_iterac =0;
     repeat(sim_size)begin
         MatrixCreate(.A1(A1),.A2(A2), .ena(sim_iterac!=0));
-        MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
-
         @(negedge DUT_MatrixMultiplyM0.currentStateSystolicControlUnit ==DUT_MatrixMultiplyM0.READY)begin
+        MatrixMultiplySoftware(.A1(A1),.A2(A2),.Out_ref(Cout_ref));
+        MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
             $writememh("../sim/a_input.txt",A1);
             $writememh("../sim/b_input.txt",A2);
             $writememh("../sim/Cout_ref.txt",Cout_ref);
             $writememh("../sim/Cout_Dut.txt",Cout_DUT);
-            MatrixComparatorHardware_VS_Software(.A1(Cout_ref),.A2(Cout_DUT),.counterPassTest(counterPassTest));
             $display("Operando  1");
             $display("");
             MatrixPrint(.A1(A1));
