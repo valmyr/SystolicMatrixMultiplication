@@ -1,0 +1,999 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 30 23:05:28 2025
+# Process ID         : 274628
+# Current directory  : /home/xmen/Desktop/compara/analise
+# Command line       : vivado
+# Log file           : /home/xmen/Desktop/compara/analise/vivado.log
+# Journal file       : /home/xmen/Desktop/compara/analise/vivado.jou
+# Running On         : VT0144
+# Platform           : Rocky
+# Operating System   : Rocky Linux release 8.10 (Green Obsidian)
+# Processor Detail   : Intel(R) Core(TM) i9-14900F
+# CPU Frequency      : 2000.000 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 67075 MB
+# Swap memory        : 14727 MB
+# Total Virtual      : 81802 MB
+# Available Virtual  : 72436 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24i:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24i/1.0/board.xml as part xck24-ubva530-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.0/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.1/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:scu35:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/scu35/1.0/board.xml as part xcsu35p-sbvb625-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24i:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24i/1.0/board.xml as part xck24-ubva530-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+INFO: [Common 17-14] Message 'Board 49-26' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+create_project project_1 /home/xmen/Desktop/compara/analise/project_1 -part xc7a100tcsg324-2L
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xmen/amd/2025.1/Vivado/data/ip'.
+add_files -norecurse {/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv /home/xmen/Desktop/compara/analise/rtl/accumulator.sv}
+add_files -fileset constrs_1 -norecurse /home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc
+update_compile_order -fileset sources_1
+open_project /home/xmen/UART/UART.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/xmen/UART/UART.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xmen/amd/2025.1/Vivado/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24i:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24i/1.0/board.xml as part xck24-ubva530-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.0/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.1/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:scu35:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/scu35/1.0/board.xml as part xcsu35p-sbvb625-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+update_compile_order -fileset sources_1
+close_project
+open_project /home/xmen/Desktop/UART/UART_ARTY.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/xmen/Desktop/UART/UART_ARTY.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xmen/amd/2025.1/Vivado/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24i:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24i/1.0/board.xml as part xck24-ubva530-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.0/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.1/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:scu35:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/scu35/1.0/board.xml as part xcsu35p-sbvb625-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+update_compile_order -fileset sources_1
+current_project project_1
+add_files -norecurse /home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv
+update_compile_order -fileset sources_1
+set_property top Arty7_top [current_fileset]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+current_project UART_ARTY
+export_ip_user_files -of_objects  [get_files /home/xmen/Desktop/UART/UART_ARTY.srcs/sources_1/new/Arty7_top.sv] -no_script -reset -force -quiet
+remove_files  /home/xmen/Desktop/UART/UART_ARTY.srcs/sources_1/new/Arty7_top.sv
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+add_files -norecurse /home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+close_project
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+launch_runs synth_1 -jobs 31
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Oct 30 23:23:39 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Oct 30 23:24:53 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/runme.log
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-2L
+Top: Arty7_top
+INFO: [Device 21-403] Loading part xc7a100tcsg324-2L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 284225
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 11326.855 ; gain = 414.773 ; free physical = 43447 ; free virtual = 67325
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Arty7_top' [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:12]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 3 - type: integer 
+	Parameter WIDTHx bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Desktop/compara/analise/rtl/accumulator.sv:13]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Desktop/compara/analise/rtl/accumulator.sv:13]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:80]
+INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:12]
+WARNING: [Synth 8-689] width (32) of port connection 'valid_i' does not match port width (1) of module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:72]
+INFO: [Synth 8-6155] done synthesizing module 'Arty7_top' (0#1) [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:23]
+WARNING: [Synth 8-87] always_comb on 'nextStateSystolicControlUnit_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:82]
+WARNING: [Synth 8-87] always_comb on 'next_counter_mult_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:83]
+WARNING: [Synth 8-87] always_comb on 'next_ena_cells_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:84]
+WARNING: [Synth 8-87] always_comb on 'next_counter_concat_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:85]
+WARNING: [Synth 8-3848] Net uart_rxd_out in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:28]
+WARNING: [Synth 8-3848] Net led in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:29]
+WARNING: [Synth 8-3848] Net led0RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:30]
+WARNING: [Synth 8-3848] Net led1RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:31]
+WARNING: [Synth 8-3848] Net led2RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:32]
+WARNING: [Synth 8-3848] Net led3RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:33]
+WARNING: [Synth 8-3848] Net a in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:66]
+WARNING: [Synth 8-3848] Net b in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:67]
+WARNING: [Synth 8-7129] Port uart_rxd_out in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[3] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[3] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uart_txd_in in module Arty7_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 11402.793 ; gain = 490.711 ; free physical = 43361 ; free virtual = 67240
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 11414.668 ; gain = 502.586 ; free physical = 43353 ; free virtual = 67232
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 11414.668 ; gain = 502.586 ; free physical = 43353 ; free virtual = 67232
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 11414.676 ; gain = 0.000 ; free physical = 43353 ; free virtual = 67232
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 11546.445 ; gain = 0.000 ; free physical = 43454 ; free virtual = 67333
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 11823.199 ; gain = 911.117 ; free physical = 43170 ; free virtual = 67050
+13 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 11823.199 ; gain = 996.391 ; free physical = 43170 ; free virtual = 67050
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2610.011; main = 2610.011; forked = 0.000
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 11823.141; main = 11823.141; forked = 0.000
+open_project /home/xmen/Desktop/UART/UART_ARTY.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/xmen/Desktop/UART/UART_ARTY.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xmen/amd/2025.1/Vivado/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24c/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24i:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k24i/1.0/board.xml as part xck24-ubva530-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.0/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kd240_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kd240_som/1.1/board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.0/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.1/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:scu35:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/scu35/1.0/board.xml as part xcsu35p-sbvb625-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/xmen/amd/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv] -no_script -reset -force -quiet
+remove_files  /home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+close_project
+add_files -norecurse /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.svh
+add_files -norecurse {/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv}
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+reset_run synth_1
+INFO: [Project 1-1160] Copying file /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/Arty7_top.dcp to /home/xmen/Desktop/compara/analise/project_1/project_1.srcs/utils_1/imports/synth_1 and adding it to utils fileset
+launch_runs synth_1 -jobs 31
+[Thu Oct 30 23:32:37 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+remove_files  {/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv}
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+remove_files  /home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+remove_files  /home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+remove_files  /home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+add_files -norecurse {/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv}
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+[Thu Oct 30 23:40:46 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 12105.043 ; gain = 66.770 ; free physical = 42636 ; free virtual = 66633
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clock_out_refp', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:33]
+WARNING: [Synth 8-11065] parameter 'STOPCOUNTER' becomes localparam in 'baudRateGenerator' with formal parameter declaration list [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:22]
+WARNING: [Synth 8-11065] parameter 'WIDTH' becomes localparam in 'baudRateGenerator' with formal parameter declaration list [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:23]
+INFO: [Synth 8-11241] undeclared symbol 'sample_center_bit', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:34]
+INFO: [Synth 8-6157] synthesizing module 'Arty7_top' [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_top' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ref_clock' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:1]
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:9]
+WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ref_clock' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized0' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized1' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized1' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-226] default block is never used [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:14]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator__parameterized0' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized2' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 44 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized2' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized3' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized3' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'uart_top' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:12]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Desktop/compara/analise/rtl/accumulator.sv:13]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Desktop/compara/analise/rtl/accumulator.sv:13]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:80]
+INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:12]
+WARNING: [Synth 8-689] width (32) of port connection 'valid_i' does not match port width (1) of module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:66]
+INFO: [Synth 8-6155] done synthesizing module 'Arty7_top' (0#1) [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:23]
+WARNING: [Synth 8-6014] Unused sequential element bit_start_reg was removed.  [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:40]
+WARNING: [Synth 8-87] always_comb on 'nextStateSystolicControlUnit_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:82]
+WARNING: [Synth 8-87] always_comb on 'next_counter_mult_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:83]
+WARNING: [Synth 8-87] always_comb on 'next_ena_cells_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:84]
+WARNING: [Synth 8-87] always_comb on 'next_counter_concat_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:85]
+WARNING: [Synth 8-3848] Net led in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:29]
+WARNING: [Synth 8-3848] Net led0RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:30]
+WARNING: [Synth 8-3848] Net led1RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:31]
+WARNING: [Synth 8-3848] Net led2RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:32]
+WARNING: [Synth 8-3848] Net led3RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:33]
+WARNING: [Synth 8-3848] Net valid in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:40]
+WARNING: [Synth 8-3848] Net a in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:43]
+WARNING: [Synth 8-3848] Net b in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:44]
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[3] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 12194.012 ; gain = 155.738 ; free physical = 42541 ; free virtual = 66539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 12199.949 ; gain = 161.676 ; free physical = 42539 ; free virtual = 66537
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 12199.949 ; gain = 161.676 ; free physical = 42539 ; free virtual = 66537
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 12201.957 ; gain = 0.000 ; free physical = 42701 ; free virtual = 66698
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc]
+Completed Processing XDC Constraints
+
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/xmen/Desktop/compara/analise/project_1/project_1.srcs/utils_1/imports/synth_1/Arty7_top.dcp with file /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/Arty7_top.dcp
+launch_runs synth_1 -jobs 31
+[Thu Oct 30 23:43:09 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 12344.086 ; gain = 0.000 ; free physical = 42301 ; free virtual = 66334
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clock_out_refp', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:33]
+WARNING: [Synth 8-11065] parameter 'STOPCOUNTER' becomes localparam in 'baudRateGenerator' with formal parameter declaration list [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:22]
+WARNING: [Synth 8-11065] parameter 'WIDTH' becomes localparam in 'baudRateGenerator' with formal parameter declaration list [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:23]
+INFO: [Synth 8-11241] undeclared symbol 'sample_center_bit', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:34]
+INFO: [Synth 8-6157] synthesizing module 'Arty7_top' [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_top' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ref_clock' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:1]
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:9]
+WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ref_clock' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized0' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized1' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized1' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-226] default block is never used [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:14]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator__parameterized0' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized2' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 44 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized2' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized3' [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized3' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'uart_top' (0#1) [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:12]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Desktop/compara/analise/rtl/accumulator.sv:13]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Desktop/compara/analise/rtl/accumulator.sv:13]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:80]
+INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:12]
+WARNING: [Synth 8-689] width (32) of port connection 'valid_i' does not match port width (1) of module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:66]
+INFO: [Synth 8-6155] done synthesizing module 'Arty7_top' (0#1) [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:23]
+WARNING: [Synth 8-6014] Unused sequential element bit_start_reg was removed.  [/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv:40]
+WARNING: [Synth 8-87] always_comb on 'nextStateSystolicControlUnit_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:82]
+WARNING: [Synth 8-87] always_comb on 'next_counter_mult_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:83]
+WARNING: [Synth 8-87] always_comb on 'next_ena_cells_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:84]
+WARNING: [Synth 8-87] always_comb on 'next_counter_concat_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv:85]
+WARNING: [Synth 8-87] always_comb on 'a_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:67]
+WARNING: [Synth 8-87] always_comb on 'b_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:68]
+WARNING: [Synth 8-3848] Net led in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:29]
+WARNING: [Synth 8-3848] Net led0RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:30]
+WARNING: [Synth 8-3848] Net led1RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:31]
+WARNING: [Synth 8-3848] Net led2RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:32]
+WARNING: [Synth 8-3848] Net led3RGB in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:33]
+WARNING: [Synth 8-3848] Net valid in module/entity Arty7_top does not have driver. [/home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv:40]
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[3] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led0RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led1RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led2RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[1] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led3RGB[0] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 12349.051 ; gain = 4.965 ; free physical = 42296 ; free virtual = 66330
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 12363.895 ; gain = 19.809 ; free physical = 42288 ; free virtual = 66322
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 12363.895 ; gain = 19.809 ; free physical = 42288 ; free virtual = 66322
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 12363.902 ; gain = 0.000 ; free physical = 42540 ; free virtual = 66573
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc]
+Completed Processing XDC Constraints
+
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/xmen/Desktop/compara/analise/project_1/project_1.srcs/utils_1/imports/synth_1/Arty7_top.dcp with file /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/Arty7_top.dcp
+launch_runs synth_1 -jobs 31
+[Thu Oct 30 23:58:04 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/xmen/Desktop/compara/analise/project_1/project_1.srcs/utils_1/imports/synth_1/Arty7_top.dcp with file /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/Arty7_top.dcp
+launch_runs synth_1 -jobs 31
+[Fri Oct 31 00:00:04 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 31
+[Fri Oct 31 00:01:21 2025] Launched impl_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/impl_1/runme.log
+close_design
+open_run impl_1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12383.910 ; gain = 0.000 ; free physical = 40336 ; free virtual = 65837
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 12383.910 ; gain = 0.000 ; free physical = 40337 ; free virtual = 65838
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+Read PlaceDB: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+Read Physdb Files: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+Restored from archive | CPU: 0.010000 secs | Memory: 0.072342 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12494.801 ; gain = 0.000 ; free physical = 40212 ; free virtual = 65712
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+launch_runs impl_1 -to_step write_bitstream -jobs 31
+[Fri Oct 31 00:03:43 2025] Launched impl_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/project_1/project_1.runs/impl_1/runme.log

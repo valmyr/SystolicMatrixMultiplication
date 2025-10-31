@@ -1,0 +1,105 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+| Date         : Fri Oct 31 00:01:41 2025
+| Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
+| Command      : report_methodology -file Arty7_top_methodology_drc_routed.rpt -pb Arty7_top_methodology_drc_routed.pb -rpx Arty7_top_methodology_drc_routed.rpx
+| Design       : Arty7_top
+| Device       : xc7a100tcsg324-2L
+| Speed File   : -2L
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 14
++-----------+------------------+-----------------------------+--------+
+| Rule      | Severity         | Description                 | Checks |
++-----------+------------------+-----------------------------+--------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 14     |
++-----------+------------------+-----------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/base_clock_counter/counter_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/base_clock_counter/counter_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/base_clock_counter/counter_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/base_clock_counter/counter_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/base_clock_counter/counter_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/base_clock_counter/counter_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/base_clock_counter/counting_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/clock_base_ref/counter_base/counter_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/clock_base_ref/counter_base/counter_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/clock_base_ref/counter_base/counter_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/clock_base_ref/counter_base/counting_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/clock_base_ref/out_clock_ref_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/boudrategenerator_inst/clock_out_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Critical Warning
+Non-clocked sequential cell  
+The clock pin uart1/uart_transmitter/sdata_tx_out_reg/C is not reached by a timing clock
+Related violations: <none>
+
+

@@ -1,0 +1,93 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 30 23:05:28 2025
+# Process ID         : 274628
+# Current directory  : /home/xmen/Desktop/compara/analise
+# Command line       : vivado
+# Log file           : /home/xmen/Desktop/compara/analise/vivado.log
+# Journal file       : /home/xmen/Desktop/compara/analise/vivado.jou
+# Running On         : VT0144
+# Platform           : Rocky
+# Operating System   : Rocky Linux release 8.10 (Green Obsidian)
+# Processor Detail   : Intel(R) Core(TM) i9-14900F
+# CPU Frequency      : 2000.000 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 67075 MB
+# Swap memory        : 14727 MB
+# Total Virtual      : 81802 MB
+# Available Virtual  : 72436 MB
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/xmen/Desktop/compara/analise/project_1 -part xc7a100tcsg324-2L
+add_files -norecurse {/home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv /home/xmen/Desktop/compara/analise/rtl/accumulator.sv}
+add_files -fileset constrs_1 -norecurse /home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc
+update_compile_order -fileset sources_1
+open_project /home/xmen/UART/UART.xpr
+update_compile_order -fileset sources_1
+close_project
+open_project /home/xmen/Desktop/UART/UART_ARTY.xpr
+update_compile_order -fileset sources_1
+current_project project_1
+add_files -norecurse /home/xmen/Desktop/compara/analise/rtl/Arty7_top.sv
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Arty7_top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+current_project UART_ARTY
+export_ip_user_files -of_objects  [get_files /home/xmen/Desktop/UART/UART_ARTY.srcs/sources_1/new/Arty7_top.sv] -no_script -reset -force -quiet
+remove_files  /home/xmen/Desktop/UART/UART_ARTY.srcs/sources_1/new/Arty7_top.sv
+update_compile_order -fileset sources_1
+add_files -norecurse /home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv
+update_compile_order -fileset sources_1
+close_project
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+open_project /home/xmen/Desktop/UART/UART_ARTY.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv] -no_script -reset -force -quiet
+remove_files  /home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv
+close_project
+add_files -norecurse /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.svh
+add_files -norecurse {/home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+remove_files  {/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv}
+remove_files  /home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv
+remove_files  /home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv
+remove_files  /home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv
+add_files -norecurse {/home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_top.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/counter.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/baud_rate.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/ref_clock.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_tx.sv /home/xmen/Desktop/compara/analise/rtl/uart/rtl/uart_rx.sv}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+launch_runs impl_1 -jobs 31
+wait_on_run impl_1
+close_design
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 31
+wait_on_run impl_1
