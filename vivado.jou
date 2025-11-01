@@ -91,3 +91,30 @@ close_design
 open_run impl_1
 launch_runs impl_1 -to_step write_bitstream -jobs 31
 wait_on_run impl_1
+open_hw_manager
+connect_hw_server -url localhost:3121 -allow_non_jtag
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210319B9B255A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210319B9B255A]
+open_hw_target
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 31
+wait_on_run impl_1
+open_project /home/xmen/Desktop/UART/UART_ARTY.xpr
+update_compile_order -fileset sources_1
+close_project
+remove_files  -fileset constrs_1 /home/xmen/ARTYA7/XilinxDesignConstraint/Nexys-A7-100T-Master.xdc
+add_files -fileset constrs_1 -norecurse /home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc
+reset_run synth_1
+launch_runs synth_1 -jobs 31
+wait_on_run synth_1
+launch_runs impl_1 -jobs 31
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 31
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/xmen/Desktop/compara/analise/project_1/project_1.runs/impl_1/Arty7_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

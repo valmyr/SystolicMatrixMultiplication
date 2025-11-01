@@ -37,12 +37,18 @@ parameter WIDTHx =1,SIZE = 8, WIDTH = 8;
 
 logic nreset;
 logic [31:0] counter;
-logic valid, ready_env_uart_rx, cnt;
+logic valid, ready_env_uart_rx,EvenT_SevenToZero,EvenT_SevenToZero_next;
 logic [BYTESIZES-1:0] data_rx_out;
 logic [BYTESIZES-1:0] data_rx_out1;
 logic [SIZE*WIDTHx-1:0] a; 
 logic [SIZE*WIDTHx-1:0] b; 
 logic [WIDTH-1:0] Cout_DUT[SIZE-1:0][SIZE-1:0];
+
+logic [3:0]cnt1,next_cnt1;
+logic valid_i;
+logic [15:0]cnt_transmi;
+logic [WIDTH-1:0]IMPUT_A[2*SIZE-1:0];
+logic [WIDTH-1:0]IMPUT_B[2*SIZE-1:0];
 
 uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart1
 (
@@ -61,9 +67,9 @@ uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRAT
     .sdata_tx_out (uart_rxd_out                 )
 );
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
-    .clock            (cnt        )                              ,
+    .clock            (clock        )                              ,
     .nreset           (nreset       )                              ,
-    .valid_i          (1            )                              ,
+    .valid_i          (valid_i      )                              ,
     .a_input          (a            )                              ,
     .b_input          (b            )                              ,
     .ready_o          (             )                              ,
@@ -71,19 +77,96 @@ systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixM
 );
 
 assign nreset = !btn[0];
-
+assign next_cnt1 =  cnt1 +1;
 always_ff@(posedge ready_env_uart_rx, negedge nreset)begin
-    if(!nreset)cnt <= 0;
-    else cnt <= cnt +1; 
+    if(!nreset)begin 
+        cnt1 <= 0;
+        for(integer i_rst = 0; i_rst < 2*SIZE; i_rst++)
+            IMPUT_A[i_rst] <= '{default:0};
+        
+    end
+    else begin 
+              cnt1 <= next_cnt1 ;
+              if(!cnt1)begin 
+                         IMPUT_A[0] = 0;
+                         IMPUT_B[0] = 0;
+              end
+              else begin 
+                         IMPUT_A[cnt1] <=data_rx_out; 
+                         IMPUT_B[cnt1] <=data_rx_out; 
+              end
+    end 
+end
+always_ff@(posedge clock)begin
+    if(cnt1 == 0 & next_cnt1 == 15)begin
+        valid_i <= 1;
+        cnt_transmi <=1;
+    end else begin
+        valid_i <= 0;
+    end
+
+    if(valid_i)begin
+        cnt_transmi <= cnt_transmi +1;
+        if(cnt_transmi < 2*(SIZE-1))begin
+            a <= IMPUT_A[cnt_transmi];
+            b <= IMPUT_B[cnt_transmi];
+        end else begin 
+            a <= 0;
+            b <= 0;
+        end
+    end else begin
+        a <= 0;
+        b <= 0;
+    end
 end
 
-always_comb begin
-    case(cnt)
-        0:a = data_rx_out;
-        1:b = data_rx_out;
-    endcase
-end
-//assign led = data_rx_out[3:0];
+
+
+ila_0 your_instance_name (
+	.clk(clock), // input wire clk
+	.probe0(Cout_DUT[0][0]), // input wire [7:0]  probe0  
+	.probe1(Cout_DUT[0][1]), // input wire [7:0]  probe1 
+	.probe2(Cout_DUT[0][2]), // input wire [7:0]  probe2 
+	.probe3(Cout_DUT[0][3]), // input wire [7:0]  probe3 
+	.probe4(Cout_DUT[0][4]), // input wire [7:0]  probe4 
+	.probe5(Cout_DUT[0][5]), // input wire [7:0]  probe5 
+	.probe6(Cout_DUT[0][6]), // input wire [7:0]  probe6 
+	.probe7(Cout_DUT[0][7]), // input wire [7:0]  probe7 
+	.probe8(Cout_DUT[0][8]), // input wire [7:0]  probe0  
+	.probe9(Cout_DUT[7][0]), // input wire [7:0]  probe1 
+	.probe10(Cout_DUT[7][1]), // input wire [7:0]  probe2 
+	.probe11(Cout_DUT[7][2]), // input wire [7:0]  probe3 
+	.probe12(Cout_DUT[7][3]), // input wire [7:0]  probe4 
+	.probe13(Cout_DUT[7][4]), // input wire [7:0]  probe5 
+	.probe14(Cout_DUT[7][5]), // input wire [7:0]  probe6 
+    .probe15(Cout_DUT[7][6]), // input wire [7:0]  probe6 
+	.probe16(Cout_DUT[7][7]), // input wire [7:0]  probe0  
+	.probe17(Cout_DUT[7][8]), // input wire [7:0]  probe1 
+	.probe18(IMPUT_B[2]), // input wire [7:0]  probe2 
+	.probe19(IMPUT_B[3]), // input wire [7:0]  probe3 
+	.probe20(IMPUT_B[4]), // input wire [7:0]  probe4 
+	.probe21(IMPUT_B[5]), // input wire [7:0]  probe5 
+	.probe22(IMPUT_B[7]), // input wire [7:0]  probe7 
+	.probe23(IMPUT_B[6]), // input wire [7:0]  probe6 
+	.probe24(IMPUT_B[8]), // input wire [7:0]  probe0  
+	.probe25(IMPUT_B[9]), // input wire [7:0]  probe1 
+	.probe26(IMPUT_B[10]), // input wire [7:0]  probe2 
+	.probe27(IMPUT_B[11]), // input wire [7:0]  probe3 
+	.probe28(IMPUT_B[12]), // input wire [7:0]  probe4 
+	.probe29(IMPUT_B[13]), // input wire [7:0]  probe5 
+	.probe30(IMPUT_B[14]), // input wire [7:0]  probe6 
+    .probe31(IMPUT_B[15]), // input wire [7:0]  probe6 
+	.probe32(cnt1), // input wire [3:0]  probe8 
+	.probe33(next_cnt1), // input wire [0:0]  probe9
+	.probe34(ready_env_uart_rx) // input wire [0:0]  probe10
+);
+//always_comb begin
+//    case(cnt)
+//        0:a = data_rx_out;
+//        1:b = data_rx_out;
+//    endcase
+//end
+//assign led = !btn[2] ?  data_rx_out[7:4]: data_rx_out[3:0];
 //always_ff@(posedge btn[1])
 //    if(btn[1])  valid <= 1;
 //    else        valid <=0;
