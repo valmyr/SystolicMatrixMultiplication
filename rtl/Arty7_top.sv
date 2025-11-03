@@ -124,10 +124,10 @@ end
 
 ila_0 your_instance_name (
 	.clk(clock), // input wire clk
-	.probe0(Cout_DUT[0][0]), // input wire [7:0]  probe0  
-	.probe1(Cout_DUT[0][1]), // input wire [7:0]  probe1 
-	.probe2(Cout_DUT[0][2]), // input wire [7:0]  probe2 
-	.probe3(Cout_DUT[0][3]), // input wire [7:0]  probe3 
+	.probe0(a), // input wire [7:0]  probe0  
+	.probe1(b), // input wire [7:0]  probe1 
+	.probe2(cnt1 == 0), // input wire [7:0]  probe2 
+	.probe3(cnt_transmi), // input wire [7:0]  probe3 
 	.probe4(Cout_DUT[0][4]), // input wire [7:0]  probe4 
 	.probe5(Cout_DUT[0][5]), // input wire [7:0]  probe5 
 	.probe6(Cout_DUT[0][6]), // input wire [7:0]  probe6 
@@ -140,8 +140,8 @@ ila_0 your_instance_name (
 	.probe13(Cout_DUT[7][4]), // input wire [7:0]  probe5 
 	.probe14(Cout_DUT[7][5]), // input wire [7:0]  probe6 
     .probe15(Cout_DUT[7][6]), // input wire [7:0]  probe6 
-	.probe16(Cout_DUT[7][7]), // input wire [7:0]  probe0  
-	.probe17(Cout_DUT[7][8]), // input wire [7:0]  probe1 
+	.probe16(IMPUT_B[0]), // input wire [7:0]  probe0  
+	.probe17(IMPUT_B[1]), // input wire [7:0]  probe1 
 	.probe18(IMPUT_B[2]), // input wire [7:0]  probe2 
 	.probe19(IMPUT_B[3]), // input wire [7:0]  probe3 
 	.probe20(IMPUT_B[4]), // input wire [7:0]  probe4 
