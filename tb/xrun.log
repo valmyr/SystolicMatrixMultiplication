@@ -1,0 +1,20 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Nov 03, 2025 at 11:22:09 -03
+xrun
+	./tb_fpga.sv
+	../rtl/Arty7_top_sim.sv
+	../rtl/systolicMatrixMultiply.sv
+	../rtl/accumulator.sv
+	-access +rwc
+	+gui
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+Trying to check out license...
+	Xcelium_Limited_Single_Core 24.00 - Failed
+	Xcelium_Single_Core 24.00 - Failed
+	Xcelium_Safety_Sim 24.00 - Failed
+	Xcelium_Safety 24.00 - Failed
+	Xcelium_Multi_Core 24.00 - Failed
+	Xcelium_For_Partners 24.00 - Failed
+xmsim: *F,NOLICN: Unable to checkout license for the simulation. 'lic_error LMF-03097'.
+TOOL:	xrun(64)	24.03-s005: Exiting on Nov 03, 2025 at 11:23:09 -03  (total: 00:01:00)

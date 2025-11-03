@@ -1,0 +1,11 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+./tb_fpga.sv
+../rtl/Arty7_top_sim.sv
+../rtl/systolicMatrixMultiply.sv
+../rtl/accumulator.sv
+-access
++rwc
++gui
