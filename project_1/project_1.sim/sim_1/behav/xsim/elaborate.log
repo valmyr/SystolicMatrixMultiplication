@@ -5,19 +5,31 @@ Running: /home/xmen/amd/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'sw' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:17]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'uart_txd_in' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:19]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_i' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:115]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'rready_i' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:116]
-WARNING: [VRFC 10-3823] variable 'ready_o' might have multiple concurrent drivers [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:119]
+WARNING: [VRFC 10-2861] module 'uart_top' does not have a parameter named BYTESIZS [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:22]
+WARNING: [VRFC 10-2861] module 'uart_top' does not have a parameter named BYTESIZS [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:146]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:27]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'sw' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:75]
+WARNING: [VRFC 10-3823] variable 'uart_data_tx_in' might have multiple concurrent drivers [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:62]
 WARNING: [VRFC 10-10063] index 8 into 'b_vec' is out of bounds [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
 WARNING: [VRFC 10-10063] index 8 into 'a_vec' is out of bounds [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.counter(MOD=5)
+Compiling module xil_defaultlib.ref_clock(CLOCK_REF=10000000,CLO...
+Compiling module xil_defaultlib.counter(MOD=3)
+Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.baudRateGenerator(BAUDRATE=11520...
+Compiling module xil_defaultlib.uart_rx(COUNTER_CLOCK_INPUT=1000...
+Compiling module xil_defaultlib.counter(MOD=44)
+Compiling module xil_defaultlib.counter(MOD=1)
+Compiling module xil_defaultlib.baudRateGenerator(BAUDRATE=11520...
+Compiling module xil_defaultlib.uart_tx(COUNTER_CLOCK_INPUT=1000...
+Compiling module xil_defaultlib.uart_top
 Compiling module xil_defaultlib.accumulator_cells(WIDTH=8,WIDTHx...
 Compiling module xil_defaultlib.systolicMatrixMultiply(WIDTH=8,S...
+Compiling module xil_defaultlib.mem
 Compiling module xil_defaultlib.Arty7_top_sim
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl

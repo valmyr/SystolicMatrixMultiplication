@@ -24,8 +24,8 @@ module Arty7_top_sim(
     input  logic          clock           ,
     input  logic [3:0]    sw              ,
     input  logic [3:0]    btn             ,
-    input  logic          uart_txd_in      ,
-    output logic          uart_rxd_out   ,
+    input  logic          uart_txd_in     ,
+    output logic          uart_rxd_out    ,
     output logic [3:0]    led             ,
     output logic [2:0]    led0RGB         ,
     output logic [2:0]    led1RGB         ,
@@ -49,178 +49,220 @@ logic valid_i;
 logic [15:0]cnt_transmi;
 logic [WIDTHx*SIZE-1:0]IMPUT_A[2*SIZE-1:0];
 logic [WIDTHx*SIZE-1:0]IMPUT_B[2*SIZE-1:0];
-/*
-initial $readmemb("../testeIMPUT_A.txt",IMPUT_A);
-initial $readmemb("../testeIMPUT_B.txt",IMPUT_B);*/
-logic [SIZE*WIDTHx-1:0] a,b;
-assign IMPUT_B[0] = 8'b11111111;
-assign IMPUT_B[1] = 8'b00000000;
-assign IMPUT_B[2] = 8'b00000000;
-assign IMPUT_B[3] = 8'b00000010;
-assign IMPUT_B[4] = 8'b00001000;
-assign IMPUT_B[5] = 8'b00010001;
-assign IMPUT_B[6] = 8'b00101100;
-assign IMPUT_B[7] = 8'b00010011;
-assign IMPUT_B[8] = 8'b01001111;
-assign IMPUT_B[9] = 8'b10111110;
-assign IMPUT_B[10] = 8'b01000000;
-assign IMPUT_B[11] = 8'b00000000;
-assign IMPUT_B[12] = 8'b01100000;
-assign IMPUT_B[13] = 8'b01000000;
-assign IMPUT_B[14] = 8'b11000000;
-assign IMPUT_B[15] = 8'b00000000;
-assign IMPUT_A[0] = 8'b11111111;
-assign IMPUT_A[1] = 8'b00000001;
-assign IMPUT_A[2] = 8'b00000000;
-assign IMPUT_A[3] = 8'b00000101;
-assign IMPUT_A[4] = 8'b00000010;
-assign IMPUT_A[5] = 8'b00000010;
-assign IMPUT_A[6] = 8'b00001011;
-assign IMPUT_A[7] = 8'b00100001;
-assign IMPUT_A[8] = 8'b10001010;
-assign IMPUT_A[9] = 8'b00111010;
-assign IMPUT_A[10] = 8'b10011100;
-assign IMPUT_A[11] = 8'b10011000;
-assign IMPUT_A[12] = 8'b00010000;
-assign IMPUT_A[13] = 8'b01100000;
-assign IMPUT_A[14] = 8'b11000000;
-assign IMPUT_A[15] = 8'b00000000;
 
 
 
 
+//Pinout Systolic
+//--------------------------------------------------------------------------------------------------
+logic                   syst_clock                                   ;
+logic                   syst_nreset                                  ;
+logic                   syst_valid_i                                 ;
+logic                   syst_rready_i                                ;
+logic [SIZE*WIDTHx-1:0] syst_a_input                                 ;
+logic [SIZE*WIDTHx-1:0] syst_b_input                                 ;
+logic                   syst_ready_o                                 ;
+logic                   syst_rvalid_o                                ;
+logic [WIDTH-1:0]       syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]  ;
 
+//--------------------------------------------------------------------------------------------------
+//Pinout MEMA
+logic                   mem_opa_clock                                    ;  
+logic                   mem_opa_nreset                                   ;// r=1,w=0
+logic                   mem_opa_rw                                       ; //Dado válido na entrada
+logic                   mem_opa_valid_i                                  ; //Dado válido na entrada
+logic                   mem_opa_rready_i                                 ; //Pronto para receber uma resposta
+logic                   mem_opa_rvalid_o                                 ; //Resposta Válida(Operação concluida)
+logic                   mem_opa_ready_o                                  ; //Pronto para receber um dado valido na entrada
+logic [SIZE*WIDTHx-1:0] mem_opa_in_data                                  ;
+logic [SIZE*WIDTHx-1:0] mem_opa_out_data                                 ;
+//---------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//Pinout MEMB
+logic                   mem_opb_clock                                    ;  
+logic                   mem_opb_nreset                                   ;// r=1,w=0
+logic                   mem_opb_rw                                       ; //Dado válido na entrada
+logic                   mem_opb_valid_i                                  ; //Dado válido na entrada
+logic                   mem_opb_rready_i                                 ; //Pronto para receber uma resposta
+logic                   mem_opb_rvalid_o                                 ; //Resposta Válida(Operação concluida)
+logic                   mem_opb_ready_o                                  ; //Pronto para receber um dado valido na entrada
+logic [SIZE*WIDTHx-1:0] mem_opb_in_data                                  ;
+logic [SIZE*WIDTHx-1:0] mem_opb_out_data                                 ;
+//---------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//Pinout MEMC
+logic                   mem_opc_clock                                    ;  
+logic                   mem_opc_nreset                                   ;// r=1,w=0
+logic                   mem_opc_rw                                       ; //Dado válido na entrada
+logic                   mem_opc_valid_i                                  ; //Dado válido na entrada
+logic                   mem_opc_rready_i                                 ; //Pronto para receber uma resposta
+logic                   mem_opc_rvalid_o                                 ; //Resposta Válida(Operação concluida)
+logic                   mem_opc_ready_o                                  ; //Pronto para receber um dado valido na entrada
+logic [SIZE*WIDTH-1:0]  mem_opc_in_data                                  ;
+logic [SIZE*WIDTH-1:0]  mem_opc_out_data                                 ;
+//---------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//Pinout UART
+logic                   uart_clock                                      ;
+logic                   uart_nreset                                     ;
+ //pinout RX                                                       ;
+logic                   uart_sdata_rx_in                                ;
+logic                   uart_valid_rx_in                                ;
+logic                   uart_ready_rx_out                               ;
+logic   [BYTESIZES-1:0] uart_data_rx_out                                ;
+ //pinout TX                                                       ;
+logic                   uart_valid_tx_in                                ;
+logic [BYTESIZES-1:0]   uart_data_tx_in                                 ;
+logic                   uart_ready_tx_out                               ;
+logic                   uart_sdata_tx_out                               ;
 
-/*
+//Atribuição de clocks
+assign syst_clock       = clock                                         ;
+assign uart_clock       = clock                                         ;
 
-uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart1
-(
+assign mem_opa_clock    = !mem_opa_rw ? uart_ready_rx_out : clock        ;
+assign mem_opb_clock    = !mem_opb_rw ? uart_ready_rx_out : clock        ;
+assign mem_opc_clock    = mem_opc_rw ? uart_ready_tx_out : clock        ;
+//Atribuição de nreset
+assign nreset            = !btn[0];
+assign syst_nreset       = nreset                                       ;
+assign uart_nreset       = nreset                                       ;
+assign mem_opa_nreset    = nreset                                       ;
+assign mem_opb_nreset    = nreset                                       ;
+assign mem_opc_nreset    = nreset                                       ;
+//Atribuição UART
+assign uart_sdata_rx_in = uart_txd_in                                   ;
+assign uart_rxd_out     = uart_sdata_tx_out                             ;
+assign uart_valid_rx_in =   1;//UART RX SEMPRE APTO A RECEBER DADOS.
+//---------------------------------------------------------------------------------------------------------------------------------
 
-    .clock        (clock)                            ,
-    .nreset       (nreset)                           ,
-    //pinout RX   
-    .sdata_rx_in  (uart_txd_in                  )    ,
-    .valid_rx_in  (1'b1                         )    ,
-    .ready_rx_out (  ready_env_uart_rx          )    ,
-    .data_rx_out  (   data_rx_out               )    ,  
-    //pinout TX
-    .valid_tx_in  (valid                        )    ,
-    .data_tx_in   ( {4'b0000,sw}                )    ,
-    .ready_tx_out (                             )    ,
-    .sdata_tx_out (uart_rxd_out                 )
-);*/
-systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
-    .clock            (clock        )                              ,
-    .nreset           (nreset       )                              ,
-    .valid_i          (1      )                              ,
-    .rready_i         (1        ),
-    .a_input          (a            )                              ,
-    .b_input          (b            )                              ,
-    .ready_o          ( valid_i            )                              ,
-    .rvalid_o          (),
-    .output_produc_a_b(Cout_DUT )
+// ATRIBUIÇÂO MEMORIA A/B
+assign mem_opa_in_data = (mem_opa_valid_i & !mem_opa_rw) ? uart_data_rx_out: 0;
+assign mem_opb_in_data = (mem_opb_valid_i & !mem_opb_rw) ? uart_data_rx_out: 0;
+assign syst_a_input = (syst_valid_i & mem_opa_rw) ? mem_opa_out_data :0;
+assign syst_b_input = (syst_valid_i & mem_opb_rw) ? mem_opb_out_data :0;
+//---------------------------------------------------------------------------------------------------------------------------------
+uart_top #(.BYTESIZS(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart1 (
+    .clock             (uart_clock       )    ,
+    .nreset            (uart_nreset      )    ,
+    //pinout RX                                 
+    .sdata_rx_in       (uart_sdata_rx_in )    ,
+    .valid_rx_in       (uart_valid_rx_in )    ,
+    .ready_rx_out      (uart_ready_rx_out)    ,
+    .data_rx_out       (uart_data_rx_out )    ,  
+    //pinout TX                                                  
+    .valid_tx_in       (uart_valid_tx_in )    ,
+    .data_tx_in        (uart_data_tx_in  )    ,
+    .ready_tx_out      (uart_ready_tx_out)    ,
+    .sdata_tx_out      (uart_sdata_tx_out)
 );
-assign nreset = btn[0];
-/*
 
-assign next_cnt1 =  cnt1 +1;
-always_ff@(posedge ready_env_uart_rx, negedge nreset)begin
-    if(!nreset)begin 
-        cnt1 <= 0;
-        for(integer i_rst = 0; i_rst < 2*SIZE; i_rst++)
-            IMPUT_A[i_rst] <= '{default:0};
-        
-    end
-    else begin 
-              cnt1 <= next_cnt1 ;
-              if(!cnt1)begin 
-                         IMPUT_A[0] = 0;
-                         IMPUT_B[0] = 0;
-              end
-              else begin 
-                         IMPUT_A[cnt1] <=data_rx_out; 
-                         IMPUT_B[cnt1] <=data_rx_out; 
-              end
-    end 
-end*/
+systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
+    .clock            (syst_clock              )                              ,
+    .nreset           (syst_nreset             )                              ,
+    .valid_i          (syst_valid_i            )                              ,
+    .rready_i         (syst_rready_i           )                              ,
+    .a_input          (syst_a_input            )                              ,
+    .b_input          (syst_b_input            )                              ,
+    .ready_o          (syst_ready_o            )                              ,
+    .rvalid_o         (syst_rvalid_o           )                              ,
+    .output_produc_a_b(syst_output_produc_a_b  )
+);
+
+mem #(.WIDTH(WIDTHx*SIZE),.SIZE (2*SIZE))mem_input_opA(
+    .clock            (mem_opa_clock          )                       ,  
+    .nreset           (mem_opa_nreset         )                       ,// r=1,w=0
+    .rw               (mem_opa_rw             )                       , //Dado válido na entrada
+    .valid_i          (mem_opa_valid_i        )                       , //Dado válido na entrada
+    .rready_i         (mem_opa_rready_i       )                       , //Pronto para receber uma resposta
+    .rvalid_o         (mem_opa_rvalid_o       )                       , //Resposta Válida(Operação concluida)
+    .ready_o          (mem_opa_ready_o        )                       , //Pronto para receber um dado valido na entrada
+    .in_data          (mem_opa_in_data        )                       ,
+    .out_data         (mem_opa_out_data       ) 
+);
+
+mem #(.WIDTH(WIDTHx*SIZE),.SIZE (2*SIZE))mem_input_opB(
+    .clock            (mem_opb_clock          )                       ,  
+    .nreset           (mem_opb_nreset         )                       ,// r=1,w=0
+    .rw               (mem_opb_rw             )                       , //Dado válido na entrada
+    .valid_i          (mem_opb_valid_i        )                       , //Dado válido na entrada
+    .rready_i         (mem_opb_rready_i       )                       , //Pronto para receber uma resposta
+    .rvalid_o         (mem_opb_rvalid_o       )                       , //Resposta Válida(Operação concluida)
+    .ready_o          (mem_opb_ready_o        )                       , //Pronto para receber um dado valido na entrada
+    .in_data          (mem_opb_in_data        )                       ,
+    .out_data         (mem_opb_out_data       ) 
+);
+
+enum {IDLE, WRITE_MEM,SYSTOLIC_READ_MEM,FINISH} fsm_unit_control, fsm_unit_control_next;
+logic [3:0]cnt_load,cnt_load_next;
+logic read,next_read;
 always_ff@(posedge clock, negedge nreset)begin
-
     if(!nreset)begin
-        a <= 0;
-        b <= 0;
-        cnt_transmi <=1;
+        fsm_unit_control <= IDLE;
+        read <=0;
     end else begin
-        if(!valid_i)begin
-            cnt_transmi <= cnt_transmi +1;
-            if(cnt_transmi < 2*(SIZE))begin
-                a <= IMPUT_A[cnt_transmi];
-                b <= IMPUT_B[cnt_transmi];
-            end
-            end else begin 
-        a <= 0;
-        b <= 0;
-            end
-        end
-    end
+        fsm_unit_control <= fsm_unit_control_next;
+        read             <= next_read;
 
+    end
+end
+always_comb case(fsm_unit_control)
+    IDLE:begin
+        mem_opa_valid_i        = 0;
+        mem_opa_rw             = 0;
+        mem_opb_valid_i        = 0;
+        mem_opb_rw             = 0;
+        cnt_load_next          = 0;
+        mem_opa_rready_i       = 0;
+        mem_opb_rready_i       = 0;
+        syst_valid_i           = 0;          
+        syst_rready_i          = 0;          
+        fsm_unit_control_next  =  uart_valid_rx_in ? WRITE_MEM :IDLE;
+        next_read                    =0;
+    end
+    WRITE_MEM:begin
+        mem_opa_valid_i        =  1;
+        mem_opa_rw             =  0;  
+        mem_opb_valid_i        = mem_opa_rvalid_o? 1:0  ;
+        mem_opb_rw             =  0;     
+        cnt_load_next          = cnt_load +1;
+        syst_valid_i           = 0;          
+        syst_rready_i          = 0;  
+        fsm_unit_control_next  = mem_opa_rvalid_o && mem_opb_rvalid_o ? SYSTOLIC_READ_MEM:WRITE_MEM;
+        mem_opa_rready_i       =0;
+        mem_opb_rready_i       =0;
+    end
+    SYSTOLIC_READ_MEM:begin
+        mem_opa_valid_i        =  1;
+        mem_opb_valid_i        =  1;
+        mem_opa_rw             =  1;  
+        mem_opb_rw             =  1;  
+        syst_valid_i           =  1;          
+        syst_rready_i          =  1;  
+        mem_opa_rready_i       =1;
+        mem_opb_rready_i       =1;
+        fsm_unit_control_next = !syst_rvalid_o ? SYSTOLIC_READ_MEM : FINISH;
+    end
+    FINISH:begin
+        
+
+    end
+endcase
 
 /*
+mem #(.WIDTH(WIDTH*SIZE),.SIZE (SIZE))mem_input_opC(
+    .clock            (mem_opc_clock          )                       ,  
+    .nreset           (mem_opc_nreset         )                       ,// r=1,w=0
+    .rw               (mem_opc_rw             )                       , //Dado válido na entrada
+    .valid_i          (mem_opc_valid_i        )                       , //Dado válido na entrada
+    .rready_i         (mem_opc_rready_i       )                       , //Pronto para receber uma resposta
+    .rvalid_o         (mem_opc_rvalid_o       )                       , //Resposta Válida(Operação concluida)
+    .ready_o          (mem_opc_ready_o        )                       , //Pronto para receber um dado valido na entrada
+    .in_data          (mem_opc_in_data        )                       ,
+    .out_data         (mem_opc_out_data       ) 
+);
 
-ila_0 your_instance_name (
-	.clk(clock), // input wire clk
-	.probe0(a), // input wire [7:0]  probe0  
-	.probe1(b), // input wire [7:0]  probe1 
-	.probe2(Cout_DUT[0][2]), // input wire [7:0]  probe2 
-	.probe3(Cout_DUT[0][3]), // input wire [7:0]  probe3 
-	.probe4(Cout_DUT[0][4]), // input wire [7:0]  probe4 
-	.probe5(Cout_DUT[0][5]), // input wire [7:0]  probe5 
-	.probe6(Cout_DUT[0][6]), // input wire [7:0]  probe6 
-	.probe7(Cout_DUT[0][7]), // input wire [7:0]  probe7 
-	.probe8(Cout_DUT[0][8]), // input wire [7:0]  probe0  
-	.probe9(Cout_DUT[7][0]), // input wire [7:0]  probe1 
-	.probe10(Cout_DUT[7][1]), // input wire [7:0]  probe2 
-	.probe11(Cout_DUT[7][2]), // input wire [7:0]  probe3 
-	.probe12(Cout_DUT[7][3]), // input wire [7:0]  probe4 
-	.probe13(Cout_DUT[7][4]), // input wire [7:0]  probe5 
-	.probe14(Cout_DUT[7][5]), // input wire [7:0]  probe6 
-    .probe15(Cout_DUT[7][6]), // input wire [7:0]  probe6 
-	.probe16(IMPUT_B[0]), // input wire [7:0]  probe0  
-	.probe17(IMPUT_B[1]), // input wire [7:0]  probe1 
-	.probe18(IMPUT_B[2]), // input wire [7:0]  probe2 
-	.probe19(IMPUT_B[3]), // input wire [7:0]  probe3 
-	.probe20(IMPUT_B[4]), // input wire [7:0]  probe4 
-	.probe21(IMPUT_B[5]), // input wire [7:0]  probe5 
-	.probe22(IMPUT_B[7]), // input wire [7:0]  probe7 
-	.probe23(IMPUT_B[6]), // input wire [7:0]  probe6 
-	.probe24(IMPUT_B[8]), // input wire [7:0]  probe0  
-	.probe25(IMPUT_B[9]), // input wire [7:0]  probe1 
-	.probe26(IMPUT_B[10]), // input wire [7:0]  probe2 
-	.probe27(IMPUT_B[11]), // input wire [7:0]  probe3 
-	.probe28(IMPUT_B[12]), // input wire [7:0]  probe4 
-	.probe29(IMPUT_B[13]), // input wire [7:0]  probe5 
-	.probe30(IMPUT_B[14]), // input wire [7:0]  probe6 
-    .probe31(IMPUT_B[15]), // input wire [7:0]  probe6 
-	.probe32(cnt1), // input wire [3:0]  probe8 
-	.probe33(next_cnt1), // input wire [0:0]  probe9
-	.probe34(ready_env_uart_rx) // input wire [0:0]  probe10
-);*/
-//always_comb begin
-//    case(cnt)
-//        0:a = data_rx_out;
-//        1:b = data_rx_out;
-//    endcase
-//end
-//assign led = !btn[2] ?  data_rx_out[7:4]: data_rx_out[3:0];
-//always_ff@(posedge btn[1])
-//    if(btn[1])  valid <= 1;
-//    else        valid <=0;
-//always_ff@(posedge btn[1])
-//assign data_rx_out1 = data_rx_out;
-//assign led = data_rx_out1;
-//always_ff@(posedge clock)
-//     led0RGB     <= sw[2 ] ? led :0;
-// assign led0RGB =  led;
-//assign led1RGB =  led0RGB;
-//assign led2RGB =  led0RGB;
-//assign led3RGB =  led0RGB;
+*/
+
 endmodule

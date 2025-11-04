@@ -11,71 +11,22 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="45.630 ns"></ZoomEndTime>
-      <Cursor1Time time="5.000 ns"></Cursor1Time>
+      <ZoomStartTime time="3,294,804.500 ns"></ZoomStartTime>
+      <ZoomEndTime time="3,295,160.501 ns"></ZoomEndTime>
+      <Cursor1Time time="3,294,875.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="197"></NameColumnWidth>
+      <NameColumnWidth column_width="221"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="29" />
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/clock">
-      <obj_property name="ElementShortName">clock</obj_property>
-      <obj_property name="ObjectShortName">clock</obj_property>
+   <WVObjectSize size="7" />
+   <wvobject type="array" fp_name="/tb/a/fsm_unit_control">
+      <obj_property name="ElementShortName">fsm_unit_control[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_unit_control[31:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/nreset">
-      <obj_property name="ElementShortName">nreset</obj_property>
-      <obj_property name="ObjectShortName">nreset</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/valid_i">
-      <obj_property name="ElementShortName">valid_i</obj_property>
-      <obj_property name="ObjectShortName">valid_i</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/rready_i">
-      <obj_property name="ElementShortName">rready_i</obj_property>
-      <obj_property name="ObjectShortName">rready_i</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_input">
-      <obj_property name="ElementShortName">a_input[7:0]</obj_property>
-      <obj_property name="ObjectShortName">a_input[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_input">
-      <obj_property name="ElementShortName">b_input[7:0]</obj_property>
-      <obj_property name="ObjectShortName">b_input[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/rvalid_o">
-      <obj_property name="ElementShortName">rvalid_o</obj_property>
-      <obj_property name="ObjectShortName">rvalid_o</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/ready_o">
-      <obj_property name="ElementShortName">ready_o</obj_property>
-      <obj_property name="ObjectShortName">ready_o</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b">
-      <obj_property name="ElementShortName">output_produc_a_b[7:0][7:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">output_produc_a_b[7:0][7:0][7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/counter_mult">
-      <obj_property name="ElementShortName">counter_mult[4:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_mult[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/next_counter_mult">
-      <obj_property name="ElementShortName">next_counter_mult[4:0]</obj_property>
-      <obj_property name="ObjectShortName">next_counter_mult[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/counter_concat">
-      <obj_property name="ElementShortName">counter_concat[4:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_concat[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/next_counter_concat">
-      <obj_property name="ElementShortName">next_counter_concat[4:0]</obj_property>
-      <obj_property name="ObjectShortName">next_counter_concat[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/produc_a_b">
-      <obj_property name="ElementShortName">produc_a_b[7:0][7:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">produc_a_b[7:0][7:0][7:0]</obj_property>
+   <wvobject type="array" fp_name="/tb/a/fsm_unit_control_next">
+      <obj_property name="ElementShortName">fsm_unit_control_next[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_unit_control_next[31:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_vec">
       <obj_property name="ElementShortName">a_vec[7:0][7:0][0:0]</obj_property>
@@ -85,56 +36,16 @@
       <obj_property name="ElementShortName">b_vec[7:0][7:0][0:0]</obj_property>
       <obj_property name="ObjectShortName">b_vec[7:0][7:0][0:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_load">
-      <obj_property name="ElementShortName">a_load[7:0]</obj_property>
-      <obj_property name="ObjectShortName">a_load[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_load">
-      <obj_property name="ElementShortName">b_load[7:0]</obj_property>
-      <obj_property name="ObjectShortName">b_load[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/valid">
-      <obj_property name="ElementShortName">valid</obj_property>
-      <obj_property name="ObjectShortName">valid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/next_valid">
-      <obj_property name="ElementShortName">next_valid</obj_property>
-      <obj_property name="ObjectShortName">next_valid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/ena_cells">
-      <obj_property name="ElementShortName">ena_cells</obj_property>
-      <obj_property name="ObjectShortName">ena_cells</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/next_ena_cells">
-      <obj_property name="ElementShortName">next_ena_cells</obj_property>
-      <obj_property name="ObjectShortName">next_ena_cells</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/currentStateSystolicControlUnit">
       <obj_property name="ElementShortName">currentStateSystolicControlUnit[31:0]</obj_property>
       <obj_property name="ObjectShortName">currentStateSystolicControlUnit[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/nextStateSystolicControlUnit">
-      <obj_property name="ElementShortName">nextStateSystolicControlUnit[31:0]</obj_property>
-      <obj_property name="ObjectShortName">nextStateSystolicControlUnit[31:0]</obj_property>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_input">
+      <obj_property name="ElementShortName">a_input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a_input[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
-      <obj_property name="ElementShortName">y[0:0]</obj_property>
-      <obj_property name="ObjectShortName">y[0:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
-      <obj_property name="ElementShortName">y[0:0]</obj_property>
-      <obj_property name="ObjectShortName">y[0:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
-      <obj_property name="ElementShortName">y[0:0]</obj_property>
-      <obj_property name="ObjectShortName">y[0:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
-      <obj_property name="ElementShortName">y[0:0]</obj_property>
-      <obj_property name="ObjectShortName">y[0:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
-      <obj_property name="ElementShortName">y[0:0]</obj_property>
-      <obj_property name="ObjectShortName">y[0:0]</obj_property>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_input">
+      <obj_property name="ElementShortName">b_input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b_input[7:0]</obj_property>
    </wvobject>
 </wave_config>
