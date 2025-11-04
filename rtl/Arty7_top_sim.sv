@@ -47,30 +47,50 @@ logic [WIDTH-1:0] Cout_DUT[SIZE-1:0][SIZE-1:0];
 logic [3:0]cnt1,next_cnt1;
 logic valid_i;
 logic [15:0]cnt_transmi;
-logic [WIDTH-1:0]IMPUT_A[2*SIZE-1:0];
-logic [WIDTH-1:0]IMPUT_B[2*SIZE-1:0];
+logic [WIDTHx*SIZE-1:0]IMPUT_A[2*SIZE-1:0];
+logic [WIDTHx*SIZE-1:0]IMPUT_B[2*SIZE-1:0];
+/*
+initial $readmemb("../testeIMPUT_A.txt",IMPUT_A);
+initial $readmemb("../testeIMPUT_B.txt",IMPUT_B);*/
+logic [SIZE*WIDTHx-1:0] a,b;
+assign IMPUT_B[0] = 8'b11111111;
+assign IMPUT_B[1] = 8'b00000000;
+assign IMPUT_B[2] = 8'b00000000;
+assign IMPUT_B[3] = 8'b00000010;
+assign IMPUT_B[4] = 8'b00001000;
+assign IMPUT_B[5] = 8'b00010001;
+assign IMPUT_B[6] = 8'b00101100;
+assign IMPUT_B[7] = 8'b00010011;
+assign IMPUT_B[8] = 8'b01001111;
+assign IMPUT_B[9] = 8'b10111110;
+assign IMPUT_B[10] = 8'b01000000;
+assign IMPUT_B[11] = 8'b00000000;
+assign IMPUT_B[12] = 8'b01100000;
+assign IMPUT_B[13] = 8'b01000000;
+assign IMPUT_B[14] = 8'b11000000;
+assign IMPUT_B[15] = 8'b00000000;
+assign IMPUT_A[0] = 8'b11111111;
+assign IMPUT_A[1] = 8'b00000001;
+assign IMPUT_A[2] = 8'b00000000;
+assign IMPUT_A[3] = 8'b00000101;
+assign IMPUT_A[4] = 8'b00000010;
+assign IMPUT_A[5] = 8'b00000010;
+assign IMPUT_A[6] = 8'b00001011;
+assign IMPUT_A[7] = 8'b00100001;
+assign IMPUT_A[8] = 8'b10001010;
+assign IMPUT_A[9] = 8'b00111010;
+assign IMPUT_A[10] = 8'b10011100;
+assign IMPUT_A[11] = 8'b10011000;
+assign IMPUT_A[12] = 8'b00010000;
+assign IMPUT_A[13] = 8'b01100000;
+assign IMPUT_A[14] = 8'b11000000;
+assign IMPUT_A[15] = 8'b00000000;
 
-//initial $readmemb("../teste.txt",IMPUT_A);
-//initial $readmemb("../teste.txt",IMPUT_B);
 
 
-assign IMPUT_A[00] = 00000000;
-assign IMPUT_A[01] = 10000000;
-assign IMPUT_A[02] = 00000000;
-assign IMPUT_A[03] = 01100000;
-assign IMPUT_A[04] = 11010000;
-assign IMPUT_A[05] = 01111000;
-assign IMPUT_A[06] = 00101000;
-assign IMPUT_A[07] = 00101000;
-assign IMPUT_A[08] = 01001111;
-assign IMPUT_A[09] = 01011100;
-assign IMPUT_A[10] = 00010000;
-assign IMPUT_A[11] = 00010011;
-assign IMPUT_A[12] = 00001011;
-assign IMPUT_A[13] = 00000000;
-assign IMPUT_A[14] = 00000001;
-assign IMPUT_A[15] = 00000000;
-assign IMPUT_B = IMPUT_A;
+
+
+
 /*
 
 uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart1
@@ -92,14 +112,17 @@ uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRAT
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
     .clock            (clock        )                              ,
     .nreset           (nreset       )                              ,
-    .valid_i          (valid_i      )                              ,
+    .valid_i          (1      )                              ,
+    .rready_i         (1        ),
     .a_input          (a            )                              ,
     .b_input          (b            )                              ,
-    .ready_o          (             )                              ,
+    .ready_o          ( valid_i            )                              ,
+    .rvalid_o          (),
     .output_produc_a_b(Cout_DUT )
 );
+assign nreset = btn[0];
 /*
-assign nreset = !btn[0];
+
 assign next_cnt1 =  cnt1 +1;
 always_ff@(posedge ready_env_uart_rx, negedge nreset)begin
     if(!nreset)begin 
@@ -120,28 +143,26 @@ always_ff@(posedge ready_env_uart_rx, negedge nreset)begin
               end
     end 
 end*/
-always_ff@(posedge clock)begin
-    if(1)begin
-        valid_i <= 1;
-        cnt_transmi <=1;
-    end else begin
-        valid_i <= 0;
-    end
+always_ff@(posedge clock, negedge nreset)begin
 
-    if(valid_i)begin
-        cnt_transmi <= cnt_transmi +1;
-        if(cnt_transmi < 2*(SIZE-1))begin
-            a <= IMPUT_A[cnt_transmi];
-            b <= IMPUT_B[cnt_transmi];
-        end else begin 
-            a <= 0;
-            b <= 0;
-        end
-    end else begin
+    if(!nreset)begin
         a <= 0;
         b <= 0;
+        cnt_transmi <=1;
+    end else begin
+        if(!valid_i)begin
+            cnt_transmi <= cnt_transmi +1;
+            if(cnt_transmi < 2*(SIZE))begin
+                a <= IMPUT_A[cnt_transmi];
+                b <= IMPUT_B[cnt_transmi];
+            end
+            end else begin 
+        a <= 0;
+        b <= 0;
+            end
+        end
     end
-end
+
 
 /*
 
