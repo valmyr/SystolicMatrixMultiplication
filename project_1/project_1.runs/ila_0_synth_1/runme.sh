@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xmen/Desktop/compara/analise/project_1/project_1.runs/ila_0_synth_1'
+HD_PWD='/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.runs/ila_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
