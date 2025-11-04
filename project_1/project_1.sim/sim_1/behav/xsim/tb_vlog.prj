@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-sv xil_defaultlib  --include "../../../../../../../../amd/2025.1/data/rsb/busdef" \
+sv xil_defaultlib  --include "../../../../../../../../../amd/2025.1/data/rsb/busdef" \
 "../../../../../rtl/Arty7_top_sim.sv" \
 "../../../../../rtl/accumulator.sv" \
 "../../../../../rtl/systolicMatrixMultiply.sv" \

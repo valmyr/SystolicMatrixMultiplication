@@ -15,8 +15,10 @@ module systolicMatrixMultiply#(
     input  logic                    clock                                  ,
     input  logic                    nreset                                 ,
     input  logic                    valid_i                                ,
+    input  logic                    rready_i                               ,                                                 
     input  logic [WIDTHx*SIZE-1:0]  a_input                         	   ,
     input  logic [WIDTHx*SIZE-1:0]  b_input                         	   ,
+    output logic                    rvalid_o                               ,
     output logic                    ready_o                                ,
     output logic [WIDTH-1:0]        output_produc_a_b [SIZE-1:0][SIZE-1:0]
 );
@@ -25,13 +27,13 @@ module systolicMatrixMultiply#(
 logic [$clog2(2*SIZE) :0]       counter_mult    , next_counter_mult             ;
 logic [$clog2(2*SIZE) :0]       counter_concat  , next_counter_concat           ;
 logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
-logic [WIDTHx-1:0]                      a_vec           [SIZE:0][SIZE:0]                ;
-logic [WIDTHx-1:0]                      b_vec           [SIZE:0][SIZE:0]                ;
+logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]                ;
+logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]                ;
 logic [SIZE*WIDTHx-1:0]                 a_load                                          ;
 logic [SIZE*WIDTHx-1:0]                 b_load                                          ;
 logic                                   valid, next_valid, ena_cells, next_ena_cells    ;
 
-enum {IDLE, LOAD_MULTI_MATRIX ,MULTI_MATRIX, READY} currentStateSystolicControlUnit, nextStateSystolicControlUnit;
+enum {IDLE, LOAD_MULTI_MATRIX ,MULTI_MATRIX, DONE} currentStateSystolicControlUnit, nextStateSystolicControlUnit;
 generate 
     genvar i,j;
         for(i =0; i < SIZE;i++)begin:CELULA_ROWS
@@ -41,7 +43,6 @@ generate
                 accumulator_cells #(.WIDTH(WIDTH),.WIDTHx(WIDTHx)) MAC(    
                     .clock    (     clock                                              ),
                     .nreset   (     nreset                                             ),
-                    .valid    (     valid                                              ),
                     .ena      (     ena_cells                                          ),
                     .a        (     a_vec[i][j]                                        ),
                     .b        (     b_vec[j][i]                                        ),
@@ -68,39 +69,48 @@ always_ff@(posedge clock, negedge nreset)begin
     end else begin
         counter_concat                   <= next_counter_concat;
         output_produc_a_b               <= ready_o ? produc_a_b : output_produc_a_b                             ;
-        valid                           <= next_valid                                                           ;
+        valid                           <= valid_i                                                           ;
         currentStateSystolicControlUnit <= nextStateSystolicControlUnit                                         ;
         counter_mult                    <= next_counter_mult                                                    ; 
         ena_cells                       <= next_ena_cells                                                       ;
-        a_load                          <=  a_input      ;
-        b_load                          <=  b_input      ;
+        a_load                          <=  currentStateSystolicControlUnit == LOAD_MULTI_MATRIX ? a_input: 0      ;
+        b_load                          <=  currentStateSystolicControlUnit == LOAD_MULTI_MATRIX ? b_input: 0      ;
     end
 end
 always_comb begin
     case(currentStateSystolicControlUnit)
         IDLE:begin
-            nextStateSystolicControlUnit = valid ? LOAD_MULTI_MATRIX : IDLE                                     ;
+            ready_o                      = 1;
+            rvalid_o                     = 0;
+            nextStateSystolicControlUnit = valid_i ? LOAD_MULTI_MATRIX : IDLE                                     ;
             next_counter_mult            = 0                                                                    ;
             next_ena_cells               = 0                                                                    ;
             next_counter_concat          = 0;
         end
        LOAD_MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_concat < SIZE+1) ? LOAD_MULTI_MATRIX :MULTI_MATRIX         ;
+            ready_o                      = 0;
+            rvalid_o                     = 0;
+            nextStateSystolicControlUnit = (counter_concat < 2*SIZE-1) ? LOAD_MULTI_MATRIX :MULTI_MATRIX         ;
             next_counter_concat          = counter_concat  +    1                                              ;                  
             next_counter_mult            = 0                                                                   ;
             next_ena_cells               = 1                                                                   ;                                                                 
         end
         MULTI_MATRIX:begin
-            nextStateSystolicControlUnit = (counter_mult < 2*SIZE) ? MULTI_MATRIX : READY                      ;
+            ready_o                      = 0;
+            rvalid_o                     = 0;
+            nextStateSystolicControlUnit = (counter_mult < SIZE-1) ? MULTI_MATRIX : DONE                      ;
             next_counter_concat          = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
-            next_ena_cells               = (counter_mult < 2*SIZE) ? 1:0                                       ;
+            next_ena_cells               = (counter_mult < SIZE-1) ? 1:0                                       ;
+            
         end
-        READY:begin
-            nextStateSystolicControlUnit =   IDLE                                                              ;
+        DONE:begin
+            ready_o  = 0;
+            rvalid_o = 1;
+            nextStateSystolicControlUnit = rready_i ?  IDLE:DONE                                               ;
             next_counter_mult            = 0                                                                   ;
             next_counter_concat          = 0                                                                   ;                  
-            next_ena_cells               = 0                                                               ;
+            next_ena_cells               = 0                                                                   ;
         end
         
     endcase

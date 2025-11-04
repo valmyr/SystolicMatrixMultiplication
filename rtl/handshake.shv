@@ -1,0 +1,38 @@
+module handshake(
+
+    input logic valid_i, //Dado válido na entrada
+    input logic rready_i, //Pronto para receber resposta
+    output logic rvalid_o,//Resposta válida(Operação concluida)
+    output logic ready_o //Psronto para receber um dado valido na entrada
+);
+
+     enum logic {IDLE,WORKING,TRANSFER} current_fsm, next_fsm;
+
+
+    always_comb case(current_fsm)
+        IDLE:begin
+            ready_o = 1;
+            rvalid_o = 0;
+            if(valid_i) begin
+            // REGISTRADORES INTERNOS < DADOS
+                next_fsm = WORKING;
+            end else begin
+                next_fsm = IDLE;
+            end
+        end
+        WORKING:begin
+            ready_o  = 0;
+            rvalid_o = 0;
+            next_fsm = TRANSFER;
+        end
+        TRANSFER: begin
+            ready_o  = 0;
+            rvalid_o = 1;
+            if (rready_i) begin
+                next_fsm = IDLE;
+            end
+        end
+
+    endcase
+
+endmodule
