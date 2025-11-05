@@ -23,7 +23,7 @@ module accumulator_cells#(
     output logic [WIDTHx-1:0] y       ,
     output logic [WIDTH-1:0] z       
 );
-    logic [WIDTH-1:0] accumulator, product, sum_product;
+    logic [2*WIDTH-1:0] accumulator, product, sum_product;
     assign product      = ena ? (a * b) : 0                   ;
     assign sum_product  = ena ? (product + accumulator) : 0   ;
     always_ff@(negedge nreset, posedge clock)begin

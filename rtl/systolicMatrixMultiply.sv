@@ -88,7 +88,7 @@ always_comb begin
        LOAD_MULTI_MATRIX:begin
             ready_o                      = 0;
             rvalid_o                     = 0;
-            nextStateSystolicControlUnit = (counter_transfer_m < 2*SIZE-1) ? LOAD_MULTI_MATRIX :MULTI_MATRIX    ;
+            nextStateSystolicControlUnit = (counter_transfer_m < 2*SIZE) ? LOAD_MULTI_MATRIX :MULTI_MATRIX    ;
             next_counter_transfer_m      = counter_transfer_m  +    1                                           ;                  
             next_counter_mult            = 0                                                                    ;
             next_ena_mac                 = 1                                                                    ;                                                                 
@@ -96,10 +96,10 @@ always_comb begin
         MULTI_MATRIX:begin
             ready_o                      = 0                                                                   ;
             rvalid_o                     = 0                                                                   ;
-            nextStateSystolicControlUnit = (counter_mult < SIZE-1) ? MULTI_MATRIX : DONE                       ;
+            nextStateSystolicControlUnit = (counter_mult < SIZE) ? MULTI_MATRIX : DONE                       ;
             next_counter_transfer_m      = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
-            next_ena_mac                 = (counter_mult < SIZE-1) ? 1:0                                       ;
+            next_ena_mac                 = (counter_mult < SIZE) ? 1:0                                       ;
             
         end
         DONE:begin
