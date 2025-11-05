@@ -217,5 +217,12 @@ $$Calcule: M^2 $$
 <img title="Entrada da Rede" alt="Alt text" src="images/testeMatrix5x5.png" width="90%" height="90%">
 </p>
 
+
+## DIAGRAMA PC-FPGA_2_FPGA-PC
+
+<p align="center">
+<img title="Entrada da Rede" alt="Alt text" src="images/DIAGRAM_PC_FPGA2FPGA_PC.png" width="90%" height="90%">
+</p>
+
 ## Referências
 [Systolic-Array Implementation of Matrix-By-Matrix Multiplication](https://ecelabs.njit.edu/ece459/lab3.php).

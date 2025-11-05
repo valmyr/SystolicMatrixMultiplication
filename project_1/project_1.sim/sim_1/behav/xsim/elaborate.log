@@ -1,12 +1,11 @@
 Vivado Simulator v2025.1.0
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/xmen/amd/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Running: /home/xmen/amd/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-2861] module 'uart_top' does not have a parameter named BYTESIZS [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:22]
-WARNING: [VRFC 10-2861] module 'uart_top' does not have a parameter named BYTESIZS [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:171]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:27]
 WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'data_rx_out' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:29]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'sw' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:98]
@@ -32,8 +31,8 @@ Compiling module xil_defaultlib.accumulator_cells(WIDTH=8,WIDTHx...
 Compiling module xil_defaultlib.systolicMatrixMultiply(WIDTH=8,S...
 Compiling module xil_defaultlib.mem
 Compiling module xil_defaultlib.mem2seriala
-Compiling module xil_defaultlib.counter(MOD=10000)
-Compiling module xil_defaultlib.ref_clock(CLOCK_REF=5000,CLOCK_I...
+Compiling module xil_defaultlib.counter(MOD=5000)
+Compiling module xil_defaultlib.ref_clock(CLOCK_REF=10000,CLOCK_...
 Compiling module xil_defaultlib.Arty7_top_sim
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl

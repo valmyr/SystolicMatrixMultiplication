@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-2L" LaunchTime="1762264653" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Arty7_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-2L" LaunchTime="1762313049" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Arty7_top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="Arty7_top_sim_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Arty7_top_sim.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="Arty7_top_sim_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="Arty7_top_sim_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="Arty7_top_sim_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="Arty7_top_sim.vds"/>
   <File Type="REPORTS-TCL" Name="Arty7_top_sim_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="Arty7_top_sim_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="Arty7_top_sim.tcl"/>
-  <File Type="RDS-UTIL" Name="Arty7_top_sim_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Arty7_top_sim_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../rtl/accumulator.sv">
@@ -23,6 +26,20 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../rtl/uart/rtl/counter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/mem.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/mem2serial.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -117,5 +134,4 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
 </GenRun>
