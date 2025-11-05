@@ -23,8 +23,8 @@ module mem#(
                 mem[i_rst] <= '{default:0};
         end else begin
             cnt <= next_cnt;
-            if(rw) out_data <= mem[cnt];
-            else   mem[cnt] <= in_data;
+            if(rw) out_data <= mem_fsm == READ ? mem[cnt]: 0;
+            else   mem[cnt] <= mem_fsm == WRITE ? in_data: mem[cnt] ;
             mem_fsm <= next_mem_fsm;
         end
     end
@@ -44,13 +44,13 @@ module mem#(
             ready_o        = 0;
             rvalid_o       = 0;
             next_cnt       = cnt + 1;
-            next_mem_fsm   = next_cnt ? WRITE: DONE; 
+            next_mem_fsm   = cnt!=15 ? WRITE: DONE; 
         end
         READ:begin
             ready_o        = 0;
-            rvalid_o       = 0;
+            rvalid_o       = cnt!=15 ? 0 : 1;
             next_cnt       = cnt + 1;
-            next_mem_fsm   = next_cnt ? READ: DONE; 
+            next_mem_fsm   = cnt!=15 ? READ: DONE; 
         end
         DONE:begin  
             ready_o        = 0;
