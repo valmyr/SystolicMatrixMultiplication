@@ -11,41 +11,109 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="3,294,804.500 ns"></ZoomStartTime>
-      <ZoomEndTime time="3,295,160.501 ns"></ZoomEndTime>
-      <Cursor1Time time="3,294,875.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="20.300002001 ms"></ZoomEndTime>
+      <Cursor1Time time="3.392045000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="221"></NameColumnWidth>
+      <NameColumnWidth column_width="95"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject type="array" fp_name="/tb/a/fsm_unit_control">
-      <obj_property name="ElementShortName">fsm_unit_control[31:0]</obj_property>
-      <obj_property name="ObjectShortName">fsm_unit_control[31:0]</obj_property>
+   <WVObjectSize size="24" />
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/fsm_unit_control_next">
-      <obj_property name="ElementShortName">fsm_unit_control_next[31:0]</obj_property>
-      <obj_property name="ObjectShortName">fsm_unit_control_next[31:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/nreset">
+      <obj_property name="ElementShortName">nreset</obj_property>
+      <obj_property name="ObjectShortName">nreset</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_vec">
-      <obj_property name="ElementShortName">a_vec[7:0][7:0][0:0]</obj_property>
-      <obj_property name="ObjectShortName">a_vec[7:0][7:0][0:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/sdata_rx_in">
+      <obj_property name="ElementShortName">sdata_rx_in</obj_property>
+      <obj_property name="ObjectShortName">sdata_rx_in</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_vec">
-      <obj_property name="ElementShortName">b_vec[7:0][7:0][0:0]</obj_property>
-      <obj_property name="ObjectShortName">b_vec[7:0][7:0][0:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/valid_rx_in">
+      <obj_property name="ElementShortName">valid_rx_in</obj_property>
+      <obj_property name="ObjectShortName">valid_rx_in</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/currentStateSystolicControlUnit">
-      <obj_property name="ElementShortName">currentStateSystolicControlUnit[31:0]</obj_property>
-      <obj_property name="ObjectShortName">currentStateSystolicControlUnit[31:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/ready_rx_out">
+      <obj_property name="ElementShortName">ready_rx_out</obj_property>
+      <obj_property name="ObjectShortName">ready_rx_out</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_input">
-      <obj_property name="ElementShortName">a_input[7:0]</obj_property>
-      <obj_property name="ObjectShortName">a_input[7:0]</obj_property>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/data_rx_out">
+      <obj_property name="ElementShortName">data_rx_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_rx_out[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_input">
-      <obj_property name="ElementShortName">b_input[7:0]</obj_property>
-      <obj_property name="ObjectShortName">b_input[7:0]</obj_property>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/next_fsm">
+      <obj_property name="ElementShortName">next_fsm[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next_fsm[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/current_fsm">
+      <obj_property name="ElementShortName">current_fsm[1:0]</obj_property>
+      <obj_property name="ObjectShortName">current_fsm[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/px_bit">
+      <obj_property name="ElementShortName">px_bit[7:0]</obj_property>
+      <obj_property name="ObjectShortName">px_bit[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/next_px_bit">
+      <obj_property name="ElementShortName">next_px_bit[7:0]</obj_property>
+      <obj_property name="ObjectShortName">next_px_bit[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/pdata_rx_out">
+      <obj_property name="ElementShortName">pdata_rx_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pdata_rx_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/next_pdata_rx_out">
+      <obj_property name="ElementShortName">next_pdata_rx_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">next_pdata_rx_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/ena">
+      <obj_property name="ElementShortName">ena</obj_property>
+      <obj_property name="ObjectShortName">ena</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/ena_next">
+      <obj_property name="ElementShortName">ena_next</obj_property>
+      <obj_property name="ObjectShortName">ena_next</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/valid_rx_in_in">
+      <obj_property name="ElementShortName">valid_rx_in_in</obj_property>
+      <obj_property name="ObjectShortName">valid_rx_in_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/tmp_sdata_rx_in">
+      <obj_property name="ElementShortName">tmp_sdata_rx_in</obj_property>
+      <obj_property name="ObjectShortName">tmp_sdata_rx_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/clock_out">
+      <obj_property name="ElementShortName">clock_out</obj_property>
+      <obj_property name="ObjectShortName">clock_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/sample_center_bit">
+      <obj_property name="ElementShortName">sample_center_bit</obj_property>
+      <obj_property name="ObjectShortName">sample_center_bit</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/bit_start">
+      <obj_property name="ElementShortName">bit_start</obj_property>
+      <obj_property name="ObjectShortName">bit_start</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/BYTESIZES">
+      <obj_property name="ElementShortName">BYTESIZES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BYTESIZES[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/OVERSAMPLING">
+      <obj_property name="ElementShortName">OVERSAMPLING[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OVERSAMPLING[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/BAUDRATE">
+      <obj_property name="ElementShortName">BAUDRATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BAUDRATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/COUNTER_CLOCK_INPUT">
+      <obj_property name="ElementShortName">COUNTER_CLOCK_INPUT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNTER_CLOCK_INPUT[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_receiver/CLOCK_REF">
+      <obj_property name="ElementShortName">CLOCK_REF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_REF[31:0]</obj_property>
    </wvobject>
 </wave_config>

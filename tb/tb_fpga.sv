@@ -2,8 +2,8 @@
 module tb;    
     logic clock   , nreset;
 
-  logic [7:0]INPUT_A [15:0];
-  logic [3:0]cnt ;
+  logic [7:0]INPUT_A [32:0];
+  logic [5:0]cnt ;
   parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
   //--------------------------------------------------------------------------------------------------
   //Pinout UART
@@ -24,31 +24,55 @@ module tb;
     .nreset            (uart_nreset      )    ,
     //pinout RX                                 
     .sdata_rx_in       (uart_sdata_rx_in )    ,
-    .valid_rx_in       (0                )    ,
+    .valid_rx_in       (1                )    ,
     .ready_rx_out      (                 )    ,
-    .data_rx_out       (                 )    ,  
+    .data_rx_out       ( uart_data_rx_out)    ,  
     //pinout TX                                                  
     .valid_tx_in       (1'b1 )    ,
     .data_tx_in        (uart_data_tx_in  )    ,
     .ready_tx_out      (uart_ready_tx_out)    ,
     .sdata_tx_out      (uart_sdata_tx_out)
 );
-  assign INPUT_A[00] = 8'b11111111;//NÂO IMPORTA
-  assign INPUT_A[01] = 8'b00000001;
-  assign INPUT_A[02] = 8'b00000010;
-  assign INPUT_A[03] = 8'b00000011;
-  assign INPUT_A[04] = 8'b00000110;
-  assign INPUT_A[05] = 8'b00001011;
-  assign INPUT_A[06] = 8'b00111110;
-  assign INPUT_A[07] = 8'b01101100;
-  assign INPUT_A[08] = 8'b11010010;
-  assign INPUT_A[09] = 8'b01011010;
-  assign INPUT_A[10] = 8'b11101000;
-  assign INPUT_A[11] = 8'b11111000;
-  assign INPUT_A[12] = 8'b00110000;
-  assign INPUT_A[13] = 8'b11100000;
-  assign INPUT_A[14] = 8'b11000000;
-  assign INPUT_A[15] = 8'b00010000;
+  assign INPUT_A[00] = 8'b00000001;
+  assign INPUT_A[01] = 8'b00000010;
+  assign INPUT_A[02] = 8'b00000011;
+  assign INPUT_A[03] = 8'b00000110;
+  assign INPUT_A[04] = 8'b00001011;
+  assign INPUT_A[05] = 8'b00111110;
+  assign INPUT_A[06] = 8'b01101100;
+  assign INPUT_A[07] = 8'b11010010;
+  assign INPUT_A[08] = 8'b01011010;
+  assign INPUT_A[09] = 8'b11101000;
+  assign INPUT_A[10] = 8'b11111000;
+  assign INPUT_A[11] = 8'b00110000;
+  assign INPUT_A[12] = 8'b11100000;
+  assign INPUT_A[13] = 8'b11000000;
+  assign INPUT_A[14] = 8'b00000000;
+
+  assign INPUT_A[15] = 8'b10101010;
+  assign INPUT_A[16] = 8'b00000000;
+
+  assign INPUT_A[17] = 8'b00000001;
+  assign INPUT_A[18] = 8'b00000010;
+  assign INPUT_A[19] = 8'b00000001;
+  assign INPUT_A[20] = 8'b00000000;
+  assign INPUT_A[21] = 8'b00000000;
+  assign INPUT_A[22] = 8'b00010111;
+  assign INPUT_A[23] = 8'b00010110;
+  assign INPUT_A[24] = 8'b00001110;
+  assign INPUT_A[25] = 8'b11110110;
+  assign INPUT_A[26] = 8'b11001100;
+  assign INPUT_A[27] = 8'b10100000;
+  assign INPUT_A[28] = 8'b00100000;
+  assign INPUT_A[29] = 8'b11000000;
+  assign INPUT_A[30] = 8'b00000000;
+  assign INPUT_A[31] = 8'b00000000;
+
+  assign INPUT_A[32] = 8'b00000000;
+  assign INPUT_A[33] = 8'b00000000;
+
+
+
   assign uart_clock = clock;
   assign uart_nreset = nreset;
   initial begin
@@ -56,8 +80,7 @@ module tb;
     nreset = 1;
     #1 nreset =0;
     #1 nreset = 1;
-    uart_data_tx_in =255;
-
+    #(20_300_000)$finish;
   end
   assign uart_data_tx_in = INPUT_A[cnt];
   always #(5)clock=~clock;
@@ -75,7 +98,7 @@ module tb;
     .sw          (0)                  ,
     .btn         ({3'b000,!nreset} )   ,
     .uart_txd_in (uart_sdata_tx_out)   ,
-    .uart_rxd_out()  ,
+    .uart_rxd_out(uart_sdata_rx_in)  ,
     .led         ()        ,
     .led0RGB     ()        ,
     .led1RGB     ()        ,
