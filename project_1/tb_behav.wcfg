@@ -11,15 +11,89 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
-      <ZoomEndTime time="20.300002001 ms"></ZoomEndTime>
-      <Cursor1Time time="3.392045000 ms"></Cursor1Time>
+      <ZoomStartTime time="0.540545000 ms"></ZoomStartTime>
+      <ZoomEndTime time="6.020545001 ms"></ZoomEndTime>
+      <Cursor1Time time="3.390545000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="95"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="317"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="43" />
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/nreset">
+      <obj_property name="ElementShortName">nreset</obj_property>
+      <obj_property name="ObjectShortName">nreset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/valid_tx_in">
+      <obj_property name="ElementShortName">valid_tx_in</obj_property>
+      <obj_property name="ObjectShortName">valid_tx_in</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/data_tx_in">
+      <obj_property name="ElementShortName">data_tx_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_tx_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/sdata_tx_out">
+      <obj_property name="ElementShortName">sdata_tx_out</obj_property>
+      <obj_property name="ObjectShortName">sdata_tx_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/ready_tx_out">
+      <obj_property name="ElementShortName">ready_tx_out</obj_property>
+      <obj_property name="ObjectShortName">ready_tx_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/clock_out">
+      <obj_property name="ElementShortName">clock_out</obj_property>
+      <obj_property name="ObjectShortName">clock_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/bit_start">
+      <obj_property name="ElementShortName">bit_start</obj_property>
+      <obj_property name="ObjectShortName">bit_start</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/px_bit">
+      <obj_property name="ElementShortName">px_bit[7:0]</obj_property>
+      <obj_property name="ObjectShortName">px_bit[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/pframe_data">
+      <obj_property name="ElementShortName">pframe_data[10:0]</obj_property>
+      <obj_property name="ObjectShortName">pframe_data[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/next_fsm">
+      <obj_property name="ElementShortName">next_fsm[2:0]</obj_property>
+      <obj_property name="ObjectShortName">next_fsm[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/current_fsm">
+      <obj_property name="ElementShortName">current_fsm[2:0]</obj_property>
+      <obj_property name="ObjectShortName">current_fsm[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/uart1/uart_transmitter/sample_center_bit">
+      <obj_property name="ElementShortName">sample_center_bit</obj_property>
+      <obj_property name="ObjectShortName">sample_center_bit</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/BYTESIZES">
+      <obj_property name="ElementShortName">BYTESIZES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BYTESIZES[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/OVERSAMPLING">
+      <obj_property name="ElementShortName">OVERSAMPLING[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OVERSAMPLING[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/BAUDRATE">
+      <obj_property name="ElementShortName">BAUDRATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BAUDRATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/COUNTER_CLOCK_INPUT">
+      <obj_property name="ElementShortName">COUNTER_CLOCK_INPUT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNTER_CLOCK_INPUT[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uart1/uart_transmitter/CLOCK_REF">
+      <obj_property name="ElementShortName">CLOCK_REF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_REF[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider146" type="divider">
+   </wvobject>
    <wvobject type="logic" fp_name="/tb/uart1/uart_receiver/clock">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>

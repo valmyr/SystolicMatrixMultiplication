@@ -35,7 +35,7 @@ module Arty7_top_sim(
 parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
 parameter WIDTHx =1,SIZE = 8, WIDTH = 8;
 
-parameter CLOCK_TRANFER_PC= 5_000;
+parameter CLOCK_TRANFER_PC= 10_000;
 
 logic nreset;
 logic [31:0] counter;
@@ -168,7 +168,7 @@ assign syst_a_input = (syst_valid_i & mem_opa_rw) ? mem_opa_out_data :0;
 assign syst_b_input = (syst_valid_i & mem_opb_rw) ? mem_opb_out_data :0;
 assign mem2serial_pmatrix_in = syst_output_produc_a_b;
 //---------------------------------------------------------------------------------------------------------------------------------
-uart_top #(.BYTESIZS(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart1 (
+uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart1 (
     .clock             (uart_clock       )    ,
     .nreset            (uart_nreset      )    ,
     //pinout RX                                 

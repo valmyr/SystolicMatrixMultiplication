@@ -99,6 +99,7 @@ OPTRACE "impl_1" END { }
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config  -id {USF-XSim-62}  -string {{ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.sim/sim_1/behav/xsim/xvlog.log' file for more information.}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -108,8 +109,6 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 8
   set_param general.usePosixSpawnForFork 1
-  set_param tcl.collectionResultDisplayLimit 0
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 32  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-2L
@@ -121,11 +120,9 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.xpr [current_project]
   set_property ip_output_repo /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.runs/synth_1/Arty7_top_sim.dcp
-  read_ip -quiet /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/sources_1/ip/ila_0_1/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/constrs_1/imports/XilinxDesignConstraint/Arty-A7-100-Master.xdc
 OPTRACE "read constraints: implementation" END { }
@@ -285,35 +282,4 @@ OPTRACE "route_design write_checkpoint" END { }
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
-OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
-OPTRACE "write_bitstream setup" START { }
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-OPTRACE "read constraints: write_bitstream" START { }
-OPTRACE "read constraints: write_bitstream" END { }
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force -no_partial_mmi Arty7_top_sim.mmi }
-OPTRACE "write_bitstream setup" END { }
-OPTRACE "write_bitstream" START { }
-  write_bitstream -force Arty7_top_sim.bit 
-OPTRACE "write_bitstream" END { }
-OPTRACE "write_bitstream misc" START { }
-OPTRACE "read constraints: write_bitstream_post" START { }
-OPTRACE "read constraints: write_bitstream_post" END { }
-  catch {write_debug_probes -quiet -force Arty7_top_sim}
-  catch {file copy -force Arty7_top_sim.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "write_bitstream misc" END { }
-OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "impl_1" END { }
