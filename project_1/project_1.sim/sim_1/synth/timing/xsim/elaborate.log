@@ -1,0 +1,25 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/xmen/amd/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L uvm -L simprims_ver -L secureip --snapshot Arty7_top_sim_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.Arty7_top_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-2861] module 'systolicMatrixMultiply' does not have a parameter named WIDTH [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:156]
+ERROR: [VRFC 10-3180] cannot find port 'output_produc_a_b' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:165]
+ERROR: [VRFC 10-3180] cannot find port 'rvalid_o' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:164]
+ERROR: [VRFC 10-3180] cannot find port 'ready_o' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:163]
+ERROR: [VRFC 10-3180] cannot find port 'b_input' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:162]
+ERROR: [VRFC 10-3180] cannot find port 'a_input' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:161]
+ERROR: [VRFC 10-3180] cannot find port 'rready_i' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:160]
+ERROR: [VRFC 10-3180] cannot find port 'valid_i' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:159]
+ERROR: [VRFC 10-3180] cannot find port 'nreset' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:158]
+ERROR: [VRFC 10-3180] cannot find port 'clock' on this module [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:157]
+ERROR: [VRFC 10-8530] module 'ref_clock(CLOCK_REF=10000,CLOCK_INPUT=100000000)' is ignored due to previous errors [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+ERROR: [VRFC 10-8530] module 'serial2mem(WIDTH=4,SIZE=8)' is ignored due to previous errors [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:1]
+ERROR: [VRFC 10-8530] module 'uart_rx(COUNTER_CLOCK_INPUT=100000000,CLOCK_REF=10000000)' is ignored due to previous errors [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv:13]
+ERROR: [VRFC 10-8530] module 'counter(MOD=5000)' is ignored due to previous errors [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+ERROR: [VRFC 10-8530] module 'uart_tx(COUNTER_CLOCK_INPUT=100000000,CLOCK_REF=10000000)' is ignored due to previous errors [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:14]
+ERROR: [VRFC 10-8530] module 'baudRateGenerator(BAUDRATE=115200,OVERSAMPLING=16,CLOCK_INPUT=100000000,CLOCK_REF=10000000)' is ignored due to previous errors [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+ERROR: [VRFC 10-8530] module 'FDCE_default' is ignored due to previous errors [/proj/xbuilds/SWIP/2025.1_0521_0003/installs/lin64/2025.1/data/verilog/src/unisims/FDCE.v:28]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

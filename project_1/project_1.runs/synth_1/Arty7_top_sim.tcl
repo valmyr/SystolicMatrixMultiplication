@@ -56,10 +56,14 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 8
 set_param general.usePosixSpawnForFork 1
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-1268759-VT0144/incrSyn
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {USF-XSim-62}  -string {{ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.sim/sim_1/behav/xsim/xvlog.log' file for more information.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-2L
@@ -79,9 +83,9 @@ read_verilog -library xil_defaultlib -sv {
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/accumulator.sv
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem.sv
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv
+  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv
   /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_top.sv
