@@ -26,14 +26,10 @@ module systolicMatrixMultiply#(
 
 logic [$clog2(2*SIZE) :0]       counter_mult        , next_counter_mult                 ;
 logic [$clog2(2*SIZE) :0]       counter_transfer_m  , next_counter_transfer_m           ;
-logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]                ;
-logic [WIDTHx-1:0]                      a_vec           [SIZE:0][SIZE:0]                ;
-logic [WIDTHx-1:0]                      b_vec           [SIZE:0][SIZE:0]                ;
-=======
 logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
 logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]            ;
 logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]            ;
->>>>>>> refs/remotes/origin/fpga
+
 logic [SIZE*WIDTHx-1:0]                 a_load                                          ;
 logic [SIZE*WIDTHx-1:0]                 b_load                                          ;
 logic                                   ena_mac, next_ena_mac                           ;

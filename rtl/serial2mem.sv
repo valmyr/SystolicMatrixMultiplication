@@ -37,7 +37,7 @@ ram_single_port #(.WIDTH(WIDTH*SIZE),.SIZE(2*(SIZE)-1))mem(
     .dout  (single_port_ram_dout    )                        
 );*/
 
-ram mem (
+ram_single_port mem (
    .clka     (single_port_ram_clock     ),              // input wire clka
    .rsta     (~single_port_ram_nreset   ),              // input wire rsta
    .ena      (single_port_ram_en        ),              // input wire ena
