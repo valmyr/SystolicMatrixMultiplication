@@ -10,7 +10,7 @@
 //============================================================
 
 module systolicMatrixMultiply#(
-    parameter WIDTH = 4 , SIZE=2, WIDTHx = 8
+    parameter WIDTH = 8 , SIZE=64, WIDTHx = 4
 )(
     input  logic                    clock                                  ,
     input  logic                    nreset                                 ,

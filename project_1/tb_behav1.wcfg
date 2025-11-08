@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="106.401 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="234"></NameColumnWidth>
+      <ValueColumnWidth column_width="235"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="81" />
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/nreset">
+      <obj_property name="ElementShortName">nreset</obj_property>
+      <obj_property name="ObjectShortName">nreset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/valid_i">
+      <obj_property name="ElementShortName">valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/rready_i">
+      <obj_property name="ElementShortName">rready_i</obj_property>
+      <obj_property name="ObjectShortName">rready_i</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_input">
+      <obj_property name="ElementShortName">a_input[63:0]</obj_property>
+      <obj_property name="ObjectShortName">a_input[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_input">
+      <obj_property name="ElementShortName">b_input[63:0]</obj_property>
+      <obj_property name="ObjectShortName">b_input[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_load">
+      <obj_property name="ElementShortName">a_load[63:0]</obj_property>
+      <obj_property name="ObjectShortName">a_load[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_load">
+      <obj_property name="ElementShortName">b_load[63:0]</obj_property>
+      <obj_property name="ObjectShortName">b_load[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/ena_mac">
+      <obj_property name="ElementShortName">ena_mac</obj_property>
+      <obj_property name="ObjectShortName">ena_mac</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/currentStateSystolicControlUnit">
+      <obj_property name="ElementShortName">currentStateSystolicControlUnit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">currentStateSystolicControlUnit[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/rvalid_o">
+      <obj_property name="ElementShortName">rvalid_o</obj_property>
+      <obj_property name="ObjectShortName">rvalid_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/ready_o">
+      <obj_property name="ElementShortName">ready_o</obj_property>
+      <obj_property name="ObjectShortName">ready_o</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b">
+      <obj_property name="ElementShortName">output_produc_a_b[15:0][15:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">output_produc_a_b[15:0][15:0][15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[15]">
+         <obj_property name="ElementShortName">[15][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[14]">
+         <obj_property name="ElementShortName">[14][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[13]">
+         <obj_property name="ElementShortName">[13][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[12]">
+         <obj_property name="ElementShortName">[12][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[11]">
+         <obj_property name="ElementShortName">[11][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[10]">
+         <obj_property name="ElementShortName">[10][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[9]">
+         <obj_property name="ElementShortName">[9][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[8]">
+         <obj_property name="ElementShortName">[8][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[7]">
+         <obj_property name="ElementShortName">[7][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[6]">
+         <obj_property name="ElementShortName">[6][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[5]">
+         <obj_property name="ElementShortName">[5][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[4]">
+         <obj_property name="ElementShortName">[4][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[3]">
+         <obj_property name="ElementShortName">[3][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[2]">
+         <obj_property name="ElementShortName">[2][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[1]">
+         <obj_property name="ElementShortName">[1][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/output_produc_a_b[0]">
+         <obj_property name="ElementShortName">[0][15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][15:0][15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/counter_mult">
+      <obj_property name="ElementShortName">counter_mult[5:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_mult[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/next_counter_mult">
+      <obj_property name="ElementShortName">next_counter_mult[5:0]</obj_property>
+      <obj_property name="ObjectShortName">next_counter_mult[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/counter_transfer_m">
+      <obj_property name="ElementShortName">counter_transfer_m[5:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_transfer_m[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/next_counter_transfer_m">
+      <obj_property name="ElementShortName">next_counter_transfer_m[5:0]</obj_property>
+      <obj_property name="ObjectShortName">next_counter_transfer_m[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/produc_a_b">
+      <obj_property name="ElementShortName">produc_a_b[15:0][15:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">produc_a_b[15:0][15:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/a_vec">
+      <obj_property name="ElementShortName">a_vec[15:0][15:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">a_vec[15:0][15:0][3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/b_vec">
+      <obj_property name="ElementShortName">b_vec[15:0][15:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">b_vec[15:0][15:0][3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/DUT_MatrixMultiplyM0/next_ena_mac">
+      <obj_property name="ElementShortName">next_ena_mac</obj_property>
+      <obj_property name="ObjectShortName">next_ena_mac</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/nextStateSystolicControlUnit">
+      <obj_property name="ElementShortName">nextStateSystolicControlUnit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">nextStateSystolicControlUnit[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
+      <obj_property name="ElementShortName">y[3:0]</obj_property>
+      <obj_property name="ObjectShortName">y[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
+      <obj_property name="ElementShortName">y[3:0]</obj_property>
+      <obj_property name="ObjectShortName">y[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
+      <obj_property name="ElementShortName">y[3:0]</obj_property>
+      <obj_property name="ObjectShortName">y[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
+      <obj_property name="ElementShortName">y[3:0]</obj_property>
+      <obj_property name="ObjectShortName">y[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/DUT_MatrixMultiplyM0/y">
+      <obj_property name="ElementShortName">y[3:0]</obj_property>
+      <obj_property name="ObjectShortName">y[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group4613">
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/clock">
+         <obj_property name="ElementShortName">clock</obj_property>
+         <obj_property name="ObjectShortName">clock</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/nreset">
+         <obj_property name="ElementShortName">nreset</obj_property>
+         <obj_property name="ObjectShortName">nreset</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/rw">
+         <obj_property name="ElementShortName">rw</obj_property>
+         <obj_property name="ObjectShortName">rw</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/valid_i">
+         <obj_property name="ElementShortName">valid_i</obj_property>
+         <obj_property name="ObjectShortName">valid_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/rready_i">
+         <obj_property name="ElementShortName">rready_i</obj_property>
+         <obj_property name="ObjectShortName">rready_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/rvalid_o">
+         <obj_property name="ElementShortName">rvalid_o</obj_property>
+         <obj_property name="ObjectShortName">rvalid_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/ready_o">
+         <obj_property name="ElementShortName">ready_o</obj_property>
+         <obj_property name="ObjectShortName">ready_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/in_data">
+         <obj_property name="ElementShortName">in_data[3:0]</obj_property>
+         <obj_property name="ObjectShortName">in_data[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/out_data">
+         <obj_property name="ElementShortName">out_data[63:0]</obj_property>
+         <obj_property name="ObjectShortName">out_data[63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/cnt">
+         <obj_property name="ElementShortName">cnt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_cnt">
+         <obj_property name="ElementShortName">next_cnt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">next_cnt[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/cnt_shift">
+         <obj_property name="ElementShortName">cnt_shift[3:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_shift[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_cnt_shift">
+         <obj_property name="ElementShortName">next_cnt_shift[3:0]</obj_property>
+         <obj_property name="ObjectShortName">next_cnt_shift[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/mem_fsm">
+         <obj_property name="ElementShortName">mem_fsm[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_fsm[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_mem_fsm">
+         <obj_property name="ElementShortName">next_mem_fsm[31:0]</obj_property>
+         <obj_property name="ObjectShortName">next_mem_fsm[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_clock">
+         <obj_property name="ElementShortName">single_port_ram_clock</obj_property>
+         <obj_property name="ObjectShortName">single_port_ram_clock</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_nreset">
+         <obj_property name="ElementShortName">single_port_ram_nreset</obj_property>
+         <obj_property name="ObjectShortName">single_port_ram_nreset</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_en">
+         <obj_property name="ElementShortName">single_port_ram_en</obj_property>
+         <obj_property name="ObjectShortName">single_port_ram_en</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_we">
+         <obj_property name="ElementShortName">single_port_ram_we</obj_property>
+         <obj_property name="ObjectShortName">single_port_ram_we</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/single_port_ram_addr">
+         <obj_property name="ElementShortName">single_port_ram_addr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">single_port_ram_addr[6:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/single_port_ram_di">
+         <obj_property name="ElementShortName">single_port_ram_di[63:0]</obj_property>
+         <obj_property name="ObjectShortName">single_port_ram_di[63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/single_port_ram_dout">
+         <obj_property name="ElementShortName">single_port_ram_dout[63:0]</obj_property>
+         <obj_property name="ObjectShortName">single_port_ram_dout[63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/buf_data">
+         <obj_property name="ElementShortName">buf_data[63:0]</obj_property>
+         <obj_property name="ObjectShortName">buf_data[63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_buf_data">
+         <obj_property name="ElementShortName">next_buf_data[63:0]</obj_property>
+         <obj_property name="ObjectShortName">next_buf_data[63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/WIDTH">
+         <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/SIZE">
+         <obj_property name="ElementShortName">SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SIZE[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/nreset">
+      <obj_property name="ElementShortName">nreset</obj_property>
+      <obj_property name="ObjectShortName">nreset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/rw">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/valid_i">
+      <obj_property name="ElementShortName">valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/rready_i">
+      <obj_property name="ElementShortName">rready_i</obj_property>
+      <obj_property name="ObjectShortName">rready_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/rvalid_o">
+      <obj_property name="ElementShortName">rvalid_o</obj_property>
+      <obj_property name="ObjectShortName">rvalid_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/ready_o">
+      <obj_property name="ElementShortName">ready_o</obj_property>
+      <obj_property name="ObjectShortName">ready_o</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/in_data">
+      <obj_property name="ElementShortName">in_data[3:0]</obj_property>
+      <obj_property name="ObjectShortName">in_data[3:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/out_data">
+      <obj_property name="ElementShortName">out_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">out_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/cnt">
+      <obj_property name="ElementShortName">cnt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_cnt">
+      <obj_property name="ElementShortName">next_cnt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">next_cnt[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/cnt_shift">
+      <obj_property name="ElementShortName">cnt_shift[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_shift[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_cnt_shift">
+      <obj_property name="ElementShortName">next_cnt_shift[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_cnt_shift[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/mem_fsm">
+      <obj_property name="ElementShortName">mem_fsm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_fsm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_mem_fsm">
+      <obj_property name="ElementShortName">next_mem_fsm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_mem_fsm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_clock">
+      <obj_property name="ElementShortName">single_port_ram_clock</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_nreset">
+      <obj_property name="ElementShortName">single_port_ram_nreset</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_nreset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_en">
+      <obj_property name="ElementShortName">single_port_ram_en</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_en</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opA/single_port_ram_we">
+      <obj_property name="ElementShortName">single_port_ram_we</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_we</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/single_port_ram_addr">
+      <obj_property name="ElementShortName">single_port_ram_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_addr[6:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/single_port_ram_di">
+      <obj_property name="ElementShortName">single_port_ram_di[63:0]</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_di[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/single_port_ram_dout">
+      <obj_property name="ElementShortName">single_port_ram_dout[63:0]</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_dout[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/buf_data">
+      <obj_property name="ElementShortName">buf_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">buf_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/next_buf_data">
+      <obj_property name="ElementShortName">next_buf_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">next_buf_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opA/WIDTH">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group4666">
+      <wvobject type="array" fp_name="/tb/a/serial2mem_opA/SIZE">
+         <obj_property name="ElementShortName">SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SIZE[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider4667" type="divider">
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/nreset">
+      <obj_property name="ElementShortName">nreset</obj_property>
+      <obj_property name="ObjectShortName">nreset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/rw">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/valid_i">
+      <obj_property name="ElementShortName">valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/rready_i">
+      <obj_property name="ElementShortName">rready_i</obj_property>
+      <obj_property name="ObjectShortName">rready_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/rvalid_o">
+      <obj_property name="ElementShortName">rvalid_o</obj_property>
+      <obj_property name="ObjectShortName">rvalid_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/ready_o">
+      <obj_property name="ElementShortName">ready_o</obj_property>
+      <obj_property name="ObjectShortName">ready_o</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/in_data">
+      <obj_property name="ElementShortName">in_data[3:0]</obj_property>
+      <obj_property name="ObjectShortName">in_data[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/out_data">
+      <obj_property name="ElementShortName">out_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">out_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/cnt">
+      <obj_property name="ElementShortName">cnt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/next_cnt">
+      <obj_property name="ElementShortName">next_cnt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">next_cnt[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/cnt_shift">
+      <obj_property name="ElementShortName">cnt_shift[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_shift[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/next_cnt_shift">
+      <obj_property name="ElementShortName">next_cnt_shift[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_cnt_shift[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/mem_fsm">
+      <obj_property name="ElementShortName">mem_fsm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_fsm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/next_mem_fsm">
+      <obj_property name="ElementShortName">next_mem_fsm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_mem_fsm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/single_port_ram_clock">
+      <obj_property name="ElementShortName">single_port_ram_clock</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/single_port_ram_nreset">
+      <obj_property name="ElementShortName">single_port_ram_nreset</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_nreset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/single_port_ram_en">
+      <obj_property name="ElementShortName">single_port_ram_en</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/a/serial2mem_opB/single_port_ram_we">
+      <obj_property name="ElementShortName">single_port_ram_we</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_we</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/single_port_ram_addr">
+      <obj_property name="ElementShortName">single_port_ram_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_addr[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/single_port_ram_di">
+      <obj_property name="ElementShortName">single_port_ram_di[63:0]</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_di[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/single_port_ram_dout">
+      <obj_property name="ElementShortName">single_port_ram_dout[63:0]</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_dout[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/buf_data">
+      <obj_property name="ElementShortName">buf_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">buf_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/next_buf_data">
+      <obj_property name="ElementShortName">next_buf_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">next_buf_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/WIDTH">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a/serial2mem_opB/SIZE">
+      <obj_property name="ElementShortName">SIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SIZE[31:0]</obj_property>
+   </wvobject>
+</wave_config>
