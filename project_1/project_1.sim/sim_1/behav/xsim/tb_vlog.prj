@@ -4,6 +4,7 @@ verilog xil_defaultlib  --include "../../../../../../../../../amd/2025.1/data/rs
 
 sv xil_defaultlib  --include "../../../../../../../../../amd/2025.1/data/rsb/busdef" \
 "../../../../../rtl/Arty7_top_sim.sv" \
+"../../../../../rtl/SystolicControlUnit.sv" \
 "../../../../../rtl/accumulator.sv" \
 "../../../../../rtl/uart/rtl/baud_rate.sv" \
 "../../../../../rtl/uart/rtl/counter.sv" \

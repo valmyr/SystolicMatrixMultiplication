@@ -19,8 +19,8 @@ module baudRateGenerator#(parameter BAUDRATE = 9600,OVERSAMPLING  = 8, CLOCK_INP
     output logic counting_done2          
 );
 
-    parameter STOPCOUNTER = CLOCK_REF/(2*BAUDRATE*OVERSAMPLING)+1;
-    parameter WIDTH=$clog2(STOPCOUNTER);
+    localparam   STOPCOUNTER = CLOCK_REF/(2*BAUDRATE*OVERSAMPLING)+1;
+    localparam WIDTH=$clog2(STOPCOUNTER);
 
     logic base_clock;
     logic sampling;

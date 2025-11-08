@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log systolicMatrixMultiply.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source systolicMatrixMultiply.tcl
+EAStep vivado -log Arty7_top_sim.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Arty7_top_sim.tcl

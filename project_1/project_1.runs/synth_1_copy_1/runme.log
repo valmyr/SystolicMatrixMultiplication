@@ -1,0 +1,675 @@
+
+*** Running vivado
+    with args -log Arty7_top_sim.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Arty7_top_sim.tcl
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sat Nov  8 11:29:31 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source Arty7_top_sim.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/utils_1/imports/synth_1/Arty7_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/utils_1/imports/synth_1/Arty7_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top Arty7_top_sim -part xc7a100tcsg324-2L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-2L
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3191548
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2340.961 ; gain = 440.742 ; free physical = 6131 ; free virtual = 16289
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clock_out_refp', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:33]
+WARNING: [Synth 8-11065] parameter 'STOPCOUNTER' becomes localparam in 'baudRateGenerator' with formal parameter declaration list [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:22]
+WARNING: [Synth 8-11065] parameter 'WIDTH' becomes localparam in 'baudRateGenerator' with formal parameter declaration list [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:23]
+INFO: [Synth 8-11241] undeclared symbol 'sample_center_bit', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:34]
+INFO: [Synth 8-6157] synthesizing module 'Arty7_top_sim' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_top' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_top.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ref_clock' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ref_clock' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized0' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized1' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized1' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-226] default block is never used [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:14]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator__parameterized0' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized2' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 44 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized2' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized3' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized3' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'uart_top' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_top.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:12]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter WIDTHx bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/accumulator.sv:13]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/accumulator.sv:13]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:49]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:79]
+INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:1]
+	Parameter WIDTH bound to: 4 - type: integer 
+	Parameter SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ram' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.runs/synth_1_copy_1/.Xil/Vivado-3191489-VT0144/realtime/ram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.runs/synth_1_copy_1/.Xil/Vivado-3191489-VT0144/realtime/ram_stub.v:6]
+WARNING: [Synth 8-689] width (7) of port connection 'addra' does not match port width (6) of module 'ram' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:45]
+WARNING: [Synth 8-689] width (64) of port connection 'dina' does not match port width (128) of module 'ram' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:46]
+WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (128) of module 'ram' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:47]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:73]
+INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:1]
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:1]
+WARNING: [Synth 8-689] width (8) of port connection 'smatrix_out' does not match port width (16) of module 'mem2seriala' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:234]
+INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ref_clock__parameterized0' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+	Parameter CLOCK_REF bound to: 10000 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized4' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 5000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized4' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ref_clock__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Arty7_top_sim' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:23]
+WARNING: [Synth 8-6014] Unused sequential element bit_start_reg was removed.  [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:40]
+WARNING: [Synth 8-87] always_comb on 'ready_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:81]
+WARNING: [Synth 8-87] always_comb on 'rvalid_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:82]
+WARNING: [Synth 8-87] always_comb on 'nextStateSystolicControlUnit_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:83]
+WARNING: [Synth 8-87] always_comb on 'next_counter_mult_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:84]
+WARNING: [Synth 8-87] always_comb on 'next_ena_mac_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:85]
+WARNING: [Synth 8-87] always_comb on 'next_counter_transfer_m_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:86]
+WARNING: [Synth 8-7137] Register mem_fsm_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:52]
+WARNING: [Synth 8-87] always_comb on 'ready_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:75]
+WARNING: [Synth 8-87] always_comb on 'rvalid_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:76]
+WARNING: [Synth 8-87] always_comb on 'next_cnt_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:77]
+WARNING: [Synth 8-87] always_comb on 'next_cnt_shift_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:78]
+WARNING: [Synth 8-87] always_comb on 'next_mem_fsm_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:80]
+WARNING: [Synth 8-7137] Register mem2seriala_fsm_reg in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:21]
+WARNING: [Synth 8-87] always_comb on 'ready_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:28]
+WARNING: [Synth 8-87] always_comb on 'rvalid_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-87] always_comb on 'next_mem2seriala_fsm_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:30]
+WARNING: [Synth 8-87] always_comb on 'next_i_counter_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:31]
+WARNING: [Synth 8-87] always_comb on 'next_j_counter_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:32]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:34]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:35]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rw_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:36]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rw_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:37]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:38]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:39]
+WARNING: [Synth 8-87] always_comb on 'mem2serial_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:40]
+WARNING: [Synth 8-87] always_comb on 'mem2serial_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:41]
+WARNING: [Synth 8-87] always_comb on 'uart_valid_tx_in_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:42]
+WARNING: [Synth 8-87] always_comb on 'syst_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:43]
+WARNING: [Synth 8-87] always_comb on 'syst_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:44]
+WARNING: [Synth 8-87] always_comb on 'fsm_unit_control_next_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:45]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][15] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][14] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][13] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][12] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][11] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][10] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][9] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][8] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][7] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][6] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][5] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][4] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][3] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][2] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][1] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[15][0] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][15] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][14] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][13] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][12] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][11] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][10] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][9] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][8] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][7] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][6] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][5] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][4] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][3] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][2] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][1] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[14][0] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][15] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][14] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][13] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][12] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][11] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][10] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][9] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][8] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][7] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][6] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][5] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][4] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][3] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][2] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][1] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[13][0] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][15] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][14] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][13] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][12] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][11] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][10] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][9] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][8] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][7] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][6] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][5] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][4] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][3] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][2] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][1] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[12][0] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][15] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][14] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][13] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][12] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][11] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][10] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][9] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][8] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][7] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][6] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][5] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][4] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][3] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][2] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][1] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[11][0] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][15] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][14] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][13] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][12] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][11] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][10] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][9] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][8] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][7] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][6] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][5] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][4] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][3] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][2] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][1] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[10][0] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[9][15] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[9][14] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[9][13] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+WARNING: [Synth 8-3848] Net mem2serial_pmatrix_in[9][12] in module/entity Arty7_top_sim does not have driver. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:108]
+INFO: [Common 17-14] Message 'Synth 8-3848' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top_sim is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top_sim is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top_sim is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2449.930 ; gain = 549.711 ; free physical = 6020 ; free virtual = 16180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2458.836 ; gain = 558.617 ; free physical = 6014 ; free virtual = 16174
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2458.836 ; gain = 558.617 ; free physical = 6014 ; free virtual = 16174
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2458.836 ; gain = 0.000 ; free physical = 6014 ; free virtual = 16174
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.gen/sources_1/ip/ram/ram/ram_in_context.xdc] for cell 'serial2mem_opA/mem'
+Finished Parsing XDC File [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.gen/sources_1/ip/ram/ram/ram_in_context.xdc] for cell 'serial2mem_opA/mem'
+Parsing XDC File [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.gen/sources_1/ip/ram/ram/ram_in_context.xdc] for cell 'serial2mem_opB/mem'
+Finished Parsing XDC File [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.gen/sources_1/ip/ram/ram/ram_in_context.xdc] for cell 'serial2mem_opB/mem'
+Parsing XDC File [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/constrs_1/imports/XilinxDesignConstraint/Arty-A7-100-Master.xdc]
+WARNING: [Vivado 12-507] No nets matched 'btn_IBUF[0]'. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/constrs_1/imports/XilinxDesignConstraint/Arty-A7-100-Master.xdc:37]
+Finished Parsing XDC File [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/constrs_1/imports/XilinxDesignConstraint/Arty-A7-100-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/constrs_1/imports/XilinxDesignConstraint/Arty-A7-100-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Arty7_top_sim_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.srcs/constrs_1/imports/XilinxDesignConstraint/Arty-A7-100-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Arty7_top_sim_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Arty7_top_sim_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2571.574 ; gain = 0.000 ; free physical = 5973 ; free virtual = 16132
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2571.609 ; gain = 0.000 ; free physical = 5972 ; free virtual = 16132
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'serial2mem_opA/mem' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'serial2mem_opB/mem' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2571.609 ; gain = 671.391 ; free physical = 5975 ; free virtual = 16132
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2579.578 ; gain = 679.359 ; free physical = 5975 ; free virtual = 16132
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2579.578 ; gain = 679.359 ; free physical = 5975 ; free virtual = 16132
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_fsm_reg' in module 'uart_rx'
+INFO: [Synth 8-802] inferred FSM for state register 'current_fsm_reg' in module 'uart_tx'
+INFO: [Synth 8-802] inferred FSM for state register 'currentStateSystolicControlUnit_reg' in module 'systolicMatrixMultiply'
+INFO: [Synth 8-802] inferred FSM for state register 'fsm_unit_control_reg' in module 'systolicControlUnitTop'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                   START |                               01 |                               01
+                  R_DATA |                               10 |                               10
+                 STOPBIT |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_fsm_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 FRAME_1 |                              000 |                              000
+                    IDLE |                              001 |                              001
+                   START |                              010 |                              010
+                  S_DATA |                              011 |                              011
+                 STOPBIT |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_fsm_reg' using encoding 'sequential' in module 'uart_tx'
+WARNING: [Synth 8-327] inferring latch for variable 'rvalid_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:82]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_nextStateSystolicControlUnit_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:83]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_nextStateSystolicControlUnit_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:83]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 | 00000000000000000000000000000000
+       LOAD_MULTI_MATRIX |                               01 | 00000000000000000000000000000001
+            MULTI_MATRIX |                               10 | 00000000000000000000000000000010
+                    DONE |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'currentStateSystolicControlUnit_reg' using encoding 'sequential' in module 'systolicMatrixMultiply'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_nextStateSystolicControlUnit_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:83]
+WARNING: [Synth 8-327] inferring latch for variable 'ready_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:81]
+WARNING: [Synth 8-327] inferring latch for variable 'next_counter_mult_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:84]
+WARNING: [Synth 8-327] inferring latch for variable 'next_counter_transfer_m_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:86]
+WARNING: [Synth 8-327] inferring latch for variable 'next_ena_mac_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:85]
+WARNING: [Synth 8-327] inferring latch for variable 'rvalid_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'ready_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:75]
+WARNING: [Synth 8-327] inferring latch for variable 'next_cnt_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:77]
+WARNING: [Synth 8-327] inferring latch for variable 'next_cnt_shift_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:78]
+WARNING: [Synth 8-327] inferring latch for variable 'next_mem_fsm_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:80]
+WARNING: [Synth 8-327] inferring latch for variable 'rvalid_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'ready_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:75]
+WARNING: [Synth 8-327] inferring latch for variable 'next_cnt_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:77]
+WARNING: [Synth 8-327] inferring latch for variable 'next_cnt_shift_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:78]
+WARNING: [Synth 8-327] inferring latch for variable 'next_mem_fsm_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:80]
+WARNING: [Synth 8-327] inferring latch for variable 'rvalid_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-327] inferring latch for variable 'ready_o_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:28]
+WARNING: [Synth 8-327] inferring latch for variable 'next_i_counter_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:31]
+WARNING: [Synth 8-327] inferring latch for variable 'next_j_counter_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:32]
+WARNING: [Synth 8-327] inferring latch for variable 'next_mem2seriala_fsm_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:30]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_valid_i_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:34]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_fsm_unit_control_next_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:45]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_fsm_unit_control_next_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:45]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 | 00000000000000000000000000000000
+               WRITE_MEM |                            00010 | 00000000000000000000000000000001
+       SYSTOLIC_READ_MEM |                            00100 | 00000000000000000000000000000010
+           WRITE_MEM_OUT |                            01000 | 00000000000000000000000000000011
+                    DONE |                            10000 | 00000000000000000000000000000100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fsm_unit_control_reg' using encoding 'one-hot' in module 'systolicControlUnitTop'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_fsm_unit_control_next_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:45]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opb_valid_i_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:35]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:36]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:38]
+WARNING: [Synth 8-327] inferring latch for variable 'mem2serial_valid_i_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:40]
+WARNING: [Synth 8-327] inferring latch for variable 'mem2serial_rready_i_reg' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:41]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2579.578 ; gain = 679.359 ; free physical = 5974 ; free virtual = 16133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 6     
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 4     
+	                8 Bit    Registers := 260   
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 517   
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 8     
+	   4 Input   32 Bit        Muxes := 3     
+	   5 Input   32 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 257   
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 8     
+	   4 Input    5 Bit        Muxes := 2     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 9     
+	   4 Input    4 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 14    
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 10    
+	   4 Input    2 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 17    
+	   2 Input    1 Bit        Muxes := 19    
+	   5 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top_sim is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top_sim is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top_sim is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (uart1/uart_transmitter/FSM_sequential_current_fsm_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (uart1/uart_transmitter/FSM_sequential_current_fsm_reg[1]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (uart1/uart_transmitter/FSM_sequential_current_fsm_reg[0]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (rvalid_o_reg) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_nextStateSystolicControlUnit_reg[1]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_nextStateSystolicControlUnit_reg[0]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (ready_o_reg) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_mult_reg[5]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_mult_reg[4]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_mult_reg[3]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_mult_reg[2]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_mult_reg[1]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_mult_reg[0]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_transfer_m_reg[5]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_transfer_m_reg[4]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_transfer_m_reg[3]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_transfer_m_reg[2]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_transfer_m_reg[1]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_counter_transfer_m_reg[0]) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (next_ena_mac_reg) is unused and will be removed from module systolicMatrixMultiply.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/rvalid_o_reg) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/ready_o_reg) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_reg[4]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_reg[3]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_reg[1]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_reg[0]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_shift_reg[3]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_shift_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_shift_reg[1]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_cnt_shift_reg[0]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_mem_fsm_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_mem_fsm_reg[1]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opA/next_mem_fsm_reg[0]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/rvalid_o_reg) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/ready_o_reg) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_reg[4]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_reg[3]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_reg[1]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_reg[0]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_shift_reg[3]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_shift_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_shift_reg[1]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_cnt_shift_reg[0]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_mem_fsm_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_mem_fsm_reg[1]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (serial2mem_opB/next_mem_fsm_reg[0]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (mem2serial_transfer_pc/ready_o_reg) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (mem2serial_transfer_pc/next_mem2seriala_fsm_reg[2]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (systolicControlUnit_Global/FSM_onehot_fsm_unit_control_reg[4]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (systolicControlUnit_Global/FSM_onehot_fsm_unit_control_next_reg[4]) is unused and will be removed from module Arty7_top_sim.
+WARNING: [Synth 8-3332] Sequential element (systolicControlUnit_Global/mem2serial_rready_i_reg) is unused and will be removed from module Arty7_top_sim.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2579.578 ; gain = 679.359 ; free physical = 5971 ; free virtual = 16137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2613.578 ; gain = 713.359 ; free physical = 5921 ; free virtual = 16087
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2651.625 ; gain = 751.406 ; free physical = 5885 ; free virtual = 16051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2651.625 ; gain = 751.406 ; free physical = 5885 ; free virtual = 16051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.438 ; gain = 903.219 ; free physical = 5752 ; free virtual = 15918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.438 ; gain = 903.219 ; free physical = 5752 ; free virtual = 15918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.438 ; gain = 903.219 ; free physical = 5747 ; free virtual = 15913
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.438 ; gain = 903.219 ; free physical = 5747 ; free virtual = 15913
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.438 ; gain = 903.219 ; free physical = 5747 ; free virtual = 15913
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.438 ; gain = 903.219 ; free physical = 5747 ; free virtual = 15913
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |ram           |         2|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |ram    |     2|
+|3     |BUFG   |     2|
+|4     |CARRY4 |     4|
+|5     |LUT1   |    10|
+|6     |LUT2   |    14|
+|7     |LUT3   |    33|
+|8     |LUT4   |    39|
+|9     |LUT5   |   154|
+|10    |LUT6   |    38|
+|11    |FDCE   |   233|
+|12    |FDPE   |     3|
+|13    |FDRE   |     7|
+|14    |LD     |    20|
+|15    |IBUF   |     3|
+|16    |OBUF   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.438 ; gain = 903.219 ; free physical = 5747 ; free virtual = 15913
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 89 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2803.438 ; gain = 790.445 ; free physical = 5747 ; free virtual = 15913
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2803.445 ; gain = 903.219 ; free physical = 5747 ; free virtual = 15913
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2803.445 ; gain = 0.000 ; free physical = 5886 ; free virtual = 16052
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 8 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2859.465 ; gain = 0.000 ; free physical = 5913 ; free virtual = 16079
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 20 instances were transformed.
+  LD => LDCE: 12 instances
+  LD => LDCE (inverted pins: G): 8 instances
+
+Synth Design complete | Checksum: 374bd2a
+INFO: [Common 17-83] Releasing license: Synthesis
+77 Infos, 275 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 2859.500 ; gain = 1099.492 ; free physical = 5913 ; free virtual = 16079
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1922.386; main = 1922.386; forked = 317.829
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4177.430; main = 2859.469; forked = 1597.848
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2883.477 ; gain = 0.000 ; free physical = 5913 ; free virtual = 16079
+INFO: [Common 17-1381] The checkpoint '/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.runs/synth_1_copy_1/Arty7_top_sim.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file Arty7_top_sim_utilization_synth.rpt -pb Arty7_top_sim_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  8 11:29:49 2025...

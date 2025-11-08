@@ -58,8 +58,6 @@ if {$::dispatch::connected} {
 OPTRACE "ram_synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 8
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {HDL 9-1061} -limit 100000
-set_msg_config -id {HDL 9-1654} -limit 100000
 set_msg_config  -id {USF-XSim-62}  -string {{ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/project_1/project_1.sim/sim_1/behav/xsim/xvlog.log' file for more information.}}  -suppress 
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run

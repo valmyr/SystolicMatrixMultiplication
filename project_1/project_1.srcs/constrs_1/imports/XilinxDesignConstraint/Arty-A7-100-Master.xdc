@@ -224,3 +224,6 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets btn_IBUF[0]]
 
 
 set_operating_conditions -process maximum
+
+create_pblock pblock_systlcCntrlUnt_Glbl
+add_cells_to_pblock [get_pblocks pblock_systlcCntrlUnt_Glbl] [get_cells -quiet [list systolicControlUnit_Global]]
