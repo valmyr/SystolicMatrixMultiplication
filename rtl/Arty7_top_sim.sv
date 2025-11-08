@@ -30,7 +30,7 @@ localparam  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_I
 localparam  WIDTHx = 1,SIZE = 8,WIDTH =8;
 localparam CLOCK_TRANSFER_PC= 10_000;
 logic nreset;
-//Pinout Unidade de Controle 
+//Pinout Unidade de Controle.
 //-------------------------------------------------------------------------------------------------
 logic                   systolicControlUnit_clock                                                               ;
 logic                   systolicControlUnit_nreset                                                              ;
