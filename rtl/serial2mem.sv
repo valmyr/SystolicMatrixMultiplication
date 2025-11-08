@@ -1,6 +1,6 @@
 module serial2mem#(
-    parameter WIDTH = 8,
-    parameter SIZE = 16
+    parameter WIDTH = 4,
+    parameter SIZE = 128
 )(
     input  logic                  clock                                      ,  
     input  logic                  nreset                                     ,// r=1,w=0
@@ -12,50 +12,89 @@ module serial2mem#(
     input  logic [WIDTH-1:0]      in_data                                    ,
     output logic [SIZE*WIDTH-1:0] out_data 
 );
-    logic [WIDTH*SIZE-1:0]  mem  [2*(SIZE-1):0];
-    logic [$clog2(2*SIZE)-1:0]       cnt, next_cnt        ;
-    logic [$clog2(SIZE)-1:0] cnt_shift, next_cnt_shift  ;
-    enum {IDLE, WRITE, READ,DONE} mem_fsm,next_mem_fsm  ;
+
+logic [$clog2(2*SIZE)-1:0]      cnt, next_cnt                                   ;
+logic [$clog2(SIZE)-1:0]        cnt_shift, next_cnt_shift                       ;
+enum {IDLE, WRITE, READ,DONE}   mem_fsm,next_mem_fsm                            ;
+logic                           single_port_ram_clock                           ;
+logic                           single_port_ram_nreset                          ;
+logic                           single_port_ram_en                              ;
+logic                           single_port_ram_we                              ;
+logic [7-1:0]                   single_port_ram_addr                            ;
+logic [WIDTH*SIZE-1:0]          single_port_ram_di                              ;
+logic [WIDTH*SIZE-1:0]          single_port_ram_dout                            ;
+logic [WIDTH*SIZE-1:0]          buf_data                                        ;
+logic [WIDTH*SIZE-1:0]          next_buf_data                                        ;
+
+/*
+ram_single_port #(.WIDTH(WIDTH*SIZE),.SIZE(2*(SIZE)-1))mem(
+    .clock (single_port_ram_clock   )                        ,  
+    .nreset(single_port_ram_nreset  )                        ,  
+    .en    (single_port_ram_en      )                        ,
+    .we    (single_port_ram_we      )                        ,
+    .addr  (single_port_ram_addr    )                        ,
+    .di    (single_port_ram_di      )                        ,
+    .dout  (single_port_ram_dout    )                        
+);*/
+
+ram mem (
+   .clka     (single_port_ram_clock     ),              // input wire clka
+   .rsta     (~single_port_ram_nreset   ),              // input wire rsta
+   .ena      (single_port_ram_en        ),              // input wire ena
+   .wea      (single_port_ram_we        ),              // input wire [0 : 0] wea
+   .addra    (single_port_ram_addr      ),              // input wire [6 : 0] addra
+   .dina     (single_port_ram_di        ),              // input wire [31 : 0] dina
+   .douta    (single_port_ram_dout      ),              // output wire [31 : 0] douta
+   .rsta_busy(                          )  // output wire rsta_busy
+);
+    assign single_port_ram_nreset   = nreset                                    ;
+    assign single_port_ram_clock    = clock                                     ;
+    assign single_port_ram_en       = cnt_shift == SIZE-1 | mem_fsm == READ     ;
+    assign single_port_ram_we       = ~rw                                       ;
+    assign single_port_ram_addr     = cnt                                       ;
+    assign single_port_ram_di       = cnt_shift == SIZE-1 ? next_buf_data : 0   ;
+    assign out_data                 = mem_fsm == READ && cnt != 0 ? single_port_ram_dout : 0;
+
     always_ff@(posedge clock, negedge nreset)begin
         if(!nreset)begin
-            cnt <= 0;
+            cnt             <= 0;
             cnt_shift       <= 0;
-            for(integer i_rst = 0; i_rst < 2*SIZE; i_rst++)
-                mem[i_rst] <= '{default:0};
-        end else begin
-            if(rw) out_data <= mem_fsm == READ  ? mem[cnt]: 0                                                       ;
-            else   mem[cnt] <= mem_fsm == WRITE ? mem[cnt] | in_data << (WIDTH * (SIZE -1-cnt_shift)): mem[cnt]     ;  
+            buf_data        <= 0;
+        end else begin                                                    
+            buf_data        <= next_buf_data ;  
             mem_fsm         <= next_mem_fsm                                                                         ;
             cnt             <= next_cnt                                                                             ;
             cnt_shift       <= next_cnt_shift                                                                       ;
         end
     end
-
+   // assign next_buf_data = {buf_data,in_data<<WIDTH*cnt_shift};// | in_data << (WIDTH * cnt_shift);
+    assign next_buf_data = {buf_data[WIDTH*SIZE-WIDTH:0],in_data};
+ //   assign next_buf_data = (mem_fsm == WRITE)&& !(cnt_shift == SIZE-1) ? buf_data | in_data << (WIDTH * (SIZE -1-cnt_shift)): buf_data | in_data  ;
     always_comb case(mem_fsm)
         IDLE:begin
-            ready_o         = 1;
-            rvalid_o        = 0;
-            next_cnt        = 0;
-            next_cnt_shift =  0;
-            if(valid_i)begin
-                next_mem_fsm = rw ? READ : WRITE;
-            end else begin
-                next_mem_fsm  = IDLE;
+            ready_o         = 1                     ;
+            rvalid_o        = 0                     ;
+            next_cnt        = 0                     ;
+            next_cnt_shift =  0                     ;
+            if(valid_i)begin                        
+                next_mem_fsm = rw ? READ : WRITE    ;
+            end else begin                          
+                next_mem_fsm  = IDLE                ;
             end
         end
         WRITE:begin
-            ready_o        = 0;
-            rvalid_o       = 0;
-            next_cnt       = cnt_shift == SIZE-1 ? cnt + 1: cnt;
-            next_cnt_shift = cnt_shift + 1;
-            next_mem_fsm   = cnt!=2*SIZE-1 ? WRITE: DONE; 
+            ready_o        = 0                                  ;
+            rvalid_o       = 0                                  ;
+            next_cnt       = cnt_shift == SIZE-1 ? cnt + 1: cnt ;
+            next_cnt_shift = cnt_shift + 1                      ;
+            next_mem_fsm   = cnt!=2*SIZE-1 ? WRITE: DONE        ;    
         end
         READ:begin
-            ready_o        = 0;
-            rvalid_o       = cnt!=2*SIZE ? 0 : 1;
-            next_cnt       = cnt + 1;
-            next_mem_fsm   = cnt!=2*SIZE ? READ: DONE;
-            next_cnt_shift =  0; 
+            ready_o        = 0                          ;
+            rvalid_o       = cnt!=2*SIZE-1 ? 0 : 1      ;
+            next_cnt       = cnt + 1                    ;
+            next_mem_fsm   = cnt!=2*SIZE-1 ? READ: DONE ;
+            next_cnt_shift =  0                         ; 
         end
         DONE:begin  
             ready_o        = 0;

@@ -22,19 +22,13 @@
 
 module Arty7_top_sim(
     input  logic          clock           ,
-    input  logic [3:0]    sw              ,
-    input  logic [3:0]    btn             ,
     input  logic          uart_txd_in     ,
     output logic          uart_rxd_out    ,
-    output logic [3:0]    led             ,
-    output logic [2:0]    led0RGB         ,
-    output logic [2:0]    led1RGB         ,
-    output logic [2:0]    led2RGB         ,
-    output logic [2:0]    led3RGB          
+    input  logic    [3:0] btn         
 );
 parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
-parameter WIDTHx =4,SIZE = 8, WIDTH = 8;
-parameter CLOCK_TRANFER_PC= 10_000;
+parameter WIDTHx =4,SIZE = 4,WIDTH = 8;
+parameter CLOCK_TRANSFER_PC= 10_000;
 logic nreset;
 
 
@@ -51,7 +45,7 @@ logic [SIZE*WIDTHx-1:0] syst_a_input                                 ;
 logic [SIZE*WIDTHx-1:0] syst_b_input                                 ;
 logic                   syst_ready_o                                 ;
 logic                   syst_rvalid_o                                ;
-logic [WIDTH-1:0]       syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]  ;
+logic [2*WIDTH-1:0]       syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]  ;
 //--------------------------------------------------------------------------------------------------
 //Pinout MEMA
 logic                  serial2mem_opa_clock                                 ;
@@ -65,13 +59,13 @@ logic [WIDTHx-1:0]      serial2mem_opa_in_data                               ;
 logic [SIZE*WIDTHx-1:0] serial2mem_opa_out_data                              ;
 //---------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------
-logic                  serial2mem_opb_clock                                 ;
-logic                  serial2mem_opb_nreset                                ;
-logic                  serial2mem_opb_rw                                    ;
-logic                  serial2mem_opb_valid_i                               ;
-logic                  serial2mem_opb_rready_i                              ;
-logic                  serial2mem_opb_rvalid_o                              ;
-logic                  serial2mem_opb_ready_o                               ;
+logic                   serial2mem_opb_clock                                 ;
+logic                   serial2mem_opb_nreset                                ;
+logic                   serial2mem_opb_rw                                    ;
+logic                   serial2mem_opb_valid_i                               ;
+logic                   serial2mem_opb_rready_i                              ;
+logic                   serial2mem_opb_ready_o                               ;
+logic                   serial2mem_opb_rvalid_o                              ;
 logic [WIDTHx-1:0]      serial2mem_opb_in_data                               ;
 logic [SIZE*WIDTHx-1:0] serial2mem_opb_out_data                              ;
 //---------------------------------------------------------------------------------------------------
@@ -117,7 +111,7 @@ assign serial2mem_opb_clock    = !serial2mem_opb_rw ? uart_ready_rx_out : clock 
 
 assign ref_clock_in_clock = clock                                       ;
 //Atribuição de nreset
-assign nreset                   = !btn[0];
+assign nreset                   = ~btn[0];
 assign syst_nreset              = nreset                                       ;
 assign uart_nreset              = nreset                                       ;
 assign serial2mem_opa_nreset    = nreset                                       ;
@@ -136,7 +130,7 @@ assign serial2mem_opa_in_data = (serial2mem_opa_valid_i & !serial2mem_opa_rw) ? 
 assign serial2mem_opb_in_data = (serial2mem_opb_valid_i & !serial2mem_opb_rw) ? uart_data_rx_out: 0;
 assign syst_a_input = (syst_valid_i & serial2mem_opa_rw) ? serial2mem_opa_out_data :0;
 assign syst_b_input = (syst_valid_i & serial2mem_opb_rw) ? serial2mem_opb_out_data :0;
-assign mem2serial_pmatrix_in = syst_output_produc_a_b;
+//assign mem2serial_pmatrix_in = syst_output_produc_a_b;
 //---------------------------------------------------------------------------------------------------------------------------------
 uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart1 (
     .clock             (uart_clock       )    ,
@@ -200,7 +194,7 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
 );
 
 
-ref_clock#(.CLOCK_REF(CLOCK_TRANFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))clock_hate_pc(
+ref_clock#(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))clock_hate_pc(
     .in_clock     (ref_clock_in_clock     ),
     .nreset       (ref_clock_nreset       ),
     .out_clock_ref(ref_clock_out_clock_ref)

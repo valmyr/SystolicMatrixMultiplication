@@ -1,4 +1,4 @@
-module mem2seriala#(parameter SIZE=8,WIDTH=8)(
+module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     input  logic             clock                           ,
     input  logic             nreset                          ,
     input  logic [WIDTH-1:0] pmatrix_in  [SIZE-1:0][SIZE-1:0],

@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log Arty7_top_sim.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Arty7_top_sim.tcl" );
+         "-log systolicMatrixMultiply.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source systolicMatrixMultiply.tcl" );
 
 
 
