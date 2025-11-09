@@ -1,13 +1,14 @@
 `timescale 1ns / 1ps
 module tb;    
   logic clock   , nreset;
-  parameter SIZE_INPUT_SERIAL =  2016;
+  parameter SIZE_M = 8;
+  parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M;
   logic [7:0]INPUT_A [SIZE_INPUT_SERIAL+3-1:0];
   logic [7:0]INPUT_B [SIZE_INPUT_SERIAL-1:0];
   logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt1 ;
   logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt2 ;
   parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
-  parameter WIDTH = 8, SIZE = 32;
+
   //--------------------------------------------------------------------------------------------------
   //Pinout UART
   logic                   tb_uart_clock                                      ;

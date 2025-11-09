@@ -59,9 +59,9 @@ ram_single_port your_instance_name (
   .rsta(rsta),            // input wire rsta
   .ena(ena),              // input wire ena
   .wea(wea),              // input wire [0 : 0] wea
-  .addra(addra),          // input wire [5 : 0] addra
-  .dina(dina),            // input wire [31 : 0] dina
-  .douta(douta),          // output wire [31 : 0] douta
+  .addra(addra),          // input wire [3 : 0] addra
+  .dina(dina),            // input wire [7 : 0] dina
+  .douta(douta),          // output wire [7 : 0] douta
   .rsta_busy(rsta_busy)  // output wire rsta_busy
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

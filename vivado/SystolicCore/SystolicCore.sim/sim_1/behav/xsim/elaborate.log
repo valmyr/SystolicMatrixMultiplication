@@ -5,12 +5,20 @@ Running: /home/xmen/amd/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:31]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'data_rx_out' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:33]
-WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 6 for port 'addra' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:45]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'smatrix_out' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:234]
-WARNING: [VRFC 10-10063] index 32 into 'b_vec' is out of bounds [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [VRFC 10-10063] index 32 into 'a_vec' is out of bounds [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:32]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'data_rx_out' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/tb/tb_fpga.sv:34]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'addra' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:45]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe8' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:272]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe9' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:273]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe10' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:274]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe11' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:275]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe12' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:276]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe13' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:277]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe14' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:278]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'probe15' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:279]
+WARNING: [VRFC 10-3705] select index 8 into 'mem2serial_pmatrix_in' is out of bounds [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv:279]
+WARNING: [VRFC 10-10063] index 8 into 'b_vec' is out of bounds [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [VRFC 10-10063] index 8 into 'a_vec' is out of bounds [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -27,18 +35,20 @@ Compiling module xil_defaultlib.baudRateGenerator(BAUDRATE=11520...
 Compiling module xil_defaultlib.uart_tx(COUNTER_CLOCK_INPUT=1000...
 Compiling module xil_defaultlib.uart_top
 Compiling module xil_defaultlib.accumulator_cells(WIDTH=8,WIDTHx...
-Compiling module xil_defaultlib.systolicMatrixMultiply(SIZE=32,W...
+Compiling module xil_defaultlib.systolicMatrixMultiply(SIZE=8,WI...
 Compiling module blk_mem_gen_v8_4_11.blk_mem_gen_v8_4_11_output_stage...
 Compiling module blk_mem_gen_v8_4_11.blk_mem_gen_v8_4_11_output_stage...
 Compiling module blk_mem_gen_v8_4_11.blk_mem_gen_v8_4_11_softecc_outp...
 Compiling module blk_mem_gen_v8_4_11.blk_mem_gen_v8_4_11_mem_module(C...
 Compiling module blk_mem_gen_v8_4_11.blk_mem_gen_v8_4_11(C_FAMILY="ar...
 Compiling module xil_defaultlib.ram_single_port
-Compiling module xil_defaultlib.serial2mem(WIDTH=1,SIZE=32)
-Compiling module xil_defaultlib.mem2seriala(SIZE=32)
+Compiling module xil_defaultlib.serial2mem(WIDTH=1,SIZE=8)
+Compiling module xil_defaultlib.mem2seriala(SIZE=8)
 Compiling module xil_defaultlib.systolicControlUnitTop
 Compiling module xil_defaultlib.counter(MOD=5000)
 Compiling module xil_defaultlib.ref_clock(CLOCK_REF=10000,CLOCK_...
+Compiling module xil_defaultlib.ila_0
+Compiling module xil_defaultlib.SystolicCoreTop
 Compiling module xil_defaultlib.Arty7_top_sim
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl

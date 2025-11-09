@@ -1,10 +1,12 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../rtl/uart/rtl" \
+"../../../../SystolicCore.gen/sources_1/ip/ila_0/sim/ila_0.v" \
 "../../../../SystolicCore.gen/sources_1/ip/ram_single_port/sim/ram_single_port.v" \
 
 sv xil_defaultlib  --include "../../../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../rtl/uart/rtl" \
 "../../../../../../rtl/Arty7_top_sim.sv" \
 "../../../../../../rtl/SystolicControlUnit.sv" \
+"../../../../../../rtl/SystolicCore.sv" \
 "../../../../../../rtl/accumulator.sv" \
 "../../../../../../rtl/uart/rtl/baud_rate.sv" \
 "../../../../../../rtl/uart/rtl/counter.sv" \

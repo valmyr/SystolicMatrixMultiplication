@@ -21,7 +21,7 @@
 
 
 module SystolicCoreTop#(
-    parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000, WIDTHx = 1,SIZE = 32,WIDTH =8, CLOCK_TRANSFER_PC= 10_000
+    parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000, WIDTHx = 1,SIZE = 8,WIDTH =8, CLOCK_TRANSFER_PC= 10_000
 )(
     input  logic          clock           ,
     input  logic          nreset          ,
