@@ -1480,3 +1480,385 @@ WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-f
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:]
+launch_runs synth_1 -jobs 32
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Sat Nov  8 19:01:14 2025] Launched synth_1...
+Run output will be captured here: /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.runs/synth_1/runme.log
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-3
+Top: Arty7_top_sim
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3460751
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 12502.387 ; gain = 261.598 ; free physical = 5897 ; free virtual = 13192
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clock_out_refp', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:33]
+INFO: [Synth 8-11241] undeclared symbol 'sample_center_bit', assumed default net type 'wire' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:34]
+INFO: [Synth 8-6157] synthesizing module 'Arty7_top_sim' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_top' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_top.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv:13]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 16 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ref_clock' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ref_clock' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized0' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized1' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized1' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-226] default block is never used [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:14]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baudRateGenerator__parameterized0' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+	Parameter OVERSAMPLING bound to: 1 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+	Parameter CLOCK_REF bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized2' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 44 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized2' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'base_clock_counter' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+WARNING: [Synth 8-7023] instance 'base_clock_counter' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized3' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized3' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'baudRateGenerator__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'uart_top' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_top.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:12]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 32 - type: integer 
+	Parameter WIDTHx bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/accumulator.sv:13]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/accumulator.sv:13]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:50]
+WARNING: [Synth 8-324] index 32 out of range [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:51]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:80]
+INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:1]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ram_single_port' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/.Xil/Vivado-3427497-VT0144/realtime/ram_single_port_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ram_single_port' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/.Xil/Vivado-3427497-VT0144/realtime/ram_single_port_stub.v:6]
+WARNING: [Synth 8-689] width (7) of port connection 'addra' does not match port width (6) of module 'ram_single_port' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:45]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:73]
+INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:1]
+	Parameter SIZE bound to: 32 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:1]
+WARNING: [Synth 8-689] width (8) of port connection 'smatrix_out' does not match port width (32) of module 'mem2seriala' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:234]
+INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ref_clock__parameterized0' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+	Parameter CLOCK_REF bound to: 10000 - type: integer 
+	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter__parameterized4' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+	Parameter MOD bound to: 5000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter__parameterized4' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ref_clock__parameterized0' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Arty7_top_sim' (0#1) [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv:23]
+WARNING: [Synth 8-6014] Unused sequential element bit_start_reg was removed.  [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv:40]
+WARNING: [Synth 8-87] always_comb on 'ready_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:82]
+WARNING: [Synth 8-87] always_comb on 'rvalid_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:83]
+WARNING: [Synth 8-87] always_comb on 'nextStateSystolicControlUnit_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:84]
+WARNING: [Synth 8-87] always_comb on 'next_counter_mult_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:85]
+WARNING: [Synth 8-87] always_comb on 'next_ena_mac_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:86]
+WARNING: [Synth 8-87] always_comb on 'next_counter_transfer_m_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv:87]
+WARNING: [Synth 8-7137] Register mem_fsm_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:52]
+WARNING: [Synth 8-87] always_comb on 'ready_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:75]
+WARNING: [Synth 8-87] always_comb on 'rvalid_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:76]
+WARNING: [Synth 8-87] always_comb on 'next_cnt_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:77]
+WARNING: [Synth 8-87] always_comb on 'next_cnt_shift_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:78]
+WARNING: [Synth 8-87] always_comb on 'next_mem_fsm_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv:80]
+WARNING: [Synth 8-7137] Register mem2seriala_fsm_reg in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:21]
+WARNING: [Synth 8-87] always_comb on 'ready_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:28]
+WARNING: [Synth 8-87] always_comb on 'rvalid_o_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-87] always_comb on 'next_mem2seriala_fsm_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:30]
+WARNING: [Synth 8-87] always_comb on 'next_i_counter_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:31]
+WARNING: [Synth 8-87] always_comb on 'next_j_counter_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv:32]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:34]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:35]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rw_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:36]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rw_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:37]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:38]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:39]
+WARNING: [Synth 8-87] always_comb on 'mem2serial_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:40]
+WARNING: [Synth 8-87] always_comb on 'mem2serial_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:41]
+WARNING: [Synth 8-87] always_comb on 'uart_valid_tx_in_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:42]
+WARNING: [Synth 8-87] always_comb on 'syst_valid_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:43]
+WARNING: [Synth 8-87] always_comb on 'syst_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:44]
+WARNING: [Synth 8-87] always_comb on 'fsm_unit_control_next_reg' did not result in combinational logic [/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv:45]
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ena2 in module baudRateGenerator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top_sim is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top_sim is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top_sim is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 12713.355 ; gain = 472.566 ; free physical = 5626 ; free virtual = 12926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 12713.355 ; gain = 472.566 ; free physical = 5626 ; free virtual = 12926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 12713.355 ; gain = 472.566 ; free physical = 5626 ; free virtual = 12926
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ram_single_port/ram_single_port.dcp' for cell 'serial2mem_opA/mem'
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 12713.363 ; gain = 0.000 ; free physical = 5791 ; free virtual = 13090
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:2]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:3]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:4]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:5]
+WARNING: [Vivado 12-584] No ports matched 'led0RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'led0RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:7]
+WARNING: [Vivado 12-584] No ports matched 'led0RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:8]
+WARNING: [Vivado 12-584] No ports matched 'led1RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'led1RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'led1RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'led2RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'led2RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'led2RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'led3RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'led3RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'led3RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:21]
+CRITICAL WARNING: [Constraints 18-948] create_clock: can't define clock 'sys_clk_pin' with period '2.5' which is less than or equal to the delta '5' between waveform edges (0,5) [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:34]
+Finished Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Arty7_top_sim_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 12838.203 ; gain = 0.000 ; free physical = 5825 ; free virtual = 13122
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 13325.145 ; gain = 1084.355 ; free physical = 5475 ; free virtual = 12803
+57 Infos, 131 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 13325.145 ; gain = 1084.355 ; free physical = 5475 ; free virtual = 12803
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3167.885; main = 3124.034; forked = 43.851
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 13639.664; main = 13166.602; forked = 473.062
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-3
+INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ram_single_port/ram_single_port.dcp' for cell 'serial2mem_opA/mem'
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 13325.145 ; gain = 0.000 ; free physical = 5427 ; free virtual = 12761
+INFO: [Netlist 29-17] Analyzing 3687 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led0RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led0RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led0RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led2RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led2RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led2RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led3RGB[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led3RGB[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led3RGB[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Constraints 18-948] create_clock: can't define clock 'sys_clk_pin' with period '2.5' which is less than or equal to the delta '5' between waveform edges (0,5) [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc:34]
+Finished Parsing XDC File [/home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 13325.145 ; gain = 0.000 ; free physical = 5430 ; free virtual = 12765
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_bus_skew -delay_type max -max_paths 10 -name bus_skew_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+report_cdc -name cdc_1
+INFO: [Timing 38-91] UpdateTimingParams: No interconnect No Cell Dly, Speed grade: -3, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.
+create_slack_histogram -significant_digits 3 -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 2147483647 -nworst 1 -delay_type max -sort_by slack.
+report_cdc -name cdc_1
+INFO: [Timing 38-91] UpdateTimingParams: No interconnect No Cell Dly, Speed grade: -3, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.
+report_power -name {power_1}
+Command: report_power -name power_1
+WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 484412 KB (Peak: 544780 KB), Simulation CPU Usage: 1144690 ms
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  8 19:39:56 2025...

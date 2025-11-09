@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
 // Date        : Sat Nov  8 17:52:30 2025
 // Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
-// Command     : write_verilog -force -mode synth_stub
-//               /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ram_single_port/ram_single_port_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top ram_single_port -prefix
+//               ram_single_port_ ram_single_port_stub.v
 // Design      : ram_single_port
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-3
