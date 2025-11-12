@@ -3,7 +3,7 @@ module tb;
   logic clock   , nreset;
   parameter SIZE_M = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M;
-  logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];
+  logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1+3:0];
   logic [7:0]INPUT_B [SIZE_INPUT_SERIAL-1:0];
   logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt1 ;
   logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt2 ;

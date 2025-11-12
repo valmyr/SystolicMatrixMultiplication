@@ -33,7 +33,7 @@ module SystolicCoreTop#(
 //-------------------------------------------------------------------------------------------------
 logic                   systolicControlUnit_clock                                                               ;
 logic                   systolicControlUnit_nreset                                                              ;
-logic                   systolicControlUnit_uart_valid_rx_in                                                    ;
+(*dont_touch = "true"*)logic                   systolicControlUnit_uart_valid_rx_in                                                    ;
 logic                   systolicControlUnit_serial2mem_opa_rvalid_o                                             ;
 logic                   systolicControlUnit_serial2mem_opb_rvalid_o                                             ;
 logic                   systolicControlUnit_syst_rvalid_o                                                       ;
@@ -61,7 +61,7 @@ logic [SIZE*WIDTHx-1:0]   syst_a_input                                          
 logic [SIZE*WIDTHx-1:0]   syst_b_input                                                                          ;
 logic                     syst_ready_o                                                                          ;
 logic                     syst_rvalid_o                                                                         ;
-logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                                           ;
+(*dont_touch = "true"*) logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                                           ;
 //--------------------------------------------------------------------------------------------------
 //Pinout MEMA
 logic                   serial2mem_opa_clock                                                                    ;
@@ -104,7 +104,7 @@ logic                   uart_sdata_tx_out                                       
 //Pinout MEM2SERIAL
 logic             mem2serial_clock                                                                              ;
 logic             mem2serial_nreset                                                                             ;
-logic [WIDTH-1:0] mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                                    ;
+(*dont_touch = "true"*) logic [WIDTH-1:0] mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                                    ;
 logic             mem2serial_valid_i                                                                            ;
 logic             mem2serial_rready_i                                                                           ;
 logic             mem2serial_rvalid_o                                                                           ;
@@ -139,7 +139,7 @@ assign systolicControlUnit_nreset = nreset                                      
 //Atribuição UART
 assign uart_sdata_rx_in = uart_txd_in                                                                           ;
 assign uart_rxd_out     = uart_sdata_tx_out                                                                     ;
-assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
+(*dont_touch = "true"*) assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
 assign uart_data_tx_in = mem2serial_smatrix_out                                                                 ;
 
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -172,9 +172,10 @@ assign syst_valid_i                                =  systolicControlUnit_syst_v
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
 assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ;
 
-assign systolicControlUnit_uart_valid_rx_in        =  uart_valid_rx_in                                          ; 
+(*dont_touch = "true"*) assign systolicControlUnit_uart_valid_rx_in        =  uart_valid_rx_in                                          ; 
 //---------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------------
+(*dont_touch = "true"*)
 uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart_systolic_core (
     .clock                  (uart_clock                                 )                  ,
     .nreset                 (uart_nreset                                )                  ,
@@ -261,24 +262,24 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
 
 ila_0 ILA (
 	.clk(clock), // input wire clk
-	.probe0 (mem2serial_pmatrix_in[00][00]), // input wire [7:0]  probe0  
-	.probe1 (mem2serial_pmatrix_in[00][01]), // input wire [7:0]  probe1 
-	.probe2 (mem2serial_pmatrix_in[00][02]), // input wire [7:0]  probe2 
-	.probe3 (mem2serial_pmatrix_in[01][00]), // input wire [7:0]  probe3 
-	.probe4 (mem2serial_pmatrix_in[01][01]), // input wire [7:0]  probe4 
-	.probe5 (mem2serial_pmatrix_in[01][02]), // input wire [7:0]  probe5 
-	.probe6 (mem2serial_pmatrix_in[02][00]), // input wire [7:0]  probe6 
-	.probe7 (mem2serial_pmatrix_in[02][01]), // input wire [7:0]  probe7 
-	.probe8 (mem2serial_pmatrix_in[02][02]), // input wire [0:0]  probe8 
-	.probe9 (serial2mem_opa_in_data       ), // input wire [0:0]  probe9 
-	.probe10(serial2mem_opb_in_data       ), // input wire [0:0]  probe10 
-	.probe11(serial2mem_opa_rw            ), // input wire [0:0]  probe11 
-	.probe12(serial2mem_opb_rw            ), // input wire [0:0]  probe12 
-	.probe13(systolicControlUnit_syst_rvalid_o  ), // input wire [0:0]  probe13 
-	.probe14(uart_data_rx_out), // input wire [0:0]  probe14 
-	.probe15(clock), // input wire [0:0]  probe15
-	.probe16(uart_txd_in                  ),
-	.probe17(systolicControlUnit_syst_rvalid_o                  )
+	.probe0 (syst_output_produc_a_b[00][00]), // input wire [7:0]  probe0  
+	.probe1 (syst_output_produc_a_b[00][01]), // input wire [7:0]  probe1 
+	.probe2 (syst_output_produc_a_b[00][02]), // input wire [7:0]  probe2 
+	.probe3 (syst_output_produc_a_b[00][03]), // input wire [7:0]  probe3 
+	.probe4 (syst_output_produc_a_b[01][00]), // input wire [7:0]  probe4 
+	.probe5 (syst_output_produc_a_b[01][01]), // input wire [7:0]  probe5 
+	.probe6 (syst_output_produc_a_b[01][02]), // input wire [7:0]  probe6 
+	.probe7 (syst_output_produc_a_b[01][03]), // input wire [7:0]  probe7 
+	.probe8 (syst_output_produc_a_b[02][00]), // input wire [0:0]  probe8 
+	.probe9 (syst_output_produc_a_b[02][01]), // input wire [0:0]  probe9 
+	.probe10(syst_output_produc_a_b[02][02]), // input wire [0:0]  probe10 
+	.probe11(syst_output_produc_a_b[02][03]), // input wire [0:0]  probe11 
+	.probe12(syst_output_produc_a_b[03][00]), // input wire [0:0]  probe12 
+	.probe13(syst_output_produc_a_b[03][01]) , // input wire [0:0]  probe13 
+	.probe14(syst_output_produc_a_b[03][02]), // input wire [0:0]  probe14 
+	.probe15(syst_output_produc_a_b[03][03]), // input wire [0:0]  probe15
+	.probe16(uart_data_rx_out               ),
+	.probe17(uart_sdata_rx_in               )
 );
 
 endmodule

@@ -20,13 +20,13 @@ module systolicMatrixMultiply#(
     input  logic [WIDTHx*SIZE-1:0]  b_input                         	   ,
     output logic                    rvalid_o                               , //Resposta Válida(Operação concluida)
     output logic                    ready_o                                , //Pronto para receber um dado valido na entrada
-    output logic [WIDTH-1:0]        output_produc_a_b [SIZE-1:0][SIZE-1:0]
+   (*dont_touch = "true"*)  output logic [WIDTH-1:0]        output_produc_a_b [SIZE-1:0][SIZE-1:0]
 );
 
 
 logic [$clog2(2*SIZE) :0]       counter_mult        , next_counter_mult                 ;
 logic [$clog2(2*SIZE) :0]       counter_transfer_m  , next_counter_transfer_m           ;
-logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
+(*dont_touch = "true"*) logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
 logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]            ;
 logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]            ;
 
@@ -69,6 +69,8 @@ always_ff@(posedge clock, negedge nreset)begin
     end else begin
         counter_transfer_m              <= next_counter_transfer_m;
         output_produc_a_b               <= rvalid_o ? produc_a_b : output_produc_a_b                           ;
+  //      output_produc_a_b               <= output_produc_a_b                           ;
+
         currentStateSystolicControlUnit <= nextStateSystolicControlUnit                                        ;
         counter_mult                    <= next_counter_mult                                                   ; 
         ena_mac                         <= next_ena_mac                                                        ;

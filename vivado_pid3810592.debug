@@ -1,0 +1,89 @@
+#--------------------------------------------------------------------------
+# AMD Vivado v2025.1 (64-bit)
+# SW Build: 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build: 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build: 6139179 on Tue May 20 17:58:58 MDT 2025
+# Current time: Wed Nov 12 09:27:36 BRT 2025
+# Process ID (PID): 3810592
+# User: xmen
+# OS: Rocky Linux release 8.10 (Green Obsidian)
+# Project: SystolicCore
+# Part: xc7a100tcsg324-3
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with AMD.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+Wed Nov 12 09:27:36 BRT 2025
+java.lang.NullPointerException: Cannot invoke "ui.i.e.bgb()" because the return value of "ui.views.o.h.bhF()" is null
+	at ui.views.o.h.handleEvent(SourceFile:313)
+	at ui.frmwork.a.c.l(SourceFile:91)
+	at ui.frmwork.a.c.a(SourceFile:56)
+	at ui.data.experiment.l.a(SourceFile:341)
+	at ui.data.experiment.b.c.dVA(SourceFile:753)
+	at ui.data.experiment.b.f.timerActionPerformed(SourceFile:421)
+	at ui.utils.s.b.actionPerformed(SourceFile:137)
+	at java.desktop/javax.swing.Timer.fireActionPerformed(Timer.java:311)
+	at ui.utils.s.a.fireActionPerformed(SourceFile:78)
+	at java.desktop/javax.swing.Timer$DoPostEvent.run(Timer.java:243)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at ui.frmwork.a.d.dispatchEvent(SourceFile:38)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+Wed Nov 12 09:27:45 BRT 2025
+java.lang.NullPointerException: Cannot invoke "ui.views.bK.bgm()" because the return value of "ui.dlg.q.aU.a(ui.dlg.q.aU)" is null
+	at ui.dlg.q.aX.gyp(SourceFile:685)
+	at ui.utils.j.j.ad.c(SourceFile:502)
+	at ui.utils.j.j.ad.setModel(SourceFile:447)
+	at ui.dlg.c.c.E.a(SourceFile:67)
+	at ui.dlg.c.c.E.cleanup(SourceFile:342)
+	at ui.dlg.c.bi.cleanup(SourceFile:88)
+	at ui.dlg.q.aU.cleanup(SourceFile:662)
+	at ui.views.o.u.cleanup(SourceFile:472)
+	at ui.views.S.w.mtw(SourceFile:1662)
+	at ui.views.S.w.cleanup(SourceFile:2037)
+	at ui.a.cleanup(SourceFile:1029)
+	at ui.PlanAhead.bhW(SourceFile:721)
+	at ui.PlanAhead.handleTclEvent(SourceFile:1832)
+	at ui.frmwork.a.x.d(SourceFile:42)
+	at ui.frmwork.I.i(SourceFile:216)
+	at ui.frmwork.I.fireTclEvent(SourceFile:139)
+	at ui.frmwork.tcltasksi.task_manager_eval_in_tcl_or_bad_alloc(Native Method)
+	at ui.a.b.fw(SourceFile:201)
+	at ui.utils.x.a(SourceFile:2851)
+	at ui.d.run(SourceFile:1332)
+	at ui.c.run(SourceFile:1338)
+	at ui.PlanAhead$c.run(SourceFile:2647)
+	at ui.views.S.ac.a(SourceFile:401)
+	at ui.PlanAhead$c.b(SourceFile:2634)
+	at ui.PlanAhead.a(SourceFile:1366)
+	at ui.a.ji(SourceFile:1348)
+	at ui.a.bfs(SourceFile:1262)
+	at ui.i.L.m(SourceFile:147)
+	at ui.i.N.n(SourceFile:83)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at ui.frmwork.a.d.dispatchEvent(SourceFile:38)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+

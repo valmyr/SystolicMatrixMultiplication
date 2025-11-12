@@ -27,8 +27,7 @@ logic [BYTESIZES-1+3:0] pframe_data;
 enum bit [2:0]{FRAME_1,IDLE, START, S_DATA, STOPBIT} next_fsm,current_fsm;
 baudRateGenerator #(.BAUDRATE(BAUDRATE),.OVERSAMPLING(OVERSAMPLING), .CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF)) boudrategenerator_inst (
     .nreset        (nreset        		)     ,        
-    .ena           (1'b1          		)     ,        
-    .ena2          (1'b1          		)     ,        
+    .ena           (1'b1          		)     ,               
     .clock         (clock         	    )     ,           
     .clock_out     (clock_out     		)     ,            
     .counting_done2(sample_center_bit)     

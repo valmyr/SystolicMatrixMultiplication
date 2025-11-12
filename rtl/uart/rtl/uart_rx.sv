@@ -11,41 +11,49 @@
 //============================================================
 
 module uart_rx#(parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 50_000_000,CLOCK_REF=5_000_000)(
-    input  logic                     clock              ,
-    input  logic                     nreset             ,
-    input  logic                     sdata_rx_in        ,
-    input  logic                     valid_rx_in        ,
-    output logic                     ready_rx_out       ,
-    output logic [BYTESIZES-1:0]     data_rx_out        
+    (*dont_touch = "true"*) input  logic                     clock              ,
+    (*dont_touch = "true"*) input  logic                     nreset             ,
+    (*dont_touch = "true"*) input  logic                     sdata_rx_in        ,
+    (*dont_touch = "true"*) input  logic                     valid_rx_in        ,
+    (*dont_touch = "true"*) output logic                     ready_rx_out       ,
+    (*dont_touch = "true"*) output logic [BYTESIZES-1:0]     data_rx_out        
 );
 
-enum logic [1:0]{IDLE=2'b00, START, R_DATA, STOPBIT} next_fsm, current_fsm      ;
-logic [OVERSAMPLING-1:0] counter_max_sampling                                   ;
-logic [BYTESIZES-1:0]    px_bit, next_px_bit                                    ;
-logic [BYTESIZES-1:0]    pdata_rx_out                                           ;
-logic [BYTESIZES-1:0]    next_pdata_rx_out                                      ;
-logic                    ena,ena_next, valid_rx_in_in, tmp_sdata_rx_in          ;  
-logic                    clock_out, sample_center_bit, bit_start, tran_bit_start;
-
+(*dont_touch = "true"*) enum logic [1:0]{IDLE=2'b00, START, R_DATA, STOPBIT} next_fsm, current_fsm      ;
+(*dont_touch = "true"*) logic [OVERSAMPLING-1:0] counter_max_sampling                                   ;
+(*dont_touch = "true"*) logic [BYTESIZES-1:0]    px_bit, next_px_bit                                    ;
+(*dont_touch = "true"*) logic [BYTESIZES-1:0]    pdata_rx_out                                           ;
+(*dont_touch = "true"*) logic [BYTESIZES-1:0]    next_pdata_rx_out                                      ;
+(*dont_touch = "true"*) logic                    ena,ena_next, valid_rx_in_in, tmp_sdata_rx_in          ;  
+(*dont_touch = "true"*) logic                    clock_out, sample_center_bit, bit_start, tran_bit_start;
+(*dont_touch = "true"*)
 baudRateGenerator #(.BAUDRATE(BAUDRATE),.OVERSAMPLING(OVERSAMPLING), .CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF)) boudrategenerator_inst (
-    .nreset        (nreset        		    )     ,        
-    .ena           (ena          		    )     ,        
-    .ena2          (1'b1          		    )     ,        
-    .clock         (clock         	        )     ,           
-    .clock_out     (clock_out     		    )     ,            
-    .counting_done2(sample_center_bit       )     
+    (*dont_touch = "true"*) .nreset        (nreset        		    )     ,        
+    (*dont_touch = "true"*) .ena           (ena         		    )     ,               
+    (*dont_touch = "true"*) .clock         (clock         	        )     ,           
+    (*dont_touch = "true"*) .clock_out     (clock_out     		    )     ,            
+    (*dont_touch = "true"*) .counting_done2(sample_center_bit       )     
 );
-
-assign valid_rx_in_in = valid_rx_in;
+//(*dont_touch = "true"*) assign tran_bit_start =1;
+(*dont_touch = "true"*) assign valid_rx_in_in = valid_rx_in;
 assign next_pdata_rx_out = (current_fsm == R_DATA) ? sample_center_bit & tmp_sdata_rx_in :pdata_rx_out       ;
 //assign tran_bit_start = (counter_max_sampling < OVERSAMPLING/2);
+
+always_ff@(posedge clock, negedge nreset)begin
+    if(!nreset)begin
+        bit_start       <=    0 ;
+        ena 	        <=    0 ;
+    end else begin
+    (*dont_touch = "true"*) bit_start <= (!sdata_rx_in & tmp_sdata_rx_in) & current_fsm == IDLE                           ;
+        ena                     <= ena_next                                                                         ;
+    end
+end
+(*dont_touch = "true"*)
 always_ff@(posedge clock_out, negedge nreset) begin
     if(!nreset)begin 
         current_fsm     <= IDLE ;
         px_bit          <= 	  0 ;
         pdata_rx_out    <=    0;
-        ena 	        <=    0 ;
-        bit_start       <=    0 ;
         tmp_sdata_rx_in <=    1 ;
         data_rx_out     <=    0 ;
     end
@@ -54,12 +62,10 @@ always_ff@(posedge clock_out, negedge nreset) begin
 	    current_fsm             <= next_fsm                                                                         ;
         px_bit                  <= next_px_bit                                                                      ;
 		pdata_rx_out[px_bit]    <= (current_fsm == R_DATA) ? next_pdata_rx_out :     pdata_rx_out[px_bit]                                                           ;
-        bit_start               <= (!sdata_rx_in & tmp_sdata_rx_in) & current_fsm == IDLE                           ;
-        ena                     <= ena_next                                                                         ;
         data_rx_out             <= ready_rx_out ?  pdata_rx_out: data_rx_out                                        ;
     end
 end
-
+(*dont_touch = "true"*)
 always_comb case(current_fsm)
         IDLE:begin
             next_fsm 		= 	bit_start & valid_rx_in_in ? START :IDLE                        ;
@@ -88,7 +94,7 @@ always_comb case(current_fsm)
         end
 		
 endcase 
-
+(*dont_touch = "true"*)
 always_ff@(posedge clock)begin
     if(current_fsm == STOPBIT )    ready_rx_out <=1                               ;
     else                        ready_rx_out <= 0                              ;

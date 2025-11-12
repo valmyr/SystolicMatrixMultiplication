@@ -11,14 +11,14 @@
 //============================================================
 
 module counter#(parameter MOD = 16)(
-    input  logic clock           ,
-    input  logic nreset          ,
-    input  logic ena             ,
-    output logic [$clog2(MOD)-1:0] counter1,
-    output logic counting_done
+    (*dont_touch = "true"*) input  logic clock           ,
+    (*dont_touch = "true"*) input  logic nreset          ,
+    (*dont_touch = "true"*) input  logic ena             ,
+    (*dont_touch = "true"*) output logic [$clog2(MOD)-1:0] counter1,
+    (*dont_touch = "true"*) output logic counting_done
 
 );
-    logic [$clog2(MOD)-1:0] next_counter, counter;
+ (*dont_touch = "true"*)   logic [$clog2(MOD)-1:0]  counter;
     always_ff@(posedge clock, negedge nreset)begin
         if(!nreset)counter <=0;
         else       counter <= counter == MOD - 1 || !ena ? 0 : counter +1 ;

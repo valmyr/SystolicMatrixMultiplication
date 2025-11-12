@@ -1,9 +1,0 @@
-# compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../../rtl/uart/rtl" \
-"tb_func_synth.v" \
-
-sv xil_defaultlib  --include "../../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../../rtl/uart/rtl" \
-"../../../../../../../tb/tb_fpga.sv" \
-
-# Do not sort compile order
-nosort
