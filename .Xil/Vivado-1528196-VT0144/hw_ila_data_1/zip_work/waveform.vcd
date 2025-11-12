@@ -1,0 +1,92 @@
+$date
+        2025-Nov-12 17:29:39
+$end
+$version
+        Vivado v2025.1 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 8 " \SystolicCore0/mem2serial_pmatrix_in[0][0] [7:0] $end
+$var reg 8 * \SystolicCore0/mem2serial_pmatrix_in[0][1] [7:0] $end
+$var reg 8 2 \SystolicCore0/mem2serial_pmatrix_in[0][2] [7:0] $end
+$var reg 8 : \SystolicCore0/mem2serial_pmatrix_in[0][3] [7:0] $end
+$var reg 8 B \SystolicCore0/mem2serial_pmatrix_in[1][0] [7:0] $end
+$var reg 8 J \SystolicCore0/mem2serial_pmatrix_in[1][1] [7:0] $end
+$var reg 8 R \SystolicCore0/mem2serial_pmatrix_in[1][2] [7:0] $end
+$var reg 8 Z \SystolicCore0/mem2serial_pmatrix_in[1][3] [7:0] $end
+$var reg 8 b \SystolicCore0/mem2serial_pmatrix_in[2][0] [7:0] $end
+$var reg 8 j \SystolicCore0/mem2serial_pmatrix_in[2][1] [7:0] $end
+$var reg 8 r \SystolicCore0/mem2serial_pmatrix_in[2][2] [7:0] $end
+$var reg 8 z \SystolicCore0/mem2serial_pmatrix_in[2][3] [7:0] $end
+$var reg 8 $" \SystolicCore0/mem2serial_pmatrix_in[3][0] [7:0] $end
+$var reg 8 ," \SystolicCore0/mem2serial_pmatrix_in[3][1] [7:0] $end
+$var reg 8 4" \SystolicCore0/mem2serial_pmatrix_in[3][2] [7:0] $end
+$var reg 8 <" \SystolicCore0/mem2serial_pmatrix_in[3][3] [7:0] $end
+$var reg 8 D" SystolicCore0/uart_data_rx_out [7:0] $end
+$var reg 1 L" SystolicCore0/uart_sdata_rx_in $end
+$var reg 1 M" SystolicCore0/systolicControlUnit_syst_rvalid_o $end
+$var reg 1 N" _TRIGGER $end
+$var reg 1 O" _WINDOW $end
+$var reg 1 P" _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 "
+b0 *
+b0 2
+b0 :
+b0 B
+b0 J
+b0 R
+b0 Z
+b0 b
+b0 j
+b0 r
+b0 z
+b0 $"
+b0 ,"
+b0 4"
+b0 <"
+b0 D"
+1L"
+0M"
+0N"
+1O"
+0P"
+$end
+#2
+0L"
+1N"
+#7811
+1L"
+#8679
+0L"
+#16346
+1M"
+#16347
+b1111101 "
+b1010011 *
+b1110010 2
+b1110010 :
+b10000111 B
+b1011010 J
+b1110100 R
+b1010101 Z
+b10001011 b
+b1001010 j
+b1110000 r
+b1011101 z
+b10001100 $"
+b1010011 ,"
+b1111000 4"
+b1101111 <"
+0M"
+#16489
+1L"
+#17356
+0L"
+#25166
+1L"

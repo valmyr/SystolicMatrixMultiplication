@@ -261,25 +261,26 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
 
 
 ila_0 ILA (
-	.clk(clock), // input wire clk
-	.probe0 (syst_output_produc_a_b[00][00]), // input wire [7:0]  probe0  
-	.probe1 (syst_output_produc_a_b[00][01]), // input wire [7:0]  probe1 
-	.probe2 (syst_output_produc_a_b[00][02]), // input wire [7:0]  probe2 
-	.probe3 (syst_output_produc_a_b[00][03]), // input wire [7:0]  probe3 
-	.probe4 (syst_output_produc_a_b[01][00]), // input wire [7:0]  probe4 
-	.probe5 (syst_output_produc_a_b[01][01]), // input wire [7:0]  probe5 
-	.probe6 (syst_output_produc_a_b[01][02]), // input wire [7:0]  probe6 
-	.probe7 (syst_output_produc_a_b[01][03]), // input wire [7:0]  probe7 
-	.probe8 (syst_output_produc_a_b[02][00]), // input wire [0:0]  probe8 
-	.probe9 (syst_output_produc_a_b[02][01]), // input wire [0:0]  probe9 
-	.probe10(syst_output_produc_a_b[02][02]), // input wire [0:0]  probe10 
-	.probe11(syst_output_produc_a_b[02][03]), // input wire [0:0]  probe11 
-	.probe12(syst_output_produc_a_b[03][00]), // input wire [0:0]  probe12 
-	.probe13(syst_output_produc_a_b[03][01]) , // input wire [0:0]  probe13 
-	.probe14(syst_output_produc_a_b[03][02]), // input wire [0:0]  probe14 
-	.probe15(syst_output_produc_a_b[03][03]), // input wire [0:0]  probe15
-	.probe16(uart_data_rx_out               ),
-	.probe17(uart_sdata_rx_in               )
+	.clk(clock                                              ), // input wire clk
+	.probe0 (syst_output_produc_a_b[00][00]                 ), // input wire [7:0]  probe0  
+	.probe1 (syst_output_produc_a_b[00][01]                 ), // input wire [7:0]  probe1 
+	.probe2 (syst_output_produc_a_b[00][02]                 ), // input wire [7:0]  probe2 
+	.probe3 (syst_output_produc_a_b[00][03]                 ), // input wire [7:0]  probe3 
+	.probe4 (syst_output_produc_a_b[01][00]                 ), // input wire [7:0]  probe4 
+	.probe5 (syst_output_produc_a_b[01][01]                 ), // input wire [7:0]  probe5 
+	.probe6 (syst_output_produc_a_b[01][02]                 ), // input wire [7:0]  probe6 
+	.probe7 (syst_output_produc_a_b[01][03]                 ), // input wire [7:0]  probe7 
+	.probe8 (syst_output_produc_a_b[02][00]                 ), // input wire [0:0]  probe8 
+	.probe9 (syst_output_produc_a_b[02][01]                 ), // input wire [0:0]  probe9 
+	.probe10(syst_output_produc_a_b[02][02]                 ), // input wire [0:0]  probe10 
+	.probe11(syst_output_produc_a_b[02][03]                 ), // input wire [0:0]  probe11 
+	.probe12(syst_output_produc_a_b[03][00]                 ), // input wire [0:0]  probe12 
+	.probe13(syst_output_produc_a_b[03][01]                 ), // input wire [0:0]  probe13 
+	.probe14(syst_output_produc_a_b[03][02]                 ), // input wire [0:0]  probe14 
+	.probe15(syst_output_produc_a_b[03][03]                 ), // input wire [0:0]  probe15
+	.probe16(uart_data_rx_out                               ),
+	.probe17(uart_sdata_rx_in                               ),
+	.probe18(systolicControlUnit_syst_rvalid_o              )
 );
 
 endmodule
