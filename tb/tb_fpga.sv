@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 module tb;    
   logic clock   , nreset;
-  parameter SIZE_M = 8;
+  parameter SIZE_M = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M;
-  logic [7:0]INPUT_A [SIZE_INPUT_SERIAL+3-1:0];
+  logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];
   logic [7:0]INPUT_B [SIZE_INPUT_SERIAL-1:0];
   logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt1 ;
   logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt2 ;
@@ -24,7 +24,7 @@ module tb;
   logic                   tb_uart_ready_tx_out                               ;
   logic                   tb_uart_sdata_tx_out                               ;
 
-  uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart_tb (
+  uart_top uart_tb(
     .clock             (tb_uart_clock       )    ,
     .nreset            (tb_uart_nreset      )    ,
     //pinout RX                                 
@@ -34,7 +34,7 @@ module tb;
     .data_rx_out       (tb_uart_data_rx_out)    ,  
     //pinout TX                                                  
     .valid_tx_in       (1'b1 )    ,
-    .data_tx_in        (tb_uart_data_tx_in  )    ,
+    .data_tx_in        ({4'b0000,tb_uart_data_tx_in}  )    ,
     .ready_tx_out      (tb_uart_ready_tx_out)    ,
     .sdata_tx_out      (tb_uart_sdata_tx_out)
 );
@@ -43,22 +43,8 @@ initial begin
   $readmemh("testeINPUT_B.mem",INPUT_B);
 end
 
-
-/*
-serial2mem #(.WIDTH(WIDTH), .SIZE(SIZE))serial2mem_inst0(
-  .clock   (serial2mem_clock   )                                   ,  
-  .nreset  (serial2mem_nreset  )                                   ,// r=1,w=0
-  .rw      (serial2mem_rw      )                                   , //Dado válido na entrada
-  .valid_i (serial2mem_valid_i )                                   , //Dado válido na entrada
-  .rready_i(serial2mem_rready_i)                                   , //Pronto para receber uma resposta
-  .rvalid_o(serial2mem_rvalid_o)                                   , //Resposta Válida(Operação concluida)
-  .ready_o (serial2mem_ready_o )                                   , //Pronto para receber um dado valido na entrada
-  .in_data (serial2mem_in_data )                                   ,
-  .out_data(serial2mem_out_data) 
-);*/
   assign tb_uart_clock = clock;
   assign tb_uart_nreset = nreset;
-
   assign serial2mem_nreset =nreset;
   assign serial2mem_clock =clock;
   assign serial2mem_valid_i = 1;
@@ -70,7 +56,7 @@ serial2mem #(.WIDTH(WIDTH), .SIZE(SIZE))serial2mem_inst0(
     #1 nreset = 1;
     //#(40_300_000)$finish;
   end
-  assign tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL+3-1) ? INPUT_A[cnt1] : INPUT_B[cnt2];
+  assign tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL-1+3) ? INPUT_A[cnt1] : INPUT_B[cnt2];
   always #(5)clock=~clock;/*
   always_ff@(posedge clock, negedge nreset)begin
       if(!nreset)begin
@@ -87,7 +73,8 @@ serial2mem #(.WIDTH(WIDTH), .SIZE(SIZE))serial2mem_inst0(
       end
     end*/
   //xrun ./tb_fpga.sv ../rtl/Arty7_top_sim.sv ../rtl/systolicMatrixMultiply.sv ../rtl/accumulator.sv -access +rwc +gui
-
+  logic aa;
+  assign aa = tb_uart_ready_tx_out;
     always_ff@(posedge tb_uart_ready_tx_out, negedge nreset)begin
       if(!nreset)begin
         cnt1 <= 0;
@@ -103,4 +90,6 @@ serial2mem #(.WIDTH(WIDTH), .SIZE(SIZE))serial2mem_inst0(
     .uart_txd_in (tb_uart_sdata_tx_out)   ,
     .uart_rxd_out(tb_uart_sdata_rx_in)  
 );
+
+
 endmodule

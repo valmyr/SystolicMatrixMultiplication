@@ -1,4 +1,7 @@
-1762111281 /home/xmen/Desktop/compara/analise/tb/tb_fpga.sv
-1762175164 /home/xmen/Desktop/compara/analise/rtl/Arty7_top_sim.sv
-1761836330 /home/xmen/Desktop/compara/analise/rtl/systolicMatrixMultiply.sv
-1761836330 /home/xmen/Desktop/compara/analise/rtl/accumulator.sv
+1762738917 /home/xmen/Desktop/SystolicCore/tb/tb_fpga.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/baud_rate.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/counter.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_rx.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_top.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_tx.sv

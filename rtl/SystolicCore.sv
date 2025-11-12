@@ -21,7 +21,7 @@
 
 
 module SystolicCoreTop#(
-    parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000, WIDTHx = 1,SIZE = 8,WIDTH =8, CLOCK_TRANSFER_PC= 10_000
+    parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000, WIDTHx = 4,SIZE = 8,WIDTH =8, CLOCK_TRANSFER_PC= 10_000
 )(
     input  logic          clock           ,
     input  logic          nreset          ,
@@ -264,19 +264,21 @@ ila_0 ILA (
 	.probe0 (mem2serial_pmatrix_in[00][00]), // input wire [7:0]  probe0  
 	.probe1 (mem2serial_pmatrix_in[00][01]), // input wire [7:0]  probe1 
 	.probe2 (mem2serial_pmatrix_in[00][02]), // input wire [7:0]  probe2 
-	.probe3 (mem2serial_pmatrix_in[00][03]), // input wire [7:0]  probe3 
-	.probe4 (mem2serial_pmatrix_in[00][04]), // input wire [7:0]  probe4 
-	.probe5 (mem2serial_pmatrix_in[00][05]), // input wire [7:0]  probe5 
-	.probe6 (mem2serial_pmatrix_in[00][06]), // input wire [7:0]  probe6 
-	.probe7 (mem2serial_pmatrix_in[00][07]), // input wire [7:0]  probe7 
-	.probe8 (mem2serial_pmatrix_in[07][00]), // input wire [0:0]  probe8 
-	.probe9 (mem2serial_pmatrix_in[07][01]), // input wire [0:0]  probe9 
-	.probe10(mem2serial_pmatrix_in[07][02]), // input wire [0:0]  probe10 
-	.probe11(mem2serial_pmatrix_in[07][04]), // input wire [0:0]  probe11 
-	.probe12(mem2serial_pmatrix_in[07][05]), // input wire [0:0]  probe12 
-	.probe13(mem2serial_pmatrix_in[07][06]), // input wire [0:0]  probe13 
-	.probe14(mem2serial_pmatrix_in[07][07]), // input wire [0:0]  probe14 
-	.probe15(mem2serial_pmatrix_in[07][08]) // input wire [0:0]  probe15
+	.probe3 (mem2serial_pmatrix_in[01][00]), // input wire [7:0]  probe3 
+	.probe4 (mem2serial_pmatrix_in[01][01]), // input wire [7:0]  probe4 
+	.probe5 (mem2serial_pmatrix_in[01][02]), // input wire [7:0]  probe5 
+	.probe6 (mem2serial_pmatrix_in[02][00]), // input wire [7:0]  probe6 
+	.probe7 (mem2serial_pmatrix_in[02][01]), // input wire [7:0]  probe7 
+	.probe8 (mem2serial_pmatrix_in[02][02]), // input wire [0:0]  probe8 
+	.probe9 (serial2mem_opa_in_data       ), // input wire [0:0]  probe9 
+	.probe10(serial2mem_opb_in_data       ), // input wire [0:0]  probe10 
+	.probe11(serial2mem_opa_rw            ), // input wire [0:0]  probe11 
+	.probe12(serial2mem_opb_rw            ), // input wire [0:0]  probe12 
+	.probe13(systolicControlUnit_syst_rvalid_o  ), // input wire [0:0]  probe13 
+	.probe14(uart_data_rx_out), // input wire [0:0]  probe14 
+	.probe15(clock), // input wire [0:0]  probe15
+	.probe16(uart_txd_in                  ),
+	.probe17(systolicControlUnit_syst_rvalid_o                  )
 );
 
 endmodule

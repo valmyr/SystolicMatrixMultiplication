@@ -1,0 +1,16 @@
+1762739311 /home/xmen/Desktop/SystolicCore/tb/tb_fpga.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/baud_rate.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/counter.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_rx.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_top.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_tx.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/Arty7_top_sim.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/ShiftMatrix.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/accumulator.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv
+1762737916 /home/xmen/Desktop/SystolicCore/rtl/ram.sv
+1762739479 /home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv
+1762739470 /home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv

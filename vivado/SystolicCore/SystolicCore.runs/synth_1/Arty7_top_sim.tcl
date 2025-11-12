@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.tcl"
+  variable script "/home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.tcl"
   variable category "vivado_synth"
 }
 
@@ -58,7 +58,9 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 8
 set_param general.usePosixSpawnForFork 1
+set_param tcl.collectionResultDisplayLimit 0
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-3
 
@@ -66,38 +68,38 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.cache/wt [current_project]
-set_property parent.project_path /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.xpr [current_project]
+set_property webtalk.parent_dir /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.cache/wt [current_project]
+set_property parent.project_path /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.cache/ip [current_project]
+set_property ip_output_repo /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicControlUnit.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/SystolicCore.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/accumulator.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/baud_rate.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/counter.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/mem2serial.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/ref_clock.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/serial2mem.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/systolicMatrixMultiply.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_rx.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_top.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/uart/rtl/uart_tx.sv
-  /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/rtl/Arty7_top_sim.sv
+  /home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv
+  /home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv
+  /home/xmen/Desktop/SystolicCore/rtl/accumulator.sv
+  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/baud_rate.sv
+  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/counter.sv
+  /home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv
+  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv
+  /home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv
+  /home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv
+  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_rx.sv
+  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_top.sv
+  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/uart_tx.sv
+  /home/xmen/Desktop/SystolicCore/rtl/Arty7_top_sim.sv
 }
-read_ip -quiet /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ram_single_port/ram_single_port.xci
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ram_single_port/ram_single_port_ooc.xdc]
+read_ip -quiet /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ram_single_port/ram_single_port.xci
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ram_single_port/ram_single_port_ooc.xdc]
 
-read_ip -quiet /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
+read_ip -quiet /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_0_1/ila_0.xci
+set_property used_in_synthesis false [get_files -all /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.gen/sources_1/ip/ila_0_1/ila_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -111,11 +113,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc
 set_property used_in_implementation false [get_files /home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
+read_checkpoint -auto_incremental -incremental /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -24,3 +24,9 @@ s11(03Nov2025:09:56:02):  xrun ./tb_fpga.sv ../rtl/Arty7_top_sim.sv ../rtl/systo
 s12(03Nov2025:10:09:07):  xrun ./tb_fpga.sv ../rtl/Arty7_top_sim.sv ../rtl/systolicMatrixMultiply.sv ../rtl/accumulator.sv -access +rwc +gui 
 #e13(03Nov2025:11:22:09): source ./xcelium.d/env.d/env.history.03Nov2025_11_22_09
 s13(03Nov2025:11:22:09):  xrun ./tb_fpga.sv ../rtl/Arty7_top_sim.sv ../rtl/systolicMatrixMultiply.sv ../rtl/accumulator.sv -access +rwc +gui 
+#e14(09Nov2025:22:43:39): source ./xcelium.d/env.d/env.history.09Nov2025_22_43_39
+s14(09Nov2025:22:43:39):  xrun tb_fpga.sv ../rtl/uart/rtl/baud_rate.sv ../rtl/uart/rtl/counter.sv ../rtl/uart/rtl/ref_clock.sv ../rtl/uart/rtl/uart_rx.sv ../rtl/uart/rtl/uart_top.sv ../rtl/uart/rtl/uart_tx.sv 
+#e15(09Nov2025:22:44:14): source ./xcelium.d/env.d/env.history.09Nov2025_22_44_14
+s15(09Nov2025:22:44:14):  xrun tb_fpga.sv ../rtl/uart/rtl/baud_rate.sv ../rtl/uart/rtl/counter.sv ../rtl/uart/rtl/ref_clock.sv ../rtl/uart/rtl/uart_rx.sv ../rtl/uart/rtl/uart_top.sv ../rtl/uart/rtl/uart_tx.sv -ac 
+#e16(09Nov2025:22:45:09): source ./xcelium.d/env.d/env.history.09Nov2025_22_45_09
+s16(09Nov2025:22:45:09):  xrun tb_fpga.sv ../rtl/uart/rtl/baud_rate.sv ../rtl/uart/rtl/counter.sv ../rtl/uart/rtl/ref_clock.sv ../rtl/uart/rtl/uart_rx.sv ../rtl/uart/rtl/uart_top.sv ../rtl/uart/rtl/uart_tx.sv -access +rw -gui 

@@ -1,0 +1,84 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Nov 09, 2025 at 22:51:21 -03
+xrun
+	tb/tb_fpga.sv
+	rtl/Arty7_top_sim.sv
+	rtl/ShiftMatrix.sv
+	rtl/SystolicControlUnit.sv
+	rtl/SystolicCore.sv
+	rtl/accumulator.sv
+	rtl/mem2serial.sv
+	rtl/ram.sv
+	rtl/serial2mem.sv
+	rtl/systolicMatrixMultiply.sv
+	-access +rw
+	-gui
+Recompiling... reason: file './tb/tb_fpga.sv' is newer than expected.
+	expected: Sun Nov  9 22:47:26 2025
+	actual:   Sun Nov  9 22:48:31 2025
+file: rtl/serial2mem.sv
+	module worklib.serial2mem:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+counter #(.MOD(STOPCOUNTER)) counter_base(
+                                        |
+xmelab: *W,CUVWSP (./rtl/uart/rtl/ref_clock.sv,9|40): 1 output port was not connected:
+xmelab: (./rtl/uart/rtl/counter.sv,17): counter1
+
+    counter #(.MOD(STOPCOUNTER)) base_clock_counter( //Contador que gera a base de tempo stop_counter(clock_input,baundrate,oversampling)
+                                                  |
+xmelab: *W,CUVWSP (./rtl/uart/rtl/baud_rate.sv,36|50): 1 output port was not connected:
+xmelab: (./rtl/uart/rtl/counter.sv,17): counter1
+
+   .clka     (single_port_ram_clock     ),              // input wire clka
+       |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,41|7): Port name 'clka' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .rsta     (~single_port_ram_nreset   ),              // input wire rsta
+       |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,42|7): Port name 'rsta' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .ena      (single_port_ram_en        ),              // input wire ena
+      |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,43|6): Port name 'ena' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .wea      (single_port_ram_we        ),              // input wire [0 : 0] wea
+      |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,44|6): Port name 'wea' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .addra    (single_port_ram_addr      ),              // input wire [6 : 0] addra
+        |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,45|8): Port name 'addra' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .dina     (single_port_ram_di        ),              // input wire [31 : 0] dina
+       |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,46|7): Port name 'dina' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .douta    (single_port_ram_dout      ),              // output wire [31 : 0] douta
+        |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,47|8): Port name 'douta' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .rsta_busy(                          )  // output wire rsta_busy
+            |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,48|12): Port name 'rsta_busy' of instance 'tb.a.SystolicCore0.serial2mem_opA.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .clka     (single_port_ram_clock     ),              // input wire clka
+       |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,41|7): Port name 'clka' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .rsta     (~single_port_ram_nreset   ),              // input wire rsta
+       |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,42|7): Port name 'rsta' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .ena      (single_port_ram_en        ),              // input wire ena
+      |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,43|6): Port name 'ena' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .wea      (single_port_ram_we        ),              // input wire [0 : 0] wea
+      |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,44|6): Port name 'wea' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .addra    (single_port_ram_addr      ),              // input wire [6 : 0] addra
+        |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,45|8): Port name 'addra' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .dina     (single_port_ram_di        ),              // input wire [31 : 0] dina
+       |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,46|7): Port name 'dina' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .douta    (single_port_ram_dout      ),              // output wire [31 : 0] douta
+        |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,47|8): Port name 'douta' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+   .rsta_busy(                          )  // output wire rsta_busy
+            |
+xmelab: *E,CUVPOM (./rtl/serial2mem.sv,48|12): Port name 'rsta_busy' of instance 'tb.a.SystolicCore0.serial2mem_opB.mem' is invalid or has multiple connections and the instantiated module is defined in file '/home/xmen/Desktop/SystolicCore/rtl/ram.sv'.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.03-s005: Exiting on Nov 09, 2025 at 22:51:21 -03  (total: 00:00:00)

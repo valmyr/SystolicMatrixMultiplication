@@ -1,0 +1,20 @@
+Csrcscan starts
+=============== Using precompiled files for SV std libs ===========
+INFO: The Verilog library search path for library "std" is now "D:/Xillinx/2025.1/Vivado/data/precomp_hsv/sv/std" (VERI-1509)
+INFO: The Verilog library search path for library "uvm" is now "D:/Xillinx/2025.1/Vivado/data/precomp_hsv/sv/uvm" (VERI-1509)
+INFO: analyzing module systolicControlUnitTop (VERI-9002)
+INFO: analyzing module SystolicCoreTop (VERI-9002)
+INFO: analyzing module accumulator_cells (VERI-9002)
+INFO: analyzing module baudRateGenerator (VERI-9002)
+C:/Users/ValmyrSilva07/Desktop/SystolicCore/rtl/uart/rtl/baud_rate.sv(33): INFO: undeclared symbol 'clock_out_refp', assumed default net type 'wire' (VERI-2561)
+INFO: analyzing module counter (VERI-9002)
+INFO: analyzing module mem2seriala (VERI-9002)
+INFO: analyzing module ref_clock (VERI-9002)
+INFO: analyzing module serial2mem (VERI-9002)
+INFO: analyzing module systolicMatrixMultiply (VERI-9002)
+INFO: analyzing module uart_rx (VERI-9002)
+INFO: analyzing module uart_top (VERI-9002)
+INFO: analyzing module uart_tx (VERI-9002)
+C:/Users/ValmyrSilva07/Desktop/SystolicCore/rtl/uart/rtl/uart_tx.sv(34): INFO: undeclared symbol 'sample_center_bit', assumed default net type 'wire' (VERI-2561)
+INFO: analyzing module Arty7_top_sim (VERI-9002)
+srcscan exits with return value 0

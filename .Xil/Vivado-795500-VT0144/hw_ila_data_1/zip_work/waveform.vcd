@@ -1,0 +1,89 @@
+$date
+        2025-Nov-10 16:01:24
+$end
+$version
+        Vivado v2025.1 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 8 " \SystolicCore0/mem2serial_pmatrix_in[0][0] [7:0] $end
+$var reg 8 * \SystolicCore0/mem2serial_pmatrix_in[0][1] [7:0] $end
+$var reg 8 2 \SystolicCore0/mem2serial_pmatrix_in[0][2] [7:0] $end
+$var reg 8 : \SystolicCore0/mem2serial_pmatrix_in[0][3] [7:0] $end
+$var reg 8 B \SystolicCore0/mem2serial_pmatrix_in[0][4] [7:0] $end
+$var reg 8 J \SystolicCore0/mem2serial_pmatrix_in[0][5] [7:0] $end
+$var reg 8 R \SystolicCore0/mem2serial_pmatrix_in[0][6] [7:0] $end
+$var reg 8 Z \SystolicCore0/mem2serial_pmatrix_in[0][7] [7:0] $end
+$var reg 8 b \SystolicCore0/mem2serial_pmatrix_in[7][0] [7:0] $end
+$var reg 8 j \SystolicCore0/mem2serial_pmatrix_in[7][1] [7:0] $end
+$var reg 8 r \SystolicCore0/mem2serial_pmatrix_in[7][2] [7:0] $end
+$var reg 8 z \SystolicCore0/mem2serial_pmatrix_in[7][4] [7:0] $end
+$var reg 8 $" \SystolicCore0/mem2serial_pmatrix_in[7][5] [7:0] $end
+$var reg 8 ," \SystolicCore0/mem2serial_pmatrix_in[7][6] [7:0] $end
+$var reg 8 4" \SystolicCore0/mem2serial_pmatrix_in[7][7] [7:0] $end
+$var reg 1 <" SystolicCore0/clock $end
+$var reg 1 =" SystolicCore0/<const0>_1 $end
+$var reg 1 >" SystolicCore0/<const0>_2 $end
+$var reg 1 ?" SystolicCore0/<const0>_3 $end
+$var reg 1 @" SystolicCore0/<const0>_4 $end
+$var reg 1 A" SystolicCore0/<const0>_5 $end
+$var reg 1 B" SystolicCore0/<const0>_6 $end
+$var reg 1 C" SystolicCore0/<const0> $end
+$var reg 1 D" SystolicCore0/uart_txd_in $end
+$var reg 1 E" SystolicCore0/systolicControlUnit_syst_rvalid_o $end
+$var reg 1 F" _TRIGGER $end
+$var reg 1 G" _WINDOW $end
+$var reg 1 H" _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 "
+b0 *
+b0 2
+b0 :
+b0 B
+b0 J
+b0 R
+b0 Z
+b0 b
+b0 j
+b0 r
+b0 z
+b0 $"
+b0 ,"
+b0 4"
+0<"
+0="
+0>"
+0?"
+0@"
+0A"
+0B"
+0C"
+0D"
+0E"
+0F"
+1G"
+0H"
+$end
+#2
+1F"
+#3004
+1D"
+#3873
+0D"
+#11681
+1D"
+#12549
+0D"
+#20357
+1D"
+#21226
+0D"
+#29036
+1D"
+#29902
+0D"

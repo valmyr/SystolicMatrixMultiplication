@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Sat Nov  8 21:16:54 2025
+| Date         : Tue Nov 11 18:00:43 2025
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_utilization -file Arty7_top_sim_utilization_synth.rpt -pb Arty7_top_sim_utilization_synth.pb
 | Design       : Arty7_top_sim
@@ -31,14 +31,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 2794 |     0 |          0 |     63400 |  4.41 |
-|   LUT as Logic          | 2794 |     0 |          0 |     63400 |  4.41 |
+| Slice LUTs*             |  586 |     0 |          0 |     63400 |  0.92 |
+|   LUT as Logic          |  586 |     0 |          0 |     63400 |  0.92 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         | 4804 |     0 |          0 |    126800 |  3.79 |
-|   Register as Flip Flop | 4784 |     0 |          0 |    126800 |  3.77 |
-|   Register as Latch     |   20 |     0 |          0 |    126800 |  0.02 |
-| F7 Muxes                |  273 |     0 |          0 |     31700 |  0.86 |
-| F8 Muxes                |  136 |     0 |          0 |     15850 |  0.86 |
+| Slice Registers         |  491 |     0 |          0 |    126800 |  0.39 |
+|   Register as Flip Flop |  475 |     0 |          0 |    126800 |  0.37 |
+|   Register as Latch     |   16 |     0 |          0 |    126800 |  0.01 |
+| F7 Muxes                |    9 |     0 |          0 |     31700 |  0.03 |
+| F8 Muxes                |    4 |     0 |          0 |     15850 |  0.03 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -58,7 +58,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 3     |          Yes |           - |          Set |
-| 4794  |          Yes |           - |        Reset |
+| 481   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 7     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    4 |     0 |          0 |       210 |  1.90 |
+| Bonded IOB                  |    5 |     0 |          0 |       210 |  2.38 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         6 |  0.00 |
@@ -115,7 +115,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    2 |     0 |          0 |        32 |  6.25 |
+| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
 | BUFIO      |    0 |     0 |          0 |        24 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         6 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         6 |  0.00 |
@@ -149,22 +149,22 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     | 4774 |        Flop & Latch |
-| LUT2     | 1810 |                 LUT |
-| LUT6     |  591 |                 LUT |
-| CARRY4   |  516 |          CarryLogic |
-| LUT4     |  345 |                 LUT |
-| LUT3     |  316 |                 LUT |
-| MUXF7    |  273 |               MuxFx |
-| MUXF8    |  136 |               MuxFx |
-| LUT5     |   58 |                 LUT |
-| LDCE     |   20 |        Flop & Latch |
-| LUT1     |   10 |                 LUT |
+| FDCE     |  465 |        Flop & Latch |
+| LUT3     |  239 |                 LUT |
+| LUT2     |  187 |                 LUT |
+| LUT6     |  185 |                 LUT |
+| LUT4     |   64 |                 LUT |
+| CARRY4   |   54 |          CarryLogic |
+| LUT5     |   37 |                 LUT |
+| LUT1     |   16 |                 LUT |
+| LDCE     |   16 |        Flop & Latch |
+| MUXF7    |    9 |               MuxFx |
 | FDRE     |    7 |        Flop & Latch |
+| MUXF8    |    4 |               MuxFx |
 | IBUF     |    3 |                  IO |
 | FDPE     |    3 |        Flop & Latch |
-| BUFG     |    2 |               Clock |
-| OBUF     |    1 |                  IO |
+| OBUF     |    2 |                  IO |
+| BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
 

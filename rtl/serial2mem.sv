@@ -23,7 +23,7 @@ logic                           single_port_ram_we                              
 logic [7-1:0]                   single_port_ram_addr                            ;
 logic [WIDTH*SIZE-1:0]          single_port_ram_di                              ;
 logic [WIDTH*SIZE-1:0]          single_port_ram_dout                            ;
-logic [WIDTH*SIZE-1:0]          buf_data                                        ;
+(*dont_touch = "true"*) logic [WIDTH*SIZE-1:0]          buf_data                                        ;
 logic [WIDTH*SIZE-1:0]          next_buf_data                                        ;
 
 /*
@@ -61,12 +61,15 @@ ram_single_port mem (
             cnt_shift       <= 0;
             buf_data        <= 0;
         end else begin                                                    
-            buf_data        <= next_buf_data ;  
+            buf_data        <= next_buf_data;  
             mem_fsm         <= next_mem_fsm                                                                         ;
             cnt             <= next_cnt                                                                             ;
             cnt_shift       <= next_cnt_shift                                                                       ;
+
         end
     end
+
+    //assign next_buf_data[WIDTH*(cnt_shift+1):WIDTH*cnt_shift] = in_data << WIDTH*cnt_shift;
    // assign next_buf_data = {buf_data,in_data<<WIDTH*cnt_shift};// | in_data << (WIDTH * cnt_shift);
     assign next_buf_data = {buf_data[WIDTH*SIZE-WIDTH:0],in_data};
  //   assign next_buf_data = (mem_fsm == WRITE)&& !(cnt_shift == SIZE-1) ? buf_data | in_data << (WIDTH * (SIZE -1-cnt_shift)): buf_data | in_data  ;

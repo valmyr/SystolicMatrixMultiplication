@@ -1,10 +1,9 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../rtl/uart/rtl" \
-"../../../../SystolicCore.gen/sources_1/ip/ila_0/sim/ila_0.v" \
+verilog xil_defaultlib  --include "../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../rtl/uart/rtl" \
 "../../../../SystolicCore.gen/sources_1/ip/ram_single_port/sim/ram_single_port.v" \
+"../../../../SystolicCore.gen/sources_1/ip/ila_0_1/sim/ila_0.v" \
 
-sv xil_defaultlib  --include "../../../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../rtl/uart/rtl" \
-"../../../../../../rtl/Arty7_top_sim.sv" \
+sv xil_defaultlib  --include "../../../../../../../../amd/2025.1/data/rsb/busdef" --include "../../../../../../rtl/uart/rtl" \
 "../../../../../../rtl/SystolicControlUnit.sv" \
 "../../../../../../rtl/SystolicCore.sv" \
 "../../../../../../rtl/accumulator.sv" \
@@ -17,6 +16,7 @@ sv xil_defaultlib  --include "../../../../../../../../../../amd/2025.1/data/rsb/
 "../../../../../../rtl/uart/rtl/uart_rx.sv" \
 "../../../../../../rtl/uart/rtl/uart_top.sv" \
 "../../../../../../rtl/uart/rtl/uart_tx.sv" \
+"../../../../../../rtl/Arty7_top_sim.sv" \
 "../../../../../../tb/tb_fpga.sv" \
 
 # compile glbl module

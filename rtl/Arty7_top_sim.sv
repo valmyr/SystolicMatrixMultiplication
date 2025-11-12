@@ -24,11 +24,13 @@ module Arty7_top_sim(
     input  logic          clock           ,
     input  logic          uart_txd_in     ,
     input  logic    [3:0] btn             ,
+    output logic          led               ,
     output logic          uart_rxd_out    
 );
 localparam  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
-localparam  WIDTHx = 1,SIZE = 8,WIDTH =8;
+localparam  WIDTHx = 4,SIZE = 4,WIDTH =8;
 localparam CLOCK_TRANSFER_PC= 10_000;
+assign led = clock;
 SystolicCoreTop #(
    .BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF), .WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH), .CLOCK_TRANSFER_PC(CLOCK_TRANSFER_PC)
 )   SystolicCore0(

@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.runs/impl_1/Arty7_top_sim.tcl"
+  variable script "/home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.runs/impl_1/Arty7_top_sim.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -106,6 +107,7 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 8
   set_param general.usePosixSpawnForFork 1
+  set_param tcl.collectionResultDisplayLimit 0
   set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 32  }
 OPTRACE "create in-memory project" START { }
@@ -114,16 +116,16 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.cache/wt [current_project]
-  set_property parent.project_path /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.xpr [current_project]
-  set_property ip_output_repo /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.cache/wt [current_project]
+  set_property parent.project_path /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.xpr [current_project]
+  set_property ip_output_repo /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.dcp
-  read_ip -quiet /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ram_single_port/ram_single_port.xci
-  read_ip -quiet /home/xmen/Desktop/compara/analise/SystolicMatrixMultiplication/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_0/ila_0.xci
+  add_files -quiet /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.dcp
+  read_ip -quiet /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ram_single_port/ram_single_port.xci
+  read_ip -quiet /home/xmen/Desktop/SystolicCore/vivado/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_0_1/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/xmen/ARTYA7/XilinxDesignConstraint/Arty-A7-100-Master.xdc
 OPTRACE "read constraints: implementation" END { }
