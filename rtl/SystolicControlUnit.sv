@@ -84,7 +84,7 @@ always_comb case(fsm_unit_control)
         syst_valid_i               =  0;
         syst_rready_i              =  0;  
         uart_valid_tx_in           =  1;
-        fsm_unit_control_next      = mem2serial_rvalid_o  ? DONE: WRITE_MEM_OUT;
+        fsm_unit_control_next      = mem2serial_rvalid_o  ? IDLE: WRITE_MEM_OUT;
     end
     DONE:begin
         

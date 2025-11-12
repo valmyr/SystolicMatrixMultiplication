@@ -1,7 +1,12 @@
 # Implementação em Hardware de um Acelerador de Multiplicação de Matrizes de Ordem N Systólica
 
 
+## Arquitetura Systolic Core
 
+
+<p align="center">
+<img title="Entrada da Rede" alt="Alt text" src="images/ArquiteturaSystolicCore.png" width="90%" height="90%">
+</p>
 ## Objetivos
 A multiplicação de matrizes é uma operação muito comum em problemas científicos e de engenharia. A implementação sequencial dessa operação consome muito tempo para matrizes grandes; a solução de força bruta resulta em um tempo computacional O(n^3) , para matrizes nxn ...
 
@@ -218,11 +223,7 @@ $$Calcule: M^2 $$
 </p>
 
 
-## DIAGRAMA PC-FPGA_2_FPGA-PC
 
-<p align="center">
-<img title="Entrada da Rede" alt="Alt text" src="images/DIAGRAM_PC_FPGA2FPGA_PC.png" width="90%" height="90%">
-</p>
 
 ## Referências
 [Systolic-Array Implementation of Matrix-By-Matrix Multiplication](https://ecelabs.njit.edu/ece459/lab3.php).
