@@ -20,6 +20,7 @@ module systolicMatrixMultiply#(
     input  logic [WIDTHx*SIZE-1:0]  b_input                         	   ,
     output logic                    rvalid_o                               , //Resposta Válida(Operação concluida)
     output logic                    ready_o                                , //Pronto para receber um dado valido na entrada
+    output logic                    read_done                              ,           
    (*dont_touch = "true"*)  output logic [WIDTH-1:0]        output_produc_a_b [SIZE-1:0][SIZE-1:0]
 );
 
@@ -87,14 +88,16 @@ always_comb begin
             next_counter_mult            = 0                                                                    ;
             next_ena_mac                 = 0                                                                    ;
             next_counter_transfer_m      = 0                                                                    ;
+            read_done                    = 1                                                                    ;
         end
        LOAD_MULTI_MATRIX:begin
             ready_o                      = 0;
             rvalid_o                     = 0;
-            nextStateSystolicControlUnit = (counter_transfer_m < 2*SIZE) ? LOAD_MULTI_MATRIX :MULTI_MATRIX    ;
+            nextStateSystolicControlUnit = (counter_transfer_m < 2*SIZE+1) ? LOAD_MULTI_MATRIX :MULTI_MATRIX    ;
             next_counter_transfer_m      = counter_transfer_m  +    1                                           ;                  
             next_counter_mult            = 0                                                                    ;
-            next_ena_mac                 = 1                                                                    ;                                                                 
+            next_ena_mac                 = 1                                                                    ;     
+            read_done                    = 0                                                                    ;
         end
         MULTI_MATRIX:begin
             ready_o                      = 0                                                                   ;
@@ -103,6 +106,8 @@ always_comb begin
             next_counter_transfer_m      = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
             next_ena_mac                 = (counter_mult < SIZE) ? 1:0                                       ;
+            read_done                    = 1                                                                    ;
+
             
         end
         DONE:begin
@@ -112,6 +117,7 @@ always_comb begin
             next_counter_mult            = 0                                                                   ;
             next_counter_transfer_m      = 0                                                                   ;                  
             next_ena_mac                 = 0                                                                   ;
+            read_done                    = 1                                                                    ;
         end
         
     endcase

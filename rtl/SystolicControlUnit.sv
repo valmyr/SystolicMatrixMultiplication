@@ -1,38 +1,55 @@
 module systolicControlUnitTop(
-    input  logic clock                   ,
-    input  logic nreset                  ,
-    input  logic uart_valid_rx_in        ,
-    input  logic serial2mem_opa_rvalid_o ,
-    input  logic serial2mem_opb_rvalid_o ,
-    input  logic syst_rvalid_o           ,
-    input  logic mem2serial_rvalid_o     ,
-
-    output logic serial2mem_opa_valid_i  ,    
-    output logic serial2mem_opb_valid_i  ,    
-    output logic serial2mem_opa_rw       ,    
-    output logic serial2mem_opb_rw       ,    
-    output logic serial2mem_opa_rready_i ,    
-    output logic serial2mem_opb_rready_i ,    
-    output logic mem2serial_valid_i      ,    
-    output logic mem2serial_rready_i     ,       
-    output logic syst_valid_i            ,    
-    output logic syst_rready_i           ,
-    output logic uart_valid_tx_in        
-
+    input  logic       clock                        ,
+    input  logic       nreset                       ,
+    input  logic       uart_valid_rx_in             ,
+    input  logic       uart_ready_rx                ,
+    input  logic       serial2mem_opa_rvalid_o      ,
+    input  logic       serial2mem_opb_rvalid_o      ,
+    input  logic       serial2mem_opa_ready_o       ,
+    input  logic       serial2mem_opb_ready_o       ,
+    input  logic       syst_rvalid_o                ,
+    input  logic       mem2serial_rvalid_o          ,
+    input  logic       read_done                    ,
+    input  logic [7:0] uart_data_rx_out             ,
+    output logic       serial2mem_opa_valid_i       ,    
+    output logic       serial2mem_opb_valid_i       ,    
+    output logic       serial2mem_opa_rw            ,    
+    output logic       serial2mem_opb_rw            ,    
+    output logic       serial2mem_opa_rready_i      ,    
+    output logic       serial2mem_opb_rready_i      ,    
+    output logic       mem2serial_valid_i           ,    
+    output logic       mem2serial_rready_i          ,       
+    output logic       syst_valid_i                 ,    
+    output logic       syst_rready_i                ,
+    output logic       uart_valid_tx_in             ,
+    output logic       starting_frame_identified    
 );
 
-enum {IDLE, WRITE_MEM,SYSTOLIC_READ_MEM,WRITE_MEM_OUT,DONE} fsm_unit_control, fsm_unit_control_next;
+enum {IDLE, WRITE_MEMAAA,WRITE_MEMBBB,SYSTOLIC_READ_MEM,WRITE_MEM_OUT,DONE} fsm_unit_control, fsm_unit_control_next;
+logic [31:0 ]frame_start;
+
+always_ff@(posedge uart_ready_rx, negedge nreset)begin
+    if(!nreset)begin
+        frame_start        <= 0;
+    end else begin
+        frame_start[07:00] <= fsm_unit_control != WRITE_MEM_OUT ? uart_data_rx_out : 0 ;
+        frame_start[15:08] <= fsm_unit_control != WRITE_MEM_OUT ? frame_start[07:00]:0;
+        frame_start[23:16] <= fsm_unit_control != WRITE_MEM_OUT ? frame_start[15:08]:0;
+        frame_start[31:24] <= fsm_unit_control != WRITE_MEM_OUT ? frame_start[23:16]:0;
+    end
+end
+
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         fsm_unit_control <= IDLE;
     end else begin
         fsm_unit_control <= fsm_unit_control_next;
+;
     end
 end
 always_comb case(fsm_unit_control)
     IDLE:begin
         serial2mem_opa_valid_i        = 0;
-        serial2mem_opb_valid_i        = 0;
         serial2mem_opa_rw             = 0;
         serial2mem_opb_rw             = 0;
         serial2mem_opa_rready_i       = 0;
@@ -42,11 +59,47 @@ always_comb case(fsm_unit_control)
         uart_valid_tx_in              = 0;        
         syst_valid_i                  = 0;  
         syst_rready_i                 = 0;          
-        fsm_unit_control_next         = uart_valid_rx_in ? WRITE_MEM :IDLE;
+        //fsm_unit_control_next         = uart_valid_rx_in && frame_start == 16'hffff ? WRITE_MEMAAA :IDLE;
+        starting_frame_identified     = 1;
+        if(uart_valid_rx_in)begin
+            if(frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o)begin
+                fsm_unit_control_next =  WRITE_MEMAAA;
+                serial2mem_opb_valid_i        =0;
+            end
+            else if(frame_start == 32'hffff_ffff)begin
+                //ffff_ffff => Envio dos operandos em sequência
+                //0000_ffff => Envio dos operandos em com atraso
+                fsm_unit_control_next = (serial2mem_opb_ready_o) ? WRITE_MEMBBB : IDLE;
+                serial2mem_opb_valid_i        = 0;
+            end
+            else begin
+                serial2mem_opb_valid_i        =0;
+                fsm_unit_control_next = IDLE;
+            end
+           end
+         else begin
+                serial2mem_opb_valid_i        =0;
+                fsm_unit_control_next = IDLE;
+         end
     end
-    WRITE_MEM:begin
+    WRITE_MEMAAA:begin
         serial2mem_opa_valid_i        = 1;
-        serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o? 1:0  ;
+        serial2mem_opb_valid_i        = 0 ;
+        serial2mem_opa_rw             = 0;  
+        serial2mem_opb_rw             = 0; 
+        serial2mem_opa_rready_i       = 0;
+        serial2mem_opb_rready_i       = 0;    
+        mem2serial_valid_i            = 0;
+        mem2serial_rready_i           = 1;
+        syst_valid_i                  = 0;          
+        syst_rready_i                 = 0;  
+        fsm_unit_control_next         = serial2mem_opa_rvalid_o ? IDLE : WRITE_MEMAAA;
+        uart_valid_tx_in              = 0;
+        starting_frame_identified     = frame_start[15:0] == 16'hffff & serial2mem_opa_rvalid_o;
+    end
+    WRITE_MEMBBB:begin
+        serial2mem_opa_valid_i        = 0;
+        serial2mem_opb_valid_i        = 1;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0; 
         serial2mem_opa_rready_i       = 0;
@@ -55,36 +108,40 @@ always_comb case(fsm_unit_control)
         mem2serial_rready_i           = 0;
         syst_valid_i                  = 0;          
         syst_rready_i                 = 0;  
-        fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o ? SYSTOLIC_READ_MEM: WRITE_MEM;
+        fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o && frame_start[15:0] == 16'hffff ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
+       // fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o && frame_start == 32'hffff_ffff ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
         uart_valid_tx_in              = 0;
+        starting_frame_identified     = frame_start == 32'hffff_ffff & serial2mem_opb_rvalid_o;
     end
     SYSTOLIC_READ_MEM:begin
         serial2mem_opa_valid_i        =  1;
         serial2mem_opb_valid_i        =  1;
         serial2mem_opa_rw             =  1;  
         serial2mem_opb_rw             =  1;  
-        serial2mem_opa_rready_i       =  1;
-        serial2mem_opb_rready_i       =  1;
+        serial2mem_opa_rready_i       =  ~read_done;
+        serial2mem_opb_rready_i       =  ~read_done;
         syst_valid_i                  =  1;          
         syst_rready_i                 =  1;  
         uart_valid_tx_in              =  0;
         mem2serial_valid_i            =  0;
         mem2serial_rready_i           =  0;
         fsm_unit_control_next         =  !syst_rvalid_o ? SYSTOLIC_READ_MEM : WRITE_MEM_OUT;
+        starting_frame_identified     = 0;
     end
     WRITE_MEM_OUT:begin
         serial2mem_opa_valid_i     =  0;
         serial2mem_opb_valid_i     =  0;
         serial2mem_opa_rw          =  1;  
         serial2mem_opb_rw          =  1;
-        serial2mem_opa_rready_i    =  0;
-        serial2mem_opb_rready_i    =  0;
+        serial2mem_opa_rready_i    =  1;
+        serial2mem_opb_rready_i    =  1;
         mem2serial_valid_i         =  1;
-        mem2serial_rready_i        = 0;          
+        mem2serial_rready_i        =  0;          
         syst_valid_i               =  0;
         syst_rready_i              =  0;  
         uart_valid_tx_in           =  1;
         fsm_unit_control_next      = mem2serial_rvalid_o  ? IDLE: WRITE_MEM_OUT;
+        starting_frame_identified  = 0;
     end
     DONE:begin
         

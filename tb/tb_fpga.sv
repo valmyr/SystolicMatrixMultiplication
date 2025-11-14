@@ -2,11 +2,12 @@
 module tb;    
   logic clock   , nreset;
   parameter SIZE_M = 4;
-  parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M;
-  logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1+3:0];
+  parameter FRAMA_START = 4;
+  parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M + FRAMA_START;
+  logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];
   logic [7:0]INPUT_B [SIZE_INPUT_SERIAL-1:0];
-  logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt1 ;
-  logic [$clog2(SIZE_INPUT_SERIAL)-1:0]cnt2 ;
+  logic [$clog2(SIZE_INPUT_SERIAL):0]cnt1 ;
+  logic [$clog2(SIZE_INPUT_SERIAL):0]cnt2 ;
   parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
 
   //--------------------------------------------------------------------------------------------------
@@ -56,7 +57,7 @@ end
     #1 nreset = 1;
     //#(40_300_000)$finish;
   end
-  assign tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL-1+3) ? INPUT_A[cnt1] : INPUT_B[cnt2];
+  assign tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2];
   always #(5)clock=~clock;/*
   always_ff@(posedge clock, negedge nreset)begin
       if(!nreset)begin
@@ -80,8 +81,8 @@ end
         cnt1 <= 0;
         cnt2 <= 0;
       end else begin
-        cnt1 <= (cnt1 == SIZE_INPUT_SERIAL-1+3) ? cnt1:cnt1 +1   ;
-        cnt2 <= (cnt1 == SIZE_INPUT_SERIAL-1+3)? cnt2 +1 : 0;
+        cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
+        cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : 0;
       end
     end
   Arty7_top_sim a(

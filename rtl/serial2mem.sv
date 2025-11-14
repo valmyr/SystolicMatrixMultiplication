@@ -10,7 +10,7 @@ module serial2mem#(
     output logic                  rvalid_o                                   , //Resposta Válida(Operação concluida)
     output logic                  ready_o                                    , //Pronto para receber um dado valido na entrada
     input  logic [WIDTH-1:0]      in_data                                    ,
-    output logic [SIZE*WIDTH-1:0] out_data 
+    output logic [SIZE*WIDTH-1:0] out_data                              
 );
 
 logic [$clog2(2*SIZE)-1:0]      cnt, next_cnt                                   ;
@@ -52,7 +52,7 @@ ram_single_port mem (
     assign single_port_ram_en       = cnt_shift == SIZE-1 | mem_fsm == READ     ;
     assign single_port_ram_we       = ~rw                                       ;
     assign single_port_ram_addr     = cnt                                       ;
-    assign single_port_ram_di       = cnt_shift == SIZE-1 ? next_buf_data : 0   ;
+    assign single_port_ram_di       = cnt_shift == SIZE-1 ? buf_data : 0   ;
     assign out_data                 = mem_fsm == READ && cnt != 0 ? single_port_ram_dout : 0;
 
     always_ff@(posedge clock, negedge nreset)begin
