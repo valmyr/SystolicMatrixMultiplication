@@ -55,7 +55,7 @@ always_comb case(fsm_unit_control)
         serial2mem_opa_rready_i       = 0;
         serial2mem_opb_rready_i       = 0;
         mem2serial_valid_i            = 0;
-        mem2serial_rready_i           = 0;
+        mem2serial_rready_i           = 1;
         uart_valid_tx_in              = 0;        
         syst_valid_i                  = 0;  
         syst_rready_i                 = 0;          
@@ -90,7 +90,7 @@ always_comb case(fsm_unit_control)
         serial2mem_opa_rready_i       = 0;
         serial2mem_opb_rready_i       = 0;    
         mem2serial_valid_i            = 0;
-        mem2serial_rready_i           = 1;
+        mem2serial_rready_i           = 0;
         syst_valid_i                  = 0;          
         syst_rready_i                 = 0;  
         fsm_unit_control_next         = serial2mem_opa_rvalid_o ? IDLE : WRITE_MEMAAA;

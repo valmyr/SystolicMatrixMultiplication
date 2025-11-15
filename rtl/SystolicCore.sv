@@ -33,7 +33,8 @@ module SystolicCoreTop#(
 //-------------------------------------------------------------------------------------------------
 logic                   systolicControlUnit_clock                                                               ;
 logic                   systolicControlUnit_nreset                                                              ;
-(*dont_touch = "true"*)logic                   systolicControlUnit_uart_valid_rx_in                                                    ;
+(*dont_touch = "true"*)
+logic                   ystolicControlUnit_uart_valid_rx_in                                                     ;
 logic                   systolicControlUnit_serial2mem_opa_rvalid_o                                             ;
 logic                   systolicControlUnit_serial2mem_opb_rvalid_o                                             ;
 logic                   systolicControlUnit_syst_rvalid_o                                                       ;
@@ -66,7 +67,8 @@ logic [SIZE*WIDTHx-1:0]   syst_a_input                                          
 logic [SIZE*WIDTHx-1:0]   syst_b_input                                                                          ;
 logic                     syst_ready_o                                                                          ;
 logic                     syst_rvalid_o                                                                         ;
-(*dont_touch = "true"*) logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                   ;
+(*dont_touch = "true"*) 
+logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                   ;
 logic                     syst_read_done                                                                        ;
 //--------------------------------------------------------------------------------------------------
 //Pinout MEMA
@@ -110,7 +112,8 @@ logic                   uart_sdata_tx_out                                       
 //Pinout MEM2SERIAL
 logic             mem2serial_clock                                                                              ;
 logic             mem2serial_nreset                                                                             ;
-(*dont_touch = "true"*) logic [WIDTH-1:0] mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                                    ;
+(*dont_touch = "true"*) 
+logic [WIDTH-1:0] mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                                    ;
 logic             mem2serial_valid_i                                                                            ;
 logic             mem2serial_rready_i                                                                           ;
 logic             mem2serial_rvalid_o                                                                           ;
@@ -145,7 +148,8 @@ assign systolicControlUnit_nreset = nreset                                      
 //Atribuição UART
 assign uart_sdata_rx_in = uart_txd_in                                                                           ;
 assign uart_rxd_out     = uart_sdata_tx_out                                                                     ;
-(*dont_touch = "true"*) assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
+(*dont_touch = "true"*) 
+assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
 assign uart_data_tx_in = mem2serial_smatrix_out                                                                 ;
 
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -183,7 +187,8 @@ assign syst_valid_i                                =  systolicControlUnit_syst_v
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
 assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ;
 assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
-(*dont_touch = "true"*) assign systolicControlUnit_uart_valid_rx_in        =  uart_valid_rx_in                                          ; 
+(*dont_touch = "true"*) 
+assign systolicControlUnit_uart_valid_rx_in        =  uart_valid_rx_in                                          ; 
 //---------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------------
 (*dont_touch = "true"*)
@@ -298,7 +303,7 @@ ila_0 ILA (
 	.probe15(syst_output_produc_a_b[03][03]                 ), // input wire [0:0]  probe15
 	.probe16(uart_data_rx_out                               ),
 	.probe17(uart_sdata_rx_in                               ),
-	.probe18(systolicControlUnit_syst_rvalid_o              )
+	.probe18(ref_clock_out_clock_ref              )
 );
 
 endmodule

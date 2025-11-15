@@ -102,11 +102,11 @@ always_comb begin
         MULTI_MATRIX:begin
             ready_o                      = 0                                                                   ;
             rvalid_o                     = 0                                                                   ;
-            nextStateSystolicControlUnit = (counter_mult < SIZE) ? MULTI_MATRIX : DONE                       ;
+            nextStateSystolicControlUnit = (counter_mult < SIZE) ? MULTI_MATRIX : DONE                         ;
             next_counter_transfer_m      = 0                                                                   ;                  
             next_counter_mult            = counter_mult + 1'b1                                                 ;
-            next_ena_mac                 = (counter_mult < SIZE) ? 1:0                                       ;
-            read_done                    = 1                                                                    ;
+            next_ena_mac                 = (counter_mult < SIZE) ? 1:0                                         ;
+            read_done                    = 1                                                                   ;
 
             
         end
@@ -117,7 +117,7 @@ always_comb begin
             next_counter_mult            = 0                                                                   ;
             next_counter_transfer_m      = 0                                                                   ;                  
             next_ena_mac                 = 0                                                                   ;
-            read_done                    = 1                                                                    ;
+            read_done                    = 1                                                                   ;
         end
         
     endcase

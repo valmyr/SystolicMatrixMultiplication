@@ -1,15 +1,19 @@
 `timescale 1ns / 1ps
 module tb;    
   logic clock   , nreset;
+  logic  nreset_arty;
   parameter SIZE_M = 4;
   parameter FRAMA_START = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M + FRAMA_START;
   logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];
   logic [7:0]INPUT_B [SIZE_INPUT_SERIAL-1:0];
+
+  logic [7:0]INPUT_A1 [SIZE_INPUT_SERIAL-1:0];
+  logic [7:0]INPUT_B1 [SIZE_INPUT_SERIAL-1:0];
   logic [$clog2(SIZE_INPUT_SERIAL):0]cnt1 ;
   logic [$clog2(SIZE_INPUT_SERIAL):0]cnt2 ;
   parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
-
+  logic     inv_r;
   //--------------------------------------------------------------------------------------------------
   //Pinout UART
   logic                   tb_uart_clock                                      ;
@@ -40,8 +44,7 @@ module tb;
     .sdata_tx_out      (tb_uart_sdata_tx_out)
 );
 initial begin
-  $readmemh("testeINPUT_A.mem",INPUT_A);
-  $readmemh("testeINPUT_B.mem",INPUT_B);
+
 end
 
   assign tb_uart_clock = clock;
@@ -51,13 +54,25 @@ end
   assign serial2mem_valid_i = 1;
 
   initial begin
-     clock = 0;
+    clock = 0;
     nreset = 1;
+    nreset_arty = 1;
+    inv_r = 0;
+
+    $readmemh("testeINPUT_A.mem",INPUT_A);
+    $readmemh("testeINPUT_B.mem",INPUT_B);
+    $readmemh("testeINPUT_A1.mem",INPUT_A1);
+    $readmemh("testeINPUT_B1.mem",INPUT_B1);
     #1 nreset =0;
+       nreset_arty = 0;
     #1 nreset = 1;
+       nreset_arty = 1;
+
+    #30_000_000 nreset =0;
+    #1 nreset =1;
     //#(40_300_000)$finish;
   end
-  assign tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2];
+  assign tb_uart_data_tx_in = inv_r ? (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2] :(cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2] ;
   always #(5)clock=~clock;/*
   always_ff@(posedge clock, negedge nreset)begin
       if(!nreset)begin
@@ -76,18 +91,49 @@ end
   //xrun ./tb_fpga.sv ../rtl/Arty7_top_sim.sv ../rtl/systolicMatrixMultiply.sv ../rtl/accumulator.sv -access +rwc +gui
   logic aa;
   assign aa = tb_uart_ready_tx_out;
-    always_ff@(posedge tb_uart_ready_tx_out, negedge nreset)begin
+   always_ff@(posedge tb_uart_ready_tx_out, negedge nreset)begin
       if(!nreset)begin
         cnt1 <= 0;
         cnt2 <= 0;
+        inv_r <= ~inv_r;
       end else begin
-        cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
-        cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : 0;
+        if(inv_r)begin
+          cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
+          cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
+        end else begin
+          cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
+          cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
+        end
       end
     end
+
+/*
+  initial begin 
+    @(posedge tb_uart_ready_tx_out, negedge nreset)begin
+      if(!nreset)begin
+        cnt1 = 0;
+        cnt2 = 0;
+      end else begin
+        cnt1 = (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
+        cnt2 = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
+      end
+    end
+    #10000000
+    cnt1 = 0;
+    cnt2 = 0;
+      @(posedge tb_uart_ready_tx_out, negedge nreset)begin
+      if(!nreset)begin
+        cnt1 = 0;
+        cnt2 = 0;
+      end else begin
+        cnt2 = (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
+        cnt1 = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
+      end
+    end  */
+  //end
   Arty7_top_sim a(
     .clock       (clock)              ,
-    .btn         ({3'b000,!nreset} )   ,
+    .btn         ({3'b000,!nreset_arty} )   ,
     .uart_txd_in (tb_uart_sdata_tx_out)   ,
     .uart_rxd_out(tb_uart_sdata_rx_in)  
 );
