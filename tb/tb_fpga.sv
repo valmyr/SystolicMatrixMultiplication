@@ -72,7 +72,7 @@ end
     #1 nreset =1;
     //#(40_300_000)$finish;
   end
-  assign tb_uart_data_tx_in = inv_r ? (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2] :(cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2] ;
+  //assign tb_uart_data_tx_in = inv_r ? (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2] :(cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2] ;
   always #(5)clock=~clock;/*
   always_ff@(posedge clock, negedge nreset)begin
       if(!nreset)begin
@@ -96,13 +96,20 @@ end
         cnt1 <= 0;
         cnt2 <= 0;
         inv_r <= ~inv_r;
+        tb_uart_data_tx_in <= 0 ;
       end else begin
         if(inv_r)begin
           cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
           cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
+          if(cnt2 <= SIZE_INPUT_SERIAL-1)
+            tb_uart_data_tx_in <= (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2];
+          else tb_uart_data_tx_in <= 0;
         end else begin
           cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
           cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
+          if(cnt2 <= SIZE_INPUT_SERIAL -1)
+            tb_uart_data_tx_in <= (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2];
+          else tb_uart_data_tx_in <= 0;
         end
       end
     end

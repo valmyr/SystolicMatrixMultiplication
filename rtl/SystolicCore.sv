@@ -34,7 +34,7 @@ module SystolicCoreTop#(
 logic                   systolicControlUnit_clock                                                               ;
 logic                   systolicControlUnit_nreset                                                              ;
 (*dont_touch = "true"*)
-logic                   ystolicControlUnit_uart_valid_rx_in                                                     ;
+logic                   systolicControlUnit_uart_valid_rx_in                                                    ;
 logic                   systolicControlUnit_serial2mem_opa_rvalid_o                                             ;
 logic                   systolicControlUnit_serial2mem_opb_rvalid_o                                             ;
 logic                   systolicControlUnit_syst_rvalid_o                                                       ;
@@ -55,6 +55,7 @@ logic                   systolicControlUnit_uart_ready_rx                       
 logic                   systolicControlUnit_serial2mem_opa_ready_o                                              ;
 logic                   systolicControlUnit_serial2mem_opb_ready_o                                              ;
 logic                   systolicControlUnit_read_done                                                           ;
+logic             [31:0]systolicControlUnit_frame_start                                                         ;
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //Pinout Systolic
@@ -110,15 +111,15 @@ logic                   uart_sdata_tx_out                                       
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout MEM2SERIAL
-logic             mem2serial_clock                                                                              ;
-logic             mem2serial_nreset                                                                             ;
+logic                   mem2serial_clock                                                                        ;
+logic                   mem2serial_nreset                                                                       ;
 (*dont_touch = "true"*) 
-logic [WIDTH-1:0] mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                                    ;
-logic             mem2serial_valid_i                                                                            ;
-logic             mem2serial_rready_i                                                                           ;
-logic             mem2serial_rvalid_o                                                                           ;
-logic             mem2serial_ready_o                                                                            ;
-logic  [WIDTH-1:0]mem2serial_smatrix_out                                                                        ;
+logic [WIDTH-1:0]       mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                              ;
+logic                   mem2serial_valid_i                                                                      ;
+logic                   mem2serial_rready_i                                                                     ;
+logic                   mem2serial_rvalid_o                                                                     ;
+logic                   mem2serial_ready_o                                                                      ;
+logic  [WIDTH-1:0]      mem2serial_smatrix_out                                                                  ;
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout SampleHatePC
@@ -150,7 +151,7 @@ assign uart_sdata_rx_in = uart_txd_in                                           
 assign uart_rxd_out     = uart_sdata_tx_out                                                                     ;
 (*dont_touch = "true"*) 
 assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
-assign uart_data_tx_in = mem2serial_smatrix_out                                                                 ;
+assign uart_data_tx_in = systolicControlUnit_mem2serial_valid_i?  mem2serial_smatrix_out : 0;                                                                 ;
 
 //---------------------------------------------------------------------------------------------------------------------------------
 
@@ -188,68 +189,74 @@ assign syst_rready_i                               =  systolicControlUnit_syst_r
 assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ;
 assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
 (*dont_touch = "true"*) 
-assign systolicControlUnit_uart_valid_rx_in        =  uart_valid_rx_in                                          ; 
+assign systolicControlUnit_uart_valid_rx_in        =  1                                          ; 
 //---------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------------
 (*dont_touch = "true"*)
 uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart_systolic_core (
-    .clock                  (uart_clock                                 )                  ,
-    .nreset                 (uart_nreset                                )                  ,
-    //pinout RX                                                                              
-    .sdata_rx_in            (uart_sdata_rx_in                           )                  ,
-    .valid_rx_in            (uart_valid_rx_in                           )                  ,
-    .ready_rx_out           (uart_ready_rx_out                          )                  ,
-    .data_rx_out            (uart_data_rx_out                           )                  ,  
-    //pinout TX                                                                                               
-    .valid_tx_in            (uart_valid_tx_in                           )                  ,
-    .data_tx_in             (uart_data_tx_in                            )                  ,
-    .ready_tx_out           (uart_ready_tx_out                          )                  ,
-    .sdata_tx_out           (uart_sdata_tx_out                          )              
+    .clock                      (uart_clock                                 )                  ,
+    .nreset                     (uart_nreset                                )                  ,
+    //pinout RX                                                                                  
+    .sdata_rx_in                (uart_sdata_rx_in                           )                  ,
+    .valid_rx_in                (uart_valid_rx_in                           )                  ,
+    .ready_rx_out               (uart_ready_rx_out                          )                  ,
+    .data_rx_out                (uart_data_rx_out                           )                  ,  
+    //pinout TX                                                                                                   
+    .valid_tx_in                (uart_valid_tx_in                           )                  ,
+    .data_tx_in                 (uart_data_tx_in                            )                  ,
+    .ready_tx_out               (uart_ready_tx_out                          )                  ,
+    .sdata_tx_out               (uart_sdata_tx_out                          )              
 );
+(*dont_touch = "true"*) 
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
-    .nreset                 (syst_nreset                                )                  ,
-    .valid_i                (syst_valid_i                               )                  ,
-    .rready_i               (syst_rready_i                              )                  ,
-    .a_input                (syst_a_input                               )                  ,
-    .b_input                (syst_b_input                               )                  ,
-    .ready_o                (syst_ready_o                               )                  ,
-    .rvalid_o               (syst_rvalid_o                              )                  ,
-    .clock                  (syst_clock                                 )                  ,
-    .output_produc_a_b      (syst_output_produc_a_b                     )                  ,
-    .read_done              (syst_read_done                             )
+    .nreset                     (syst_nreset                                )                  ,
+    .valid_i                    (syst_valid_i                               )                  ,
+    .rready_i                   (syst_rready_i                              )                  ,
+    .a_input                    (syst_a_input                               )                  ,
+    .b_input                    (syst_b_input                               )                  ,
+    .ready_o                    (syst_ready_o                               )                  ,
+    .rvalid_o                   (syst_rvalid_o                              )                  ,
+    .clock                      (syst_clock                                 )                  ,
+    .output_produc_a_b          (syst_output_produc_a_b                     )                  ,
+    .read_done                  (syst_read_done                             )
 );
+(*dont_touch = "true"*) 
 serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
-    .clock                  (serial2mem_opa_clock                       )                 ,  
-    .nreset                 (serial2mem_opa_nreset                      )                 ,// r=1,w=0
-    .rw                     (serial2mem_opa_rw                          )                 , //Dado válido na entrada
-    .valid_i                (serial2mem_opa_valid_i                     )                 , //Dado válido na entrada
-    .rready_i               (serial2mem_opa_rready_i                    )                 , //Pronto para receber uma resposta
-    .rvalid_o               (serial2mem_opa_rvalid_o                    )                 , //Resposta Válida(Operação concluida)
-    .ready_o                (serial2mem_opa_ready_o                     )                 , //Pronto para receber um dado valido na entrada
-    .in_data                (serial2mem_opa_in_data                     )                 ,
-    .out_data               (serial2mem_opa_out_data                    ) 
+    .clock                      (serial2mem_opa_clock                       )                 ,  
+    .nreset                     (serial2mem_opa_nreset                      )                 ,// r=1,w=0
+    .rw                         (serial2mem_opa_rw                          )                 , //Dado válido na entrada
+    .valid_i                    (serial2mem_opa_valid_i                     )                 , //Dado válido na entrada
+    .rready_i                   (serial2mem_opa_rready_i                    )                 , //Pronto para receber uma resposta
+    .rvalid_o                   (serial2mem_opa_rvalid_o                    )                 , //Resposta Válida(Operação concluida)
+    .ready_o                    (serial2mem_opa_ready_o                     )                 , //Pronto para receber um dado valido na entrada
+    .in_data                    (serial2mem_opa_in_data                     )                 ,
+    .out_data                   (serial2mem_opa_out_data                    ) 
 );
+(*dont_touch = "true"*) 
 serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
-    .clock                  (serial2mem_opb_clock                       )                 ,  
-    .nreset                 (serial2mem_opb_nreset                      )                 ,// r=1,w=0
-    .rw                     (serial2mem_opb_rw                          )                 , //Dado válido na entrada
-    .valid_i                (serial2mem_opb_valid_i                     )                 , //Dado válido na entrada
-    .rready_i               (serial2mem_opb_rready_i                    )                 , //Pronto para receber uma resposta
-    .rvalid_o               (serial2mem_opb_rvalid_o                    )                 , //Resposta Válida(Operação concluida)
-    .ready_o                (serial2mem_opb_ready_o                     )                 , //Pronto para receber um dado valido na entrada
-    .in_data                (serial2mem_opb_in_data                     )                 ,
-    .out_data               (serial2mem_opb_out_data                    ) 
+    .clock                      (serial2mem_opb_clock                       )                 ,  
+    .nreset                     (serial2mem_opb_nreset                      )                 ,// r=1,w=0
+    .rw                         (serial2mem_opb_rw                          )                 , //Dado válido na entrada
+    .valid_i                    (serial2mem_opb_valid_i                     )                 , //Dado válido na entrada
+    .rready_i                   (serial2mem_opb_rready_i                    )                 , //Pronto para receber uma resposta
+    .rvalid_o                   (serial2mem_opb_rvalid_o                    )                 , //Resposta Válida(Operação concluida)
+    .ready_o                    (serial2mem_opb_ready_o                     )                 , //Pronto para receber um dado valido na entrada
+    .in_data                    (serial2mem_opb_in_data                     )                 ,
+    .out_data                   (serial2mem_opb_out_data                    ) 
 );
+(*dont_touch = "true"*) 
 mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
-    .clock                  (mem2serial_clock                           )                 ,
-    .nreset                 (mem2serial_nreset                          )                 ,
-    .pmatrix_in             (mem2serial_pmatrix_in                      )                 ,
-    .valid_i                (mem2serial_valid_i                         )                 , //Dado válido na entrada
-    .rready_i               (mem2serial_rready_i                        )                 , //Pronto para receber uma resposta
-    .rvalid_o               (mem2serial_rvalid_o                        )                 , //Resposta Válida(Operação concluida)
-    .ready_o                (mem2serial_ready_o                         )                 , //Pronto para receber um dado valido na entrada
-    .smatrix_out            (mem2serial_smatrix_out                     )                 
+    .clock                      (mem2serial_clock                           )                 ,
+    .nreset                     (mem2serial_nreset                          )                 ,
+    .pmatrix_in                 (mem2serial_pmatrix_in                      )                 ,
+    .valid_i                    (mem2serial_valid_i                         )                 , //Dado válido na entrada
+    .rready_i                   (mem2serial_rready_i                        )                 , //Pronto para receber uma resposta
+    .rvalid_o                   (mem2serial_rvalid_o                        )                 , //Resposta Válida(Operação concluida)
+    .ready_o                    (mem2serial_ready_o                         )                 , //Pronto para receber um dado valido na entrada
+    .smatrix_out                (mem2serial_smatrix_out                     )                 
 );
+
+(*dont_touch = "true"*) 
 systolicControlUnitTop systolicControlUnit_Global(
     .clock                      (systolicControlUnit_clock                      )                ,
     .nreset                     (systolicControlUnit_nreset                     )                ,
@@ -274,8 +281,10 @@ systolicControlUnitTop systolicControlUnit_Global(
     .uart_ready_rx              (systolicControlUnit_uart_ready_rx              )                ,
     .serial2mem_opa_ready_o     (systolicControlUnit_serial2mem_opa_ready_o     )                ,
     .serial2mem_opb_ready_o     (systolicControlUnit_serial2mem_opb_ready_o     )                ,
-    .read_done                  (systolicControlUnit_read_done                  )
+    .read_done                  (systolicControlUnit_read_done                  )                ,
+    .frame_start                (systolicControlUnit_frame_start                )
 );
+(*dont_touch = "true"*) 
 ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))clock_hate_pc(
     .in_clock     (ref_clock_in_clock                                   )                ,
     .nreset       (ref_clock_nreset                                     )                ,
@@ -298,12 +307,12 @@ ila_0 ILA (
 	.probe10(syst_output_produc_a_b[02][02]                 ), // input wire [0:0]  probe10 
 	.probe11(syst_output_produc_a_b[02][03]                 ), // input wire [0:0]  probe11 
 	.probe12(syst_output_produc_a_b[03][00]                 ), // input wire [0:0]  probe12 
-	.probe13(syst_output_produc_a_b[03][01]                 ), // input wire [0:0]  probe13 
-	.probe14(syst_output_produc_a_b[03][02]                 ), // input wire [0:0]  probe14 
-	.probe15(syst_output_produc_a_b[03][03]                 ), // input wire [0:0]  probe15
-	.probe16(uart_data_rx_out                               ),
+	.probe13(systolicControlUnit_frame_start[07:00]         ), // input wire [0:0]  probe13 
+	.probe14(systolicControlUnit_frame_start[15:08]         ), // input wire [0:0]  probe14 
+	.probe15(systolicControlUnit_frame_start[23:16]         ), // input wire [0:0]  probe15
+	.probe16(systolicControlUnit_frame_start[31:24]         ),
 	.probe17(uart_sdata_rx_in                               ),
-	.probe18(ref_clock_out_clock_ref              )
+	.probe18(ref_clock_out_clock_ref                        )
 );
 
 endmodule

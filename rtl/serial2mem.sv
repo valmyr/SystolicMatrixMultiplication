@@ -61,10 +61,10 @@ ram_single_port mem (
             cnt_shift       <= 0;
             buf_data        <= 0;
         end else begin                                                    
-            buf_data        <= next_buf_data;  
-            mem_fsm         <= next_mem_fsm                                                                         ;
-            cnt             <= next_cnt                                                                             ;
-            cnt_shift       <= next_cnt_shift                                                                       ;
+            buf_data        <= mem_fsm != DONE ? next_buf_data    :    0                                                                  ;  
+            mem_fsm         <= next_mem_fsm                                                                ;
+            cnt             <= mem_fsm != DONE ? next_cnt         :    0                                                                 ;
+            cnt_shift       <= mem_fsm != DONE ? next_cnt_shift   :    0                                                                 ;
 
         end
     end
@@ -106,6 +106,12 @@ ram_single_port mem (
             next_mem_fsm   = rready_i ? IDLE : DONE;
             next_cnt_shift =  0;
         end
-            
+        default:begin
+            next_mem_fsm = IDLE;
+            ready_o         = 1                     ;
+            rvalid_o        = 0                     ;
+            next_cnt        = 0                     ;
+            next_cnt_shift =  0                     ;
+        end
     endcase
 endmodule

@@ -119,7 +119,15 @@ always_comb begin
             next_ena_mac                 = 0                                                                   ;
             read_done                    = 1                                                                   ;
         end
-        
+        default:begin
+            nextStateSystolicControlUnit = IDLE;
+            ready_o                      = 1                                                                    ;
+            rvalid_o                     = 0                                                                    ;
+            next_counter_mult            = 0                                                                    ;
+            next_ena_mac                 = 0                                                                    ;
+            next_counter_transfer_m      = 0                                                                    ;
+            read_done                    = 1                                                                    ;
+        end
     endcase
 end
 endmodule

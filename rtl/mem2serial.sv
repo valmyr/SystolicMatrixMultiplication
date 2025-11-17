@@ -8,17 +8,22 @@ module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     output logic ready_o                         , //Pronto para receber um dado valido na entrada
     output logic [SIZE-1:0]      smatrix_out                     
 );
+
+logic [WIDTH-1:0] pmatrix_out  [SIZE-1:0][SIZE-1:0];
 enum {IDLE_INDEX,COUNTER_INDEX,DONE_INDEX} mem2seriala_fsm,next_mem2seriala_fsm;
 logic [$clog2(SIZE)-1:0] i_counter, j_counter;
 logic [$clog2(SIZE)-1:0] next_i_counter, next_j_counter;
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         i_counter        <=0; 
-        j_counter        <=0; 
+        j_counter        <=0;
+        for(integer i_rst = 0; i_rst < SIZE; i_rst++)
+            pmatrix_out[i_rst] <= '{default:0};
     end else begin
         i_counter        <=next_i_counter; 
         j_counter        <=next_j_counter;
         mem2seriala_fsm <= next_mem2seriala_fsm;
+        pmatrix_out <=pmatrix_in;
     end
 end
 
@@ -42,8 +47,17 @@ always_comb begin
             ready_o = 0;
             rvalid_o = 1;
             next_mem2seriala_fsm = rready_i ? IDLE_INDEX : DONE_INDEX; 
+            next_i_counter = 0;
+            next_j_counter = 0;
+        end
+        default:begin
+            next_mem2seriala_fsm = IDLE_INDEX;
+            ready_o = 1;
+            rvalid_o = 0;
+            next_i_counter =0;
+            next_j_counter =0;
         end
     endcase
 end
-assign smatrix_out = pmatrix_in[i_counter][j_counter];
+assign smatrix_out = pmatrix_out[i_counter][j_counter];
 endmodule
