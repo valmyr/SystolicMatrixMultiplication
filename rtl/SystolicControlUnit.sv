@@ -83,7 +83,8 @@ always_comb case(fsm_unit_control)
                 fsm_unit_control_next = IDLE;
          end
         */
-         casex({uart_valid_rx_in,frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start == 32'hffff_ffff})
+         //casex({uart_valid_rx_in,frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start[15:0] ==16'haaaa})
+        casex({uart_valid_rx_in,frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start ==32'haaaa_ffff})
             3'b11x:begin
                 fsm_unit_control_next =  WRITE_MEMAAA;
                 serial2mem_opb_valid_i        =0;
@@ -129,7 +130,7 @@ always_comb case(fsm_unit_control)
         mem2serial_rready_i           = 0;
         syst_valid_i                  = 0;          
         syst_rready_i                 = 0;  
-        fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o && frame_start[15:0] == 16'hffff ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
+        fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o && frame_start[15:0] == 16'haaaa ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
        // fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o && frame_start == 32'hffff_ffff ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
         uart_valid_tx_in              = 0;
         //starting_frame_identified     = frame_start == 32'hffff_ffff & serial2mem_opb_rvalid_o;
