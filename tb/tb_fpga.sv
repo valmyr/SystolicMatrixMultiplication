@@ -1,6 +1,7 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 100ps
 module tb;    
   logic clock   , nreset;
+  logic clock_tb;
   logic  nreset_arty;
   parameter SIZE_M = 4;
   parameter FRAME_START = 4;
@@ -21,8 +22,8 @@ module tb;
  //pinout RX              tb_                                         ;
   logic                   tb_uart_sdata_rx_in                                ;
   logic                   tb_uart_valid_rx_in                                ;
-  logic [BYTESIZES-1:0]   tb_uart_ready_rx_out                               ;
-  logic                   tb_uart_data_rx_out                                ;
+  logic                   tb_uart_ready_rx_out                               ;
+  logic [BYTESIZES-1:0]   tb_uart_data_rx_out                                ;
  //pinout TX              tb_                                         ;
   logic                   tb_uart_valid_tx_in                                ;
   logic [BYTESIZES-1:0]   tb_uart_data_tx_in                                 ;
@@ -30,13 +31,13 @@ module tb;
   logic                   tb_uart_sdata_tx_out                               ;
 
   uart_top uart_tb(
-    .clock             (tb_uart_clock       )    ,
-    .nreset            (tb_uart_nreset      )    ,
+    .clock             (tb_uart_clock         )    ,
+    .nreset            (tb_uart_nreset        )    ,
     //pinout RX                                 
-    .sdata_rx_in       (tb_uart_sdata_rx_in )    ,
-    .valid_rx_in       (1                )    ,
-    .ready_rx_out      (                 )    ,
-    .data_rx_out       (tb_uart_data_rx_out)    ,  
+    .sdata_rx_in       (tb_uart_sdata_rx_in   )    ,
+    .valid_rx_in       (1                     )    ,
+    .ready_rx_out      (tb_uart_ready_rx_out  )    ,
+    .data_rx_out       (tb_uart_data_rx_out   )    ,  
     //pinout TX                                                  
     .valid_tx_in       (1'b1 )    ,
     .data_tx_in        ({4'b0000,tb_uart_data_tx_in}  )    ,
@@ -67,29 +68,9 @@ end
        nreset_arty = 0;
     #1 nreset = 1;
        nreset_arty = 1;
-
-    #7_000_000 nreset =0;
-    #1 nreset =1;
-    //#(40_300_000)$finish;
   end
-  //assign tb_uart_data_tx_in = inv_r ? (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2] :(cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2] ;
+
   always #(5)clock=~clock;/*
-  always_ff@(posedge clock, negedge nreset)begin
-      if(!nreset)begin
-        cnt <= 0;
-          serial2mem_rw = 0;
-          serial2mem_rready_i = 0;
-      end else begin
-        cnt <= !serial2mem_ready_o ? cnt +1: 0;
-        //serial2mem_in_data =!serial2mem_ready_o ? $random%10: 0;
-        if(serial2mem_rvalid_o)begin
-          serial2mem_rready_i = 1;
-          serial2mem_rw = 1;
-        end
-      end
-    end*/
-  //xrun ./tb_fpga.sv ../rtl/Arty7_top_sim.sv ../rtl/systolicMatrixMultiply.sv ../rtl/accumulator.sv -access +rwc +gui
-  logic aa;
 
   /*
   
@@ -101,54 +82,76 @@ end
 
        
   */
-  assign aa = tb_uart_ready_tx_out;
-   always_ff@(posedge tb_uart_ready_tx_out, negedge nreset)begin
-      if(!nreset)begin
-        cnt1 <= 0;
-        cnt2 <= 0;
-        inv_r <= ~inv_r;
-        tb_uart_data_tx_in <= 0 ;
-      end else begin
-        if(inv_r)begin
-          cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
-          cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
-          if(cnt2 <= SIZE_INPUT_SERIAL-1)
-            tb_uart_data_tx_in <= (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2];
-          else tb_uart_data_tx_in <= 0;
+  enum {SEND_OP,WAIT_CALC,WAIT_REQUEST} fsm_next_tb, fsm_tb;
+  logic [31:0] cnt3,cnt4;
+  logic [31:0] cnt3_next,cnt4_next;
+  logic [31:0] cnt1_next,cnt2_next;
+  assign clock_tb = (fsm_tb != WAIT_REQUEST) ? tb_uart_ready_tx_out : tb_uart_ready_rx_out;
+ // assign clock_tb = tb_uart_ready_tx_out ;
+//
+  //   █████████  █████ ██████   ██████ █████  █████ █████         █████████      ███████       ██████████      ███████       ███████████     ███████    ██████   █████ ███████████    ███████       ██████████   ██████████    █████   █████ █████  █████████  ███████████   █████████      ██████████      ███████       ███████████    █████████              ███ █████   █████    ███████     █████████  ███████████
+  //  ███░░░░░███░░███ ░░██████ ██████ ░░███  ░░███ ░░███         ███░░░░░███   ███░░░░░███    ░░███░░░░███   ███░░░░░███    ░░███░░░░░███  ███░░░░░███ ░░██████ ░░███ ░█░░░███░░░█  ███░░░░░███    ░░███░░░░███ ░░███░░░░░█   ░░███   ░░███ ░░███  ███░░░░░███░█░░░███░░░█  ███░░░░░███    ░░███░░░░███   ███░░░░░███    ░░███░░░░░███  ███░░░░░███           ███░ ░░███   ░░███   ███░░░░░███  ███░░░░░███░█░░░███░░░█
+  // ░███    ░░░  ░███  ░███░█████░███  ░███   ░███  ░███        ░███    ░███  ███     ░░███    ░███   ░░███ ███     ░░███    ░███    ░███ ███     ░░███ ░███░███ ░███ ░   ░███  ░  ███     ░░███    ░███   ░░███ ░███  █ ░     ░███    ░███  ░███ ░███    ░░░ ░   ░███  ░  ░███    ░███     ░███   ░░███ ███     ░░███    ░███    ░███ ███     ░░░          ███░    ░███    ░███  ███     ░░███░███    ░░░ ░   ░███  ░ 
+  // ░░█████████  ░███  ░███░░███ ░███  ░███   ░███  ░███        ░███████████ ░███      ░███    ░███    ░███░███      ░███    ░██████████ ░███      ░███ ░███░░███░███     ░███    ░███      ░███    ░███    ░███ ░██████       ░███    ░███  ░███ ░░█████████     ░███     ░███████████     ░███    ░███░███      ░███    ░██████████ ░███                ███░      ░███████████ ░███      ░███░░█████████     ░███    
+  //  ░░░░░░░░███ ░███  ░███ ░░░  ░███  ░███   ░███  ░███        ░███░░░░░███ ░███      ░███    ░███    ░███░███      ░███    ░███░░░░░░  ░███      ░███ ░███ ░░██████     ░███    ░███      ░███    ░███    ░███ ░███░░█       ░░███   ███   ░███  ░░░░░░░░███    ░███     ░███░░░░░███     ░███    ░███░███      ░███    ░███░░░░░░  ░███              ███░        ░███░░░░░███ ░███      ░███ ░░░░░░░░███    ░███    
+  //  ███    ░███ ░███  ░███      ░███  ░███   ░███  ░███      █ ░███    ░███ ░░███     ███     ░███    ███ ░░███     ███     ░███        ░░███     ███  ░███  ░░█████     ░███    ░░███     ███     ░███    ███  ░███ ░   █     ░░░█████░    ░███  ███    ░███    ░███     ░███    ░███     ░███    ███ ░░███     ███     ░███        ░░███     ███   ███░          ░███    ░███ ░░███     ███  ███    ░███    ░███    
+  // ░░█████████  █████ █████     █████ ░░████████   ███████████ █████   █████ ░░░███████░      ██████████   ░░░███████░      █████        ░░░███████░   █████  ░░█████    █████    ░░░███████░      ██████████   ██████████       ░░███      █████░░█████████     █████    █████   █████    ██████████   ░░░███████░      █████        ░░█████████  ███░            █████   █████ ░░░███████░  ░░█████████     █████   
+  //  ░░░░░░░░░  ░░░░░ ░░░░░     ░░░░░   ░░░░░░░░   ░░░░░░░░░░░ ░░░░░   ░░░░░    ░░░░░░░       ░░░░░░░░░░      ░░░░░░░       ░░░░░           ░░░░░░░    ░░░░░    ░░░░░    ░░░░░       ░░░░░░░       ░░░░░░░░░░   ░░░░░░░░░░         ░░░      ░░░░░  ░░░░░░░░░     ░░░░░    ░░░░░   ░░░░░    ░░░░░░░░░░      ░░░░░░░       ░░░░░          ░░░░░░░░░  ░░░             ░░░░░   ░░░░░    ░░░░░░░     ░░░░░░░░░     ░░░░░    
+                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                      
+  //-------------------------------------------------------------------------------------------------------------------------------
+   initial 
+     forever begin
+      @(posedge clock_tb, negedge nreset)
+      begin
+        if(!nreset)begin
+          cnt1               <= 0     ;
+          cnt2               <= 0     ;
+          cnt3               <= 0     ;
+          cnt4               <= 0     ;
+          tb_uart_data_tx_in <= 0     ;
+          fsm_tb             <= SEND_OP;
         end else begin
-          cnt1 <= (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
-          cnt2 <= (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
-          if(cnt2 <= SIZE_INPUT_SERIAL -1)
-            tb_uart_data_tx_in <= 8'hea;
-          else tb_uart_data_tx_in <= 8'hea;
+          fsm_tb <= fsm_next_tb ;
+          cnt1   <= cnt1_next   ;
+          cnt2   <= cnt2_next   ;
+          cnt3   <= cnt3_next   ;
+          cnt4   <= cnt4_next   ;
         end
       end
-    end
+     end
 
-/*
-  initial begin 
-    @(posedge tb_uart_ready_tx_out, negedge nreset)begin
-      if(!nreset)begin
-        cnt1 = 0;
-        cnt2 = 0;
-      end else begin
-        cnt1 = (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
-        cnt2 = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
-      end
-    end
-    #10000000
-    cnt1 = 0;
-    cnt2 = 0;
-      @(posedge tb_uart_ready_tx_out, negedge nreset)begin
-      if(!nreset)begin
-        cnt1 = 0;
-        cnt2 = 0;
-      end else begin
-        cnt2 = (cnt1 == SIZE_INPUT_SERIAL) ? cnt1:cnt1 +1   ;
-        cnt1 = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2;
-      end
-    end  */
-  //end
+  always_comb
+    case(fsm_tb)
+        SEND_OP:begin
+            cnt1_next               = (cnt1 == SIZE_INPUT_SERIAL) ?                             cnt1    : cnt1 +1   ;
+            cnt2_next               = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2      ;
+            cnt3_next               = 0                                                                             ;
+            cnt4_next               = 0                                                                             ;
+            tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2]                     ;
+            fsm_next_tb        = (cnt1 == SIZE_INPUT_SERIAL && cnt2 == SIZE_INPUT_SERIAL) ? WAIT_CALC: SEND_OP ;
+        end
+        WAIT_CALC:begin
+            tb_uart_data_tx_in  =8'hea;
+            fsm_next_tb         =cnt3 == 1 ? WAIT_REQUEST : WAIT_CALC;
+            cnt3_next                =cnt3 + 1;
+            cnt1_next                =0;
+            cnt2_next                =0;
+            cnt4_next                =0;
+        end
+        WAIT_REQUEST:begin
+            tb_uart_data_tx_in =8'h00;
+            cnt1_next               = 0      ;
+            cnt2_next               = 0      ;
+            cnt3_next               = 0      ;
+            cnt4_next               = cnt4 +1;
+            //fsm_next_tb        = WAIT_REQUEST;
+            fsm_next_tb        = cnt4 == SIZE_M*SIZE_M -1? SEND_OP :WAIT_REQUEST;
+        end
+    endcase
+  //-------------------------------------------------------------------------------------------------------------------------------
+
   Arty7_top_sim a(
     .clock       (clock)              ,
     .btn         ({3'b000,!nreset_arty} )   ,

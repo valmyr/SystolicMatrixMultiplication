@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 100ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Valmir F. Silva
@@ -29,7 +29,7 @@ module Arty7_top_sim(
 );
 localparam  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
 localparam  WIDTHx = 4,SIZE = 4,WIDTH =8;
-localparam CLOCK_TRANSFER_PC= 8_000;
+localparam CLOCK_TRANSFER_PC= 11500; //Constante determinada da seguinte forma: ((BAUDRATE)/(BIT_START+BIT_STOP+BIT_DADOS+BIT_PARITY))) obso...
 assign led = clock;
 SystolicCoreTop #(
    .BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF), .WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH), .CLOCK_TRANSFER_PC(CLOCK_TRANSFER_PC)

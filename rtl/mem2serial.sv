@@ -37,6 +37,7 @@ always_comb begin
             next_mem2seriala_fsm = valid_i  ? COUNTER_INDEX: IDLE_INDEX;
             next_i_counter =0;
             next_j_counter =0;
+            smatrix_out  = 8'hfe;
         end
         COUNTER_INDEX:begin
             ready_o = 0;
@@ -44,8 +45,10 @@ always_comb begin
             next_j_counter = j_counter < SIZE  ? j_counter +1 : 0;
             next_i_counter = j_counter < SIZE -1? i_counter:i_counter+1  ;
             next_mem2seriala_fsm = i_counter >= SIZE -1 & j_counter >= SIZE-1 ? DONE_INDEX: COUNTER_INDEX;
+            smatrix_out     = pmatrix_in[i_counter][j_counter];
         end
         DONE_INDEX:begin
+            smatrix_out  = 8'h00;
             ready_o = 0;
             rvalid_o = 1;
             next_mem2seriala_fsm = rready_i ? IDLE_INDEX : DONE_INDEX; 
@@ -53,6 +56,7 @@ always_comb begin
             next_j_counter = 0;
         end
         default:begin
+            smatrix_out  = 8'hef;
             next_mem2seriala_fsm = IDLE_INDEX;
             ready_o = 1;
             rvalid_o = 0;
@@ -61,5 +65,5 @@ always_comb begin
         end
     endcase
 end
-assign    smatrix_out     = pmatrix[i_counter][j_counter];
+//assign    smatrix_out     = pmatrix_in[i_counter][j_counter];
 endmodule

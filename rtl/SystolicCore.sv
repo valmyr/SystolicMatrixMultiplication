@@ -131,7 +131,7 @@ logic ref_clock_out_clock_ref                                                   
 //Atribuição de clocks
 assign syst_clock                = clock                                                                        ;
 assign uart_clock                = clock                                                                        ;
-assign mem2serial_clock          = ref_clock_out_clock_ref                                                      ;//A definir 5kHz
+assign mem2serial_clock          = uart_ready_tx_out                                                      ;//A definir 5kHz
 assign serial2mem_opa_clock      = !systolicControlUnit_serial2mem_opa_rw ? uart_ready_rx_out : clock           ;
 assign serial2mem_opb_clock      = !systolicControlUnit_serial2mem_opb_rw ? uart_ready_rx_out : clock           ;
 assign systolicControlUnit_clock = clock                                                                        ;
@@ -157,7 +157,7 @@ always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
     2'b10:
         uart_data_tx_in = mem2serial_smatrix_out;
     2'b01:
-        uart_data_tx_in = 8'haf;
+        uart_data_tx_in = 0;
     default:
         uart_data_tx_in = 0;
 endcase
@@ -179,15 +179,15 @@ assign mem2serial_pmatrix_in = syst_output_produc_a_b;
 //assign mem2serial_pmatrix_in[1][0] = 8'd15;
 //assign mem2serial_pmatrix_in[1][1] = 8'd16;
 //assign mem2serial_pmatrix_in[1][2] = 8'd17;
-//assign mem2serial_pmatrix_in[1][3] = 8'd18;
-//assign mem2serial_pmatrix_in[2][0] = 8'd19;
-//assign mem2serial_pmatrix_in[2][1] = 8'd11;
-//assign mem2serial_pmatrix_in[2][2] = 8'd12;
-//assign mem2serial_pmatrix_in[2][3] = 8'd13;
-//assign mem2serial_pmatrix_in[3][0] = 8'd14;
-//assign mem2serial_pmatrix_in[3][1] = 8'd15;
-//assign mem2serial_pmatrix_in[3][2] = 8'd16;
-//assign mem2serial_pmatrix_in[3][3] = 8'd17;
+//assign mem2serial_pmatrix_in[1][3] = 8'd118;
+//assign mem2serial_pmatrix_in[2][0] = 8'd119;
+//assign mem2serial_pmatrix_in[2][1] = 8'd111;
+//assign mem2serial_pmatrix_in[2][2] = 8'd112;
+//assign mem2serial_pmatrix_in[2][3] = 8'd113;
+//assign mem2serial_pmatrix_in[3][0] = 8'd114;
+//assign mem2serial_pmatrix_in[3][1] = 8'd115;
+//assign mem2serial_pmatrix_in[3][2] = 8'd116;
+//assign mem2serial_pmatrix_in[3][3] = 8'd117;
 //[[1,2,3,4],[4,3,2,1],[9,8,7,6],[7,8,9,0]];
 assign systolicControlUnit_serial2mem_opa_ready_o = serial2mem_opa_ready_o ;
 assign systolicControlUnit_serial2mem_opb_ready_o = serial2mem_opb_ready_o ;
@@ -318,7 +318,7 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
     .out_clock_ref(ref_clock_out_clock_ref                              )                
 );
 
-
+/*
 ila_0 ILA (
 	.clk(clock                                              ), // input wire clk
 	.probe0 (syst_output_produc_a_b[00][00]                 ), // input wire [7:0]  probe0  
@@ -340,5 +340,5 @@ ila_0 ILA (
 	.probe16(systolicControlUnit_frame_start[31:24]         ),
 	.probe17(uart_sdata_rx_in                               ),
 	.probe18(ref_clock_out_clock_ref                        )
-);
+);*/
 endmodule
