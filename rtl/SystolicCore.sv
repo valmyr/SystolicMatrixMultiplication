@@ -69,7 +69,7 @@ logic [SIZE*WIDTHx-1:0]   syst_b_input                                          
 logic                     syst_ready_o                                                                          ;
 logic                     syst_rvalid_o                                                                         ;
 (*dont_touch = "true"*) 
-logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                   ;
+logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE:0][SIZE:0]                   ;
 logic                     syst_read_done                                                                        ;
 //--------------------------------------------------------------------------------------------------
 //Pinout MEMA
@@ -114,7 +114,7 @@ logic                   uart_sdata_tx_out                                       
 logic                   mem2serial_clock                                                                        ;
 logic                   mem2serial_nreset                                                                       ;
 (*dont_touch = "true"*) 
-logic [WIDTH-1:0]       mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                              ;
+logic [WIDTH-1:0]       mem2serial_pmatrix_in [SIZE:0][SIZE:0]                                              ;
 logic                   mem2serial_valid_i                                                                      ;
 logic                   mem2serial_rready_i                                                                     ;
 logic                   mem2serial_rvalid_o                                                                     ;
@@ -151,8 +151,16 @@ assign uart_sdata_rx_in = uart_txd_in                                           
 assign uart_rxd_out     = uart_sdata_tx_out                                                                     ;
 (*dont_touch = "true"*) 
 assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
-assign uart_data_tx_in = systolicControlUnit_mem2serial_valid_i?  mem2serial_smatrix_out : 0;                                                                 ;
-
+// assign uart_data_tx_in = systolicControlUnit_mem2serial_valid_i?  mem2serial_smatrix_out : 8'haf;                                                                 ;
+(*dont_touch = "true"*) 
+always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
+    2'b10:
+        uart_data_tx_in = mem2serial_smatrix_out;
+    2'b01:
+        uart_data_tx_in = 8'haf;
+    default:
+        uart_data_tx_in = 0;
+endcase
 //---------------------------------------------------------------------------------------------------------------------------------
 
 // ATRIBUIÇÂO MEMORIA A/B
@@ -162,7 +170,25 @@ assign serial2mem_opa_in_data = uart_data_rx_out;//: 0            ;
 assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;
 assign syst_a_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opa_rw) ? serial2mem_opa_out_data :0                           ;
 assign syst_b_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opb_rw) ? serial2mem_opb_out_data :0                           ;
+(*dont_touch = "true"*) 
 assign mem2serial_pmatrix_in = syst_output_produc_a_b;
+//assign mem2serial_pmatrix_in[0][0] = 8'd11;
+//assign mem2serial_pmatrix_in[0][1] = 8'd12;
+//assign mem2serial_pmatrix_in[0][2] = 8'd13;
+//assign mem2serial_pmatrix_in[0][3] = 8'd14;
+//assign mem2serial_pmatrix_in[1][0] = 8'd15;
+//assign mem2serial_pmatrix_in[1][1] = 8'd16;
+//assign mem2serial_pmatrix_in[1][2] = 8'd17;
+//assign mem2serial_pmatrix_in[1][3] = 8'd18;
+//assign mem2serial_pmatrix_in[2][0] = 8'd19;
+//assign mem2serial_pmatrix_in[2][1] = 8'd11;
+//assign mem2serial_pmatrix_in[2][2] = 8'd12;
+//assign mem2serial_pmatrix_in[2][3] = 8'd13;
+//assign mem2serial_pmatrix_in[3][0] = 8'd14;
+//assign mem2serial_pmatrix_in[3][1] = 8'd15;
+//assign mem2serial_pmatrix_in[3][2] = 8'd16;
+//assign mem2serial_pmatrix_in[3][3] = 8'd17;
+//[[1,2,3,4],[4,3,2,1],[9,8,7,6],[7,8,9,0]];
 assign systolicControlUnit_serial2mem_opa_ready_o = serial2mem_opa_ready_o ;
 assign systolicControlUnit_serial2mem_opb_ready_o = serial2mem_opb_ready_o ;
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -253,6 +279,7 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
     .rready_i                   (mem2serial_rready_i                        )                 , //Pronto para receber uma resposta
     .rvalid_o                   (mem2serial_rvalid_o                        )                 , //Resposta Válida(Operação concluida)
     .ready_o                    (mem2serial_ready_o                         )                 , //Pronto para receber um dado valido na entrada
+    (*dont_touch = "true"*) 
     .smatrix_out                (mem2serial_smatrix_out                     )                 
 );
 
@@ -285,7 +312,7 @@ systolicControlUnitTop systolicControlUnit_Global(
     .frame_start                (systolicControlUnit_frame_start                )
 );
 (*dont_touch = "true"*) 
-ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))clock_hate_pc(
+ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))clock_rate_pc(
     .in_clock     (ref_clock_in_clock                                   )                ,
     .nreset       (ref_clock_nreset                                     )                ,
     .out_clock_ref(ref_clock_out_clock_ref                              )                
@@ -314,5 +341,4 @@ ila_0 ILA (
 	.probe17(uart_sdata_rx_in                               ),
 	.probe18(ref_clock_out_clock_ref                        )
 );
-
 endmodule

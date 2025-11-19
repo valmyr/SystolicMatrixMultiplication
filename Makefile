@@ -6,7 +6,7 @@ dir = ./sim/
 simi:
 	cd ${dir} &&\
 	source /usr/local/cadence/cds.sh &&\
-	xrun ${TB} ${RTL} -mce_sim_thread_count 32 -mce_build_thread_count 32 -access +rw &
+	xrun tb/*sv rtl/*sv rtl/uart/rtl/*sv -gui -access +rwc &
 #	xrun ${TB} ${RTL} -mce -mce_build_cpu_configuration single-socket -mce_build_thread_count 32 -access +rw &
 isim:
 	source /usr/local/cadence/cds.sh &&\

@@ -5,12 +5,12 @@
 
 
 <p align="center">
-<img title="Arquitetura Systolic Core" alt="Alt text" src="images/ArquiteturaSystolicCoreBlue.png" width="90%" height="90%">
+<img title="Arquitetura Systolic Core" alt="Alt text" src="images/ArquiteturaSystolicCoreBlue.png" width="100%" height="100%">
 </p>
 
 ## Objetivos
 
-A multiplicação de matrizes é uma operação muito comum em problemas científicos e de engenharia. A implementação sequencial dessa operação consome muito tempo para matrizes grandes; a solução de força bruta resulta em um tempo computacional O(n^3) , para matrizes nxn ...
+A multiplicação de matrizes é uma operação muito comum em problemas científicos e de engenharia. A implementação sequencial dessa operação consome muito tempo para matrizes grandes; a solução de força bruta resulta em um tempo computacional O(n^3) , para matrizes nxn.
 
 
 ## Introdução 

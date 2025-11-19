@@ -14,17 +14,18 @@ module serial2mem#(
 );
 
 logic [$clog2(2*SIZE)-1:0]      cnt, next_cnt                                   ;
-logic [$clog2(SIZE)-1:0]        cnt_shift, next_cnt_shift                       ;
+logic [$clog2(SIZE)-1:0]  cnt_shift, next_cnt_shift                       ;
 enum {IDLE, WRITE, READ,DONE}   mem_fsm,next_mem_fsm                            ;
 logic                           single_port_ram_clock                           ;
 logic                           single_port_ram_nreset                          ;
 logic                           single_port_ram_en                              ;
 logic                           single_port_ram_we                              ;
-logic [7-1:0]                   single_port_ram_addr                            ;
+logic [$clog2(SIZE*SIZE)-1:0]   single_port_ram_addr                            ;
 logic [WIDTH*SIZE-1:0]          single_port_ram_di                              ;
 logic [WIDTH*SIZE-1:0]          single_port_ram_dout                            ;
-(*dont_touch = "true"*) logic [WIDTH*SIZE-1:0]          buf_data                                        ;
-logic [WIDTH*SIZE-1:0]          next_buf_data                                        ;
+(*dont_touch = "true"*)
+logic [WIDTH*SIZE-1:0]          buf_data                                        ;
+logic [WIDTH*SIZE-1:0]          next_buf_data                                   ;
 
 /*
 ram_single_port #(.WIDTH(WIDTH*SIZE),.SIZE(2*(SIZE)-1))mem(
@@ -71,7 +72,7 @@ ram_single_port mem (
 
     //assign next_buf_data[WIDTH*(cnt_shift+1):WIDTH*cnt_shift] = in_data << WIDTH*cnt_shift;
    // assign next_buf_data = {buf_data,in_data<<WIDTH*cnt_shift};// | in_data << (WIDTH * cnt_shift);
-    assign next_buf_data = {buf_data[WIDTH*SIZE-WIDTH:0],in_data};
+    assign next_buf_data =(mem_fsm == WRITE)?  {buf_data[WIDTH*SIZE-WIDTH:0],in_data} : 0;
  //   assign next_buf_data = (mem_fsm == WRITE)&& !(cnt_shift == SIZE-1) ? buf_data | in_data << (WIDTH * (SIZE -1-cnt_shift)): buf_data | in_data  ;
     always_comb case(mem_fsm)
         IDLE:begin
