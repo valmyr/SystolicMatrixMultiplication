@@ -157,9 +157,10 @@ always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
     2'b10:
         uart_data_tx_in = mem2serial_smatrix_out;
     2'b01:
-        uart_data_tx_in = 0;
+        uart_data_tx_in = 8'hef;
     default:
-        uart_data_tx_in = 0;
+        uart_data_tx_in = 8'hef;
+
 endcase
 //---------------------------------------------------------------------------------------------------------------------------------
 

@@ -3,7 +3,7 @@ module tb;
   logic clock   , nreset;
   logic clock_tb;
   logic  nreset_arty;
-  parameter SIZE_M = 4;
+  parameter SIZE_M = 16;
   parameter FRAME_START = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M + FRAME_START;
   logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];
@@ -86,6 +86,7 @@ end
   logic [31:0] cnt3,cnt4;
   logic [31:0] cnt3_next,cnt4_next;
   logic [31:0] cnt1_next,cnt2_next;
+  logic inv;
   assign clock_tb = (fsm_tb != WAIT_REQUEST) ? tb_uart_ready_tx_out : tb_uart_ready_rx_out;
  // assign clock_tb = tb_uart_ready_tx_out ;
 //
@@ -112,12 +113,14 @@ end
           cnt4               <= 0     ;
           tb_uart_data_tx_in <= 0     ;
           fsm_tb             <= SEND_OP;
+          inv                <= 0;
         end else begin
           fsm_tb <= fsm_next_tb ;
           cnt1   <= cnt1_next   ;
           cnt2   <= cnt2_next   ;
           cnt3   <= cnt3_next   ;
           cnt4   <= cnt4_next   ;
+          inv    <= cnt4 == SIZE_M*SIZE_M -1?   ~inv: inv;
         end
       end
      end
@@ -129,8 +132,19 @@ end
             cnt2_next               = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2      ;
             cnt3_next               = 0                                                                             ;
             cnt4_next               = 0                                                                             ;
-            tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2]                     ;
             fsm_next_tb        = (cnt1 == SIZE_INPUT_SERIAL && cnt2 == SIZE_INPUT_SERIAL) ? WAIT_CALC: SEND_OP ;
+            tb_uart_data_tx_in = inv ? ((cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2]):((cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2])                      ;
+            /*
+            case(inv)
+              2'b1:begin
+                tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2]                     ;
+              end
+              2'b1:begin
+                tb_uart_data_tx_in = (cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2]                     ;
+              end
+            endcase
+            */
+
         end
         WAIT_CALC:begin
             tb_uart_data_tx_in  =8'hea;
