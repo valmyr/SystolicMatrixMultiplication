@@ -3,7 +3,7 @@ module tb;
   logic clock   , nreset;
   logic clock_tb;
   logic  nreset_arty;
-  parameter SIZE_M = 16;
+  parameter SIZE_M = 8;
   parameter FRAME_START = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M + FRAME_START;
   logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];
@@ -148,7 +148,7 @@ end
         end
         WAIT_CALC:begin
             tb_uart_data_tx_in  =8'hea;
-            fsm_next_tb         =cnt3 == 1 ? WAIT_REQUEST : WAIT_CALC;
+            fsm_next_tb         =cnt3 == 5 ? WAIT_REQUEST : WAIT_CALC;
             cnt3_next                =cnt3 + 1;
             cnt1_next                =0;
             cnt2_next                =0;

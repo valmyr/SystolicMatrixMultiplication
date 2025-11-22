@@ -69,7 +69,8 @@ logic [SIZE*WIDTHx-1:0]   syst_b_input                                          
 logic                     syst_ready_o                                                                          ;
 logic                     syst_rvalid_o                                                                         ;
 (*dont_touch = "true"*) 
-logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE:0][SIZE:0]                   ;
+logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                   ;
+
 logic                     syst_read_done                                                                        ;
 //--------------------------------------------------------------------------------------------------
 //Pinout MEMA
@@ -82,6 +83,7 @@ logic                   serial2mem_opa_rvalid_o                                 
 logic                   serial2mem_opa_ready_o                                                                  ;
 logic [WIDTHx-1:0]      serial2mem_opa_in_data                                                                  ;
 logic [SIZE*WIDTHx-1:0] serial2mem_opa_out_data                                                                 ;
+logic [SIZE*WIDTHx-1:0] serial2mem_opa_buf_data                                                                 ;
 //---------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------
 logic                   serial2mem_opb_clock                                                                    ;
@@ -93,6 +95,8 @@ logic                   serial2mem_opb_ready_o                                  
 logic                   serial2mem_opb_rvalid_o                                                                 ;
 logic [WIDTHx-1:0]      serial2mem_opb_in_data                                                                  ;
 logic [SIZE*WIDTHx-1:0] serial2mem_opb_out_data                                                                 ;
+logic [SIZE*WIDTHx-1:0] serial2mem_opb_buf_data                                                                 ;
+
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout UART
@@ -114,7 +118,7 @@ logic                   uart_sdata_tx_out                                       
 logic                   mem2serial_clock                                                                        ;
 logic                   mem2serial_nreset                                                                       ;
 (*dont_touch = "true"*) 
-logic [WIDTH-1:0]       mem2serial_pmatrix_in [SIZE:0][SIZE:0]                                              ;
+logic [WIDTH-1:0]       mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                              ;
 logic                   mem2serial_valid_i                                                                      ;
 logic                   mem2serial_rready_i                                                                     ;
 logic                   mem2serial_rvalid_o                                                                     ;
@@ -257,7 +261,8 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
     .rvalid_o                   (serial2mem_opa_rvalid_o                    )                 , //Resposta Válida(Operação concluida)
     .ready_o                    (serial2mem_opa_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opa_in_data                     )                 ,
-    .out_data                   (serial2mem_opa_out_data                    ) 
+    .out_data                   (serial2mem_opa_out_data                    )                 ,
+    .single_port_ram_di                   (serial2mem_opa_buf_data                    )
 );
 (*dont_touch = "true"*) 
 serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
@@ -269,7 +274,8 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
     .rvalid_o                   (serial2mem_opb_rvalid_o                    )                 , //Resposta Válida(Operação concluida)
     .ready_o                    (serial2mem_opb_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opb_in_data                     )                 ,
-    .out_data                   (serial2mem_opb_out_data                    ) 
+    .out_data                   (serial2mem_opb_out_data                    )                 ,
+    .single_port_ram_di                   (serial2mem_opb_buf_data                    )
 );
 (*dont_touch = "true"*) 
 mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
@@ -319,13 +325,17 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
     .out_clock_ref(ref_clock_out_clock_ref                              )                
 );
 
-/*
+(*dont_touch = "true"*) 
 ila_0 ILA (
-	.clk(clock                                              ), // input wire clk
-	.probe0 (syst_output_produc_a_b[00][00]                 ), // input wire [7:0]  probe0  
-	.probe1 (syst_output_produc_a_b[00][01]                 ), // input wire [7:0]  probe1 
-	.probe2 (syst_output_produc_a_b[00][02]                 ), // input wire [7:0]  probe2 
-	.probe3 (syst_output_produc_a_b[00][03]                 ), // input wire [7:0]  probe3 
+	.clk(systolicControlUnit_uart_ready_rx                                              ), // input wire clk
+(*dont_touch = "true"*) 
+    .probe0 (serial2mem_opa_buf_data                         ), // input wire [7:0]  probe0  
+(*dont_touch = "true"*) 
+	.probe1 (serial2mem_opb_buf_data                         ), // input wire [7:0]  probe1 
+(*dont_touch = "true"*) 
+	.probe2 (serial2mem_opa_out_data                        ), // input wire [7:0]  probe2 
+(*dont_touch = "true"*) 
+	.probe3 (serial2mem_opb_out_data                        ), // input wire [7:0]  probe3 
 	.probe4 (syst_output_produc_a_b[01][00]                 ), // input wire [7:0]  probe4 
 	.probe5 (syst_output_produc_a_b[01][01]                 ), // input wire [7:0]  probe5 
 	.probe6 (syst_output_produc_a_b[01][02]                 ), // input wire [7:0]  probe6 
@@ -341,5 +351,5 @@ ila_0 ILA (
 	.probe16(systolicControlUnit_frame_start[31:24]         ),
 	.probe17(uart_sdata_rx_in                               ),
 	.probe18(ref_clock_out_clock_ref                        )
-);*/
+);
 endmodule

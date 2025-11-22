@@ -1,7 +1,7 @@
 module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     input  logic             clock                           ,
     input  logic             nreset                          ,
-    input  logic [WIDTH-1:0] pmatrix_in  [SIZE:0][SIZE:0]    ,
+    input  logic [WIDTH-1:0] pmatrix_in  [SIZE-1:0][SIZE-1:0]    ,
     input  logic valid_i                                     , //Dado válido na entrada
     input  logic rready_i                                    , //Pronto para receber uma resposta
     output logic rvalid_o                                    , //Resposta Válida(Operação concluida)
@@ -10,7 +10,7 @@ module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     output logic [WIDTH-1:0]      smatrix_out                     
 );
 (*dont_touch = "true"*) 
-logic [WIDTH-1:0] pmatrix  [SIZE:0][SIZE:0]    ;
+logic [WIDTH-1:0] pmatrix  [SIZE-1:0][SIZE-1:0]    ;
 
 enum {IDLE_INDEX,COUNTER_INDEX,DONE_INDEX} mem2seriala_fsm,next_mem2seriala_fsm;
 logic [$clog2(SIZE)-1:0] i_counter, j_counter;
