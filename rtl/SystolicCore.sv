@@ -324,19 +324,15 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
     .nreset       (ref_clock_nreset                                     )                ,
     .out_clock_ref(ref_clock_out_clock_ref                              )                
 );
-
+/*
 (*dont_touch = "true"*) 
 ila_0 ILA (
-	.clk(systolicControlUnit_uart_ready_rx                                              ), // input wire clk
-(*dont_touch = "true"*) 
-    .probe0 (serial2mem_opa_buf_data                         ), // input wire [7:0]  probe0  
-(*dont_touch = "true"*) 
-	.probe1 (serial2mem_opb_buf_data                         ), // input wire [7:0]  probe1 
-(*dont_touch = "true"*) 
+	.clk(clock                                              ), // input wire clk
+    .probe0 (serial2mem_opa_buf_data                        ), // input wire [7:0]  probe0  
+	.probe1 (serial2mem_opb_buf_data                        ), // input wire [7:0]  probe1 
 	.probe2 (serial2mem_opa_out_data                        ), // input wire [7:0]  probe2 
-(*dont_touch = "true"*) 
 	.probe3 (serial2mem_opb_out_data                        ), // input wire [7:0]  probe3 
-	.probe4 (syst_output_produc_a_b[01][00]                 ), // input wire [7:0]  probe4 
+	.probe4 (uart_data_rx_out                               ), // input wire [7:0]  probe4 
 	.probe5 (syst_output_produc_a_b[01][01]                 ), // input wire [7:0]  probe5 
 	.probe6 (syst_output_produc_a_b[01][02]                 ), // input wire [7:0]  probe6 
 	.probe7 (syst_output_produc_a_b[01][03]                 ), // input wire [7:0]  probe7 
@@ -350,6 +346,6 @@ ila_0 ILA (
 	.probe15(systolicControlUnit_frame_start[23:16]         ), // input wire [0:0]  probe15
 	.probe16(systolicControlUnit_frame_start[31:24]         ),
 	.probe17(uart_sdata_rx_in                               ),
-	.probe18(ref_clock_out_clock_ref                        )
-);
+	.probe18(serial2mem_opa_clock                        )
+);*/
 endmodule

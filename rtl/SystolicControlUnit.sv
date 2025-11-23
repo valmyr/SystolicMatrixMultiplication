@@ -121,15 +121,26 @@ always_comb case(fsm_unit_control)
     WRITE_MEMBBB:begin
         serial2mem_opa_valid_i        = 0;
         serial2mem_opb_valid_i        = 1;
-        serial2mem_opa_rw             = 0;  
-        serial2mem_opb_rw             = 0; 
         serial2mem_opa_rready_i       = 0;
         serial2mem_opb_rready_i       = 0;    
         mem2serial_valid_i            = 0;
         mem2serial_rready_i           = 0;
         syst_valid_i                  = 0;          
         syst_rready_i                 = 0;  
-        fsm_unit_control_next         = frame_start[15:0]  == 16'hadda ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
+        
+        
+        if(frame_start[15:0]  == 16'hadda)begin
+            fsm_unit_control_next         =  SYSTOLIC_READ_MEM;
+            serial2mem_opa_rw             =  1;  
+            serial2mem_opb_rw             =  1; 
+        
+        end else begin
+               fsm_unit_control_next         = WRITE_MEMBBB;
+            serial2mem_opa_rw             =  0;  
+            serial2mem_opb_rw             =  0; 
+                       
+        
+        end
        // fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o && frame_start == 32'hffff_ffff ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
         uart_valid_tx_in              = 1;
         //starting_frame_identified     = frame_start == 32'hffff_ffff & serial2mem_opb_rvalid_o;

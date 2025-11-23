@@ -3,7 +3,7 @@ module tb;
   logic clock   , nreset;
   logic clock_tb;
   logic  nreset_arty;
-  parameter SIZE_M = 8;
+  parameter SIZE_M = 4;
   parameter FRAME_START = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M + FRAME_START;
   logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];
@@ -13,7 +13,7 @@ module tb;
   logic [7:0]INPUT_B1 [SIZE_INPUT_SERIAL-1:0];
   logic [$clog2(SIZE_INPUT_SERIAL):0]cnt1 ;
   logic [$clog2(SIZE_INPUT_SERIAL):0]cnt2 ;
-  parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
+  parameter  BYTESIZES = 8, OVERSAMPLING = 32, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000;
   logic     inv_r;
   //--------------------------------------------------------------------------------------------------
   //Pinout UART
