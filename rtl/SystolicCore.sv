@@ -136,8 +136,8 @@ logic ref_clock_out_clock_ref                                                   
 assign syst_clock                = clock                                                                        ;
 assign uart_clock                = clock                                                                        ;
 assign mem2serial_clock          = uart_ready_tx_out                                                      ;//A definir 5kHz
-assign serial2mem_opa_clock      = !systolicControlUnit_serial2mem_opa_rw ? uart_ready_rx_out : clock           ;
-assign serial2mem_opb_clock      = !systolicControlUnit_serial2mem_opb_rw ? uart_ready_rx_out : clock           ;
+assign serial2mem_opa_clock      = !systolicControlUnit_serial2mem_opa_rw ? ~uart_ready_rx_out : clock           ;
+assign serial2mem_opb_clock      = !systolicControlUnit_serial2mem_opb_rw ? ~uart_ready_rx_out : clock           ;
 assign systolicControlUnit_clock = clock                                                                        ;
 assign ref_clock_in_clock        = clock                                                                        ;
 //Atribuição de nreset
@@ -324,7 +324,7 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
     .nreset       (ref_clock_nreset                                     )                ,
     .out_clock_ref(ref_clock_out_clock_ref                              )                
 );
-/*
+
 (*dont_touch = "true"*) 
 ila_0 ILA (
 	.clk(clock                                              ), // input wire clk
@@ -347,5 +347,17 @@ ila_0 ILA (
 	.probe16(systolicControlUnit_frame_start[31:24]         ),
 	.probe17(uart_sdata_rx_in                               ),
 	.probe18(serial2mem_opa_clock                        )
-);*/
+	
+);
+
+clk_wiz_0  clock_pll
+ (
+  // Clock out ports
+  .clk_out1(clock_sync_data),
+  // Status and control signals
+  .reset(~nreset),
+  .locked(),
+ // Clock in ports
+  .clk_in1(uart_ready_rx_out)
+ );
 endmodule
