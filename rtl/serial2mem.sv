@@ -77,12 +77,10 @@ ram_single_port mem (
  //   assign next_buf_data = (mem_fsm == WRITE)&& !(cnt_shift == SIZE-1) ? buf_data | in_data << (WIDTH * (SIZE -1-cnt_shift)): buf_data | in_data  ;
     always_comb case(mem_fsm)
         IDLE:begin
-            ready_o         = 1                     ;
-            rvalid_o        = 0                     ;
+            ready_o         = 1                                ;
+            rvalid_o        = 0                                ;
 
             if(valid_i)begin                        
-                //ext_mem_fsm = rw ? READ : WRITE    ;
-
                 if(rw)begin
                         next_mem_fsm = READ;
                         next_cnt        = 0                     ;
@@ -93,39 +91,38 @@ ram_single_port mem (
                         next_cnt_shift =  0                     ;
                 end
             end else begin                          
-                next_mem_fsm  = IDLE                ;
-                                        next_cnt        = 0                     ;
-                        next_cnt_shift =  0                     ;
+                        next_mem_fsm   = IDLE                    ;
+                        next_cnt       = 0                       ;
+                        next_cnt_shift = 0                       ;
             end
-            out_data       =  0                     ;
-            single_port_ram_di       = 0  ;
+            out_data                 =  0                        ;
+            single_port_ram_di       =  0                        ;
         end
         WRITE:begin
-            ready_o                  = 0                                  ;
-            rvalid_o                 = 0                                  ;
-            next_cnt                 = cnt_shift == SIZE-1 ? cnt + 1: cnt ;
-            next_cnt_shift           = cnt_shift + 1                      ;
-            next_mem_fsm             = cnt!=2*SIZE-1 ? WRITE: DONE        ;    
-            
-            out_data                 =  0                                 ;
+            ready_o                  = 0                                                         ;
+            rvalid_o                 = 0                                                         ;
+            next_cnt                 = cnt_shift == SIZE-1 ? cnt + 1: cnt                        ;
+            next_cnt_shift           = cnt_shift + 1                                             ;
+            next_mem_fsm             = cnt!=2*SIZE-1 ? WRITE: DONE                               ;    
+            out_data                 =  0                                                        ;
             single_port_ram_di       =  (cnt_shift == SIZE-1 ? buf_data : single_port_ram_di)    ;
         end
         READ:begin
-            ready_o        = 0                          ;
-            rvalid_o       = cnt!=2*SIZE-1 ? 0 : 1      ;
-            next_cnt       = cnt + 1                    ;
-            next_mem_fsm   = cnt!=2*SIZE-1 ? READ: DONE ;
-            next_cnt_shift =  0                         ; 
-            out_data       =  cnt !=0  ?  single_port_ram_dout: 0      ;
+            ready_o        = 0                                                                   ;
+            rvalid_o       = cnt!=2*SIZE-1 ? 0 : 1                                               ;
+            next_cnt       = cnt + 1                                                             ;
+            next_mem_fsm   = cnt!=2*SIZE-1 ? READ: DONE                                          ;
+            next_cnt_shift = 0                                                                   ; 
+            out_data       = cnt !=0  ?  single_port_ram_dout: 0                                 ;
         end
         DONE:begin  
-            ready_o        = 0                           ;
-            rvalid_o       = 1                           ;
-            next_cnt       = 0                           ;
-            next_mem_fsm   = rready_i ? IDLE : DONE      ;
-            next_cnt_shift =  0                          ;
-            out_data       =  0                          ;
-            single_port_ram_di       = 0  ;
+            ready_o                  = 0                                                         ;
+            rvalid_o                 = 1                                                         ;
+            next_cnt                 = 0                                                         ;
+            next_mem_fsm             = rready_i ? IDLE : DONE                                    ;
+            next_cnt_shift           = 0                                                         ;
+            out_data                 = 0                                                         ;
+            single_port_ram_di       = 0                                                         ;
 
         end
         default:begin

@@ -129,10 +129,10 @@ end
     case(fsm_tb)
         SEND_OP:begin
             cnt1_next               = (cnt1 == SIZE_INPUT_SERIAL) ?                             cnt1    : cnt1 +1   ;
-            cnt2_next               = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL? cnt2 +1 : cnt2      ;
+            cnt2_next               = (cnt1 == SIZE_INPUT_SERIAL) && cnt2 != SIZE_INPUT_SERIAL-1? cnt2 +1 : cnt2      ;
             cnt3_next               = 0                                                                             ;
             cnt4_next               = 0                                                                             ;
-            fsm_next_tb        = (cnt1 == SIZE_INPUT_SERIAL && cnt2 == SIZE_INPUT_SERIAL) ? WAIT_CALC: SEND_OP ;
+            fsm_next_tb        = (cnt1 == SIZE_INPUT_SERIAL && cnt2 == SIZE_INPUT_SERIAL-1) ? WAIT_CALC: SEND_OP ;
             tb_uart_data_tx_in = inv ? ((cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A[cnt1] : INPUT_B[cnt2]):((cnt1!=SIZE_INPUT_SERIAL) ? INPUT_A1[cnt1] : INPUT_B1[cnt2])                      ;
             /*
             case(inv)
