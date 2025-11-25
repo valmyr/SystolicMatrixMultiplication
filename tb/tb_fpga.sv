@@ -3,7 +3,7 @@ module tb;
   logic clock   , nreset;
   logic clock_tb;
   logic  nreset_arty;
-  parameter SIZE_M = 4;
+  parameter SIZE_M = 16;
   parameter FRAME_START = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M + FRAME_START;
   logic [7:0]INPUT_A [SIZE_INPUT_SERIAL-1:0];

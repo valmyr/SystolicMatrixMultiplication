@@ -136,8 +136,8 @@ logic ref_clock_out_clock_ref                                                   
 assign syst_clock                = clock                                                                        ;
 assign uart_clock                = clock                                                                        ;
 assign mem2serial_clock          = uart_ready_tx_out                                                      ;//A definir 5kHz
-assign serial2mem_opa_clock      = !systolicControlUnit_serial2mem_opa_rw ? ~uart_ready_rx_out : clock           ;
-assign serial2mem_opb_clock      = !systolicControlUnit_serial2mem_opb_rw ? ~uart_ready_rx_out : clock           ;
+assign serial2mem_opa_clock      =  clock           ;
+assign serial2mem_opb_clock      =  clock           ;
 assign systolicControlUnit_clock = clock                                                                        ;
 assign ref_clock_in_clock        = clock                                                                        ;
 //Atribuição de nreset
@@ -238,6 +238,9 @@ uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRAT
     .ready_tx_out               (uart_ready_tx_out                          )                  ,
     .sdata_tx_out               (uart_sdata_tx_out                          )              
 );
+
+//logic [111:0]fifo_d_a;
+//logic [111:0]fifo_d_b;
 (*dont_touch = "true"*) 
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
     .nreset                     (syst_nreset                                )                  ,
@@ -262,7 +265,10 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
     .ready_o                    (serial2mem_opa_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opa_in_data                     )                 ,
     .out_data                   (serial2mem_opa_out_data                    )                 ,
-    .single_port_ram_di                   (serial2mem_opa_buf_data                    )
+    .single_port_ram_di         (serial2mem_opa_buf_data                    ),
+    .uart_ready_rx_out          (uart_ready_rx_out                          )
+    //.fifo_d(fifo_d_a)
+
 );
 (*dont_touch = "true"*) 
 serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
@@ -275,7 +281,9 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
     .ready_o                    (serial2mem_opb_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opb_in_data                     )                 ,
     .out_data                   (serial2mem_opb_out_data                    )                 ,
-    .single_port_ram_di                   (serial2mem_opb_buf_data                    )
+    .single_port_ram_di         (serial2mem_opb_buf_data                    )                 ,
+    .uart_ready_rx_out          (uart_ready_rx_out                          )
+    //.fifo_d(fifo_d_b)
 );
 (*dont_touch = "true"*) 
 mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
@@ -325,6 +333,14 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
     .out_clock_ref(ref_clock_out_clock_ref                              )                
 );
 
+ila_2 your_instance_name (
+	.clk(clock), // input wire clk
+
+
+	.probe0(probe0), // input wire [0:0]  probe0  
+	.probe1(probe1) // input wire [0:0]  probe1
+);
+/*
 (*dont_touch = "true"*) 
 ila_0 ILA (
 	.clk(clock                                              ), // input wire clk
@@ -348,8 +364,8 @@ ila_0 ILA (
 	.probe17(uart_sdata_rx_in                               ),
 	.probe18(serial2mem_opa_clock                        )
 	
-);
-
+);*/
+/*
 clk_wiz_0  clock_pll
  (
   // Clock out ports
@@ -359,5 +375,22 @@ clk_wiz_0  clock_pll
   .locked(),
  // Clock in ports
   .clk_in1(uart_ready_rx_out)
- );
+ );*/
+ /*
+ 
+ ila_0 your_instance_name (
+	.clk(clock), // input wire clk
+
+
+	.probe0(serial2mem_opa_buf_data), // input wire [15:0]  probe0  
+	.probe1(serial2mem_opb_buf_data), // input wire [15:0]  probe1 
+	.probe2(fifo_d_a), // input wire [15:0]  probe2 
+	.probe3(fifo_d_b), // input wire [7:0]  probe3 
+	.probe4(serial2mem_opa_ready_o), // input wire [7:0]  probe4 
+	.probe5(serial2mem_opb_ready_o), // input wire [0:0]  probe5 
+	.probe6(serial2mem_opa_rvalid_o), // input wire [0:0]  probe6 
+	.probe7(serial2mem_opb_rvalid_o), // input wire [0:0]  probe7 
+	.probe8(uart_data_rx_out), // input wire [0:0]  probe8 
+	.probe9(systolicControlUnit_clock) // input wire [0:0]  probe9
+);*/
 endmodule
