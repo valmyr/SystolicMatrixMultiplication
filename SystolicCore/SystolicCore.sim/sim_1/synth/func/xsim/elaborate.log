@@ -1,0 +1,67 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/xmen/Music/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L secureip --snapshot tb_func_synth xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Desktop/SystolicCore/tb/tb_fpga.sv:38]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 8 for port 'data_tx_in' [/home/xmen/Desktop/SystolicCore/tb/tb_fpga.sv:43]
+WARNING: [VRFC 10-3818] variable 'tb_uart_data_tx_in' is driven by invalid combination of procedural drivers [/home/xmen/Desktop/SystolicCore/tb/tb_fpga.sv:29]
+WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block should not be driven by any other process [/home/xmen/Desktop/SystolicCore/tb/tb_fpga.sv:128]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/xmen/Desktop/SystolicCore/rtl/src/uart_top.sv" Line 13. Module uart_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/xmen/Desktop/SystolicCore/rtl/src/uart_top.sv" Line 13. Module uart_top doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_rx_default
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.uart_top
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.CARRY4
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT5
+Compiling module xil_defaultlib.systolicMatrixMultiply
+Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.ref_clock
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.FDPE(INIT=1'b0)
+Compiling module unisims_ver.latchsre_ldce
+Compiling module unisims_ver.LDCE
+Compiling module unisims_ver.FDCP
+Compiling module unisims_ver.FDPE_default
+Compiling module unisims_ver.MUXF7
+Compiling module unisims_ver.MUXF8
+Compiling module xil_defaultlib.mem2seriala
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.GND
+Compiling module unisims_ver.SRL16E_default
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_MODE="SDP...
+Compiling module unisims_ver.RAMB36E1(RAM_MODE="SDP",READ_WID...
+Compiling module xil_defaultlib.dual_porte_ram
+Compiling module xil_defaultlib.serial2mem__xdcDup__1
+Compiling module xil_defaultlib.serial2mem
+Compiling module unisims_ver.RB18_INTERNAL_VLOG(DOA_REG=1,DOB...
+Compiling module unisims_ver.RAMB18E1(DOA_REG=1,DOB_REG=1,REA...
+Compiling module unisims_ver.SRLC32E_default
+Compiling module unisims_ver.SRLC16E_default
+Compiling module unisims_ver.CFGLUT5_default
+Compiling module unisims_ver.FDSE_default
+Compiling module xil_defaultlib.ila_2
+Compiling module xil_defaultlib.systolicControlUnitTop
+Compiling module xil_defaultlib.ila_2_HD2
+Compiling module unisims_ver.IBUF
+Compiling module xil_defaultlib.dbg_hub_CV
+Compiling module unisims_ver.OBUF
+Compiling module xil_defaultlib.Arty7_top_sim
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_func_synth
