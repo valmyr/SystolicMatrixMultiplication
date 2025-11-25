@@ -148,7 +148,7 @@ end
         end
         WAIT_CALC:begin
             tb_uart_data_tx_in  =8'hea;
-            fsm_next_tb         =cnt3 == 5 ? WAIT_REQUEST : WAIT_CALC;
+            fsm_next_tb         =cnt3 == 1 ? WAIT_REQUEST : WAIT_CALC;
             cnt3_next                =cnt3 + 1;
             cnt1_next                =0;
             cnt2_next                =0;

@@ -1,6 +1,7 @@
 module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     input  logic             clock                           ,
     input  logic             nreset                          ,
+    (*dont_touch = "true"*) 
     input  logic [WIDTH-1:0] pmatrix_in  [SIZE-1:0][SIZE-1:0]    ,
     input  logic valid_i                                     , //Dado válido na entrada
     input  logic rready_i                                    , //Pronto para receber uma resposta
@@ -24,6 +25,7 @@ always_ff@(posedge clock, negedge nreset)begin
         i_counter        <=next_i_counter; 
         j_counter        <=next_j_counter;
         mem2seriala_fsm  <= next_mem2seriala_fsm;
+        (*dont_touch = "true"*) 
         pmatrix  <= pmatrix_in;
 
     end
@@ -45,6 +47,7 @@ always_comb begin
             next_j_counter = j_counter < SIZE  ? j_counter +1 : 0;
             next_i_counter = j_counter < SIZE -1? i_counter:i_counter+1  ;
             next_mem2seriala_fsm = i_counter >= SIZE -1 & j_counter >= SIZE-1 ? DONE_INDEX: COUNTER_INDEX;
+            (*dont_touch = "true"*) 
             smatrix_out     = pmatrix_in[i_counter][j_counter];
         end
         DONE_INDEX:begin

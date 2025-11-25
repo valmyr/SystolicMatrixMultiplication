@@ -68,10 +68,11 @@ always_ff@(posedge clock, negedge nreset)begin
 
     end else begin
         counter_transfer_m              <= next_counter_transfer_m                                               ;
-        if(currentStateSystolicControlUnit == DONE)begin
-            output_produc_a_b               <= valid_i ?produc_a_b :  output_produc_a_b                           ;
+        if(ena_mac)begin
+            output_produc_a_b               <= produc_a_b                          ;
         end else 
-            output_produc_a_b                      <= '{default:0};
+            output_produc_a_b               <=   output_produc_a_b                           ;
+
         currentStateSystolicControlUnit <= nextStateSystolicControlUnit                                        ;
         counter_mult                    <= next_counter_mult                                                   ; 
         ena_mac                         <= next_ena_mac                                                        ;

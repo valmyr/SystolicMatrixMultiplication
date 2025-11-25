@@ -124,8 +124,7 @@ always_comb case(fsm_unit_control)
         serial2mem_opa_rready_i       = 0;
         serial2mem_opb_rready_i       = 0;    
         mem2serial_valid_i            = 0;
-        mem2serial_rready_i           = 0;
-        syst_valid_i                  = 0;          
+        mem2serial_rready_i           = 0;        
         syst_rready_i                 = 0;  
         
         
@@ -133,11 +132,13 @@ always_comb case(fsm_unit_control)
             fsm_unit_control_next         =  SYSTOLIC_READ_MEM;
             serial2mem_opa_rw             =  1;  
             serial2mem_opb_rw             =  1; 
+                    syst_valid_i                  = 1;  
         
         end else begin
                fsm_unit_control_next         = WRITE_MEMBBB;
             serial2mem_opa_rw             =  0;  
             serial2mem_opb_rw             =  0; 
+                    syst_valid_i                  = 0;  
                        
         
         end
@@ -153,7 +154,7 @@ always_comb case(fsm_unit_control)
         serial2mem_opb_rw             =  1;  
         serial2mem_opa_rready_i       =  ~read_done;
         serial2mem_opb_rready_i       =  ~read_done;
-        syst_valid_i                  =  1;          
+        syst_valid_i                  =  ~read_done;          
         syst_rready_i                 =  0;  
         uart_valid_tx_in              =  0;
         mem2serial_valid_i            =  0;
