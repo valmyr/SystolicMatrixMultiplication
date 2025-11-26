@@ -333,7 +333,7 @@ ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))cloc
     .out_clock_ref(ref_clock_out_clock_ref                              )                
 );
 
-ila_2 your_instance_name (
+ila_3 your_instance_name (
 	.clk(clock), // input wire clk
 
 

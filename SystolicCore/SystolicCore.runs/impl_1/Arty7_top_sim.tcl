@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/impl_1/Arty7_top_sim.tcl"
+  variable script "/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/impl_1/Arty7_top_sim.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,18 +115,18 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.cache/wt [current_project]
-  set_property parent.project_path /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.xpr [current_project]
-  set_property ip_output_repo /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.cache/wt [current_project]
+  set_property parent.project_path /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.xpr [current_project]
+  set_property ip_output_repo /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.dcp
-  read_ip -quiet /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/dual_porte_ram/dual_porte_ram.xci
-  read_ip -quiet /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_2/ila_2.xci
+  add_files -quiet /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.dcp
+  read_ip -quiet /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/ram_dual_port/ram_dual_port.xci
+  read_ip -quiet /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_3/ila_3.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/xmen/Desktop/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc
+  read_xdc /home/xmen/Desktop/PROJETO_TCC/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

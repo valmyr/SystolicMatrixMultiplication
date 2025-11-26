@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="dual_porte_ram_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1764077659">
+<GenRun Id="dual_porte_ram_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1764187522">
   <File Type="VDS-TIMINGSUMMARY" Name="dual_porte_ram_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="dual_porte_ram.dcp"/>
   <File Type="RDS-UTIL-PB" Name="dual_porte_ram_utilization_synth.pb"/>
@@ -37,7 +37,7 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PSRCDIR/utils_1/imports/synth_1/Arty7_top_sim.dcp">
+    <File Path="$PPRDIR/../../../SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

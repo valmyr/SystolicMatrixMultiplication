@@ -7,12 +7,12 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Tue Nov 25 10:35:18 2025
+  **** Start of session at: Wed Nov 26 17:16:19 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source Arty7_top_sim.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
+Command: read_checkpoint -incremental /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top Arty7_top_sim -part xc7a100tcsg324-1
@@ -24,14 +24,14 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3576707
+INFO: [Synth 8-7075] Helper process launched with PID 424490
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2474.223 ; gain = 483.156 ; free physical = 7017 ; free virtual = 47579
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2473.566 ; gain = 479.188 ; free physical = 13494 ; free virtual = 29928
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'probe0', assumed default net type 'wire' [/home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv:340]
-INFO: [Synth 8-11241] undeclared symbol 'probe1', assumed default net type 'wire' [/home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv:341]
-INFO: [Synth 8-6157] synthesizing module 'Arty7_top_sim' [/home/xmen/Desktop/SystolicCore/rtl/Arty7_top_sim.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCoreTop' [/home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv:23]
+INFO: [Synth 8-11241] undeclared symbol 'probe0', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:340]
+INFO: [Synth 8-11241] undeclared symbol 'probe1', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:341]
+INFO: [Synth 8-6157] synthesizing module 'Arty7_top_sim' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/Arty7_top_sim.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCoreTop' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:23]
 	Parameter BYTESIZES bound to: 8 - type: integer 
 	Parameter OVERSAMPLING bound to: 16 - type: integer 
 	Parameter BAUDRATE bound to: 115200 - type: integer 
@@ -41,261 +41,261 @@ INFO: [Synth 8-6157] synthesizing module 'SystolicCoreTop' [/home/xmen/Desktop/S
 	Parameter SIZE bound to: 16 - type: integer 
 	Parameter WIDTH bound to: 8 - type: integer 
 	Parameter CLOCK_TRANSFER_PC bound to: 11500 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'uart_top' [/home/xmen/Desktop/SystolicCore/rtl/src/uart_top.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'uart_top' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_top.sv:13]
 	Parameter BYTESIZES bound to: 8 - type: integer 
 	Parameter OVERSAMPLING bound to: 16 - type: integer 
 	Parameter BAUDRATE bound to: 115200 - type: integer 
 	Parameter COUNTER_CLOCK_INPUT bound to: 100000000 - type: integer 
 	Parameter CLOCK_REF bound to: 10000000 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/xmen/Desktop/SystolicCore/rtl/src/uart_rx.v:29]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_rx.v:29]
 	Parameter CLK_FRE bound to: 100 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/src/uart_rx.v:29]
-INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/xmen/Desktop/SystolicCore/rtl/src/uart_tx.v:29]
-INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/src/uart_tx.v:29]
-INFO: [Synth 8-6155] done synthesizing module 'uart_top' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/src/uart_top.sv:13]
-INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_rx.v:29]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_tx.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_tx.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'uart_top' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_top.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
 	Parameter WIDTH bound to: 8 - type: integer 
 	Parameter SIZE bound to: 16 - type: integer 
 	Parameter WIDTHx bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Desktop/SystolicCore/rtl/accumulator.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/accumulator.sv:13]
 	Parameter WIDTH bound to: 8 - type: integer 
 	Parameter WIDTHx bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/accumulator.sv:13]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
-INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/accumulator.sv:13]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:1]
 	Parameter WIDTH bound to: 4 - type: integer 
 	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'dual_porte_ram' [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3576642-VT0144/realtime/dual_porte_ram_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'dual_porte_ram' (0#1) [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3576642-VT0144/realtime/dual_porte_ram_stub.v:6]
-WARNING: [Synth 8-689] width (5) of port connection 'addra' does not match port width (6) of module 'dual_porte_ram' [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:62]
-WARNING: [Synth 8-689] width (64) of port connection 'dina' does not match port width (128) of module 'dual_porte_ram' [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:63]
-WARNING: [Synth 8-689] width (5) of port connection 'addrb' does not match port width (6) of module 'dual_porte_ram' [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:67]
-WARNING: [Synth 8-689] width (64) of port connection 'doutb' does not match port width (128) of module 'dual_porte_ram' [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:68]
-INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-424426-VT0144/realtime/ram_dual_port_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-424426-VT0144/realtime/ram_dual_port_stub.v:6]
+WARNING: [Synth 8-689] width (5) of port connection 'addra' does not match port width (6) of module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:62]
+WARNING: [Synth 8-689] width (64) of port connection 'dina' does not match port width (128) of module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:63]
+WARNING: [Synth 8-689] width (5) of port connection 'addrb' does not match port width (6) of module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:67]
+WARNING: [Synth 8-689] width (64) of port connection 'doutb' does not match port width (128) of module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:68]
+INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:1]
 	Parameter SIZE bound to: 16 - type: integer 
 	Parameter WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:1]
-INFO: [Synth 8-226] default block is never used [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:86]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:223]
-INFO: [Synth 8-6157] synthesizing module 'ila_2' [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3576642-VT0144/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_2' (0#1) [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3576642-VT0144/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'ref_clock' [/home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:86]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:223]
+INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-424426-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-424426-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ref_clock' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv:1]
 	Parameter CLOCK_REF bound to: 11500 - type: integer 
 	Parameter CLOCK_INPUT bound to: 100000000 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'counter' [/home/xmen/Desktop/SystolicCore/rtl/uart/rtl/counter.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/counter.sv:13]
 	Parameter MOD bound to: 4347 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/uart/rtl/counter.sv:13]
-WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv:12]
-WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv:12]
-INFO: [Synth 8-6155] done synthesizing module 'ref_clock' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv:1]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv:336]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCoreTop' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'Arty7_top_sim' (0#1) [/home/xmen/Desktop/SystolicCore/rtl/Arty7_top_sim.sv:23]
-WARNING: [Synth 8-7137] Register mem_fsm_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:119]
-WARNING: [Synth 8-87] always_comb on 'single_port_ram_di_reg' did not result in combinational logic [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:63]
-WARNING: [Synth 8-7137] Register mem2seriala_fsm_reg in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:27]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[15][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[14][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[13][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[12][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[11][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[10][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[9][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
-WARNING: [Synth 8-7137] Register pmatrix_reg[9][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/counter.sv:13]
+WARNING: [Synth 8-7071] port 'counter1' of module 'counter' is unconnected for instance 'counter_base' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv:12]
+WARNING: [Synth 8-7023] instance 'counter_base' of module 'counter' has 5 connections declared, but only 4 given [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'ref_clock' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv:1]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:336]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCoreTop' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'Arty7_top_sim' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/Arty7_top_sim.sv:23]
+WARNING: [Synth 8-7137] Register mem_fsm_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:119]
+WARNING: [Synth 8-87] always_comb on 'single_port_ram_di_reg' did not result in combinational logic [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:63]
+WARNING: [Synth 8-7137] Register mem2seriala_fsm_reg in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:27]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[9][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[9][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:29]
 INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'systolicControlUnit_Global'. This will prevent further optimization [/home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv:302]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:223]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rw_reg' did not result in combinational logic [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:52]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rw_reg' did not result in combinational logic [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:53]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:54]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:55]
-WARNING: [Synth 8-87] always_comb on 'starting_frame_identified_reg' did not result in combinational logic [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:62]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'systolicControlUnit_Global'. This will prevent further optimization [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:302]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:223]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rw_reg' did not result in combinational logic [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:52]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rw_reg' did not result in combinational logic [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:53]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:54]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rready_i_reg' did not result in combinational logic [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:55]
+WARNING: [Synth 8-87] always_comb on 'starting_frame_identified_reg' did not result in combinational logic [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:62]
 WARNING: [Synth 8-7129] Port serial2mem_opb_rvalid_o in module systolicControlUnitTop is either unconnected or has no load
 WARNING: [Synth 8-7129] Port serial2mem_opa_ready_o in module systolicControlUnitTop is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top_sim is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top_sim is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top_sim is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2660.160 ; gain = 669.094 ; free physical = 6828 ; free virtual = 47392
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2660.535 ; gain = 666.156 ; free physical = 13336 ; free virtual = 29771
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2660.160 ; gain = 669.094 ; free physical = 6828 ; free virtual = 47392
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2660.535 ; gain = 666.156 ; free physical = 13338 ; free virtual = 29773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2660.160 ; gain = 669.094 ; free physical = 6828 ; free virtual = 47392
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2660.535 ; gain = 666.156 ; free physical = 13338 ; free virtual = 29773
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2660.160 ; gain = 0.000 ; free physical = 6827 ; free virtual = 47389
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2660.535 ; gain = 0.000 ; free physical = 13313 ; free virtual = 29749
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/dual_porte_ram/dual_porte_ram/dual_porte_ram_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
-Finished Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/dual_porte_ram/dual_porte_ram/dual_porte_ram_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
-Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/dual_porte_ram/dual_porte_ram/dual_porte_ram_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
-Finished Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/dual_porte_ram/dual_porte_ram/dual_porte_ram_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
-Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
-Finished Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
-Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
-Finished Parsing XDC File [/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
-Parsing XDC File [/home/xmen/Desktop/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
-Finished Parsing XDC File [/home/xmen/Desktop/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Desktop/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Arty7_top_sim_propImpl.xdc].
+Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
+Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
+Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
+Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
+Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
+Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
+Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
+Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
+Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
+Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Arty7_top_sim_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Arty7_top_sim_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2744.992 ; gain = 0.000 ; free physical = 6807 ; free virtual = 47371
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2741.367 ; gain = 0.000 ; free physical = 13274 ; free virtual = 29709
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2745.027 ; gain = 0.000 ; free physical = 6804 ; free virtual = 47370
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2741.402 ; gain = 0.000 ; free physical = 13294 ; free virtual = 29730
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opA/ram' at clock pin 'clkb' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opB/ram' at clock pin 'clkb' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2745.027 ; gain = 753.961 ; free physical = 6814 ; free virtual = 47380
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2741.402 ; gain = 747.023 ; free physical = 13302 ; free virtual = 29738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2752.996 ; gain = 761.930 ; free physical = 6814 ; free virtual = 47380
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2749.371 ; gain = 754.992 ; free physical = 13302 ; free virtual = 29737
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2752.996 ; gain = 761.930 ; free physical = 6814 ; free virtual = 47380
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2749.371 ; gain = 754.992 ; free physical = 13293 ; free virtual = 29728
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
@@ -328,13 +328,13 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                     DONE |                               11 | 00000000000000000000000000000011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'currentStateSystolicControlUnit_reg' using encoding 'sequential' in module 'systolicMatrixMultiply'
-WARNING: [Synth 8-327] inferring latch for variable 'single_port_ram_di_reg' [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:63]
-WARNING: [Synth 8-327] inferring latch for variable 'single_port_ram_di_reg' [/home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv:63]
-WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:52]
-WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:54]
-WARNING: [Synth 8-327] inferring latch for variable 'starting_frame_identified_reg' [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:62]
+WARNING: [Synth 8-327] inferring latch for variable 'single_port_ram_di_reg' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:63]
+WARNING: [Synth 8-327] inferring latch for variable 'single_port_ram_di_reg' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:63]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:52]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:54]
+WARNING: [Synth 8-327] inferring latch for variable 'starting_frame_identified_reg' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:62]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2752.996 ; gain = 761.930 ; free physical = 6813 ; free virtual = 47380
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2749.371 ; gain = 754.992 ; free physical = 13280 ; free virtual = 29718
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -401,25 +401,25 @@ WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top_sim is either unconnecte
 WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top_sim is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top_sim is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2790.012 ; gain = 798.945 ; free physical = 6722 ; free virtual = 47325
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2790.387 ; gain = 796.008 ; free physical = 13192 ; free virtual = 29656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2871.012 ; gain = 879.945 ; free physical = 6643 ; free virtual = 47247
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2871.387 ; gain = 877.008 ; free physical = 13129 ; free virtual = 29592
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2923.059 ; gain = 931.992 ; free physical = 6556 ; free virtual = 47162
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2922.434 ; gain = 928.055 ; free physical = 13064 ; free virtual = 29527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2932.059 ; gain = 940.992 ; free physical = 6546 ; free virtual = 47152
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2932.434 ; gain = 938.055 ; free physical = 13046 ; free virtual = 29509
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -436,107 +436,107 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv:33]
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv:21]
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv:19]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:33]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:21]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv:19]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3045.871 ; gain = 1054.805 ; free physical = 6450 ; free virtual = 47056
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 3045.246 ; gain = 1050.867 ; free physical = 12968 ; free virtual = 29431
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3045.871 ; gain = 1054.805 ; free physical = 6450 ; free virtual = 47056
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 3045.246 ; gain = 1050.867 ; free physical = 12955 ; free virtual = 29418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3045.871 ; gain = 1054.805 ; free physical = 6438 ; free virtual = 47044
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 3045.246 ; gain = 1050.867 ; free physical = 12937 ; free virtual = 29400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3045.871 ; gain = 1054.805 ; free physical = 6438 ; free virtual = 47044
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 3045.246 ; gain = 1050.867 ; free physical = 12959 ; free virtual = 29422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3045.871 ; gain = 1054.805 ; free physical = 6436 ; free virtual = 47042
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.246 ; gain = 1050.867 ; free physical = 12935 ; free virtual = 29398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3045.871 ; gain = 1054.805 ; free physical = 6436 ; free virtual = 47042
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.246 ; gain = 1050.867 ; free physical = 12961 ; free virtual = 29424
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+---------------+----------+
-|      |BlackBox name  |Instances |
-+------+---------------+----------+
-|1     |dual_porte_ram |         2|
-|2     |ila_2          |         2|
-+------+---------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |ram_dual_port |         2|
+|2     |ila_3         |         2|
++------+--------------+----------+
 
 Report Cell Usage: 
-+------+---------------+------+
-|      |Cell           |Count |
-+------+---------------+------+
-|1     |dual_porte_ram |     2|
-|3     |ila            |     1|
-|4     |ila_2          |     1|
-|5     |BUFG           |     5|
-|6     |CARRY4         |  1035|
-|7     |LUT1           |  2078|
-|8     |LUT2           |  6996|
-|9     |LUT3           |  4856|
-|10    |LUT4           |  1393|
-|11    |LUT5           |   248|
-|12    |LUT6           |  3049|
-|13    |MUXF7          |   272|
-|14    |MUXF8          |   128|
-|15    |FDCE           |  8485|
-|16    |FDCP           |  2048|
-|17    |FDPE           |  2051|
-|18    |FDRE           |    10|
-|19    |LD             |   131|
-|20    |LDC            |  2048|
-|21    |IBUF           |     3|
-|22    |OBUF           |     2|
-+------+---------------+------+
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |ila           |     1|
+|2     |ila_3         |     1|
+|3     |ram_dual_port |     2|
+|5     |BUFG          |     5|
+|6     |CARRY4        |  1035|
+|7     |LUT1          |  2078|
+|8     |LUT2          |  6996|
+|9     |LUT3          |  4856|
+|10    |LUT4          |  1393|
+|11    |LUT5          |   248|
+|12    |LUT6          |  3049|
+|13    |MUXF7         |   272|
+|14    |MUXF8         |   128|
+|15    |FDCE          |  8485|
+|16    |FDCP          |  2048|
+|17    |FDPE          |  2051|
+|18    |FDRE          |    10|
+|19    |LD            |   131|
+|20    |LDC           |  2048|
+|21    |IBUF          |     3|
+|22    |OBUF          |     2|
++------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3045.871 ; gain = 1054.805 ; free physical = 6436 ; free virtual = 47042
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.246 ; gain = 1050.867 ; free physical = 12952 ; free virtual = 29415
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 3045.871 ; gain = 969.938 ; free physical = 6436 ; free virtual = 47042
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3045.879 ; gain = 1054.805 ; free physical = 6436 ; free virtual = 47042
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3045.246 ; gain = 970.000 ; free physical = 12932 ; free virtual = 29395
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.254 ; gain = 1050.867 ; free physical = 12932 ; free virtual = 29395
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3045.879 ; gain = 0.000 ; free physical = 6612 ; free virtual = 47218
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3045.254 ; gain = 0.000 ; free physical = 13105 ; free virtual = 29568
 INFO: [Netlist 29-17] Analyzing 5662 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3104.867 ; gain = 0.000 ; free physical = 6608 ; free virtual = 47213
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3104.242 ; gain = 0.000 ; free physical = 13101 ; free virtual = 29565
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4227 instances were transformed.
   FDCP => FDCP (FDCE, FDPE, LDCE, LUT3, VCC): 2048 instances
   LD => LDCE: 131 instances
   LDC => LDCE: 2048 instances
 
-Synth Design complete | Checksum: 55cfe3ac
+Synth Design complete | Checksum: d9a47b44
 INFO: [Common 17-83] Releasing license: Synthesis
 61 Infos, 164 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 3104.902 ; gain = 1245.109 ; free physical = 6608 ; free virtual = 47214
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2011.903; main = 1910.936; forked = 258.190
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4566.066; main = 3104.871; forked = 1641.004
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3128.879 ; gain = 0.000 ; free physical = 6606 ; free virtual = 47214
-INFO: [Common 17-1381] The checkpoint '/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:43 . Memory (MB): peak = 3104.277 ; gain = 1282.188 ; free physical = 13120 ; free virtual = 29583
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2050.304; main = 1972.153; forked = 282.239
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4547.422; main = 3104.246; forked = 1641.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3128.254 ; gain = 0.000 ; free physical = 13086 ; free virtual = 29550
+INFO: [Common 17-1381] The checkpoint '/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Arty7_top_sim_utilization_synth.rpt -pb Arty7_top_sim_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 25 10:36:01 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 26 17:17:05 2025...

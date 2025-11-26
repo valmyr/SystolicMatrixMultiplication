@@ -34,7 +34,7 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PSRCDIR/utils_1/imports/synth_1/Arty7_top_sim.dcp">
+    <File Path="$PPRDIR/../../../SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

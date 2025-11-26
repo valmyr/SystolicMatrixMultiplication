@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.tcl"
+  variable script "/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.tcl"
   variable category "vivado_synth"
 }
 
@@ -67,39 +67,39 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.cache/wt [current_project]
-set_property parent.project_path /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.xpr [current_project]
+set_property webtalk.parent_dir /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.cache/wt [current_project]
+set_property parent.project_path /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.cache/ip [current_project]
+set_property ip_output_repo /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  /home/xmen/Desktop/SystolicCore/rtl/SystolicControlUnit.sv
-  /home/xmen/Desktop/SystolicCore/rtl/SystolicCore.sv
-  /home/xmen/Desktop/SystolicCore/rtl/accumulator.sv
-  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/counter.sv
-  /home/xmen/Desktop/SystolicCore/rtl/mem2serial.sv
-  /home/xmen/Desktop/SystolicCore/rtl/uart/rtl/ref_clock.sv
-  /home/xmen/Desktop/SystolicCore/rtl/serial2mem.sv
-  /home/xmen/Desktop/SystolicCore/rtl/systolicMatrixMultiply.sv
-  /home/xmen/Desktop/SystolicCore/rtl/src/uart_top.sv
-  /home/xmen/Desktop/SystolicCore/rtl/Arty7_top_sim.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/accumulator.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/counter.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/systolicMatrixMultiply.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_top.sv
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/Arty7_top_sim.sv
 }
 read_verilog -library xil_defaultlib {
-  /home/xmen/Desktop/SystolicCore/rtl/src/uart_rx.v
-  /home/xmen/Desktop/SystolicCore/rtl/src/uart_tx.v
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_rx.v
+  /home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/src/uart_tx.v
 }
-read_ip -quiet /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/dual_porte_ram/dual_porte_ram.xci
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/dual_porte_ram/dual_porte_ram_ooc.xdc]
+read_ip -quiet /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/ram_dual_port/ram_dual_port.xci
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port_ooc.xdc]
 
-read_ip -quiet /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_2/ila_2.xci
-set_property used_in_synthesis false [get_files -all /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_2_ooc.xdc]
+read_ip -quiet /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.srcs/sources_1/ip/ila_3/ila_3.xci
+set_property used_in_synthesis false [get_files -all /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -110,12 +110,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/xmen/Desktop/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc
-set_property used_in_implementation false [get_files /home/xmen/Desktop/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
+read_xdc /home/xmen/Desktop/PROJETO_TCC/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc
+set_property used_in_implementation false [get_files /home/xmen/Desktop/PROJETO_TCC/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
+read_checkpoint -incremental /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

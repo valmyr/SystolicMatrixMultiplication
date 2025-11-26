@@ -220,7 +220,7 @@ always_comb case(fsm_unit_control)
         starting_frame_identified     = 1;
     end
 endcase
-ila_2 your_instance_name (
+ila_3 your_instance_name (
 	.clk(clock), // input wire clk
 
 

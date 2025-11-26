@@ -12,17 +12,17 @@ vmap xpm riviera/xpm
 vmap blk_mem_gen_v8_4_12 riviera/blk_mem_gen_v8_4_12
 vmap xil_defaultlib riviera/xil_defaultlib
 
-vlog -work xpm  -incr "+incdir+../../../../../../../Music/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
+vlog -work xpm  -incr "+incdir+../../../../../../../../Music/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
 "/home/xmen/Music/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 "/home/xmen/Music/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93  -incr \
 "/home/xmen/Music/2025.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
-vlog -work blk_mem_gen_v8_4_12  -incr -v2k5 "+incdir+../../../../../../../Music/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
+vlog -work blk_mem_gen_v8_4_12  -incr -v2k5 "+incdir+../../../../../../../../Music/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
 "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 
-vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../../../../Music/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
+vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../../../../../Music/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
 "../../../../SystolicCore.gen/sources_1/ip/dual_porte_ram/sim/dual_porte_ram.v" \
 
 vlog -work xil_defaultlib \

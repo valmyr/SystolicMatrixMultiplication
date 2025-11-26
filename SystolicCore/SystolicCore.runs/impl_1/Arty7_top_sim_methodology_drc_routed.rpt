@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Nov 25 10:37:12 2025
+| Date         : Wed Nov 26 17:18:46 2025
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_methodology -file Arty7_top_sim_methodology_drc_routed.rpt -pb Arty7_top_sim_methodology_drc_routed.pb -rpx Arty7_top_sim_methodology_drc_routed.rpx
 | Design       : Arty7_top_sim
@@ -42883,25 +42883,25 @@ Related violations: <none>
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
 The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '46' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc (Line: 72)
+Current XDC: /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc (Line: 72)
 Related violations: <none>
 
 XDCB-5#2 Warning
 Runtime inefficient way to find pin objects  
 The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '97' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc (Line: 72)
+Current XDC: /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc (Line: 72)
 Related violations: <none>
 
 XDCB-5#3 Warning
 Runtime inefficient way to find pin objects  
 The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '46' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc (Line: 72)
+Current XDC: /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc (Line: 72)
 Related violations: <none>
 
 XDCB-5#4 Warning
 Runtime inefficient way to find pin objects  
 The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '97' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc (Line: 72)
+Current XDC: /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc (Line: 72)
 Related violations: <none>
 
 LATCH-1#1 Advisory

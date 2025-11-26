@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Nov 25 10:36:01 2025
+| Date         : Wed Nov 26 17:17:05 2025
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_utilization -file Arty7_top_sim_utilization_synth.rpt -pb Arty7_top_sim_utilization_synth.pb
 | Design       : Arty7_top_sim
@@ -173,12 +173,12 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+----------------+------+
-|    Ref Name    | Used |
-+----------------+------+
-| ila_2          |    2 |
-| dual_porte_ram |    2 |
-+----------------+------+
++---------------+------+
+|    Ref Name   | Used |
++---------------+------+
+| ram_dual_port |    2 |
+| ila_3         |    2 |
++---------------+------+
 
 
 9. Instantiated Netlists

@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.runs/dual_porte_ram_synth_1'
+HD_PWD='/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/dual_porte_ram_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
