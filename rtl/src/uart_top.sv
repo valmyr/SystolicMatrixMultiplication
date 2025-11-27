@@ -35,7 +35,7 @@ uart_rx #(.CLK_FRE(100), .BAUD_RATE(BAUDRATE)) uart_receiver(
     .rx_data       (data_rx_out                     )       
 );
 
-uart_tx uart_transmitter(
+uart_tx #(.CLK_FRE(100), .BAUD_RATE(BAUDRATE)) uart_transmitter(
    .clk             (clock              )             ,
    .rst_n           (nreset             )             ,
    .tx_data_valid   (valid_tx_in        )             ,

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="dual_porte_ram_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1764187522">
-  <File Type="VDS-TIMINGSUMMARY" Name="dual_porte_ram_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="dual_porte_ram.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="dual_porte_ram_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="dual_porte_ram_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="dual_porte_ram_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="dual_porte_ram.vds"/>
   <File Type="REPORTS-TCL" Name="dual_porte_ram_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="dual_porte_ram_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="dual_porte_ram.tcl"/>
+  <File Type="RDS-UTIL" Name="dual_porte_ram_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="dual_porte_ram_utilization_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dual_porte_ram" RelGenDir="$PGENDIR/dual_porte_ram">
     <File Path="$PSRCDIR/sources_1/ip/dual_porte_ram/dual_porte_ram.xci">
       <FileInfo>
