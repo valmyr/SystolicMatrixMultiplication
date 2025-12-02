@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Nov 27 10:53:25 2025
-# Process ID         : 1011078
+# Start of session at: Tue Dec  2 16:00:52 2025
+# Process ID         : 1179275
 # Current directory  : /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1
 # Command line       : vivado -log Arty7_top_sim.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Arty7_top_sim.tcl
 # Log file           : /home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.vds
@@ -19,7 +19,7 @@
 # Host memory        : 67075 MB
 # Swap memory        : 14727 MB
 # Total Virtual      : 81802 MB
-# Available Virtual  : 23694 MB
+# Available Virtual  : 57857 MB
 #-----------------------------------------------------------
 source Arty7_top_sim.tcl -notrace
 Command: read_checkpoint -incremental /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1011186
+INFO: [Synth 8-7075] Helper process launched with PID 1179484
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2473.977 ; gain = 481.875 ; free physical = 3109 ; free virtual = 21362
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2473.691 ; gain = 481.875 ; free physical = 18229 ; free virtual = 51417
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'probe0', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:340]
 INFO: [Synth 8-11241] undeclared symbol 'probe1', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicCore.sv:341]
@@ -110,8 +110,8 @@ INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/h
 INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:1]
 	Parameter WIDTH bound to: 4 - type: integer 
 	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1011078-VT0144/realtime/ram_dual_port_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1011078-VT0144/realtime/ram_dual_port_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1179275-VT0144/realtime/ram_dual_port_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1179275-VT0144/realtime/ram_dual_port_stub.v:6]
 WARNING: [Synth 8-689] width (5) of port connection 'addra' does not match port width (6) of module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:62]
 WARNING: [Synth 8-689] width (64) of port connection 'dina' does not match port width (128) of module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:63]
 WARNING: [Synth 8-689] width (5) of port connection 'addrb' does not match port width (6) of module 'ram_dual_port' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/serial2mem.sv:67]
@@ -124,8 +124,8 @@ INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/De
 INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:1]
 INFO: [Synth 8-226] default block is never used [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:86]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:223]
-INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1011078-VT0144/realtime/ila_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1011078-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1179275-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-1179275-VT0144/realtime/ila_3_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'ref_clock' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv:1]
 	Parameter CLOCK_REF bound to: 11500 - type: integer 
@@ -254,18 +254,18 @@ WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top_sim is either unconnecte
 WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top_sim is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top_sim is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2659.914 ; gain = 667.812 ; free physical = 2909 ; free virtual = 21165
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2660.629 ; gain = 668.812 ; free physical = 19304 ; free virtual = 52494
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2659.914 ; gain = 667.812 ; free physical = 2908 ; free virtual = 21164
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2660.629 ; gain = 668.812 ; free physical = 19304 ; free virtual = 52494
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2659.914 ; gain = 667.812 ; free physical = 2908 ; free virtual = 21164
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2660.629 ; gain = 668.812 ; free physical = 19304 ; free virtual = 52494
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2659.914 ; gain = 0.000 ; free physical = 2905 ; free virtual = 21160
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2660.629 ; gain = 0.000 ; free physical = 19323 ; free virtual = 52508
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -284,30 +284,30 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Arty7_top_sim_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2737.746 ; gain = 0.000 ; free physical = 2900 ; free virtual = 21157
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2737.461 ; gain = 0.000 ; free physical = 19525 ; free virtual = 52713
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2737.781 ; gain = 0.000 ; free physical = 2902 ; free virtual = 21157
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2737.496 ; gain = 0.000 ; free physical = 19525 ; free virtual = 52712
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opA/ram' at clock pin 'clkb' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opB/ram' at clock pin 'clkb' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2737.781 ; gain = 745.680 ; free physical = 2898 ; free virtual = 21149
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2737.496 ; gain = 745.680 ; free physical = 20023 ; free virtual = 53209
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2745.750 ; gain = 753.648 ; free physical = 2898 ; free virtual = 21149
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2745.465 ; gain = 753.648 ; free physical = 20023 ; free virtual = 53209
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2745.750 ; gain = 753.648 ; free physical = 2898 ; free virtual = 21149
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2745.465 ; gain = 753.648 ; free physical = 20023 ; free virtual = 53209
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
@@ -346,7 +346,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/ho
 WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:54]
 WARNING: [Synth 8-327] inferring latch for variable 'starting_frame_identified_reg' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/SystolicControlUnit.sv:62]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2745.750 ; gain = 753.648 ; free physical = 2837 ; free virtual = 21108
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2745.465 ; gain = 753.648 ; free physical = 20010 ; free virtual = 53205
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -413,25 +413,25 @@ WARNING: [Synth 8-7129] Port btn[3] in module Arty7_top_sim is either unconnecte
 WARNING: [Synth 8-7129] Port btn[2] in module Arty7_top_sim is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[1] in module Arty7_top_sim is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2789.766 ; gain = 797.664 ; free physical = 2410 ; free virtual = 21029
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2790.480 ; gain = 798.664 ; free physical = 20029 ; free virtual = 53241
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2870.766 ; gain = 878.664 ; free physical = 2330 ; free virtual = 20949
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2870.480 ; gain = 878.664 ; free physical = 19974 ; free virtual = 53188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2922.812 ; gain = 930.711 ; free physical = 2241 ; free virtual = 20861
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2922.527 ; gain = 930.711 ; free physical = 19954 ; free virtual = 53168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2932.812 ; gain = 940.711 ; free physical = 2236 ; free virtual = 20869
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2932.527 ; gain = 940.711 ; free physical = 19864 ; free virtual = 53096
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -452,37 +452,37 @@ WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/
 WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/mem2serial.sv:21]
 WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/rtl/uart/rtl/ref_clock.sv:19]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3045.625 ; gain = 1053.523 ; free physical = 2248 ; free virtual = 20833
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.340 ; gain = 1053.523 ; free physical = 19750 ; free virtual = 52986
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3045.625 ; gain = 1053.523 ; free physical = 2247 ; free virtual = 20832
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.340 ; gain = 1053.523 ; free physical = 19750 ; free virtual = 52985
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 3045.625 ; gain = 1053.523 ; free physical = 2236 ; free virtual = 20816
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 3045.340 ; gain = 1053.523 ; free physical = 19740 ; free virtual = 52970
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 3045.625 ; gain = 1053.523 ; free physical = 2236 ; free virtual = 20815
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 3045.340 ; gain = 1053.523 ; free physical = 19740 ; free virtual = 52970
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.625 ; gain = 1053.523 ; free physical = 2234 ; free virtual = 20813
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 3045.340 ; gain = 1053.523 ; free physical = 19739 ; free virtual = 52968
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.625 ; gain = 1053.523 ; free physical = 2233 ; free virtual = 20812
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 3045.340 ; gain = 1053.523 ; free physical = 19739 ; free virtual = 52968
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -523,18 +523,18 @@ Report Cell Usage:
 |22    |OBUF          |     2|
 +------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.625 ; gain = 1053.523 ; free physical = 2232 ; free virtual = 20812
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 3045.340 ; gain = 1053.523 ; free physical = 19739 ; free virtual = 52968
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3045.625 ; gain = 975.656 ; free physical = 2232 ; free virtual = 20812
-Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3045.633 ; gain = 1053.523 ; free physical = 2232 ; free virtual = 20812
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 3045.340 ; gain = 976.656 ; free physical = 19772 ; free virtual = 53001
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 3045.348 ; gain = 1053.523 ; free physical = 19772 ; free virtual = 53001
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3045.633 ; gain = 0.000 ; free physical = 2408 ; free virtual = 20987
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3045.348 ; gain = 0.000 ; free physical = 19972 ; free virtual = 53201
 INFO: [Netlist 29-17] Analyzing 5662 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3104.621 ; gain = 0.000 ; free physical = 2400 ; free virtual = 20979
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3104.336 ; gain = 0.000 ; free physical = 19930 ; free virtual = 53160
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4227 instances were transformed.
   FDCP => FDCP (FDCE, FDPE, LDCE, LUT3, VCC): 2048 instances
@@ -545,10 +545,10 @@ Synth Design complete | Checksum: d9a47b44
 INFO: [Common 17-83] Releasing license: Synthesis
 61 Infos, 164 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:43 . Memory (MB): peak = 3104.656 ; gain = 1248.828 ; free physical = 2404 ; free virtual = 20983
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2197.754; main = 2122.875; forked = 325.530
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4563.816; main = 3104.625; forked = 1641.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3128.633 ; gain = 0.000 ; free physical = 2402 ; free virtual = 20983
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:44 . Memory (MB): peak = 3104.371 ; gain = 1285.844 ; free physical = 19930 ; free virtual = 53162
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2076.742; main = 1987.821; forked = 289.899
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4547.516; main = 3104.340; forked = 1641.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3128.348 ; gain = 0.000 ; free physical = 19928 ; free virtual = 53161
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/Arty7_top_sim.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Arty7_top_sim_utilization_synth.rpt -pb Arty7_top_sim_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 27 10:54:12 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  2 16:01:40 2025...
