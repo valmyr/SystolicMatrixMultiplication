@@ -33,14 +33,77 @@ localparam CLOCK_TRANSFER_PC= 11500; //Constante determinada da seguinte forma: 
 assign led = clock;
 
 
+//---------------------------------------------------------------------------------------------------
+//Pinout UART
+logic                   uart_clock                                                                              ;
+logic                   uart_nreset                                                                             ;
+ //pinout RX                                                       ;                                            
+logic                   uart_sdata_rx_in                                                                        ;
+logic                   uart_valid_rx_in                                                                        ;
+logic                   uart_ready_rx_out                                                                       ;
+logic   [BYTESIZES-1:0] uart_data_rx_out                                                                        ;
+ //pinout TX                                                       ;                                            
+logic                   uart_valid_tx_in                                                                        ;
+logic [BYTESIZES-1:0]   uart_data_tx_in                                                                         ;
+logic                   uart_ready_tx_out                                                                       ;
+logic                   uart_sdata_tx_out                                                                       ;
+
+
+//Atribuição UART
+assign uart_sdata_rx_in = uart_txd_in                                                                           ;
+assign uart_rxd_out     = uart_sdata_tx_out                                                                     ;
+(*dont_touch = "true"*) 
+assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
+assign uart_clock = clock;
+assign uart_nreset = ~btn[0];
+(*dont_touch = "true"*)
+uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart_systolic_core (
+    .clock                      (uart_clock                                 )                  ,
+    .nreset                     (uart_nreset                                )                  ,
+    //pinout RX                                                                                  
+    .sdata_rx_in                (uart_sdata_rx_in                           )                  ,
+    .valid_rx_in                (uart_valid_rx_in                           )                  ,
+    .ready_rx_out               (uart_ready_rx_out                          )                  ,
+    .data_rx_out                (uart_data_rx_out                           )                  ,  
+    //pinout TX                                                                                                   
+    .valid_tx_in                (uart_valid_tx_in                           )                  ,
+    .data_tx_in                 (uart_data_tx_in                            )                  ,
+    .ready_tx_out               (uart_ready_tx_out                          )                  ,
+    .sdata_tx_out               (uart_sdata_tx_out                          )              
+);
+
 SystolicCoreTop #(
    .BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF), .WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH), .CLOCK_TRANSFER_PC(CLOCK_TRANSFER_PC)
 )   SystolicCore0(
-    .clock       (clock       )    ,
-    .uart_txd_in (uart_txd_in )    ,
-    .uart_rxd_out(uart_rxd_out)    ,
-    .nreset       (~btn[0]    )
-);/*
+        .clock               (clock             )      ,
+        .nreset              (~btn[0]           )      ,
+        .uart_data_rx_out    (uart_data_rx_out  )      ,
+        .uart_data_tx_in     (uart_data_tx_in   )      ,
+        .uart_valid_rx_in    (uart_valid_rx_in  )      ,
+        .uart_valid_tx_in    (uart_valid_tx_in  )      ,    
+        .uart_ready_tx_out   (uart_ready_tx_out )      ,
+        .uart_ready_rx_out   (uart_ready_rx_out )      
+  
+);
+
+SystolicCoreTop #(
+   .BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF), .WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH), .CLOCK_TRANSFER_PC(CLOCK_TRANSFER_PC)
+)   SystolicCore1(
+        .clock               (clock             )      ,
+        .nreset              (~btn[0]           )      ,
+        .uart_data_rx_out    (uart_data_rx_out  )      ,
+        .uart_data_tx_in     (uart_data_tx_in   )      ,
+        .uart_valid_rx_in    (                  )      ,
+        .uart_valid_tx_in    (                  )      ,    
+        .uart_ready_tx_out   (uart_ready_tx_out )      ,
+        .uart_ready_rx_out   (uart_ready_rx_out )      
+  
+);
+
+
+
+
+/*
 
 logic [7:0] aa,assd;
 logic aaas;

@@ -23,10 +23,14 @@
 module SystolicCoreTop#(
     parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000, WIDTHx = 4,SIZE = 8,WIDTH =8, CLOCK_TRANSFER_PC= 10_000
 )(
-    input  logic          clock           ,
-    input  logic          nreset          ,
-    input  logic          uart_txd_in     ,
-    output logic          uart_rxd_out    
+    input  logic                    clock                     ,
+    input  logic                    nreset                    ,
+    input  logic [BYTESIZES-1:0]    uart_data_rx_out          ,
+    output logic [BYTESIZES-1:0]    uart_data_tx_in           ,
+    input  logic                    uart_ready_rx_out         ,
+    input  logic                    uart_ready_tx_out         ,
+    output logic                    uart_valid_tx_in          ,
+    output logic                    uart_valid_rx_in
 );
 
 //Pinout Unidade de Controle.
@@ -99,20 +103,6 @@ logic [SIZE*WIDTHx-1:0] serial2mem_opb_buf_data                                 
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
-//Pinout UART
-logic                   uart_clock                                                                              ;
-logic                   uart_nreset                                                                             ;
- //pinout RX                                                       ;                                            
-logic                   uart_sdata_rx_in                                                                        ;
-logic                   uart_valid_rx_in                                                                        ;
-logic                   uart_ready_rx_out                                                                       ;
-logic   [BYTESIZES-1:0] uart_data_rx_out                                                                        ;
- //pinout TX                                                       ;                                            
-logic                   uart_valid_tx_in                                                                        ;
-logic [BYTESIZES-1:0]   uart_data_tx_in                                                                         ;
-logic                   uart_ready_tx_out                                                                       ;
-logic                   uart_sdata_tx_out                                                                       ;
-//---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout MEM2SERIAL
 logic                   mem2serial_clock                                                                        ;
@@ -136,8 +126,8 @@ logic ref_clock_out_clock_ref                                                   
 assign syst_clock                = clock                                                                        ;
 assign uart_clock                = clock                                                                        ;
 assign mem2serial_clock          = uart_ready_tx_out                                                      ;//A definir 5kHz
-assign serial2mem_opa_clock      =  clock           ;
-assign serial2mem_opb_clock      =  clock           ;
+assign serial2mem_opa_clock      = clock           ;
+assign serial2mem_opb_clock      = clock           ;
 assign systolicControlUnit_clock = clock                                                                        ;
 assign ref_clock_in_clock        = clock                                                                        ;
 //Atribuição de nreset
@@ -150,11 +140,6 @@ assign mem2serial_nreset          = nreset                                      
 assign ref_clock_nreset           = nreset                                                                      ; 
 assign systolicControlUnit_nreset = nreset                                                                      ;
 
-//Atribuição UART
-assign uart_sdata_rx_in = uart_txd_in                                                                           ;
-assign uart_rxd_out     = uart_sdata_tx_out                                                                     ;
-(*dont_touch = "true"*) 
-assign uart_valid_rx_in =   1                                                                                   ;//UART RX SEMPRE APTO A RECEBER DADOS.
 // assign uart_data_tx_in = systolicControlUnit_mem2serial_valid_i?  mem2serial_smatrix_out : 8'haf;                                                                 ;
 (*dont_touch = "true"*) 
 always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
@@ -166,6 +151,9 @@ always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
         uart_data_tx_in = 8'hef;
 
 endcase
+
+
+
 //---------------------------------------------------------------------------------------------------------------------------------
 
 // ATRIBUIÇÂO MEMORIA A/B
@@ -223,21 +211,7 @@ assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
 assign systolicControlUnit_uart_valid_rx_in        =  1                                          ; 
 //---------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------------
-(*dont_touch = "true"*)
-uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT), .CLOCK_REF(CLOCK_REF)) uart_systolic_core (
-    .clock                      (uart_clock                                 )                  ,
-    .nreset                     (uart_nreset                                )                  ,
-    //pinout RX                                                                                  
-    .sdata_rx_in                (uart_sdata_rx_in                           )                  ,
-    .valid_rx_in                (uart_valid_rx_in                           )                  ,
-    .ready_rx_out               (uart_ready_rx_out                          )                  ,
-    .data_rx_out                (uart_data_rx_out                           )                  ,  
-    //pinout TX                                                                                                   
-    .valid_tx_in                (uart_valid_tx_in                           )                  ,
-    .data_tx_in                 (uart_data_tx_in                            )                  ,
-    .ready_tx_out               (uart_ready_tx_out                          )                  ,
-    .sdata_tx_out               (uart_sdata_tx_out                          )              
-);
+
 
 //logic [111:0]fifo_d_a;
 //logic [111:0]fifo_d_b;

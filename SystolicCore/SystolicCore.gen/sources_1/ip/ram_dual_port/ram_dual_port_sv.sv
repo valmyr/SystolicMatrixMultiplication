@@ -60,9 +60,9 @@ module ram_dual_port_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [0:0] wea,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [5:0] addra,
+  input wire [4:0] addra,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [127:0] dina,
+  input wire [63:0] dina,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire clkb,
   (* X_INTERFACE_IGNORE = "true" *)
@@ -70,9 +70,9 @@ module ram_dual_port_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire enb,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [5:0] addrb,
+  input wire [4:0] addrb,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [127:0] doutb,
+  output wire [63:0] doutb,
   (* X_INTERFACE_IGNORE = "true" *)
   output wire rsta_busy,
   (* X_INTERFACE_IGNORE = "true" *)
