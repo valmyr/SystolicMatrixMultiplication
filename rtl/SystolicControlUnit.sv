@@ -27,15 +27,17 @@ module systolicControlUnitTop(
 );
 
 enum {IDLE,IDLE_PC, WRITE_MEMAAA,WRITE_MEMBBB,SYSTOLIC_READ_MEM,WRITE_MEM_OUT,DONE} fsm_unit_control, fsm_unit_control_next;
-
-always_ff@(posedge uart_ready_rx, negedge nreset)begin
+logic last_uart_ready_rx;
+always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         frame_start        <= 0;
+        last_uart_ready_rx<=0;
     end else begin
-        frame_start[07:00] <=  uart_data_rx_out  ;
-        frame_start[15:08] <=  frame_start[07:00];
-        frame_start[23:16] <=  frame_start[15:08];
-        frame_start[31:24] <=  frame_start[23:16];
+        last_uart_ready_rx <= uart_ready_rx;
+        frame_start[07:00] <=  (uart_ready_rx && !last_uart_ready_rx) ? uart_data_rx_out  : frame_start[07:00];
+        frame_start[15:08] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[07:00]: frame_start[15:08];
+        frame_start[23:16] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[15:08]: frame_start[23:16];
+        frame_start[31:24] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[23:16]: frame_start[31:24];
     end
 end
 

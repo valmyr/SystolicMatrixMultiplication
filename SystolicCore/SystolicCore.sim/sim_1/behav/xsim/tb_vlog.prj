@@ -1,11 +1,11 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../../../../Music/2025.2/data/rsb/busdef" \
+verilog xil_defaultlib  --include "../../../../../../../../../Music/2025.2/data/rsb/busdef" \
 "../../../../SystolicCore.gen/sources_1/ip/ila_3/sim/ila_3.v" \
 "../../../../SystolicCore.gen/sources_1/ip/ram_dual_port/sim/ram_dual_port.v" \
 "../../../../../rtl/src/uart_rx.v" \
 "../../../../../rtl/src/uart_tx.v" \
 
-sv xil_defaultlib  --include "../../../../../../../Music/2025.2/data/rsb/busdef" \
+sv xil_defaultlib  --include "../../../../../../../../../Music/2025.2/data/rsb/busdef" \
 "../../../../../rtl/Arty7_top_sim.sv" \
 "../../../../../rtl/SystolicControlUnit.sv" \
 "../../../../../rtl/SystolicCore.sv" \

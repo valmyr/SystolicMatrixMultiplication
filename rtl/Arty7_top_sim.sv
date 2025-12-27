@@ -10,7 +10,8 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-// 
+// [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+
 // Dependencies: 
 // 
 // Revision:

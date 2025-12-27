@@ -5,14 +5,14 @@ Running: /home/xmen/Music/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --deb
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Videos/SystolicCore/tb/tb_fpga.sv:38]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 8 for port 'data_tx_in' [/home/xmen/Videos/SystolicCore/tb/tb_fpga.sv:43]
-WARNING: [VRFC 10-3818] variable 'tb_uart_data_tx_in' is driven by invalid combination of procedural drivers [/home/xmen/Videos/SystolicCore/tb/tb_fpga.sv:29]
-WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block should not be driven by any other process [/home/xmen/Videos/SystolicCore/tb/tb_fpga.sv:128]
-WARNING: [VRFC 10-3823] variable 'uart_valid_rx_in' might have multiple concurrent drivers [/home/xmen/Videos/SystolicCore/rtl/Arty7_top_sim.sv:82]
-WARNING: [VRFC 10-3823] variable 'uart_data_tx_in' might have multiple concurrent drivers [/home/xmen/Videos/SystolicCore/rtl/Arty7_top_sim.sv:95]
-WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:38]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 8 for port 'data_tx_in' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:43]
+WARNING: [VRFC 10-3818] variable 'tb_uart_data_tx_in' is driven by invalid combination of procedural drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:29]
+WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block should not be driven by any other process [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:128]
+WARNING: [VRFC 10-3823] variable 'uart_valid_rx_in' might have multiple concurrent drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/Arty7_top_sim.sv:83]
+WARNING: [VRFC 10-3823] variable 'uart_data_tx_in' might have multiple concurrent drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/Arty7_top_sim.sv:96]
+WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
