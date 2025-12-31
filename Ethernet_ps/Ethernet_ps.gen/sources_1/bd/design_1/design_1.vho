@@ -53,7 +53,8 @@
 -- COMP_TAG     ------ Begin cut for COMPONENT Declaration ------
 COMPONENT design_1
   PORT (
-    GPIO_0_tri_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    GPIO_0_tri_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    GPIO_1_tri_i : IN STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -64,7 +65,8 @@ END COMPONENT;
 -- INST_TAG     ------ Begin cut for INSTANTIATION Template ------
 your_instance_name : design_1
   PORT MAP (
-    GPIO_0_tri_o => GPIO_0_tri_o
+    GPIO_0_tri_o => GPIO_0_tri_o,
+    GPIO_1_tri_i => GPIO_1_tri_i
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

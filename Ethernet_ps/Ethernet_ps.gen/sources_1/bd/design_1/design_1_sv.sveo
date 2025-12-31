@@ -66,7 +66,8 @@
 
 // INST_TAG     ------ Begin cut for WRAPPER INSTANTIATION Template ------
 design_1_sv your_instance_name (
-  .GPIO_0_tri_o(GPIO_0_tri_o) // output wire [15:0] GPIO_0_tri_o
+  .GPIO_0_tri_o(GPIO_0_tri_o), // output wire [15:0] GPIO_0_tri_o
+  .GPIO_1_tri_i(GPIO_1_tri_i) // input wire [15:0] GPIO_1_tri_i
 );
 // INST_TAG_END ------  End cut for WRAPPER INSTANTIATION Template  ------
 

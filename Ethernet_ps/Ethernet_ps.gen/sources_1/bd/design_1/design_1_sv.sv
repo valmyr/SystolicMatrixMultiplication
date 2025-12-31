@@ -54,11 +54,14 @@
 
 module design_1_sv (
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [15:0] GPIO_0_tri_o
+  output wire [15:0] GPIO_0_tri_o,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire [15:0] GPIO_1_tri_i
 );
 
   design_1 inst (
-    .GPIO_0_tri_o(GPIO_0_tri_o)
+    .GPIO_0_tri_o(GPIO_0_tri_o),
+    .GPIO_1_tri_i(GPIO_1_tri_i)
   );
 
 endmodule

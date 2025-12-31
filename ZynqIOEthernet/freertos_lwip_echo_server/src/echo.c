@@ -36,7 +36,7 @@ Project 2: send and receive signals
  * The existing implementation does not support closing of an existing telnet.
  * Once a telnet connection is made, it stays for ever.
  */
-#define MAX_CONNECTIONS 102
+#define MAX_CONNECTIONS 65550
 int new_sd[MAX_CONNECTIONS];
 int connection_index;
 
@@ -55,26 +55,30 @@ void print_echo_app_header()
 void process_echo_request(void *p)
 {
     int sd = *(int *)p;
-    int Status;
+    int Status1,Status2;
     int RECV_BUF_SIZE =4;
-    int SEND_BUF_SIZE =32;
+    int SEND_BUF_SIZE =4;
     int recv_buf;//[RECV_BUF_SIZE / sizeof(int)];  // Buffer to store received integer samples
     int send_buf[SEND_BUF_SIZE / sizeof(int)];  // Buffer to store processed samples
     int n, nwrote;
     const int MULTIPLIER = 2;                  // Constant to multiply signal samples
-    XGpio Gpio;
-	#ifndef SDT
-	Status = XGpio_Initialize(&Gpio, GPIO_EXAMPLE_DEVICE_ID);
-	#else
-	Status = XGpio_Initialize(&Gpio, XGPIO_AXI_BASEADDRESS);
-	#endif
-	if (Status != XST_SUCCESS) {
-		xil_printf("Gpio Initialization Failed\r\n");
+    XGpio Gpio_output;
+    XGpio Gpio_input;
+	Status1 = XGpio_Initialize(&Gpio_output, XGPIO_AXI_BASEADDRESS);
+	Status2 = XGpio_Initialize(&Gpio_input, XGPIO_AXI_BASEADDRESS);
+	if (Status1 != XST_SUCCESS) {
+		xil_printf("Gpio_output Initialization Failed\r\n");
 		//return XST_FAILURE;
 	}
-	XGpio_SetDataDirection(&Gpio, 1, 0x00000000);
+	if (Status2 != XST_SUCCESS) {
+		xil_printf("Gpio_input Initialization Failed\r\n");
+		//return XST_FAILURE;
+	}
+	XGpio_SetDataDirection(&Gpio_output, 1, 0x00000000);
+	XGpio_SetDataDirection(&Gpio_input, 1, 0xFFFFFFFF);
 	int temp;
 	int k = 0;
+	int counter = 0;
 	xil_printf("\n	..........start..........	\n");
     while (1) {
         /* read a max of RECV_BUF_SIZE bytes from socket */
@@ -86,12 +90,13 @@ void process_echo_request(void *p)
             break;
 		temp = recv_buf;
 		k+=1;
-        XGpio_DiscreteWrite(&Gpio, 1,temp << 1 | 1);
+        XGpio_DiscreteWrite(&Gpio_output, 1,temp << 1 | 1);
 		xil_printf("	%x	%x	%d	%d	",temp,temp << 1 | 1,k, k-4);
 		xil_printf("\n");
-		XGpio_DiscreteWrite(&Gpio, 1,0x00000000);
+		XGpio_DiscreteWrite(&Gpio_output, 1,0x00000000);
 
-
+		if(temp==0xea)
+			counter++;
         /* break if client closed connection */
 
 
@@ -102,7 +107,7 @@ void process_echo_request(void *p)
         //for (int i = 0; i < num_samples; i++) {
         //    send_buf[i] = abs(recv_buf[i]) * MULTIPLIER;
 		//	xil_printf("%d ",recv_buf[i]);
-	    //    //XGpio_DiscreteWrite(&Gpio, 1,recv_buf[0]);
+	    //    //XGpio_DiscreteWrite(&Gpio_output, 1,recv_buf[0]);
         //}
 		
 //=============================================================
@@ -113,10 +118,28 @@ void process_echo_request(void *p)
         //    xil_printf("Closing socket %d\r\n", sd);
         //    break;
         //}
+
+		if(counter==2){
+			xil_printf("Read out matrix...\n");
+			for(int i = 0; i <256; i++){
+				//DataRead = XGpio_DiscreteRead(&Gpio_input, 1);
+	    	    if ((nwrote = write(sd, &i, SEND_BUF_SIZE)) < 0) {
+        		    xil_printf("%s: ERROR responding to client signal processing request. received = %d, written = %d\r\n",
+        		            __FUNCTION__, n, nwrote);
+        		    xil_printf("Closing socket %d\r\n", sd);
+        		    break;
+        		}
+				xil_printf("\n%d %d",i,i);
+				//xil_printf("\n%d %d\n",DataRead,i);
+			}
+		}
+		if(nwrote < 0 )
+		break;
     }
 
     /* close connection */
 	xil_printf("\n	..........end..........	\n");
+	//int DataRead ;
 
     close(sd);
     vTaskDelete(NULL);
