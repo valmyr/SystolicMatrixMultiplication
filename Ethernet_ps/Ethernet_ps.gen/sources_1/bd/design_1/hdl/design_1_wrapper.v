@@ -1,0 +1,97 @@
+`timescale 1ns / 100ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: Valmir F. Silva
+// 
+// Create Date: 10/20/2025 09:23:21 AM
+// Design Name: 
+// Module Name: zynq_wrapper_systolic
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+module zynq_wrapper_systolic(
+       clk_125mhz_p ,
+       reset        ,
+       clk_125mhz_n
+);
+
+localparam  BYTESIZES = 8;
+localparam  WIDTHx = 4,SIZE = 16,WIDTH =8;
+
+input clk_125mhz_p;
+input clk_125mhz_n;
+input reset;
+wire clk;
+wire nreset;
+assign nreset = ~reset;
+wire [15:0]GPIO_0_tri_o;
+design_1 design_1_i
+       (.GPIO_0_tri_o(GPIO_0_tri_o));
+  IBUFDS #(
+  .DIFF_TERM("TRUE"),
+  .IBUF_LOW_PWR("FALSE")) ibufds_clk (
+  .I (clk_125mhz_p),
+  .IB(clk_125mhz_n),
+  .O (clk)
+); 
+wire [7:0]data_input;
+wire enable_write;
+assign data_input = GPIO_0_tri_o[15:1];
+assign enable_write =GPIO_0_tri_o[0];
+reg last_enable_write;
+wire valid_data;
+reg reg_valid_data;
+reg [7:0]data;
+assign valid_data = enable_write && !last_enable_write;
+always@(posedge clk, negedge nreset)begin
+    if(!nreset)begin
+        last_enable_write <= 0;
+        reg_valid_data <= 0;
+    end else begin
+        last_enable_write <= enable_write;
+        reg_valid_data <= valid_data;
+        data <= valid_data ? data_input :data;
+    end
+end
+
+
+
+
+
+
+
+SystolicCoreTop #(
+   .BYTESIZES(BYTESIZES),.WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH)
+)   SystolicCore0(
+        .clock               (clk               )      ,// input
+        .nreset              (nreset            )      ,// input 
+        .uart_data_rx_out    (data              )      ,// input 8 Bits / 1 Byte
+        .uart_data_tx_in     (                  )      ,// output 8 Bits
+        .uart_valid_rx_in    (                  )      ,// input
+        .uart_valid_tx_in    (                  )      ,// output 
+        .uart_ready_tx_out   (0                 )      ,// input
+        .uart_ready_rx_out   (reg_valid_data    )       // input
+  
+);
+
+
+ila_0 your_instance_name (
+	.clk(clk), // input wire clk
+	.probe0(GPIO_0_tri_o), // input wire [31:0]  probe0  
+	.probe1(reg_valid_data), // input wire [0:0]  probe1 
+	.probe2(enable_write), // input wire [0:0]  probe2 
+	.probe3(last_enable_write) // input wire [0:0]  probe3
+);
+endmodule

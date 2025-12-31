@@ -1,0 +1,17 @@
+{
+  "name": "xgpio_example",
+  "type": "HOST",
+  "platform": "ZyqnIO_EThernet",
+  "domain": "Ethernet_IO",
+  "cpuInstance": "psu_cortexa53_2",
+  "cpuType": "cortex-a53",
+  "os": "freertos",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "Ethernet_IO",
+  "useSysrootToolchain": false,
+  "applicationFlow": "EMBEDDED",
+  "templateFlow": "VITIS"
+}

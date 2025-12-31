@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/synth_1'
+HD_PWD='/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Arty7_top_sim.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Arty7_top_sim.tcl
+EAStep vivado -log zynq_wrapper_systolic.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_wrapper_systolic.tcl

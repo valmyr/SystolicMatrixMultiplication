@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="ila_0_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1764024779">
+<GenRun Id="ila_0_synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1767122872">
   <File Type="RDS-DCP" Name="ila_0.dcp"/>
   <File Type="RDS-RDS" Name="ila_0.vds"/>
   <File Type="REPORTS-TCL" Name="ila_0_reports.tcl"/>
@@ -9,6 +9,7 @@
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ila_0" RelGenDir="$PGENDIR/ila_0">
     <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -22,6 +23,7 @@
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ila_0" RelGenDir="$PGENDIR/ila_0">
     <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

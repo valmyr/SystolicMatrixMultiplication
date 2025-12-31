@@ -21,7 +21,7 @@
 
 
 module SystolicCoreTop#(
-    parameter  BYTESIZES = 8, OVERSAMPLING = 16, BAUDRATE = 115200,	COUNTER_CLOCK_INPUT = 100_000_000,CLOCK_REF=10_000_000, WIDTHx = 4,SIZE = 8,WIDTH =8, CLOCK_TRANSFER_PC= 10_000
+    parameter  BYTESIZES = 8, WIDTHx = 4,SIZE = 8,WIDTH =8
 )(
     input  logic                    clock                     ,
     input  logic                    nreset                    ,
@@ -300,20 +300,65 @@ systolicControlUnitTop systolicControlUnit_Global(
     .read_done                  (systolicControlUnit_read_done                  )                ,
     .frame_start                (systolicControlUnit_frame_start                )
 );
+
+ila_1 your_instance_name (
+	.clk(clock), // input wire clk
+
+      
+     .probe0(syst_output_produc_a_b[0][0]), // input wire [7:0]  probe0  
+     .probe1(syst_output_produc_a_b[0][1]), // input wire [7:0]  probe1 
+     .probe2(syst_output_produc_a_b[0][2]), // input wire [7:0]  probe2 
+     .probe3(syst_output_produc_a_b[0][3]), // input wire [7:0]  probe3 
+     .probe4(syst_output_produc_a_b[0][4]), // input wire [7:0]  probe4 
+     .probe5(syst_output_produc_a_b[0][5]), // input wire [7:0]  probe5 
+     .probe6(syst_output_produc_a_b[0][6]), // input wire [7:0]  probe6 
+     .probe7(syst_output_produc_a_b[0][7]), // input wire [7:0]  probe7 
+     .probe8(syst_output_produc_a_b[0][8]), // input wire [7:0]  probe8 
+     .probe9(syst_output_produc_a_b[0][9]), // input wire [7:0]  probe9 
+	.probe10(syst_output_produc_a_b[0][10]), // input wire [7:0]  probe10 
+	.probe11(syst_output_produc_a_b[0][11]), // input wire [7:0]  probe11 
+	.probe12(syst_output_produc_a_b[0][12]), // input wire [7:0]  probe12 
+	.probe13(syst_output_produc_a_b[0][13]), // input wire [7:0]  probe13 
+	.probe14(syst_output_produc_a_b[0][14]), // input wire [7:0]  probe14 
+	.probe15(syst_output_produc_a_b[0][15]), // input wire [7:0]  probe15 
+	.probe16(syst_output_produc_a_b[1][0]), // input wire [7:0]  probe16 
+	.probe17(syst_output_produc_a_b[1][1]), // input wire [7:0]  probe17 
+	.probe18(syst_output_produc_a_b[1][2]), // input wire [7:0]  probe18 
+	.probe19(syst_output_produc_a_b[1][3]), // input wire [7:0]  probe19 
+	.probe20(syst_output_produc_a_b[1][4]), // input wire [7:0]  probe20 
+	.probe21(syst_output_produc_a_b[1][5]), // input wire [7:0]  probe21 
+	.probe22(syst_output_produc_a_b[1][6]), // input wire [7:0]  probe22 
+	.probe23(syst_output_produc_a_b[1][7]), // input wire [7:0]  probe23 
+	.probe24(syst_output_produc_a_b[1][8]), // input wire [7:0]  probe24 
+	.probe25(syst_output_produc_a_b[1][9]), // input wire [7:0]  probe25 
+	.probe26(syst_output_produc_a_b[1][10]), // input wire [7:0]  probe26 
+	.probe27(syst_output_produc_a_b[1][11]), // input wire [7:0]  probe27 
+	.probe28(syst_output_produc_a_b[1][12]), // input wire [7:0]  probe28 
+	.probe29(syst_output_produc_a_b[1][13]), // input wire [7:0]  probe29 
+	.probe30(syst_output_produc_a_b[1][14]), // input wire [7:0]  probe30 
+    .probe31(syst_output_produc_a_b[1][15]) // input wire [7:0]  probe31
+
+
+);
+
+
+/*
 (*dont_touch = "true"*) 
 ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))clock_rate_pc(
     .in_clock     (ref_clock_in_clock                                   )                ,
     .nreset       (ref_clock_nreset                                     )                ,
     .out_clock_ref(ref_clock_out_clock_ref                              )                
 );
+*/
 
+/*
 ila_3 your_instance_name (
 	.clk(clock), // input wire clk
 
 
 	.probe0(probe0), // input wire [0:0]  probe0  
 	.probe1(probe1) // input wire [0:0]  probe1
-);
+);*/
 /*
 (*dont_touch = "true"*) 
 ila_0 ILA (

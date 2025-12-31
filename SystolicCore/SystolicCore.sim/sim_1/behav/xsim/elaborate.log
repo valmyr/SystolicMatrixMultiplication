@@ -10,7 +10,6 @@ WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 8 fo
 WARNING: [VRFC 10-3818] variable 'tb_uart_data_tx_in' is driven by invalid combination of procedural drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:29]
 WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block should not be driven by any other process [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:128]
 WARNING: [VRFC 10-3823] variable 'uart_valid_rx_in' might have multiple concurrent drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/Arty7_top_sim.sv:83]
-WARNING: [VRFC 10-3823] variable 'uart_data_tx_in' might have multiple concurrent drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/Arty7_top_sim.sv:96]
 WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
 WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
 Completed static elaboration
@@ -32,9 +31,7 @@ Compiling module xil_defaultlib.serial2mem(SIZE=16)
 Compiling module xil_defaultlib.mem2seriala(SIZE=16)
 Compiling module xil_defaultlib.ila_3
 Compiling module xil_defaultlib.systolicControlUnitTop
-Compiling module xil_defaultlib.counter(MOD=4347)
-Compiling module xil_defaultlib.ref_clock(CLOCK_REF=11500,CLOCK_...
-Compiling module xil_defaultlib.SystolicCoreTop(SIZE=16,CLOCK_TR...
+Compiling module xil_defaultlib.SystolicCoreTop(SIZE=16)
 Compiling module xil_defaultlib.Arty7_top_sim
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl

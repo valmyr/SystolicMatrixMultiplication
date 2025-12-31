@@ -1,110 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1764702051">
-  <File Type="NOC_SOLUTION_FILE" Name="Arty7_top_sim.ncr"/>
-  <File Type="NOC_TRAFFIC_SPEC_FILE" Name="Arty7_top_sim.nts"/>
-  <File Type="PL_UNMASK_RCDO_FILE" Name="Arty7_top_sim_pld_unmask.rcdo"/>
-  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="Arty7_top_sim_pld_unmask_markers.rcdo"/>
-  <File Type="PL_MASK_RCDO_FILE" Name="Arty7_top_sim_pld_mask.rcdo"/>
-  <File Type="PL_MARKER_RCDO_FILE" Name="Arty7_top_sim_pld_markers.rcdo"/>
-  <File Type="PL-CLEAR-RCDO-FILE" Name="Arty7_top_sim_pld_clear.rcdo"/>
-  <File Type="PL_UNMASK_RNPI_FILE" Name="Arty7_top_sim_pld_unmask.rnpi"/>
-  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="Arty7_top_sim_pld_shutdown.rnpi"/>
-  <File Type="PL_MASK_RNPI_FILE" Name="Arty7_top_sim_pld_mask.rnpi"/>
-  <File Type="PL_MARKER_RNPI_FILE" Name="Arty7_top_sim_pld_markers.rnpi"/>
-  <File Type="BOOT_MARKER_RNPI_FILE" Name="Arty7_top_sim_boot_markers.rnpi"/>
-  <File Type="PL_RNPI_FILE" Name="Arty7_top_sim_pld.rnpi"/>
-  <File Type="BOOT_RNPI_FILE" Name="Arty7_top_sim_boot.rnpi"/>
-  <File Type="MARKER-RNPI-FILE" Name="Arty7_top_sim_markers.rnpi"/>
-  <File Type="PL-RCDO-FILE" Name="Arty7_top_sim_pld.rcdo"/>
-  <File Type="MARKER-RCDO-FILE" Name="Arty7_top_sim_markers.rcdo"/>
-  <File Type="RCDO-FILE" Name="Arty7_top_sim.rcdo"/>
-  <File Type="PL-LTX-FILE" Name="Arty7_top_sim_pld.ltx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Arty7_top_sim_timing_summary_postroute_physopted.rpx"/>
-  <File Type="BITSTR-MSK" Name="Arty7_top_sim.msk"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="Arty7_top_sim_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="Arty7_top_sim_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW" Name="Arty7_top_sim_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="Arty7_top_sim_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="Arty7_top_sim_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="Arty7_top_sim_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="Arty7_top_sim_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Arty7_top_sim_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC" Name="Arty7_top_sim_drc_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="Arty7_top_sim_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="Arty7_top_sim_power_routed.rpx"/>
-  <File Type="ROUTE-PWR" Name="Arty7_top_sim_power_routed.rpt"/>
-  <File Type="BG-DRC" Name="Arty7_top_sim.drc"/>
-  <File Type="ROUTE-STATUS-PB" Name="Arty7_top_sim_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="Arty7_top_sim_route_status.rpt"/>
-  <File Type="BITSTR-BMM" Name="Arty7_top_sim_bd.bmm"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Arty7_top_sim_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Arty7_top_sim_timing_summary_routed.rpt"/>
-  <File Type="BG-BGN" Name="Arty7_top_sim.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Arty7_top_sim_methodology_drc_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="Arty7_top_sim_reports.tcl"/>
-  <File Type="PA-TCL" Name="Arty7_top_sim.tcl"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Arty7_top_sim_methodology_drc_routed.rpt"/>
-  <File Type="PLACE-CTRL" Name="Arty7_top_sim_control_sets_placed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Arty7_top_sim_timing_summary_postroute_physopted.rpt"/>
-  <File Type="BITSTR-MMI" Name="Arty7_top_sim.mmi"/>
-  <File Type="BITSTR-NKY" Name="Arty7_top_sim.nky"/>
-  <File Type="PLACE-UTIL" Name="Arty7_top_sim_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="Arty7_top_sim_utilization_placed.pb"/>
-  <File Type="OPT-DRC" Name="Arty7_top_sim_drc_opted.rpt"/>
-  <File Type="PLACE-IO" Name="Arty7_top_sim_io_placed.rpt"/>
-  <File Type="BG-BIN" Name="Arty7_top_sim.bin"/>
-  <File Type="BITSTR-RBT" Name="Arty7_top_sim.rbt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Arty7_top_sim_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Arty7_top_sim_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Arty7_top_sim_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Arty7_top_sim_bus_skew_postroute_physopted.pb"/>
-  <File Type="RDI-RDI" Name="Arty7_top_sim.vdi"/>
-  <File Type="PDI-FILE" Name="Arty7_top_sim.pdi"/>
-  <File Type="BG-BIT" Name="Arty7_top_sim.bit"/>
+<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1767122872">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="Arty7_top_sim.sysdef"/>
-  <File Type="MMI-FILE" Name="Arty7_top_sim.mmi"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="Arty7_top_sim.ltx"/>
-  <File Type="BIF-FILE" Name="Arty7_top_sim.bif"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BOOT-LTX-FILE" Name="Arty7_top_sim_boot.ltx"/>
-  <File Type="OPT-HWDEF" Name="Arty7_top_sim.hwdef"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="Arty7_top_sim_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DCP" Name="Arty7_top_sim_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="Arty7_top_sim_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="Arty7_top_sim_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMING-PB" Name="Arty7_top_sim_timing_summary_routed.pb"/>
-  <File Type="OPT-DCP" Name="Arty7_top_sim_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="Arty7_top_sim_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="Arty7_top_sim_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Arty7_top_sim_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="Arty7_top_sim_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Arty7_top_sim_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Arty7_top_sim_postroute_physopt_bb.dcp"/>
-  <File Type="BOOT-PDI-FILE" Name="Arty7_top_sim_boot.pdi"/>
-  <File Type="PL-PDI-FILE" Name="Arty7_top_sim_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="Arty7_top_sim.rcfi"/>
-  <File Type="CFI_FILE" Name="Arty7_top_sim.cfi"/>
-  <File Type="RNPI_FILE" Name="Arty7_top_sim.rnpi"/>
-  <File Type="NPI_FILE" Name="Arty7_top_sim.npi"/>
-  <File Type="RBD_FILE" Name="Arty7_top_sim.rbd"/>
-  <File Type="ROUTE-RQS" Name="Arty7_top_sim_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="Arty7_top_sim_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="BOOT-BIF-FILE" Name="Arty7_top_sim_boot.bif"/>
-  <File Type="PL-BIF-FILE" Name="Arty7_top_sim_pld.bif"/>
-  <File Type="LTX-FILE" Name="Arty7_top_sim.ltx"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="zynq_wrapper_systolic_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="zynq_wrapper_systolic_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="zynq_wrapper_systolic.vdi"/>
+  <File Type="BG-DRC" Name="zynq_wrapper_systolic.drc"/>
+  <File Type="BG-BGN" Name="zynq_wrapper_systolic.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="zynq_wrapper_systolic.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="zynq_wrapper_systolic.ltx"/>
+  <File Type="PL-LTX-FILE" Name="zynq_wrapper_systolic_pld.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="zynq_wrapper_systolic_boot.ltx"/>
+  <File Type="LTX-FILE" Name="zynq_wrapper_systolic.ltx"/>
+  <File Type="PL-BIF-FILE" Name="zynq_wrapper_systolic_pld.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="zynq_wrapper_systolic_boot.bif"/>
+  <File Type="BIF-FILE" Name="zynq_wrapper_systolic.bif"/>
+  <File Type="MMI-FILE" Name="zynq_wrapper_systolic.mmi"/>
+  <File Type="RBD_FILE" Name="zynq_wrapper_systolic.rbd"/>
+  <File Type="NPI_FILE" Name="zynq_wrapper_systolic.npi"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="zynq_wrapper_systolic_pld_unmask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="zynq_wrapper_systolic_pld_unmask_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="zynq_wrapper_systolic_pld_mask.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="zynq_wrapper_systolic_pld_markers.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="zynq_wrapper_systolic_pld_clear.rcdo"/>
+  <File Type="PL-RCDO-FILE" Name="zynq_wrapper_systolic_pld.rcdo"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="zynq_wrapper_systolic_pld_unmask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="zynq_wrapper_systolic_pld_shutdown.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="zynq_wrapper_systolic_pld_mask.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="zynq_wrapper_systolic_pld_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="zynq_wrapper_systolic_pld.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="zynq_wrapper_systolic_boot_markers.rnpi"/>
+  <File Type="BOOT_RNPI_FILE" Name="zynq_wrapper_systolic_boot.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="zynq_wrapper_systolic_markers.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="zynq_wrapper_systolic_markers.rnpi"/>
+  <File Type="RCDO-FILE" Name="zynq_wrapper_systolic.rcdo"/>
+  <File Type="RNPI_FILE" Name="zynq_wrapper_systolic.rnpi"/>
+  <File Type="CFI_FILE" Name="zynq_wrapper_systolic.cfi"/>
+  <File Type="RCFI_FILE" Name="zynq_wrapper_systolic.rcfi"/>
+  <File Type="PL-PDI-FILE" Name="zynq_wrapper_systolic_pld.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="zynq_wrapper_systolic_boot.pdi"/>
+  <File Type="PDI-FILE" Name="zynq_wrapper_systolic.pdi"/>
+  <File Type="BITSTR-MMI" Name="zynq_wrapper_systolic.mmi"/>
+  <File Type="BITSTR-BMM" Name="zynq_wrapper_systolic_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="zynq_wrapper_systolic.nky"/>
+  <File Type="BITSTR-RBT" Name="zynq_wrapper_systolic.rbt"/>
+  <File Type="BITSTR-MSK" Name="zynq_wrapper_systolic.msk"/>
+  <File Type="BG-BIN" Name="zynq_wrapper_systolic.bin"/>
+  <File Type="BG-BIT" Name="zynq_wrapper_systolic.bit"/>
+  <File Type="NOC_SOLUTION_FILE" Name="zynq_wrapper_systolic.ncr"/>
+  <File Type="NOC_TRAFFIC_SPEC_FILE" Name="zynq_wrapper_systolic.nts"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="zynq_wrapper_systolic_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="zynq_wrapper_systolic_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="zynq_wrapper_systolic_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="zynq_wrapper_systolic_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="zynq_wrapper_systolic_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="zynq_wrapper_systolic_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="zynq_wrapper_systolic_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="zynq_wrapper_systolic_postroute_physopt.dcp"/>
+  <File Type="ROUTE-RQS-PB" Name="zynq_wrapper_systolic_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="zynq_wrapper_systolic_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="zynq_wrapper_systolic_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="zynq_wrapper_systolic_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="zynq_wrapper_systolic_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="zynq_wrapper_systolic_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="zynq_wrapper_systolic_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="zynq_wrapper_systolic_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="zynq_wrapper_systolic_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="zynq_wrapper_systolic_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="zynq_wrapper_systolic_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="zynq_wrapper_systolic_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="zynq_wrapper_systolic_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="zynq_wrapper_systolic_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="zynq_wrapper_systolic_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="zynq_wrapper_systolic_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="zynq_wrapper_systolic_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="zynq_wrapper_systolic_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="zynq_wrapper_systolic_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="zynq_wrapper_systolic_drc_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="zynq_wrapper_systolic_utilization_routed.pb"/>
+  <File Type="ROUTE-UTIL" Name="zynq_wrapper_systolic_utilization_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="zynq_wrapper_systolic_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="zynq_wrapper_systolic_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="zynq_wrapper_systolic_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="zynq_wrapper_systolic_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="zynq_wrapper_systolic_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="zynq_wrapper_systolic_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="zynq_wrapper_systolic_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="zynq_wrapper_systolic_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="zynq_wrapper_systolic_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="zynq_wrapper_systolic_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="zynq_wrapper_systolic_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="zynq_wrapper_systolic_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="zynq_wrapper_systolic_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="zynq_wrapper_systolic_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="zynq_wrapper_systolic_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="zynq_wrapper_systolic_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="zynq_wrapper_systolic_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="zynq_wrapper_systolic_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="zynq_wrapper_systolic_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="zynq_wrapper_systolic_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="zynq_wrapper_systolic_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="zynq_wrapper_systolic_rqa_opted.pb"/>
+  <File Type="OPT-TIMING" Name="zynq_wrapper_systolic_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="zynq_wrapper_systolic.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="zynq_wrapper_systolic_methodology_drc_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="zynq_wrapper_systolic_utilization_opted.pb"/>
+  <File Type="OPT-UTIL" Name="zynq_wrapper_systolic_utilization_opted.rpt"/>
+  <File Type="OPT-DRC" Name="zynq_wrapper_systolic_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="zynq_wrapper_systolic_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="zynq_wrapper_systolic_timing_summary_init.rpt"/>
+  <File Type="REPORTS-TCL" Name="zynq_wrapper_systolic_reports.tcl"/>
+  <File Type="PA-TCL" Name="zynq_wrapper_systolic.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../rtl/ram.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../rtl/uart/rtl/baud_rate.sv">
       <FileInfo>
         <Attr Name="UserDisabled" Val="1"/>
@@ -137,14 +147,62 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../rtl/Arty7_top_sim.sv">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../rtl/src/uart_rx.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../rtl/src/uart_tx.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/uart/rtl/counter.sv">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ram.sv">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/uart/rtl/ref_clock.sv">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/src/uart_top.sv">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -172,21 +230,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../rtl/uart/rtl/counter.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../rtl/mem2serial.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../rtl/uart/rtl/ref_clock.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -207,14 +251,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../rtl/src/uart_top.sv">
+    <File Path="$PPRDIR/../rtl/design_1_wrapper.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../rtl/Arty7_top_sim.sv">
-      <FileInfo>
+        <Attr Name="IsGlobalInclude" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -222,7 +261,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Arty7_top_sim"/>
+      <Option Name="TopModule" Val="zynq_wrapper_systolic"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -263,8 +302,12 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_0_96M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_3"/>
   <BlockFileSet Type="BlockSrcs" Name="ram_dual_port"/>
 </GenRun>

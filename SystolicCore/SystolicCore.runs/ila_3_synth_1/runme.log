@@ -7,125 +7,127 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Wed Nov 26 17:13:44 2025
+  **** Start of session at: Tue Dec 30 14:45:07 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source ila_3.tcl -notrace
 WARNING: [IP_Flow 19-5242] IP Cache entry (cache-ID 964e1b857292fabf) does not have the required number of cached files and is not valid. Please delete this entry using the TCL command: 'config_ip_cache -remove [get_ips ila_3]'
-Command: synth_design -top ila_3 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
+Command: synth_design -top ila_3 -part xczu7ev-ffvc1156-2-e -incremental_mode off -mode out_of_context
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
-INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [IP_Flow 19-2162] IP 'ila_3' is locked:
+* Current project part 'xczu7ev-ffvc1156-2-e' and the part 'xc7a100tcsg324-1' used to customize the IP 'ila_3' do not match.
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 422419
+INFO: [Synth 8-7075] Helper process launched with PID 2802241
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2474.488 ; gain = 478.875 ; free physical = 13558 ; free virtual = 29977
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3227.711 ; gain = 147.688 ; free physical = 452 ; free virtual = 40581
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:30]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:32]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:69]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:71]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:109]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:111]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:150]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:152]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:192]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:194]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:235]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:237]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:279]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:281]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:324]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:326]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:370]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:372]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:417]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:419]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:465]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:467]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:514]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:516]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:564]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:566]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:615]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:617]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:30]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:32]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:69]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:71]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:109]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:111]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:150]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:152]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:192]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:194]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:235]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:237]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:279]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:281]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:324]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:326]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:370]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:372]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:417]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:419]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:465]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:467]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:514]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:516]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:564]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:566]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:615]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:617]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:30]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:32]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:65]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:67]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:100]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:102]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:135]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:137]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:170]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:172]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:205]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:207]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:240]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:242]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:275]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:277]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:310]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:312]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:345]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:347]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:380]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:382]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:415]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:417]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:450]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:452]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:485]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:487]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:30]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:32]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:65]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:67]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:100]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:102]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:135]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:137]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:170]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:172]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:205]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:207]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:240]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:242]
-INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:275]
-INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:277]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:30]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:32]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:69]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:71]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:109]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:111]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:150]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:152]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:192]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:194]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:235]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:237]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:279]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:281]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:324]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:326]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:370]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:372]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:417]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:419]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:465]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:467]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:514]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:516]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:564]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:566]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:615]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:617]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:30]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:32]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:69]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:71]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:109]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:111]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:150]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:152]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:192]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:194]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:235]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:237]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:279]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:281]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:324]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:326]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:370]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:372]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:417]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:419]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:465]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:467]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:514]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:516]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:564]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:566]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:615]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core.vh:617]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:30]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:32]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:65]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:67]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:100]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:102]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:135]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:137]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:170]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:172]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:205]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:207]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:240]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:242]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:275]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:277]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:310]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:312]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:345]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:347]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:380]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:382]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:415]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:417]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:450]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:452]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:485]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:487]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:30]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:32]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:65]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:67]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:100]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:102]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:135]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:137]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:170]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:172]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:205]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:207]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:240]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:242]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:275]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:277]
 INFO: [Common 17-14] Message 'Synth 8-11241' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:48]
+INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:48]
 INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:3131]
 INFO: [Synth 8-6155] done synthesizing module 'CFGLUT5' (0#1) [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:3131]
 INFO: [Synth 8-6157] synthesizing module 'CARRY4' [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:3094]
@@ -138,15 +140,15 @@ INFO: [Synth 8-6157] synthesizing module 'SRLC16E' [/home/xmen/Music/2025.2/Viva
 INFO: [Synth 8-6155] done synthesizing module 'SRLC16E' (0#1) [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165423]
 INFO: [Synth 8-6157] synthesizing module 'FDRE' [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:49396]
 INFO: [Synth 8-6155] done synthesizing module 'FDRE' (0#1) [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:49396]
-INFO: [Synth 8-7071] port 'clk_nobuf' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
-INFO: [Synth 8-7071] port 'clkdiv_out' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
-INFO: [Synth 8-7071] port 'trig_in' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
-INFO: [Synth 8-7071] port 'trig_in_ack' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
-INFO: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
-INFO: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
-INFO: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_19_ila' has 1033 connections declared, but only 1027 given [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
-INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:48]
-INFO: [Synth 8-3848] Net sl_iport0 in module/entity ila_3 does not have driver. [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:100]
+INFO: [Synth 8-7071] port 'clk_nobuf' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
+INFO: [Synth 8-7071] port 'clkdiv_out' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
+INFO: [Synth 8-7071] port 'trig_in' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
+INFO: [Synth 8-7071] port 'trig_in_ack' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
+INFO: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
+INFO: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_19_ila' is unconnected for instance 'inst' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
+INFO: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_19_ila' has 1033 connections declared, but only 1027 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:3211]
+INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:48]
+INFO: [Synth 8-3848] Net sl_iport0 in module/entity ila_3 does not have driver. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/synth/ila_3.v:100]
 INFO: [Synth 8-7129] Port SEL_I[0] in module ltlib_v1_0_3_generic_mux is either unconnected or has no load
 INFO: [Synth 8-7129] Port CLKB in module blk_mem_gen_v8_4_12_blk_mem_output_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port DOUTA_I[2] in module blk_mem_gen_v8_4_12_blk_mem_output_block is either unconnected or has no load
@@ -249,57 +251,59 @@ INFO: [Synth 8-7129] Port S_AXI_AWADDR[17] in module blk_mem_gen_v8_4_12_synth i
 INFO: [Synth 8-7129] Port S_AXI_AWADDR[16] in module blk_mem_gen_v8_4_12_synth is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2923.098 ; gain = 927.484 ; free physical = 13131 ; free virtual = 29550
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3669.156 ; gain = 589.133 ; free physical = 471 ; free virtual = 39367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2923.098 ; gain = 927.484 ; free physical = 13113 ; free virtual = 29531
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3669.156 ; gain = 589.133 ; free physical = 443 ; free virtual = 39350
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2923.098 ; gain = 927.484 ; free physical = 13113 ; free virtual = 29531
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3669.156 ; gain = 589.133 ; free physical = 443 ; free virtual = 39350
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2923.098 ; gain = 0.000 ; free physical = 13117 ; free virtual = 29535
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3669.156 ; gain = 0.000 ; free physical = 463 ; free virtual = 39225
 INFO: [Netlist 29-17] Analyzing 58 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3_ooc.xdc] for cell 'inst'
-Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'inst'
-Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ila_3_propImpl.xdc].
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ila_3_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/ila_3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2963.117 ; gain = 0.000 ; free physical = 13116 ; free virtual = 29534
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3709.176 ; gain = 0.000 ; free physical = 449 ; free virtual = 36902
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 42 instances were transformed.
+  A total of 43 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 36 instances
   CFGLUT5 => SRLC32E: 6 instances
+  RAMB18E1 => RAMB18E2: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2963.152 ; gain = 0.000 ; free physical = 13137 ; free virtual = 29555
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3709.211 ; gain = 0.000 ; free physical = 485 ; free virtual = 36878
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2963.152 ; gain = 967.539 ; free physical = 13129 ; free virtual = 29544
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 3709.211 ; gain = 629.188 ; free physical = 5820 ; free virtual = 42309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a100tcsg324-1
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2971.121 ; gain = 975.508 ; free physical = 13129 ; free virtual = 29544
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 3717.180 ; gain = 637.156 ; free physical = 5819 ; free virtual = 42308
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2971.121 ; gain = 975.508 ; free physical = 13105 ; free virtual = 29520
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 3717.180 ; gain = 637.156 ; free physical = 5804 ; free virtual = 42300
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s__parameterized0'
@@ -354,7 +358,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'ltlib_v1_0_3_generic_memrd'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2971.121 ; gain = 975.508 ; free physical = 13133 ; free virtual = 29554
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3717.180 ; gain = 637.156 ; free physical = 9442 ; free virtual = 46026
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -366,8 +370,8 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 240 (col length:80)
-BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
@@ -376,25 +380,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_current_state_reg[5]) is unused and will be removed from module ltlib_v1_0_3_generic_memrd.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2971.121 ; gain = 975.508 ; free physical = 13118 ; free virtual = 29541
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3717.180 ; gain = 637.156 ; free physical = 11631 ; free virtual = 48477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2971.121 ; gain = 975.508 ; free physical = 13105 ; free virtual = 29527
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 4090.070 ; gain = 1010.047 ; free physical = 14089 ; free virtual = 50983
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2971.121 ; gain = 975.508 ; free physical = 13102 ; free virtual = 29525
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 4120.117 ; gain = 1040.094 ; free physical = 14055 ; free virtual = 50949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2971.121 ; gain = 975.508 ; free physical = 13130 ; free virtual = 29552
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 4122.133 ; gain = 1042.109 ; free physical = 14025 ; free virtual = 50919
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -412,37 +416,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2990.965 ; gain = 995.352 ; free physical = 13090 ; free virtual = 29513
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2990.965 ; gain = 995.352 ; free physical = 13089 ; free virtual = 29512
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2990.965 ; gain = 995.352 ; free physical = 13080 ; free virtual = 29502
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2990.965 ; gain = 995.352 ; free physical = 13079 ; free virtual = 29502
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2990.965 ; gain = 995.352 ; free physical = 13075 ; free virtual = 29497
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2990.965 ; gain = 995.352 ; free physical = 13078 ; free virtual = 29500
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -460,12 +464,12 @@ Report Cell Usage:
 +------+---------+------+
 |1     |CARRY4   |    15|
 |2     |CFGLUT5  |    42|
-|3     |LUT1     |    28|
+|3     |LUT1     |    29|
 |4     |LUT2     |    52|
-|5     |LUT3     |    97|
+|5     |LUT3     |    92|
 |6     |LUT4     |   115|
 |7     |LUT5     |    73|
-|8     |LUT6     |   291|
+|8     |LUT6     |   292|
 |9     |MUXF7    |     4|
 |10    |RAMB18E1 |     1|
 |11    |SRL16E   |     6|
@@ -475,34 +479,36 @@ Report Cell Usage:
 |15    |FDSE     |    10|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2990.965 ; gain = 995.352 ; free physical = 13084 ; free virtual = 29507
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2990.965 ; gain = 955.297 ; free physical = 13087 ; free virtual = 29510
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2990.973 ; gain = 995.352 ; free physical = 13086 ; free virtual = 29509
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 4287.945 ; gain = 1167.867 ; free physical = 13908 ; free virtual = 50802
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 4287.945 ; gain = 1207.922 ; free physical = 13908 ; free virtual = 50802
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2990.973 ; gain = 0.000 ; free physical = 13250 ; free virtual = 29673
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4287.945 ; gain = 0.000 ; free physical = 14076 ; free virtual = 50971
 INFO: [Netlist 29-17] Analyzing 62 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3046.992 ; gain = 0.000 ; free physical = 13256 ; free virtual = 29678
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4287.945 ; gain = 0.000 ; free physical = 14047 ; free virtual = 50957
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 42 instances were transformed.
+  A total of 52 instances were transformed.
+  (CARRY4) => CARRY8: 9 instances
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 36 instances
   CFGLUT5 => SRLC32E: 6 instances
+  RAMB18E1 => RAMB18E2: 1 instance 
 
-Synth Design complete | Checksum: 9d54a9c5
+Synth Design complete | Checksum: 6103e0b8
 INFO: [Common 17-83] Releasing license: Synthesis
-252 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+254 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 3047.027 ; gain = 1229.578 ; free physical = 13238 ; free virtual = 29661
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2119.573; main = 1911.773; forked = 282.795
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4612.125; main = 3046.996; forked = 1641.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3071.004 ; gain = 0.000 ; free physical = 13262 ; free virtual = 29685
-INFO: [Common 17-1381] The checkpoint '/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/ila_3.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 4287.945 ; gain = 2396.523 ; free physical = 14089 ; free virtual = 51000
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3039.728; main = 3039.728; forked = 236.146
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5621.859; main = 4270.289; forked = 1641.020
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4294.297 ; gain = 0.000 ; free physical = 14083 ; free virtual = 50994
+INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/ila_3.dcp' has been generated.
 INFO: [Coretcl 2-1174] Renamed 108 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3071.004 ; gain = 0.000 ; free physical = 13248 ; free virtual = 29677
-INFO: [Common 17-1381] The checkpoint '/home/xmen/Desktop/PROJETO_TCC/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/ila_3.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4294.297 ; gain = 0.000 ; free physical = 14019 ; free virtual = 50961
+INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/ila_3_synth_1/ila_3.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file ila_3_utilization_synth.rpt -pb ila_3_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 26 17:14:14 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 30 14:45:57 2025...

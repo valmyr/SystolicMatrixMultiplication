@@ -1,0 +1,975 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Dec 30 16:05:35 2025
+# Process ID         : 3767664
+# Current directory  : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1
+# Command line       : vivado -log zynq_wrapper_systolic.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_wrapper_systolic.tcl
+# Log file           : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/zynq_wrapper_systolic.vds
+# Journal file       : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/vivado.jou
+# Running On         : VT0144
+# Platform           : Rocky
+# Operating System   : Rocky Linux release 8.10 (Green Obsidian)
+# Processor Detail   : Intel(R) Core(TM) i9-14900F
+# CPU Frequency      : 2000.000 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 67075 MB
+# Swap memory        : 14727 MB
+# Total Virtual      : 81802 MB
+# Available Virtual  : 52051 MB
+#-----------------------------------------------------------
+source zynq_wrapper_systolic.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xmen/Music/2025.2/data/ip'.
+Command: read_checkpoint -incremental /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top zynq_wrapper_systolic -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'ram_dual_port' is locked:
+* Current project part 'xczu7ev-ffvc1156-2-e' and the part 'xc7a100tcsg324-1' used to customize the IP 'ram_dual_port' do not match.
+INFO: [IP_Flow 19-2162] IP 'ila_3' is locked:
+* Current project part 'xczu7ev-ffvc1156-2-e' and the part 'xc7a100tcsg324-1' used to customize the IP 'ila_3' do not match.
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3767803
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3256.164 ; gain = 145.688 ; free physical = 4789 ; free virtual = 46653
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'uart_clock', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:127]
+INFO: [Synth 8-11241] undeclared symbol 'uart_nreset', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:136]
+INFO: [Synth 8-6157] synthesizing module 'zynq_wrapper_systolic' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/design_1_wrapper.v:24]
+INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:100]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:100]
+WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 60 connections declared, but only 58 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:100]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps8_0_96M_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_rst_ps8_0_96M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps8_0_96M_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_rst_ps8_0_96M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:159]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:159]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:159]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:159]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_96M' of module 'design_1_rst_ps8_0_96M_0' has 10 connections declared, but only 6 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:159]
+INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:82819]
+	Parameter DIFF_TERM bound to: TRUE - type: string 
+	Parameter IBUF_LOW_PWR bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (0#1) [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:82819]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCoreTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:23]
+	Parameter BYTESIZES bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 4 - type: integer 
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter WIDTHx bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/accumulator.sv:13]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter WIDTHx bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/accumulator.sv:13]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
+	Parameter WIDTH bound to: 4 - type: integer 
+	Parameter SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/ram_dual_port_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/ram_dual_port_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:1]
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:88]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:225]
+INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:1]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:306]
+INFO: [Synth 8-6157] synthesizing module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/ila_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_4' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/.Xil/Vivado-3767664-VT0144/realtime/ila_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCoreTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_wrapper_systolic' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/design_1_wrapper.v:24]
+WARNING: [Synth 8-7137] Register mem_fsm_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:122]
+WARNING: [Synth 8-87] always_comb on 'single_port_ram_di_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:63]
+WARNING: [Synth 8-7137] Register mem2seriala_fsm_reg in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:27]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[15][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[14][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[13][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[12][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[11][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][13] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][12] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][11] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][10] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][9] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][8] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][7] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][6] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][5] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][4] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][3] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][2] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][1] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[10][0] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[9][15] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+WARNING: [Synth 8-7137] Register pmatrix_reg[9][14] in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'systolicControlUnit_Global'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:276]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:225]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rw_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:54]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rw_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:55]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rready_i_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:56]
+WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rready_i_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:57]
+WARNING: [Synth 8-87] always_comb on 'starting_frame_identified_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:64]
+WARNING: [Synth 8-3848] Net uart_valid_rx_in in module/entity SystolicCoreTop does not have driver. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:33]
+WARNING: [Synth 8-7129] Port serial2mem_opb_rvalid_o in module systolicControlUnitTop is either unconnected or has no load
+WARNING: [Synth 8-7129] Port serial2mem_opa_ready_o in module systolicControlUnitTop is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uart_valid_rx_in in module SystolicCoreTop is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3434.102 ; gain = 323.625 ; free physical = 4601 ; free virtual = 46468
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3434.102 ; gain = 323.625 ; free physical = 4601 ; free virtual = 46468
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3434.102 ; gain = 323.625 ; free physical = 4601 ; free virtual = 46468
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3434.102 ; gain = 0.000 ; free physical = 4679 ; free virtual = 46546
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
+WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_96M'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_96M'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_4/ila_4/ila_4_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.gen/sources_1/ip/ila_4/ila_4/ila_4_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[0]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:5]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[0]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[1]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:7]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[1]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:8]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[2]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[2]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[3]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[3]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[4]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[4]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[5]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[5]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[6]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'led_8bits_tri_o[6]'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 's_axi_bvalid_0'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc:25]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/zynq_wrapper_systolic_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/xilinxdesignconstraint/Arty-A7-100-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zynq_wrapper_systolic_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/zynq_wrapper_systolic_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3522.934 ; gain = 0.000 ; free physical = 4561 ; free virtual = 46431
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3522.969 ; gain = 0.000 ; free physical = 4561 ; free virtual = 46431
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/your_instance_name' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opA/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opB/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/systolicControlUnit_Global/your_instance_name' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3522.969 ; gain = 412.492 ; free physical = 4556 ; free virtual = 46426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3530.938 ; gain = 420.461 ; free physical = 4556 ; free virtual = 46426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3530.938 ; gain = 420.461 ; free physical = 4556 ; free virtual = 46426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint /home/xmen/Desktop/SystolicCore/SystolicCore/SystolicCore.srcs/utils_1/imports/synth_1/Arty7_top_sim.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3530.938 ; gain = 420.461 ; free physical = 4549 ; free virtual = 46419
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3530.938 ; gain = 420.461 ; free physical = 4547 ; free virtual = 46417
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'currentStateSystolicControlUnit_reg' in module 'systolicMatrixMultiply'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 | 00000000000000000000000000000000
+       LOAD_MULTI_MATRIX |                               01 | 00000000000000000000000000000001
+            MULTI_MATRIX |                               10 | 00000000000000000000000000000010
+                    DONE |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'currentStateSystolicControlUnit_reg' using encoding 'sequential' in module 'systolicMatrixMultiply'
+WARNING: [Synth 8-327] inferring latch for variable 'single_port_ram_di_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:63]
+WARNING: [Synth 8-327] inferring latch for variable 'single_port_ram_di_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:63]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:54]
+WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:56]
+WARNING: [Synth 8-327] inferring latch for variable 'starting_frame_identified_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:64]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3530.938 ; gain = 420.461 ; free physical = 4554 ; free virtual = 46423
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 4     
++---Registers : 
+	               64 Bit    Registers := 4     
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 256   
+	                8 Bit    Registers := 513   
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 516   
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 10    
+	   4 Input   64 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 769   
+	   4 Input    8 Bit        Muxes := 1     
+	   3 Input    8 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 7     
+	   4 Input    5 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 11    
+	   4 Input    4 Bit        Muxes := 5     
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 12    
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 6     
+	   4 Input    1 Bit        Muxes := 19    
+	   2 Input    1 Bit        Muxes := 33    
+	   7 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 3721.328 ; gain = 610.852 ; free physical = 5012 ; free virtual = 46906
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4162.477 ; gain = 1052.000 ; free physical = 4515 ; free virtual = 46407
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 4421.578 ; gain = 1311.102 ; free physical = 4395 ; free virtual = 46290
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4282 ; free virtual = 46180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4224 ; free virtual = 46121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4224 ; free virtual = 46121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4128 ; free virtual = 46025
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4121 ; free virtual = 46018
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4109 ; free virtual = 46005
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4109 ; free virtual = 46005
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------------------+----------+
+|      |BlackBox name                |Instances |
++------+-----------------------------+----------+
+|1     |design_1_axi_gpio_0_0        |         1|
+|2     |design_1_axi_smc_0           |         1|
+|3     |design_1_rst_ps8_0_96M_0     |         1|
+|4     |design_1_zynq_ultra_ps_e_0_0 |         1|
+|5     |ram_dual_port                |         2|
+|6     |ila_3                        |         1|
+|7     |ila_4                        |         1|
++------+-----------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------+------+
+|      |Cell                       |Count |
++------+---------------------------+------+
+|1     |design_1_axi_gpio_0        |     1|
+|2     |design_1_axi_smc           |     1|
+|3     |design_1_rst_ps8_0_96M     |     1|
+|4     |design_1_zynq_ultra_ps_e_0 |     1|
+|5     |ila                        |     2|
+|7     |ram_dual_port              |     2|
+|9     |BUFG                       |     3|
+|10    |CARRY8                     |   256|
+|11    |LUT1                       |  2057|
+|12    |LUT2                       |  6634|
+|13    |LUT3                       |   788|
+|14    |LUT4                       |  1006|
+|15    |LUT5                       |   806|
+|16    |LUT6                       |  4889|
+|17    |MUXF7                      |   272|
+|18    |MUXF8                      |   128|
+|19    |FDCE                       |  6353|
+|20    |FDCP                       |  2048|
+|21    |FDRE                       |    18|
+|22    |LD                         |   131|
+|23    |IBUF                       |     1|
+|24    |IBUFDS                     |     1|
++------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4109 ; free virtual = 46005
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 4480.578 ; gain = 1281.234 ; free physical = 4108 ; free virtual = 46004
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 4480.578 ; gain = 1370.102 ; free physical = 4108 ; free virtual = 46004
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 4480.578 ; gain = 0.000 ; free physical = 4277 ; free virtual = 46173
+INFO: [Netlist 29-17] Analyzing 2840 Unisim elements for replacement
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][0][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][10][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][11][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][12][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][13][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][14][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][15][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][1][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][2][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][3][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][4][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][5][7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][6][0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][6][1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][6][2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/pmatrix_reg[0][6][3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:29]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+INFO: [Common 17-14] Message 'Netlist 29-358' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
+WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4480.578 ; gain = 0.000 ; free physical = 3913 ; free virtual = 45810
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2184 instances were transformed.
+  BUFG => BUFGCE: 3 instances
+  FDCP => FDCP (FDCE, FDPE, LDCE, LUT3, VCC): 2048 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  LD => LDCE: 131 instances
+
+Synth Design complete | Checksum: e27bf5d4
+INFO: [Common 17-83] Releasing license: Synthesis
+67 Infos, 181 Warnings, 101 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:01:05 . Memory (MB): peak = 4480.578 ; gain = 2554.766 ; free physical = 3937 ; free virtual = 45834
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3433.035; main = 3255.067; forked = 255.140
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 6062.590; main = 4462.922; forked = 1641.008
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4486.930 ; gain = 0.000 ; free physical = 3911 ; free virtual = 45809
+INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/SystolicCore/SystolicCore.runs/synth_1/zynq_wrapper_systolic.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_wrapper_systolic_utilization_synth.rpt -pb zynq_wrapper_systolic_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 30 16:06:45 2025...

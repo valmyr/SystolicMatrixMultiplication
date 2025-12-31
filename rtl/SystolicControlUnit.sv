@@ -40,7 +40,15 @@ always_ff@(posedge clock, negedge nreset)begin
         frame_start[31:24] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[23:16]: frame_start[31:24];
     end
 end
+ila_0 your_instance_name (
+	.clk(clock), // input wire clk
 
+
+	.probe0({frame_start,uart_ready_rx}), // input wire [127:0]  probe0  
+	.probe1((uart_ready_rx && !last_uart_ready_rx)), // input wire [0:0]  probe1 
+	.probe2(last_uart_ready_rx), // input wire [0:0]  probe2 
+	.probe3(uart_ready_rx) // input wire [0:0]  probe3
+);
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         fsm_unit_control <= IDLE;
@@ -222,11 +230,12 @@ always_comb case(fsm_unit_control)
         starting_frame_identified     = 1;
     end
 endcase
+/*
 ila_3 your_instance_name (
 	.clk(clock), // input wire clk
 
 
 	.probe0(mem2serial_valid_i), // input wire [0:0]  probe0  
 	.probe1(uart_valid_tx_in) // input wire [0:0]  probe1
-);
+);*/
 endmodule

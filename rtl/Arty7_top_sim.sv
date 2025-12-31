@@ -74,30 +74,16 @@ uart_top #(.BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRAT
 );
 
 SystolicCoreTop #(
-   .BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF), .WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH), .CLOCK_TRANSFER_PC(CLOCK_TRANSFER_PC)
+   .BYTESIZES(BYTESIZES),.WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH)
 )   SystolicCore0(
-        .clock               (clock             )      ,
-        .nreset              (~btn[0]           )      ,
-        .uart_data_rx_out    (uart_data_rx_out  )      ,
-        .uart_data_tx_in     (uart_data_tx_in   )      ,
-        .uart_valid_rx_in    (uart_valid_rx_in  )      ,
-        .uart_valid_tx_in    (uart_valid_tx_in  )      ,    
-        .uart_ready_tx_out   (uart_ready_tx_out )      ,
-        .uart_ready_rx_out   (uart_ready_rx_out )      
-  
-);
-
-SystolicCoreTop #(
-   .BYTESIZES(BYTESIZES), .OVERSAMPLING(OVERSAMPLING), .BAUDRATE(BAUDRATE),	.COUNTER_CLOCK_INPUT(COUNTER_CLOCK_INPUT),.CLOCK_REF(CLOCK_REF), .WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH), .CLOCK_TRANSFER_PC(CLOCK_TRANSFER_PC)
-)   SystolicCore1(
-        .clock               (clock             )      ,
-        .nreset              (~btn[0]           )      ,
-        .uart_data_rx_out    (uart_data_rx_out  )      ,
-        .uart_data_tx_in     (uart_data_tx_in   )      ,
-        .uart_valid_rx_in    (                  )      ,
-        .uart_valid_tx_in    (                  )      ,    
-        .uart_ready_tx_out   (uart_ready_tx_out )      ,
-        .uart_ready_rx_out   (uart_ready_rx_out )      
+        .clock               (clock             )      ,// input
+        .nreset              (~btn[0]           )      ,// input 
+        .uart_data_rx_out    (uart_data_rx_out  )      ,// input 8 Bits / 1 Byte
+        .uart_data_tx_in     (uart_data_tx_in   )      ,// output 8 Bits
+        .uart_valid_rx_in    (1                 )      ,// input
+        .uart_valid_tx_in    (uart_valid_tx_in  )      ,// output 
+        .uart_ready_tx_out   (uart_ready_tx_out )      ,// input
+        .uart_ready_rx_out   (uart_ready_rx_out )       // input
   
 );
 

@@ -2,13 +2,13 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Dec 24 23:48:11 2025
+// Date        : Tue Dec 30 14:45:38 2025
 // Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ ram_dual_port_stub.v
 // Design      : ram_dual_port
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7a100tcsg324-1
+// Device      : xczu7ev-ffvc1156-2-e
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

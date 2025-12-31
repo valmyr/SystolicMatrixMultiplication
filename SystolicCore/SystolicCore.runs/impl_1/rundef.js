@@ -30,7 +30,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
-         "-log Arty7_top_sim.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Arty7_top_sim.tcl -notrace" );
+         "-log zynq_wrapper_systolic.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source zynq_wrapper_systolic.tcl -notrace" );
 
 
 

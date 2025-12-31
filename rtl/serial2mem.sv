@@ -16,6 +16,7 @@ module serial2mem#(
    // output logic [(2*WIDTH-1)*SIZE*SIZE-1:0]    fifo_d                          
 );
 
+
 logic [$clog2(2*SIZE)-1:0]      cnt, next_cnt                                   ;
 logic [$clog2(SIZE)-1:0]  cnt_shift, next_cnt_shift                       ;
 enum {IDLE, WRITE, READ,DONE}   mem_fsm,next_mem_fsm                            ;
@@ -110,18 +111,21 @@ ram_single_port mem (
     //        fifo_d <=0;
     //    else fifo_d <=cnt_shift == SIZE-1 ? {fifo_d[(2*WIDTH-1)*SIZE*SIZE-(WIDTH)*SIZE:0],single_port_ram_di}:fifo_d;
     //end
+   reg  [WIDTH*SIZE-1:0] single_port_ram_di_reg;
     always_ff@(posedge clock, negedge nreset)begin
         if(!nreset)begin
             cnt                 <= 0                                                                                                           ;
             cnt_shift           <= 0                                                                                                           ;
             buf_data            <= 0                                                                                                           ;
             last_uart_ready_rx  <= 0                                                                                                           ;
+            single_port_ram_di_reg <= 0;
         end else begin        
             last_uart_ready_rx <= uart_ready_rx_out;                                          
             buf_data           <= uart_ready_rx_out && !last_uart_ready_rx ? next_buf_data    :   buf_data                                     ;  
             mem_fsm            <= next_mem_fsm                                                                                                 ;
             cnt                <= mem_fsm != DONE ? next_cnt         :    0                                                                    ;
             cnt_shift          <= mem_fsm != DONE ? next_cnt_shift   :    0                                                                    ;
+            single_port_ram_di_reg <= single_port_ram_en ? single_port_ram_di:single_port_ram_di_reg;
 
         end
     end
@@ -205,4 +209,21 @@ ram_single_port mem (
 
         end
     endcase
+    
+    ila_2 your_instance_name (
+	.clk(clock), // input wire clk
+
+
+	.probe0(uart_ready_rx_out), // input wire [0:0]  probe0  
+	.probe1(nreset), // input wire [0:0]  probe1 
+	.probe2(rw), // input wire [0:0]  probe2 
+	.probe3(valid_i), // input wire [0:0]  probe3 
+	.probe4(rready_i), // input wire [0:0]  probe4 
+	.probe5(rvalid_o), // input wire [0:0]  probe5 
+	.probe6(ready_o), // input wire [0:0]  probe6 
+	.probe7(ready_o), // input wire [0:0]  probe7 
+	.probe8(in_data), // input wire [3:0]  probe8 
+	.probe9(out_data), // input wire [63:0]  probe9 
+	.probe10(single_port_ram_di_reg) // input wire [63:0]  probe10
+);
 endmodule
