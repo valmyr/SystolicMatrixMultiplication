@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/xilsecure/src
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/xilsecure/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,30 +39,30 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/xilsecure/src/server/cmake_install.cmake")
+  include("/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/xilsecure/src/server/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/lib/libxilsecure.a")
+   "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/lib/libxilsecure.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/xilsecure/src/libxilsecure.a")
+  file(INSTALL DESTINATION "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/xilsecure/src/libxilsecure.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/include/../include")
+   "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/include/../include")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/include")
+  file(INSTALL DESTINATION "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/include")
 endif()
 

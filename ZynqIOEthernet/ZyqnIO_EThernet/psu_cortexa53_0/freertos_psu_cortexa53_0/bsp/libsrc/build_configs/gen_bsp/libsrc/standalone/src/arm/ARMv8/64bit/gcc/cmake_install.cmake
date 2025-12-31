@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/standalone/src/arm/ARMv8/64bit/gcc
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/standalone/src/arm/ARMv8/64bit/gcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

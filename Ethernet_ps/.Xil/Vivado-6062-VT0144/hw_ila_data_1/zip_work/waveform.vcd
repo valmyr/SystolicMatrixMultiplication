@@ -1,0 +1,51 @@
+$date
+        2025-Dec-31 12:26:57
+$end
+$version
+        Vivado v2025.2 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 1 " SystolicCore0/serial2mem_opA/uart_ready_rx_out $end
+$var reg 1 # SystolicCore0/serial2mem_opA/nreset $end
+$var reg 1 $ SystolicCore0/serial2mem_opA/rw $end
+$var reg 1 % SystolicCore0/serial2mem_opA/valid_i $end
+$var reg 1 & SystolicCore0/serial2mem_opA/rready_i $end
+$var reg 1 ' SystolicCore0/serial2mem_opA/rvalid_o $end
+$var reg 1 ( SystolicCore0/serial2mem_opA/ready_o $end
+$var reg 1 ) SystolicCore0/serial2mem_opA/single_port_ram_en $end
+$var reg 4 * SystolicCore0/serial2mem_opA/in_data [3:0] $end
+$var reg 64 . SystolicCore0/serial2mem_opA/out_data [63:0] $end
+$var reg 64 n SystolicCore0/serial2mem_opA/single_port_ram_di_reg [63:0] $end
+$var reg 1 P" _TRIGGER $end
+$var reg 1 Q" _WINDOW $end
+$var reg 1 R" _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+1#
+0$
+1%
+0&
+0'
+0(
+0)
+b10 *
+b0 .
+b10001000101000100010000010100010000110000 n
+0P"
+1Q"
+0R"
+$end
+#511
+1"
+1)
+#512
+0)
+1P"
+#527
+0"

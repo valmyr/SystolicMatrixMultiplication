@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/ttcps/src
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/ttcps/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

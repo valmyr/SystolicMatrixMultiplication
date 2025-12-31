@@ -21,6 +21,6 @@
 /* #undef XTICKTIMER_IS_AXITIMER */
 #define XTICKTIMER_IS_TTCPS     
 /* #undef XTICKTIMER_IS_SCUTIMER */
-#define XTIMER_NO_TICK_TIMER   1
+/* #undef XTIMER_NO_TICK_TIMER */
 
 #endif /* XTIMER_CONFIG_H */

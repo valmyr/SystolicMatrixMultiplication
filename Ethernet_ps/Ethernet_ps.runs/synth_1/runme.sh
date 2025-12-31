@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xmen/TESTE_FINAL/Ethernet_ps/Ethernet_ps.runs/synth_1'
+HD_PWD='/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

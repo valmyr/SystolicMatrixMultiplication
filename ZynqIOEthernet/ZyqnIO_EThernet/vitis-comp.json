@@ -3,7 +3,7 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "/home/xmen/TESTE_FINAL/Ethernet_ps/zynq_wrapper_systolic.xsa",
+    "xsa": "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/zynq_wrapper_systolic.xsa",
     "xsaPathInPlatform": "ZyqnIO_EThernet/hw/zynq_wrapper_systolic.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
@@ -90,20 +90,6 @@
         "qemuData": "resources/Ethernet_IO/qemu",
         "qemuArgsFile": "resources/Ethernet_IO/qemu/qemu_args.txt",
         "pmcQemuArgsFile": "resources/Ethernet_IO/qemu/pmu_args.txt",
-        "isBSPGenReq": false
-      },
-      {
-        "name": "aaa",
-        "displayName": "aaa",
-        "processor": "psu_cortexa53_2",
-        "cpuType": "cortex-a53",
-        "cpuInstance": "psu_cortexa53_2",
-        "os": "standalone",
-        "appTemplate": "hello_world",
-        "isBootDomain": false,
-        "qemuData": "resources/aaa/qemu",
-        "qemuArgsFile": "resources/aaa/qemu/qemu_args.txt",
-        "pmcQemuArgsFile": "resources/aaa/qemu/pmu_args.txt",
         "isBSPGenReq": false
       }
     ],

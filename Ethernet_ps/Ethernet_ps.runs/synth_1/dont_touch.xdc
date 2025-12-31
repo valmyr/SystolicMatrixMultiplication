@@ -18,4 +18,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ax
 # IP: bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rst_ps8_0_99M_6 || ORIG_REF_NAME==design_1_rst_ps8_0_99M_6} -quiet] -quiet
 
-# XDC: /home/xmen/TESTE_FINAL/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/design_1_ooc.xdc
+# XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/design_1_ooc.xdc

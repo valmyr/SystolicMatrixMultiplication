@@ -67,7 +67,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_2/Ethernet_IO/bsp/include;/home/xmen/Music/2025.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc/aarch64-xilinx-elf/13.3.0/include;/home/xmen/Music/2025.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc/aarch64-xilinx-elf/13.3.0/include-fixed;/home/xmen/Music/2025.2/Vitis/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_2/Ethernet_IO/bsp/include;/home/xmen/Music/2025.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc/aarch64-xilinx-elf/13.3.0/include;/home/xmen/Music/2025.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc/aarch64-xilinx-elf/13.3.0/include-fixed;/home/xmen/Music/2025.2/Vitis/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;c;gcc")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/xmen/Music/2025.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc/aarch64-xilinx-elf/13.3.0;/home/xmen/Music/2025.2/gnu/aarch64/lin/aarch64-none/x86_64-oesdk-linux/usr/lib/aarch64-xilinx-elf/gcc;/home/xmen/Music/2025.2/Vitis/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/lib64/aarch64-xilinx-elf/13.3.0;/home/xmen/Music/2025.2/Vitis/gnu/aarch64/lin/aarch64-none/aarch64-xilinx-elf/usr/lib64")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

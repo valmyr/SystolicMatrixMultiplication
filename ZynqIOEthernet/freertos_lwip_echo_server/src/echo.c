@@ -15,7 +15,7 @@ Project 2: send and receive signals
 #include "task.h"
 #include <stdlib.h>  // For abs()
 #include "xgpiops.h"
-
+#include "sleep.h"
 #include <xgpio.h>
 #include <xil_printf.h>
 
@@ -56,7 +56,7 @@ void process_echo_request(void *p)
 {
     int sd = *(int *)p;
     int Status;
-    int RECV_BUF_SIZE =8;
+    int RECV_BUF_SIZE =4;
     int SEND_BUF_SIZE =32;
     int recv_buf;//[RECV_BUF_SIZE / sizeof(int)];  // Buffer to store received integer samples
     int send_buf[SEND_BUF_SIZE / sizeof(int)];  // Buffer to store processed samples
@@ -73,18 +73,24 @@ void process_echo_request(void *p)
 		//return XST_FAILURE;
 	}
 	XGpio_SetDataDirection(&Gpio, 1, 0x00000000);
+	int temp;
+	int k = 0;
+	xil_printf("\n	..........start..........	\n");
     while (1) {
         /* read a max of RECV_BUF_SIZE bytes from socket */
         if ((n = read(sd, &recv_buf, RECV_BUF_SIZE)) < 0) {
             xil_printf("%s: error reading from socket %d, closing socket\r\n", __FUNCTION__, sd);
             break;
         }
-        if (n <= 0)
+		if (n <= 0)
             break;
-		XGpio_DiscreteWrite(&Gpio, 1,recv_buf << 1 | 1);
-		XGpio_DiscreteWrite(&Gpio, 1,recv_buf << 1 | 0);
-		xil_printf("%x %x",recv_buf,recv_buf << 1 | 1);
+		temp = recv_buf;
+		k+=1;
+        XGpio_DiscreteWrite(&Gpio, 1,temp << 1 | 1);
+		xil_printf("	%x	%x	%d	%d	",temp,temp << 1 | 1,k, k-4);
 		xil_printf("\n");
+		XGpio_DiscreteWrite(&Gpio, 1,0x00000000);
+
 
         /* break if client closed connection */
 
@@ -110,7 +116,7 @@ void process_echo_request(void *p)
     }
 
     /* close connection */
-	xil_printf("\n..........end..........\n");
+	xil_printf("\n	..........end..........	\n");
 
     close(sd);
     vTaskDelete(NULL);

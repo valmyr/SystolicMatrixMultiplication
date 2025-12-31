@@ -80,7 +80,7 @@ SystolicCoreTop #(
         .nreset              (~btn[0]           )      ,// input 
         .uart_data_rx_out    (uart_data_rx_out  )      ,// input 8 Bits / 1 Byte
         .uart_data_tx_in     (uart_data_tx_in   )      ,// output 8 Bits
-        .uart_valid_rx_in    (1                 )      ,// input
+        .uart_valid_rx_in    (                 )      ,// input
         .uart_valid_tx_in    (uart_valid_tx_in  )      ,// output 
         .uart_ready_tx_out   (uart_ready_tx_out )      ,// input
         .uart_ready_rx_out   (uart_ready_rx_out )       // input

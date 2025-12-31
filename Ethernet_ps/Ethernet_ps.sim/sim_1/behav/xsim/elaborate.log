@@ -1,0 +1,16 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/xmen/Music/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_12 -L uvm -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'valid_rx_in' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:38]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 8 for port 'data_tx_in' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:43]
+WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 128 for port 'probe0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:47]
+WARNING: [VRFC 10-3818] variable 'tb_uart_data_tx_in' is driven by invalid combination of procedural drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:29]
+WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block should not be driven by any other process [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:128]
+WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
+WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

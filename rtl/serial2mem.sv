@@ -125,7 +125,7 @@ ram_single_port mem (
             mem_fsm            <= next_mem_fsm                                                                                                 ;
             cnt                <= mem_fsm != DONE ? next_cnt         :    0                                                                    ;
             cnt_shift          <= mem_fsm != DONE ? next_cnt_shift   :    0                                                                    ;
-            single_port_ram_di_reg <= single_port_ram_en ? single_port_ram_di:single_port_ram_di_reg;
+            single_port_ram_di_reg <=  (cnt_shift == SIZE-1) && uart_ready_rx_out && !last_uart_ready_rx&& single_port_ram_en? buf_data : single_port_ram_di_reg;
 
         end
     end
@@ -221,7 +221,7 @@ ram_single_port mem (
 	.probe4(rready_i), // input wire [0:0]  probe4 
 	.probe5(rvalid_o), // input wire [0:0]  probe5 
 	.probe6(ready_o), // input wire [0:0]  probe6 
-	.probe7(ready_o), // input wire [0:0]  probe7 
+	.probe7(single_port_ram_en), // input wire [0:0]  probe7 
 	.probe8(in_data), // input wire [3:0]  probe8 
 	.probe9(out_data), // input wire [63:0]  probe9 
 	.probe10(single_port_ram_di_reg) // input wire [63:0]  probe10

@@ -21,5 +21,3 @@ set_property -dict {LOC G9  IOSTANDARD LVDS} [get_ports clk_125mhz_n]
 create_clock -period 5.000 -name clk_125mhz [get_ports clk_125mhz_p]
 
 #set_property IOSTANDARD LVCMOS12 [get_ports s_axi_bvalid_0]
-
-set_property INTERNAL TRUE [get_ports s_axi_bvalid_0]

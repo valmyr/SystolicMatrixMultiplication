@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

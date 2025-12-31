@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Linux")
 set(CMAKE_HOST_SYSTEM_VERSION "4.18.0-553.89.1.el8_10.x86_64")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/cortexa53_toolchain.cmake")
+include("/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/cortexa53_toolchain.cmake")
 
 set(CMAKE_SYSTEM "FreeRTOS")
 set(CMAKE_SYSTEM_NAME "FreeRTOS")

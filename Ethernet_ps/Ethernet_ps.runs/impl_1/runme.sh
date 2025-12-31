@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xmen/TESTE_FINAL/Ethernet_ps/Ethernet_ps.runs/impl_1'
+HD_PWD='/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -38,7 +38,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log zynq_wrapper_systolic.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source zynq_wrapper_systolic.tcl -notrace
 
 

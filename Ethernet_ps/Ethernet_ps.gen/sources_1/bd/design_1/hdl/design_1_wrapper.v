@@ -48,21 +48,27 @@ design_1 design_1_i
 ); 
 wire [7:0]data_input;
 wire enable_write;
-assign data_input = GPIO_0_tri_o[15:1];
+assign data_input = GPIO_0_tri_o[9:1];
 assign enable_write =GPIO_0_tri_o[0];
 reg last_enable_write;
 wire valid_data;
 reg reg_valid_data;
 reg [7:0]data;
-assign valid_data = enable_write && !last_enable_write;
+reg [63:0] d;
+reg [3:0]counter ;
+//assign valid_data = enable_write && !last_enable_write;
 always@(posedge clk, negedge nreset)begin
     if(!nreset)begin
+        counter <= 0;
         last_enable_write <= 0;
         reg_valid_data <= 0;
+        d <=0;
     end else begin
+    counter <= enable_write && !last_enable_write ? counter +1: counter;
         last_enable_write <= enable_write;
-        reg_valid_data <= valid_data;
-        data <= valid_data ? data_input :data;
+        reg_valid_data <= enable_write && !last_enable_write;
+        data <= enable_write && !last_enable_write ? data_input :data;
+        d <= enable_write && !last_enable_write ? {d[63-4:0],data_input[3:0]} :d;
     end
 end
 
@@ -89,9 +95,9 @@ SystolicCoreTop #(
 
 ila_0 your_instance_name (
 	.clk(clk), // input wire clk
-	.probe0(GPIO_0_tri_o), // input wire [31:0]  probe0  
+	.probe0(data), // input wire [31:0]  probe0  
 	.probe1(reg_valid_data), // input wire [0:0]  probe1 
 	.probe2(enable_write), // input wire [0:0]  probe2 
-	.probe3(last_enable_write) // input wire [0:0]  probe3
+	.probe3(counter == 15) // input wire [0:0]  probe3
 );
 endmodule

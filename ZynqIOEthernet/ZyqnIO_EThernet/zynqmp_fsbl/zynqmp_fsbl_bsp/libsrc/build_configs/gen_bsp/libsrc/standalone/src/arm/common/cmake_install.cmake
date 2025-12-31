@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/standalone/src/arm/common
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/standalone/src/arm/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/common/gcc/cmake_install.cmake")
+  include("/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/common/gcc/cmake_install.cmake")
 endif()
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/Desktop/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/xiltimer/src/core/ttcps
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/ZynqIOEthernet/ZyqnIO_EThernet/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/xiltimer/src/core/ttcps
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

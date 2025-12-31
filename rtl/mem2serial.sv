@@ -10,8 +10,7 @@ module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     (*dont_touch = "true"*) 
     output logic [WIDTH-1:0]      smatrix_out                     
 );
-(*dont_touch = "true"*) 
-logic [WIDTH-1:0] pmatrix  [SIZE-1:0][SIZE-1:0]    ;
+
 
 enum {IDLE_INDEX,COUNTER_INDEX,DONE_INDEX} mem2seriala_fsm,next_mem2seriala_fsm;
 logic [$clog2(SIZE)-1:0] i_counter, j_counter;
@@ -25,8 +24,8 @@ always_ff@(posedge clock, negedge nreset)begin
         i_counter        <=next_i_counter; 
         j_counter        <=next_j_counter;
         mem2seriala_fsm  <= next_mem2seriala_fsm;
-        (*dont_touch = "true"*) 
-        pmatrix  <= pmatrix_in;
+ //       (*dont_touch = "true"*) 
+//        pmatrix  <= pmatrix_in;
 
     end
 end
