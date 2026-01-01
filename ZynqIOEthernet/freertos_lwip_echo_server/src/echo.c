@@ -24,11 +24,6 @@ Project 2: send and receive signals
  * xparameters.h file. They are defined here such that a user can easily
  * change all the needed parameters in one place.
  */
-#ifndef SDT
-#define GPIO_EXAMPLE_DEVICE_ID  XPAR_GPIO_0_DEVICE_ID
-#else
-#define	XGPIO_AXI_BASEADDRESS	XPAR_XGPIO_0_BASEADDR
-#endif
 
 #define THREAD_STACKSIZE 1024
 /*
@@ -64,8 +59,10 @@ void process_echo_request(void *p)
     const int MULTIPLIER = 2;                  // Constant to multiply signal samples
     XGpio Gpio_output;
     XGpio Gpio_input;
-	Status1 = XGpio_Initialize(&Gpio_output, XGPIO_AXI_BASEADDRESS);
-	Status2 = XGpio_Initialize(&Gpio_input, XGPIO_AXI_BASEADDRESS);
+	int DataRead ;
+
+	Status1 = XGpio_Initialize(&Gpio_output, XPAR_XGPIO_0_BASEADDR);
+	Status2 = XGpio_Initialize(&Gpio_input, XPAR_XGPIO_0_BASEADDR);
 	if (Status1 != XST_SUCCESS) {
 		xil_printf("Gpio_output Initialization Failed\r\n");
 		//return XST_FAILURE;
@@ -75,7 +72,10 @@ void process_echo_request(void *p)
 		//return XST_FAILURE;
 	}
 	XGpio_SetDataDirection(&Gpio_output, 1, 0x00000000);
-	XGpio_SetDataDirection(&Gpio_input, 1, 0xFFFFFFFF);
+	xil_printf("debug --");
+	XGpio_SetDataDirection(&Gpio_input, 2, 0xFFFFFFFF);
+	xil_printf("debug --");
+
 	int temp;
 	int k = 0;
 	int counter = 0;
@@ -122,19 +122,23 @@ void process_echo_request(void *p)
 		if(counter==2){
 			xil_printf("Read out matrix...\n");
 			for(int i = 0; i <256; i++){
-				//DataRead = XGpio_DiscreteRead(&Gpio_input, 1);
-	    	    if ((nwrote = write(sd, &i, SEND_BUF_SIZE)) < 0) {
+				DataRead = XGpio_DiscreteRead(&Gpio_input, 1);
+				xil_printf("%d",DataRead);
+				while(~DataRead & 0x00000001)
+					xil_printf("...wait response systolic...\n");
+				int mask_appl = (DataRead & 0x0000001f6) >> 1;
+	    	    if ((nwrote = write(sd, &mask_appl, SEND_BUF_SIZE)) < 0) {
         		    xil_printf("%s: ERROR responding to client signal processing request. received = %d, written = %d\r\n",
         		            __FUNCTION__, n, nwrote);
         		    xil_printf("Closing socket %d\r\n", sd);
         		    break;
         		}
-				xil_printf("\n%d %d",i,i);
-				//xil_printf("\n%d %d\n",DataRead,i);
+				//sleep(1);
+				xil_printf("\n%d %d\n",DataRead,i);
 			}
 		}
 		if(nwrote < 0 )
-		break;
+			break;
     }
 
     /* close connection */

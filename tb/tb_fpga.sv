@@ -1,3 +1,4 @@
+/// Lembre-se altere o clock da uart
 `timescale 1ns / 100ps
 module tb;    
   logic clock   , nreset;

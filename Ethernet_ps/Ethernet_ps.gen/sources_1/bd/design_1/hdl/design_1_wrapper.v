@@ -51,11 +51,13 @@ reg [7:0]data;
 reg [63:0] d;
 reg [3:0]counter ;
 //assign valid_data = enable_write && !last_enable_write;
+reg [15:0] counter_clock;
 always@(posedge clk, negedge nreset)begin
     if(!nreset)begin
         counter <= 0;
         last_enable_write <= 0;
         reg_valid_data <= 0;
+        counter_clock <= 0;
         d <=0;
     end else begin
     counter <= enable_write && !last_enable_write ? counter +1: counter;
@@ -63,8 +65,10 @@ always@(posedge clk, negedge nreset)begin
         reg_valid_data <= enable_write && !last_enable_write;
         data <= enable_write && !last_enable_write ? data_input :data;
         d <= enable_write && !last_enable_write ? {d[63-4:0],data_input[3:0]} :d;
+        counter_clock <= counter_clock +1;
     end
 end
+
 
 
 
@@ -90,8 +94,8 @@ end
           .uart_data_rx_out    (data              )      ,// input 8 Bits / 1 Byte
           .uart_data_tx_in     (GPIO_1_tri_i[9:1] )      ,// output 8 Bits
           .uart_valid_rx_in    (                  )      ,// input
-          .uart_valid_tx_in    (                  )      ,// output 
-          .uart_ready_tx_out   (clk                 )      ,// input
+          .uart_valid_tx_in    (GPIO_1_tri_i[0]   )      ,// output 
+          .uart_ready_tx_out   (clk               )      ,// input
           .uart_ready_rx_out   (reg_valid_data    )       // input
     
   );
@@ -100,8 +104,8 @@ end
   
   ila_0 your_instance_name (
   	.clk(clk), // input wire clk
-  	.probe0(data), // input wire [31:0]  probe0  
-  	.probe1(reg_valid_data), // input wire [0:0]  probe1 
+  	.probe0(GPIO_1_tri_i[9:1]), // input wire [31:0]  probe0  
+  	.probe1(GPIO_1_tri_i[0]), // input wire [0:0]  probe1 
   	.probe2(enable_write), // input wire [0:0]  probe2 
   	.probe3(counter == 15) // input wire [0:0]  probe3
   );

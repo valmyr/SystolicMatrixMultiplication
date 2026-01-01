@@ -13,4 +13,32 @@ WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block sh
 WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
 WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/src/uart_rx.v" Line 29. Module uart_rx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/src/uart_tx.v" Line 29. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/src/uart_rx.v" Line 29. Module uart_rx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/src/uart_tx.v" Line 29. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_rx_default
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.uart_top
+Compiling module xil_defaultlib.accumulator_cells(WIDTH=8)
+Compiling module xil_defaultlib.systolicMatrixMultiply(SIZE=16)
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_output_stage...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_output_stage...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_softecc_outp...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_mem_module(C...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12(C_FAMILY="zy...
+Compiling module xil_defaultlib.ram_dual_port
+Compiling module xil_defaultlib.ila_2
+Compiling module xil_defaultlib.serial2mem(SIZE=16)
+Compiling module xil_defaultlib.mem2seriala(SIZE=16)
+Compiling module xil_defaultlib.ila_0
+Compiling module xil_defaultlib.systolicControlUnitTop
+Compiling module xil_defaultlib.ila_1
+Compiling module xil_defaultlib.SystolicCoreTop(SIZE=16)
+Compiling module xil_defaultlib.Arty7_top_sim
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav

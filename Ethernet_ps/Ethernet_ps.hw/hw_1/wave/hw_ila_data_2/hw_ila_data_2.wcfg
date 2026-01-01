@@ -10,83 +10,90 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="13"></ZoomEndTime>
+      <ZoomEndTime time="5"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="806"></NameColumnWidth>
-      <ValueColumnWidth column_width="431"></ValueColumnWidth>
+      <ValueColumnWidth column_width="375"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
-   <wvobject type="array" fp_name="SystolicCore0/serial2mem_opB/in_data">
+   <WVObjectSize size="11" />
+   <wvobject type="array" fp_name="SystolicCore0/serial2mem_opA/in_data">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/in_data[3:0]</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/in_data[3:0]</obj_property>
       <obj_property name="ObjectShortName">in_data[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opB/nreset">
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/nreset">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/nreset</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/nreset</obj_property>
       <obj_property name="ObjectShortName">nreset</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="SystolicCore0/serial2mem_opB/out_data">
+   <wvobject type="array" fp_name="SystolicCore0/serial2mem_opA/out_data">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/out_data[63:0]</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/out_data[63:0]</obj_property>
       <obj_property name="ObjectShortName">out_data[63:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opB/ready_o">
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/ready_o">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/ready_o</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/ready_o</obj_property>
       <obj_property name="ObjectShortName">ready_o</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opB/rready_i">
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/rready_i">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/rready_i</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/rready_i</obj_property>
       <obj_property name="ObjectShortName">rready_i</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opB/rvalid_o">
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/rvalid_o">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/rvalid_o</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/rvalid_o</obj_property>
       <obj_property name="ObjectShortName">rvalid_o</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opB/rw">
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/rw">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/rw</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/rw</obj_property>
       <obj_property name="ObjectShortName">rw</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="SystolicCore0/serial2mem_opB/single_port_ram_di_reg">
+   <wvobject type="array" fp_name="SystolicCore0/serial2mem_opA/single_port_ram_di_reg">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/single_port_ram_di_reg[63:0]</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/single_port_ram_di_reg[63:0]</obj_property>
       <obj_property name="ObjectShortName">single_port_ram_di_reg[63:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opB/uart_ready_rx_out">
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/single_port_ram_en">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/uart_ready_rx_out</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/single_port_ram_en</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_en</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/uart_ready_rx_out">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/uart_ready_rx_out</obj_property>
       <obj_property name="ObjectShortName">uart_ready_rx_out</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opB/valid_i">
+   <wvobject type="logic" fp_name="SystolicCore0/serial2mem_opA/valid_i">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opB/valid_i</obj_property>
+      <obj_property name="ElementShortName">SystolicCore0/serial2mem_opA/valid_i</obj_property>
       <obj_property name="ObjectShortName">valid_i</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>

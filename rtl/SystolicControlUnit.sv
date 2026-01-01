@@ -44,7 +44,7 @@ ila_0 your_instance_name (
 	.clk(clock), // input wire clk
 
 
-	.probe0({frame_start,uart_ready_rx}), // input wire [127:0]  probe0  
+	.probe0({mem2serial_valid_i,fsm_unit_control,frame_start,uart_ready_rx}), // input wire [127:0]  probe0  
 	.probe1((uart_ready_rx && !last_uart_ready_rx)), // input wire [0:0]  probe1 
 	.probe2(last_uart_ready_rx), // input wire [0:0]  probe2 
 	.probe3(uart_ready_rx) // input wire [0:0]  probe3
@@ -173,6 +173,7 @@ always_comb case(fsm_unit_control)
         starting_frame_identified     = 0;
     end
     IDLE_PC:begin
+       // if({frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
         if({frame_start[7:0],uart_data_rx_out} == 16'heaea)begin
             fsm_unit_control_next   = WRITE_MEM_OUT             ;            
             uart_valid_tx_in        =  0                        ;

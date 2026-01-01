@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Dec 31 15:59:16 2025
+| Date         : Thu Jan  1 00:57:08 2026
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_drc -file zynq_wrapper_systolic_drc_routed.rpt -pb zynq_wrapper_systolic_drc_routed.pb -rpx zynq_wrapper_systolic_drc_routed.rpx
 | Design       : zynq_wrapper_systolic
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 15
+             Checks found: 39
 +-----------+----------+--------------------------------------+--------+
 | Rule      | Severity | Description                          | Checks |
 +-----------+----------+--------------------------------------+--------+
 | PDCN-1569 | Warning  | LUT equation term check              | 3      |
-| PDRC-153  | Warning  | Gated clock check                    | 9      |
+| PDRC-153  | Warning  | Gated clock check                    | 33     |
 | REQP-1935 | Warning  | RAMB36E2_nochange_collision_advisory | 2      |
 | RTSTAT-10 | Warning  | No routable loads                    | 1      |
 +-----------+----------+--------------------------------------+--------+
@@ -38,62 +38,182 @@ Table of Contents
 -----------------
 PDCN-1569#1 Warning
 LUT equation term check  
-Used physical LUT pin 'A1' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I0) is not included in the LUT equation: 'O5=(A3*A2)+(A3*(~A2)*(~A4))+((~A3))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A2' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I0) is not included in the LUT equation: 'O5=(A4*A5)+(A4*(~A5)*(~A1))+((~A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#2 Warning
 LUT equation term check  
-Used physical LUT pin 'A5' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I1) is not included in the LUT equation: 'O5=(A3*A2)+(A3*(~A2)*(~A4))+((~A3))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A3' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I1) is not included in the LUT equation: 'O5=(A4*A5)+(A4*(~A5)*(~A1))+((~A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#3 Warning
 LUT equation term check  
-Used physical LUT pin 'A5' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1/I0) is not included in the LUT equation: 'O6=(A6+~A6)*((A2))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A5' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1/I0) is not included in the LUT equation: 'O6=(A6+~A6)*((A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg_i_2/O, cell SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[0]_i_3_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[0]_i_3/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[0]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net data[0]_i_2_n_2 is a gated clock net sourced by a combinational pin data[0]_i_2/O, cell data[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[10]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[10]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[10]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net data[1]_i_2_n_2 is a gated clock net sourced by a combinational pin data[1]_i_2/O, cell data[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[11]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[11]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[11]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net data[2]_i_2_n_2 is a gated clock net sourced by a combinational pin data[2]_i_2/O, cell data[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[12]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[12]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[12]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net data[3]_i_2_n_2 is a gated clock net sourced by a combinational pin data[3]_i_2/O, cell data[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[13]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[13]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[13]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net data[4]_i_2_n_2 is a gated clock net sourced by a combinational pin data[4]_i_2/O, cell data[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[14]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[14]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[14]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net data[5]_i_2_n_2 is a gated clock net sourced by a combinational pin data[5]_i_2/O, cell data[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[15]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[15]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net data[6]_i_2_n_2 is a gated clock net sourced by a combinational pin data[6]_i_2/O, cell data[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[16]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[16]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#9 Warning
 Gated clock check  
-Net data[7]_i_2_n_2 is a gated clock net sourced by a combinational pin data[7]_i_2/O, cell data[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[17]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[17]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[17]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[18]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[18]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[18]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[19]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[19]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[19]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[1]_i_3_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[1]_i_3/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[1]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#13 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[20]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[20]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[20]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#14 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[21]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[21]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[21]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#15 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[22]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[22]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[22]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#16 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[23]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[23]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#17 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[24]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[24]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[24]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#18 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[25]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[25]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[25]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#19 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[26]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[26]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[26]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#20 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[27]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[27]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[27]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#21 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[28]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[28]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[28]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#22 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[29]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[29]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[29]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#23 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[2]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[2]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#24 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[30]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[30]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[30]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#25 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[31]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[31]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[31]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#26 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[3]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[3]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#27 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[4]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[4]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#28 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[5]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[5]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#29 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[6]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[6]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#30 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[7]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[7]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#31 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[8]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[8]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[8]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#32 Warning
+Gated clock check  
+Net SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[9]_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[9]_i_2/O, cell SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[9]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#33 Warning
+Gated clock check  
+Net SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg_i_2_n_2 is a gated clock net sourced by a combinational pin SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg_i_2/O, cell SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 REQP-1935#1 Warning
@@ -108,22 +228,22 @@ Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-68 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1],
+57 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1],
 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2],
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[0],
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2],
 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0],
 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1],
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TMS,
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0],
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0],
-dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0],
-design_1_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/mi_handler_m_sc_areset_pipe,
-design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/mi_handler_m_sc_areset_pipe,
-design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/mi_handler_m_sc_areset_pipe,
-design_1_i/axi_smc/inst/m00_nodes/m00_w_node/inst/mi_handler_m_sc_areset_pipe,
-design_1_i/axi_smc/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe,
-design_1_i/axi_smc/inst/m01_nodes/m01_w_node/inst/mi_handler_m_sc_areset_pipe,
-design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst/mi_handler_m_sc_areset_pipe
- (the first 15 of 66 listed nets/buses).
+dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0]
+ (the first 15 of 55 listed nets/buses).
 Related violations: <none>
 
 

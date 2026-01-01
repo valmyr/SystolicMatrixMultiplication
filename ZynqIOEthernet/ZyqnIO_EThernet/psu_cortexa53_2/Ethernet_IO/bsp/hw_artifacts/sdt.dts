@@ -4256,11 +4256,11 @@
                         #gpio-cells = <0x2>;
                         xlnx,gpio-width = <0x10>;
                         xlnx,dout-default = <0x0>;
-                        xlnx,is-dual = <0x0>;
+                        xlnx,is-dual = <0x1>;
                         xlnx,ip-name = "axi_gpio";
                         xlnx,tri-default-2 = <0xffffffff>;
                         reg = <0x0 0xa0000000 0x0 0x10000>;
-                        xlnx,all-inputs-2 = <0x0>;
+                        xlnx,all-inputs-2 = <0x1>;
                         clocks = <&zynqmp_clk 0x47>;
                         xlnx,all-outputs-2 = <0x0>;
                         gpio-controller;
@@ -4269,7 +4269,7 @@
                         xlnx,edk-iptype = "PERIPHERAL";
                         xlnx,dout-default-2 = <0x0>;
                         status = "okay";
-                        xlnx,gpio2-width = <0x20>;
+                        xlnx,gpio2-width = <0x10>;
                         clock-names = "s_axi_aclk";
                         xlnx,use-board-flow;
                         xlnx,tri-default = <0xffffffff>;
