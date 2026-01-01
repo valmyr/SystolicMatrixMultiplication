@@ -25,42 +25,36 @@ int main()
     print("Successfully ran Hello World application\n");
     
         /* Initialize the GPIO driver */
-    #ifndef SDT
-        Status = XGpio_Initialize(&Gpio, GPIO_EXAMPLE_DEVICE_ID);
-        print("Initialized GPIO at GPIO_EXAMPLE_DEVICE_ID\n\r");
-    #else
-        Status = XGpio_Initialize(&Gpio, XPAR_XGPIO_0_BASEADDR);
-        print("Initialized GPIO at base address\n\r");
-    #endif
-        if (Status != XST_SUCCESS) {
-            xil_printf("Gpio Initialization Failed\r\n");
-            return XST_FAILURE;
-        }
  
+    Status = XGpio_Initialize(&Gpio, XPAR_AXI_GPIO_0_BASEADDR);
+    xil_printf("%d\n\r",Status);
+    Status = XGpio_Initialize(&Gpio, XPAR_AXI_GPIO_1_BASEADDR);
+
 	xil_printf("%d\n\r",Status);
  
     print("\nSetting the direction for LED signals\n\r");
-	//XGpio_SetDataDirection(&Gpio, LED_CHANNEL, ~LED);
+	//XGpio_SetDataDirection(&Gpio, 1, ~LED);
+	XGpio_SetDataDirection(&Gpio, 2, LED);
     print("\n/Have set the direction for LED signals\n\r");
  
     while (0) {
         print("Inside loop\n\r");
-    	u32 switches = XGpio_DiscreteRead(&Gpio,SWITCH_CHANNEL);
-		XGpio_DiscreteWrite(&Gpio, LED_CHANNEL, switches);
+    	u32 switches = XGpio_DiscreteRead(&Gpio,2);
+		XGpio_DiscreteWrite(&Gpio, 1, switches);
 		xil_printf("checked! %x\n\r",switches);
-        sleep (1);
+       // sleep (1);
     }
  
 	while (1) {
         print("Inside LED blink loop\n\r");
 		/* Set the LED to High */
-		XGpio_DiscreteWrite(&Gpio, LED_CHANNEL, LED);
+		XGpio_DiscreteWrite(&Gpio, 1, LED);
  
 		/* Wait a small amount of time so the LED is visible */
 		for (Delay = 0; Delay < LED_DELAY; Delay++);
  
 		/* Clear the LED bit */
-		XGpio_DiscreteClear(&Gpio, LED_CHANNEL, LED);
+		XGpio_DiscreteClear(&Gpio, 1, LED);
  
 		/* Wait a small amount of time so the LED is visible */
 		for (Delay = 0; Delay < LED_DELAY; Delay++);

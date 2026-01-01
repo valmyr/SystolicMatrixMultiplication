@@ -4,7 +4,7 @@ Project 2: send and receive signals
 
 #include <stdio.h>
 #include <string.h>
-
+			#include "xil_io.h"
 
 #include "xparameters.h"
 #include "lwip/sockets.h"
@@ -18,7 +18,8 @@ Project 2: send and receive signals
 #include "sleep.h"
 #include <xgpio.h>
 #include <xil_printf.h>
-
+#define XPAR_AXI_GPIO_0_BASEADDR 0xA0000000
+#define XPAR_AXI_GPIO_1_BASEADDR 0xA0010000
 /*
  * The following constants map to the XPAR parameters created in the
  * xparameters.h file. They are defined here such that a user can easily
@@ -61,20 +62,16 @@ void process_echo_request(void *p)
     XGpio Gpio_input;
 	int DataRead ;
 
-	Status1 = XGpio_Initialize(&Gpio_output, XPAR_XGPIO_0_BASEADDR);
-	Status2 = XGpio_Initialize(&Gpio_input, XPAR_XGPIO_0_BASEADDR);
+	Status1 = XGpio_Initialize(&Gpio_output, XPAR_AXI_GPIO_0_BASEADDR);
+
+	XGpio_SetDataDirection(&Gpio_output, 1, 0x00000000);
+	xil_printf("debug --");
+
 	if (Status1 != XST_SUCCESS) {
 		xil_printf("Gpio_output Initialization Failed\r\n");
 		//return XST_FAILURE;
 	}
-	if (Status2 != XST_SUCCESS) {
-		xil_printf("Gpio_input Initialization Failed\r\n");
-		//return XST_FAILURE;
-	}
-	XGpio_SetDataDirection(&Gpio_output, 1, 0x00000000);
-	xil_printf("debug --");
-	XGpio_SetDataDirection(&Gpio_input, 2, 0xFFFFFFFF);
-	xil_printf("debug --");
+
 
 	int temp;
 	int k = 0;
@@ -121,20 +118,33 @@ void process_echo_request(void *p)
 
 		if(counter==2){
 			xil_printf("Read out matrix...\n");
+			//Status2 = XGpio_Initialize(&Gpio_input, XPAR_XGPIO_1_BASEADDR);
+			//XGpio_SetDataDirection(&Gpio_input, 1, 0x0000FFFF);
+			//if (Status2 != XST_SUCCESS) {
+			//	xil_printf("Gpio_input Initialization Failed\r\n");
+			//	return XST_FAILURE;
+			//}
+
+
+volatile u32 test;
+
+test = Xil_In32(XPAR_AXI_GPIO_1_BASEADDR);
+			xil_printf("debug --");
+
 			for(int i = 0; i <256; i++){
-				DataRead = XGpio_DiscreteRead(&Gpio_input, 1);
-				xil_printf("%d",DataRead);
-				while(~DataRead & 0x00000001)
-					xil_printf("...wait response systolic...\n");
-				int mask_appl = (DataRead & 0x0000001f6) >> 1;
+				//DataRead = XGpio_DiscreteRead(&Gpio_input, 1);
+				//xil_printf("%d",DataRead);
+				//while(~DataRead & 0x00000001)
+				//	xil_printf("...wait response systolic...\n");
+				int mask_appl = i;//(DataRead & 0x0000001f6) ;
 	    	    if ((nwrote = write(sd, &mask_appl, SEND_BUF_SIZE)) < 0) {
         		    xil_printf("%s: ERROR responding to client signal processing request. received = %d, written = %d\r\n",
         		            __FUNCTION__, n, nwrote);
         		    xil_printf("Closing socket %d\r\n", sd);
         		    break;
         		}
-				//sleep(1);
-				xil_printf("\n%d %d\n",DataRead,i);
+				sleep(1);
+				xil_printf("\n%d %d\n",i,i);
 			}
 		}
 		if(nwrote < 0 )

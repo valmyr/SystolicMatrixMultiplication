@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Jan  1 00:54:45 2026
+| Date         : Thu Jan  1 11:25:21 2026
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_utilization -file zynq_wrapper_systolic_utilization_synth.rpt -pb zynq_wrapper_systolic_utilization_synth.pb
 | Design       : zynq_wrapper_systolic
@@ -35,10 +35,10 @@ Table of Contents
 | CLB LUTs*               | 10790 |     0 |          0 |    230400 |  4.68 |
 |   LUT as Logic          | 10790 |     0 |          0 |    230400 |  4.68 |
 |   LUT as Memory         |     0 |     0 |          0 |    101760 |  0.00 |
-| CLB Registers           |  6778 |     0 |          0 |    460800 |  1.47 |
-|   Register as Flip Flop |  6615 |     0 |          0 |    460800 |  1.44 |
+| CLB Registers           |  6785 |     0 |          0 |    460800 |  1.47 |
+|   Register as Flip Flop |  6622 |     0 |          0 |    460800 |  1.44 |
 |   Register as Latch     |   163 |     0 |          0 |    460800 |  0.04 |
-| CARRY8                  |   259 |     0 |          0 |     28800 |  0.90 |
+| CARRY8                  |   260 |     0 |          0 |     28800 |  0.90 |
 | F7 Muxes                |   272 |     0 |          0 |    115200 |  0.24 |
 | F8 Muxes                |   128 |     0 |          0 |     57600 |  0.22 |
 | F9 Muxes                |     0 |     0 |          0 |     28800 |  0.00 |
@@ -63,7 +63,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 6666  |          Yes |           - |        Reset |
+| 6673  |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 16    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -171,7 +171,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------+------+---------------------+
 |  Ref Name | Used | Functional Category |
 +-----------+------+---------------------+
-| FDCE      | 6567 |            Register |
+| FDCE      | 6574 |            Register |
 | LUT6      | 4942 |                 CLB |
 | LUT2      | 2638 |                 CLB |
 | LUT1      | 2066 |                 CLB |
@@ -179,7 +179,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT3      |  826 |                 CLB |
 | LUT5      |  812 |                 CLB |
 | MUXF7     |  272 |                 CLB |
-| CARRY8    |  259 |                 CLB |
+| CARRY8    |  260 |                 CLB |
 | LDCE      |  163 |            Register |
 | MUXF8     |  128 |                 CLB |
 | FDPE      |   32 |            Register |
@@ -205,6 +205,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | design_1_zynq_ultra_ps_e_0_0 |    1 |
 | design_1_rst_ps8_0_99M_6     |    1 |
 | design_1_axi_smc_0           |    1 |
+| design_1_axi_gpio_1_0        |    1 |
 | design_1_axi_gpio_0_1        |    1 |
 +------------------------------+------+
 

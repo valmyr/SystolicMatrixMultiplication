@@ -77,8 +77,7 @@ ENTITY design_1_axi_gpio_0_1 IS
     s_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s_axi_rvalid : OUT STD_LOGIC;
     s_axi_rready : IN STD_LOGIC;
-    gpio_io_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-    gpio2_io_i : IN STD_LOGIC_VECTOR(15 DOWNTO 0)
+    gpio_io_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END design_1_axi_gpio_0_1;
 
@@ -135,9 +134,6 @@ ARCHITECTURE design_1_axi_gpio_0_1_arch OF design_1_axi_gpio_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF gpio2_io_i: SIGNAL IS "xilinx.com:interface:gpio:1.0 GPIO2 TRI_I";
-  ATTRIBUTE X_INTERFACE_MODE OF gpio2_io_i: SIGNAL IS "master GPIO2";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF gpio2_io_i: SIGNAL IS "XIL_INTERFACENAME GPIO2, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE";
   ATTRIBUTE X_INTERFACE_INFO OF gpio_io_o: SIGNAL IS "xilinx.com:interface:gpio:1.0 GPIO TRI_O";
   ATTRIBUTE X_INTERFACE_MODE OF gpio_io_o: SIGNAL IS "master GPIO";
   ATTRIBUTE X_INTERFACE_PARAMETER OF gpio_io_o: SIGNAL IS "XIL_INTERFACENAME GPIO, BOARD.ASSOCIATED_PARAM GPIO_BOARD_INTERFACE";
@@ -176,13 +172,13 @@ BEGIN
       C_GPIO_WIDTH => 16,
       C_GPIO2_WIDTH => 16,
       C_ALL_INPUTS => 0,
-      C_ALL_INPUTS_2 => 1,
+      C_ALL_INPUTS_2 => 0,
       C_ALL_OUTPUTS => 1,
       C_ALL_OUTPUTS_2 => 0,
       C_INTERRUPT_PRESENT => 0,
       C_DOUT_DEFAULT => X"00000000",
       C_TRI_DEFAULT => X"FFFFFFFF",
-      C_IS_DUAL => 1,
+      C_IS_DUAL => 0,
       C_DOUT_DEFAULT_2 => X"00000000",
       C_TRI_DEFAULT_2 => X"FFFFFFFF"
     )
@@ -208,6 +204,6 @@ BEGIN
       s_axi_rready => s_axi_rready,
       gpio_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 16)),
       gpio_io_o => gpio_io_o,
-      gpio2_io_i => gpio2_io_i
+      gpio2_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 16))
     );
 END design_1_axi_gpio_0_1_arch;

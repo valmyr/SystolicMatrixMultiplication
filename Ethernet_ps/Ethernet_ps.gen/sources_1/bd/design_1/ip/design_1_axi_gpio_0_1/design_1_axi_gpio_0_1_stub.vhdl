@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Thu Jan  1 00:53:11 2026
+-- Date        : Thu Jan  1 01:55:02 2026
 -- Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_stub.vhdl
@@ -34,14 +34,13 @@ entity design_1_axi_gpio_0_1 is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio2_io_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    gpio_io_o : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
 
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of design_1_axi_gpio_0_1 : entity is "design_1_axi_gpio_0_1,axi_gpio,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of design_1_axi_gpio_0_1 : entity is "design_1_axi_gpio_0_1,axi_gpio,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_gpio,x_ipVersion=2.0,x_ipCoreRevision=37,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynquplus,C_S_AXI_ADDR_WIDTH=9,C_S_AXI_DATA_WIDTH=32,C_GPIO_WIDTH=16,C_GPIO2_WIDTH=16,C_ALL_INPUTS=0,C_ALL_INPUTS_2=1,C_ALL_OUTPUTS=1,C_ALL_OUTPUTS_2=0,C_INTERRUPT_PRESENT=0,C_DOUT_DEFAULT=0x00000000,C_TRI_DEFAULT=0xFFFFFFFF,C_IS_DUAL=1,C_DOUT_DEFAULT_2=0x00000000,C_TRI_DEFAULT_2=0xFFFFFFFF}";
+  attribute core_generation_info of design_1_axi_gpio_0_1 : entity is "design_1_axi_gpio_0_1,axi_gpio,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_gpio,x_ipVersion=2.0,x_ipCoreRevision=37,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynquplus,C_S_AXI_ADDR_WIDTH=9,C_S_AXI_DATA_WIDTH=32,C_GPIO_WIDTH=16,C_GPIO2_WIDTH=16,C_ALL_INPUTS=0,C_ALL_INPUTS_2=0,C_ALL_OUTPUTS=1,C_ALL_OUTPUTS_2=0,C_INTERRUPT_PRESENT=0,C_DOUT_DEFAULT=0x00000000,C_TRI_DEFAULT=0xFFFFFFFF,C_IS_DUAL=0,C_DOUT_DEFAULT_2=0x00000000,C_TRI_DEFAULT_2=0xFFFFFFFF}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of design_1_axi_gpio_0_1 : entity is "yes";
 end design_1_axi_gpio_0_1;
@@ -50,7 +49,7 @@ architecture stub of design_1_axi_gpio_0_1 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "s_axi_aclk,s_axi_aresetn,s_axi_awaddr[8:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[8:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,gpio_io_o[15:0],gpio2_io_i[15:0]";
+  attribute black_box_pad_pin of stub : architecture is "s_axi_aclk,s_axi_aresetn,s_axi_awaddr[8:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[8:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,gpio_io_o[15:0]";
   attribute x_interface_info : string;
   attribute x_interface_info of s_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK";
   attribute x_interface_mode : string;
@@ -82,9 +81,6 @@ architecture stub of design_1_axi_gpio_0_1 is
   attribute x_interface_info of gpio_io_o : signal is "xilinx.com:interface:gpio:1.0 GPIO TRI_O";
   attribute x_interface_mode of gpio_io_o : signal is "master GPIO";
   attribute x_interface_parameter of gpio_io_o : signal is "XIL_INTERFACENAME GPIO, BOARD.ASSOCIATED_PARAM GPIO_BOARD_INTERFACE";
-  attribute x_interface_info of gpio2_io_i : signal is "xilinx.com:interface:gpio:1.0 GPIO2 TRI_I";
-  attribute x_interface_mode of gpio2_io_i : signal is "master GPIO2";
-  attribute x_interface_parameter of gpio2_io_i : signal is "XIL_INTERFACENAME GPIO2, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE";
   attribute x_core_info : string;
   attribute x_core_info of stub : architecture is "axi_gpio,Vivado 2025.2";
 begin

@@ -7,7 +7,7 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Thu Jan  1 00:53:55 2026
+  **** Start of session at: Thu Jan  1 11:24:31 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -27,30 +27,34 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 449592
+INFO: [Synth 8-7075] Helper process launched with PID 1473896
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3220.523 ; gain = 146.688 ; free physical = 6821 ; free virtual = 58753
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3230.434 ; gain = 147.688 ; free physical = 1487 ; free virtual = 55871
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'uart_clock', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:127]
 INFO: [Synth 8-11241] undeclared symbol 'uart_nreset', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:136]
 INFO: [Synth 8-6157] synthesizing module 'zynq_wrapper_systolic' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:24]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:104]
-WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:104]
-WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 60 connections declared, but only 58 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:104]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps8_0_99M_6' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps8_0_99M_6' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:163]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:163]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:163]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:163]
-WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'design_1_rst_ps8_0_99M_6' has 10 connections declared, but only 6 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:163]
-INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_1_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_1_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
+WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
+WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
+WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 79 connections declared, but only 75 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps8_0_99M_6' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps8_0_99M_6' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'design_1_rst_ps8_0_99M_6' has 10 connections declared, but only 6 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
+INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'design_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:13]
 INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:82819]
 	Parameter DIFF_TERM bound to: TRUE - type: string 
@@ -105,32 +109,32 @@ INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/h
 INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
 	Parameter WIDTH bound to: 4 - type: integer 
 	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ram_dual_port_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ram_dual_port_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ram_dual_port_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ram_dual_port_stub.v:6]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:213]
-INFO: [Synth 8-6157] synthesizing module 'ila_2' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_2' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_2' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_2' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_2_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:1]
 	Parameter SIZE bound to: 16 - type: integer 
 	Parameter WIDTH bound to: 8 - type: integer 
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:82]
-INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_3_stub.v:6]
 WARNING: [Synth 8-689] width (4) of port connection 'probe1' does not match port width (8) of module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:87]
 WARNING: [Synth 8-689] width (4) of port connection 'probe2' does not match port width (8) of module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:88]
 WARNING: [Synth 8-689] width (32) of port connection 'probe3' does not match port width (8) of module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:89]
 INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:1]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:43]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_0_stub.v:6]
 WARNING: [Synth 8-689] width (66) of port connection 'probe0' does not match port width (128) of module 'ila_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:47]
 INFO: [Synth 8-226] default block is never used [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:96]
 INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:1]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:304]
-INFO: [Synth 8-6157] synthesizing module 'ila_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-449504-VT0144/realtime/ila_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'SystolicCoreTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:23]
 WARNING: [Synth 8-689] width (9) of port connection 'uart_data_tx_in' does not match port width (8) of module 'SystolicCoreTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:95]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:105]
@@ -161,18 +165,18 @@ WARNING: [Synth 8-7129] Port serial2mem_opb_rvalid_o in module systolicControlUn
 WARNING: [Synth 8-7129] Port serial2mem_opa_ready_o in module systolicControlUnitTop is either unconnected or has no load
 WARNING: [Synth 8-7129] Port uart_valid_rx_in in module SystolicCoreTop is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3369.461 ; gain = 295.625 ; free physical = 6656 ; free virtual = 58590
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3378.371 ; gain = 295.625 ; free physical = 1644 ; free virtual = 55735
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3369.461 ; gain = 295.625 ; free physical = 6656 ; free virtual = 58590
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3378.371 ; gain = 295.625 ; free physical = 1644 ; free virtual = 55736
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3369.461 ; gain = 295.625 ; free physical = 6656 ; free virtual = 58590
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3378.371 ; gain = 295.625 ; free physical = 1644 ; free virtual = 55736
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3369.461 ; gain = 0.000 ; free physical = 6655 ; free virtual = 58589
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3378.371 ; gain = 0.000 ; free physical = 1645 ; free virtual = 55737
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -189,6 +193,8 @@ Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_99M'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_99M'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_in_context.xdc] for cell 'design_1_i/axi_gpio_1'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_in_context.xdc] for cell 'design_1_i/axi_gpio_1'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'your_instance_name'
@@ -213,12 +219,12 @@ Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3453.293 ; gain = 0.000 ; free physical = 7928 ; free virtual = 59861
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3471.609 ; gain = 0.000 ; free physical = 2468 ; free virtual = 56559
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3453.328 ; gain = 0.000 ; free physical = 7927 ; free virtual = 59860
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3471.645 ; gain = 0.000 ; free physical = 2468 ; free virtual = 56559
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/mem2serial_transfer_pc/your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
@@ -230,7 +236,7 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3453.328 ; gain = 379.492 ; free physical = 7952 ; free virtual = 59886
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3471.645 ; gain = 388.898 ; free physical = 2466 ; free virtual = 56557
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -238,13 +244,13 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3461.297 ; gain = 387.461 ; free physical = 7951 ; free virtual = 59885
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3479.613 ; gain = 396.867 ; free physical = 2466 ; free virtual = 56557
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3461.297 ; gain = 387.461 ; free physical = 7949 ; free virtual = 59882
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3479.613 ; gain = 396.867 ; free physical = 2466 ; free virtual = 56557
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'currentStateSystolicControlUnit_reg' in module 'systolicMatrixMultiply'
 ---------------------------------------------------------------------------------------------------
@@ -261,7 +267,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/ho
 WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:64]
 WARNING: [Synth 8-327] inferring latch for variable 'starting_frame_identified_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:72]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3461.297 ; gain = 387.461 ; free physical = 7945 ; free virtual = 59881
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3479.613 ; gain = 396.867 ; free physical = 2563 ; free virtual = 56656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -317,25 +323,25 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7129] Port serial2mem_opb_rvalid_o in module systolicControlUnitTop is either unconnected or has no load
 WARNING: [Synth 8-7129] Port serial2mem_opa_ready_o in module systolicControlUnitTop is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3732.664 ; gain = 658.828 ; free physical = 7645 ; free virtual = 59593
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3737.152 ; gain = 654.406 ; free physical = 2168 ; free virtual = 56275
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 4104.102 ; gain = 1030.266 ; free physical = 7339 ; free virtual = 59286
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 4111.590 ; gain = 1028.844 ; free physical = 1857 ; free virtual = 55964
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 4394.852 ; gain = 1321.016 ; free physical = 7053 ; free virtual = 59001
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 4403.332 ; gain = 1320.586 ; free physical = 1596 ; free virtual = 55701
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 6995 ; free virtual = 58944
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1516 ; free virtual = 55621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -354,37 +360,37 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:31]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 7085 ; free virtual = 59032
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1509 ; free virtual = 55614
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 7085 ; free virtual = 59032
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1516 ; free virtual = 55621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 7060 ; free virtual = 59007
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 7058 ; free virtual = 59005
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 7037 ; free virtual = 58984
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 7030 ; free virtual = 58977
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -395,14 +401,15 @@ Report BlackBoxes:
 |      |BlackBox name                |Instances |
 +------+-----------------------------+----------+
 |1     |design_1_axi_gpio_0_1        |         1|
-|2     |design_1_axi_smc_0           |         1|
-|3     |design_1_rst_ps8_0_99M_6     |         1|
-|4     |design_1_zynq_ultra_ps_e_0_0 |         1|
-|5     |ila_0                        |         2|
-|6     |ram_dual_port                |         2|
-|7     |ila_2                        |         2|
-|8     |ila_3                        |         1|
-|9     |ila_1                        |         1|
+|2     |design_1_axi_gpio_1_0        |         1|
+|3     |design_1_axi_smc_0           |         1|
+|4     |design_1_rst_ps8_0_99M_6     |         1|
+|5     |design_1_zynq_ultra_ps_e_0_0 |         1|
+|6     |ila_0                        |         2|
+|7     |ram_dual_port                |         2|
+|8     |ila_2                        |         2|
+|9     |ila_3                        |         1|
+|10    |ila_1                        |         1|
 +------+-----------------------------+----------+
 
 Report Cell Usage: 
@@ -410,41 +417,42 @@ Report Cell Usage:
 |      |Cell                       |Count |
 +------+---------------------------+------+
 |1     |design_1_axi_gpio_0        |     1|
-|2     |design_1_axi_smc           |     1|
-|3     |design_1_rst_ps8_0_99M     |     1|
-|4     |design_1_zynq_ultra_ps_e_0 |     1|
-|5     |ila                        |     1|
-|6     |ila_0                      |     1|
-|7     |ila                        |     2|
-|9     |ila_2                      |     1|
-|10    |ila                        |     1|
-|11    |ram_dual_port              |     2|
-|13    |BUFG                       |     3|
-|14    |CARRY8                     |   259|
-|15    |LUT1                       |  2066|
-|16    |LUT2                       |  2638|
-|17    |LUT3                       |   794|
-|18    |LUT4                       |   935|
-|19    |LUT5                       |   812|
-|20    |LUT6                       |  4942|
-|21    |MUXF7                      |   272|
-|22    |MUXF8                      |   128|
-|23    |FDCE                       |  6535|
-|24    |FDCP                       |    32|
-|25    |FDRE                       |    16|
-|26    |LD                         |   131|
-|27    |IBUF                       |     1|
-|28    |IBUFDS                     |     1|
+|2     |design_1_axi_gpio_1        |     1|
+|3     |design_1_axi_smc           |     1|
+|4     |design_1_rst_ps8_0_99M     |     1|
+|5     |design_1_zynq_ultra_ps_e_0 |     1|
+|6     |ila                        |     1|
+|7     |ila_0                      |     1|
+|8     |ila                        |     2|
+|10    |ila_2                      |     1|
+|11    |ila                        |     1|
+|12    |ram_dual_port              |     2|
+|14    |BUFG                       |     3|
+|15    |CARRY8                     |   260|
+|16    |LUT1                       |  2066|
+|17    |LUT2                       |  2638|
+|18    |LUT3                       |   794|
+|19    |LUT4                       |   935|
+|20    |LUT5                       |   812|
+|21    |LUT6                       |  4942|
+|22    |MUXF7                      |   272|
+|23    |MUXF8                      |   128|
+|24    |FDCE                       |  6542|
+|25    |FDCP                       |    32|
+|26    |FDRE                       |    16|
+|27    |LD                         |   131|
+|28    |IBUF                       |     1|
+|29    |IBUFDS                     |     1|
 +------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 7027 ; free virtual = 58974
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 4449.852 ; gain = 1292.148 ; free physical = 6998 ; free virtual = 58945
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4449.852 ; gain = 1376.016 ; free physical = 6998 ; free virtual = 58945
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 4456.332 ; gain = 1280.312 ; free physical = 1517 ; free virtual = 55621
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4449.852 ; gain = 0.000 ; free physical = 7167 ; free virtual = 59115
-INFO: [Netlist 29-17] Analyzing 827 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4456.332 ; gain = 0.000 ; free physical = 1684 ; free virtual = 55789
+INFO: [Netlist 29-17] Analyzing 828 Unisim elements for replacement
 CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
@@ -578,7 +586,7 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
 WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4449.852 ; gain = 0.000 ; free physical = 7165 ; free virtual = 59113
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4456.332 ; gain = 0.000 ; free physical = 1674 ; free virtual = 55779
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 168 instances were transformed.
   BUFG => BUFGCE: 3 instances
@@ -587,15 +595,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
   LD => LDCE: 131 instances
 
-Synth Design complete | Checksum: 2bff35e8
+Synth Design complete | Checksum: 125d2a77
 INFO: [Common 17-83] Releasing license: Synthesis
-77 Infos, 85 Warnings, 32 Critical Warnings and 0 Errors encountered.
+79 Infos, 87 Warnings, 32 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 4449.852 ; gain = 2562.617 ; free physical = 7164 ; free virtual = 59112
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3499.341; main = 3300.186; forked = 285.841
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 6035.855; main = 4432.195; forked = 1641.000
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:44 . Memory (MB): peak = 4456.332 ; gain = 2560.586 ; free physical = 1674 ; free virtual = 55779
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3510.672; main = 3316.243; forked = 280.074
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 6044.340; main = 4438.676; forked = 1641.004
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4456.203 ; gain = 0.000 ; free physical = 7163 ; free virtual = 59112
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4462.684 ; gain = 0.000 ; free physical = 1674 ; free virtual = 55779
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/zynq_wrapper_systolic.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_wrapper_systolic_utilization_synth.rpt -pb zynq_wrapper_systolic_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan  1 00:54:45 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  1 11:25:21 2026...

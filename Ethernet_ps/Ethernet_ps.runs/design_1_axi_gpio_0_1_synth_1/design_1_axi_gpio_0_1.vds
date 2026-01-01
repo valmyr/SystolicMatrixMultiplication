@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Jan  1 00:52:47 2026
-# Process ID         : 448035
+# Start of session at: Thu Jan  1 01:54:37 2026
+# Process ID         : 990662
 # Current directory  : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/design_1_axi_gpio_0_1_synth_1
 # Command line       : vivado -log design_1_axi_gpio_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi_gpio_0_1.tcl
 # Log file           : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/design_1_axi_gpio_0_1_synth_1/design_1_axi_gpio_0_1.vds
@@ -13,13 +13,13 @@
 # Platform           : Rocky
 # Operating System   : Rocky Linux release 8.10 (Green Obsidian)
 # Processor Detail   : Intel(R) Core(TM) i9-14900F
-# CPU Frequency      : 2000.000 MHz
+# CPU Frequency      : 4815.228 MHz
 # CPU Physical cores : 24
 # CPU Logical cores  : 32
 # Host memory        : 67075 MB
 # Swap memory        : 14727 MB
 # Total Virtual      : 81802 MB
-# Available Virtual  : 66116 MB
+# Available Virtual  : 65106 MB
 #-----------------------------------------------------------
 source design_1_axi_gpio_0_1.tcl -notrace
 Command: synth_design -top design_1_axi_gpio_0_1 -part xczu7ev-ffvc1156-2-e -incremental_mode off -mode out_of_context
@@ -29,27 +29,27 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev
 INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 448120
+INFO: [Synth 8-7075] Helper process launched with PID 990776
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3158.812 ; gain = 148.688 ; free physical = 8960 ; free virtual = 60802
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3159.727 ; gain = 149.688 ; free physical = 3196 ; free virtual = 57845
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/synth/design_1_axi_gpio_0_1.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/synth/design_1_axi_gpio_0_1.vhd:84]
 	Parameter C_FAMILY bound to: zynquplus - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_GPIO_WIDTH bound to: 16 - type: integer 
 	Parameter C_GPIO2_WIDTH bound to: 16 - type: integer 
 	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
-	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
 	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
 	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
 	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
 	Parameter C_DOUT_DEFAULT bound to: 32'b00000000000000000000000000000000 
 	Parameter C_TRI_DEFAULT bound to: 32'b11111111111111111111111111111111 
-	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_IS_DUAL bound to: 0 - type: integer 
 	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
 	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
-INFO: [Synth 8-3491] module 'axi_gpio' declared at '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:1255' bound to instance 'U0' of component 'axi_gpio' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/synth/design_1_axi_gpio_0_1.vhd:177]
+INFO: [Synth 8-3491] module 'axi_gpio' declared at '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:1255' bound to instance 'U0' of component 'axi_gpio' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/synth/design_1_axi_gpio_0_1.vhd:173]
 INFO: [Synth 8-638] synthesizing module 'axi_gpio' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:1341]
 INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
 INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
@@ -67,57 +67,35 @@ INFO: [Synth 8-226] default block is never used [/home/xmen/Videos/RustDesk/Syst
 INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
 INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
 INFO: [Synth 8-638] synthesizing module 'GPIO_Core' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:182]
-INFO: [Synth 8-226] default block is never used [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:833]
+INFO: [Synth 8-226] default block is never used [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:447]
 	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
 	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
 	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
 	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
 	Parameter WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_array_single' declared at '/home/xmen/Music/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903' bound to instance 'INPUT_DOUBLE_REGS4' of component 'xpm_cdc_array_single' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:851]
+INFO: [Synth 8-3491] module 'xpm_cdc_array_single' declared at '/home/xmen/Music/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903' bound to instance 'INPUT_DOUBLE_REGS3' of component 'xpm_cdc_array_single' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:458]
 INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_array_single' [/home/xmen/Music/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_array_single' (0#1) [/home/xmen/Music/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-	Parameter WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_array_single' declared at '/home/xmen/Music/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903' bound to instance 'INPUT_DOUBLE_REGS5' of component 'xpm_cdc_array_single' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:880]
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:182]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:1341]
-INFO: [Synth 8-256] done synthesizing module 'design_1_axi_gpio_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/synth/design_1_axi_gpio_0_1.vhd:85]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[2].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[3].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[4].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[5].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[6].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[7].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[8].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[9].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[10].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[11].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[12].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[13].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[14].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[15].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:688]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[1].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[2].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[3].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[4].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[5].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[6].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[7].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[8].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[9].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[10].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[11].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[12].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[13].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[14].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[15].GPIO2_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:717]
-INFO: [Synth 8-6014] Unused sequential element Dual.gpio_Data_In_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:875]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_gpio_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/synth/design_1_axi_gpio_0_1.vhd:84]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[2].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[3].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[4].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[5].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[6].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[7].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[8].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[9].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[10].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[11].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[12].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[13].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[14].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GEN[15].GPIO_DBus_i_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:323]
+INFO: [Synth 8-6014] Unused sequential element Not_Dual.gpio_Data_In_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ipshared/0271/hdl/axi_gpio_v2_0_vh_rfs.vhd:485]
 INFO: [Synth 8-7129] Port src_clk in module xpm_cdc_array_single is either unconnected or has no load
 INFO: [Synth 8-7129] Port ABus_Reg[1] in module GPIO_Core is either unconnected or has no load
 INFO: [Synth 8-7129] Port ABus_Reg[2] in module GPIO_Core is either unconnected or has no load
@@ -129,6 +107,22 @@ INFO: [Synth 8-7129] Port BE_Reg[0] in module GPIO_Core is either unconnected or
 INFO: [Synth 8-7129] Port BE_Reg[1] in module GPIO_Core is either unconnected or has no load
 INFO: [Synth 8-7129] Port BE_Reg[2] in module GPIO_Core is either unconnected or has no load
 INFO: [Synth 8-7129] Port BE_Reg[3] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[0] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[1] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[2] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[3] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[4] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[5] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[6] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[7] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[8] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[9] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[10] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[11] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[12] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[13] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[14] in module GPIO_Core is either unconnected or has no load
+INFO: [Synth 8-7129] Port GPIO2_IO_I[15] in module GPIO_Core is either unconnected or has no load
 INFO: [Synth 8-7129] Port Address_In_Erly[0] in module address_decoder is either unconnected or has no load
 INFO: [Synth 8-7129] Port Address_In_Erly[1] in module address_decoder is either unconnected or has no load
 INFO: [Synth 8-7129] Port Address_In_Erly[2] in module address_decoder is either unconnected or has no load
@@ -142,18 +136,18 @@ INFO: [Synth 8-7129] Port S_AXI_WSTRB[2] in module slave_attachment is either un
 INFO: [Synth 8-7129] Port S_AXI_WSTRB[1] in module slave_attachment is either unconnected or has no load
 INFO: [Synth 8-7129] Port S_AXI_WSTRB[0] in module slave_attachment is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3253.781 ; gain = 243.656 ; free physical = 8248 ; free virtual = 60091
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3252.664 ; gain = 242.625 ; free physical = 2328 ; free virtual = 56981
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3253.781 ; gain = 243.656 ; free physical = 8228 ; free virtual = 60072
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3252.664 ; gain = 242.625 ; free physical = 2320 ; free virtual = 56971
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3253.781 ; gain = 243.656 ; free physical = 8228 ; free virtual = 60072
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3252.664 ; gain = 242.625 ; free physical = 2320 ; free virtual = 56971
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3253.781 ; gain = 0.000 ; free physical = 8219 ; free virtual = 60063
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3252.664 ; gain = 0.000 ; free physical = 2312 ; free virtual = 56963
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -166,17 +160,17 @@ Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/design_1_axi_gpio_0_1_synth_1/dont_touch.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Music/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_gpio_0_1_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_gpio_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-INFO: [Project 1-1714] 2 XPM XDC files have been applied to the design.
+INFO: [Project 1-1714] 1 XPM XDC files have been applied to the design.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3355.449 ; gain = 0.000 ; free physical = 6371 ; free virtual = 58379
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3338.496 ; gain = 0.000 ; free physical = 1012 ; free virtual = 55043
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3355.484 ; gain = 0.000 ; free physical = 6366 ; free virtual = 58379
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3338.531 ; gain = 0.000 ; free physical = 960 ; free virtual = 54991
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3355.484 ; gain = 345.359 ; free physical = 7235 ; free virtual = 59090
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3338.531 ; gain = 328.492 ; free physical = 1617 ; free virtual = 55699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -184,13 +178,13 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3363.453 ; gain = 353.328 ; free physical = 7235 ; free virtual = 59090
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3346.500 ; gain = 336.461 ; free physical = 1617 ; free virtual = 55699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3363.453 ; gain = 353.328 ; free physical = 7235 ; free virtual = 59090
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3346.500 ; gain = 336.461 ; free physical = 1618 ; free virtual = 55699
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 ---------------------------------------------------------------------------------------------------
@@ -203,7 +197,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3363.453 ; gain = 353.328 ; free physical = 7235 ; free virtual = 59091
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3346.500 ; gain = 336.461 ; free physical = 1517 ; free virtual = 55599
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -213,21 +207,20 @@ Detailed RTL Component Info :
 	   2 Input    4 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 2     
-	               16 Bit    Registers := 13    
+	               16 Bit    Registers := 6     
 	                9 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 50    
+	                1 Bit    Registers := 34    
 +---Muxes : 
 	   5 Input   32 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 3     
 	   2 Input    9 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 5     
 	   2 Input    2 Bit        Muxes := 3     
 	   3 Input    2 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 12    
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 11    
 	   4 Input    1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -265,26 +258,42 @@ INFO: [Synth 8-7129] Port s_axi_wstrb[3] in module axi_gpio is either unconnecte
 INFO: [Synth 8-7129] Port s_axi_wstrb[2] in module axi_gpio is either unconnected or has no load
 INFO: [Synth 8-7129] Port s_axi_wstrb[1] in module axi_gpio is either unconnected or has no load
 INFO: [Synth 8-7129] Port s_axi_wstrb[0] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[15] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[14] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[13] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[12] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[11] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[10] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[9] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[8] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[7] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[6] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[5] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[4] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[3] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[2] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[1] in module axi_gpio is either unconnected or has no load
+INFO: [Synth 8-7129] Port gpio2_io_i[0] in module axi_gpio is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3363.453 ; gain = 353.328 ; free physical = 7329 ; free virtual = 59185
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3346.500 ; gain = 336.461 ; free physical = 1664 ; free virtual = 55744
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3965.891 ; gain = 955.766 ; free physical = 7429 ; free virtual = 59286
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3965.234 ; gain = 955.195 ; free physical = 410 ; free virtual = 53992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3995.945 ; gain = 985.820 ; free physical = 7401 ; free virtual = 59258
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3995.281 ; gain = 985.242 ; free physical = 502 ; free virtual = 53968
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3995.945 ; gain = 985.820 ; free physical = 7401 ; free virtual = 59258
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3995.281 ; gain = 985.242 ; free physical = 500 ; free virtual = 53967
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -302,37 +311,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7239 ; free virtual = 59096
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 439 ; free virtual = 53632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7239 ; free virtual = 59096
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 439 ; free virtual = 53632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7239 ; free virtual = 59096
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 439 ; free virtual = 53632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7239 ; free virtual = 59096
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 439 ; free virtual = 53632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7239 ; free virtual = 59096
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 439 ; free virtual = 53632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7239 ; free virtual = 59096
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 439 ; free virtual = 53632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -352,37 +361,37 @@ Report Cell Usage:
 |2     |LUT2 |    10|
 |3     |LUT3 |     7|
 |4     |LUT4 |     5|
-|5     |LUT5 |    43|
-|6     |LUT6 |     7|
-|7     |FDRE |   255|
-|8     |FDSE |    17|
+|5     |LUT5 |     8|
+|6     |LUT6 |    23|
+|7     |FDRE |   159|
+|8     |FDSE |     1|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7239 ; free virtual = 59096
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 439 ; free virtual = 53632
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 4171.758 ; gain = 1059.930 ; free physical = 7231 ; free virtual = 59088
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 4171.758 ; gain = 1161.633 ; free physical = 7231 ; free virtual = 59088
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 4170.094 ; gain = 1074.188 ; free physical = 515 ; free virtual = 53710
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4170.094 ; gain = 1160.055 ; free physical = 515 ; free virtual = 53710
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4171.758 ; gain = 0.000 ; free physical = 7400 ; free virtual = 59256
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4170.094 ; gain = 0.000 ; free physical = 851 ; free virtual = 54046
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4171.758 ; gain = 0.000 ; free physical = 7503 ; free virtual = 59359
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4170.094 ; gain = 0.000 ; free physical = 968 ; free virtual = 54163
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: fd54b34f
+Synth Design complete | Checksum: 3e24a326
 INFO: [Common 17-83] Releasing license: Synthesis
-122 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+137 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 4171.758 ; gain = 2311.219 ; free physical = 7493 ; free virtual = 59349
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2999.934; main = 2999.934; forked = 285.939
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5004.461; main = 4154.102; forked = 1641.004
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4178.109 ; gain = 0.000 ; free physical = 7493 ; free virtual = 59349
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 4170.094 ; gain = 2305.938 ; free physical = 946 ; free virtual = 54141
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2887.484; main = 2887.484; forked = 238.730
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4987.504; main = 4152.438; forked = 1641.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4176.445 ; gain = 0.000 ; free physical = 945 ; free virtual = 54140
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/design_1_axi_gpio_0_1_synth_1/design_1_axi_gpio_0_1.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axi_gpio_0_1, cache-ID = 289b6e9c9e8687f8
-INFO: [Coretcl 2-1174] Renamed 9 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4178.109 ; gain = 0.000 ; free physical = 7447 ; free virtual = 59303
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axi_gpio_0_1, cache-ID = 608bf18413fd4923
+INFO: [Coretcl 2-1174] Renamed 8 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4176.445 ; gain = 0.000 ; free physical = 899 ; free virtual = 54095
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/design_1_axi_gpio_0_1_synth_1/design_1_axi_gpio_0_1.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_axi_gpio_0_1_utilization_synth.rpt -pb design_1_axi_gpio_0_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan  1 00:53:11 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  1 01:55:02 2026...
