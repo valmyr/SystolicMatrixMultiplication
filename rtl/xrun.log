@@ -1,0 +1,138 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Jan 01, 2026 at 15:41:49 -03
+xrun
+	SystolicCore.v
+file: SystolicCore.v
+assign syst_clock                = clock                                                                        ;
+                |
+xmvlog: *E,RANOTL (SystolicCore.v,126|16): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign mem2serial_clock          = uart_ready_tx_out                                                      ;//A definir 5kHz
+                      |
+xmvlog: *E,RANOTL (SystolicCore.v,128|22): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opa_clock      = clock           ;
+                          |
+xmvlog: *E,RANOTL (SystolicCore.v,129|26): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opb_clock      = clock           ;
+                          |
+xmvlog: *E,RANOTL (SystolicCore.v,130|26): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_clock = clock                                                                        ;
+                               |
+xmvlog: *E,RANOTL (SystolicCore.v,131|31): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign ref_clock_in_clock        = clock                                                                        ;
+                        |
+xmvlog: *E,RANOTL (SystolicCore.v,132|24): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign syst_nreset                = nreset                                                                      ;
+                 |
+xmvlog: *E,RANOTL (SystolicCore.v,135|17): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opa_nreset      = nreset                                                                      ;
+                           |
+xmvlog: *E,RANOTL (SystolicCore.v,137|27): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opb_nreset      = nreset                                                                      ;
+                           |
+xmvlog: *E,RANOTL (SystolicCore.v,138|27): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign mem2serial_nreset          = nreset                                                                      ;
+                       |
+xmvlog: *E,RANOTL (SystolicCore.v,139|23): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign ref_clock_nreset           = nreset                                                                      ; 
+                      |
+xmvlog: *E,RANOTL (SystolicCore.v,140|22): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_nreset = nreset                                                                      ;
+                                |
+xmvlog: *E,RANOTL (SystolicCore.v,141|32): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign        uart_data_tx_in = mem2serial_smatrix_out;
+                            |
+xmvlog: *E,RANOTL (SystolicCore.v,147|28): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opa_in_data = uart_data_rx_out;//: 0            ;
+                            |
+xmvlog: *E,RANOTL (SystolicCore.v,162|28): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;
+                            |
+xmvlog: *E,RANOTL (SystolicCore.v,163|28): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign syst_a_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opa_rw) ? serial2mem_opa_out_data :0                           ;
+                  |
+xmvlog: *E,RANOTL (SystolicCore.v,164|18): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign syst_b_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opb_rw) ? serial2mem_opb_out_data :0                           ;
+                  |
+xmvlog: *E,RANOTL (SystolicCore.v,165|18): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign mem2serial_pmatrix_in = syst_output_produc_a_b;
+                           |
+xmvlog: *E,RANOTL (SystolicCore.v,167|27): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign mem2serial_pmatrix_in = syst_output_produc_a_b;
+                           |
+xmvlog: *E,MEMNDI (SystolicCore.v,167|27): Memory or an array reference requires an index [3.8][4.2.2(IEEE)].
+assign mem2serial_pmatrix_in = syst_output_produc_a_b;
+                                                    |
+xmvlog: *E,MEMNDI (SystolicCore.v,167|52): Memory or an array reference requires an index [3.8][4.2.2(IEEE)].
+assign systolicControlUnit_serial2mem_opa_ready_o = serial2mem_opa_ready_o ;
+                                                |
+xmvlog: *E,RANOTL (SystolicCore.v,185|48): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_serial2mem_opb_ready_o = serial2mem_opb_ready_o ;
+                                                |
+xmvlog: *E,RANOTL (SystolicCore.v,186|48): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_serial2mem_opa_rvalid_o =  serial2mem_opa_rvalid_o                                   ;
+                                                 |
+xmvlog: *E,RANOTL (SystolicCore.v,192|49): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_serial2mem_opb_rvalid_o =  serial2mem_opb_rvalid_o                                   ;
+                                                 |
+xmvlog: *E,RANOTL (SystolicCore.v,193|49): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_syst_rvalid_o           =  syst_rvalid_o                                             ;
+                                       |
+xmvlog: *E,RANOTL (SystolicCore.v,194|39): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_mem2serial_rvalid_o     =  mem2serial_rvalid_o                                       ;
+                                             |
+xmvlog: *E,RANOTL (SystolicCore.v,195|45): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_read_done               = syst_read_done                                             ;
+                                   |
+xmvlog: *E,RANOTL (SystolicCore.v,196|35): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opa_valid_i                      =  systolicControlUnit_serial2mem_opa_valid_i                ;
+                            |
+xmvlog: *E,RANOTL (SystolicCore.v,198|28): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opb_valid_i                      =  systolicControlUnit_serial2mem_opb_valid_i                ;
+                            |
+xmvlog: *E,RANOTL (SystolicCore.v,199|28): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opa_rw                           =  systolicControlUnit_serial2mem_opa_rw                     ;
+                       |
+xmvlog: *E,RANOTL (SystolicCore.v,200|23): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opb_rw                           =  systolicControlUnit_serial2mem_opb_rw                     ;
+                       |
+xmvlog: *E,RANOTL (SystolicCore.v,201|23): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opa_rready_i                     =  systolicControlUnit_serial2mem_opa_rready_i               ;
+                             |
+xmvlog: *E,RANOTL (SystolicCore.v,202|29): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign serial2mem_opb_rready_i                     =  systolicControlUnit_serial2mem_opb_rready_i               ;
+                             |
+xmvlog: *E,RANOTL (SystolicCore.v,203|29): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign mem2serial_valid_i                          =  systolicControlUnit_mem2serial_valid_i                    ;
+                        |
+xmvlog: *E,RANOTL (SystolicCore.v,204|24): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign mem2serial_rready_i                         =  systolicControlUnit_mem2serial_rready_i                   ;
+                         |
+xmvlog: *E,RANOTL (SystolicCore.v,205|25): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign syst_valid_i                                =  systolicControlUnit_syst_valid_i                          ;
+                  |
+xmvlog: *E,RANOTL (SystolicCore.v,206|18): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
+                   |
+xmvlog: *E,RANOTL (SystolicCore.v,207|19): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ;
+                      |
+xmvlog: *E,RANOTL (SystolicCore.v,208|22): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
+                                       |
+xmvlog: *E,RANOTL (SystolicCore.v,209|39): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+assign systolicControlUnit_uart_valid_rx_in        =  1                                          ; 
+                                          |
+xmvlog: *E,RANOTL (SystolicCore.v,211|42): A reg is not a legal lvalue in this context [6.1.2(IEEE)].
+    .output_produc_a_b          (syst_output_produc_a_b                     )                  ,
+                                                      |
+xmvlog: *E,MEMNDI (SystolicCore.v,228|54): Memory or an array reference requires an index [3.8][4.2.2(IEEE)].
+    .pmatrix_in                 (mem2serial_pmatrix_in                      )                 ,
+                                                     |
+xmvlog: *E,MEMNDI (SystolicCore.v,266|53): Memory or an array reference requires an index [3.8][4.2.2(IEEE)].
+	module worklib.SystolicCoreTop:v
+		errors: 42, warnings: 0
+xmvlog: *W,NOTOPL: no top-level unit found, must have recursive instances.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun(64)	24.03-s005: Exiting on Jan 01, 2026 at 15:41:49 -03  (total: 00:00:00)

@@ -16,7 +16,7 @@ enum {IDLE_INDEX,COUNTER_INDEX,DONE_INDEX} mem2seriala_fsm,next_mem2seriala_fsm;
 logic [$clog2(SIZE)-1:0] i_counter, j_counter;
 logic [$clog2(SIZE)-1:0] next_i_counter, next_j_counter;
 
-logic [27:0]pseudo_clock;
+logic [14:0]pseudo_clock;
 logic clockk;
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
@@ -25,7 +25,7 @@ always_ff@(posedge clock, negedge nreset)begin
         pseudo_clock<= pseudo_clock+1;
     end
 end
-assign clockk = pseudo_clock[27];
+assign clockk = pseudo_clock[14];
 always_ff@(posedge clockk, negedge nreset)begin
     if(!nreset)begin
         i_counter        <=0; 
