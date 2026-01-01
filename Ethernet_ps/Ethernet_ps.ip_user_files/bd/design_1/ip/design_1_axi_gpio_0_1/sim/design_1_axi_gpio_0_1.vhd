@@ -1,5 +1,5 @@
 -- (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
--- (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+-- (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of AMD and is protected under U.S. and international copyright
@@ -126,9 +126,9 @@ ARCHITECTURE design_1_axi_gpio_0_1_arch OF design_1_axi_gpio_0_1 IS
       gpio_io_i : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       gpio_io_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       gpio_io_t : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-      gpio2_io_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      gpio2_io_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      gpio2_io_t : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      gpio2_io_i : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      gpio2_io_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      gpio2_io_t : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
   END COMPONENT axi_gpio;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -148,8 +148,8 @@ ARCHITECTURE design_1_axi_gpio_0_1_arch OF design_1_axi_gpio_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_arvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI ARVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI AWADDR";
   ATTRIBUTE X_INTERFACE_MODE OF s_axi_awaddr: SIGNAL IS "slave S_AXI";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 99990005, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN design_1_zynq_ultra_ps_e_0_0_pl_clk0, NUM_READ_THREADS 1, NU" & 
-"M_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 99990005, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_zynq_ultra_ps_e_0_0_pl_clk0, NUM_READ_THREADS 1, NUM_" & 
+"WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI AWREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI AWVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_bready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI BREADY";
@@ -170,7 +170,7 @@ BEGIN
       C_S_AXI_ADDR_WIDTH => 9,
       C_S_AXI_DATA_WIDTH => 32,
       C_GPIO_WIDTH => 16,
-      C_GPIO2_WIDTH => 32,
+      C_GPIO2_WIDTH => 16,
       C_ALL_INPUTS => 0,
       C_ALL_INPUTS_2 => 0,
       C_ALL_OUTPUTS => 1,
@@ -204,6 +204,6 @@ BEGIN
       s_axi_rready => s_axi_rready,
       gpio_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 16)),
       gpio_io_o => gpio_io_o,
-      gpio2_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32))
+      gpio2_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 16))
     );
 END design_1_axi_gpio_0_1_arch;

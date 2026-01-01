@@ -7,4 +7,4 @@
 # Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log zynq_wrapper_systolic.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source zynq_wrapper_systolic.tcl -notrace
+vivado -log design_1_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace

@@ -13,3 +13,5 @@ comp.build()
 
 comp.build()
 
+vitis.dispose()
+

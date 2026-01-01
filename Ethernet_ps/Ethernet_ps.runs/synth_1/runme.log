@@ -1,24 +1,24 @@
 
 *** Running vivado
-    with args -log zynq_wrapper_systolic.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_wrapper_systolic.tcl
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 
 
 ****** Vivado v2025.2 (64-bit)
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Thu Jan  1 11:24:31 2026
+  **** Start of session at: Thu Jan  1 17:23:00 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source zynq_wrapper_systolic.tcl -notrace
+source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xmen/Music/2025.2/data/ip'.
 Command: read_checkpoint -auto_incremental -incremental /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top zynq_wrapper_systolic -part xczu7ev-ffvc1156-2-e
+Command: synth_design -top design_1_wrapper -part xczu7ev-ffvc1156-2-e
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
@@ -27,161 +27,46 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1473896
+INFO: [Synth 8-7075] Helper process launched with PID 2848867
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3230.434 ; gain = 147.688 ; free physical = 1487 ; free virtual = 55871
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3220.816 ; gain = 147.688 ; free physical = 4723 ; free virtual = 53968
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'uart_clock', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:127]
-INFO: [Synth 8-11241] undeclared symbol 'uart_nreset', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:136]
-INFO: [Synth 8-6157] synthesizing module 'zynq_wrapper_systolic' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:24]
+INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_1_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_1_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
-WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
-WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
-WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
-WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 79 connections declared, but only 75 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:141]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps8_0_99M_6' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps8_0_99M_6' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
-WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'design_1_rst_ps8_0_99M_6' has 10 connections declared, but only 6 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:217]
-INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_SystolicCoreWrapperV_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_SystolicCoreWrapperV_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_SystolicCoreWrapperV_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_SystolicCoreWrapperV_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_axi_smc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:106]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'design_1_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:106]
+WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 60 connections declared, but only 58 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:106]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps8_0_99M_6' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps8_0_99M_6' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_rst_ps8_0_99M_6_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:165]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:165]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:165]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps8_0_99M_6' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:165]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'design_1_rst_ps8_0_99M_6' has 10 connections declared, but only 6 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:165]
+INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-2848770-VT0144/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'design_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:82819]
-	Parameter DIFF_TERM bound to: TRUE - type: string 
-	Parameter IBUF_LOW_PWR bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (0#1) [/home/xmen/Music/2025.2/Vivado/scripts/rt/data/unisim_comp.v:82819]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCoreTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:23]
-	Parameter BYTESIZES bound to: 8 - type: integer 
-	Parameter WIDTHx bound to: 4 - type: integer 
-	Parameter SIZE bound to: 16 - type: integer 
-	Parameter WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'systolicMatrixMultiply' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
-	Parameter WIDTH bound to: 8 - type: integer 
-	Parameter SIZE bound to: 16 - type: integer 
-	Parameter WIDTHx bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/accumulator.sv:13]
-	Parameter WIDTH bound to: 8 - type: integer 
-	Parameter WIDTHx bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/accumulator.sv:13]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
-INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
-	Parameter WIDTH bound to: 4 - type: integer 
-	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ram_dual_port_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ram_dual_port_stub.v:6]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:213]
-INFO: [Synth 8-6157] synthesizing module 'ila_2' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_2' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:1]
-	Parameter SIZE bound to: 16 - type: integer 
-	Parameter WIDTH bound to: 8 - type: integer 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:82]
-INFO: [Synth 8-6157] synthesizing module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_3_stub.v:6]
-WARNING: [Synth 8-689] width (4) of port connection 'probe1' does not match port width (8) of module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:87]
-WARNING: [Synth 8-689] width (4) of port connection 'probe2' does not match port width (8) of module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:88]
-WARNING: [Synth 8-689] width (32) of port connection 'probe3' does not match port width (8) of module 'ila_3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:89]
-INFO: [Synth 8-6155] done synthesizing module 'mem2seriala' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'systolicControlUnitTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:1]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:43]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_0_stub.v:6]
-WARNING: [Synth 8-689] width (66) of port connection 'probe0' does not match port width (128) of module 'ila_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:47]
-INFO: [Synth 8-226] default block is never used [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:96]
-INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:1]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:304]
-INFO: [Synth 8-6157] synthesizing module 'ila_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/.Xil/Vivado-1473789-VT0144/realtime/ila_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCoreTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:23]
-WARNING: [Synth 8-689] width (9) of port connection 'uart_data_tx_in' does not match port width (8) of module 'SystolicCoreTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:95]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:105]
-WARNING: [Synth 8-689] width (9) of port connection 'probe0' does not match port width (128) of module 'ila_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:107]
-INFO: [Synth 8-6155] done synthesizing module 'zynq_wrapper_systolic' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:24]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'serial2mem_opA'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:232]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'serial2mem_opB'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:248]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:213]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ram'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:59]
-WARNING: [Synth 8-7137] Register mem_fsm_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:125]
-WARNING: [Synth 8-87] always_comb on 'single_port_ram_di_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:64]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:82]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mem2serial_transfer_pc'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:263]
-WARNING: [Synth 8-7137] Register mem2seriala_fsm_reg in module mem2seriala has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'systolicControlUnit_Global'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:276]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:43]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rw_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:62]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rw_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:63]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opa_rready_i_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:64]
-WARNING: [Synth 8-87] always_comb on 'serial2mem_opb_rready_i_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:65]
-WARNING: [Synth 8-87] always_comb on 'starting_frame_identified_reg' did not result in combinational logic [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:72]
-WARNING: [Synth 8-3848] Net uart_valid_rx_in in module/entity SystolicCoreTop does not have driver. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:33]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'design_1_i'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:78]
-WARNING: [Synth 8-6014] Unused sequential element counter_clock_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:60]
-WARNING: [Synth 8-6014] Unused sequential element d_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:61]
-WARNING: [Synth 8-7137] Register data_reg in module zynq_wrapper_systolic has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:66]
-WARNING: [Synth 8-7129] Port serial2mem_opb_rvalid_o in module systolicControlUnitTop is either unconnected or has no load
-WARNING: [Synth 8-7129] Port serial2mem_opa_ready_o in module systolicControlUnitTop is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uart_valid_rx_in in module SystolicCoreTop is either unconnected or has no load
+INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:13]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3378.371 ; gain = 295.625 ; free physical = 1644 ; free virtual = 55735
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3311.785 ; gain = 238.656 ; free physical = 3592 ; free virtual = 52837
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3378.371 ; gain = 295.625 ; free physical = 1644 ; free virtual = 55736
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3311.785 ; gain = 238.656 ; free physical = 3470 ; free virtual = 52715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3378.371 ; gain = 295.625 ; free physical = 1644 ; free virtual = 55736
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3311.785 ; gain = 238.656 ; free physical = 3469 ; free virtual = 52714
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3378.371 ; gain = 0.000 ; free physical = 1645 ; free virtual = 55737
-INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3311.785 ; gain = 0.000 ; free physical = 4184 ; free virtual = 53429
 INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
-WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
 
 Processing XDC Constraints
 Initializing timing engine
@@ -189,54 +74,33 @@ Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_99M'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_99M'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_in_context.xdc] for cell 'design_1_i/axi_gpio_1'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_in_context.xdc] for cell 'design_1_i/axi_gpio_1'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'SystolicCore0/systolicControlUnit_Global/your_instance_name'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'your_instance_name'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'your_instance_name'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/ram'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/ram'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_1/ila_1/ila_1_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_1/ila_1/ila_1_in_context.xdc] for cell 'SystolicCore0/your_instance_name'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/your_instance_name'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/serial2mem_opA/your_instance_name'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/your_instance_name'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'SystolicCore0/serial2mem_opB/your_instance_name'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/mem2serial_transfer_pc/your_instance_name'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'SystolicCore0/mem2serial_transfer_pc/your_instance_name'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_SystolicCoreWrapperV_0_0/design_1_SystolicCoreWrapperV_0_0/design_1_SystolicCoreWrapperV_0_0_in_context.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_SystolicCoreWrapperV_0_0/design_1_SystolicCoreWrapperV_0_0/design_1_SystolicCoreWrapperV_0_0_in_context.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc]
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc:1]
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc:2]
+WARNING: [Vivado 12-584] No ports matched 'clk_125mhz_p'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'clk_125mhz_n'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'clk_125mhz_p'. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc:21]
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zynq_wrapper_systolic_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/zynq_wrapper_systolic_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.srcs/constrs_1/new/zyqnZCU106.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3471.609 ; gain = 0.000 ; free physical = 2468 ; free virtual = 56559
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3351.805 ; gain = 0.000 ; free physical = 3294 ; free virtual = 52738
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1 instances were transformed.
-  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3471.645 ; gain = 0.000 ; free physical = 2468 ; free virtual = 56559
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/mem2serial_transfer_pc/your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opA/ram' at clock pin 'clka' is different from the actual clock period '5.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opA/your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opB/ram' at clock pin 'clka' is different from the actual clock period '5.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/serial2mem_opB/your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'SystolicCore0/systolicControlUnit_Global/your_instance_name' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3351.840 ; gain = 0.000 ; free physical = 3277 ; free virtual = 52726
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3471.645 ; gain = 388.898 ; free physical = 2466 ; free virtual = 56557
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3351.840 ; gain = 278.711 ; free physical = 4518 ; free virtual = 53762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -244,67 +108,21 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3479.613 ; gain = 396.867 ; free physical = 2466 ; free virtual = 56557
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3359.809 ; gain = 286.680 ; free physical = 4518 ; free virtual = 53762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3479.613 ; gain = 396.867 ; free physical = 2466 ; free virtual = 56557
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3359.809 ; gain = 286.680 ; free physical = 4517 ; free virtual = 53761
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'currentStateSystolicControlUnit_reg' in module 'systolicMatrixMultiply'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    IDLE |                               00 | 00000000000000000000000000000000
-       LOAD_MULTI_MATRIX |                               01 | 00000000000000000000000000000001
-            MULTI_MATRIX |                               10 | 00000000000000000000000000000010
-                    DONE |                               11 | 00000000000000000000000000000011
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'currentStateSystolicControlUnit_reg' using encoding 'sequential' in module 'systolicMatrixMultiply'
-WARNING: [Synth 8-327] inferring latch for variable 'single_port_ram_di_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:64]
-WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:62]
-WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:64]
-WARNING: [Synth 8-327] inferring latch for variable 'starting_frame_identified_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:72]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3479.613 ; gain = 396.867 ; free physical = 2563 ; free virtual = 56656
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3359.809 ; gain = 286.680 ; free physical = 4516 ; free virtual = 53761
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input    6 Bit       Adders := 2     
-	   2 Input    5 Bit       Adders := 2     
-	   2 Input    4 Bit       Adders := 5     
-+---Registers : 
-	               64 Bit    Registers := 6     
-	               32 Bit    Registers := 3     
-	               16 Bit    Registers := 256   
-	                8 Bit    Registers := 257   
-	                6 Bit    Registers := 2     
-	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 517   
-	                1 Bit    Registers := 5     
-+---Muxes : 
-	   2 Input   64 Bit        Muxes := 10    
-	   4 Input   64 Bit        Muxes := 4     
-	   2 Input   32 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 261   
-	   4 Input    8 Bit        Muxes := 1     
-	   3 Input    8 Bit        Muxes := 1     
-	   4 Input    6 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 7     
-	   4 Input    5 Bit        Muxes := 4     
-	   2 Input    4 Bit        Muxes := 11    
-	   4 Input    4 Bit        Muxes := 5     
-	   3 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 12    
-	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 6     
-	   4 Input    1 Bit        Muxes := 18    
-	   2 Input    1 Bit        Muxes := 32    
-	   7 Input    1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -320,28 +138,26 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7129] Port serial2mem_opb_rvalid_o in module systolicControlUnitTop is either unconnected or has no load
-WARNING: [Synth 8-7129] Port serial2mem_opa_ready_o in module systolicControlUnitTop is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3737.152 ; gain = 654.406 ; free physical = 2168 ; free virtual = 56275
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3359.809 ; gain = 286.680 ; free physical = 4512 ; free virtual = 53761
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 4111.590 ; gain = 1028.844 ; free physical = 1857 ; free virtual = 55964
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 4010.449 ; gain = 937.320 ; free physical = 5458 ; free virtual = 54707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 4403.332 ; gain = 1320.586 ; free physical = 1596 ; free virtual = 55701
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 4010.449 ; gain = 937.320 ; free physical = 5458 ; free virtual = 54707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1516 ; free virtual = 55621
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 4020.465 ; gain = 947.336 ; free physical = 5448 ; free virtual = 54698
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -358,252 +174,85 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:31]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1509 ; free virtual = 55614
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1516 ; free virtual = 55621
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+-----------------------------+----------+
-|      |BlackBox name                |Instances |
-+------+-----------------------------+----------+
-|1     |design_1_axi_gpio_0_1        |         1|
-|2     |design_1_axi_gpio_1_0        |         1|
-|3     |design_1_axi_smc_0           |         1|
-|4     |design_1_rst_ps8_0_99M_6     |         1|
-|5     |design_1_zynq_ultra_ps_e_0_0 |         1|
-|6     |ila_0                        |         2|
-|7     |ram_dual_port                |         2|
-|8     |ila_2                        |         2|
-|9     |ila_3                        |         1|
-|10    |ila_1                        |         1|
-+------+-----------------------------+----------+
++------+----------------------------------+----------+
+|      |BlackBox name                     |Instances |
++------+----------------------------------+----------+
+|1     |design_1_SystolicCoreWrapperV_0_0 |         1|
+|2     |design_1_axi_gpio_0_1             |         1|
+|3     |design_1_axi_smc_0                |         1|
+|4     |design_1_rst_ps8_0_99M_6          |         1|
+|5     |design_1_zynq_ultra_ps_e_0_0      |         1|
++------+----------------------------------+----------+
 
 Report Cell Usage: 
-+------+---------------------------+------+
-|      |Cell                       |Count |
-+------+---------------------------+------+
-|1     |design_1_axi_gpio_0        |     1|
-|2     |design_1_axi_gpio_1        |     1|
-|3     |design_1_axi_smc           |     1|
-|4     |design_1_rst_ps8_0_99M     |     1|
-|5     |design_1_zynq_ultra_ps_e_0 |     1|
-|6     |ila                        |     1|
-|7     |ila_0                      |     1|
-|8     |ila                        |     2|
-|10    |ila_2                      |     1|
-|11    |ila                        |     1|
-|12    |ram_dual_port              |     2|
-|14    |BUFG                       |     3|
-|15    |CARRY8                     |   260|
-|16    |LUT1                       |  2066|
-|17    |LUT2                       |  2638|
-|18    |LUT3                       |   794|
-|19    |LUT4                       |   935|
-|20    |LUT5                       |   812|
-|21    |LUT6                       |  4942|
-|22    |MUXF7                      |   272|
-|23    |MUXF8                      |   128|
-|24    |FDCE                       |  6542|
-|25    |FDCP                       |    32|
-|26    |FDRE                       |    16|
-|27    |LD                         |   131|
-|28    |IBUF                       |     1|
-|29    |IBUFDS                     |     1|
-+------+---------------------------+------+
++------+--------------------------------+------+
+|      |Cell                            |Count |
++------+--------------------------------+------+
+|1     |design_1_SystolicCoreWrapperV_0 |     1|
+|2     |design_1_axi_gpio_0             |     1|
+|3     |design_1_axi_smc                |     1|
+|4     |design_1_rst_ps8_0_99M          |     1|
+|5     |design_1_zynq_ultra_ps_e_0      |     1|
++------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 4456.332 ; gain = 1280.312 ; free physical = 1517 ; free virtual = 55621
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4456.332 ; gain = 1373.586 ; free physical = 1517 ; free virtual = 55621
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 4213.277 ; gain = 1100.094 ; free physical = 5261 ; free virtual = 54511
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 4213.277 ; gain = 1140.148 ; free physical = 5261 ; free virtual = 54511
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4456.332 ; gain = 0.000 ; free physical = 1684 ; free virtual = 55789
-INFO: [Netlist 29-17] Analyzing 828 Unisim elements for replacement
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[10]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[11]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[12]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[13]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[14]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[15]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[16]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[17]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[18]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[19]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[20]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[21]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[22]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[23]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[24]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[25]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[26]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[27]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[28]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[29]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[30]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[31]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[8]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[9]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
-Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
-Convert at least one of them to synchronous signal, or get rid of at least one of those.
-Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4213.277 ; gain = 0.000 ; free physical = 5261 ; free virtual = 54511
 INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
-WARNING: [Constraints 18-5254] DIFF_TERM is not supported in UltraScale devices.  Automatically translating DIFF_TERM of TRUE to DIFF_TERM_ADV=TERM_100.  Refer to UG571: UltraScale Architecture SelectIO User Guide for more detail.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4456.332 ; gain = 0.000 ; free physical = 1674 ; free virtual = 55779
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4213.277 ; gain = 0.000 ; free physical = 5428 ; free virtual = 54677
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 168 instances were transformed.
-  BUFG => BUFGCE: 3 instances
-  FDCP => FDCP (FDCE, FDPE, LDCE, LUT3, VCC): 32 instances
-  IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
-  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
-  LD => LDCE: 131 instances
+No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 125d2a77
+Synth Design complete | Checksum: e7ed68d5
 INFO: [Common 17-83] Releasing license: Synthesis
-79 Infos, 87 Warnings, 32 Critical Warnings and 0 Errors encountered.
+36 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:44 . Memory (MB): peak = 4456.332 ; gain = 2560.586 ; free physical = 1674 ; free virtual = 55779
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3510.672; main = 3316.243; forked = 280.074
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 6044.340; main = 4438.676; forked = 1641.004
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4462.684 ; gain = 0.000 ; free physical = 1674 ; free virtual = 55779
-INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/zynq_wrapper_systolic.dcp' has been generated.
-INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_wrapper_systolic_utilization_synth.rpt -pb zynq_wrapper_systolic_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan  1 11:25:21 2026...
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 4213.277 ; gain = 2324.781 ; free physical = 5427 ; free virtual = 54676
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3067.175; main = 3067.175; forked = 289.203
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5000.816; main = 4139.594; forked = 1641.004
+INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  1 17:23:26 2026...

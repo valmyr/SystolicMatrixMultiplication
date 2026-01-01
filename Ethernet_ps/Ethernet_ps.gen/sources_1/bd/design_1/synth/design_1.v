@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Thu Jan  1 01:56:25 2026
+//Date        : Thu Jan  1 17:22:56 2026
 //Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -10,15 +10,12 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=21,da_board_cnt=19,da_bram_cntlr_cnt=6,da_clkrst_cnt=7,da_zynq_ultra_ps_e_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=21,da_board_cnt=23,da_bram_cntlr_cnt=6,da_clkrst_cnt=13,da_zynq_ultra_ps_e_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
-   (GPIO_0_tri_o,
-    GPIO_1_tri_i);
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0 TRI_O" *) (* X_INTERFACE_MODE = "Master" *) output [15:0]GPIO_0_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_1 TRI_I" *) (* X_INTERFACE_MODE = "Master" *) input [15:0]GPIO_1_tri_i;
+   ();
 
-  wire [15:0]GPIO_0_tri_o;
-  wire [15:0]GPIO_1_tri_i;
+  wire [15:0]SystolicCoreWrapperV_0_gpio_output;
+  wire [15:0]axi_gpio_0_gpio_io_o;
   wire [8:0]axi_smc_M00_AXI_ARADDR;
   wire axi_smc_M00_AXI_ARREADY;
   wire axi_smc_M00_AXI_ARVALID;
@@ -36,23 +33,6 @@ module design_1
   wire axi_smc_M00_AXI_WREADY;
   wire [3:0]axi_smc_M00_AXI_WSTRB;
   wire axi_smc_M00_AXI_WVALID;
-  wire [8:0]axi_smc_M01_AXI_ARADDR;
-  wire axi_smc_M01_AXI_ARREADY;
-  wire axi_smc_M01_AXI_ARVALID;
-  wire [8:0]axi_smc_M01_AXI_AWADDR;
-  wire axi_smc_M01_AXI_AWREADY;
-  wire axi_smc_M01_AXI_AWVALID;
-  wire axi_smc_M01_AXI_BREADY;
-  wire [1:0]axi_smc_M01_AXI_BRESP;
-  wire axi_smc_M01_AXI_BVALID;
-  wire [31:0]axi_smc_M01_AXI_RDATA;
-  wire axi_smc_M01_AXI_RREADY;
-  wire [1:0]axi_smc_M01_AXI_RRESP;
-  wire axi_smc_M01_AXI_RVALID;
-  wire [31:0]axi_smc_M01_AXI_WDATA;
-  wire axi_smc_M01_AXI_WREADY;
-  wire [3:0]axi_smc_M01_AXI_WSTRB;
-  wire axi_smc_M01_AXI_WVALID;
   wire [0:0]rst_ps8_0_99M_peripheral_aresetn;
   wire [39:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR;
   wire [1:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST;
@@ -96,8 +76,14 @@ module design_1
   wire zynq_ultra_ps_e_0_pl_clk0;
   wire zynq_ultra_ps_e_0_pl_resetn0;
 
+  design_1_SystolicCoreWrapperV_0_0 SystolicCoreWrapperV_0
+       (.clk(zynq_ultra_ps_e_0_pl_clk0),
+        .gpio_input(axi_gpio_0_gpio_io_o),
+        .gpio_output(SystolicCoreWrapperV_0_gpio_output),
+        .nrst(rst_ps8_0_99M_peripheral_aresetn));
   design_1_axi_gpio_0_1 axi_gpio_0
-       (.gpio_io_o(GPIO_0_tri_o),
+       (.gpio2_io_i(SystolicCoreWrapperV_0_gpio_output),
+        .gpio_io_o(axi_gpio_0_gpio_io_o),
         .s_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
         .s_axi_araddr(axi_smc_M00_AXI_ARADDR),
         .s_axi_aresetn(rst_ps8_0_99M_peripheral_aresetn),
@@ -117,27 +103,6 @@ module design_1
         .s_axi_wready(axi_smc_M00_AXI_WREADY),
         .s_axi_wstrb(axi_smc_M00_AXI_WSTRB),
         .s_axi_wvalid(axi_smc_M00_AXI_WVALID));
-  design_1_axi_gpio_1_0 axi_gpio_1
-       (.gpio_io_i(GPIO_1_tri_i),
-        .s_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
-        .s_axi_araddr(axi_smc_M01_AXI_ARADDR),
-        .s_axi_aresetn(rst_ps8_0_99M_peripheral_aresetn),
-        .s_axi_arready(axi_smc_M01_AXI_ARREADY),
-        .s_axi_arvalid(axi_smc_M01_AXI_ARVALID),
-        .s_axi_awaddr(axi_smc_M01_AXI_AWADDR),
-        .s_axi_awready(axi_smc_M01_AXI_AWREADY),
-        .s_axi_awvalid(axi_smc_M01_AXI_AWVALID),
-        .s_axi_bready(axi_smc_M01_AXI_BREADY),
-        .s_axi_bresp(axi_smc_M01_AXI_BRESP),
-        .s_axi_bvalid(axi_smc_M01_AXI_BVALID),
-        .s_axi_rdata(axi_smc_M01_AXI_RDATA),
-        .s_axi_rready(axi_smc_M01_AXI_RREADY),
-        .s_axi_rresp(axi_smc_M01_AXI_RRESP),
-        .s_axi_rvalid(axi_smc_M01_AXI_RVALID),
-        .s_axi_wdata(axi_smc_M01_AXI_WDATA),
-        .s_axi_wready(axi_smc_M01_AXI_WREADY),
-        .s_axi_wstrb(axi_smc_M01_AXI_WSTRB),
-        .s_axi_wvalid(axi_smc_M01_AXI_WVALID));
   design_1_axi_smc_0 axi_smc
        (.M00_AXI_araddr(axi_smc_M00_AXI_ARADDR),
         .M00_AXI_arready(axi_smc_M00_AXI_ARREADY),
@@ -156,23 +121,6 @@ module design_1
         .M00_AXI_wready(axi_smc_M00_AXI_WREADY),
         .M00_AXI_wstrb(axi_smc_M00_AXI_WSTRB),
         .M00_AXI_wvalid(axi_smc_M00_AXI_WVALID),
-        .M01_AXI_araddr(axi_smc_M01_AXI_ARADDR),
-        .M01_AXI_arready(axi_smc_M01_AXI_ARREADY),
-        .M01_AXI_arvalid(axi_smc_M01_AXI_ARVALID),
-        .M01_AXI_awaddr(axi_smc_M01_AXI_AWADDR),
-        .M01_AXI_awready(axi_smc_M01_AXI_AWREADY),
-        .M01_AXI_awvalid(axi_smc_M01_AXI_AWVALID),
-        .M01_AXI_bready(axi_smc_M01_AXI_BREADY),
-        .M01_AXI_bresp(axi_smc_M01_AXI_BRESP),
-        .M01_AXI_bvalid(axi_smc_M01_AXI_BVALID),
-        .M01_AXI_rdata(axi_smc_M01_AXI_RDATA),
-        .M01_AXI_rready(axi_smc_M01_AXI_RREADY),
-        .M01_AXI_rresp(axi_smc_M01_AXI_RRESP),
-        .M01_AXI_rvalid(axi_smc_M01_AXI_RVALID),
-        .M01_AXI_wdata(axi_smc_M01_AXI_WDATA),
-        .M01_AXI_wready(axi_smc_M01_AXI_WREADY),
-        .M01_AXI_wstrb(axi_smc_M01_AXI_WSTRB),
-        .M01_AXI_wvalid(axi_smc_M01_AXI_WVALID),
         .S00_AXI_araddr(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR),
         .S00_AXI_arburst(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST),
         .S00_AXI_arcache(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARCACHE),

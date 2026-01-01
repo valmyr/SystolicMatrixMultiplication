@@ -8,6 +8,11 @@
 <img title="Arquitetura Systolic Core" alt="Alt text" src="images/ArquiteturaSystolicCoreBlue.png" width="100%" height="100%">
 </p>
 
+## Vivado Diagram
+<p align="center">
+<img title="DIagram Zynq+ Systolic Core" alt="Alt text" src="images/VivadoDiagram.png" width="100%" height="100%">
+</p>
+
 ## Objetivos
 
 A multiplicação de matrizes é uma operação muito comum em problemas científicos e de engenharia. A implementação sequencial dessa operação consome muito tempo para matrizes grandes; a solução de força bruta resulta em um tempo computacional O(n^3) , para matrizes nxn.

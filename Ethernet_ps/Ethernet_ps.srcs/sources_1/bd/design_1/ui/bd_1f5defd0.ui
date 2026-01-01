@@ -1,33 +1,30 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"2.0",
-   "Default View_TopLeft":"-234,-250",
+   "Default View_TopLeft":"-124,-256",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
-preplace port GPIO_0 -pg 1 -lvl 4 -x 1290 -y 90 -defaultsOSRD
-preplace port GPIO_1 -pg 1 -lvl 4 -x 1290 -y 230 -defaultsOSRD
-preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 340 -y 90 -defaultsOSRD
-preplace inst axi_smc -pg 1 -lvl 2 -x 810 -y 90 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1120 -y 100 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 340 -y 100 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 2 -x 810 -y 100 -defaultsOSRD
 preplace inst rst_ps8_0_99M -pg 1 -lvl 1 -x 340 -y 290 -defaultsOSRD
-preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 1120 -y 240 -defaultsOSRD
-preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 1 2 670 180 970
-preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 3 20 180 660 170 960
+preplace inst SystolicCoreWrapperV_0 -pg 1 -lvl 4 -x 1430 -y 90 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1100 -y 120 -defaultsOSRD
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 1 3 670 180 950 210 1260J
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 20 10 660 20 950 30 1260
 preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 2 30 190 650
-preplace netloc axi_gpio_0_GPIO 1 3 1 NJ 90
-preplace netloc axi_smc_M00_AXI 1 2 1 N 80
-preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 1 N 70
-preplace netloc axi_smc_M01_AXI 1 2 1 950 100n
-preplace netloc axi_gpio_1_GPIO 1 3 1 NJ 230
-levelinfo -pg 1 0 340 810 1120 1290
-pagesize -pg 1 -db -bbox -sgen 0 0 1390 390
+preplace netloc axi_gpio_0_gpio_io_o 1 3 1 N 110
+preplace netloc SystolicCoreWrapperV_0_gpio_output 1 3 2 1250 170 1600
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 1 N 80
+preplace netloc axi_smc_M00_AXI 1 2 1 N 100
+levelinfo -pg 1 0 340 810 1100 1430 1620
+pagesize -pg 1 -db -bbox -sgen 0 0 1620 390
 "
 }
 {
    "da_axi4_cnt":"21",
-   "da_board_cnt":"19",
+   "da_board_cnt":"23",
    "da_bram_cntlr_cnt":"6",
-   "da_clkrst_cnt":"7",
+   "da_clkrst_cnt":"13",
    "da_zynq_ultra_ps_e_cnt":"1"
 }
