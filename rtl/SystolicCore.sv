@@ -345,7 +345,7 @@ ila_1 your_instance_name (
 
 /*
 (*dont_touch = "true"*) 
-ref_clock #(.CLOCK_REF(CLOCK_TRANSFER_PC),.CLOCK_INPUT(COUNTER_CLOCK_INPUT))clock_rate_pc(
+ref_clock #(.CLOCK_REF(1000),.CLOCK_INPUT(100_000_000))clock_rate_pc(
     .in_clock     (ref_clock_in_clock                                   )                ,
     .nreset       (ref_clock_nreset                                     )                ,
     .out_clock_ref(ref_clock_out_clock_ref                              )                

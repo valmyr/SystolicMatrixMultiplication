@@ -25,22 +25,23 @@ logic [$clog2(SIZE*SIZE)-1:0] next_k_counter_clock_slow;
 logic [$clog2(SIZE)-1:0] next_i_counter, next_j_counter;
 
 logic last_event_send_data;
-logic [16:0]pseudo_clock;
+logic [27:0]pseudo_clock;
 logic clockk;
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
-        pseudo_clock <=0;
-    end else begin
-        pseudo_clock<= pseudo_clock+1;
-    end
-end
-assign clockk = pseudo_clock[16];
+
+ref_clock #(.CLOCK_REF(100),.CLOCK_INPUT(100_000_000))clock_rate_pc(
+    .in_clock     (clock                                   )                ,
+    .nreset       (nreset                                  )                ,
+    .out_clock_ref(clockk                                  )                
+);
+
+
 always_ff@(posedge clockk, negedge nreset)begin
     if(!nreset)begin
         i_counter        <=0; 
         j_counter        <=0;
         k_counter_clock_slow <= 0;
         last_event_send_data <= 0;
+        mem2seriala_fsm <= IDLE_INDEX;
     end else begin
         i_counter        <=next_i_counter; 
         j_counter        <=next_j_counter;
@@ -105,7 +106,7 @@ ila_3 your_instance_name (
 
 	.probe0(smatrix_out), // input wire [7:0]  probe0  
 	.probe1(i_counter), // input wire [7:0]  probe1 
-	.probe2(j_counter), // input wire [7:0]  probe2 
+	.probe2(k_counter_clock_slow), // input wire [7:0]  probe2 
 	.probe3(mem2seriala_fsm), // input wire [7:0]  probe3 
 	.probe4(valid_i), // input wire [0:0]  probe4 
 	.probe5(rvalid_o), // input wire [0:0]  probe5 

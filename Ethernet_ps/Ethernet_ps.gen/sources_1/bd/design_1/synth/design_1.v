@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Fri Jan  2 17:27:24 2026
+//Date        : Fri Jan  2 20:06:33 2026
 //Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -78,7 +78,7 @@ module design_1
   wire zynq_ultra_ps_e_0_pl_clk0;
   wire zynq_ultra_ps_e_0_pl_resetn0;
 
-  design_1_SystolicCoreWrapperV_0_18 SystolicCoreWrapperV_0
+  design_1_SystolicCoreWrapperV_0_5 SystolicCoreWrapperV_0
        (.clk(zynq_ultra_ps_e_0_pl_clk0),
         .gpio_input(axi_gpio_0_gpio_io_o),
         .gpio_output(SystolicCoreWrapperV_0_gpio_output),

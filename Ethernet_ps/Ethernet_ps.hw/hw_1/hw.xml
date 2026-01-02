@@ -119,7 +119,7 @@
     <Object name="SystolicCore0/systolicControlUnit_Global/uart_ready_rx_1" gui_info=""/>
     <Object name="design_1_i/GPIOinput_0_reg_valid_data" gui_info="Trigger Setup=0"/>
     <Object name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/clockk" gui_info=""/>
-    <Object name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/event_send_data" gui_info="Trigger Setup=0"/>
+    <Object name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/event_send_data" gui_info=""/>
     <Object name="design_1_i/SystolicCoreWrapperV_0/inst/enable_write_1" gui_info=""/>
     <Object name="design_1_i/SystolicCoreWrapperV_0/inst/reg_valid_data" gui_info=""/>
     <Object name="design_1_i/SystolicCoreWrapperV_0/inst/reg_valid_data_1" gui_info=""/>
@@ -14096,7 +14096,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_7"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe0[46]"/>
+        <Option Id="MAP" value="probe0[45]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -14537,7 +14537,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_7"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe0[65]"/>
+        <Option Id="MAP" value="probe0[64]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -16196,7 +16196,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_6"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe0[32]"/>
+        <Option Id="MAP" value="probe0[39]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -16238,7 +16238,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_6"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe0[34]"/>
+        <Option Id="MAP" value="probe0[41]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -20736,7 +20736,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[0][13]_485[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -20792,7 +20792,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[0][14]_483[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -20848,7 +20848,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[0][15]_481[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -21100,7 +21100,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[0][3]_505[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -21184,7 +21184,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[0][4]_503[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -21632,7 +21632,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][0]_479[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -21688,7 +21688,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][10]_459[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -21800,7 +21800,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][12]_455[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -21856,7 +21856,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][13]_453[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -21912,7 +21912,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][14]_451[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22052,7 +22052,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][1]_477[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22136,7 +22136,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][2]_475[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22220,7 +22220,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][3]_473[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22304,7 +22304,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][4]_471[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22472,7 +22472,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][6]_99[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22556,7 +22556,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][7]_97[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22612,7 +22612,7 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_pmatrix_in[1][8]_463[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -22678,7 +22678,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe2[7]"/>
+        <Option Id="MAP" value="probe1[7]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -23024,6 +23024,34 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[7]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[6]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[5]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[4]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[3]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[2]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[1]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_slow[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe3[7:0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -23040,6 +23068,34 @@
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[2]"/>
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[1]"/>
         <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[7]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[6]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[5]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[4]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[3]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[2]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[1]"/>
+        <net name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/next_k_counter_clock_slow[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">

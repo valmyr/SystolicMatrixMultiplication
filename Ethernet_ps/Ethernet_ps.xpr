@@ -173,7 +173,21 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../rtl/uart/rtl/counter.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../rtl/mem2serial.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../rtl/uart/rtl/ref_clock.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -207,8 +221,8 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_SystolicCoreWrapperV_0_18/design_1_SystolicCoreWrapperV_0_18.xci">
-          <Proxy FileSetName="design_1_SystolicCoreWrapperV_0_18"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_SystolicCoreWrapperV_0_5/design_1_SystolicCoreWrapperV_0_5.xci">
+          <Proxy FileSetName="design_1_SystolicCoreWrapperV_0_5"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_ila_0_0/design_1_ila_0_0.xci">
           <Proxy FileSetName="design_1_ila_0_0"/>
@@ -385,9 +399,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="design_1_SystolicCoreWrapperV_0_18" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_SystolicCoreWrapperV_0_18" RelGenDir="$PGENDIR/design_1_SystolicCoreWrapperV_0_18">
+    <FileSet Name="design_1_SystolicCoreWrapperV_0_5" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_SystolicCoreWrapperV_0_5" RelGenDir="$PGENDIR/design_1_SystolicCoreWrapperV_0_5">
       <Config>
-        <Option Name="TopModule" Val="design_1_SystolicCoreWrapperV_0_18"/>
+        <Option Name="TopModule" Val="design_1_SystolicCoreWrapperV_0_5"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -494,7 +508,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_1_SystolicCoreWrapperV_0_18_synth_1" Type="Ft3:Synth" SrcSet="design_1_SystolicCoreWrapperV_0_18" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="design_1_SystolicCoreWrapperV_0_18" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_SystolicCoreWrapperV_0_18_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_18_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_18_synth_1" ParallelReportGen="true">
+    <Run Id="design_1_SystolicCoreWrapperV_0_5_synth_1" Type="Ft3:Synth" SrcSet="design_1_SystolicCoreWrapperV_0_5" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="design_1_SystolicCoreWrapperV_0_5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_SystolicCoreWrapperV_0_5_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_5_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_5_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -643,7 +657,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_1_SystolicCoreWrapperV_0_18_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="design_1_SystolicCoreWrapperV_0_18" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_SystolicCoreWrapperV_0_18_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_18_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_18_impl_1" ParallelReportGen="true">
+    <Run Id="design_1_SystolicCoreWrapperV_0_5_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="design_1_SystolicCoreWrapperV_0_5" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_SystolicCoreWrapperV_0_5_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_5_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_SystolicCoreWrapperV_0_5_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>

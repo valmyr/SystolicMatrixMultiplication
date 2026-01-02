@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="ram_dual_port_synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1767382284">
+<GenRun Id="ram_dual_port_synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1767395159">
   <File Type="RDS-DCP" Name="ram_dual_port.dcp"/>
   <File Type="RDS-RDS" Name="ram_dual_port.vds"/>
   <File Type="REPORTS-TCL" Name="ram_dual_port_reports.tcl"/>
@@ -9,6 +9,7 @@
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ram_dual_port" RelGenDir="$PGENDIR/ram_dual_port">
     <File Path="$PSRCDIR/sources_1/ip/ram_dual_port/ram_dual_port.xci">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -22,6 +23,7 @@
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ram_dual_port" RelGenDir="$PGENDIR/ram_dual_port">
     <File Path="$PSRCDIR/sources_1/ip/ram_dual_port/ram_dual_port.xci">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
