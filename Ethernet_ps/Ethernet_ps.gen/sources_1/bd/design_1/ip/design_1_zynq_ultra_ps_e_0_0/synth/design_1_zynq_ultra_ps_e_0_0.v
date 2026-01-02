@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -97,7 +97,6 @@ module design_1_zynq_ultra_ps_e_0_0 (
   maxigp0_rready,
   maxigp0_awqos,
   maxigp0_arqos,
-  pl_ps_irq0,
   pl_resetn0,
   pl_clk0
 );
@@ -187,10 +186,6 @@ output wire maxigp0_rready;
 output wire [3 : 0] maxigp0_awqos;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_FPD ARQOS" *)
 output wire [3 : 0] maxigp0_arqos;
-(* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 PL_PS_IRQ0 INTERRUPT" *)
-(* X_INTERFACE_MODE = "slave" *)
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME PL_PS_IRQ0, SENSITIVITY LEVEL_HIGH, PortWidth 1" *)
-input wire [0 : 0] pl_ps_irq0;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 PL_RESETN0 RST" *)
 (* X_INTERFACE_MODE = "master" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME PL_RESETN0, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -1197,7 +1192,7 @@ output wire pl_clk0;
     .pl_ps_trigack_3(1'B0),
     .ftm_gpo(),
     .ftm_gpi(32'B0),
-    .pl_ps_irq0(pl_ps_irq0),
+    .pl_ps_irq0(1'B0),
     .pl_ps_irq1(1'B0),
     .pl_resetn0(pl_resetn0),
     .pl_resetn1(),

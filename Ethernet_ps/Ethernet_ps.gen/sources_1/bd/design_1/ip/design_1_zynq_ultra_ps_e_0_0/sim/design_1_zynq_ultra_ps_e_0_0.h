@@ -2,7 +2,7 @@
 #define IP_DESIGN_1_ZYNQ_ULTRA_PS_E_0_0_H_
 
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -120,7 +120,6 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<1> > pl_ps_irq0;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -192,7 +191,6 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<1> > pl_ps_irq0;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -264,7 +262,6 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<1> > pl_ps_irq0;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -338,7 +335,6 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<1> > pl_ps_irq0;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -418,7 +414,6 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<1> > pl_ps_irq0;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 

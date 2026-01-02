@@ -9,23 +9,29 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1 ||
 # IP: bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_zynq_ultra_ps_e_0_0 || ORIG_REF_NAME==design_1_zynq_ultra_ps_e_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_smc_0 || ORIG_REF_NAME==design_1_axi_smc_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_0_1 || ORIG_REF_NAME==design_1_axi_gpio_0_1} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rst_ps8_0_99M_6 || ORIG_REF_NAME==design_1_rst_ps8_0_99M_6} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_SystolicCoreWrapperV_0_0/design_1_SystolicCoreWrapperV_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_SystolicCoreWrapperV_0_0 || ORIG_REF_NAME==design_1_SystolicCoreWrapperV_0_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_axi_gpio_0_0_1/design_1_axi_gpio_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_0_0 || ORIG_REF_NAME==design_1_axi_gpio_0_0} -quiet] -quiet
 
-# IP: ip/ila_1/ila_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_1 || ORIG_REF_NAME==ila_1} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_smc_0 || ORIG_REF_NAME==design_1_axi_smc_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_ila_1_0/design_1_ila_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ila_1_0 || ORIG_REF_NAME==design_1_ila_1_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ila_0_0 || ORIG_REF_NAME==design_1_ila_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_SystolicCoreWrapperV_0_18/design_1_SystolicCoreWrapperV_0_18.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_SystolicCoreWrapperV_0_18 || ORIG_REF_NAME==design_1_SystolicCoreWrapperV_0_18} -quiet] -quiet
 
 # IP: ip/ila_0/ila_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_0 || ORIG_REF_NAME==ila_0} -quiet] -quiet
+
+# IP: ip/ila_1/ila_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_1 || ORIG_REF_NAME==ila_1} -quiet] -quiet
 
 # IP: ip/ila_3/ila_3.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_3 || ORIG_REF_NAME==ila_3} -quiet] -quiet

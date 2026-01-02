@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Thu Jan  1 17:22:56 2026
+//Date        : Fri Jan  2 17:27:24 2026
 //Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -10,16 +10,18 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=21,da_board_cnt=23,da_bram_cntlr_cnt=6,da_clkrst_cnt=13,da_zynq_ultra_ps_e_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=22,da_board_cnt=24,da_bram_cntlr_cnt=6,da_clkrst_cnt=13,da_zynq_ultra_ps_e_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    ();
 
   wire [15:0]SystolicCoreWrapperV_0_gpio_output;
   wire [15:0]axi_gpio_0_gpio_io_o;
   wire [8:0]axi_smc_M00_AXI_ARADDR;
+  wire [2:0]axi_smc_M00_AXI_ARPROT;
   wire axi_smc_M00_AXI_ARREADY;
   wire axi_smc_M00_AXI_ARVALID;
   wire [8:0]axi_smc_M00_AXI_AWADDR;
+  wire [2:0]axi_smc_M00_AXI_AWPROT;
   wire axi_smc_M00_AXI_AWREADY;
   wire axi_smc_M00_AXI_AWVALID;
   wire axi_smc_M00_AXI_BREADY;
@@ -76,12 +78,12 @@ module design_1
   wire zynq_ultra_ps_e_0_pl_clk0;
   wire zynq_ultra_ps_e_0_pl_resetn0;
 
-  design_1_SystolicCoreWrapperV_0_0 SystolicCoreWrapperV_0
+  design_1_SystolicCoreWrapperV_0_18 SystolicCoreWrapperV_0
        (.clk(zynq_ultra_ps_e_0_pl_clk0),
         .gpio_input(axi_gpio_0_gpio_io_o),
         .gpio_output(SystolicCoreWrapperV_0_gpio_output),
         .nrst(rst_ps8_0_99M_peripheral_aresetn));
-  design_1_axi_gpio_0_1 axi_gpio_0
+  design_1_axi_gpio_0_0 axi_gpio_0
        (.gpio2_io_i(SystolicCoreWrapperV_0_gpio_output),
         .gpio_io_o(axi_gpio_0_gpio_io_o),
         .s_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
@@ -105,9 +107,11 @@ module design_1
         .s_axi_wvalid(axi_smc_M00_AXI_WVALID));
   design_1_axi_smc_0 axi_smc
        (.M00_AXI_araddr(axi_smc_M00_AXI_ARADDR),
+        .M00_AXI_arprot(axi_smc_M00_AXI_ARPROT),
         .M00_AXI_arready(axi_smc_M00_AXI_ARREADY),
         .M00_AXI_arvalid(axi_smc_M00_AXI_ARVALID),
         .M00_AXI_awaddr(axi_smc_M00_AXI_AWADDR),
+        .M00_AXI_awprot(axi_smc_M00_AXI_AWPROT),
         .M00_AXI_awready(axi_smc_M00_AXI_AWREADY),
         .M00_AXI_awvalid(axi_smc_M00_AXI_AWVALID),
         .M00_AXI_bready(axi_smc_M00_AXI_BREADY),
@@ -162,6 +166,31 @@ module design_1
         .S00_AXI_wvalid(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_WVALID),
         .aclk(zynq_ultra_ps_e_0_pl_clk0),
         .aresetn(rst_ps8_0_99M_peripheral_aresetn));
+  design_1_ila_0_0 ila_0
+       (.clk(zynq_ultra_ps_e_0_pl_clk0),
+        .probe0(axi_gpio_0_gpio_io_o),
+        .probe1(SystolicCoreWrapperV_0_gpio_output));
+  design_1_ila_1_0 ila_1
+       (.clk(zynq_ultra_ps_e_0_pl_clk0),
+        .probe0(axi_smc_M00_AXI_WREADY),
+        .probe1(axi_smc_M00_AXI_AWADDR),
+        .probe10(axi_smc_M00_AXI_RDATA),
+        .probe11(axi_smc_M00_AXI_AWVALID),
+        .probe12(axi_smc_M00_AXI_AWREADY),
+        .probe13(axi_smc_M00_AXI_RRESP),
+        .probe14(axi_smc_M00_AXI_WDATA),
+        .probe15(axi_smc_M00_AXI_WSTRB),
+        .probe16(axi_smc_M00_AXI_RVALID),
+        .probe17(axi_smc_M00_AXI_ARPROT),
+        .probe18(axi_smc_M00_AXI_AWPROT),
+        .probe2(axi_smc_M00_AXI_BRESP),
+        .probe3(axi_smc_M00_AXI_BVALID),
+        .probe4(axi_smc_M00_AXI_BREADY),
+        .probe5(axi_smc_M00_AXI_ARADDR),
+        .probe6(axi_smc_M00_AXI_RREADY),
+        .probe7(axi_smc_M00_AXI_WVALID),
+        .probe8(axi_smc_M00_AXI_ARVALID),
+        .probe9(axi_smc_M00_AXI_ARREADY));
   design_1_rst_ps8_0_99M_6 rst_ps8_0_99M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -211,6 +240,5 @@ module design_1
         .maxigp0_wvalid(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_WVALID),
         .maxihpm0_fpd_aclk(zynq_ultra_ps_e_0_pl_clk0),
         .pl_clk0(zynq_ultra_ps_e_0_pl_clk0),
-        .pl_ps_irq0(1'b0),
         .pl_resetn0(zynq_ultra_ps_e_0_pl_resetn0));
 endmodule

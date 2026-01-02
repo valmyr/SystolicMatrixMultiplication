@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Jan  1 17:23:27 2026
-# Process ID         : 2849271
+# Start of session at: Fri Jan  2 17:28:48 2026
+# Process ID         : 1254017
 # Current directory  : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1
 # Command line       : vivado -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 # Log file           : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1/design_1_wrapper.vdi
@@ -19,7 +19,7 @@
 # Host memory        : 67075 MB
 # Swap memory        : 14727 MB
 # Total Virtual      : 81802 MB
-# Available Virtual  : 60138 MB
+# Available Virtual  : 56980 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -30,11 +30,15 @@ Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
 INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
-INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_SystolicCoreWrapperV_0_0/design_1_SystolicCoreWrapperV_0_0.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1.dcp' for cell 'design_1_i/axi_gpio_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_SystolicCoreWrapperV_0_18/design_1_SystolicCoreWrapperV_0_18.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0_1/design_1_axi_gpio_0_0.dcp' for cell 'design_1_i/axi_gpio_0'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0.dcp' for cell 'design_1_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0.dcp' for cell 'design_1_i/ila_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_1_0/design_1_ila_1_0.dcp' for cell 'design_1_i/ila_1'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6.dcp' for cell 'design_1_i/rst_ps8_0_99M'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0.dcp' for cell 'design_1_i/zynq_ultra_ps_e_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name'
+INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_1/ila_1.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/your_instance_name'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_3/ila_3.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/your_instance_name'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ram_dual_port/ram_dual_port.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opA/ram'
@@ -42,133 +46,133 @@ INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/Syst
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ram_dual_port/ram_dual_port.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/ram'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_2/ila_2.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/your_instance_name'
 INFO: [Project 1-454] Reading design checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_0.dcp' for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name'
-Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 3122.449 ; gain = 0.000 ; free physical = 4635 ; free virtual = 54651
-INFO: [Netlist 29-17] Analyzing 1064 Unisim elements for replacement
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+Netlist sorting complete. Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.25 . Memory (MB): peak = 3134.715 ; gain = 0.000 ; free physical = 4737 ; free virtual = 52732
+INFO: [Netlist 29-17] Analyzing 2052 Unisim elements for replacement
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[10]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[10]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[11]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[11]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[12]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[12]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[13]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[13]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[14]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[14]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[15]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[15]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[16]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[16]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[17]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[17]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[18]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[18]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[19]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[19]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[1]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[20]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[20]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[21]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[21]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[22]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[22]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[23]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[23]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[24]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[24]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[25]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[25]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[26]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[26]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[27]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[27]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[28]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[28]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[29]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[29]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[2]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[30]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[30]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[31]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[31]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[3]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[4]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[5]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[6]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[7]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[8]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[8]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
-CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[9]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:37]
+CRITICAL WARNING: [Netlist 29-358] Reg 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm_reg[9]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:48]
 Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
 Convert at least one of them to synchronous signal, or get rid of at least one of those.
 Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
@@ -180,22 +184,50 @@ INFO: [Chipscope 16-324] Core: design_1_i/SystolicCoreWrapperV_0/inst/SystolicCo
 INFO: [Chipscope 16-324] Core: design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/your_instance_name UUID: 31dc8d5e-34de-5421-b8f2-c9c77591c271 
 INFO: [Chipscope 16-324] Core: design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name UUID: 5ee02300-ce67-51c5-8a42-ea88b27838bf 
 INFO: [Chipscope 16-324] Core: design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/your_instance_name UUID: cd74d5bc-f7c6-5855-866f-548690dac820 
+INFO: [Chipscope 16-324] Core: design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name UUID: 46fe522d-c297-58f3-a5d8-250204f096cf 
+INFO: [Chipscope 16-324] Core: design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1 UUID: 72b9f835-8122-5356-b4bb-bce88d256eea 
+INFO: [Chipscope 16-324] Core: design_1_i/ila_0 UUID: be177176-557e-59fe-ace2-fe04795a2b22 
+INFO: [Chipscope 16-324] Core: design_1_i/ila_1 UUID: b0ff74a9-f11a-54c5-b2aa-3d087c7ab7be 
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0/inst'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6_board.xdc] for cell 'design_1_i/rst_ps8_0_99M/U0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6_board.xdc] for cell 'design_1_i/rst_ps8_0_99M/U0'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0_1/design_1_axi_gpio_0_0_board.xdc] for cell 'design_1_i/axi_gpio_0/U0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0_1/design_1_axi_gpio_0_0_board.xdc] for cell 'design_1_i/axi_gpio_0/U0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0_board.xdc] for cell 'design_1_i/axi_smc/inst/clk_map/psr_aclk/U0'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0_board.xdc] for cell 'design_1_i/axi_smc/inst/clk_map/psr_aclk/U0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc] for cell 'design_1_i/axi_smc/inst'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc] for cell 'design_1_i/axi_smc/inst'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6_board.xdc] for cell 'design_1_i/rst_ps8_0_99M/U0'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_6/design_1_rst_ps8_0_99M_6_board.xdc] for cell 'design_1_i/rst_ps8_0_99M/U0'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_board.xdc] for cell 'design_1_i/axi_gpio_0/U0'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_board.xdc] for cell 'design_1_i/axi_gpio_0/U0'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_1_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/ila_1/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_1_0/ila_v6_2/constraints/ila_impl.xdc:31]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_1_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/ila_1/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_1_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/ila_1/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_1_0/ila_v6_2/constraints/ila.xdc:108]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_1_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/ila_1/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/ila_0/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila_impl.xdc:31]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/ila_0/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/ila_0/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila.xdc:108]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/ila_0/inst'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name/inst'
 WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc:31]
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc:31]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc:31]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name/inst'
 WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc:108]
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc:108]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc:108]
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/your_instance_name/inst'
 WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc:31]
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc] for cell 'design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/your_instance_name/inst'
@@ -241,16 +273,16 @@ INFO: [Project 1-1714] 20 XPM XDC files have been applied to the design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opA/ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/ram/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
-INFO: [Project 1-1687] 10 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3955.523 ; gain = 0.000 ; free physical = 4925 ; free virtual = 54950
+INFO: [Project 1-1687] 18 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4032.445 ; gain = 0.000 ; free physical = 4027 ; free virtual = 52024
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 628 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 596 instances
+  A total of 1024 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 992 instances
   FDCP => FDCP (FDCE, FDPE, LDCE, LUT3, VCC): 32 instances
 
-32 Infos, 15 Warnings, 37 Critical Warnings and 0 Errors encountered.
+40 Infos, 23 Warnings, 37 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 3955.559 ; gain = 2020.047 ; free physical = 4925 ; free virtual = 54950
+link_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 4032.480 ; gain = 2083.797 ; free physical = 4027 ; free virtual = 52024
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
@@ -261,13 +293,13 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:00.75 ; elapsed = 00:00:00.26 . Memory (MB): peak = 4000.328 ; gain = 44.770 ; free physical = 4849 ; free virtual = 54875
+Time (s): cpu = 00:00:00.82 ; elapsed = 00:00:00.27 . Memory (MB): peak = 4078.039 ; gain = 45.559 ; free physical = 3966 ; free virtual = 51964
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 2236f5332
+Ending Cache Timing Information Task | Checksum: 1adc0291c
 
-Time (s): cpu = 00:00:00.69 ; elapsed = 00:00:00.26 . Memory (MB): peak = 4000.328 ; gain = 0.000 ; free physical = 4836 ; free virtual = 54861
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.44 . Memory (MB): peak = 4078.039 ; gain = 0.000 ; free physical = 3928 ; free virtual = 51925
 
 Starting Logic Optimization Task
 
@@ -278,48 +310,48 @@ Phase 1.1 Core Generation And Design Setup
 Phase 1.1.1 Generate And Synthesize Debug Cores
 INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
-INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = af52c209c1142438.
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4343.953 ; gain = 0.000 ; free physical = 4461 ; free virtual = 54489
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4343.953 ; gain = 0.000 ; free physical = 4339 ; free virtual = 54364
-Phase 1.1.1 Generate And Synthesize Debug Cores | Checksum: 1a1cb9ce4
+INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = ca505e0a3c7940e5.
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4423.633 ; gain = 0.000 ; free physical = 3426 ; free virtual = 51425
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4423.633 ; gain = 0.000 ; free physical = 3246 ; free virtual = 51245
+Phase 1.1.1 Generate And Synthesize Debug Cores | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4339 ; free virtual = 54364
-Phase 1.1 Core Generation And Design Setup | Checksum: 1a1cb9ce4
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3246 ; free virtual = 51245
+Phase 1.1 Core Generation And Design Setup | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4339 ; free virtual = 54364
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3246 ; free virtual = 51245
 
 Phase 1.2 Setup Constraints And Sort Netlist
-Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1a1cb9ce4
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4339 ; free virtual = 54364
-Phase 1 Initialization | Checksum: 1a1cb9ce4
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3239 ; free virtual = 51237
+Phase 1 Initialization | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4339 ; free virtual = 54364
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3239 ; free virtual = 51237
 
 Phase 2 Timer Update And Timing Data Collection
 
 Phase 2.1 Detect if minReqCache needed
-Phase 2.1 Detect if minReqCache needed | Checksum: 1a1cb9ce4
+Phase 2.1 Detect if minReqCache needed | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4333 ; free virtual = 54358
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3211 ; free virtual = 51209
 
 Phase 2.2 Timer Update
-Phase 2.2 Timer Update | Checksum: 1a1cb9ce4
+Phase 2.2 Timer Update | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4314 ; free virtual = 54340
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3265 ; free virtual = 51264
 
 Phase 2.3 Timing Data Collection
-Phase 2.3 Timing Data Collection | Checksum: 1a1cb9ce4
+Phase 2.3 Timing Data Collection | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4320 ; free virtual = 54345
-Phase 2 Timer Update And Timing Data Collection | Checksum: 1a1cb9ce4
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3265 ; free virtual = 51263
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1d72b8355
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4320 ; free virtual = 54345
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3265 ; free virtual = 51263
 
 Phase 3 Retarget
 INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
 INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
-INFO: [Opt 31-138] Pushed 40 inverter(s) to 1249 load pin(s).
+INFO: [Opt 31-138] Pushed 45 inverter(s) to 4341 load pin(s).
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/mem2serial_transfer_pc/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opA/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
@@ -342,80 +374,92 @@ INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/Systo
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/SystolicCoreWrapperV_0/inst/your_instance_name1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/ila_0/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/ila_1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/ila_1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/ila_1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 3 Retarget | Checksum: 1feabe85a
+Phase 3 Retarget | Checksum: 2381cbbaa
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4216 ; free virtual = 54241
-Retarget | Checksum: 1feabe85a
-INFO: [Opt 31-389] Phase Retarget created 44 cells and removed 354 cells
-INFO: [Opt 31-1021] In phase Retarget, 1251 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3589 ; free virtual = 51588
+Retarget | Checksum: 2381cbbaa
+INFO: [Opt 31-389] Phase Retarget created 75 cells and removed 388 cells
+INFO: [Opt 31-1021] In phase Retarget, 4467 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 4 Constant propagation | Checksum: 2657c186d
+Phase 4 Constant propagation | Checksum: 24f9978ee
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4211 ; free virtual = 54236
-Constant propagation | Checksum: 2657c186d
-INFO: [Opt 31-389] Phase Constant propagation created 3 cells and removed 88 cells
-INFO: [Opt 31-1021] In phase Constant propagation, 1701 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3589 ; free virtual = 51588
+Constant propagation | Checksum: 24f9978ee
+INFO: [Opt 31-389] Phase Constant propagation created 3 cells and removed 152 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 6380 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 5 Sweep
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4343.953 ; gain = 0.000 ; free physical = 4117 ; free virtual = 54145
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4423.633 ; gain = 0.000 ; free physical = 3589 ; free virtual = 51588
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4343.953 ; gain = 0.000 ; free physical = 4115 ; free virtual = 54144
-Phase 5 Sweep | Checksum: 1e721ae40
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4423.633 ; gain = 0.000 ; free physical = 3589 ; free virtual = 51588
+Phase 5 Sweep | Checksum: 2203d448e
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4343.953 ; gain = 23.812 ; free physical = 4148 ; free virtual = 54177
-Sweep | Checksum: 1e721ae40
-INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 430 cells
-INFO: [Opt 31-1021] In phase Sweep, 5779 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 4423.633 ; gain = 23.781 ; free physical = 3589 ; free virtual = 51588
+Sweep | Checksum: 2203d448e
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 520 cells
+INFO: [Opt 31-1021] In phase Sweep, 16829 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 6 BUFG optimization
-INFO: [Opt 31-194] Inserted BUFG design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_di_reg[31]_i_2_n_0_BUFG_inst to drive 32 load(s) on clock net design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_di_reg[31]_i_2_n_0_BUFGCE
-INFO: [Opt 31-194] Inserted BUFG design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di_reg[31]_i_2_n_0_BUFG_inst to drive 32 load(s) on clock net design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di_reg[31]_i_2_n_0_BUFGCE
+INFO: [Opt 31-194] Inserted BUFG design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_di_reg[63]_i_2_n_0_BUFG_inst to drive 64 load(s) on clock net design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_di_reg[63]_i_2_n_0_BUFGCE
+INFO: [Opt 31-194] Inserted BUFG design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di_reg[63]_i_2_n_0_BUFG_inst to drive 64 load(s) on clock net design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di_reg[63]_i_2_n_0_BUFGCE
 INFO: [Opt 31-193] Inserted 2 BUFG(s) on clock nets
 INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
-Phase 6 BUFG optimization | Checksum: 2702f45bc
+Phase 6 BUFG optimization | Checksum: 2174ed8b5
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4375.969 ; gain = 55.828 ; free physical = 4148 ; free virtual = 54177
-BUFG optimization | Checksum: 2702f45bc
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 4455.648 ; gain = 55.797 ; free physical = 3589 ; free virtual = 51587
+BUFG optimization | Checksum: 2174ed8b5
 INFO: [Opt 31-662] Phase BUFG optimization created 2 cells of which 2 are BUFGs and removed 0 cells.
 
 Phase 7 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 7 Shift Register Optimization | Checksum: 2702f45bc
+Phase 7 Shift Register Optimization | Checksum: 2174ed8b5
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4375.969 ; gain = 55.828 ; free physical = 4148 ; free virtual = 54177
-Shift Register Optimization | Checksum: 2702f45bc
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 4455.648 ; gain = 55.797 ; free physical = 3589 ; free virtual = 51587
+Shift Register Optimization | Checksum: 2174ed8b5
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 8 Post Processing Netlist
-Phase 8 Post Processing Netlist | Checksum: 2482e3d35
+Phase 8 Post Processing Netlist | Checksum: 2174ed8b5
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 4375.969 ; gain = 55.828 ; free physical = 4148 ; free virtual = 54177
-Post Processing Netlist | Checksum: 2482e3d35
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 4455.648 ; gain = 55.797 ; free physical = 3589 ; free virtual = 51587
+Post Processing Netlist | Checksum: 2174ed8b5
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
-INFO: [Opt 31-1021] In phase Post Processing Netlist, 1178 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 4327 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 9 Finalization
 
 Phase 9.1 Finalizing Design Cores and Updating Shapes
-Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 237766496
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 135b0d15a
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 4375.969 ; gain = 55.828 ; free physical = 4148 ; free virtual = 54177
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 4455.648 ; gain = 55.797 ; free physical = 3589 ; free virtual = 51588
 
 Phase 9.2 Verifying Netlist Connectivity
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4375.969 ; gain = 0.000 ; free physical = 4152 ; free virtual = 54181
-Phase 9.2 Verifying Netlist Connectivity | Checksum: 237766496
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 4455.648 ; gain = 0.000 ; free physical = 3589 ; free virtual = 51588
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 135b0d15a
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 4375.969 ; gain = 55.828 ; free physical = 4152 ; free virtual = 54181
-Phase 9 Finalization | Checksum: 237766496
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 4455.648 ; gain = 55.797 ; free physical = 3589 ; free virtual = 51588
+Phase 9 Finalization | Checksum: 135b0d15a
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 4375.969 ; gain = 55.828 ; free physical = 4152 ; free virtual = 54181
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 4455.648 ; gain = 55.797 ; free physical = 3589 ; free virtual = 51588
 Opt_design Change Summary
 =========================
 
@@ -423,18 +467,18 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |              44  |             354  |                                           1251  |
-|  Constant propagation         |               3  |              88  |                                           1701  |
-|  Sweep                        |               0  |             430  |                                           5779  |
+|  Retarget                     |              75  |             388  |                                           4467  |
+|  Constant propagation         |               3  |             152  |                                           6380  |
+|  Sweep                        |               0  |             520  |                                          16829  |
 |  BUFG optimization            |               2  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
-|  Post Processing Netlist      |               0  |               0  |                                           1178  |
+|  Post Processing Netlist      |               0  |               0  |                                           4327  |
 -------------------------------------------------------------------------------------------------------------------------
 
 
-Ending Logic Optimization Task | Checksum: 237766496
+Ending Logic Optimization Task | Checksum: 135b0d15a
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 4375.969 ; gain = 55.828 ; free physical = 4152 ; free virtual = 54181
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 4455.648 ; gain = 55.797 ; free physical = 3589 ; free virtual = 51588
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -447,25 +491,25 @@ Finished Running Vector-less Activity Propagation
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 24 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 36 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
-Number of BRAM Ports augmented: 22 newly gated: 0 Total Ports: 48
-Ending PowerOpt Patch Enables Task | Checksum: 19c64bdb1
+Number of BRAM Ports augmented: 34 newly gated: 0 Total Ports: 72
+Ending PowerOpt Patch Enables Task | Checksum: 13cced004
 
-Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 4544.020 ; gain = 0.000 ; free physical = 4414 ; free virtual = 54444
-Ending Power Optimization Task | Checksum: 19c64bdb1
+Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.16 . Memory (MB): peak = 4631.707 ; gain = 0.000 ; free physical = 3558 ; free virtual = 51557
+Ending Power Optimization Task | Checksum: 13cced004
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 4544.020 ; gain = 168.051 ; free physical = 4413 ; free virtual = 54442
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:03 . Memory (MB): peak = 4631.707 ; gain = 176.059 ; free physical = 3559 ; free virtual = 51557
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 19c64bdb1
+Ending Final Cleanup Task | Checksum: 13cced004
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4544.020 ; gain = 0.000 ; free physical = 4413 ; free virtual = 54442
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4544.020 ; gain = 0.000 ; free physical = 4413 ; free virtual = 54442
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4631.707 ; gain = 0.000 ; free physical = 3559 ; free virtual = 51557
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4631.707 ; gain = 0.000 ; free physical = 3559 ; free virtual = 51557
 INFO: [Common 17-83] Releasing license: Implementation
-95 Infos, 15 Warnings, 37 Critical Warnings and 0 Errors encountered.
+115 Infos, 23 Warnings, 37 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 4544.020 ; gain = 588.461 ; free physical = 4413 ; free virtual = 54442
+opt_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:15 . Memory (MB): peak = 4631.707 ; gain = 599.227 ; free physical = 3559 ; free virtual = 51557
 INFO: [Vivado 12-24828] Executing command : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 Command: report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
@@ -473,7 +517,7 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1/design_1_wrapper_drc_opted.rpt.
 report_drc completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.03 . Memory (MB): peak = 4544.020 ; gain = 0.000 ; free physical = 4376 ; free virtual = 54409
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.04 . Memory (MB): peak = 4631.707 ; gain = 0.000 ; free physical = 3542 ; free virtual = 51545
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1/design_1_wrapper_opt.dcp' has been generated.
 INFO: [Chipscope 16-240] Debug cores have already been implemented
 Command: place_design
@@ -495,29 +539,29 @@ Starting Placer Task
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4607.156 ; gain = 0.000 ; free physical = 4385 ; free virtual = 54422
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 154a32cf7
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4713.820 ; gain = 0.000 ; free physical = 3535 ; free virtual = 51543
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 12e654184
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4607.156 ; gain = 0.000 ; free physical = 4385 ; free virtual = 54422
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4607.156 ; gain = 0.000 ; free physical = 4385 ; free virtual = 54422
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4713.820 ; gain = 0.000 ; free physical = 3535 ; free virtual = 51543
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4713.820 ; gain = 0.000 ; free physical = 3535 ; free virtual = 51543
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1d00c26a3
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 23892e24d
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 4846.012 ; gain = 238.855 ; free physical = 4010 ; free virtual = 54049
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 5015.543 ; gain = 301.723 ; free physical = 3220 ; free virtual = 51228
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1e125e373
+Phase 1.3 Build Placer Netlist Model | Checksum: 3248b598c
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 4878.027 ; gain = 270.871 ; free physical = 3977 ; free virtual = 54062
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 5047.559 ; gain = 333.738 ; free physical = 3225 ; free virtual = 51232
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1e125e373
+Phase 1.4 Constrain Clocks/Macros | Checksum: 3248b598c
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 4878.027 ; gain = 270.871 ; free physical = 4022 ; free virtual = 54060
-Phase 1 Placer Initialization | Checksum: 1e125e373
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 5047.559 ; gain = 333.738 ; free physical = 3225 ; free virtual = 51232
+Phase 1 Placer Initialization | Checksum: 3248b598c
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 4878.027 ; gain = 270.871 ; free physical = 4021 ; free virtual = 54059
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 5047.559 ; gain = 333.738 ; free physical = 3225 ; free virtual = 51232
 
 Phase 2 Global Placement
 
@@ -526,63 +570,63 @@ Phase 2.1 Floorplanning
 Phase 2.1.1 Partition Driven Placement
 
 Phase 2.1.1.1 PBP: Partition Driven Placement
-Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 21394bfc0
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 32e5d2921
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 4878.027 ; gain = 270.871 ; free physical = 4006 ; free virtual = 54046
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 5047.559 ; gain = 333.738 ; free physical = 3002 ; free virtual = 51012
 
 Phase 2.1.1.2 PBP: Clock Region Placement
 INFO: [Place 30-3162] Check ILP status : ILP-based clock placer completed successfully.
-Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 29fa44ce5
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 23ac9c709
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 4878.027 ; gain = 270.871 ; free physical = 4005 ; free virtual = 54044
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:15 . Memory (MB): peak = 5047.559 ; gain = 333.738 ; free physical = 2816 ; free virtual = 50825
 
 Phase 2.1.1.3 PBP: Compute Congestion
-Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 29fa44ce5
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 23ac9c709
 
-Time (s): cpu = 00:00:26 ; elapsed = 00:00:14 . Memory (MB): peak = 5257.012 ; gain = 649.855 ; free physical = 3586 ; free virtual = 53625
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:17 . Memory (MB): peak = 5414.543 ; gain = 700.723 ; free physical = 2557 ; free virtual = 50566
 
 Phase 2.1.1.4 PBP: UpdateTiming
-Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 219e64215
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 29aee861c
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 5289.027 ; gain = 681.871 ; free physical = 3577 ; free virtual = 53616
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 5446.559 ; gain = 732.738 ; free physical = 2556 ; free virtual = 50566
 
 Phase 2.1.1.5 PBP: Add part constraints
-Phase 2.1.1.5 PBP: Add part constraints | Checksum: 219e64215
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 29aee861c
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 5289.027 ; gain = 681.871 ; free physical = 3577 ; free virtual = 53616
-Phase 2.1.1 Partition Driven Placement | Checksum: 219e64215
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 5446.559 ; gain = 732.738 ; free physical = 2556 ; free virtual = 50566
+Phase 2.1.1 Partition Driven Placement | Checksum: 29aee861c
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 5289.027 ; gain = 681.871 ; free physical = 3577 ; free virtual = 53616
-Phase 2.1 Floorplanning | Checksum: 246fffbd9
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 5446.559 ; gain = 732.738 ; free physical = 2556 ; free virtual = 50566
+Phase 2.1 Floorplanning | Checksum: 26acc4bd8
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 5289.027 ; gain = 681.871 ; free physical = 3576 ; free virtual = 53616
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 5446.559 ; gain = 732.738 ; free physical = 2556 ; free virtual = 50566
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 246fffbd9
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 26acc4bd8
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 5289.027 ; gain = 681.871 ; free physical = 3576 ; free virtual = 53616
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 5446.559 ; gain = 732.738 ; free physical = 2556 ; free virtual = 50566
 
 Phase 2.3 Post-Processing in Floorplanning
-Phase 2.3 Post-Processing in Floorplanning | Checksum: 246fffbd9
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 26acc4bd8
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 5289.027 ; gain = 681.871 ; free physical = 3576 ; free virtual = 53616
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 5446.559 ; gain = 732.738 ; free physical = 2557 ; free virtual = 50566
 
 Phase 2.4 Global Place Phase1
-Phase 2.4 Global Place Phase1 | Checksum: 21a1e7776
+Phase 2.4 Global Place Phase1 | Checksum: 27b5ba019
 
-Time (s): cpu = 00:01:00 ; elapsed = 00:00:24 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 3364 ; free virtual = 53438
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:30 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4291 ; free virtual = 52298
 
 Phase 2.5 Global Place Phase2
 
 Phase 2.5.1 UpdateTiming Before Physical Synthesis
-Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 1c8f19559
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 2458b66a4
 
-Time (s): cpu = 00:01:01 ; elapsed = 00:00:25 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 3365 ; free virtual = 53442
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:31 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4290 ; free virtual = 52298
 
 Phase 2.5.2 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 550 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 824 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-1138] End 1 Pass. Optimized 271 nets or LUTs. Breaked 0 LUT, combined 271 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 399 nets or LUTs. Breaked 0 LUT, combined 399 existing LUTs and moved 0 existing LUT
 INFO: [Physopt 32-670] No setup violation found.  Equivalent Driver Rewiring was not performed.
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
@@ -594,7 +638,7 @@ INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was
 INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5385.027 ; gain = 0.000 ; free physical = 4814 ; free virtual = 54887
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5562.559 ; gain = 0.000 ; free physical = 4290 ; free virtual = 52298
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -603,7 +647,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |            271  |                   271  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |            399  |                   399  |           0  |           1  |  00:00:00  |
 |  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Equivalent Driver Rewiring                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
@@ -613,64 +657,64 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |            271  |                   271  |           0  |           4  |  00:00:00  |
+|  Total                                            |            0  |            399  |                   399  |           0  |           4  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.5.2 Physical Synthesis In Placer | Checksum: 2c378a520
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 21e168f4d
 
-Time (s): cpu = 00:01:03 ; elapsed = 00:00:26 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4814 ; free virtual = 54887
-Phase 2.5 Global Place Phase2 | Checksum: 2c8047130
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:32 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4290 ; free virtual = 52297
+Phase 2.5 Global Place Phase2 | Checksum: 28549d64c
 
-Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4857 ; free virtual = 54914
-Phase 2 Global Placement | Checksum: 2c8047130
+Time (s): cpu = 00:01:38 ; elapsed = 00:00:37 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4304 ; free virtual = 52312
+Phase 2 Global Placement | Checksum: 28549d64c
 
-Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4857 ; free virtual = 54914
+Time (s): cpu = 00:01:38 ; elapsed = 00:00:37 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4304 ; free virtual = 52312
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 311551fad
+Phase 3.1 Commit Multi Column Macros | Checksum: 2d7f23408
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:00:33 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4786 ; free virtual = 54873
+Time (s): cpu = 00:01:48 ; elapsed = 00:00:40 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4292 ; free virtual = 52299
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 28daa3c4e
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2f27e41fe
 
-Time (s): cpu = 00:01:31 ; elapsed = 00:00:34 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4791 ; free virtual = 54874
+Time (s): cpu = 00:01:50 ; elapsed = 00:00:41 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4237 ; free virtual = 52244
 
 Phase 3.3 Small Shape DP
 
 Phase 3.3.1 Small Shape Clustering
-Phase 3.3.1 Small Shape Clustering | Checksum: 277f1b9e7
+Phase 3.3.1 Small Shape Clustering | Checksum: 2d72c3a29
 
-Time (s): cpu = 00:01:39 ; elapsed = 00:00:36 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4796 ; free virtual = 54876
+Time (s): cpu = 00:01:59 ; elapsed = 00:00:44 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4293 ; free virtual = 52300
 
 Phase 3.3.2 Slice Area Swap
 
 Phase 3.3.2.1 Slice Area Swap Initial
-Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 2a380a926
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 27eef33b6
 
-Time (s): cpu = 00:01:40 ; elapsed = 00:00:37 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4793 ; free virtual = 54873
-Phase 3.3.2 Slice Area Swap | Checksum: 2a380a926
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:45 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4286 ; free virtual = 52293
+Phase 3.3.2 Slice Area Swap | Checksum: 27eef33b6
 
-Time (s): cpu = 00:01:40 ; elapsed = 00:00:37 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4793 ; free virtual = 54873
-Phase 3.3 Small Shape DP | Checksum: 2aca29fc1
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:45 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4286 ; free virtual = 52293
+Phase 3.3 Small Shape DP | Checksum: 2b00d52f3
 
-Time (s): cpu = 00:01:42 ; elapsed = 00:00:37 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4797 ; free virtual = 54870
+Time (s): cpu = 00:02:05 ; elapsed = 00:00:47 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4286 ; free virtual = 52293
 
 Phase 3.4 Re-assign LUT pins
-Phase 3.4 Re-assign LUT pins | Checksum: 2abeba6ad
+Phase 3.4 Re-assign LUT pins | Checksum: 2d7ae6b4e
 
-Time (s): cpu = 00:01:43 ; elapsed = 00:00:38 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4803 ; free virtual = 54873
+Time (s): cpu = 00:02:06 ; elapsed = 00:00:48 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4285 ; free virtual = 52293
 
 Phase 3.5 Pipeline Register Optimization
-Phase 3.5 Pipeline Register Optimization | Checksum: 306eee996
+Phase 3.5 Pipeline Register Optimization | Checksum: 26cf6b1e8
 
-Time (s): cpu = 00:01:43 ; elapsed = 00:00:38 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4803 ; free virtual = 54873
-Phase 3 Detail Placement | Checksum: 306eee996
+Time (s): cpu = 00:02:06 ; elapsed = 00:00:48 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4285 ; free virtual = 52293
+Phase 3 Detail Placement | Checksum: 26cf6b1e8
 
-Time (s): cpu = 00:01:43 ; elapsed = 00:00:38 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4803 ; free virtual = 54873
+Time (s): cpu = 00:02:06 ; elapsed = 00:00:48 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4285 ; free virtual = 52293
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -678,7 +722,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 20769bf46
+Post Placement Optimization Initialization | Checksum: 2960fb51a
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -686,36 +730,39 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.483 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 190ad0941
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.693 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 14a585199
 
-Time (s): cpu = 00:00:00.5 ; elapsed = 00:00:00.15 . Memory (MB): peak = 5385.027 ; gain = 0.000 ; free physical = 4830 ; free virtual = 54899
+Time (s): cpu = 00:00:00.96 ; elapsed = 00:00:00.28 . Memory (MB): peak = 5562.559 ; gain = 0.000 ; free physical = 4278 ; free virtual = 52288
+INFO: [Place 46-35] Processed net design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/ena_mac, inserted BUFG to drive 2048 loads.
+INFO: [Place 46-45] Replicated bufg driver design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/ena_mac_reg_replica
 INFO: [Physopt 32-712] Optimization is not feasible on net nreset due to MARK_DEBUG attribute.
 INFO: [Place 46-32] Processed net design_1_i/rst_ps8_0_99M/U0/peripheral_aresetn[0], BUFG insertion was skipped because the netlist editing failed.
-INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 1.
-Ending Physical Synthesis Task | Checksum: 1f7d929f4
+INFO: [Place 46-35] Processed net design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/CELULA_ROWS[14].CELULA_COLUMNS[14].MAC/nrst, inserted BUFG to drive 2048 loads.
+INFO: [Place 46-56] BUFG insertion identified 3 candidate nets. Inserted BUFG: 2, Replicated BUFG Driver: 1, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 1.
+Ending Physical Synthesis Task | Checksum: 2651563ba
 
-Time (s): cpu = 00:00:00.85 ; elapsed = 00:00:00.32 . Memory (MB): peak = 5385.027 ; gain = 0.000 ; free physical = 4830 ; free virtual = 54900
-Phase 4.1.1.1 BUFG Insertion | Checksum: 20769bf46
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 5562.559 ; gain = 0.000 ; free physical = 4278 ; free virtual = 52288
+Phase 4.1.1.1 BUFG Insertion | Checksum: 2b51c35b8
 
-Time (s): cpu = 00:01:56 ; elapsed = 00:00:42 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4830 ; free virtual = 54899
+Time (s): cpu = 00:02:30 ; elapsed = 00:00:56 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4278 ; free virtual = 52288
 
 Phase 4.1.1.2 Post Placement Timing Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=5.483. For the most accurate timing information please run report_timing.
-Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 18d9bc50d
+INFO: [Place 30-746] Post Placement Timing Summary WNS=4.948. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 26dd4f4c4
 
-Time (s): cpu = 00:01:57 ; elapsed = 00:00:42 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4830 ; free virtual = 54899
+Time (s): cpu = 00:02:30 ; elapsed = 00:00:56 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4278 ; free virtual = 52288
 
-Time (s): cpu = 00:01:57 ; elapsed = 00:00:42 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4830 ; free virtual = 54899
-Phase 4.1 Post Commit Optimization | Checksum: 18d9bc50d
+Time (s): cpu = 00:02:30 ; elapsed = 00:00:56 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4278 ; free virtual = 52288
+Phase 4.1 Post Commit Optimization | Checksum: 26dd4f4c4
 
-Time (s): cpu = 00:01:57 ; elapsed = 00:00:42 . Memory (MB): peak = 5385.027 ; gain = 777.871 ; free physical = 4830 ; free virtual = 54899
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5028 ; free virtual = 55111
+Time (s): cpu = 00:02:30 ; elapsed = 00:00:56 . Memory (MB): peak = 5562.559 ; gain = 848.738 ; free physical = 4278 ; free virtual = 52288
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4190 ; free virtual = 52198
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: c0a11481
+Phase 4.2 Post Placement Cleanup | Checksum: 205482a10
 
-Time (s): cpu = 00:02:08 ; elapsed = 00:00:48 . Memory (MB): peak = 5418.012 ; gain = 810.855 ; free physical = 5033 ; free virtual = 55109
+Time (s): cpu = 00:02:42 ; elapsed = 00:01:02 . Memory (MB): peak = 5617.543 ; gain = 903.723 ; free physical = 4190 ; free virtual = 52198
 
 Phase 4.3 Placer Reporting
 
@@ -734,44 +781,44 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |       West|                1x1|                1x1|                1x1|
 |___________|___________________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: c0a11481
+Phase 4.3.1 Print Estimated Congestion | Checksum: 205482a10
 
-Time (s): cpu = 00:02:08 ; elapsed = 00:00:48 . Memory (MB): peak = 5418.012 ; gain = 810.855 ; free physical = 5033 ; free virtual = 55109
-Phase 4.3 Placer Reporting | Checksum: c0a11481
+Time (s): cpu = 00:02:42 ; elapsed = 00:01:02 . Memory (MB): peak = 5617.543 ; gain = 903.723 ; free physical = 4190 ; free virtual = 52198
+Phase 4.3 Placer Reporting | Checksum: 205482a10
 
-Time (s): cpu = 00:02:08 ; elapsed = 00:00:48 . Memory (MB): peak = 5418.012 ; gain = 810.855 ; free physical = 5033 ; free virtual = 55109
+Time (s): cpu = 00:02:42 ; elapsed = 00:01:02 . Memory (MB): peak = 5617.543 ; gain = 903.723 ; free physical = 4190 ; free virtual = 52198
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5033 ; free virtual = 55109
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4190 ; free virtual = 52198
 
-Time (s): cpu = 00:02:08 ; elapsed = 00:00:48 . Memory (MB): peak = 5418.012 ; gain = 810.855 ; free physical = 5033 ; free virtual = 55109
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 12346f231
+Time (s): cpu = 00:02:42 ; elapsed = 00:01:02 . Memory (MB): peak = 5617.543 ; gain = 903.723 ; free physical = 4190 ; free virtual = 52198
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 127c32536
 
-Time (s): cpu = 00:02:08 ; elapsed = 00:00:48 . Memory (MB): peak = 5418.012 ; gain = 810.855 ; free physical = 5033 ; free virtual = 55109
-Ending Placer Task | Checksum: 1193ee22c
+Time (s): cpu = 00:02:43 ; elapsed = 00:01:02 . Memory (MB): peak = 5617.543 ; gain = 903.723 ; free physical = 4190 ; free virtual = 52198
+Ending Placer Task | Checksum: f53880fd
 
-Time (s): cpu = 00:02:08 ; elapsed = 00:00:48 . Memory (MB): peak = 5418.012 ; gain = 810.855 ; free physical = 5033 ; free virtual = 55109
-135 Infos, 15 Warnings, 37 Critical Warnings and 0 Errors encountered.
+Time (s): cpu = 00:02:43 ; elapsed = 00:01:02 . Memory (MB): peak = 5617.543 ; gain = 903.723 ; free physical = 4190 ; free virtual = 52198
+158 Infos, 23 Warnings, 37 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:02:12 ; elapsed = 00:00:49 . Memory (MB): peak = 5418.012 ; gain = 873.992 ; free physical = 5033 ; free virtual = 55109
+place_design: Time (s): cpu = 00:02:47 ; elapsed = 00:01:04 . Memory (MB): peak = 5617.543 ; gain = 985.836 ; free physical = 4190 ; free virtual = 52198
 INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
 Running report generation with 3 threads.
 INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.1 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5031 ; free virtual = 55107
+report_control_sets: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.14 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4187 ; free virtual = 52196
 INFO: [Vivado 12-24828] Executing command : report_io -file design_1_wrapper_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.22 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5008 ; free virtual = 55084
+report_io: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.22 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4187 ; free virtual = 52195
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_placed.rpt -pb design_1_wrapper_utilization_placed.pb
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.04 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5020 ; free virtual = 55100
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.43 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5004 ; free virtual = 55102
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5004 ; free virtual = 55102
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.07 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4176 ; free virtual = 52196
+Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.84 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4129 ; free virtual = 52184
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4129 ; free virtual = 52184
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.04 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5003 ; free virtual = 55103
-Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5002 ; free virtual = 55103
-Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4999 ; free virtual = 55103
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.49 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4999 ; free virtual = 55103
+Wrote RouteStorage: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.05 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4122 ; free virtual = 52177
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4111 ; free virtual = 52170
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4103 ; free virtual = 52165
+Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.93 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4103 ; free virtual = 52165
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1/design_1_wrapper_placed.dcp' has been generated.
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
@@ -779,24 +826,24 @@ INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc
 
 Starting Initial Update Timing Task
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5015 ; free virtual = 55100
-INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 5.485 | TNS= 0.000 | 
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4170 ; free virtual = 52195
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 4.947 | TNS= 0.000 | 
 INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
 INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
 INFO: [Common 17-83] Releasing license: Implementation
-146 Infos, 15 Warnings, 37 Critical Warnings and 0 Errors encountered.
+169 Infos, 23 Warnings, 37 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.03 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4991 ; free virtual = 55083
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4995 ; free virtual = 55108
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4995 ; free virtual = 55108
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4140 ; free virtual = 52175
+Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.86 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4128 ; free virtual = 52200
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4128 ; free virtual = 52200
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.04 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4995 ; free virtual = 55108
-Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4994 ; free virtual = 55108
-Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4990 ; free virtual = 55108
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.49 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4990 ; free virtual = 55109
+Wrote RouteStorage: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.05 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4128 ; free virtual = 52200
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4124 ; free virtual = 52200
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4121 ; free virtual = 52200
+Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.95 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4121 ; free virtual = 52200
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1/design_1_wrapper_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
@@ -807,143 +854,144 @@ Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
 
 Phase 1 Build RT Design
-Checksum: PlaceDB: 4ed0cd99 ConstDB: 0 ShapeSum: 9ae9579d RouteDB: 2f84bcf6
-Nodegraph reading from file.  Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.51 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5012 ; free virtual = 55108
-Post Restoration Checksum: NetGraph: d296d171 | NumContArr: dc208581 | Constraints: 60327520 | Timing: c2a8fa9d
-Phase 1 Build RT Design | Checksum: 2d192c6af
+Checksum: PlaceDB: 40ffcaea ConstDB: 0 ShapeSum: 20461345 RouteDB: 93f2a2ce
+Nodegraph reading from file.  Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.48 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4151 ; free virtual = 52194
+Post Restoration Checksum: NetGraph: 81b32337 | NumContArr: 2aba9e2f | Constraints: d0f6d744 | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2400d9347
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5017 ; free virtual = 55115
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4152 ; free virtual = 52195
 
 Phase 2 Router Initialization
 
 Phase 2.1 Fix Topology Constraints
-Phase 2.1 Fix Topology Constraints | Checksum: 2d192c6af
+Phase 2.1 Fix Topology Constraints | Checksum: 2400d9347
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5017 ; free virtual = 55115
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4152 ; free virtual = 52195
 
 Phase 2.2 Pre Route Cleanup
-Phase 2.2 Pre Route Cleanup | Checksum: 2d192c6af
+Phase 2.2 Pre Route Cleanup | Checksum: 2400d9347
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5017 ; free virtual = 55115
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4152 ; free virtual = 52195
 
 Phase 2.3 Global Clock Net Routing
  Number of Nodes with overlaps = 0
-Phase 2.3 Global Clock Net Routing | Checksum: 2a253eee7
+Phase 2.3 Global Clock Net Routing | Checksum: 27da08549
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5014 ; free virtual = 55112
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4153 ; free virtual = 52195
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 1f3d4adad
+Phase 2.4 Update Timing | Checksum: 22525a02d
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 4838 ; free virtual = 54936
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.610  | TNS=0.000  | WHS=-0.067 | THS=-2.873 |
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4153 ; free virtual = 52195
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.182  | TNS=0.000  | WHS=-0.071 | THS=-3.279 |
 
 
 Phase 2.5 Update Timing for Bus Skew
 
 Phase 2.5.1 Update Timing
-Phase 2.5.1 Update Timing | Checksum: 1e0c9d618
+Phase 2.5.1 Update Timing | Checksum: 1aece394b
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3995 ; free virtual = 54092
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.610  | TNS=0.000  | WHS=-0.120 | THS=-6.177 |
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:09 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4152 ; free virtual = 52194
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.182  | TNS=0.000  | WHS=-0.105 | THS=-6.048 |
 
-Phase 2.5 Update Timing for Bus Skew | Checksum: 17a78e77f
+Phase 2.5 Update Timing for Bus Skew | Checksum: 1b9ea6fa4
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3990 ; free virtual = 54087
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:10 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4152 ; free virtual = 52194
 
 Phase 2.6 Soft Constraint Pins - Fast Budgeting
-Phase 2.6 Soft Constraint Pins - Fast Budgeting | Checksum: 17a78e77f
+Phase 2.6 Soft Constraint Pins - Fast Budgeting | Checksum: 1b9ea6fa4
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3983 ; free virtual = 54080
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:10 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4153 ; free virtual = 52194
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.0187682 %
-  Global Horizontal Routing Utilization  = 0.00436138 %
+  Global Vertical Routing Utilization    = 0.0196127 %
+  Global Horizontal Routing Utilization  = 0.00443927 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 22701
+  Number of Failed Nets               = 44402
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 19114
-  Number of Partially Routed Nets     = 3587
-  Number of Node Overlaps             = 99
+  Number of Unrouted Nets             = 36080
+  Number of Partially Routed Nets     = 8322
+  Number of Node Overlaps             = 107
 
-Phase 2 Router Initialization | Checksum: 132e694d3
+Phase 2 Router Initialization | Checksum: 1b389a0a2
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3888 ; free virtual = 53985
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:10 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4152 ; free virtual = 52194
 
 Phase 3 Global Routing
-Phase 3 Global Routing | Checksum: 132e694d3
+Phase 3 Global Routing | Checksum: 1b389a0a2
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:07 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3887 ; free virtual = 53985
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:10 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4152 ; free virtual = 52194
 
 Phase 4 Initial Routing
 
 Phase 4.1 Initial Net Routing Pass
-Phase 4.1 Initial Net Routing Pass | Checksum: 2045cd39c
+Phase 4.1 Initial Net Routing Pass | Checksum: c0f9aa90
 
-Time (s): cpu = 00:00:22 ; elapsed = 00:00:08 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3314 ; free virtual = 53413
-Phase 4 Initial Routing | Checksum: 21276fe1e
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:12 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4160 ; free virtual = 52202
+Phase 4 Initial Routing | Checksum: 16fc6ad96
 
-Time (s): cpu = 00:00:22 ; elapsed = 00:00:08 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3323 ; free virtual = 53423
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:12 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4160 ; free virtual = 52202
 
 Phase 5 Rip-up And Reroute
 
 Phase 5.1 Global Iteration 0
- Number of Nodes with overlaps = 3386
- Number of Nodes with overlaps = 214
- Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 8319
+ Number of Nodes with overlaps = 561
+ Number of Nodes with overlaps = 26
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.710  | TNS=0.000  | WHS=-0.019 | THS=-0.046 |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.724  | TNS=0.000  | WHS=-0.015 | THS=-0.066 |
 
-Phase 5.1 Global Iteration 0 | Checksum: 1319bd7c0
+Phase 5.1 Global Iteration 0 | Checksum: 17ee4aa00
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3667 ; free virtual = 53757
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:24 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 5.2 Additional Iteration for Hold
-Phase 5.2 Additional Iteration for Hold | Checksum: 127b954ef
+Phase 5.2 Additional Iteration for Hold | Checksum: 16327f0aa
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3667 ; free virtual = 53757
-Phase 5 Rip-up And Reroute | Checksum: 127b954ef
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:24 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
+Phase 5 Rip-up And Reroute | Checksum: 16327f0aa
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3667 ; free virtual = 53757
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:24 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 6 Delay and Skew Optimization
 
 Phase 6.1 Delay CleanUp
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.710  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.724  | TNS=0.000  | WHS=0.010  | THS=0.000  |
 
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.710  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.724  | TNS=0.000  | WHS=0.010  | THS=0.000  |
 
-Phase 6.1 Delay CleanUp | Checksum: da9802b9
+Phase 6.1 Delay CleanUp | Checksum: 1d57a5eb5
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:15 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3676 ; free virtual = 53766
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:25 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 6.2 Clock Skew Optimization
-Phase 6.2 Clock Skew Optimization | Checksum: da9802b9
+Phase 6.2 Clock Skew Optimization | Checksum: 1d57a5eb5
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:15 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3676 ; free virtual = 53766
-Phase 6 Delay and Skew Optimization | Checksum: da9802b9
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:25 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
+Phase 6 Delay and Skew Optimization | Checksum: 1d57a5eb5
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:15 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3676 ; free virtual = 53766
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:25 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 7 Post Hold Fix
 
 Phase 7.1 Hold Fix Iter
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.710  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.724  | TNS=0.000  | WHS=0.010  | THS=0.000  |
 
-Phase 7.1 Hold Fix Iter | Checksum: 14112f7cb
+Phase 7.1 Hold Fix Iter | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:15 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3678 ; free virtual = 53768
-Phase 7 Post Hold Fix | Checksum: 14112f7cb
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:26 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
+Phase 7 Post Hold Fix | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:15 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3678 ; free virtual = 53768
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:26 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 8 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 1.13027 %
-  Global Horizontal Routing Utilization  = 1.11215 %
+  Global Vertical Routing Utilization    = 1.75562 %
+  Global Horizontal Routing Utilization  = 2.03882 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -953,55 +1001,55 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 8 Route finalize | Checksum: 14112f7cb
+Phase 8 Route finalize | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:15 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3679 ; free virtual = 53768
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:26 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4153 ; free virtual = 52193
 
 Phase 9 Verifying routed nets
 
  Verification completed successfully
-Phase 9 Verifying routed nets | Checksum: 14112f7cb
+Phase 9 Verifying routed nets | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:15 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 3678 ; free virtual = 53768
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:26 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4153 ; free virtual = 52193
 
 Phase 10 Depositing Routes
-Phase 10 Depositing Routes | Checksum: 14112f7cb
+Phase 10 Depositing Routes | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:43 ; elapsed = 00:00:16 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5088 ; free virtual = 55178
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:27 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 11 Resolve XTalk
-Phase 11 Resolve XTalk | Checksum: 14112f7cb
+Phase 11 Resolve XTalk | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:43 ; elapsed = 00:00:16 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5088 ; free virtual = 55178
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:27 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 12 Post Process Routing
-Phase 12 Post Process Routing | Checksum: 14112f7cb
+Phase 12 Post Process Routing | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:16 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5095 ; free virtual = 55185
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:28 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Phase 13 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=4.710  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=4.724  | TNS=0.000  | WHS=0.010  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 13 Post Router Timing | Checksum: 14112f7cb
+Phase 13 Post Router Timing | Checksum: 1d70ffc6e
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:16 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5095 ; free virtual = 55185
-Total Elapsed time in route_design: 15.94 secs
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:28 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
+Total Elapsed time in route_design: 27.52 secs
 
 Phase 14 Post-Route Event Processing
-Phase 14 Post-Route Event Processing | Checksum: 24ad0bfe9
+Phase 14 Post-Route Event Processing | Checksum: 104f7774f
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:16 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5095 ; free virtual = 55185
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:28 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 INFO: [Route 35-16] Router Completed Successfully
-Ending Routing Task | Checksum: 24ad0bfe9
+Ending Routing Task | Checksum: 104f7774f
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:16 . Memory (MB): peak = 5418.012 ; gain = 0.000 ; free physical = 5089 ; free virtual = 55179
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:28 . Memory (MB): peak = 5617.543 ; gain = 0.000 ; free physical = 4154 ; free virtual = 52194
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-160 Infos, 15 Warnings, 37 Critical Warnings and 0 Errors encountered.
+183 Infos, 23 Warnings, 37 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:16 . Memory (MB): peak = 5436.273 ; gain = 18.262 ; free physical = 5097 ; free virtual = 55187
+route_design: Time (s): cpu = 00:01:21 ; elapsed = 00:00:28 . Memory (MB): peak = 5635.805 ; gain = 18.262 ; free physical = 4154 ; free virtual = 52193
 INFO: [Vivado 12-24828] Executing command : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 Command: report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
@@ -1034,22 +1082,22 @@ Running Vector-less Activity Propagation...
 Finished Running Vector-less Activity Propagation
 WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
 Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
-180 Infos, 17 Warnings, 37 Critical Warnings and 0 Errors encountered.
+203 Infos, 25 Warnings, 37 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 5476.203 ; gain = 39.930 ; free physical = 5054 ; free virtual = 55171
+report_power: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 5675.734 ; gain = 39.930 ; free physical = 4134 ; free virtual = 52190
 INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file design_1_wrapper_clock_utilization_routed.rpt
-generate_parallel_reports: Time (s): cpu = 00:00:25 ; elapsed = 00:00:12 . Memory (MB): peak = 5476.203 ; gain = 39.930 ; free physical = 5043 ; free virtual = 55165
+generate_parallel_reports: Time (s): cpu = 00:00:38 ; elapsed = 00:00:15 . Memory (MB): peak = 5675.734 ; gain = 39.930 ; free physical = 4132 ; free virtual = 52188
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.04 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 5037 ; free virtual = 55166
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.41 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 5013 ; free virtual = 55159
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 5013 ; free virtual = 55159
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4137 ; free virtual = 52203
+Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.82 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4075 ; free virtual = 52178
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4075 ; free virtual = 52178
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.11 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 5004 ; free virtual = 55154
-Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 5002 ; free virtual = 55153
-Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 5000 ; free virtual = 55154
-Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.55 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 5000 ; free virtual = 55154
+Wrote RouteStorage: Time (s): cpu = 00:00:00.54 ; elapsed = 00:00:00.2 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4058 ; free virtual = 52169
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4054 ; free virtual = 52168
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4050 ; free virtual = 52167
+Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4043 ; free virtual = 52160
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/Ethernet_ps.runs/impl_1/design_1_wrapper_routed.dcp' has been generated.
 Command: write_bitstream -force design_1_wrapper.bit
 Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
@@ -1070,7 +1118,7 @@ Creating bitstream...
 Writing bitstream ./design_1_wrapper.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
-191 Infos, 17 Warnings, 37 Critical Warnings and 0 Errors encountered.
+214 Infos, 25 Warnings, 37 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 5476.203 ; gain = 0.000 ; free physical = 3271 ; free virtual = 53625
-INFO: [Common 17-206] Exiting Vivado at Thu Jan  1 17:25:52 2026...
+write_bitstream: Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 5675.734 ; gain = 0.000 ; free physical = 4056 ; free virtual = 52148
+INFO: [Common 17-206] Exiting Vivado at Fri Jan  2 17:31:56 2026...

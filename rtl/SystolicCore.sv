@@ -205,7 +205,7 @@ assign mem2serial_valid_i                          =  systolicControlUnit_mem2se
 assign mem2serial_rready_i                         =  systolicControlUnit_mem2serial_rready_i                   ;
 assign syst_valid_i                                =  systolicControlUnit_syst_valid_i                          ;
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
-assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ;
+//assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ; //Avaliação 1.1
 assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
 (*dont_touch = "true"*) 
 assign systolicControlUnit_uart_valid_rx_in        =  1                                          ; 
@@ -239,8 +239,8 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
     .ready_o                    (serial2mem_opa_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opa_in_data                     )                 ,
     .out_data                   (serial2mem_opa_out_data                    )                 ,
-    .single_port_ram_di         (serial2mem_opa_buf_data                    ),
-    .uart_ready_rx_out          (uart_ready_rx_out                          )
+    .single_port_ram_di         (serial2mem_opa_buf_data                    )                 ,
+    .uart_ready_rx_out          (uart_ready_rx_out                          )                 
     //.fifo_d(fifo_d_a)
 
 );
@@ -269,7 +269,8 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
     .rvalid_o                   (mem2serial_rvalid_o                        )                 , //Resposta Válida(Operação concluida)
     .ready_o                    (mem2serial_ready_o                         )                 , //Pronto para receber um dado valido na entrada
     (*dont_touch = "true"*) 
-    .smatrix_out                (mem2serial_smatrix_out                     )                 
+    .smatrix_out                (mem2serial_smatrix_out                     )                 ,
+    .event_send_data            (uart_valid_tx_in                           )                   //Avaliação 1.1
 );
 
 (*dont_touch = "true"*) 

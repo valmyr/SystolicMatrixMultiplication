@@ -9,7 +9,7 @@ module GPIOinput(
     wire [7:0] data_input;
     wire enable_write;
     reg last_enable_write;
-    assign data_input = GPIO_0_tri_o[9:1];
+    assign data_input = GPIO_0_tri_o[15:1];
     assign enable_write =GPIO_0_tri_o[0];
     always@(posedge clk, negedge nreset)begin
         if(!nreset)begin

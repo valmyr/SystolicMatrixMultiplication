@@ -10,62 +10,69 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="23"></ZoomEndTime>
+      <ZoomEndTime time="20"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="1430"></NameColumnWidth>
-      <ValueColumnWidth column_width="128"></ValueColumnWidth>
+      <NameColumnWidth column_width="1371"></NameColumnWidth>
+      <ValueColumnWidth column_width="480"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject type="array" fp_name="SystolicCore0/systolicControlUnit_Global/frame_start">
+   <WVObjectSize size="8" />
+   <wvobject type="logic" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/&lt;const0&gt;_61">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/systolicControlUnit_Global/frame_start[31:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/&lt;const0&gt;_61</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_61</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[31:0]</obj_property>
       <obj_property name="ObjectShortName">frame_start[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="SystolicCore0/systolicControlUnit_Global/fsm_unit_control">
+   <wvobject type="array" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/fsm_unit_control">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/systolicControlUnit_Global/fsm_unit_control[31:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/fsm_unit_control[31:0]</obj_property>
       <obj_property name="ObjectShortName">fsm_unit_control[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx">
+   <wvobject type="logic" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx</obj_property>
       <obj_property name="ObjectShortName">last_uart_ready_rx</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/systolicControlUnit_Global/mem2serial_valid_i">
+   <wvobject type="logic" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/mem2serial_valid_i">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/systolicControlUnit_Global/mem2serial_valid_i</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/mem2serial_valid_i</obj_property>
       <obj_property name="ObjectShortName">mem2serial_valid_i</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/systolicControlUnit_Global/uart_ready_rx">
+   <wvobject type="logic" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/systolicControlUnit_Global/uart_ready_rx</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx</obj_property>
       <obj_property name="ObjectShortName">uart_ready_rx</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/systolicControlUnit_Global/uart_ready_rx_1">
+   <wvobject type="logic" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx_1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/systolicControlUnit_Global/uart_ready_rx_1</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx_1</obj_property>
       <obj_property name="ObjectShortName">uart_ready_rx_1</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore0/systolicControlUnit_Global/your_instance_name_i_1_n_2">
+   <wvobject type="logic" fp_name="design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name_i_1_n_0">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore0/systolicControlUnit_Global/your_instance_name_i_1_n_2</obj_property>
-      <obj_property name="ObjectShortName">your_instance_name_i_1_n_2</obj_property>
+      <obj_property name="ElementShortName">design_1_i/SystolicCoreWrapperV_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name_i_1_n_0</obj_property>
+      <obj_property name="ObjectShortName">your_instance_name_i_1_n_0</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
