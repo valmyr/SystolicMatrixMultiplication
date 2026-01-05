@@ -9,7 +9,8 @@ module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     output logic ready_o                                     , //Pronto para receber um dado valido na entrada
     (*dont_touch = "true"*) 
     output logic [WIDTH-1:0]      smatrix_out                ,
-    output logic event_send_data         
+    input logic event_send_data                              ,
+    output logic m_axis_tlast 
 );
 
 
@@ -24,23 +25,20 @@ logic [$clog2(SIZE*SIZE)-1:0] k_counter_clock_slow;
 logic [$clog2(SIZE*SIZE)-1:0] next_k_counter_clock_slow;
 logic [$clog2(SIZE)-1:0] next_i_counter, next_j_counter;
 
-logic last_event_send_data;
-logic [27:0]pseudo_clock;
-logic clockk;
 
+/*
 ref_clock #(.CLOCK_REF(500),.CLOCK_INPUT(100_000_000))clock_rate_pc(
     .in_clock     (clock                                   )                ,
     .nreset       (nreset                                  )                ,
     .out_clock_ref(clockk                                  )                
 );
+*/
 
-
-always_ff@(posedge clockk, negedge nreset)begin
+always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         i_counter        <=0; 
         j_counter        <=0;
         k_counter_clock_slow <= 0;
-        last_event_send_data <= 0;
         mem2seriala_fsm <= IDLE_INDEX;
     end else begin
         i_counter        <=next_i_counter; 
@@ -50,15 +48,11 @@ always_ff@(posedge clockk, negedge nreset)begin
 
  //       (*dont_touch = "true"*) 
 //        pmatrix  <= pmatrix_in;
-        if(mem2seriala_fsm == COUNTER_INDEX)begin
-            
-            last_event_send_data <= ~last_event_send_data;
-        end else begin
-            last_event_send_data <= 0;
-        end
 
+        end
+        
     end
-end
+
 
 
 always_comb begin
@@ -70,18 +64,21 @@ always_comb begin
             next_i_counter =0;
             next_j_counter =0;
             smatrix_out  = 8'hfe;
+            m_axis_tlast = 0;
         end
         COUNTER_INDEX:begin
             ready_o = 0;
             rvalid_o = 0;
-            next_j_counter = j_counter < SIZE  ? j_counter +1 : 0;
-            next_i_counter = j_counter < SIZE -1? i_counter:i_counter+1  ;
-            next_mem2seriala_fsm = i_counter >= SIZE -1 & j_counter >= SIZE-1 ? DONE_INDEX: COUNTER_INDEX;
+            m_axis_tlast = 0;
+            next_j_counter = event_send_data && (j_counter < SIZE   )? j_counter +1 : 0;
+            next_i_counter = event_send_data && (j_counter < SIZE -1)? i_counter:i_counter+1  ;
+            next_mem2seriala_fsm = event_send_data && (i_counter >= SIZE -1 & j_counter >= SIZE-1) ? DONE_INDEX: COUNTER_INDEX;
             (*dont_touch = "true"*) 
             smatrix_out     = pmatrix_in[i_counter][j_counter];
             next_k_counter_clock_slow <= k_counter_clock_slow + 1;
         end
         DONE_INDEX:begin
+            m_axis_tlast =1;
             smatrix_out  = 8'h00;
             ready_o = 0;
             rvalid_o = 1;
@@ -99,7 +96,8 @@ always_comb begin
         end
     endcase
 end
-assign event_send_data = last_event_send_data;
+
+/*
 ila_3 your_instance_name (
 	.clk(clock), // input wire clk
 
@@ -112,6 +110,6 @@ ila_3 your_instance_name (
 	.probe5(rvalid_o), // input wire [0:0]  probe5 
 	.probe6(event_send_data), // input wire [0:0]  probe6 
 	.probe7(clockk) // input wire [0:0]  probe7
-);
+);*/
 //assign    smatrix_out     = pmatrix_in[i_counter][j_counter];
 endmodule

@@ -209,7 +209,7 @@ ram_single_port mem (
 
         end
     endcase
-    
+    /*
     ila_2 your_instance_name (
 	.clk(clock), // input wire clk
 
@@ -225,5 +225,5 @@ ram_single_port mem (
 	.probe8(in_data), // input wire [3:0]  probe8 
 	.probe9(out_data), // input wire [63:0]  probe9 
 	.probe10(single_port_ram_di_reg) // input wire [63:0]  probe10
-);
+);*/
 endmodule

@@ -1,0 +1,56 @@
+-------------------------------------
+| Tool Version : Vivado v.2025.2
+| Date         : Mon Jan  5 13:58:31 2026
+| Host         : VT0144
+| Design       : design_1
+| Device       : xczu7ev-ffvc1156-2-E-
+-------------------------------------
+
+For more information on clockInfo.txt clock routing debug file see https://support.xilinx.com/s/article/000035660?language=en_US
+
+***********************
+Running Pre-CRP Checker
+***********************
+Number of global clocks: 4
+	Number of BUFGCE: 3
+	Number of BUFGCE_HDIO: 0
+	Number of BUFG_CTRL: 0
+	Number of BUFGCE_DIV: 0
+	Number of BUFG_GT: 0
+	Number of BUFG_PS: 1
+	Number of BUFG_FABRIC: 0
+	Running suboptimal placement checker for 3 clocks (and their loads) which do not have the CLOCK_LOW_FANOUT property but have a fanout less than 2000...
+Pre-CRP Checker took 0 secs
+
+**************************************
+Clock Nets/Source Overview (CRP Input)
+**************************************
+Clock 1: SystolicCore_i/zynq_ultra_ps_e_0/inst/pl_clk0
+	Clock source type: BUFG_PS
+	Clock source region: X1Y3
+	Clock regions with locked loads: X1Y1 
+	initial rect ((0, 0), (3, 4))
+
+Clock 2: dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i
+	Clock source type: BUFGCE
+	Clock source region: X2Y2
+	initial rect ((2, 2), (3, 2))
+
+Clock 3: SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_di_reg[63]_i_2_n_0_BUFGCE
+	Clock source type: BUFGCE
+	Clock source region: X2Y1
+	initial rect ((2, 1), (2, 1))
+
+Clock 4: SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di_reg[63]_i_2_n_0_BUFGCE
+	Clock source type: BUFGCE
+	Clock source region: X2Y1
+	initial rect ((2, 1), (2, 1))
+
+
+
+*****************************
+Clocks With User Constraints:
+*****************************
+No clocks with user constraints found
+
+

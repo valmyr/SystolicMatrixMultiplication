@@ -11,7 +11,7 @@
 // Tool Versions: 
 // Description: 
 // 
-// Dependencies: UART, SYSTOLICMATRIXMILTIPLY, SERIAL2MEM, SYSTOLICCONTROLUNIT,CLOCKHATE
+// Dependencies: SYSTOLICMATRIXMILTIPLY, SERIAL2MEM, SYSTOLICCONTROLUNIT,CLOCKHATE
 // 
 // Revision:
 // Revision 0.01 - File Created
@@ -27,10 +27,12 @@ module SystolicCoreTop#(
     input  logic                    nreset                    ,
     input  logic [BYTESIZES-1:0]    uart_data_rx_out          ,
     output logic [BYTESIZES-1:0]    uart_data_tx_in           ,
-    input  logic                    uart_ready_rx_out         ,
+    output logic                    uart_ready_rx_out         ,
     input  logic                    uart_ready_tx_out         ,
     output logic                    uart_valid_tx_in          ,
-    output logic                    uart_valid_rx_in
+    output logic                    uart_valid_rx_in          ,
+    output logic                    s_axis_tlast              ,
+    output logic                    m_axis_tlast
 );
 
 //Pinout Unidade de Controle.
@@ -60,6 +62,7 @@ logic                   systolicControlUnit_serial2mem_opa_ready_o              
 logic                   systolicControlUnit_serial2mem_opb_ready_o                                              ;
 logic                   systolicControlUnit_read_done                                                           ;
 logic             [31:0]systolicControlUnit_frame_start                                                         ;
+logic                   systolicControlUnit_s_axis_tlast                                                        ;
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //Pinout Systolic
@@ -114,6 +117,7 @@ logic                   mem2serial_rready_i                                     
 logic                   mem2serial_rvalid_o                                                                     ;
 logic                   mem2serial_ready_o                                                                      ;
 logic  [WIDTH-1:0]      mem2serial_smatrix_out                                                                  ;
+logic                   mem2serial_m_axis_tlast                                                                 ;
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout SampleHatePC
@@ -121,11 +125,20 @@ logic ref_clock_in_clock                                                        
 logic ref_clock_nreset                                                                                          ;
 logic ref_clock_out_clock_ref                                                                                   ;
 //---------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------------
+//AXI
+assign uart_ready_rx_out =1;
+assign s_axis_tlast = systolicControlUnit_s_axis_tlast  ;
+assign uart_valid_tx_in =1;
+assign mem2serial_m_axis_tlast = m_axis_tlast;
+//---------------------------------------------------------------------------------------------------------------------------------
+
 //---------------------------------------------------------------------------------------------------
 //Atribuição de clocks
 assign syst_clock                = clock                                                                        ;
 assign uart_clock                = clock                                                                        ;
-assign mem2serial_clock          = uart_ready_tx_out                                                      ;//A definir 5kHz
+assign mem2serial_clock          = clock                                     ;//A definir 5kHz
 assign serial2mem_opa_clock      = clock           ;
 assign serial2mem_opb_clock      = clock           ;
 assign systolicControlUnit_clock = clock                                                                        ;
@@ -206,12 +219,8 @@ assign mem2serial_rready_i                         =  systolicControlUnit_mem2se
 assign syst_valid_i                                =  systolicControlUnit_syst_valid_i                          ;
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
 //assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ; //Avaliação 1.1
-assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
+assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out && uart_valid_rx_in;
 (*dont_touch = "true"*) 
-assign systolicControlUnit_uart_valid_rx_in        =  1                                          ; 
-//---------------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------------------------------------
-
 
 //logic [111:0]fifo_d_a;
 //logic [111:0]fifo_d_b;
@@ -240,7 +249,7 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
     .in_data                    (serial2mem_opa_in_data                     )                 ,
     .out_data                   (serial2mem_opa_out_data                    )                 ,
     .single_port_ram_di         (serial2mem_opa_buf_data                    )                 ,
-    .uart_ready_rx_out          (uart_ready_rx_out                          )                 
+    .uart_ready_rx_out          (uart_ready_rx_out && uart_valid_rx_in      )                 
     //.fifo_d(fifo_d_a)
 
 );
@@ -256,7 +265,7 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
     .in_data                    (serial2mem_opb_in_data                     )                 ,
     .out_data                   (serial2mem_opb_out_data                    )                 ,
     .single_port_ram_di         (serial2mem_opb_buf_data                    )                 ,
-    .uart_ready_rx_out          (uart_ready_rx_out                          )
+    .uart_ready_rx_out          (uart_ready_rx_out && uart_valid_rx_in      )
     //.fifo_d(fifo_d_b)
 );
 (*dont_touch = "true"*) 
@@ -270,7 +279,8 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
     .ready_o                    (mem2serial_ready_o                         )                 , //Pronto para receber um dado valido na entrada
     (*dont_touch = "true"*) 
     .smatrix_out                (mem2serial_smatrix_out                     )                 ,
-    .event_send_data            (uart_valid_tx_in                           )                   //Avaliação 1.1
+    .m_axis_tlast               (mem2serial_m_axis_tlast                    )                 ,
+    .event_send_data            (uart_ready_tx_out                          )                   //Avaliação 1.1
 );
 
 (*dont_touch = "true"*) 
@@ -299,9 +309,11 @@ systolicControlUnitTop systolicControlUnit_Global(
     .serial2mem_opa_ready_o     (systolicControlUnit_serial2mem_opa_ready_o     )                ,
     .serial2mem_opb_ready_o     (systolicControlUnit_serial2mem_opb_ready_o     )                ,
     .read_done                  (systolicControlUnit_read_done                  )                ,
-    .frame_start                (systolicControlUnit_frame_start                )
+    .frame_start                (systolicControlUnit_frame_start                )                ,
+    .s_axis_tlast               (systolicControlUnit_s_axis_tlast               )
 );
 
+/*
 ila_1 your_instance_name (
 	.clk(clock), // input wire clk
 
@@ -342,7 +354,7 @@ ila_1 your_instance_name (
 
 );
 
-
+*/
 /*
 (*dont_touch = "true"*) 
 ref_clock #(.CLOCK_REF(1000),.CLOCK_INPUT(100_000_000))clock_rate_pc(

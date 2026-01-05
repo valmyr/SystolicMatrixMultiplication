@@ -23,7 +23,8 @@ module systolicControlUnitTop(
     output logic       syst_rready_i                ,
     output logic       uart_valid_tx_in             ,
     output logic       starting_frame_identified    ,
-    output logic [31:0] frame_start 
+    output logic [31:0] frame_start                 ,
+    output logic       s_axis_tlast
 );
 
 enum {IDLE,IDLE_PC, WRITE_MEMAAA,WRITE_MEMBBB,SYSTOLIC_READ_MEM,WRITE_MEM_OUT,DONE} fsm_unit_control, fsm_unit_control_next;
@@ -40,14 +41,24 @@ always_ff@(posedge clock, negedge nreset)begin
         frame_start[31:24] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[23:16]: frame_start[31:24];
     end
 end
+
+
+
+
 ila_0 your_instance_name (
 	.clk(clock), // input wire clk
 
 
-	.probe0({mem2serial_valid_i,fsm_unit_control,frame_start,uart_ready_rx}), // input wire [127:0]  probe0  
-	.probe1((uart_ready_rx && !last_uart_ready_rx)), // input wire [0:0]  probe1 
-	.probe2(last_uart_ready_rx), // input wire [0:0]  probe2 
-	.probe3(uart_ready_rx) // input wire [0:0]  probe3
+	.probe0(frame_start), // input wire [31:0]  probe0  
+	.probe1(fsm_unit_control), // input wire [2:0]  probe1 
+	.probe2(s_axis_tlast), // input wire [0:0]  probe2 
+	.probe3(last_uart_ready_rx), // input wire [0:0]  probe3 
+	.probe4(mem2serial_valid_i), // input wire [0:0]  probe4 
+	.probe5(uart_ready_rx), // input wire [0:0]  probe5 
+	.probe6(mem2serial_valid_i), // input wire [0:0]  probe6 
+	.probe7(last_uart_ready_rx), // input wire [0:0]  probe7 
+	.probe8(uart_valid_tx_in), // input wire [0:0]  probe8 
+	.probe9(1) // input wire [0:0]  probe9
 );
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
@@ -70,6 +81,7 @@ always_comb case(fsm_unit_control)
         syst_rready_i                 = 1;          
         //fsm_unit_control_next         = uart_valid_rx_in && frame_start == 16'hffff ? WRITE_MEMAAA :IDLE;
         starting_frame_identified     = 1;
+        s_axis_tlast =0;
         /*
         if(uart_valid_rx_in)begin
             if(frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o)begin
@@ -86,29 +98,33 @@ always_comb case(fsm_unit_control)
                 serial2mem_opb_valid_i        =0;
                 fsm_unit_control_next = IDLE;
             end
-           end
+           endssssssssssss
          else begin
                 serial2mem_opb_valid_i        =0;
                 fsm_unit_control_next = IDLE;
          end
         */
          //casex({uart_valid_rx_in,frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start[15:0] ==16'haaaa})
-        casex({uart_valid_rx_in,frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start ==32'hadda_ffff})
+        casex({(uart_ready_rx && !last_uart_ready_rx),frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start ==32'hadda_ffff})
             3'b11x:begin
                 fsm_unit_control_next =  WRITE_MEMAAA;
                 serial2mem_opb_valid_i        =0;
+                s_axis_tlast    =1;
             end
             3'b1x1:begin
                 fsm_unit_control_next = (serial2mem_opb_ready_o) ? WRITE_MEMBBB : IDLE;
                 serial2mem_opb_valid_i        = 0;
+                s_axis_tlast    =1;
             end
             3'bxxx:begin
                 fsm_unit_control_next = IDLE;
                 serial2mem_opb_valid_i        = 0;
+                s_axis_tlast    =1;
             end
             default:begin
                 serial2mem_opb_valid_i        =0;
                 fsm_unit_control_next = IDLE;
+                s_axis_tlast    =1;
             end
          endcase
     end
@@ -127,6 +143,7 @@ always_comb case(fsm_unit_control)
         uart_valid_tx_in              = 0;
         //starting_frame_identified     = frame_start[15:0] == 16'hffff & serial2mem_opa_rvalid_o;
         starting_frame_identified     = 1;
+        s_axis_tlast = serial2mem_opa_rvalid_o ? 1 : 0;
     end
     WRITE_MEMBBB:begin
         serial2mem_opa_valid_i        = 0;
@@ -142,14 +159,15 @@ always_comb case(fsm_unit_control)
             fsm_unit_control_next         =  SYSTOLIC_READ_MEM;
             serial2mem_opa_rw             =  1;  
             serial2mem_opb_rw             =  1; 
-            syst_valid_i                  =  1;  
+            syst_valid_i                  =  1;
+            s_axis_tlast = 1;  
         
         end else begin
-               fsm_unit_control_next         = WRITE_MEMBBB;
+            fsm_unit_control_next         = WRITE_MEMBBB;
             serial2mem_opa_rw             =  0;  
             serial2mem_opb_rw             =  0; 
-                    syst_valid_i                  = 0;  
-                       
+            syst_valid_i                  = 0;  
+            s_axis_tlast = 0;        
         
         end
        // fsm_unit_control_next         = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o && frame_start == 32'hffff_ffff ? SYSTOLIC_READ_MEM: WRITE_MEMBBB;
@@ -171,6 +189,7 @@ always_comb case(fsm_unit_control)
         mem2serial_rready_i           =  0;
         fsm_unit_control_next         =  !syst_rvalid_o ? SYSTOLIC_READ_MEM : IDLE_PC;
         starting_frame_identified     = 0;
+        s_axis_tlast    =1; 
     end
     IDLE_PC:begin
        if((uart_ready_rx && !last_uart_ready_rx)&&{frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
@@ -179,12 +198,14 @@ always_comb case(fsm_unit_control)
             uart_valid_tx_in        =  1                        ;
             syst_rready_i           =  0                        ;
             mem2serial_valid_i      =  0                        ;
+            s_axis_tlast <= 1;
         end
         else begin
             fsm_unit_control_next = IDLE_PC                     ; 
             uart_valid_tx_in      =  1                          ;
             syst_rready_i         =  0                          ;
             mem2serial_valid_i    =  0                          ;
+            s_axis_tlast = 0;
 
         end
         mem2serial_rready_i           =  0         ;
@@ -199,6 +220,7 @@ always_comb case(fsm_unit_control)
 
     end
     WRITE_MEM_OUT:begin
+        s_axis_tlast= 0;
         serial2mem_opa_valid_i     =  0;
         serial2mem_opb_valid_i     =  0;
         serial2mem_opa_rw          =  1;  
@@ -228,6 +250,7 @@ always_comb case(fsm_unit_control)
         syst_rready_i                 = 0;          
         //fsm_unit_control_next         = uart_valid_rx_in && frame_start == 16'hffff ? WRITE_MEMAAA :IDLE;
         starting_frame_identified     = 1;
+        s_axis_tlast = 1;
     end
 endcase
 /*

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2025.2 (64-bit)                                     -->
+<!--                                                                              -->
+<!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                        -->
+<!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.        -->
+
+<hwsession version="1" minor="2">
+  <device name="xczu7_0" gui_info="dashboard1=hw_ila_1[xczu7_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_1/Status=ILA_STATUS_1;xczu7_0/hw_ila_1/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_1/Settings=ILA_SETTINGS_1;]"/>
+  <ObjectList object_type="hw_device" gui_info="">
+    <Object name="xczu7_0" gui_info="">
+      <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/SystolicCore_wrapper.ltx"/>
+      <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/SystolicCore_wrapper.ltx"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/SystolicCore_wrapper.bit"/>
+      <Properties Property="SLR.COUNT" value="1"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_probe" gui_info="">
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx" gui_info=""/>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx" gui_info=""/>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/uart_valid_tx_in" gui_info=""/>
+  </ObjectList>
+  <probeset name="hw project" active="false">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe9[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/&lt;const1>"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[31]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[30]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[29]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[28]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[27]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[26]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[25]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[24]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[23]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[22]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[21]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[20]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[19]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[18]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[17]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[16]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[15]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[14]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[13]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[12]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[11]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[10]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[9]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[8]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[7]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[6]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[5]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[4]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[3]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[2]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[1]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/frame_start[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq3&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq3&apos;hX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[2:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq3&apos;hX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/fsm_unit_control[2]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/fsm_unit_control[1]"/>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/fsm_unit_control[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe7[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe6[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/mem2serial_valid_i"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/mem2serial_valid_i_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/s_axis_tlast"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe8[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/uart_valid_tx_in"/>
+      </nets>
+    </probe>
+  </probeset>
+</hwsession>
