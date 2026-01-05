@@ -28,7 +28,7 @@ logic last_event_send_data;
 logic [27:0]pseudo_clock;
 logic clockk;
 
-ref_clock #(.CLOCK_REF(100),.CLOCK_INPUT(100_000_000))clock_rate_pc(
+ref_clock #(.CLOCK_REF(500),.CLOCK_INPUT(100_000_000))clock_rate_pc(
     .in_clock     (clock                                   )                ,
     .nreset       (nreset                                  )                ,
     .out_clock_ref(clockk                                  )                

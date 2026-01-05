@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan  2 20:06:33 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan  3 19:09:27 2026" VIVADOVERSION="2025.2">
 
   <SYSTEMINFO ARCH="zynquplus" BOARD="xilinx.com:zcu106:part0:2.6" DEVICE="xczu7ev" NAME="design_1" PACKAGE="ffvc1156" SPEEDGRADE="-2"/>
 
@@ -15,7 +15,7 @@
         <PARAMETER NAME="SIZE" VALUE="16"/>
         <PARAMETER NAME="WIDTH" VALUE="8"/>
         <PARAMETER NAME="WIDTHx" VALUE="4"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_SystolicCoreWrapperV_0_5"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_SystolicCoreWrapperV_0_12"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -24,15 +24,15 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="gpio_input" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
+        <PORT DIR="I" LEFT="15" NAME="gpio_input" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="gpio_output" RIGHT="0" SIGIS="undef" SIGNAME="SystolicCoreWrapperV_0_gpio_output">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_i"/>
             <CONNECTION INSTANCE="ila_0" PORT="probe1"/>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio_io_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="nrst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="rst_ps8_0_99M_peripheral_aresetn">
@@ -214,16 +214,16 @@
         </ADDRESSBLOCK>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="C_ALL_INPUTS" VALUE="0"/>
-        <PARAMETER NAME="C_ALL_INPUTS_2" VALUE="1"/>
-        <PARAMETER NAME="C_ALL_OUTPUTS" VALUE="1"/>
-        <PARAMETER NAME="C_ALL_OUTPUTS_2" VALUE="0"/>
+        <PARAMETER NAME="C_ALL_INPUTS" VALUE="1"/>
+        <PARAMETER NAME="C_ALL_INPUTS_2" VALUE="0"/>
+        <PARAMETER NAME="C_ALL_OUTPUTS" VALUE="0"/>
+        <PARAMETER NAME="C_ALL_OUTPUTS_2" VALUE="1"/>
         <PARAMETER NAME="C_DOUT_DEFAULT" VALUE="0x00000000"/>
         <PARAMETER NAME="C_DOUT_DEFAULT_2" VALUE="0x00000000"/>
         <PARAMETER NAME="C_FAMILY" VALUE="zynquplus"/>
         <PARAMETER NAME="C_GPIO2_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_GPIO_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_INTERRUPT_PRESENT" VALUE="0"/>
+        <PARAMETER NAME="C_INTERRUPT_PRESENT" VALUE="1"/>
         <PARAMETER NAME="C_IS_DUAL" VALUE="1"/>
         <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="9"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
@@ -238,15 +238,20 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0xA000FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="SystolicCoreWrapperV_0_gpio_output">
+        <PORT DIR="O" LEFT="15" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe0"/>
+            <CONNECTION INSTANCE="SystolicCoreWrapperV_0" PORT="gpio_input"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="SystolicCoreWrapperV_0_gpio_output">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SystolicCoreWrapperV_0" PORT="gpio_output"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
+        <PORT DIR="O" NAME="ip2intc_irpt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="axi_gpio_0_ip2intc_irpt">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ila_0" PORT="probe0"/>
-            <CONNECTION INSTANCE="SystolicCoreWrapperV_0" PORT="gpio_input"/>
+            <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_ps_irq0"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="99990005" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
@@ -400,12 +405,12 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="GPIO" TYPE="INITIATOR" VLNV="xilinx.com:interface:gpio:1.0">
           <PORTMAPS>
-            <PORTMAP LOGICAL="TRI_O" PHYSICAL="gpio_io_o"/>
+            <PORTMAP LOGICAL="TRI_I" PHYSICAL="gpio_io_i"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="GPIO2" TYPE="INITIATOR" VLNV="xilinx.com:interface:gpio:1.0">
           <PORTMAPS>
-            <PORTMAP LOGICAL="TRI_I" PHYSICAL="gpio2_io_i"/>
+            <PORTMAP LOGICAL="TRI_O" PHYSICAL="gpio2_io_o"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -3992,9 +3997,9 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
+        <PORT DIR="I" LEFT="15" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="15" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="SystolicCoreWrapperV_0_gpio_output">
@@ -8961,7 +8966,7 @@
         <PARAMETER NAME="PSU__USE__FTM" VALUE="0"/>
         <PARAMETER NAME="PSU__USE__GDMA" VALUE="0"/>
         <PARAMETER NAME="PSU__USE__IRQ" VALUE="0"/>
-        <PARAMETER NAME="PSU__USE__IRQ0" VALUE="0"/>
+        <PARAMETER NAME="PSU__USE__IRQ0" VALUE="1"/>
         <PARAMETER NAME="PSU__USE__IRQ1" VALUE="0"/>
         <PARAMETER NAME="PSU__USE__M_AXI_GP0" VALUE="1"/>
         <PARAMETER NAME="PSU__USE__M_AXI_GP1" VALUE="0"/>
@@ -9221,6 +9226,11 @@
             <CONNECTION INSTANCE="ila_1" PORT="clk"/>
             <CONNECTION INSTANCE="ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="SystolicCoreWrapperV_0" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="pl_ps_irq0" RIGHT="0" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="axi_gpio_0_ip2intc_irpt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="ip2intc_irpt"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="pl_resetn0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="zynq_ultra_ps_e_0_pl_resetn0">

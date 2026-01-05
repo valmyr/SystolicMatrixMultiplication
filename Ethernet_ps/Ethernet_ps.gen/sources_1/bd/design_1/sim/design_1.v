@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Fri Jan  2 20:06:33 2026
+//Date        : Sat Jan  3 19:09:26 2026
 //Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -16,6 +16,7 @@ module design_1
 
   wire [15:0]SystolicCoreWrapperV_0_gpio_output;
   wire [15:0]axi_gpio_0_gpio_io_o;
+  wire axi_gpio_0_ip2intc_irpt;
   wire [8:0]axi_smc_M00_AXI_ARADDR;
   wire [2:0]axi_smc_M00_AXI_ARPROT;
   wire axi_smc_M00_AXI_ARREADY;
@@ -78,14 +79,15 @@ module design_1
   wire zynq_ultra_ps_e_0_pl_clk0;
   wire zynq_ultra_ps_e_0_pl_resetn0;
 
-  design_1_SystolicCoreWrapperV_0_5 SystolicCoreWrapperV_0
+  design_1_SystolicCoreWrapperV_0_12 SystolicCoreWrapperV_0
        (.clk(zynq_ultra_ps_e_0_pl_clk0),
         .gpio_input(axi_gpio_0_gpio_io_o),
         .gpio_output(SystolicCoreWrapperV_0_gpio_output),
         .nrst(rst_ps8_0_99M_peripheral_aresetn));
   design_1_axi_gpio_0_0 axi_gpio_0
-       (.gpio2_io_i(SystolicCoreWrapperV_0_gpio_output),
-        .gpio_io_o(axi_gpio_0_gpio_io_o),
+       (.gpio2_io_o(axi_gpio_0_gpio_io_o),
+        .gpio_io_i(SystolicCoreWrapperV_0_gpio_output),
+        .ip2intc_irpt(axi_gpio_0_ip2intc_irpt),
         .s_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
         .s_axi_araddr(axi_smc_M00_AXI_ARADDR),
         .s_axi_aresetn(rst_ps8_0_99M_peripheral_aresetn),
@@ -240,5 +242,6 @@ module design_1
         .maxigp0_wvalid(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_WVALID),
         .maxihpm0_fpd_aclk(zynq_ultra_ps_e_0_pl_clk0),
         .pl_clk0(zynq_ultra_ps_e_0_pl_clk0),
+        .pl_ps_irq0(axi_gpio_0_ip2intc_irpt),
         .pl_resetn0(zynq_ultra_ps_e_0_pl_resetn0));
 endmodule

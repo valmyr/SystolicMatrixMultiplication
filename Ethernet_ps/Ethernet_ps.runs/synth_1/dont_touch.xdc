@@ -24,8 +24,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_il
 # IP: bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ila_0_0 || ORIG_REF_NAME==design_1_ila_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_SystolicCoreWrapperV_0_5/design_1_SystolicCoreWrapperV_0_5.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_SystolicCoreWrapperV_0_5 || ORIG_REF_NAME==design_1_SystolicCoreWrapperV_0_5} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_SystolicCoreWrapperV_0_12/design_1_SystolicCoreWrapperV_0_12.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_SystolicCoreWrapperV_0_12 || ORIG_REF_NAME==design_1_SystolicCoreWrapperV_0_12} -quiet] -quiet
 
 # IP: ip/ila_0/ila_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_0 || ORIG_REF_NAME==ila_0} -quiet] -quiet

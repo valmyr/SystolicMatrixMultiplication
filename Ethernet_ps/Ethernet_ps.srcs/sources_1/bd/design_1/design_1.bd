@@ -990,6 +990,9 @@
             "value": "Active Low"
           },
           "PSU__USE__IRQ0": {
+            "value": "1"
+          },
+          "PSU__USE__IRQ1": {
             "value": "0"
           },
           "PSU__USE__M_AXI_GP0": {
@@ -1135,12 +1138,12 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "C_ALL_INPUTS": {
-            "value": "0"
-          },
-          "C_ALL_INPUTS_2": {
             "value": "1"
           },
-          "C_ALL_OUTPUTS": {
+          "C_ALL_INPUTS_2": {
+            "value": "0"
+          },
+          "C_ALL_OUTPUTS_2": {
             "value": "1"
           },
           "C_GPIO2_WIDTH": {
@@ -1148,6 +1151,9 @@
           },
           "C_GPIO_WIDTH": {
             "value": "16"
+          },
+          "C_INTERRUPT_PRESENT": {
+            "value": "1"
           },
           "C_IS_DUAL": {
             "value": "1"
@@ -1265,8 +1271,8 @@
       "SystolicCoreWrapperV_0": {
         "vlnv": "xilinx.com:module_ref:SystolicCoreWrapperVerilogGlobal:1.0",
         "ip_revision": "1",
-        "xci_name": "design_1_SystolicCoreWrapperV_0_5",
-        "xci_path": "ip/design_1_SystolicCoreWrapperV_0_5/design_1_SystolicCoreWrapperV_0_5.xci",
+        "xci_name": "design_1_SystolicCoreWrapperV_0_12",
+        "xci_path": "ip/design_1_SystolicCoreWrapperV_0_12/design_1_SystolicCoreWrapperV_0_12.xci",
         "inst_hier_path": "SystolicCoreWrapperV_0",
         "has_run_ip_tcl": "true",
         "reference_info": {
@@ -1330,15 +1336,21 @@
       "SystolicCoreWrapperV_0_gpio_output": {
         "ports": [
           "SystolicCoreWrapperV_0/gpio_output",
-          "axi_gpio_0/gpio2_io_i",
-          "ila_0/probe1"
+          "ila_0/probe1",
+          "axi_gpio_0/gpio_io_i"
         ]
       },
       "axi_gpio_0_gpio_io_o": {
         "ports": [
-          "axi_gpio_0/gpio_io_o",
+          "axi_gpio_0/gpio2_io_o",
           "ila_0/probe0",
           "SystolicCoreWrapperV_0/gpio_input"
+        ]
+      },
+      "axi_gpio_0_ip2intc_irpt": {
+        "ports": [
+          "axi_gpio_0/ip2intc_irpt",
+          "zynq_ultra_ps_e_0/pl_ps_irq0"
         ]
       },
       "rst_ps8_0_99M_peripheral_aresetn": {

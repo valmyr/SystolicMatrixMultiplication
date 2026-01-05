@@ -142,7 +142,7 @@ always_comb case(fsm_unit_control)
             fsm_unit_control_next         =  SYSTOLIC_READ_MEM;
             serial2mem_opa_rw             =  1;  
             serial2mem_opb_rw             =  1; 
-                    syst_valid_i                  = 1;  
+            syst_valid_i                  =  1;  
         
         end else begin
                fsm_unit_control_next         = WRITE_MEMBBB;
@@ -173,19 +173,18 @@ always_comb case(fsm_unit_control)
         starting_frame_identified     = 0;
     end
     IDLE_PC:begin
-       // if({frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
-        if({frame_start[7:0],uart_data_rx_out} == 16'heaea)begin
+       if((uart_ready_rx && !last_uart_ready_rx)&&{frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
+        //if({frame_start[7:0],uart_data_rx_out} == 16'heaea)begin
             fsm_unit_control_next   = WRITE_MEM_OUT             ;            
             uart_valid_tx_in        =  1                        ;
             syst_rready_i           =  0                        ;
-            mem2serial_valid_i      =  1                        ;
-
+            mem2serial_valid_i      =  0                        ;
         end
         else begin
             fsm_unit_control_next = IDLE_PC                     ; 
             uart_valid_tx_in      =  1                          ;
             syst_rready_i         =  0                          ;
-            mem2serial_valid_i    =  1                          ;
+            mem2serial_valid_i    =  0                          ;
 
         end
         mem2serial_rready_i           =  0         ;

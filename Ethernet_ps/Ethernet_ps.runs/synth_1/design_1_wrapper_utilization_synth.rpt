@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Fri Jan  2 20:07:51 2026
+| Date         : Sat Jan  3 19:39:22 2026
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -176,17 +176,17 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 9. Black Boxes
 --------------
 
-+-----------------------------------+------+
-|              Ref Name             | Used |
-+-----------------------------------+------+
-| design_1_zynq_ultra_ps_e_0_0      |    1 |
-| design_1_rst_ps8_0_99M_6          |    1 |
-| design_1_ila_1_0                  |    1 |
-| design_1_ila_0_0                  |    1 |
-| design_1_axi_smc_0                |    1 |
-| design_1_axi_gpio_0_0             |    1 |
-| design_1_SystolicCoreWrapperV_0_5 |    1 |
-+-----------------------------------+------+
++------------------------------------+------+
+|              Ref Name              | Used |
++------------------------------------+------+
+| design_1_zynq_ultra_ps_e_0_0       |    1 |
+| design_1_rst_ps8_0_99M_6           |    1 |
+| design_1_ila_1_0                   |    1 |
+| design_1_ila_0_0                   |    1 |
+| design_1_axi_smc_0                 |    1 |
+| design_1_axi_gpio_0_0              |    1 |
+| design_1_SystolicCoreWrapperV_0_12 |    1 |
++------------------------------------+------+
 
 
 10. Instantiated Netlists
