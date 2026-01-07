@@ -130,8 +130,8 @@ logic ref_clock_out_clock_ref                                                   
 //AXI
 assign uart_ready_rx_out =1;
 assign s_axis_tlast = systolicControlUnit_s_axis_tlast  ;
-assign uart_valid_tx_in =1;
-assign mem2serial_m_axis_tlast = m_axis_tlast;
+//assign uart_valid_tx_in =1;
+assign m_axis_tlast = mem2serial_m_axis_tlast;
 //---------------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ assign ref_clock_nreset           = nreset                                      
 assign systolicControlUnit_nreset = nreset                                                                      ;
 
 // assign uart_data_tx_in = systolicControlUnit_mem2serial_valid_i?  mem2serial_smatrix_out : 8'haf;                                                                 ;
-(*dont_touch = "true"*) 
+(*dont_touch = "true"*) /*
 always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
     2'b10:
         uart_data_tx_in = mem2serial_smatrix_out;
@@ -163,8 +163,8 @@ always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
     default:
         uart_data_tx_in = 8'hef;
 
-endcase
-
+endcase*/
+assign uart_data_tx_in = mem2serial_smatrix_out;
 
 
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -280,7 +280,8 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
     (*dont_touch = "true"*) 
     .smatrix_out                (mem2serial_smatrix_out                     )                 ,
     .m_axis_tlast               (mem2serial_m_axis_tlast                    )                 ,
-    .event_send_data            (uart_ready_tx_out                          )                   //Avaliação 1.1
+    .event_send_data            (uart_ready_tx_out                          )                ,    //Avaliação 1.1
+    .uart_valid_tx_in           (uart_valid_tx_in)
 );
 
 (*dont_touch = "true"*) 

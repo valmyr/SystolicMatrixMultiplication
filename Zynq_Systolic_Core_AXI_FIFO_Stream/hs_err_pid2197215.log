@@ -1,0 +1,13 @@
+#
+# An unexpected error has occurred (11) Segmentation fault
+#
+Stack:
+/home/xmen/Music/2025.2/Vivado/tps/lnx64/jre21.0.5_11/lib//server/libjvm.so(+0xe7195c) [0x7f1c6620b95c]
+/home/xmen/Music/2025.2/Vivado/tps/lnx64/jre21.0.5_11/lib//server/libjvm.so(JVM_handle_linux_signal+0x23e) [0x7f1c6620c42e]
+/lib64/libc.so.6(+0x4e5b0) [0x7f1cb2ec25b0]
+/home/xmen/Music/2025.2/Vivado/lib/lnx64.o/libxv_xicom_hw.so(XHWName::operator<(XHWName const&) const+0x2) [0x7f1c77cceed2]
+/home/xmen/Music/2025.2/Vivado/lib/lnx64.o/libxv_labtools.so(std::_Rb_tree<XHWName, std::pair<XHWName const, XHWProperty>, std::_Select1st<std::pair<XHWName const, XHWProperty> >, std::less<XHWName>, std::allocator<std::pair<XHWName const, XHWProperty> > >::find(XHWName const&)+0x38) [0x7f1c80cf63e8]
+/home/xmen/Music/2025.2/Vivado/lib/lnx64.o/libxv_xicom_hw.so(XHWDevice::getIsProgrammable() const+0x42) [0x7f1c77be5982]
+/home/xmen/Music/2025.2/Vivado/lib/lnx64.o/libxv_labtools.so(LTDHWDevice::getStatus[abi:cxx11]() const+0x21) [0x7f1c80ead541]
+/home/xmen/Music/2025.2/Vivado/lib/lnx64.o/libxv_labtools.so(Java_ui_data_labtools_lthwdatai_HWDevice_1getStatus+0x4d) [0x7f1c80c386ed]
+[0x7f1c55d6cbea]

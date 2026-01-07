@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1767632246">
+<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1767767564">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="SystolicCore_wrapper_postroute_physopted.rqs"/>
@@ -215,8 +215,9 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
   <BlockFileSet Type="BlockSrcs" Name="SystolicCore_zynq_ultra_ps_e_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ram_dual_port"/>
 </GenRun>

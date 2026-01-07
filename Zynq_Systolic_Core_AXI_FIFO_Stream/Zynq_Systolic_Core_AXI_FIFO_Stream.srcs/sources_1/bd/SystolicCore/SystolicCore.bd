@@ -15,7 +15,8 @@
       "axi_fifo_mm_s_0": "",
       "axi_smc": "",
       "rst_ps8_0_99M": "",
-      "AXI_Stream_Systolic_0": ""
+      "AXI_Stream_Systolic_0": "",
+      "system_ila_0": ""
     },
     "components": {
       "zynq_ultra_ps_e_0": {
@@ -1365,20 +1366,92 @@
             }
           }
         }
+      },
+      "system_ila_0": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "ip_revision": "22",
+        "xci_name": "SystolicCore_system_ila_0_0",
+        "xci_path": "ip/SystolicCore_system_ila_0_0/SystolicCore_system_ila_0_0.xci",
+        "inst_hier_path": "system_ila_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "INTERFACE"
+          },
+          "C_NUM_MONITOR_SLOTS": {
+            "value": "2"
+          },
+          "C_SLOT_0_APC_EN": {
+            "value": "0"
+          },
+          "C_SLOT_0_AXI_DATA_SEL": {
+            "value": "1"
+          },
+          "C_SLOT_0_AXI_TRIG_SEL": {
+            "value": "1"
+          },
+          "C_SLOT_0_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "C_SLOT_1_APC_EN": {
+            "value": "0"
+          },
+          "C_SLOT_1_AXI_DATA_SEL": {
+            "value": "1"
+          },
+          "C_SLOT_1_AXI_TRIG_SEL": {
+            "value": "1"
+          },
+          "C_SLOT_1_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        },
+        "interface_ports": {
+          "SLOT_0_AXIS": {
+            "mode": "Monitor",
+            "monitor_type": "SlaveType",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "SLOT_1_AXIS": {
+            "mode": "Monitor",
+            "monitor_type": "SlaveType",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        }
       }
     },
     "interface_nets": {
       "AXI_Stream_Systolic_0_m_axis": {
         "interface_ports": [
           "AXI_Stream_Systolic_0/m_axis",
-          "axi_fifo_mm_s_0/AXI_STR_RXD"
-        ]
+          "axi_fifo_mm_s_0/AXI_STR_RXD",
+          "system_ila_0/SLOT_1_AXIS"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "axi_fifo_mm_s_0_AXI_STR_TXD": {
         "interface_ports": [
           "AXI_Stream_Systolic_0/s_axis",
-          "axi_fifo_mm_s_0/AXI_STR_TXD"
-        ]
+          "axi_fifo_mm_s_0/AXI_STR_TXD",
+          "system_ila_0/SLOT_0_AXIS"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "axi_smc_M00_AXI": {
         "interface_ports": [
@@ -1399,6 +1472,7 @@
           "rst_ps8_0_99M/peripheral_aresetn",
           "axi_fifo_mm_s_0/s_axi_aresetn",
           "axi_smc/aresetn",
+          "system_ila_0/resetn",
           "AXI_Stream_Systolic_0/resetn"
         ]
       },
@@ -1409,6 +1483,7 @@
           "axi_smc/aclk",
           "axi_fifo_mm_s_0/s_axi_aclk",
           "rst_ps8_0_99M/slowest_sync_clk",
+          "system_ila_0/clk",
           "AXI_Stream_Systolic_0/clock"
         ]
       },

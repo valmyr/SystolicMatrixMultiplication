@@ -22,7 +22,13 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==SystolicCor
 # IP: ip/ila_0/ila_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_0 || ORIG_REF_NAME==ila_0} -quiet] -quiet
 
+# IP: ip/ila_1/ila_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_1 || ORIG_REF_NAME==ila_1} -quiet] -quiet
+
 # IP: ip/ram_dual_port/ram_dual_port.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ram_dual_port || ORIG_REF_NAME==ram_dual_port} -quiet] -quiet
+
+# IP: bd/SystolicCore/ip/SystolicCore_system_ila_0_0/SystolicCore_system_ila_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==SystolicCore_system_ila_0_0 || ORIG_REF_NAME==SystolicCore_system_ila_0_0} -quiet] -quiet
 
 # XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/SystolicCore_ooc.xdc

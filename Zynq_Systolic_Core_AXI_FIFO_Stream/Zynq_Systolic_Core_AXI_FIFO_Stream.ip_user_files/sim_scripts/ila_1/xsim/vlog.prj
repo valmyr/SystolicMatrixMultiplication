@@ -1,0 +1,7 @@
+verilog xil_defaultlib -i "../../../../../../../../../Music/2025.2/data/rsb/busdef" --include "/home/xmen/Music/2025.2/data/xilinx_vip/include" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_1/hdl/verilog" \
+"../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_1/sim/ila_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

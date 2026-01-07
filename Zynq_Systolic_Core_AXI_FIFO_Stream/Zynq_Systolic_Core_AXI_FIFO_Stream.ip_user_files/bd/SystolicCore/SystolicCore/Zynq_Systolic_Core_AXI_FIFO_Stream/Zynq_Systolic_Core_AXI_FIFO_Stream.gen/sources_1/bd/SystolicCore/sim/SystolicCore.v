@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Mon Jan  5 13:56:08 2026
+//Date        : Wed Jan  7 01:31:45 2026
 //Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 //Command     : generate_target SystolicCore.bd
 //Design      : SystolicCore
@@ -10,18 +10,18 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "SystolicCore,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SystolicCore,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_clkrst_cnt=1,da_zynq_ultra_ps_e_cnt=2,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "SystolicCore.hwdef" *) 
+(* CORE_GENERATION_INFO = "SystolicCore,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SystolicCore,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_clkrst_cnt=1,da_zynq_ultra_ps_e_cnt=2,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "SystolicCore.hwdef" *) 
 module SystolicCore
    ();
 
-  wire [31:0]AXI_Stream_Systolic_0_m_axis_TDATA;
-  wire AXI_Stream_Systolic_0_m_axis_TLAST;
-  wire AXI_Stream_Systolic_0_m_axis_TREADY;
-  wire AXI_Stream_Systolic_0_m_axis_TVALID;
-  wire [31:0]axi_fifo_mm_s_0_AXI_STR_TXD_TDATA;
-  wire axi_fifo_mm_s_0_AXI_STR_TXD_TLAST;
-  wire axi_fifo_mm_s_0_AXI_STR_TXD_TREADY;
-  wire axi_fifo_mm_s_0_AXI_STR_TXD_TVALID;
+  (* CONN_BUS_INFO = "AXI_Stream_Systolic_0_m_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]AXI_Stream_Systolic_0_m_axis_TDATA;
+  (* CONN_BUS_INFO = "AXI_Stream_Systolic_0_m_axis xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Stream_Systolic_0_m_axis_TLAST;
+  (* CONN_BUS_INFO = "AXI_Stream_Systolic_0_m_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Stream_Systolic_0_m_axis_TREADY;
+  (* CONN_BUS_INFO = "AXI_Stream_Systolic_0_m_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Stream_Systolic_0_m_axis_TVALID;
+  (* CONN_BUS_INFO = "axi_fifo_mm_s_0_AXI_STR_TXD xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]axi_fifo_mm_s_0_AXI_STR_TXD_TDATA;
+  (* CONN_BUS_INFO = "axi_fifo_mm_s_0_AXI_STR_TXD xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_fifo_mm_s_0_AXI_STR_TXD_TLAST;
+  (* CONN_BUS_INFO = "axi_fifo_mm_s_0_AXI_STR_TXD xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_fifo_mm_s_0_AXI_STR_TXD_TREADY;
+  (* CONN_BUS_INFO = "axi_fifo_mm_s_0_AXI_STR_TXD xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_fifo_mm_s_0_AXI_STR_TXD_TVALID;
   wire [31:0]axi_smc_M00_AXI_ARADDR;
   wire axi_smc_M00_AXI_ARREADY;
   wire axi_smc_M00_AXI_ARVALID;
@@ -187,6 +187,17 @@ module SystolicCore
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps8_0_99M_peripheral_aresetn),
         .slowest_sync_clk(zynq_ultra_ps_e_0_pl_clk0));
+  SystolicCore_system_ila_0_0 system_ila_0
+       (.SLOT_0_AXIS_tdata(axi_fifo_mm_s_0_AXI_STR_TXD_TDATA),
+        .SLOT_0_AXIS_tlast(axi_fifo_mm_s_0_AXI_STR_TXD_TLAST),
+        .SLOT_0_AXIS_tready(axi_fifo_mm_s_0_AXI_STR_TXD_TREADY),
+        .SLOT_0_AXIS_tvalid(axi_fifo_mm_s_0_AXI_STR_TXD_TVALID),
+        .SLOT_1_AXIS_tdata(AXI_Stream_Systolic_0_m_axis_TDATA),
+        .SLOT_1_AXIS_tlast(AXI_Stream_Systolic_0_m_axis_TLAST),
+        .SLOT_1_AXIS_tready(AXI_Stream_Systolic_0_m_axis_TREADY),
+        .SLOT_1_AXIS_tvalid(AXI_Stream_Systolic_0_m_axis_TVALID),
+        .clk(zynq_ultra_ps_e_0_pl_clk0),
+        .resetn(rst_ps8_0_99M_peripheral_aresetn));
   SystolicCore_zynq_ultra_ps_e_0_1 zynq_ultra_ps_e_0
        (.maxigp0_araddr(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR),
         .maxigp0_arburst(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST),

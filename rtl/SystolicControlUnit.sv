@@ -197,7 +197,7 @@ always_comb case(fsm_unit_control)
             fsm_unit_control_next   = WRITE_MEM_OUT             ;            
             uart_valid_tx_in        =  1                        ;
             syst_rready_i           =  0                        ;
-            mem2serial_valid_i      =  0                        ;
+            mem2serial_valid_i      =  1                        ;
             s_axis_tlast <= 1;
         end
         else begin

@@ -32,15 +32,18 @@ module AXI_Stream_Systolic_Core#(parameter  BYTESIZES = 8, WIDTHx = 4,SIZE = 16,
         input wire          s_axis_tlast,
         // ... outros sinais opcionais como TUSER
 
-        // Interface Master AXI Stream (Saída)
+        // Interface Master AXI Stream (Saída) 
         output wire          m_axis_tvalid,
         input wire          m_axis_tready,
         output wire [31:0]   m_axis_tdata,
         output wire          m_axis_tlast
         // ... outros sinais opcionais
 );
-//Update 5
+//Update 63
 
+//assign m_axis_tdata =6764553;
+//assign m_axis_tvalid  =1;
+//assign  m_axis_tlast = m_axis_tvalid && m_axis_tready;
 
 SystolicCoreTop #(
    .BYTESIZES(BYTESIZES),.WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH)
@@ -60,5 +63,7 @@ SystolicCoreTop #(
         .m_axis_tlast        (m_axis_tlast                    )       // output
   
 );
+
+
 
 endmodule

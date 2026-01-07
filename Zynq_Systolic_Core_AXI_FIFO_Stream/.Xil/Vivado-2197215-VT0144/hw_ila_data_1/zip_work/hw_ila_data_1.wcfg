@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0"></ZoomStartTime>
+      <ZoomEndTime time="19"></ZoomEndTime>
+      <Cursor1Time time="0"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="1407"></NameColumnWidth>
+      <ValueColumnWidth column_width="561"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/event_send_data">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/event_send_data</obj_property>
+      <obj_property name="ObjectShortName">event_send_data</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_base">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/k_counter_clock_base[7:0]</obj_property>
+      <obj_property name="ObjectShortName">k_counter_clock_base[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/mem2seriala_fsm[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem2seriala_fsm[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/rvalid_o">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/rvalid_o</obj_property>
+      <obj_property name="ObjectShortName">rvalid_o</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">smatrix_out[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/valid_i">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/i_counter">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/i_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i_counter[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/j_counter">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/j_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">j_counter[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,47 @@
+$date
+        2026-Jan-06 15:02:19
+$end
+$version
+        Vivado v2025.2 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 32 " SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tdata [31:0] $end
+$var reg 1 B SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tvalid $end
+$var reg 1 C SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tready $end
+$var reg 1 D SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tlast $end
+$var reg 32 E SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tdata [31:0] $end
+$var reg 1 e SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tvalid $end
+$var reg 1 f SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tready $end
+$var reg 1 g SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tlast $end
+$var reg 3 h Interface__i3_s0___axi_fifo_mm_s_0_AXI_STR_TXD_ [2:0] $end
+$var reg 3 k Interface__i3_s1___AXI_Stream_Systolic_0_m_axis_ [2:0] $end
+$var reg 3 n T_Channel__i3_s0___axi_fifo_mm_s_0_AXI_STR_TXD_ [2:0] $end
+$var reg 3 q T_Channel__i3_s1___AXI_Stream_Systolic_0_m_axis_ [2:0] $end
+$var reg 1 t _TRIGGER $end
+$var reg 1 u _WINDOW $end
+$var reg 1 v _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 "
+0B
+1C
+0D
+b11111111 E
+0e
+1f
+0g
+b11 h
+b11 k
+b11 n
+b11 q
+0t
+1u
+0v
+$end
+#512
+1t
