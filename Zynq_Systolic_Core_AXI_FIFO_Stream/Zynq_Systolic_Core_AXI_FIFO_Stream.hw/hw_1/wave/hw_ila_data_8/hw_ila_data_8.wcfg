@@ -10,11 +10,11 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="30"></ZoomEndTime>
+      <ZoomEndTime time="24"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="1359"></NameColumnWidth>
+      <NameColumnWidth column_width="1319"></NameColumnWidth>
       <ValueColumnWidth column_width="128"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="2" />
@@ -66,7 +66,7 @@
          <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : T Channel</obj_property>
          <obj_property name="DisplayName">label</obj_property>
          <wvobject type="logic" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tvalid">
-            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="DisplayName">FullPathName</obj_property>
             <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tvalid</obj_property>
             <obj_property name="ObjectShortName">net_slot_1_axis_tvalid</obj_property>
             <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : TVALID</obj_property>
@@ -90,7 +90,7 @@
             <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tdata">
-            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="DisplayName">FullPathName</obj_property>
             <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tdata[31:0]</obj_property>
             <obj_property name="ObjectShortName">net_slot_1_axis_tdata[31:0]</obj_property>
             <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : TDATA</obj_property>

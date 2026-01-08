@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Jan  7 23:11:00 2026
+// Date        : Thu Jan  8 00:56:00 2026
 // Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 // Command     : write_verilog -force -mode funcsim
 //               /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_AXI_Stream_Systolic_0_0/SystolicCore_AXI_Stream_Systolic_0_0_sim_netlist.v
@@ -136423,17 +136423,19 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
   wire \j_counter[1]_i_1_n_0 ;
   wire \j_counter[2]_i_1_n_0 ;
   wire \j_counter[3]_i_1_n_0 ;
-  wire \j_counter[3]_i_2_n_0 ;
   (* MARK_DEBUG *) wire [7:0]k_counter_clock_base;
   wire \k_counter_clock_base[4]_i_2_n_0 ;
-  wire \k_counter_clock_base[6]_i_2_n_0 ;
-  wire \k_counter_clock_base[6]_i_3_n_0 ;
+  wire \k_counter_clock_base[5]_i_2_n_0 ;
+  wire \k_counter_clock_base[7]_i_1_n_0 ;
   wire \k_counter_clock_base[7]_i_2_n_0 ;
+  wire \k_counter_clock_base[7]_i_3_n_0 ;
   (* MARK_DEBUG *) wire m_axis_tlast;
   wire m_axis_tlast_i_10_n_0;
   wire m_axis_tlast_i_11_n_0;
   wire m_axis_tlast_i_12_n_0;
   wire m_axis_tlast_i_13_n_0;
+  wire m_axis_tlast_i_14_n_0;
+  wire m_axis_tlast_i_15_n_0;
   wire m_axis_tlast_i_1_n_0;
   wire m_axis_tlast_i_2_n_0;
   wire m_axis_tlast_i_3_n_0;
@@ -136456,7 +136458,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
   wire \mem2seriala_fsm[31]_i_1_n_0 ;
   wire [1:0]next_mem2seriala_fsm;
   wire nreset;
-  wire [7:0]p_0_in__0;
+  wire [6:0]p_0_in__0;
   (* DONT_TOUCH *) wire [7:0]\pmatrix_in[0][0] ;
   (* DONT_TOUCH *) wire [7:0]\pmatrix_in[0][10] ;
   (* DONT_TOUCH *) wire [7:0]\pmatrix_in[0][11] ;
@@ -137671,13 +137673,8 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
   wire smatrix_out1_inferred_i_98_n_0;
   wire smatrix_out1_inferred_i_99_n_0;
   wire smatrix_out1_inferred_i_9_n_0;
-  wire \smatrix_out[1]_i_2_n_0 ;
-  wire \smatrix_out[3]_i_2_n_0 ;
-  wire \smatrix_out[5]_i_2_n_0 ;
-  wire \smatrix_out[6]_i_2_n_0 ;
-  wire \smatrix_out[7]_i_2_n_0 ;
-  wire [7:0]smatrix_out__0;
   (* MARK_DEBUG *) wire uart_valid_tx_in;
+  wire uart_valid_tx_in_inferred_i_2_n_0;
   wire valid_i;
 
   LUT2 #(
@@ -137694,14 +137691,14 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
         .I2(j_counter[1]),
         .I3(j_counter[3]),
         .I4(i_counter[0]),
-        .I5(\j_counter[3]_i_2_n_0 ),
+        .I5(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\i_counter[0]_i_1_n_0 ));
   LUT3 #(
     .INIT(8'h06)) 
     \i_counter[1]_i_1 
        (.I0(\i_counter[1]_i_2_n_0 ),
         .I1(i_counter[1]),
-        .I2(\j_counter[3]_i_2_n_0 ),
+        .I2(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\i_counter[1]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h80000000)) 
@@ -137717,7 +137714,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
     \i_counter[2]_i_1 
        (.I0(\i_counter[3]_i_2_n_0 ),
         .I1(i_counter[2]),
-        .I2(\j_counter[3]_i_2_n_0 ),
+        .I2(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\i_counter[2]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'h006A)) 
@@ -137725,7 +137722,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
        (.I0(i_counter[3]),
         .I1(i_counter[2]),
         .I2(\i_counter[3]_i_2_n_0 ),
-        .I3(\j_counter[3]_i_2_n_0 ),
+        .I3(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\i_counter[3]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
@@ -137769,14 +137766,14 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
     .INIT(4'h1)) 
     \j_counter[0]_i_1 
        (.I0(j_counter[0]),
-        .I1(\j_counter[3]_i_2_n_0 ),
+        .I1(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\j_counter[0]_i_1_n_0 ));
   LUT3 #(
     .INIT(8'h06)) 
     \j_counter[1]_i_1 
        (.I0(j_counter[1]),
         .I1(j_counter[0]),
-        .I2(\j_counter[3]_i_2_n_0 ),
+        .I2(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\j_counter[1]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'h0078)) 
@@ -137784,7 +137781,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
        (.I0(j_counter[0]),
         .I1(j_counter[1]),
         .I2(j_counter[2]),
-        .I3(\j_counter[3]_i_2_n_0 ),
+        .I3(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\j_counter[2]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h00007F80)) 
@@ -137793,17 +137790,8 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
         .I1(j_counter[0]),
         .I2(j_counter[2]),
         .I3(j_counter[3]),
-        .I4(\j_counter[3]_i_2_n_0 ),
+        .I4(uart_valid_tx_in_inferred_i_2_n_0),
         .O(\j_counter[3]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFFEFF)) 
-    \j_counter[3]_i_2 
-       (.I0(ready_o_INST_0_i_3_n_0),
-        .I1(ready_o_INST_0_i_2_n_0),
-        .I2(ready_o_INST_0_i_1_n_0),
-        .I3(mem2seriala_fsm[0]),
-        .I4(mem2seriala_fsm[1]),
-        .O(\j_counter[3]_i_2_n_0 ));
   (* KEEP = "yes" *) 
   FDCE \j_counter_reg[0] 
        (.C(clock),
@@ -137837,7 +137825,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
     \k_counter_clock_base[0]_i_1 
        (.I0(handshake),
         .I1(k_counter_clock_base[0]),
-        .I2(\j_counter[3]_i_2_n_0 ),
+        .I2(uart_valid_tx_in_inferred_i_2_n_0),
         .O(p_0_in__0[0]));
   LUT4 #(
     .INIT(16'h0078)) 
@@ -137845,7 +137833,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
        (.I0(handshake),
         .I1(k_counter_clock_base[0]),
         .I2(k_counter_clock_base[1]),
-        .I3(\j_counter[3]_i_2_n_0 ),
+        .I3(uart_valid_tx_in_inferred_i_2_n_0),
         .O(p_0_in__0[1]));
   LUT5 #(
     .INIT(32'h00006AAA)) 
@@ -137854,7 +137842,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
         .I1(k_counter_clock_base[1]),
         .I2(handshake),
         .I3(k_counter_clock_base[0]),
-        .I4(\j_counter[3]_i_2_n_0 ),
+        .I4(uart_valid_tx_in_inferred_i_2_n_0),
         .O(p_0_in__0[2]));
   LUT6 #(
     .INIT(64'h000000006AAAAAAA)) 
@@ -137864,75 +137852,71 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
         .I2(k_counter_clock_base[0]),
         .I3(handshake),
         .I4(k_counter_clock_base[1]),
-        .I5(\j_counter[3]_i_2_n_0 ),
+        .I5(uart_valid_tx_in_inferred_i_2_n_0),
         .O(p_0_in__0[3]));
-  LUT2 #(
-    .INIT(4'h1)) 
+  LUT3 #(
+    .INIT(8'h09)) 
     \k_counter_clock_base[4]_i_1 
-       (.I0(\j_counter[3]_i_2_n_0 ),
-        .I1(\k_counter_clock_base[4]_i_2_n_0 ),
+       (.I0(\k_counter_clock_base[4]_i_2_n_0 ),
+        .I1(k_counter_clock_base[4]),
+        .I2(uart_valid_tx_in_inferred_i_2_n_0),
         .O(p_0_in__0[4]));
-  LUT6 #(
-    .INIT(64'h9555555555555555)) 
+  LUT5 #(
+    .INIT(32'h7FFFFFFF)) 
     \k_counter_clock_base[4]_i_2 
-       (.I0(k_counter_clock_base[4]),
-        .I1(k_counter_clock_base[3]),
-        .I2(k_counter_clock_base[1]),
-        .I3(handshake),
-        .I4(k_counter_clock_base[0]),
-        .I5(k_counter_clock_base[2]),
+       (.I0(k_counter_clock_base[2]),
+        .I1(k_counter_clock_base[0]),
+        .I2(handshake),
+        .I3(k_counter_clock_base[1]),
+        .I4(k_counter_clock_base[3]),
         .O(\k_counter_clock_base[4]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0001000000000001)) 
+    .INIT(64'h0000000000000004)) 
     \k_counter_clock_base[5]_i_1 
-       (.I0(\k_counter_clock_base[6]_i_2_n_0 ),
-        .I1(ready_o_INST_0_i_1_n_0),
-        .I2(ready_o_INST_0_i_2_n_0),
-        .I3(ready_o_INST_0_i_3_n_0),
-        .I4(\k_counter_clock_base[7]_i_2_n_0 ),
-        .I5(k_counter_clock_base[5]),
-        .O(p_0_in__0[5]));
-  LUT6 #(
-    .INIT(64'h0000000100010000)) 
-    \k_counter_clock_base[6]_i_1 
-       (.I0(ready_o_INST_0_i_3_n_0),
-        .I1(ready_o_INST_0_i_2_n_0),
-        .I2(ready_o_INST_0_i_1_n_0),
-        .I3(\k_counter_clock_base[6]_i_2_n_0 ),
-        .I4(k_counter_clock_base[6]),
-        .I5(\k_counter_clock_base[6]_i_3_n_0 ),
-        .O(p_0_in__0[6]));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \k_counter_clock_base[6]_i_2 
        (.I0(mem2seriala_fsm[1]),
         .I1(mem2seriala_fsm[0]),
-        .O(\k_counter_clock_base[6]_i_2_n_0 ));
+        .I2(ready_o_INST_0_i_1_n_0),
+        .I3(ready_o_INST_0_i_2_n_0),
+        .I4(ready_o_INST_0_i_3_n_0),
+        .I5(\k_counter_clock_base[5]_i_2_n_0 ),
+        .O(p_0_in__0[5]));
+  LUT2 #(
+    .INIT(4'h6)) 
+    \k_counter_clock_base[5]_i_2 
+       (.I0(k_counter_clock_base[5]),
+        .I1(\k_counter_clock_base[7]_i_3_n_0 ),
+        .O(\k_counter_clock_base[5]_i_2_n_0 ));
+  LUT3 #(
+    .INIT(8'h14)) 
+    \k_counter_clock_base[6]_i_1 
+       (.I0(uart_valid_tx_in_inferred_i_2_n_0),
+        .I1(\k_counter_clock_base[7]_i_2_n_0 ),
+        .I2(k_counter_clock_base[6]),
+        .O(p_0_in__0[6]));
+  LUT4 #(
+    .INIT(16'h1540)) 
+    \k_counter_clock_base[7]_i_1 
+       (.I0(uart_valid_tx_in_inferred_i_2_n_0),
+        .I1(k_counter_clock_base[6]),
+        .I2(\k_counter_clock_base[7]_i_2_n_0 ),
+        .I3(k_counter_clock_base[7]),
+        .O(\k_counter_clock_base[7]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'h2)) 
-    \k_counter_clock_base[6]_i_3 
+    \k_counter_clock_base[7]_i_2 
        (.I0(k_counter_clock_base[5]),
-        .I1(\k_counter_clock_base[7]_i_2_n_0 ),
-        .O(\k_counter_clock_base[6]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'h0000BF40)) 
-    \k_counter_clock_base[7]_i_1 
-       (.I0(\k_counter_clock_base[7]_i_2_n_0 ),
-        .I1(k_counter_clock_base[5]),
-        .I2(k_counter_clock_base[6]),
-        .I3(k_counter_clock_base[7]),
-        .I4(\j_counter[3]_i_2_n_0 ),
-        .O(p_0_in__0[7]));
+        .I1(\k_counter_clock_base[7]_i_3_n_0 ),
+        .O(\k_counter_clock_base[7]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \k_counter_clock_base[7]_i_2 
+    \k_counter_clock_base[7]_i_3 
        (.I0(k_counter_clock_base[3]),
         .I1(k_counter_clock_base[1]),
         .I2(handshake),
         .I3(k_counter_clock_base[0]),
         .I4(k_counter_clock_base[2]),
         .I5(k_counter_clock_base[4]),
-        .O(\k_counter_clock_base[7]_i_2_n_0 ));
+        .O(\k_counter_clock_base[7]_i_3_n_0 ));
   (* KEEP = "yes" *) 
   FDCE \k_counter_clock_base_reg[0] 
        (.C(clock),
@@ -137987,118 +137971,136 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
        (.C(clock),
         .CE(1'b1),
         .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(p_0_in__0[7]),
+        .D(\k_counter_clock_base[7]_i_1_n_0 ),
         .Q(k_counter_clock_base[7]));
   LUT6 #(
-    .INIT(64'hAAAAAAAEAAAAAAAA)) 
+    .INIT(64'hAAAAAAAAAAAAAABA)) 
     m_axis_tlast_i_1
        (.I0(m_axis_tlast_i_2_n_0),
-        .I1(p_0_in__0[5]),
-        .I2(m_axis_tlast_i_3_n_0),
+        .I1(m_axis_tlast_i_3_n_0),
+        .I2(p_0_in__0[5]),
         .I3(m_axis_tlast_i_4_n_0),
         .I4(m_axis_tlast_i_5_n_0),
-        .I5(p_0_in__0[6]),
+        .I5(m_axis_tlast_i_6_n_0),
         .O(m_axis_tlast_i_1_n_0));
-  LUT4 #(
-    .INIT(16'h9555)) 
-    m_axis_tlast_i_10
-       (.I0(k_counter_clock_base[2]),
-        .I1(k_counter_clock_base[1]),
-        .I2(handshake),
-        .I3(k_counter_clock_base[0]),
-        .O(m_axis_tlast_i_10_n_0));
-  LUT6 #(
-    .INIT(64'h80000000FFFFFFFF)) 
-    m_axis_tlast_i_11
-       (.I0(smatrix_out1[6]),
-        .I1(smatrix_out1[4]),
-        .I2(smatrix_out1[7]),
-        .I3(smatrix_out1[5]),
-        .I4(\smatrix_out[7]_i_2_n_0 ),
-        .I5(handshake),
-        .O(m_axis_tlast_i_11_n_0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    m_axis_tlast_i_12
-       (.I0(mem2seriala_fsm[31]),
-        .I1(mem2seriala_fsm[3]),
-        .I2(mem2seriala_fsm[23]),
-        .I3(mem2seriala_fsm[21]),
-        .O(m_axis_tlast_i_12_n_0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    m_axis_tlast_i_13
-       (.I0(mem2seriala_fsm[22]),
-        .I1(mem2seriala_fsm[18]),
-        .I2(mem2seriala_fsm[25]),
-        .I3(mem2seriala_fsm[5]),
-        .O(m_axis_tlast_i_13_n_0));
-  LUT6 #(
-    .INIT(64'h222222EA22222222)) 
-    m_axis_tlast_i_2
-       (.I0(m_axis_tlast),
-        .I1(handshake),
-        .I2(nreset),
-        .I3(m_axis_tlast_i_6_n_0),
-        .I4(m_axis_tlast_i_7_n_0),
-        .I5(\smatrix_out[7]_i_2_n_0 ),
-        .O(m_axis_tlast_i_2_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFEB)) 
-    m_axis_tlast_i_3
-       (.I0(m_axis_tlast_i_8_n_0),
-        .I1(handshake),
-        .I2(k_counter_clock_base[0]),
-        .I3(ready_o_INST_0_i_3_n_0),
-        .I4(m_axis_tlast_i_9_n_0),
-        .I5(\k_counter_clock_base[6]_i_2_n_0 ),
-        .O(m_axis_tlast_i_3_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFB)) 
-    m_axis_tlast_i_4
-       (.I0(mem2seriala_fsm[1]),
-        .I1(mem2seriala_fsm[0]),
-        .I2(ready_o_INST_0_i_1_n_0),
-        .I3(ready_o_INST_0_i_2_n_0),
-        .I4(ready_o_INST_0_i_3_n_0),
-        .I5(m_axis_tlast_i_10_n_0),
-        .O(m_axis_tlast_i_4_n_0));
-  LUT4 #(
-    .INIT(16'hFFBF)) 
-    m_axis_tlast_i_5
-       (.I0(\k_counter_clock_base[4]_i_2_n_0 ),
-        .I1(k_counter_clock_base[1]),
-        .I2(k_counter_clock_base[7]),
-        .I3(m_axis_tlast_i_11_n_0),
-        .O(m_axis_tlast_i_5_n_0));
-  LUT2 #(
-    .INIT(4'h7)) 
-    m_axis_tlast_i_6
-       (.I0(smatrix_out1[4]),
-        .I1(smatrix_out1[6]),
-        .O(m_axis_tlast_i_6_n_0));
-  LUT2 #(
-    .INIT(4'h7)) 
-    m_axis_tlast_i_7
-       (.I0(smatrix_out1[5]),
-        .I1(smatrix_out1[7]),
-        .O(m_axis_tlast_i_7_n_0));
   LUT5 #(
     .INIT(32'h95555555)) 
-    m_axis_tlast_i_8
+    m_axis_tlast_i_10
        (.I0(k_counter_clock_base[3]),
         .I1(k_counter_clock_base[2]),
         .I2(k_counter_clock_base[0]),
         .I3(handshake),
         .I4(k_counter_clock_base[1]),
+        .O(m_axis_tlast_i_10_n_0));
+  LUT4 #(
+    .INIT(16'h9555)) 
+    m_axis_tlast_i_11
+       (.I0(k_counter_clock_base[2]),
+        .I1(k_counter_clock_base[1]),
+        .I2(handshake),
+        .I3(k_counter_clock_base[0]),
+        .O(m_axis_tlast_i_11_n_0));
+  LUT6 #(
+    .INIT(64'h40000000FFFFFFFF)) 
+    m_axis_tlast_i_12
+       (.I0(m_axis_tlast_i_13_n_0),
+        .I1(smatrix_out[5]),
+        .I2(smatrix_out[4]),
+        .I3(smatrix_out[6]),
+        .I4(smatrix_out[7]),
+        .I5(handshake),
+        .O(m_axis_tlast_i_12_n_0));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    m_axis_tlast_i_13
+       (.I0(smatrix_out[1]),
+        .I1(smatrix_out[0]),
+        .I2(smatrix_out[3]),
+        .I3(smatrix_out[2]),
+        .O(m_axis_tlast_i_13_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    m_axis_tlast_i_14
+       (.I0(mem2seriala_fsm[26]),
+        .I1(mem2seriala_fsm[21]),
+        .I2(mem2seriala_fsm[27]),
+        .I3(mem2seriala_fsm[9]),
+        .O(m_axis_tlast_i_14_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    m_axis_tlast_i_15
+       (.I0(mem2seriala_fsm[25]),
+        .I1(mem2seriala_fsm[17]),
+        .I2(mem2seriala_fsm[11]),
+        .I3(mem2seriala_fsm[7]),
+        .O(m_axis_tlast_i_15_n_0));
+  LUT4 #(
+    .INIT(16'hEA0A)) 
+    m_axis_tlast_i_2
+       (.I0(m_axis_tlast),
+        .I1(nreset),
+        .I2(handshake),
+        .I3(m_axis_tlast_i_7_n_0),
+        .O(m_axis_tlast_i_2_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFDFFFDFFFF)) 
+    m_axis_tlast_i_3
+       (.I0(k_counter_clock_base[7]),
+        .I1(m_axis_tlast_i_8_n_0),
+        .I2(m_axis_tlast_i_9_n_0),
+        .I3(ready_o_INST_0_i_3_n_0),
+        .I4(\k_counter_clock_base[7]_i_2_n_0 ),
+        .I5(k_counter_clock_base[6]),
+        .O(m_axis_tlast_i_3_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFEB)) 
+    m_axis_tlast_i_4
+       (.I0(m_axis_tlast_i_10_n_0),
+        .I1(handshake),
+        .I2(k_counter_clock_base[0]),
+        .I3(ready_o_INST_0_i_3_n_0),
+        .I4(m_axis_tlast_i_9_n_0),
+        .I5(m_axis_tlast_i_8_n_0),
+        .O(m_axis_tlast_i_4_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFB)) 
+    m_axis_tlast_i_5
+       (.I0(mem2seriala_fsm[1]),
+        .I1(mem2seriala_fsm[0]),
+        .I2(ready_o_INST_0_i_1_n_0),
+        .I3(ready_o_INST_0_i_2_n_0),
+        .I4(ready_o_INST_0_i_3_n_0),
+        .I5(m_axis_tlast_i_11_n_0),
+        .O(m_axis_tlast_i_5_n_0));
+  LUT3 #(
+    .INIT(8'hBF)) 
+    m_axis_tlast_i_6
+       (.I0(m_axis_tlast_i_12_n_0),
+        .I1(k_counter_clock_base[4]),
+        .I2(k_counter_clock_base[1]),
+        .O(m_axis_tlast_i_6_n_0));
+  LUT5 #(
+    .INIT(32'h00008000)) 
+    m_axis_tlast_i_7
+       (.I0(smatrix_out[7]),
+        .I1(smatrix_out[6]),
+        .I2(smatrix_out[4]),
+        .I3(smatrix_out[5]),
+        .I4(m_axis_tlast_i_13_n_0),
+        .O(m_axis_tlast_i_7_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    m_axis_tlast_i_8
+       (.I0(mem2seriala_fsm[1]),
+        .I1(mem2seriala_fsm[0]),
         .O(m_axis_tlast_i_8_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
     m_axis_tlast_i_9
        (.I0(ready_o_INST_0_i_5_n_0),
-        .I1(m_axis_tlast_i_12_n_0),
+        .I1(m_axis_tlast_i_14_n_0),
         .I2(ready_o_INST_0_i_4_n_0),
-        .I3(m_axis_tlast_i_13_n_0),
+        .I3(m_axis_tlast_i_15_n_0),
         .O(m_axis_tlast_i_9_n_0));
   (* KEEP = "yes" *) 
   FDCE m_axis_tlast_reg
@@ -138128,10 +138130,10 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
   LUT4 #(
     .INIT(16'hFFFE)) 
     \mem2seriala_fsm[1]_i_10 
-       (.I0(mem2seriala_fsm[24]),
-        .I1(mem2seriala_fsm[4]),
-        .I2(mem2seriala_fsm[18]),
-        .I3(mem2seriala_fsm[16]),
+       (.I0(mem2seriala_fsm[19]),
+        .I1(mem2seriala_fsm[16]),
+        .I2(mem2seriala_fsm[26]),
+        .I3(mem2seriala_fsm[8]),
         .O(\mem2seriala_fsm[1]_i_10_n_0 ));
   LUT4 #(
     .INIT(16'h8000)) 
@@ -138151,19 +138153,19 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \mem2seriala_fsm[1]_i_4 
-       (.I0(mem2seriala_fsm[11]),
-        .I1(mem2seriala_fsm[12]),
-        .I2(mem2seriala_fsm[21]),
-        .I3(mem2seriala_fsm[22]),
+       (.I0(mem2seriala_fsm[12]),
+        .I1(mem2seriala_fsm[29]),
+        .I2(mem2seriala_fsm[11]),
+        .I3(mem2seriala_fsm[28]),
         .I4(\mem2seriala_fsm[1]_i_7_n_0 ),
         .O(\mem2seriala_fsm[1]_i_4_n_0 ));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \mem2seriala_fsm[1]_i_5 
-       (.I0(mem2seriala_fsm[19]),
-        .I1(mem2seriala_fsm[26]),
-        .I2(mem2seriala_fsm[10]),
-        .I3(mem2seriala_fsm[30]),
+       (.I0(mem2seriala_fsm[10]),
+        .I1(mem2seriala_fsm[24]),
+        .I2(mem2seriala_fsm[5]),
+        .I3(mem2seriala_fsm[18]),
         .I4(\mem2seriala_fsm[1]_i_8_n_0 ),
         .O(\mem2seriala_fsm[1]_i_5_n_0 ));
   LUT6 #(
@@ -138171,35 +138173,35 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
     \mem2seriala_fsm[1]_i_6 
        (.I0(\mem2seriala_fsm[1]_i_9_n_0 ),
         .I1(\mem2seriala_fsm[1]_i_10_n_0 ),
-        .I2(mem2seriala_fsm[31]),
-        .I3(mem2seriala_fsm[29]),
-        .I4(mem2seriala_fsm[5]),
-        .I5(mem2seriala_fsm[3]),
+        .I2(mem2seriala_fsm[30]),
+        .I3(mem2seriala_fsm[31]),
+        .I4(mem2seriala_fsm[4]),
+        .I5(mem2seriala_fsm[2]),
         .O(\mem2seriala_fsm[1]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \mem2seriala_fsm[1]_i_7 
-       (.I0(mem2seriala_fsm[14]),
+       (.I0(mem2seriala_fsm[23]),
         .I1(mem2seriala_fsm[7]),
-        .I2(mem2seriala_fsm[25]),
+        .I2(mem2seriala_fsm[22]),
         .I3(mem2seriala_fsm[6]),
         .O(\mem2seriala_fsm[1]_i_7_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \mem2seriala_fsm[1]_i_8 
-       (.I0(mem2seriala_fsm[23]),
-        .I1(mem2seriala_fsm[8]),
-        .I2(mem2seriala_fsm[20]),
-        .I3(mem2seriala_fsm[2]),
+       (.I0(mem2seriala_fsm[21]),
+        .I1(mem2seriala_fsm[15]),
+        .I2(mem2seriala_fsm[14]),
+        .I3(mem2seriala_fsm[9]),
         .O(\mem2seriala_fsm[1]_i_8_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \mem2seriala_fsm[1]_i_9 
-       (.I0(mem2seriala_fsm[15]),
-        .I1(mem2seriala_fsm[13]),
-        .I2(mem2seriala_fsm[27]),
-        .I3(mem2seriala_fsm[28]),
-        .I4(mem2seriala_fsm[9]),
+       (.I0(mem2seriala_fsm[20]),
+        .I1(mem2seriala_fsm[3]),
+        .I2(mem2seriala_fsm[25]),
+        .I3(mem2seriala_fsm[27]),
+        .I4(mem2seriala_fsm[13]),
         .I5(mem2seriala_fsm[17]),
         .O(\mem2seriala_fsm[1]_i_9_n_0 ));
   LUT1 #(
@@ -138507,19 +138509,19 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     ready_o_INST_0_i_1
-       (.I0(mem2seriala_fsm[5]),
-        .I1(mem2seriala_fsm[25]),
-        .I2(mem2seriala_fsm[18]),
-        .I3(mem2seriala_fsm[22]),
+       (.I0(mem2seriala_fsm[7]),
+        .I1(mem2seriala_fsm[11]),
+        .I2(mem2seriala_fsm[17]),
+        .I3(mem2seriala_fsm[25]),
         .I4(ready_o_INST_0_i_4_n_0),
         .O(ready_o_INST_0_i_1_n_0));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     ready_o_INST_0_i_2
-       (.I0(mem2seriala_fsm[21]),
-        .I1(mem2seriala_fsm[23]),
-        .I2(mem2seriala_fsm[3]),
-        .I3(mem2seriala_fsm[31]),
+       (.I0(mem2seriala_fsm[9]),
+        .I1(mem2seriala_fsm[27]),
+        .I2(mem2seriala_fsm[21]),
+        .I3(mem2seriala_fsm[26]),
         .I4(ready_o_INST_0_i_5_n_0),
         .O(ready_o_INST_0_i_2_n_0));
   LUT6 #(
@@ -138529,24 +138531,24 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
         .I1(ready_o_INST_0_i_7_n_0),
         .I2(mem2seriala_fsm[4]),
         .I3(mem2seriala_fsm[2]),
-        .I4(mem2seriala_fsm[17]),
-        .I5(mem2seriala_fsm[7]),
+        .I4(mem2seriala_fsm[30]),
+        .I5(mem2seriala_fsm[29]),
         .O(ready_o_INST_0_i_3_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
     ready_o_INST_0_i_4
-       (.I0(mem2seriala_fsm[26]),
-        .I1(mem2seriala_fsm[9]),
-        .I2(mem2seriala_fsm[27]),
-        .I3(mem2seriala_fsm[20]),
+       (.I0(mem2seriala_fsm[20]),
+        .I1(mem2seriala_fsm[18]),
+        .I2(mem2seriala_fsm[22]),
+        .I3(mem2seriala_fsm[5]),
         .O(ready_o_INST_0_i_4_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
     ready_o_INST_0_i_5
-       (.I0(mem2seriala_fsm[30]),
-        .I1(mem2seriala_fsm[11]),
-        .I2(mem2seriala_fsm[29]),
-        .I3(mem2seriala_fsm[24]),
+       (.I0(mem2seriala_fsm[31]),
+        .I1(mem2seriala_fsm[24]),
+        .I2(mem2seriala_fsm[23]),
+        .I3(mem2seriala_fsm[3]),
         .O(ready_o_INST_0_i_5_n_0));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
@@ -146111,190 +146113,60 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
         .I1(smatrix_out1_inferred_i_268_n_0),
         .O(smatrix_out1_inferred_i_99_n_0),
         .S(i_counter[3]));
-  LUT5 #(
-    .INIT(32'h8AAAAAAA)) 
-    \smatrix_out[0]_i_1 
-       (.I0(smatrix_out1[0]),
-        .I1(\smatrix_out[5]_i_2_n_0 ),
-        .I2(smatrix_out1[5]),
-        .I3(smatrix_out1[1]),
-        .I4(smatrix_out1[7]),
-        .O(smatrix_out__0[0]));
-  LUT5 #(
-    .INIT(32'h8AAAAAAA)) 
-    \smatrix_out[1]_i_1 
-       (.I0(smatrix_out1[1]),
-        .I1(\smatrix_out[1]_i_2_n_0 ),
-        .I2(smatrix_out1[0]),
-        .I3(smatrix_out1[3]),
-        .I4(smatrix_out1[2]),
-        .O(smatrix_out__0[1]));
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \smatrix_out[1]_i_2 
-       (.I0(smatrix_out1[6]),
-        .I1(smatrix_out1[4]),
-        .I2(smatrix_out1[7]),
-        .I3(smatrix_out1[5]),
-        .O(\smatrix_out[1]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h2AAAAAAA)) 
-    \smatrix_out[2]_i_1 
-       (.I0(smatrix_out1[2]),
-        .I1(smatrix_out1[6]),
-        .I2(smatrix_out1[4]),
-        .I3(smatrix_out1[3]),
-        .I4(\smatrix_out[3]_i_2_n_0 ),
-        .O(smatrix_out__0[2]));
-  LUT5 #(
-    .INIT(32'h2AAAAAAA)) 
-    \smatrix_out[3]_i_1 
-       (.I0(smatrix_out1[3]),
-        .I1(smatrix_out1[6]),
-        .I2(smatrix_out1[4]),
-        .I3(smatrix_out1[2]),
-        .I4(\smatrix_out[3]_i_2_n_0 ),
-        .O(smatrix_out__0[3]));
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \smatrix_out[3]_i_2 
-       (.I0(smatrix_out1[0]),
-        .I1(smatrix_out1[7]),
-        .I2(smatrix_out1[1]),
-        .I3(smatrix_out1[5]),
-        .O(\smatrix_out[3]_i_2_n_0 ));
-  LUT3 #(
-    .INIT(8'h2A)) 
-    \smatrix_out[4]_i_1 
-       (.I0(smatrix_out1[4]),
-        .I1(\smatrix_out[6]_i_2_n_0 ),
-        .I2(smatrix_out1[6]),
-        .O(smatrix_out__0[4]));
-  LUT5 #(
-    .INIT(32'h8AAAAAAA)) 
-    \smatrix_out[5]_i_1 
-       (.I0(smatrix_out1[5]),
-        .I1(\smatrix_out[5]_i_2_n_0 ),
-        .I2(smatrix_out1[0]),
-        .I3(smatrix_out1[1]),
-        .I4(smatrix_out1[7]),
-        .O(smatrix_out__0[5]));
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \smatrix_out[5]_i_2 
-       (.I0(smatrix_out1[2]),
-        .I1(smatrix_out1[4]),
-        .I2(smatrix_out1[6]),
-        .I3(smatrix_out1[3]),
-        .O(\smatrix_out[5]_i_2_n_0 ));
-  LUT3 #(
-    .INIT(8'h2A)) 
-    \smatrix_out[6]_i_1 
-       (.I0(smatrix_out1[6]),
-        .I1(\smatrix_out[6]_i_2_n_0 ),
-        .I2(smatrix_out1[4]),
-        .O(smatrix_out__0[6]));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    \smatrix_out[6]_i_2 
-       (.I0(smatrix_out1[2]),
-        .I1(smatrix_out1[3]),
-        .I2(smatrix_out1[0]),
-        .I3(smatrix_out1[1]),
-        .I4(smatrix_out1[7]),
-        .I5(smatrix_out1[5]),
-        .O(\smatrix_out[6]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h2AAAAAAA)) 
-    \smatrix_out[7]_i_1 
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst
        (.I0(smatrix_out1[7]),
-        .I1(smatrix_out1[6]),
-        .I2(smatrix_out1[4]),
-        .I3(smatrix_out1[5]),
-        .I4(\smatrix_out[7]_i_2_n_0 ),
-        .O(smatrix_out__0[7]));
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \smatrix_out[7]_i_2 
+        .O(smatrix_out[7]));
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst__0
+       (.I0(smatrix_out1[6]),
+        .O(smatrix_out[6]));
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst__1
+       (.I0(smatrix_out1[5]),
+        .O(smatrix_out[5]));
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst__2
+       (.I0(smatrix_out1[4]),
+        .O(smatrix_out[4]));
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst__3
+       (.I0(smatrix_out1[3]),
+        .O(smatrix_out[3]));
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst__4
+       (.I0(smatrix_out1[2]),
+        .O(smatrix_out[2]));
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst__5
        (.I0(smatrix_out1[1]),
-        .I1(smatrix_out1[0]),
-        .I2(smatrix_out1[3]),
-        .I3(smatrix_out1[2]),
-        .O(\smatrix_out[7]_i_2_n_0 ));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[0] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[0]),
-        .Q(smatrix_out[0]));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[1] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[1]),
-        .Q(smatrix_out[1]));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[2] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[2]),
-        .Q(smatrix_out[2]));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[3] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[3]),
-        .Q(smatrix_out[3]));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[4] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[4]),
-        .Q(smatrix_out[4]));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[5] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[5]),
-        .Q(smatrix_out[5]));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[6] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[6]),
-        .Q(smatrix_out[6]));
-  (* DONT_TOUCH *) 
-  (* KEEP = "yes" *) 
-  FDCE \smatrix_out_reg[7] 
-       (.C(clock),
-        .CE(handshake),
-        .CLR(\mem2seriala_fsm[31]_i_1_n_0 ),
-        .D(smatrix_out__0[7]),
-        .Q(smatrix_out[7]));
-  LUT6 #(
-    .INIT(64'h0001000100010000)) 
+        .O(smatrix_out[1]));
+  LUT1 #(
+    .INIT(2'h2)) 
+    smatrix_out1_inst__6
+       (.I0(smatrix_out1[0]),
+        .O(smatrix_out[0]));
+  LUT1 #(
+    .INIT(2'h1)) 
     uart_valid_tx_in_inferred_i_1
-       (.I0(ready_o_INST_0_i_1_n_0),
-        .I1(ready_o_INST_0_i_2_n_0),
-        .I2(ready_o_INST_0_i_3_n_0),
-        .I3(mem2seriala_fsm[1]),
-        .I4(mem2seriala_fsm[0]),
-        .I5(valid_i),
+       (.I0(uart_valid_tx_in_inferred_i_2_n_0),
         .O(uart_valid_tx_in));
+  LUT5 #(
+    .INIT(32'hFFFFFEFF)) 
+    uart_valid_tx_in_inferred_i_2
+       (.I0(ready_o_INST_0_i_3_n_0),
+        .I1(ready_o_INST_0_i_2_n_0),
+        .I2(ready_o_INST_0_i_1_n_0),
+        .I3(mem2seriala_fsm[0]),
+        .I4(mem2seriala_fsm[1]),
+        .O(uart_valid_tx_in_inferred_i_2_n_0));
   (* CHECK_LICENSE_TYPE = "ila_1,ila,{}" *) 
   (* DowngradeIPIdentifiedWarnings = "yes" *) 
   (* X_CORE_INFO = "ila,Vivado 2025.2" *) 
@@ -146316,7 +146188,7 @@ module SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala
         .probe0(smatrix_out),
         .probe1(k_counter_clock_base),
         .probe2({1'b0,1'b0,1'b0,1'b0,j_counter}),
-        .probe3(smatrix_out1),
+        .probe3(smatrix_out),
         .probe4({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,handshake}),
         .probe5(m_axis_tlast),
         .probe6(event_send_data),

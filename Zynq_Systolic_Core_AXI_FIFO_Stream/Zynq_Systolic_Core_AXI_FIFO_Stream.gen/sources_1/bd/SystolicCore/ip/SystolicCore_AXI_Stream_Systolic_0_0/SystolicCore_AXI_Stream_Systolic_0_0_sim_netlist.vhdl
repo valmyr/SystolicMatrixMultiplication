@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Wed Jan  7 23:11:00 2026
+-- Date        : Thu Jan  8 00:56:01 2026
 -- Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_AXI_Stream_Systolic_0_0/SystolicCore_AXI_Stream_Systolic_0_0_sim_netlist.vhdl
@@ -164205,19 +164205,21 @@ architecture STRUCTURE of SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala is
   signal \j_counter[1]_i_1_n_0\ : STD_LOGIC;
   signal \j_counter[2]_i_1_n_0\ : STD_LOGIC;
   signal \j_counter[3]_i_1_n_0\ : STD_LOGIC;
-  signal \j_counter[3]_i_2_n_0\ : STD_LOGIC;
   signal k_counter_clock_base : STD_LOGIC_VECTOR ( 7 downto 0 );
   attribute MARK_DEBUG of k_counter_clock_base : signal is std.standard.true;
   signal \k_counter_clock_base[4]_i_2_n_0\ : STD_LOGIC;
-  signal \k_counter_clock_base[6]_i_2_n_0\ : STD_LOGIC;
-  signal \k_counter_clock_base[6]_i_3_n_0\ : STD_LOGIC;
+  signal \k_counter_clock_base[5]_i_2_n_0\ : STD_LOGIC;
+  signal \k_counter_clock_base[7]_i_1_n_0\ : STD_LOGIC;
   signal \k_counter_clock_base[7]_i_2_n_0\ : STD_LOGIC;
+  signal \k_counter_clock_base[7]_i_3_n_0\ : STD_LOGIC;
   signal \^m_axis_tlast\ : STD_LOGIC;
   attribute MARK_DEBUG of m_axis_tlast : signal is std.standard.true;
   signal m_axis_tlast_i_10_n_0 : STD_LOGIC;
   signal m_axis_tlast_i_11_n_0 : STD_LOGIC;
   signal m_axis_tlast_i_12_n_0 : STD_LOGIC;
   signal m_axis_tlast_i_13_n_0 : STD_LOGIC;
+  signal m_axis_tlast_i_14_n_0 : STD_LOGIC;
+  signal m_axis_tlast_i_15_n_0 : STD_LOGIC;
   signal m_axis_tlast_i_1_n_0 : STD_LOGIC;
   signal m_axis_tlast_i_2_n_0 : STD_LOGIC;
   signal m_axis_tlast_i_3_n_0 : STD_LOGIC;
@@ -164240,7 +164242,7 @@ architecture STRUCTURE of SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala is
   signal \mem2seriala_fsm[1]_i_9_n_0\ : STD_LOGIC;
   signal \mem2seriala_fsm[31]_i_1_n_0\ : STD_LOGIC;
   signal next_mem2seriala_fsm : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \p_0_in__0\ : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal \p_0_in__0\ : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal ready_o_INST_0_i_1_n_0 : STD_LOGIC;
   signal ready_o_INST_0_i_2_n_0 : STD_LOGIC;
   signal ready_o_INST_0_i_3_n_0 : STD_LOGIC;
@@ -165201,14 +165203,9 @@ architecture STRUCTURE of SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala is
   signal smatrix_out1_inferred_i_98_n_0 : STD_LOGIC;
   signal smatrix_out1_inferred_i_99_n_0 : STD_LOGIC;
   signal smatrix_out1_inferred_i_9_n_0 : STD_LOGIC;
-  signal \smatrix_out[1]_i_2_n_0\ : STD_LOGIC;
-  signal \smatrix_out[3]_i_2_n_0\ : STD_LOGIC;
-  signal \smatrix_out[5]_i_2_n_0\ : STD_LOGIC;
-  signal \smatrix_out[6]_i_2_n_0\ : STD_LOGIC;
-  signal \smatrix_out[7]_i_2_n_0\ : STD_LOGIC;
-  signal \smatrix_out__0\ : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal \^uart_valid_tx_in\ : STD_LOGIC;
   attribute MARK_DEBUG of uart_valid_tx_in : signal is std.standard.true;
+  signal uart_valid_tx_in_inferred_i_2_n_0 : STD_LOGIC;
   attribute KEEP : string;
   attribute KEEP of \i_counter_reg[0]\ : label is "yes";
   attribute KEEP of \i_counter_reg[1]\ : label is "yes";
@@ -165325,22 +165322,6 @@ architecture STRUCTURE of SystolicCore_AXI_Stream_Systolic_0_0_mem2seriala is
   attribute FSM_ENCODED_STATES of \mem2seriala_fsm_reg[9]\ : label is "IDLE_INDEX:00000000000000000000000000000000,COUNTER_INDEX:00000000000000000000000000000001,DONE_INDEX:00000000000000000000000000000010";
   attribute KEEP of \mem2seriala_fsm_reg[9]\ : label is "yes";
   attribute mark_debug_string of \mem2seriala_fsm_reg[9]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[0]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[0]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[1]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[1]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[2]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[2]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[3]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[3]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[4]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[4]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[5]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[5]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[6]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[6]\ : label is "yes";
-  attribute DONT_TOUCH of \smatrix_out_reg[7]\ : label is std.standard.true;
-  attribute KEEP of \smatrix_out_reg[7]\ : label is "yes";
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of your_instance_name : label is "ila_1,ila,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
@@ -165632,7 +165613,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I2 => j_counter(1),
       I3 => j_counter(3),
       I4 => i_counter(0),
-      I5 => \j_counter[3]_i_2_n_0\,
+      I5 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \i_counter[0]_i_1_n_0\
     );
 \i_counter[1]_i_1\: unisim.vcomponents.LUT3
@@ -165642,7 +165623,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
         port map (
       I0 => \i_counter[1]_i_2_n_0\,
       I1 => i_counter(1),
-      I2 => \j_counter[3]_i_2_n_0\,
+      I2 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \i_counter[1]_i_1_n_0\
     );
 \i_counter[1]_i_2\: unisim.vcomponents.LUT5
@@ -165664,7 +165645,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
         port map (
       I0 => \i_counter[3]_i_2_n_0\,
       I1 => i_counter(2),
-      I2 => \j_counter[3]_i_2_n_0\,
+      I2 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \i_counter[2]_i_1_n_0\
     );
 \i_counter[3]_i_1\: unisim.vcomponents.LUT4
@@ -165675,7 +165656,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I0 => i_counter(3),
       I1 => i_counter(2),
       I2 => \i_counter[3]_i_2_n_0\,
-      I3 => \j_counter[3]_i_2_n_0\,
+      I3 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \i_counter[3]_i_1_n_0\
     );
 \i_counter[3]_i_2\: unisim.vcomponents.LUT6
@@ -165729,7 +165710,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
     )
         port map (
       I0 => j_counter(0),
-      I1 => \j_counter[3]_i_2_n_0\,
+      I1 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \j_counter[0]_i_1_n_0\
     );
 \j_counter[1]_i_1\: unisim.vcomponents.LUT3
@@ -165739,7 +165720,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
         port map (
       I0 => j_counter(1),
       I1 => j_counter(0),
-      I2 => \j_counter[3]_i_2_n_0\,
+      I2 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \j_counter[1]_i_1_n_0\
     );
 \j_counter[2]_i_1\: unisim.vcomponents.LUT4
@@ -165750,7 +165731,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I0 => j_counter(0),
       I1 => j_counter(1),
       I2 => j_counter(2),
-      I3 => \j_counter[3]_i_2_n_0\,
+      I3 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \j_counter[2]_i_1_n_0\
     );
 \j_counter[3]_i_1\: unisim.vcomponents.LUT5
@@ -165762,20 +165743,8 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I1 => j_counter(0),
       I2 => j_counter(2),
       I3 => j_counter(3),
-      I4 => \j_counter[3]_i_2_n_0\,
+      I4 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \j_counter[3]_i_1_n_0\
-    );
-\j_counter[3]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFFFEFF"
-    )
-        port map (
-      I0 => ready_o_INST_0_i_3_n_0,
-      I1 => ready_o_INST_0_i_2_n_0,
-      I2 => ready_o_INST_0_i_1_n_0,
-      I3 => mem2seriala_fsm(0),
-      I4 => mem2seriala_fsm(1),
-      O => \j_counter[3]_i_2_n_0\
     );
 \j_counter_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -165816,7 +165785,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
         port map (
       I0 => handshake,
       I1 => k_counter_clock_base(0),
-      I2 => \j_counter[3]_i_2_n_0\,
+      I2 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \p_0_in__0\(0)
     );
 \k_counter_clock_base[1]_i_1\: unisim.vcomponents.LUT4
@@ -165827,7 +165796,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I0 => handshake,
       I1 => k_counter_clock_base(0),
       I2 => k_counter_clock_base(1),
-      I3 => \j_counter[3]_i_2_n_0\,
+      I3 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \p_0_in__0\(1)
     );
 \k_counter_clock_base[2]_i_1\: unisim.vcomponents.LUT5
@@ -165839,7 +165808,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I1 => k_counter_clock_base(1),
       I2 => handshake,
       I3 => k_counter_clock_base(0),
-      I4 => \j_counter[3]_i_2_n_0\,
+      I4 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \p_0_in__0\(2)
     );
 \k_counter_clock_base[3]_i_1\: unisim.vcomponents.LUT6
@@ -165852,88 +165821,84 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I2 => k_counter_clock_base(0),
       I3 => handshake,
       I4 => k_counter_clock_base(1),
-      I5 => \j_counter[3]_i_2_n_0\,
+      I5 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \p_0_in__0\(3)
     );
-\k_counter_clock_base[4]_i_1\: unisim.vcomponents.LUT2
+\k_counter_clock_base[4]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"1"
+      INIT => X"09"
     )
         port map (
-      I0 => \j_counter[3]_i_2_n_0\,
-      I1 => \k_counter_clock_base[4]_i_2_n_0\,
+      I0 => \k_counter_clock_base[4]_i_2_n_0\,
+      I1 => k_counter_clock_base(4),
+      I2 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \p_0_in__0\(4)
     );
-\k_counter_clock_base[4]_i_2\: unisim.vcomponents.LUT6
+\k_counter_clock_base[4]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"9555555555555555"
+      INIT => X"7FFFFFFF"
     )
         port map (
-      I0 => k_counter_clock_base(4),
-      I1 => k_counter_clock_base(3),
-      I2 => k_counter_clock_base(1),
-      I3 => handshake,
-      I4 => k_counter_clock_base(0),
-      I5 => k_counter_clock_base(2),
+      I0 => k_counter_clock_base(2),
+      I1 => k_counter_clock_base(0),
+      I2 => handshake,
+      I3 => k_counter_clock_base(1),
+      I4 => k_counter_clock_base(3),
       O => \k_counter_clock_base[4]_i_2_n_0\
     );
 \k_counter_clock_base[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0001000000000001"
-    )
-        port map (
-      I0 => \k_counter_clock_base[6]_i_2_n_0\,
-      I1 => ready_o_INST_0_i_1_n_0,
-      I2 => ready_o_INST_0_i_2_n_0,
-      I3 => ready_o_INST_0_i_3_n_0,
-      I4 => \k_counter_clock_base[7]_i_2_n_0\,
-      I5 => k_counter_clock_base(5),
-      O => \p_0_in__0\(5)
-    );
-\k_counter_clock_base[6]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000100010000"
-    )
-        port map (
-      I0 => ready_o_INST_0_i_3_n_0,
-      I1 => ready_o_INST_0_i_2_n_0,
-      I2 => ready_o_INST_0_i_1_n_0,
-      I3 => \k_counter_clock_base[6]_i_2_n_0\,
-      I4 => k_counter_clock_base(6),
-      I5 => \k_counter_clock_base[6]_i_3_n_0\,
-      O => \p_0_in__0\(6)
-    );
-\k_counter_clock_base[6]_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
+      INIT => X"0000000000000004"
     )
         port map (
       I0 => mem2seriala_fsm(1),
       I1 => mem2seriala_fsm(0),
-      O => \k_counter_clock_base[6]_i_2_n_0\
+      I2 => ready_o_INST_0_i_1_n_0,
+      I3 => ready_o_INST_0_i_2_n_0,
+      I4 => ready_o_INST_0_i_3_n_0,
+      I5 => \k_counter_clock_base[5]_i_2_n_0\,
+      O => \p_0_in__0\(5)
     );
-\k_counter_clock_base[6]_i_3\: unisim.vcomponents.LUT2
+\k_counter_clock_base[5]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => k_counter_clock_base(5),
+      I1 => \k_counter_clock_base[7]_i_3_n_0\,
+      O => \k_counter_clock_base[5]_i_2_n_0\
+    );
+\k_counter_clock_base[6]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"14"
+    )
+        port map (
+      I0 => uart_valid_tx_in_inferred_i_2_n_0,
+      I1 => \k_counter_clock_base[7]_i_2_n_0\,
+      I2 => k_counter_clock_base(6),
+      O => \p_0_in__0\(6)
+    );
+\k_counter_clock_base[7]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"1540"
+    )
+        port map (
+      I0 => uart_valid_tx_in_inferred_i_2_n_0,
+      I1 => k_counter_clock_base(6),
+      I2 => \k_counter_clock_base[7]_i_2_n_0\,
+      I3 => k_counter_clock_base(7),
+      O => \k_counter_clock_base[7]_i_1_n_0\
+    );
+\k_counter_clock_base[7]_i_2\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
     )
         port map (
       I0 => k_counter_clock_base(5),
-      I1 => \k_counter_clock_base[7]_i_2_n_0\,
-      O => \k_counter_clock_base[6]_i_3_n_0\
+      I1 => \k_counter_clock_base[7]_i_3_n_0\,
+      O => \k_counter_clock_base[7]_i_2_n_0\
     );
-\k_counter_clock_base[7]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0000BF40"
-    )
-        port map (
-      I0 => \k_counter_clock_base[7]_i_2_n_0\,
-      I1 => k_counter_clock_base(5),
-      I2 => k_counter_clock_base(6),
-      I3 => k_counter_clock_base(7),
-      I4 => \j_counter[3]_i_2_n_0\,
-      O => \p_0_in__0\(7)
-    );
-\k_counter_clock_base[7]_i_2\: unisim.vcomponents.LUT6
+\k_counter_clock_base[7]_i_3\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFFFFFFFFFFFFFF"
     )
@@ -165944,7 +165909,7 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       I3 => k_counter_clock_base(0),
       I4 => k_counter_clock_base(2),
       I5 => k_counter_clock_base(4),
-      O => \k_counter_clock_base[7]_i_2_n_0\
+      O => \k_counter_clock_base[7]_i_3_n_0\
     );
 \k_counter_clock_base_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -166007,137 +165972,23 @@ handshake_inferred_i_1: unisim.vcomponents.LUT2
       C => clock,
       CE => '1',
       CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \p_0_in__0\(7),
+      D => \k_counter_clock_base[7]_i_1_n_0\,
       Q => k_counter_clock_base(7)
     );
 m_axis_tlast_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"AAAAAAAEAAAAAAAA"
+      INIT => X"AAAAAAAAAAAAAABA"
     )
         port map (
       I0 => m_axis_tlast_i_2_n_0,
-      I1 => \p_0_in__0\(5),
-      I2 => m_axis_tlast_i_3_n_0,
+      I1 => m_axis_tlast_i_3_n_0,
+      I2 => \p_0_in__0\(5),
       I3 => m_axis_tlast_i_4_n_0,
       I4 => m_axis_tlast_i_5_n_0,
-      I5 => \p_0_in__0\(6),
+      I5 => m_axis_tlast_i_6_n_0,
       O => m_axis_tlast_i_1_n_0
     );
-m_axis_tlast_i_10: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"9555"
-    )
-        port map (
-      I0 => k_counter_clock_base(2),
-      I1 => k_counter_clock_base(1),
-      I2 => handshake,
-      I3 => k_counter_clock_base(0),
-      O => m_axis_tlast_i_10_n_0
-    );
-m_axis_tlast_i_11: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"80000000FFFFFFFF"
-    )
-        port map (
-      I0 => smatrix_out1(6),
-      I1 => smatrix_out1(4),
-      I2 => smatrix_out1(7),
-      I3 => smatrix_out1(5),
-      I4 => \smatrix_out[7]_i_2_n_0\,
-      I5 => handshake,
-      O => m_axis_tlast_i_11_n_0
-    );
-m_axis_tlast_i_12: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FFFE"
-    )
-        port map (
-      I0 => mem2seriala_fsm(31),
-      I1 => mem2seriala_fsm(3),
-      I2 => mem2seriala_fsm(23),
-      I3 => mem2seriala_fsm(21),
-      O => m_axis_tlast_i_12_n_0
-    );
-m_axis_tlast_i_13: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FFFE"
-    )
-        port map (
-      I0 => mem2seriala_fsm(22),
-      I1 => mem2seriala_fsm(18),
-      I2 => mem2seriala_fsm(25),
-      I3 => mem2seriala_fsm(5),
-      O => m_axis_tlast_i_13_n_0
-    );
-m_axis_tlast_i_2: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"222222EA22222222"
-    )
-        port map (
-      I0 => \^m_axis_tlast\,
-      I1 => handshake,
-      I2 => nreset,
-      I3 => m_axis_tlast_i_6_n_0,
-      I4 => m_axis_tlast_i_7_n_0,
-      I5 => \smatrix_out[7]_i_2_n_0\,
-      O => m_axis_tlast_i_2_n_0
-    );
-m_axis_tlast_i_3: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFEB"
-    )
-        port map (
-      I0 => m_axis_tlast_i_8_n_0,
-      I1 => handshake,
-      I2 => k_counter_clock_base(0),
-      I3 => ready_o_INST_0_i_3_n_0,
-      I4 => m_axis_tlast_i_9_n_0,
-      I5 => \k_counter_clock_base[6]_i_2_n_0\,
-      O => m_axis_tlast_i_3_n_0
-    );
-m_axis_tlast_i_4: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFFB"
-    )
-        port map (
-      I0 => mem2seriala_fsm(1),
-      I1 => mem2seriala_fsm(0),
-      I2 => ready_o_INST_0_i_1_n_0,
-      I3 => ready_o_INST_0_i_2_n_0,
-      I4 => ready_o_INST_0_i_3_n_0,
-      I5 => m_axis_tlast_i_10_n_0,
-      O => m_axis_tlast_i_4_n_0
-    );
-m_axis_tlast_i_5: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FFBF"
-    )
-        port map (
-      I0 => \k_counter_clock_base[4]_i_2_n_0\,
-      I1 => k_counter_clock_base(1),
-      I2 => k_counter_clock_base(7),
-      I3 => m_axis_tlast_i_11_n_0,
-      O => m_axis_tlast_i_5_n_0
-    );
-m_axis_tlast_i_6: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => smatrix_out1(4),
-      I1 => smatrix_out1(6),
-      O => m_axis_tlast_i_6_n_0
-    );
-m_axis_tlast_i_7: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => smatrix_out1(5),
-      I1 => smatrix_out1(7),
-      O => m_axis_tlast_i_7_n_0
-    );
-m_axis_tlast_i_8: unisim.vcomponents.LUT5
+m_axis_tlast_i_10: unisim.vcomponents.LUT5
     generic map(
       INIT => X"95555555"
     )
@@ -166147,6 +165998,144 @@ m_axis_tlast_i_8: unisim.vcomponents.LUT5
       I2 => k_counter_clock_base(0),
       I3 => handshake,
       I4 => k_counter_clock_base(1),
+      O => m_axis_tlast_i_10_n_0
+    );
+m_axis_tlast_i_11: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9555"
+    )
+        port map (
+      I0 => k_counter_clock_base(2),
+      I1 => k_counter_clock_base(1),
+      I2 => handshake,
+      I3 => k_counter_clock_base(0),
+      O => m_axis_tlast_i_11_n_0
+    );
+m_axis_tlast_i_12: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"40000000FFFFFFFF"
+    )
+        port map (
+      I0 => m_axis_tlast_i_13_n_0,
+      I1 => \^smatrix_out\(5),
+      I2 => \^smatrix_out\(4),
+      I3 => \^smatrix_out\(6),
+      I4 => \^smatrix_out\(7),
+      I5 => handshake,
+      O => m_axis_tlast_i_12_n_0
+    );
+m_axis_tlast_i_13: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^smatrix_out\(1),
+      I1 => \^smatrix_out\(0),
+      I2 => \^smatrix_out\(3),
+      I3 => \^smatrix_out\(2),
+      O => m_axis_tlast_i_13_n_0
+    );
+m_axis_tlast_i_14: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"FFFE"
+    )
+        port map (
+      I0 => mem2seriala_fsm(26),
+      I1 => mem2seriala_fsm(21),
+      I2 => mem2seriala_fsm(27),
+      I3 => mem2seriala_fsm(9),
+      O => m_axis_tlast_i_14_n_0
+    );
+m_axis_tlast_i_15: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"FFFE"
+    )
+        port map (
+      I0 => mem2seriala_fsm(25),
+      I1 => mem2seriala_fsm(17),
+      I2 => mem2seriala_fsm(11),
+      I3 => mem2seriala_fsm(7),
+      O => m_axis_tlast_i_15_n_0
+    );
+m_axis_tlast_i_2: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"EA0A"
+    )
+        port map (
+      I0 => \^m_axis_tlast\,
+      I1 => nreset,
+      I2 => handshake,
+      I3 => m_axis_tlast_i_7_n_0,
+      O => m_axis_tlast_i_2_n_0
+    );
+m_axis_tlast_i_3: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFDFFFDFFFF"
+    )
+        port map (
+      I0 => k_counter_clock_base(7),
+      I1 => m_axis_tlast_i_8_n_0,
+      I2 => m_axis_tlast_i_9_n_0,
+      I3 => ready_o_INST_0_i_3_n_0,
+      I4 => \k_counter_clock_base[7]_i_2_n_0\,
+      I5 => k_counter_clock_base(6),
+      O => m_axis_tlast_i_3_n_0
+    );
+m_axis_tlast_i_4: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFFFEB"
+    )
+        port map (
+      I0 => m_axis_tlast_i_10_n_0,
+      I1 => handshake,
+      I2 => k_counter_clock_base(0),
+      I3 => ready_o_INST_0_i_3_n_0,
+      I4 => m_axis_tlast_i_9_n_0,
+      I5 => m_axis_tlast_i_8_n_0,
+      O => m_axis_tlast_i_4_n_0
+    );
+m_axis_tlast_i_5: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFFFFB"
+    )
+        port map (
+      I0 => mem2seriala_fsm(1),
+      I1 => mem2seriala_fsm(0),
+      I2 => ready_o_INST_0_i_1_n_0,
+      I3 => ready_o_INST_0_i_2_n_0,
+      I4 => ready_o_INST_0_i_3_n_0,
+      I5 => m_axis_tlast_i_11_n_0,
+      O => m_axis_tlast_i_5_n_0
+    );
+m_axis_tlast_i_6: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"BF"
+    )
+        port map (
+      I0 => m_axis_tlast_i_12_n_0,
+      I1 => k_counter_clock_base(4),
+      I2 => k_counter_clock_base(1),
+      O => m_axis_tlast_i_6_n_0
+    );
+m_axis_tlast_i_7: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00008000"
+    )
+        port map (
+      I0 => \^smatrix_out\(7),
+      I1 => \^smatrix_out\(6),
+      I2 => \^smatrix_out\(4),
+      I3 => \^smatrix_out\(5),
+      I4 => m_axis_tlast_i_13_n_0,
+      O => m_axis_tlast_i_7_n_0
+    );
+m_axis_tlast_i_8: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => mem2seriala_fsm(1),
+      I1 => mem2seriala_fsm(0),
       O => m_axis_tlast_i_8_n_0
     );
 m_axis_tlast_i_9: unisim.vcomponents.LUT4
@@ -166155,9 +166144,9 @@ m_axis_tlast_i_9: unisim.vcomponents.LUT4
     )
         port map (
       I0 => ready_o_INST_0_i_5_n_0,
-      I1 => m_axis_tlast_i_12_n_0,
+      I1 => m_axis_tlast_i_14_n_0,
       I2 => ready_o_INST_0_i_4_n_0,
-      I3 => m_axis_tlast_i_13_n_0,
+      I3 => m_axis_tlast_i_15_n_0,
       O => m_axis_tlast_i_9_n_0
     );
 m_axis_tlast_reg: unisim.vcomponents.FDCE
@@ -166197,10 +166186,10 @@ m_axis_tlast_reg: unisim.vcomponents.FDCE
       INIT => X"FFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(24),
-      I1 => mem2seriala_fsm(4),
-      I2 => mem2seriala_fsm(18),
-      I3 => mem2seriala_fsm(16),
+      I0 => mem2seriala_fsm(19),
+      I1 => mem2seriala_fsm(16),
+      I2 => mem2seriala_fsm(26),
+      I3 => mem2seriala_fsm(8),
       O => \mem2seriala_fsm[1]_i_10_n_0\
     );
 \mem2seriala_fsm[1]_i_2\: unisim.vcomponents.LUT4
@@ -166229,10 +166218,10 @@ m_axis_tlast_reg: unisim.vcomponents.FDCE
       INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(11),
-      I1 => mem2seriala_fsm(12),
-      I2 => mem2seriala_fsm(21),
-      I3 => mem2seriala_fsm(22),
+      I0 => mem2seriala_fsm(12),
+      I1 => mem2seriala_fsm(29),
+      I2 => mem2seriala_fsm(11),
+      I3 => mem2seriala_fsm(28),
       I4 => \mem2seriala_fsm[1]_i_7_n_0\,
       O => \mem2seriala_fsm[1]_i_4_n_0\
     );
@@ -166241,10 +166230,10 @@ m_axis_tlast_reg: unisim.vcomponents.FDCE
       INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(19),
-      I1 => mem2seriala_fsm(26),
-      I2 => mem2seriala_fsm(10),
-      I3 => mem2seriala_fsm(30),
+      I0 => mem2seriala_fsm(10),
+      I1 => mem2seriala_fsm(24),
+      I2 => mem2seriala_fsm(5),
+      I3 => mem2seriala_fsm(18),
       I4 => \mem2seriala_fsm[1]_i_8_n_0\,
       O => \mem2seriala_fsm[1]_i_5_n_0\
     );
@@ -166255,10 +166244,10 @@ m_axis_tlast_reg: unisim.vcomponents.FDCE
         port map (
       I0 => \mem2seriala_fsm[1]_i_9_n_0\,
       I1 => \mem2seriala_fsm[1]_i_10_n_0\,
-      I2 => mem2seriala_fsm(31),
-      I3 => mem2seriala_fsm(29),
-      I4 => mem2seriala_fsm(5),
-      I5 => mem2seriala_fsm(3),
+      I2 => mem2seriala_fsm(30),
+      I3 => mem2seriala_fsm(31),
+      I4 => mem2seriala_fsm(4),
+      I5 => mem2seriala_fsm(2),
       O => \mem2seriala_fsm[1]_i_6_n_0\
     );
 \mem2seriala_fsm[1]_i_7\: unisim.vcomponents.LUT4
@@ -166266,9 +166255,9 @@ m_axis_tlast_reg: unisim.vcomponents.FDCE
       INIT => X"FFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(14),
+      I0 => mem2seriala_fsm(23),
       I1 => mem2seriala_fsm(7),
-      I2 => mem2seriala_fsm(25),
+      I2 => mem2seriala_fsm(22),
       I3 => mem2seriala_fsm(6),
       O => \mem2seriala_fsm[1]_i_7_n_0\
     );
@@ -166277,10 +166266,10 @@ m_axis_tlast_reg: unisim.vcomponents.FDCE
       INIT => X"FFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(23),
-      I1 => mem2seriala_fsm(8),
-      I2 => mem2seriala_fsm(20),
-      I3 => mem2seriala_fsm(2),
+      I0 => mem2seriala_fsm(21),
+      I1 => mem2seriala_fsm(15),
+      I2 => mem2seriala_fsm(14),
+      I3 => mem2seriala_fsm(9),
       O => \mem2seriala_fsm[1]_i_8_n_0\
     );
 \mem2seriala_fsm[1]_i_9\: unisim.vcomponents.LUT6
@@ -166288,11 +166277,11 @@ m_axis_tlast_reg: unisim.vcomponents.FDCE
       INIT => X"FFFFFFFFFFFFFFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(15),
-      I1 => mem2seriala_fsm(13),
-      I2 => mem2seriala_fsm(27),
-      I3 => mem2seriala_fsm(28),
-      I4 => mem2seriala_fsm(9),
+      I0 => mem2seriala_fsm(20),
+      I1 => mem2seriala_fsm(3),
+      I2 => mem2seriala_fsm(25),
+      I3 => mem2seriala_fsm(27),
+      I4 => mem2seriala_fsm(13),
       I5 => mem2seriala_fsm(17),
       O => \mem2seriala_fsm[1]_i_9_n_0\
     );
@@ -166577,10 +166566,10 @@ ready_o_INST_0_i_1: unisim.vcomponents.LUT5
       INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(5),
-      I1 => mem2seriala_fsm(25),
-      I2 => mem2seriala_fsm(18),
-      I3 => mem2seriala_fsm(22),
+      I0 => mem2seriala_fsm(7),
+      I1 => mem2seriala_fsm(11),
+      I2 => mem2seriala_fsm(17),
+      I3 => mem2seriala_fsm(25),
       I4 => ready_o_INST_0_i_4_n_0,
       O => ready_o_INST_0_i_1_n_0
     );
@@ -166589,10 +166578,10 @@ ready_o_INST_0_i_2: unisim.vcomponents.LUT5
       INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(21),
-      I1 => mem2seriala_fsm(23),
-      I2 => mem2seriala_fsm(3),
-      I3 => mem2seriala_fsm(31),
+      I0 => mem2seriala_fsm(9),
+      I1 => mem2seriala_fsm(27),
+      I2 => mem2seriala_fsm(21),
+      I3 => mem2seriala_fsm(26),
       I4 => ready_o_INST_0_i_5_n_0,
       O => ready_o_INST_0_i_2_n_0
     );
@@ -166605,8 +166594,8 @@ ready_o_INST_0_i_3: unisim.vcomponents.LUT6
       I1 => ready_o_INST_0_i_7_n_0,
       I2 => mem2seriala_fsm(4),
       I3 => mem2seriala_fsm(2),
-      I4 => mem2seriala_fsm(17),
-      I5 => mem2seriala_fsm(7),
+      I4 => mem2seriala_fsm(30),
+      I5 => mem2seriala_fsm(29),
       O => ready_o_INST_0_i_3_n_0
     );
 ready_o_INST_0_i_4: unisim.vcomponents.LUT4
@@ -166614,10 +166603,10 @@ ready_o_INST_0_i_4: unisim.vcomponents.LUT4
       INIT => X"FFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(26),
-      I1 => mem2seriala_fsm(9),
-      I2 => mem2seriala_fsm(27),
-      I3 => mem2seriala_fsm(20),
+      I0 => mem2seriala_fsm(20),
+      I1 => mem2seriala_fsm(18),
+      I2 => mem2seriala_fsm(22),
+      I3 => mem2seriala_fsm(5),
       O => ready_o_INST_0_i_4_n_0
     );
 ready_o_INST_0_i_5: unisim.vcomponents.LUT4
@@ -166625,10 +166614,10 @@ ready_o_INST_0_i_5: unisim.vcomponents.LUT4
       INIT => X"FFFE"
     )
         port map (
-      I0 => mem2seriala_fsm(30),
-      I1 => mem2seriala_fsm(11),
-      I2 => mem2seriala_fsm(29),
-      I3 => mem2seriala_fsm(24),
+      I0 => mem2seriala_fsm(31),
+      I1 => mem2seriala_fsm(24),
+      I2 => mem2seriala_fsm(23),
+      I3 => mem2seriala_fsm(3),
       O => ready_o_INST_0_i_5_n_0
     );
 ready_o_INST_0_i_6: unisim.vcomponents.LUT6
@@ -176665,231 +176654,89 @@ smatrix_out1_inferred_i_99: unisim.vcomponents.MUXF8
       O => smatrix_out1_inferred_i_99_n_0,
       S => i_counter(3)
     );
-\smatrix_out[0]_i_1\: unisim.vcomponents.LUT5
+smatrix_out1_inst: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"8AAAAAAA"
-    )
-        port map (
-      I0 => smatrix_out1(0),
-      I1 => \smatrix_out[5]_i_2_n_0\,
-      I2 => smatrix_out1(5),
-      I3 => smatrix_out1(1),
-      I4 => smatrix_out1(7),
-      O => \smatrix_out__0\(0)
-    );
-\smatrix_out[1]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"8AAAAAAA"
-    )
-        port map (
-      I0 => smatrix_out1(1),
-      I1 => \smatrix_out[1]_i_2_n_0\,
-      I2 => smatrix_out1(0),
-      I3 => smatrix_out1(3),
-      I4 => smatrix_out1(2),
-      O => \smatrix_out__0\(1)
-    );
-\smatrix_out[1]_i_2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => smatrix_out1(6),
-      I1 => smatrix_out1(4),
-      I2 => smatrix_out1(7),
-      I3 => smatrix_out1(5),
-      O => \smatrix_out[1]_i_2_n_0\
-    );
-\smatrix_out[2]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"2AAAAAAA"
-    )
-        port map (
-      I0 => smatrix_out1(2),
-      I1 => smatrix_out1(6),
-      I2 => smatrix_out1(4),
-      I3 => smatrix_out1(3),
-      I4 => \smatrix_out[3]_i_2_n_0\,
-      O => \smatrix_out__0\(2)
-    );
-\smatrix_out[3]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"2AAAAAAA"
-    )
-        port map (
-      I0 => smatrix_out1(3),
-      I1 => smatrix_out1(6),
-      I2 => smatrix_out1(4),
-      I3 => smatrix_out1(2),
-      I4 => \smatrix_out[3]_i_2_n_0\,
-      O => \smatrix_out__0\(3)
-    );
-\smatrix_out[3]_i_2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8000"
-    )
-        port map (
-      I0 => smatrix_out1(0),
-      I1 => smatrix_out1(7),
-      I2 => smatrix_out1(1),
-      I3 => smatrix_out1(5),
-      O => \smatrix_out[3]_i_2_n_0\
-    );
-\smatrix_out[4]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"2A"
-    )
-        port map (
-      I0 => smatrix_out1(4),
-      I1 => \smatrix_out[6]_i_2_n_0\,
-      I2 => smatrix_out1(6),
-      O => \smatrix_out__0\(4)
-    );
-\smatrix_out[5]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"8AAAAAAA"
-    )
-        port map (
-      I0 => smatrix_out1(5),
-      I1 => \smatrix_out[5]_i_2_n_0\,
-      I2 => smatrix_out1(0),
-      I3 => smatrix_out1(1),
-      I4 => smatrix_out1(7),
-      O => \smatrix_out__0\(5)
-    );
-\smatrix_out[5]_i_2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => smatrix_out1(2),
-      I1 => smatrix_out1(4),
-      I2 => smatrix_out1(6),
-      I3 => smatrix_out1(3),
-      O => \smatrix_out[5]_i_2_n_0\
-    );
-\smatrix_out[6]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"2A"
-    )
-        port map (
-      I0 => smatrix_out1(6),
-      I1 => \smatrix_out[6]_i_2_n_0\,
-      I2 => smatrix_out1(4),
-      O => \smatrix_out__0\(6)
-    );
-\smatrix_out[6]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => smatrix_out1(2),
-      I1 => smatrix_out1(3),
-      I2 => smatrix_out1(0),
-      I3 => smatrix_out1(1),
-      I4 => smatrix_out1(7),
-      I5 => smatrix_out1(5),
-      O => \smatrix_out[6]_i_2_n_0\
-    );
-\smatrix_out[7]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"2AAAAAAA"
+      INIT => X"2"
     )
         port map (
       I0 => smatrix_out1(7),
-      I1 => smatrix_out1(6),
-      I2 => smatrix_out1(4),
-      I3 => smatrix_out1(5),
-      I4 => \smatrix_out[7]_i_2_n_0\,
-      O => \smatrix_out__0\(7)
+      O => \^smatrix_out\(7)
     );
-\smatrix_out[7]_i_2\: unisim.vcomponents.LUT4
+\smatrix_out1_inst__0\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"8000"
+      INIT => X"2"
+    )
+        port map (
+      I0 => smatrix_out1(6),
+      O => \^smatrix_out\(6)
+    );
+\smatrix_out1_inst__1\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => smatrix_out1(5),
+      O => \^smatrix_out\(5)
+    );
+\smatrix_out1_inst__2\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => smatrix_out1(4),
+      O => \^smatrix_out\(4)
+    );
+\smatrix_out1_inst__3\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => smatrix_out1(3),
+      O => \^smatrix_out\(3)
+    );
+\smatrix_out1_inst__4\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => smatrix_out1(2),
+      O => \^smatrix_out\(2)
+    );
+\smatrix_out1_inst__5\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"2"
     )
         port map (
       I0 => smatrix_out1(1),
-      I1 => smatrix_out1(0),
-      I2 => smatrix_out1(3),
-      I3 => smatrix_out1(2),
-      O => \smatrix_out[7]_i_2_n_0\
+      O => \^smatrix_out\(1)
     );
-\smatrix_out_reg[0]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(0),
-      Q => \^smatrix_out\(0)
-    );
-\smatrix_out_reg[1]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(1),
-      Q => \^smatrix_out\(1)
-    );
-\smatrix_out_reg[2]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(2),
-      Q => \^smatrix_out\(2)
-    );
-\smatrix_out_reg[3]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(3),
-      Q => \^smatrix_out\(3)
-    );
-\smatrix_out_reg[4]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(4),
-      Q => \^smatrix_out\(4)
-    );
-\smatrix_out_reg[5]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(5),
-      Q => \^smatrix_out\(5)
-    );
-\smatrix_out_reg[6]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(6),
-      Q => \^smatrix_out\(6)
-    );
-\smatrix_out_reg[7]\: unisim.vcomponents.FDCE
-     port map (
-      C => clock,
-      CE => handshake,
-      CLR => \mem2seriala_fsm[31]_i_1_n_0\,
-      D => \smatrix_out__0\(7),
-      Q => \^smatrix_out\(7)
-    );
-uart_valid_tx_in_inferred_i_1: unisim.vcomponents.LUT6
+\smatrix_out1_inst__6\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"0001000100010000"
+      INIT => X"2"
     )
         port map (
-      I0 => ready_o_INST_0_i_1_n_0,
-      I1 => ready_o_INST_0_i_2_n_0,
-      I2 => ready_o_INST_0_i_3_n_0,
-      I3 => mem2seriala_fsm(1),
-      I4 => mem2seriala_fsm(0),
-      I5 => valid_i,
+      I0 => smatrix_out1(0),
+      O => \^smatrix_out\(0)
+    );
+uart_valid_tx_in_inferred_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => uart_valid_tx_in_inferred_i_2_n_0,
       O => \^uart_valid_tx_in\
+    );
+uart_valid_tx_in_inferred_i_2: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFFFFEFF"
+    )
+        port map (
+      I0 => ready_o_INST_0_i_3_n_0,
+      I1 => ready_o_INST_0_i_2_n_0,
+      I2 => ready_o_INST_0_i_1_n_0,
+      I3 => mem2seriala_fsm(0),
+      I4 => mem2seriala_fsm(1),
+      O => uart_valid_tx_in_inferred_i_2_n_0
     );
 your_instance_name: component ila_1_HD259
      port map (
@@ -176912,7 +176759,7 @@ your_instance_name2: component SystolicCore_AXI_Stream_Systolic_0_0_ila_1
       probe1(7 downto 0) => k_counter_clock_base(7 downto 0),
       probe2(7 downto 4) => B"0000",
       probe2(3 downto 0) => j_counter(3 downto 0),
-      probe3(7 downto 0) => smatrix_out1(7 downto 0),
+      probe3(7 downto 0) => \^smatrix_out\(7 downto 0),
       probe4(7 downto 1) => B"0000000",
       probe4(0) => handshake,
       probe5(0) => \^m_axis_tlast\,

@@ -41,21 +41,22 @@ assign handshake = uart_valid_tx_in && event_send_data;
 logic [WIDTH-1:0]      smatrix_out2                ;
 always @(posedge clock or negedge nreset) begin
     if (!nreset) begin
-        smatrix_out  <= 32'd0;
+        //smatrix_out  <= 32'd0;
         m_axis_tlast <= 0;
     end else begin
         //m_axis_tlast <= smatrix_out1 == 254;
         if (handshake) begin
             if (smatrix_out1 == 255) begin
-                smatrix_out <=0;
+                //smatrix_out <=0;
                 m_axis_tlast = 1;
             end else begin
-                smatrix_out <= smatrix_out1;
+               // smatrix_out <= smatrix_out1;
                 m_axis_tlast <= next_k_counter_clock_base == 255;
             end
         end
     end
 end
+assign smatrix_out = smatrix_out1;
 
 ila_1 your_instance_name2 (
 	.clk(clock), // input wire clk
@@ -102,7 +103,7 @@ always_comb begin
             smatrix_out1  = valid_i ? 8'hff:0;
             //m_axis_tlast = valid_i;
             next_k_counter_clock_base<=0;
-            uart_valid_tx_in = valid_i;   // já começa válido
+            uart_valid_tx_in = 0;   // já começa válido
            
 
            //uart_valid_tx_in =0;
