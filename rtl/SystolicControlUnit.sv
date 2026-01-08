@@ -28,17 +28,22 @@ module systolicControlUnitTop(
 );
 
 enum {IDLE,IDLE_PC, WRITE_MEMAAA,WRITE_MEMBBB,SYSTOLIC_READ_MEM,WRITE_MEM_OUT,DONE} fsm_unit_control, fsm_unit_control_next;
-logic last_uart_ready_rx;
+
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         frame_start        <= 0;
-        last_uart_ready_rx<=0;
+
     end else begin
-        last_uart_ready_rx <= uart_ready_rx;
-        frame_start[07:00] <=  (uart_ready_rx && !last_uart_ready_rx) ? uart_data_rx_out  : frame_start[07:00];
-        frame_start[15:08] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[07:00]: frame_start[15:08];
-        frame_start[23:16] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[15:08]: frame_start[23:16];
-        frame_start[31:24] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[23:16]: frame_start[31:24];
+
+        //frame_start[07:00] <=  (uart_ready_rx && !last_uart_ready_rx) ? uart_data_rx_out  : frame_start[07:00];
+        //frame_start[15:08] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[07:00]: frame_start[15:08];
+        //frame_start[23:16] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[15:08]: frame_start[23:16];
+        //frame_start[31:24] <=  (uart_ready_rx && !last_uart_ready_rx) ? frame_start[23:16]: frame_start[31:24];
+
+        frame_start[07:00] <= uart_valid_rx_in && uart_ready_rx ? uart_data_rx_out  :frame_start[07:00];
+        frame_start[15:08] <= uart_valid_rx_in && uart_ready_rx ? frame_start[07:00]:frame_start[15:08];
+        frame_start[23:16] <= uart_valid_rx_in && uart_ready_rx ? frame_start[15:08]:frame_start[23:16];
+        frame_start[31:24] <= uart_valid_rx_in && uart_ready_rx ? frame_start[23:16]:frame_start[31:24];
     end
 end
 
@@ -52,11 +57,11 @@ ila_0 your_instance_name (
 	.probe0(frame_start), // input wire [31:0]  probe0  
 	.probe1(fsm_unit_control), // input wire [2:0]  probe1 
 	.probe2(s_axis_tlast), // input wire [0:0]  probe2 
-	.probe3(last_uart_ready_rx), // input wire [0:0]  probe3 
+	.probe3(uart_valid_rx_in && uart_ready_rx ), // input wire [0:0]  probe3 
 	.probe4(mem2serial_valid_i), // input wire [0:0]  probe4 
 	.probe5(uart_ready_rx), // input wire [0:0]  probe5 
 	.probe6(mem2serial_valid_i), // input wire [0:0]  probe6 
-	.probe7(last_uart_ready_rx), // input wire [0:0]  probe7 
+	.probe7(uart_valid_rx_in && uart_ready_rx ), // input wire [0:0]  probe7 
 	.probe8(uart_valid_tx_in), // input wire [0:0]  probe8 
 	.probe9(1) // input wire [0:0]  probe9
 );
@@ -105,7 +110,7 @@ always_comb case(fsm_unit_control)
          end
         */
          //casex({uart_valid_rx_in,frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start[15:0] ==16'haaaa})
-        casex({(uart_ready_rx && !last_uart_ready_rx),frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start ==32'hadda_ffff})
+        casex({(uart_valid_rx_in && uart_ready_rx),frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start ==32'hadda_ffff})
             3'b11x:begin
                 fsm_unit_control_next =  WRITE_MEMAAA;
                 serial2mem_opb_valid_i        =0;
@@ -192,7 +197,7 @@ always_comb case(fsm_unit_control)
         s_axis_tlast    =1; 
     end
     IDLE_PC:begin
-       if((uart_ready_rx && !last_uart_ready_rx)&&{frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
+       if((uart_valid_rx_in && uart_ready_rx)&&{frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
         //if({frame_start[7:0],uart_data_rx_out} == 16'heaea)begin
             fsm_unit_control_next   = WRITE_MEM_OUT             ;            
             uart_valid_tx_in        =  1                        ;

@@ -30,7 +30,9 @@ module SystolicCoreTop#(
     output logic                    uart_ready_rx_out         ,
     input  logic                    uart_ready_tx_out         ,
     output logic                    uart_valid_tx_in          ,
-    output logic                    uart_valid_rx_in          ,
+    input logic                    uart_valid_rx_in          ,
+
+
     output logic                    s_axis_tlast              ,
     output logic                    m_axis_tlast
 );
@@ -219,7 +221,8 @@ assign mem2serial_rready_i                         =  systolicControlUnit_mem2se
 assign syst_valid_i                                =  systolicControlUnit_syst_valid_i                          ;
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
 //assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ; //Avaliação 1.1
-assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out && uart_valid_rx_in;
+assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
+assign systolicControlUnit_uart_valid_rx_in = uart_valid_rx_in;
 (*dont_touch = "true"*) 
 
 //logic [111:0]fifo_d_a;
@@ -314,8 +317,8 @@ systolicControlUnitTop systolicControlUnit_Global(
     .s_axis_tlast               (systolicControlUnit_s_axis_tlast               )
 );
 
-/*
-ila_1 your_instance_name (
+
+ila_3 your_instance_name (
 	.clk(clock), // input wire clk
 
       
@@ -355,7 +358,7 @@ ila_1 your_instance_name (
 
 );
 
-*/
+
 /*
 (*dont_touch = "true"*) 
 ref_clock #(.CLOCK_REF(1000),.CLOCK_INPUT(100_000_000))clock_rate_pc(

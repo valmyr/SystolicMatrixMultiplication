@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Jan  7 03:32:29 2026
+| Date         : Wed Jan  7 23:11:00 2026
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_utilization -file SystolicCore_AXI_Stream_Systolic_0_0_utilization_synth.rpt -pb SystolicCore_AXI_Stream_Systolic_0_0_utilization_synth.pb
 | Design       : SystolicCore_AXI_Stream_Systolic_0_0
@@ -32,17 +32,17 @@ Table of Contents
 +-------------------------+-------+-------+------------+-----------+-------+
 |        Site Type        |  Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+-------+-------+------------+-----------+-------+
-| CLB LUTs*               | 10656 |     0 |          0 |    230400 |  4.63 |
-|   LUT as Logic          | 10656 |     0 |          0 |    230400 |  4.63 |
+| CLB LUTs*               | 11211 |     0 |          0 |    230400 |  4.87 |
+|   LUT as Logic          | 11211 |     0 |          0 |    230400 |  4.87 |
 |   LUT as Memory         |     0 |     0 |          0 |    101760 |  0.00 |
-| CLB Registers           |  6568 |     0 |          0 |    460800 |  1.43 |
-|   Register as Flip Flop |  6437 |     0 |          0 |    460800 |  1.40 |
-|   Register as Latch     |   131 |     0 |          0 |    460800 |  0.03 |
+| CLB Registers           |  6781 |     0 |          0 |    460800 |  1.47 |
+|   Register as Flip Flop |  6778 |     0 |          0 |    460800 |  1.47 |
+|   Register as Latch     |     3 |     0 |          0 |    460800 | <0.01 |
 | CARRY8                  |   256 |     0 |          0 |     28800 |  0.89 |
 | F7 Muxes                |   272 |     0 |          0 |    115200 |  0.24 |
 | F8 Muxes                |   128 |     0 |          0 |     57600 |  0.22 |
 | F9 Muxes                |     0 |     0 |          0 |     28800 |  0.00 |
-| Unique Control Sets     |    18 |       |          0 |     57600 |  0.03 |
+| Unique Control Sets     |   266 |       |          0 |     57600 |  0.46 |
 +-------------------------+-------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -63,9 +63,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 6560  |          Yes |           - |        Reset |
+| 6653  |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 8     |          Yes |       Reset |            - |
+| 128   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -171,18 +171,18 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     | 6429 |            Register |
-| LUT6     | 4958 |                 CLB |
-| LUT2     | 2579 |                 CLB |
-| LUT1     | 2056 |                 CLB |
-| LUT4     |  949 |                 CLB |
-| LUT5     |  819 |                 CLB |
-| LUT3     |  790 |                 CLB |
+| FDCE     | 6650 |            Register |
+| LUT6     | 5260 |                 CLB |
+| LUT2     | 2585 |                 CLB |
+| LUT1     | 2311 |                 CLB |
+| LUT4     | 1223 |                 CLB |
+| LUT5     |  829 |                 CLB |
+| LUT3     |  411 |                 CLB |
 | MUXF7    |  272 |                 CLB |
 | CARRY8   |  256 |                 CLB |
-| LDCE     |  131 |            Register |
 | MUXF8    |  128 |                 CLB |
-| FDRE     |    8 |            Register |
+| FDRE     |  128 |            Register |
+| LDCE     |    3 |            Register |
 +----------+------+---------------------+
 
 
@@ -192,9 +192,12 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------------------------------------------------+------+
 |                      Ref Name                      | Used |
 +----------------------------------------------------+------+
+| SystolicCore_AXI_Stream_Systolic_0_0_ila_2         |    2 |
 | ram_dual_port_HD257                                |    1 |
-| ila_1_HD258                                        |    1 |
+| ila_2_HD258                                        |    1 |
+| ila_1_HD259                                        |    1 |
 | SystolicCore_AXI_Stream_Systolic_0_0_ram_dual_port |    1 |
+| SystolicCore_AXI_Stream_Systolic_0_0_ila_3         |    1 |
 | SystolicCore_AXI_Stream_Systolic_0_0_ila_1         |    1 |
 | SystolicCore_AXI_Stream_Systolic_0_0_ila_0         |    1 |
 +----------------------------------------------------+------+

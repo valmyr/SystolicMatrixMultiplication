@@ -39,7 +39,7 @@ module AXI_Stream_Systolic_Core#(parameter  BYTESIZES = 8, WIDTHx = 4,SIZE = 16,
         output wire          m_axis_tlast
         // ... outros sinais opcionais
 );
-//Update 63
+//Update 66
 
 //assign m_axis_tdata =6764553;
 //assign m_axis_tvalid  =1;

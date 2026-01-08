@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
 -- Date        : Mon Jan  5 03:13:13 2026
 -- Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
--- Command     : write_vhdl -force -mode funcsim
---               /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_zynq_ultra_ps_e_0_1/SystolicCore_zynq_ultra_ps_e_0_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top SystolicCore_zynq_ultra_ps_e_0_1 -prefix
+--               SystolicCore_zynq_ultra_ps_e_0_1_ SystolicCore_zynq_ultra_ps_e_0_1_sim_netlist.vhdl
 -- Design      : SystolicCore_zynq_ultra_ps_e_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -1587,8 +1587,6 @@ entity SystolicCore_zynq_ultra_ps_e_0_1_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e i
   attribute C_USE_DIFF_RW_CLK_GP6 of SystolicCore_zynq_ultra_ps_e_0_1_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of SystolicCore_zynq_ultra_ps_e_0_1_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "SystolicCore_zynq_ultra_ps_e_0_1.hwdef";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of SystolicCore_zynq_ultra_ps_e_0_1_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e";
   attribute PSS_IO : string;
   attribute PSS_IO of SystolicCore_zynq_ultra_ps_e_0_1_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "Signal Name, DiffPair Type, DiffPair Signal,Direction, Site Type, IO Standard, Drive (mA), Slew Rate, Pull Type, IBIS Model, ODT, OUTPUT_IMPEDANCE " & LF &
  "QSPI_X4_SCLK_OUT, , , OUT, PS_MIO0_500, LVCMOS18, 12, FAST, PULLUP, PS_MIO_LVCMOS18_F_12,,  " & LF &

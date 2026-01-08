@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Wed Jan  7 03:35:12 2026
+| Date             : Wed Jan  7 23:15:19 2026
 | Host             : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command          : report_power -file SystolicCore_wrapper_power_routed.rpt -pb SystolicCore_wrapper_power_summary_routed.pb -rpx SystolicCore_wrapper_power_routed.rpx
 | Design           : SystolicCore_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.431        |
+| Total On-Chip Power (W)  | 3.566        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.739        |
-| Device Static (W)        | 0.692        |
+| Dynamic (W)              | 2.872        |
+| Device Static (W)        | 0.694        |
 | Effective TJA (C/W)      | 1.0          |
-| Max Ambient (C)          | 96.6         |
-| Junction Temperature (C) | 28.4         |
+| Max Ambient (C)          | 96.5         |
+| Junction Temperature (C) | 28.5         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.050 |        4 |       --- |             --- |
-| CLB Logic                |     0.012 |    36993 |       --- |             --- |
-|   LUT as Logic           |     0.008 |    14739 |    230400 |            6.40 |
-|   LUT as Shift Register  |     0.002 |      546 |    101760 |            0.54 |
-|   Register               |    <0.001 |    15085 |    460800 |            3.27 |
-|   CARRY8                 |    <0.001 |      367 |     28800 |            1.27 |
+| Clocks                   |     0.084 |        4 |       --- |             --- |
+| CLB Logic                |     0.026 |    58804 |       --- |             --- |
+|   LUT as Logic           |     0.017 |    20021 |    230400 |            8.69 |
+|   LUT as Shift Register  |     0.005 |     1816 |    101760 |            1.78 |
+|   Register               |     0.002 |    25930 |    460800 |            5.63 |
+|   CARRY8                 |     0.001 |      510 |     28800 |            1.77 |
 |   LUT as Distributed RAM |    <0.001 |       68 |    101760 |            0.07 |
-|   BUFG                   |    <0.001 |        4 |        64 |            6.25 |
-|   Others                 |     0.000 |     1753 |       --- |             --- |
-|   F7/F8 Muxes            |     0.000 |      466 |    230400 |            0.20 |
-| Signals                  |     0.013 |    28787 |       --- |             --- |
-| Block RAM                |     0.009 |     10.5 |       312 |            3.37 |
+|   BUFG                   |    <0.001 |        1 |        64 |            1.56 |
+|   Others                 |     0.000 |     3277 |       --- |             --- |
+|   F7/F8 Muxes            |     0.000 |      611 |    230400 |            0.27 |
+| Signals                  |     0.027 |    44708 |       --- |             --- |
+| Block RAM                |     0.080 |    166.5 |       312 |           53.37 |
 | PS8                      |     2.656 |        1 |       --- |             --- |
-| Static Power             |     0.692 |          |           |                 |
+| Static Power             |     0.694 |          |           |                 |
 |   PS Static              |     0.099 |          |           |                 |
-|   PL Static              |     0.594 |          |           |                 |
-| Total                    |     3.431 |          |           |                 |
+|   PL Static              |     0.596 |          |           |                 |
+| Total                    |     3.566 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,9 +78,9 @@ Table of Contents
 +------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source           | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint           |       0.850 |     0.248 |       0.097 |      0.151 |       NA    | Unspecified | NA         |
+| Vccint           |       0.850 |     0.401 |       0.247 |      0.154 |       NA    | Unspecified | NA         |
 | Vccint_io        |       0.850 |     0.071 |       0.000 |      0.071 |       NA    | Unspecified | NA         |
-| Vccbram          |       0.850 |     0.003 |       0.001 |      0.002 |       NA    | Unspecified | NA         |
+| Vccbram          |       0.850 |     0.010 |       0.008 |      0.002 |       NA    | Unspecified | NA         |
 | Vccaux           |       1.800 |     0.147 |       0.000 |      0.147 |       NA    | Unspecified | NA         |
 | Vccaux_io        |       1.800 |     0.055 |       0.000 |      0.055 |       NA    | Unspecified | NA         |
 | Vcco33           |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -167,21 +167,21 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| SystolicCore_wrapper      |     2.739 |
-|   SystolicCore_i          |     2.736 |
-|     AXI_Stream_Systolic_0 |     0.057 |
-|       inst                |     0.057 |
+| SystolicCore_wrapper      |     2.872 |
+|   SystolicCore_i          |     2.869 |
+|     AXI_Stream_Systolic_0 |     0.191 |
+|       inst                |     0.191 |
 |     axi_fifo_mm_s_0       |     0.004 |
 |       U0                  |     0.004 |
-|     axi_smc               |     0.009 |
-|       inst                |     0.009 |
+|     axi_smc               |     0.008 |
+|       inst                |     0.008 |
 |     system_ila_0          |     0.009 |
 |       inst                |     0.009 |
 |     zynq_ultra_ps_e_0     |     2.657 |
 |       inst                |     2.657 |
-|   dbg_hub                 |     0.002 |
-|     inst                  |     0.002 |
-|       BSCANID.u_xsdbm_id  |     0.002 |
+|   dbg_hub                 |     0.003 |
+|     inst                  |     0.003 |
+|       BSCANID.u_xsdbm_id  |     0.003 |
 +---------------------------+-----------+
 
 

@@ -56,6 +56,22 @@ generate
         end
 
 endgenerate
+    ila_2 your_instance_name1123 (
+	.clk(clock), // input wire clk
+
+
+	.probe0(a_load), // input wire [63:0]  probe0  
+	.probe1(b_load), // input wire [63:0]  probe1 
+	.probe2(counter_mult), // input wire [63:0]  probe2 
+	.probe3(counter_transfer_m), // input wire [7:0]  probe3 
+	.probe4(currentStateSystolicControlUnit), // input wire [7:0]  probe4 
+	.probe5(0), // input wire [7:0]  probe5 
+	.probe6(ena_mac), // input wire [0:0]  probe6 
+	.probe7(read_done), // input wire [0:0]  probe7 
+	.probe8(0), // input wire [0:0]  probe8 
+	.probe9(0) // input wire [0:0]  probe9
+);
+
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         currentStateSystolicControlUnit <= IDLE;

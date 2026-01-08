@@ -10,118 +10,90 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="36"></ZoomEndTime>
+      <ZoomEndTime time="8,193"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="129"></NameColumnWidth>
+      <NameColumnWidth column_width="1359"></NameColumnWidth>
       <ValueColumnWidth column_width="128"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="2" />
-   <wvobject type="group" fp_name="group309">
-      <obj_property name="label">slot_0 : axi_fifo_mm_s_0_AXI_STR_TXD : Interface</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="Detail_Data">Interface_(i4:s0)_(axi_fifo_mm_s_0_AXI_STR_TXD)_tooltip</obj_property>
-      <obj_property name="Render_Data">Interface_(i4:s0)_(axi_fifo_mm_s_0_AXI_STR_TXD)</obj_property>
-      <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-      <obj_property name="CustomSignalColor">Cornsilk</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-      <wvobject type="group" fp_name="group310">
-         <obj_property name="label">slot_0 : axi_fifo_mm_s_0_AXI_STR_TXD : T Channel</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="Detail_Data">T_Channel_(i4:s0)_(axi_fifo_mm_s_0_AXI_STR_TXD)_tooltip</obj_property>
-         <obj_property name="Render_Data">T_Channel_(i4:s0)_(axi_fifo_mm_s_0_AXI_STR_TXD)</obj_property>
-         <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-         <obj_property name="CustomSignalColor">Purple</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-         <wvobject type="logic" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tvalid">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tvalid</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tvalid</obj_property>
-            <obj_property name="label">slot_0 : axi_fifo_mm_s_0_AXI_STR_TXD : TVALID</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject type="logic" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tready">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tready</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tready</obj_property>
-            <obj_property name="label">slot_0 : axi_fifo_mm_s_0_AXI_STR_TXD : TREADY</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject type="logic" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tlast">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tlast</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tlast</obj_property>
-            <obj_property name="label">slot_0 : axi_fifo_mm_s_0_AXI_STR_TXD : TLAST</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tdata">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tdata[31:0]</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tdata[31:0]</obj_property>
-            <obj_property name="label">slot_0 : axi_fifo_mm_s_0_AXI_STR_TXD : TDATA</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-      </wvobject>
+   <WVObjectSize size="10" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/buf_data">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/buf_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">buf_data[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="group" fp_name="group315">
-      <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : Interface</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="Detail_Data">Interface_(i4:s1)_(AXI_Stream_Systolic_0_m_axis)_tooltip</obj_property>
-      <obj_property name="Render_Data">Interface_(i4:s1)_(AXI_Stream_Systolic_0_m_axis)</obj_property>
-      <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-      <obj_property name="CustomSignalColor">Cornsilk</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-      <wvobject type="group" fp_name="group316">
-         <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : T Channel</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="Detail_Data">T_Channel_(i4:s1)_(AXI_Stream_Systolic_0_m_axis)_tooltip</obj_property>
-         <obj_property name="Render_Data">T_Channel_(i4:s1)_(AXI_Stream_Systolic_0_m_axis)</obj_property>
-         <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-         <obj_property name="CustomSignalColor">Purple</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-         <wvobject type="logic" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tvalid">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tvalid</obj_property>
-            <obj_property name="ObjectShortName">net_slot_1_axis_tvalid</obj_property>
-            <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : TVALID</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject type="logic" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tready">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tready</obj_property>
-            <obj_property name="ObjectShortName">net_slot_1_axis_tready</obj_property>
-            <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : TREADY</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject type="logic" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tlast">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tlast</obj_property>
-            <obj_property name="ObjectShortName">net_slot_1_axis_tlast</obj_property>
-            <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : TLAST</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tdata">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tdata[31:0]</obj_property>
-            <obj_property name="ObjectShortName">net_slot_1_axis_tdata[31:0]</obj_property>
-            <obj_property name="label">slot_1 : AXI_Stream_Systolic_0_m_axis : TDATA</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-      </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/cnt">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/cnt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/cnt_shift">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/cnt_shift[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_shift[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/in_data">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/in_data[3:0]</obj_property>
+      <obj_property name="ObjectShortName">in_data[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/mem_fsm">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/mem_fsm[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_fsm[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/sampling_window_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/sampling_window_debug</obj_property>
+      <obj_property name="ObjectShortName">sampling_window_debug</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_di_reg">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_di_reg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_di_reg[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_we">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/single_port_ram_we</obj_property>
+      <obj_property name="ObjectShortName">single_port_ram_we</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/uart_ready_rx_out">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/uart_ready_rx_out</obj_property>
+      <obj_property name="ObjectShortName">uart_ready_rx_out</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/your_instance_name1123_i_1_n_0">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opA/your_instance_name1123_i_1_n_0</obj_property>
+      <obj_property name="ObjectShortName">your_instance_name1123_i_1_n_0</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
 </wave_config>

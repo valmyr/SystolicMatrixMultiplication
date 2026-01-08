@@ -97,7 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -109,7 +108,6 @@ set rc [catch {
   set_param xicom.use_bs_reader 1
   set_param tcl.collectionResultDisplayLimit 0
   set_param general.usePosixSpawnForFork 1
-  set_param bd.open.in_stealth_mode 2
   set_param runs.launchOptions { -jobs 32  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xczu7ev-ffvc1156-2-e
@@ -132,6 +130,8 @@ OPTRACE "add files" START { }
   read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ram_dual_port/ram_dual_port.xci
   read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_0/ila_0.xci
   read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_1/ila_1.xci
+  read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_2/ila_2.xci
+  read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_3/ila_3.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
 OPTRACE "read constraints: implementation" END { }

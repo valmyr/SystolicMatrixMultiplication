@@ -60,8 +60,6 @@ set_param chipscope.maxJobs 8
 set_param xicom.use_bs_reader 1
 set_param tcl.collectionResultDisplayLimit 0
 set_param general.usePosixSpawnForFork 1
-set_param bd.open.in_stealth_mode 2
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 set_param ips.modRefOverrideMrefDirPath /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/mref
@@ -82,6 +80,12 @@ set_property ip_output_repo /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_mem {
+  /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/testeINPUT_B.mem
+  /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/testeINPUT_A.mem
+  /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/testeINPUT_B1.mem
+  /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/testeINPUT_A1.mem
+}
 read_verilog -library xil_defaultlib -sv {
   /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv
   /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv
@@ -91,6 +95,12 @@ read_verilog -library xil_defaultlib -sv {
   /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv
 }
 read_verilog -library xil_defaultlib /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v
+read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_3/ila_3.xci
+set_property used_in_synthesis false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_3/ila_3_ooc.xdc]
+
 read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
@@ -102,6 +112,12 @@ set_property used_in_synthesis false [get_files -all /home/xmen/Videos/RustDesk/
 set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_1/ila_1_ooc.xdc]
+
+read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_2/ila_2.xci
+set_property used_in_synthesis false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_2/ila_2_ooc.xdc]
 
 read_ip -quiet /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ram_dual_port/ram_dual_port.xci
 set_property used_in_implementation false [get_files -all /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/ram_dual_port_ooc.xdc]

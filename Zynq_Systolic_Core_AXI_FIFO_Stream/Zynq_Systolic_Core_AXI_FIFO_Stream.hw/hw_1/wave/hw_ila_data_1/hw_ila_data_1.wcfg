@@ -10,18 +10,67 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="19"></ZoomEndTime>
+      <ZoomEndTime time="8,193"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="1407"></NameColumnWidth>
-      <ValueColumnWidth column_width="481"></ValueColumnWidth>
+      <ValueColumnWidth column_width="295"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="1" />
-   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/rvalid_o">
+   <WVObjectSize size="7" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/a_load">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/rvalid_o</obj_property>
-      <obj_property name="ObjectShortName">rvalid_o</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/a_load[63:0]</obj_property>
+      <obj_property name="ObjectShortName">a_load[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/b_load">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/b_load[63:0]</obj_property>
+      <obj_property name="ObjectShortName">b_load[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/counter_mult">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/counter_mult[5:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_mult[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/counter_transfer_m">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/counter_transfer_m[5:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_transfer_m[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/currentStateSystolicControlUnit">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/currentStateSystolicControlUnit[7:0]</obj_property>
+      <obj_property name="ObjectShortName">currentStateSystolicControlUnit[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/ena_mac">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/ena_mac</obj_property>
+      <obj_property name="ObjectShortName">ena_mac</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/read_done">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/read_done</obj_property>
+      <obj_property name="ObjectShortName">read_done</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

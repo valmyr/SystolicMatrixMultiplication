@@ -31,20 +31,7 @@ module tb;
   logic                   tb_uart_ready_tx_out                               ;
   logic                   tb_uart_sdata_tx_out                               ;
 
-  uart_top uart_tb(
-    .clock             (tb_uart_clock         )    ,
-    .nreset            (tb_uart_nreset        )    ,
-    //pinout RX                                 
-    .sdata_rx_in       (tb_uart_sdata_rx_in   )    ,
-    .valid_rx_in       (1                     )    ,
-    .ready_rx_out      (tb_uart_ready_rx_out  )    ,
-    .data_rx_out       (tb_uart_data_rx_out   )    ,  
-    //pinout TX                                                  
-    .valid_tx_in       (1'b1 )    ,
-    .data_tx_in        ({4'b0000,tb_uart_data_tx_in}  )    ,
-    .ready_tx_out      (tb_uart_ready_tx_out)    ,
-    .sdata_tx_out      (tb_uart_sdata_tx_out)
-);
+
 initial begin
 
 end
@@ -105,7 +92,7 @@ end
   //-------------------------------------------------------------------------------------------------------------------------------
    initial 
      forever begin
-      @(posedge clock_tb, negedge nreset)
+      @(posedge clock, negedge nreset)
       begin
         if(!nreset)begin
           cnt1               <= 0     ;
@@ -166,14 +153,31 @@ end
         end
     endcase
   //-------------------------------------------------------------------------------------------------------------------------------
+logic s_axis_tvalid;
 
-  Arty7_top_sim a(
-    .clock       (clock)              ,
-    .btn         ({3'b000,!nreset_arty} )   ,
-    .uart_txd_in (tb_uart_sdata_tx_out)   ,
-    .uart_rxd_out(tb_uart_sdata_rx_in)  ,
-    .led()
+assign s_axis_tvalid =1;
+
+
+AXI_Stream_Systolic_Core mm (
+        // Sinais de sistema
+        .clock(clock),
+        .resetn(nreset),
+
+        // Interface Slave AXI Stream (Entrada)
+        .s_axis_tvalid(s_axis_tvalid),
+        .s_axis_tready(tb_uart_ready_tx_out),
+        .s_axis_tdata(tb_uart_data_tx_in),
+        .s_axis_tlast(1'b1),
+        // ... outros sinais opcionais como TUSER
+
+        // Interface Master AXI Stream (Saída) 
+        .m_axis_tvalid(),
+        .m_axis_tready(1),
+        .m_axis_tdata(),
+        .m_axis_tlast()
+        // ... outros sinais opcionais
 );
+
 
 
 endmodule

@@ -19,11 +19,17 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==SystolicCor
 # IP: bd/SystolicCore/ip/SystolicCore_AXI_Stream_Systolic_0_0/SystolicCore_AXI_Stream_Systolic_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==SystolicCore_AXI_Stream_Systolic_0_0 || ORIG_REF_NAME==SystolicCore_AXI_Stream_Systolic_0_0} -quiet] -quiet
 
+# IP: ip/ila_3/ila_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_3 || ORIG_REF_NAME==ila_3} -quiet] -quiet
+
 # IP: ip/ila_0/ila_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_0 || ORIG_REF_NAME==ila_0} -quiet] -quiet
 
 # IP: ip/ila_1/ila_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_1 || ORIG_REF_NAME==ila_1} -quiet] -quiet
+
+# IP: ip/ila_2/ila_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_2 || ORIG_REF_NAME==ila_2} -quiet] -quiet
 
 # IP: ip/ram_dual_port/ram_dual_port.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ram_dual_port || ORIG_REF_NAME==ram_dual_port} -quiet] -quiet
