@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/VitisSystolic1/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/standalone/src/arm/ARMv8/64bit/gcc
+# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/standalone/src/arm/ARMv8/64bit/gcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/VitisSystolic1/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/standalone/src/arm/ARMv8/includes_ps/platform
+# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/standalone/src/arm/ARMv8/includes_ps/platform
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/xmen/aVitisProjetos/VitisSystolic1/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/ARMv8/includes_ps/platform/ZynqMP/cmake_install.cmake")
+  include("/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/ARMv8/includes_ps/platform/ZynqMP/cmake_install.cmake")
 endif()
 

@@ -57,7 +57,7 @@ always @(posedge clock or negedge nreset) begin
     end
 end
 assign smatrix_out = smatrix_out1;
-
+/*
 ila_1 your_instance_name2 (
 	.clk(clock), // input wire clk
 
@@ -72,6 +72,7 @@ ila_1 your_instance_name2 (
 	.probe7(uart_valid_tx_in) // input wire [0:0]  probe7
 
 );
+*/
 
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin

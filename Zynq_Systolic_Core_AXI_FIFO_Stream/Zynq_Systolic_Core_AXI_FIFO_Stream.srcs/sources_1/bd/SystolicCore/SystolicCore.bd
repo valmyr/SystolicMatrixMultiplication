@@ -246,10 +246,10 @@
             "value": "IOPLL"
           },
           "PSU__CRL_APB__CPU_R5_CTRL__ACT_FREQMHZ": {
-            "value": "499.950043"
+            "value": "299.970032"
           },
           "PSU__CRL_APB__CPU_R5_CTRL__FREQMHZ": {
-            "value": "500"
+            "value": "333"
           },
           "PSU__CRL_APB__CPU_R5_CTRL__SRCSEL": {
             "value": "IOPLL"
@@ -339,10 +339,10 @@
             "value": "IOPLL"
           },
           "PSU__CRL_APB__PL0_REF_CTRL__ACT_FREQMHZ": {
-            "value": "99.990005"
+            "value": "299.970032"
           },
           "PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ": {
-            "value": "100"
+            "value": "300"
           },
           "PSU__CRL_APB__PL0_REF_CTRL__SRCSEL": {
             "value": "IOPLL"
@@ -1235,7 +1235,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99990005",
+                "value": "299970032",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -1302,7 +1302,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99990005",
+                "value": "299970032",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -1346,7 +1346,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99990005",
+                "value": "299970032",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -1479,12 +1479,12 @@
       "zynq_ultra_ps_e_0_pl_clk0": {
         "ports": [
           "zynq_ultra_ps_e_0/pl_clk0",
-          "zynq_ultra_ps_e_0/maxihpm0_fpd_aclk",
           "axi_smc/aclk",
+          "zynq_ultra_ps_e_0/maxihpm0_fpd_aclk",
           "axi_fifo_mm_s_0/s_axi_aclk",
           "rst_ps8_0_99M/slowest_sync_clk",
-          "system_ila_0/clk",
-          "AXI_Stream_Systolic_0/clock"
+          "AXI_Stream_Systolic_0/clock",
+          "system_ila_0/clk"
         ]
       },
       "zynq_ultra_ps_e_0_pl_resetn0": {

@@ -3,8 +3,8 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Ethernet_ps/design_1_wrapper.xsa",
-    "xsaPathInPlatform": "platform/hw/design_1_wrapper.xsa",
+    "xsa": "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/SystolicCore_wrapper.xsa",
+    "xsaPathInPlatform": "platform/hw/SystolicCore_wrapper.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
     "isCustomFSBL": false,
@@ -79,17 +79,17 @@
         "isBSPGenReq": false
       },
       {
-        "name": "SystolicVitis01",
-        "displayName": "SystolicVitis01",
+        "name": "SystolicCoreEhertnetFIFO",
+        "displayName": "SystolicCoreEhertnetFIFO",
         "processor": "psu_cortexa53_2",
         "cpuType": "cortex-a53",
         "cpuInstance": "psu_cortexa53_2",
         "os": "freertos",
         "appTemplate": "freertos_lwip_echo_server",
         "isBootDomain": false,
-        "qemuData": "resources/SystolicVitis01/qemu",
-        "qemuArgsFile": "resources/SystolicVitis01/qemu/qemu_args.txt",
-        "pmcQemuArgsFile": "resources/SystolicVitis01/qemu/pmu_args.txt",
+        "qemuData": "resources/SystolicCoreEhertnetFIFO/qemu",
+        "qemuArgsFile": "resources/SystolicCoreEhertnetFIFO/qemu/qemu_args.txt",
+        "pmcQemuArgsFile": "resources/SystolicCoreEhertnetFIFO/qemu/pmu_args.txt",
         "isBSPGenReq": false
       }
     ],

@@ -1,6 +1,6 @@
 sdt: hw_artifacts/psu_cortexa53_0_baremetal.dts
 family: ZynqMP
-path: /home/xmen/aVitisProjetos/VitisSystolic1/platform/zynqmp_fsbl/zynqmp_fsbl_bsp
+path: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/zynqmp_fsbl_bsp
 config: None
 os: standalone
 os_info:
@@ -218,10 +218,10 @@ include_folder: include
 lib_folder: lib
 libsrc_folder: libsrc
 drv_info:
-  axi_gpio_0:
-    driver: gpio
-    ip_name: axi_gpio
-    path: /home/xmen/Music/2025.2/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/gpio_v4_12
+  axi_fifo_mm_s_0:
+    driver: llfifo
+    ip_name: axi_fifo_mm_s
+    path: /home/xmen/Music/2025.2/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/llfifo_v6_0
   psu_acpu_gic:
     driver: scugic
     ip_name: psu_acpu_gic
@@ -321,6 +321,14 @@ drv_info:
     driver: ddrcpsu
     ip_name: psu_ddrc
     path: /home/xmen/Music/2025.2/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/ddrcpsu_v1_8
+  psu_dp:
+    driver: dppsu
+    ip_name: psu_dp
+    path: /home/xmen/Music/2025.2/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/dppsu_v1_7
+  psu_dpdma:
+    driver: dpdma
+    ip_name: psu_dpdma
+    path: /home/xmen/Music/2025.2/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/dpdma_v1_6
   psu_efuse: None
   psu_ethernet_3:
     driver: emacps
@@ -392,6 +400,10 @@ drv_info:
   psu_ocm: None
   psu_ocm_xmpu_cfg: None
   psu_pmu_global_0: None
+  psu_qspi_0:
+    driver: qspipsu
+    ip_name: psu_qspi
+    path: /home/xmen/Music/2025.2/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/qspipsu_v1_22
   psu_r5_0_atcm: None
   psu_r5_0_atcm_global: None
   psu_r5_0_atcm_lockstep: None
@@ -410,6 +422,7 @@ drv_info:
     driver: rtcpsu
     ip_name: psu_rtc
     path: /home/xmen/Music/2025.2/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/rtcpsu_v1_16
+  psu_sata: None
   psu_sd_1:
     driver: sdps
     ip_name: psu_sd

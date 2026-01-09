@@ -184,15 +184,19 @@
 			xlnx,name = "psu_pmu_ram";
 		};
 		psu_pmu_iomodule: psu_pmu_iomodule@ffd40000 {
-			xlnx,gpo4-enable = <0>;
 			compatible = "xlnx,psu-pmu-iomodule-1.0";
-			status = "okay";
-			xlnx,gpo5-enable = <0>;
+			xlnx,gpo4-polarity = <0>;
+			xlnx,gpo2-enable = <1>;
+			xlnx,gpo4-enable = <1>;
 			xlnx,ip-name = "psu_pmu_iomodule";
-			xlnx,gpo2-enable = <0>;
 			reg = <0x0 0xffd40000 0x0 0x20000>;
-			xlnx,gpo3-enable = <0>;
+			xlnx,gpo3-polarity = <0>;
+			xlnx,gpo5-polarity = <0>;
+			xlnx,gpo3-enable = <1>;
+			status = "okay";
+			xlnx,gpo5-enable = <1>;
 			xlnx,name = "psu_pmu_iomodule";
+			xlnx,gpo2-polarity = <0>;
 		};
 		psu_pmu_global_0: psu_pmu_global_0@ffd80000 {
 			compatible = "xlnx,psu-pmu-global-0-1.0";
@@ -517,6 +521,9 @@
 			reg = <0x00000008 0x00000000 0x0 0x80000000>;
 			xlnx,name = "psu_ddr_1";
 		};
+		psu_qspi_linear_0: psu_qspi_linear@c0000000 {
+			reg = <0x0 0xc0000000 0x0 0x20000000>;
+		};
 	};
 	&psu_pmu_0 {
 		xlnx,psu-ep = <1>;
@@ -705,11 +712,26 @@
 		xlnx,dma-type = <0>;
 		xlnx,name = "psu_gdma_0";
 	};
+	&zynqmp_dpdma {
+		status = "okay";
+		xlnx,ip-name = "psu_dpdma";
+		xlnx,name = "psu_dpdma";
+	};
 	&gpu {
 		status = "okay";
 		xlnx,ip-name = "psu_gpu";
 		xlnx,tz-nonsecure = <1>;
 		xlnx,name = "psu_gpu";
+	};
+	&zynqmp_dpsub {
+		xlnx,max-lanes = <2>;
+		phys = <&psgtr 1 6 0 3>, <&psgtr 0 6 1 3>;
+		status = "okay";
+		xlnx,dp-board-interface = "custom";
+		xlnx,ip-name = "psu_dp";
+		phy-names = "dp-phy0" , "dp-phy1";
+		xlnx,tz-nonsecure = <0>;
+		xlnx,name = "psu_dp";
 	};
 	&perf_monitor_cci {
 		xlnx,global-count-width = <32>;
@@ -736,6 +758,15 @@
 		status = "okay";
 		xlnx,ip-name = "psu_serdes";
 		xlnx,name = "psu_serdes";
+	};
+	&sata {
+		xlnx,is-cache-coherent = <0>;
+		status = "okay";
+		xlnx,tz-nonsecure-sata0 = <0>;
+		xlnx,ip-name = "psu_sata";
+		xlnx,sata-board-interface = "custom";
+		xlnx,tz-nonsecure-sata1 = <0>;
+		xlnx,name = "psu_sata";
 	};
 	&perf_monitor_ddr {
 		xlnx,global-count-width = <32>;
@@ -1680,6 +1711,26 @@
 		xlnx,ttc-clk0-freq-hz = <100000000>;
 		xlnx,ttc-clk1-freq-hz = <100000000>;
 		xlnx,name = "psu_ttc_0";
+	};
+	&qspi {
+		xlnx,is-cache-coherent = <0>;
+		xlnx,qspi-fbclk = <0>;
+		num-cs = <2>;
+		xlnx,tz-nonsecure = <1>;
+		xlnx,qspi-clk-freq-hz = <124987511>;
+		xlnx,bus-width = <2>;
+		xlnx,ip-name = "psu_qspi";
+		xlnx,qspi-board-interface = "custom";
+		spi-rx-bus-width = <4>;
+		xlnx,connection-mode = <2>;
+		spi-tx-bus-width = <4>;
+		status = "okay";
+		xlnx,clock-freq = <124987511>;
+		xlnx,fb-clk = <1>;
+		xlnx,qspi-mode = <2>;
+		xlnx,name = "psu_qspi_0";
+		xlnx,qspi-bus-width = <2>;
+		is-dual = <1>;
 	};
 	&gem3 {
 		xlnx,is-cache-coherent = <0>;

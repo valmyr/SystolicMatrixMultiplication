@@ -56,6 +56,7 @@ generate
         end
 
 endgenerate
+/*
     ila_2 your_instance_name1123 (
 	.clk(clock), // input wire clk
 
@@ -71,7 +72,7 @@ endgenerate
 	.probe8(0), // input wire [0:0]  probe8 
 	.probe9(0) // input wire [0:0]  probe9
 );
-
+*/
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         currentStateSystolicControlUnit <= IDLE;

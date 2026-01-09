@@ -1,0 +1,4 @@
+set(DRIVER_INSTANCES "axi_fifo_mm_s@a0000000")
+set(DRIVER_PROP_0_LIST "xlnx,axi-fifo-mm-s-4.3;0xa0000000;0x0;0x0;0xffff;0xffff")
+set(DRIVER_OPTPROP_0_LIST "")
+list(APPEND TOTAL_DRIVER_PROP_LIST DRIVER_PROP_0_LIST)

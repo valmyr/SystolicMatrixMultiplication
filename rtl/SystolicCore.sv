@@ -317,7 +317,7 @@ systolicControlUnitTop systolicControlUnit_Global(
     .s_axis_tlast               (systolicControlUnit_s_axis_tlast               )
 );
 
-
+/*
 ila_3 your_instance_name (
 	.clk(clock), // input wire clk
 
@@ -358,7 +358,7 @@ ila_3 your_instance_name (
 
 );
 
-
+*/
 /*
 (*dont_touch = "true"*) 
 ref_clock #(.CLOCK_REF(1000),.CLOCK_INPUT(100_000_000))clock_rate_pc(

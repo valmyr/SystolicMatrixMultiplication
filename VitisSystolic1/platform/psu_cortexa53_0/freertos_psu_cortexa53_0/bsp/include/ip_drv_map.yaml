@@ -1,6 +1,6 @@
-axi_gpio_0:
-- axi_gpio
-- gpio
+axi_fifo_mm_s_0:
+- axi_fifo_mm_s
+- llfifo
 psu_acpu_gic:
 - psu_acpu_gic
 - scugic
@@ -118,6 +118,12 @@ psu_ddr_xmpu5_cfg:
 psu_ddrc_0:
 - psu_ddrc
 - ddrcpsu
+psu_dp:
+- psu_dp
+- dppsu
+psu_dpdma:
+- psu_dpdma
+- dpdma
 psu_efuse:
 - psu_efuse
 - None
@@ -214,6 +220,9 @@ psu_ocm_xmpu_cfg:
 psu_pmu_global_0:
 - psu_pmu_global_0
 - None
+psu_qspi_0:
+- psu_qspi
+- qspipsu
 psu_r5_0_atcm:
 - psu_r5_0_atcm
 - None
@@ -259,6 +268,9 @@ psu_rsa:
 psu_rtc:
 - psu_rtc
 - rtcpsu
+psu_sata:
+- psu_sata
+- None
 psu_sd_1:
 - psu_sd
 - sdps

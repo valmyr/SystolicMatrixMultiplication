@@ -2,11 +2,11 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Jan  5 03:01:24 2026
+-- Date        : Thu Jan  8 19:09:35 2026
 -- Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top SystolicCore_axi_fifo_mm_s_0_0 -prefix
---               SystolicCore_axi_fifo_mm_s_0_0_ SystolicCore_axi_fifo_mm_s_0_1_stub.vhdl
--- Design      : SystolicCore_axi_fifo_mm_s_0_1
+--               SystolicCore_axi_fifo_mm_s_0_0_ SystolicCore_axi_fifo_mm_s_0_0_stub.vhdl
+-- Design      : SystolicCore_axi_fifo_mm_s_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xczu7ev-ffvc1156-2-e
 -- --------------------------------------------------------------------------------
@@ -48,9 +48,9 @@ entity SystolicCore_axi_fifo_mm_s_0_0 is
   );
 
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of SystolicCore_axi_fifo_mm_s_0_0 : entity is "SystolicCore_axi_fifo_mm_s_0_1,axi_fifo_mm_s,{}";
+  attribute CHECK_LICENSE_TYPE of SystolicCore_axi_fifo_mm_s_0_0 : entity is "SystolicCore_axi_fifo_mm_s_0_0,axi_fifo_mm_s,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of SystolicCore_axi_fifo_mm_s_0_0 : entity is "SystolicCore_axi_fifo_mm_s_0_1,axi_fifo_mm_s,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_fifo_mm_s,x_ipVersion=4.3,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynquplus,C_S_AXI_ID_WIDTH=4,C_S_AXI_ADDR_WIDTH=32,C_S_AXI_DATA_WIDTH=32,C_S_AXI4_DATA_WIDTH=32,C_TX_FIFO_DEPTH=512,C_RX_FIFO_DEPTH=512,C_TX_CASCADE_HEIGHT=0,C_RX_CASCADE_HEIGHT=0,C_TX_FIFO_PF_THRESHOLD=507,C_TX_FIFO_PE_THRESHOLD=5,C_RX_FIFO_PF_THRESHOLD=507,C_RX_FIFO_PE_THRESHOLD=5,C_USE_TX_CUT_THROUGH=1,C_DATA_INTERFACE_TYPE=0,C_TX_ENABLE_ECC=0,C_RX_ENABLE_ECC=0,C_TX_HAS_ECC_ERR_INJECT=0,C_RX_HAS_ECC_ERR_INJECT=0,C_BASEADDR=0xA0000000,C_HIGHADDR=0xA000FFFF,C_AXI4_BASEADDR=0x80001000,C_AXI4_HIGHADDR=0x80002FFF,C_HAS_AXIS_TID=0,C_HAS_AXIS_TDEST=0,C_HAS_AXIS_TUSER=0,C_HAS_AXIS_TSTRB=0,C_HAS_AXIS_TKEEP=0,C_AXIS_TID_WIDTH=4,C_AXIS_TDEST_WIDTH=4,C_AXIS_TUSER_WIDTH=4,C_USE_RX_CUT_THROUGH=1,C_USE_TX_DATA=1,C_USE_TX_CTRL=0,C_USE_RX_DATA=1}";
+  attribute core_generation_info of SystolicCore_axi_fifo_mm_s_0_0 : entity is "SystolicCore_axi_fifo_mm_s_0_0,axi_fifo_mm_s,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_fifo_mm_s,x_ipVersion=4.3,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynquplus,C_S_AXI_ID_WIDTH=4,C_S_AXI_ADDR_WIDTH=32,C_S_AXI_DATA_WIDTH=32,C_S_AXI4_DATA_WIDTH=32,C_TX_FIFO_DEPTH=512,C_RX_FIFO_DEPTH=512,C_TX_CASCADE_HEIGHT=0,C_RX_CASCADE_HEIGHT=0,C_TX_FIFO_PF_THRESHOLD=507,C_TX_FIFO_PE_THRESHOLD=5,C_RX_FIFO_PF_THRESHOLD=507,C_RX_FIFO_PE_THRESHOLD=5,C_USE_TX_CUT_THROUGH=1,C_DATA_INTERFACE_TYPE=0,C_TX_ENABLE_ECC=0,C_RX_ENABLE_ECC=0,C_TX_HAS_ECC_ERR_INJECT=0,C_RX_HAS_ECC_ERR_INJECT=0,C_BASEADDR=0xA0000000,C_HIGHADDR=0xA000FFFF,C_AXI4_BASEADDR=0x80001000,C_AXI4_HIGHADDR=0x80002FFF,C_HAS_AXIS_TID=0,C_HAS_AXIS_TDEST=0,C_HAS_AXIS_TUSER=0,C_HAS_AXIS_TSTRB=0,C_HAS_AXIS_TKEEP=0,C_AXIS_TID_WIDTH=4,C_AXIS_TDEST_WIDTH=4,C_AXIS_TUSER_WIDTH=4,C_USE_RX_CUT_THROUGH=1,C_USE_TX_DATA=1,C_USE_TX_CTRL=0,C_USE_RX_DATA=1}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of SystolicCore_axi_fifo_mm_s_0_0 : entity is "yes";
 end SystolicCore_axi_fifo_mm_s_0_0;
@@ -68,13 +68,13 @@ architecture stub of SystolicCore_axi_fifo_mm_s_0_0 is
   attribute x_interface_parameter of interrupt : signal is "XIL_INTERFACENAME interrupt_intf, SENSITIVITY LEVEL_HIGH, PortWidth 1";
   attribute x_interface_info of s_axi_aclk : signal is "xilinx.com:signal:clock:1.0 aclk_s_axi CLK";
   attribute x_interface_mode of s_axi_aclk : signal is "slave aclk_s_axi";
-  attribute x_interface_parameter of s_axi_aclk : signal is "XIL_INTERFACENAME aclk_s_axi, ASSOCIATED_BUSIF S_AXI:S_AXI_FULL:AXI_STR_TXD:AXI_STR_TXC:AXI_STR_RXD, ASSOCIATED_RESET s_axi_aresetn:mm2s_prmry_reset_out_n:mm2s_cntrl_reset_out_n:s2mm_prmry_reset_out_n, FREQ_HZ 99990005, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_0_pl_clk0, INSERT_VIP 0";
+  attribute x_interface_parameter of s_axi_aclk : signal is "XIL_INTERFACENAME aclk_s_axi, ASSOCIATED_BUSIF S_AXI:S_AXI_FULL:AXI_STR_TXD:AXI_STR_TXC:AXI_STR_RXD, ASSOCIATED_RESET s_axi_aresetn:mm2s_prmry_reset_out_n:mm2s_cntrl_reset_out_n:s2mm_prmry_reset_out_n, FREQ_HZ 299970032, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0, INSERT_VIP 0";
   attribute x_interface_info of s_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 rst_s_axi RST";
   attribute x_interface_mode of s_axi_aresetn : signal is "slave rst_s_axi";
   attribute x_interface_parameter of s_axi_aresetn : signal is "XIL_INTERFACENAME rst_s_axi, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of s_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 S_AXI AWADDR";
   attribute x_interface_mode of s_axi_awaddr : signal is "slave S_AXI";
-  attribute x_interface_parameter of s_axi_awaddr : signal is "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 99990005, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_0_pl_clk0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute x_interface_parameter of s_axi_awaddr : signal is "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 299970032, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute x_interface_info of s_axi_awvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI AWVALID";
   attribute x_interface_info of s_axi_awready : signal is "xilinx.com:interface:aximm:1.0 S_AXI AWREADY";
   attribute x_interface_info of s_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 S_AXI WDATA";
@@ -96,7 +96,7 @@ architecture stub of SystolicCore_axi_fifo_mm_s_0_0 is
   attribute x_interface_parameter of mm2s_prmry_reset_out_n : signal is "XIL_INTERFACENAME rst_axi_str_txd, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of axi_str_txd_tvalid : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD TVALID";
   attribute x_interface_mode of axi_str_txd_tvalid : signal is "master AXI_STR_TXD";
-  attribute x_interface_parameter of axi_str_txd_tvalid : signal is "XIL_INTERFACENAME AXI_STR_TXD, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 99990005, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_0_pl_clk0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute x_interface_parameter of axi_str_txd_tvalid : signal is "XIL_INTERFACENAME AXI_STR_TXD, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 299970032, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute x_interface_info of axi_str_txd_tready : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD TREADY";
   attribute x_interface_info of axi_str_txd_tlast : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD TLAST";
   attribute x_interface_info of axi_str_txd_tdata : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD TDATA";
@@ -105,7 +105,7 @@ architecture stub of SystolicCore_axi_fifo_mm_s_0_0 is
   attribute x_interface_parameter of s2mm_prmry_reset_out_n : signal is "XIL_INTERFACENAME rst_axi_str_rxd, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of axi_str_rxd_tvalid : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD TVALID";
   attribute x_interface_mode of axi_str_rxd_tvalid : signal is "slave AXI_STR_RXD";
-  attribute x_interface_parameter of axi_str_rxd_tvalid : signal is "XIL_INTERFACENAME AXI_STR_RXD, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 99990005, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_0_pl_clk0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute x_interface_parameter of axi_str_rxd_tvalid : signal is "XIL_INTERFACENAME AXI_STR_RXD, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 299970032, PHASE 0.0, CLK_DOMAIN SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute x_interface_info of axi_str_rxd_tready : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD TREADY";
   attribute x_interface_info of axi_str_rxd_tlast : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD TLAST";
   attribute x_interface_info of axi_str_rxd_tdata : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD TDATA";

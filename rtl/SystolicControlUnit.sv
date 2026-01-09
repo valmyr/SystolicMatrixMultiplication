@@ -49,7 +49,7 @@ end
 
 
 
-
+/*
 ila_0 your_instance_name (
 	.clk(clock), // input wire clk
 
@@ -64,7 +64,7 @@ ila_0 your_instance_name (
 	.probe7(uart_valid_rx_in && uart_ready_rx ), // input wire [0:0]  probe7 
 	.probe8(uart_valid_tx_in), // input wire [0:0]  probe8 
 	.probe9(1) // input wire [0:0]  probe9
-);
+);*/
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         fsm_unit_control <= IDLE;

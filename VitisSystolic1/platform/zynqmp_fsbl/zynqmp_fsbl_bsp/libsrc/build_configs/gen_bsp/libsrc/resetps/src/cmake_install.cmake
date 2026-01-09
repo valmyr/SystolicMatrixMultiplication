@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/VitisSystolic1/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/resetps/src
+# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/resetps/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

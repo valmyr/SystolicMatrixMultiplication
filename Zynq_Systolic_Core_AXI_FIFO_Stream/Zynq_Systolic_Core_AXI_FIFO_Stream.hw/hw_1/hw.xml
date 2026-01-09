@@ -45,7 +45,7 @@
     </Object>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/your_instance_name" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
-      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="1"/>
     </Object>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/your_instance_name" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
@@ -57,7 +57,7 @@
     </Object>
   </ObjectList>
   <ObjectList object_type="hw_probe" gui_info="">
-    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/ena_mac" gui_info="Trigger Setup=0"/>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/ena_mac" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/event_send_data" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/handshake" gui_info="Trigger Setup=0"/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/uart_valid_tx_in" gui_info=""/>
@@ -77,7 +77,7 @@
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_en" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_en_1" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_we" gui_info=""/>
-    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/uart_ready_rx_out" gui_info="Trigger Setup=0"/>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/uart_ready_rx_out" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/your_instance_name1123_i_1_n_0" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx" gui_info=""/>
@@ -1808,7 +1808,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bB"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -1819,7 +1819,7 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bB"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -7730,7 +7730,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bB"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -7741,7 +7741,7 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bB"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>

@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/VitisSystolic1/platform/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/freertos10_xilinx/src/Source/portable/MemMang
+# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/freertos10_xilinx/src/Source/portable/MemMang
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

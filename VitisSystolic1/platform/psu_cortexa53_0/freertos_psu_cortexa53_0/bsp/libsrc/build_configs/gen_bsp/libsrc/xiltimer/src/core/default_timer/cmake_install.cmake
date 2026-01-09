@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/VitisSystolic1/platform/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/xiltimer/src/core/default_timer
+# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_0/freertos_psu_cortexa53_0/bsp/libsrc/xiltimer/src/core/default_timer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

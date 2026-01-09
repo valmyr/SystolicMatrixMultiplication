@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan  7 19:01:42 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan  8 23:47:27 2026" VIVADOVERSION="2025.2">
 
   <SYSTEMINFO ARCH="zynquplus" BOARD="xilinx.com:zcu106:part0:2.6" DEVICE="xczu7ev" NAME="SystolicCore" PACKAGE="ffvc1156" SPEEDGRADE="-2"/>
 
@@ -19,7 +19,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="99990005" DIR="I" NAME="clock" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="299970032" DIR="I" NAME="clock" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
@@ -73,7 +73,7 @@
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="AXI_Stream_Systolic_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
@@ -94,7 +94,7 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_fifo_mm_s_0_AXI_STR_TXD" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
@@ -928,7 +928,7 @@
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
         <PORT DIR="O" NAME="mm2s_prmry_reset_out_n" POLARITY="ACTIVE_LOW" SIGIS="rst"/>
         <PORT DIR="O" NAME="s2mm_prmry_reset_out_n" POLARITY="ACTIVE_LOW" SIGIS="rst"/>
-        <PORT CLKFREQUENCY="99990005" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="299970032" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
@@ -1032,7 +1032,7 @@
           <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_BURST" VALUE="0"/>
           <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
@@ -1079,7 +1079,7 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_fifo_mm_s_0_AXI_STR_TXD" NAME="AXI_STR_TXD" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
@@ -1100,7 +1100,7 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="AXI_Stream_Systolic_0_m_axis" NAME="AXI_STR_RXD" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
@@ -1418,7 +1418,7 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="99990005" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="299970032" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
@@ -1437,7 +1437,7 @@
           <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_BURST" VALUE="1"/>
           <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
@@ -1511,7 +1511,7 @@
           <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_BURST" VALUE="0"/>
           <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
@@ -1598,7 +1598,7 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
-        <PORT CLKFREQUENCY="99990005" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="299970032" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
@@ -5596,7 +5596,7 @@
         <PORT DIR="I" NAME="SLOT_1_AXIS_tlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_1_AXIS_tready" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_1_AXIS_tvalid" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="99990005" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="299970032" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
@@ -5610,7 +5610,7 @@
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="axi_fifo_mm_s_0_AXI_STR_TXD" NAME="SLOT_0_AXIS" TYPE="MONITOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
@@ -5631,7 +5631,7 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="AXI_Stream_Systolic_0_m_axis" NAME="SLOT_1_AXIS" TYPE="MONITOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
@@ -6370,9 +6370,9 @@
         <PARAMETER NAME="PSU__CRL_APB__CAN1_REF_CTRL__DIVISOR1" VALUE="1"/>
         <PARAMETER NAME="PSU__CRL_APB__CAN1_REF_CTRL__FREQMHZ" VALUE="100"/>
         <PARAMETER NAME="PSU__CRL_APB__CAN1_REF_CTRL__SRCSEL" VALUE="IOPLL"/>
-        <PARAMETER NAME="PSU__CRL_APB__CPU_R5_CTRL__ACT_FREQMHZ" VALUE="499.950043"/>
-        <PARAMETER NAME="PSU__CRL_APB__CPU_R5_CTRL__DIVISOR0" VALUE="3"/>
-        <PARAMETER NAME="PSU__CRL_APB__CPU_R5_CTRL__FREQMHZ" VALUE="500"/>
+        <PARAMETER NAME="PSU__CRL_APB__CPU_R5_CTRL__ACT_FREQMHZ" VALUE="299.970032"/>
+        <PARAMETER NAME="PSU__CRL_APB__CPU_R5_CTRL__DIVISOR0" VALUE="5"/>
+        <PARAMETER NAME="PSU__CRL_APB__CPU_R5_CTRL__FREQMHZ" VALUE="333"/>
         <PARAMETER NAME="PSU__CRL_APB__CPU_R5_CTRL__SRCSEL" VALUE="IOPLL"/>
         <PARAMETER NAME="PSU__CRL_APB__CSU_PLL_CTRL__ACT_FREQMHZ" VALUE="180"/>
         <PARAMETER NAME="PSU__CRL_APB__CSU_PLL_CTRL__DIVISOR0" VALUE="3"/>
@@ -6456,10 +6456,10 @@
         <PARAMETER NAME="PSU__CRL_APB__PCAP_CTRL__DIVISOR0" VALUE="8"/>
         <PARAMETER NAME="PSU__CRL_APB__PCAP_CTRL__FREQMHZ" VALUE="200"/>
         <PARAMETER NAME="PSU__CRL_APB__PCAP_CTRL__SRCSEL" VALUE="IOPLL"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__ACT_FREQMHZ" VALUE="99.990005"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0" VALUE="15"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__ACT_FREQMHZ" VALUE="299.970032"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0" VALUE="5"/>
         <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1" VALUE="1"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ" VALUE="100"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ" VALUE="300"/>
         <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__SRCSEL" VALUE="IOPLL"/>
         <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ" VALUE="100"/>
         <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0" VALUE="4"/>
@@ -6944,7 +6944,7 @@
         <PARAMETER NAME="PSU__MAXIGP1__DATA_WIDTH" VALUE="128"/>
         <PARAMETER NAME="PSU__MAXIGP2__DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="PSU__M_AXI_GP0_SUPPORTS_NARROW_BURST" VALUE="1"/>
-        <PARAMETER NAME="PSU__M_AXI_GP0__FREQMHZ" VALUE="99.990005"/>
+        <PARAMETER NAME="PSU__M_AXI_GP0__FREQMHZ" VALUE="299.970032"/>
         <PARAMETER NAME="PSU__M_AXI_GP1_SUPPORTS_NARROW_BURST" VALUE="1"/>
         <PARAMETER NAME="PSU__M_AXI_GP1__FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PSU__M_AXI_GP2_SUPPORTS_NARROW_BURST" VALUE="1"/>
@@ -7584,19 +7584,19 @@
             <CONNECTION INSTANCE="axi_smc" PORT="S00_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="99990005" DIR="I" NAME="maxihpm0_fpd_aclk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="299970032" DIR="I" NAME="maxihpm0_fpd_aclk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="99990005" DIR="O" NAME="pl_clk0" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="299970032" DIR="O" NAME="pl_clk0" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxihpm0_fpd_aclk"/>
             <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
+            <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxihpm0_fpd_aclk"/>
             <CONNECTION INSTANCE="axi_fifo_mm_s_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="rst_ps8_0_99M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="AXI_Stream_Systolic_0" PORT="clock"/>
+            <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="pl_resetn0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="zynq_ultra_ps_e_0_pl_resetn0">
@@ -7613,7 +7613,7 @@
           <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="SystolicCore_zynq_ultra_ps_e_0_1_pl_clk0"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="128"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="99990005"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="299970032"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_BURST" VALUE="1"/>
           <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
