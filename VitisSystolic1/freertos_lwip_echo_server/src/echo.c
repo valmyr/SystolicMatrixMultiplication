@@ -63,7 +63,7 @@
 
 #define MAX_DATA_BUFFER_SIZE NO_OF_PACKETS*MAX_PACKET_LEN
 
-#define DEBUG true
+#define DEBUG false
 
 /************************** Function Prototypes ******************************/
 
@@ -101,7 +101,7 @@ void print_echo_app_header()
 /* thread spawned for each connection */
 int RECV_BUF_SIZE =4*1000;
 int SEND_BUF_SIZE =4*256;
-
+volatile int packages_received = 0;
 void process_echo_request(void *p)
 {
     int sd = *(int *)p;
@@ -112,9 +112,8 @@ void process_echo_request(void *p)
 
 
 
-	int packages_received = 0;
-	if(DEBUG)
-		xil_printf("\n-------------	SERVER ON	-------------\n\n");
+	
+	xil_printf("\n-------------	SERVER ON	-------------\n\n");
     while (1) {
         /* read a max of RECV_BUF_SIZE bytes from socket */
 		if (n < 0) {
@@ -124,28 +123,33 @@ void process_echo_request(void *p)
 		n = read(sd, recv_buf+packages_received, RECV_BUF_SIZE);
 		packages_received += n / sizeof(int);
 		if(packages_received==1000){
-			xil_printf("		Host-to-PS \n");
-			while (XLlFifo_iTxVacancy(&FifoInstance) < 1000){ vTaskDelay(1);};
+			if(DEBUG)
+				xil_printf("		Host-to-PS \n");
+			while (XLlFifo_iTxVacancy(&FifoInstance) < 1000){  };
 			XLlFifo_Write(&FifoInstance , recv_buf ,  1000 * 4);
 			XLlFifo_TxSetLen(&FifoInstance, (1000 * 4));
-			while (!XLlFifo_IsTxDone(&FifoInstance));
+			while (!XLlFifo_IsTxDone(&FifoInstance)){ };
 			packages_received = 0;
-			xil_printf("		PS-to-PL \n");
+			if(DEBUG)
+				xil_printf("		PS-to-PL \n");
 			//while( !(XLlFifo_IsTxDone(&FifoInstance))){xil_printf("Loop debug\n");}			
 		}
 		if(*(recv_buf) == 0xea && *(recv_buf+1) == 0xea){
-			xil_printf("		PL-to-PS \n");
-			while (XLlFifo_iTxVacancy(&FifoInstance) < 1);
+			packages_received = 0;
+			if(DEBUG)
+				xil_printf("		PL-to-PS \n");
+			while (XLlFifo_iTxVacancy(&FifoInstance) < 1){ };
 			XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf));
 			XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
-			while (!XLlFifo_IsTxDone(&FifoInstance));
-			while (XLlFifo_iTxVacancy(&FifoInstance) < 1);
+			while (!XLlFifo_IsTxDone(&FifoInstance)){ };
+			while (XLlFifo_iTxVacancy(&FifoInstance) < 1){ };
 			XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf)) ;
 			XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
-			while (!XLlFifo_IsTxDone(&FifoInstance));
-			while (XLlFifo_iRxOccupancy(&FifoInstance) < 256);
+			while (!XLlFifo_IsTxDone(&FifoInstance)){ };
+			while (XLlFifo_iRxOccupancy(&FifoInstance) < 256){ };
 			XLlFifo_Read(&FifoInstance,send_buf,256*sizeof(int));
-			xil_printf("		PS-to-Host \n");
+			if(DEBUG)
+				xil_printf("		PS-to-Host \n");
 			if ((nwrote = write(sd, send_buf, 256 * sizeof(int))) < 0) {
         		xil_printf("%s: ERROR responding to client signal processing request. received = %d, written = %d\r\n",
         	    __FUNCTION__, n, nwrote);
@@ -153,12 +157,13 @@ void process_echo_request(void *p)
         		break;
         	}	
 		}
-		if (n <= 0 || nwrote <= 0 || (*(recv_buf) == 0xea && *(recv_buf+1) == 0xea))
+		if (n <= 0 || nwrote <= 0 || (*(recv_buf) == 0xea))
             break;
 	}
-	if(DEBUG)
-		xil_printf("\n-------------	SERVER OFF	-------------\n\n");
+	xil_printf("\n-------------	SERVER OFF	-------------\n\n");
 	//int DataRead ;
+
+	vTaskDelay(1);
     close(sd);
     vTaskDelete(NULL);
 }
@@ -198,22 +203,22 @@ void echo_application_thread()
 
 	lwip_listen(sock, 0);
 	size = sizeof(remote);
-	u64 t1, t2;
 	/* Initialize the Device Configuration Interface driver */
 	Config = XLlFfio_LookupConfig(XPAR_XLLFIFO_0_BASEADDR);
 	XLlFifo_CfgInitialize(&FifoInstance, Config, Config->BaseAddress);
 	XLlFifo_Status(&FifoInstance);
 	XLlFifo_IntClear(&FifoInstance,0xffffffff);
-    XLlFifo_Status(&FifoInstance);	
+    XLlFifo_Status(&FifoInstance);
+	XLlFifo_IntDisable(&FifoInstance,0x000000000);	
 	while (1) {
-    	XTime_GetTime(&t1);
+    	//XTime_GetTime(&t1);
 		if ((new_sd[connection_index] = lwip_accept(sock, (struct sockaddr *)&remote, (socklen_t *)&size)) > 0) {
 			sys_thread_new("echos", process_echo_request,
 				(void*)&(new_sd[connection_index]),
 				THREAD_STACKSIZE,
 				DEFAULT_THREAD_PRIO);
 		}
-    	XTime_GetTime(&t2);
+    	//XTime_GetTime(&t2);
 	}
 	xil_printf("Maximum number of connections reached, No further connections will be accepted\r\n");
 	vTaskSuspend(NULL);
