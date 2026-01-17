@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/xilpm/src/zynqmp/client/common
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/xilpm/src/zynqmp/client/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

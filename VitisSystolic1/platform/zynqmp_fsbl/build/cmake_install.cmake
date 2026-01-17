@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/zynqmp_fsbl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/zynqmp_fsbl/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

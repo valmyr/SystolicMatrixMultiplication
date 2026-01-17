@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/standalone/src/arm/ARMv8/64bit/platform/ZynqMP
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/standalone/src/arm/ARMv8/64bit/platform/ZynqMP
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/ARMv8/64bit/platform/ZynqMP/gcc/cmake_install.cmake")
+  include("/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/ARMv8/64bit/platform/ZynqMP/gcc/cmake_install.cmake")
 endif()
 

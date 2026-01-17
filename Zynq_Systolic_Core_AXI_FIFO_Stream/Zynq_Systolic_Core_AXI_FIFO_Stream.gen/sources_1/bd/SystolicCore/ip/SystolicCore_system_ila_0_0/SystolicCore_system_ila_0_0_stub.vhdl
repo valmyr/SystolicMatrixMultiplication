@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Thu Jan  8 23:48:17 2026
+-- Date        : Thu Jan  8 23:48:16 2026
 -- Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
--- Command     : write_vhdl -force -mode synth_stub
---               /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_system_ila_0_0/SystolicCore_system_ila_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top SystolicCore_system_ila_0_0 -prefix
+--               SystolicCore_system_ila_0_0_ SystolicCore_system_ila_0_0_stub.vhdl
 -- Design      : SystolicCore_system_ila_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xczu7ev-ffvc1156-2-e

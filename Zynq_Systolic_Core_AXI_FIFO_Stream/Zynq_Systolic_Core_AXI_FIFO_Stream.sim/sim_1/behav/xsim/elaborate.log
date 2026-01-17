@@ -13,16 +13,12 @@ WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 64 fo
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'probe3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:123]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'probe4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:124]
 WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 8 for port 'probe5' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:125]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'probe2' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:66]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'probe4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:68]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'probe1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:58]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'probe9' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:66]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'probe1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:161]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'probe2' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:162]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'probe3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:163]
 WARNING: [VRFC 10-3818] variable 'tb_uart_data_tx_in' is driven by invalid combination of procedural drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:30]
 WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block should not be driven by any other process [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:116]
 WARNING: [VRFC 10-3129] assignment to input 's_axis_tlast' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:57]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'probe1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:159]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'probe2' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:160]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'probe3' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:161]
 WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
 WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
 Completed static elaboration
@@ -42,7 +38,6 @@ Compiling module xil_defaultlib.ila_2
 Compiling module xil_defaultlib.serial2mem(SIZE=16)
 Compiling module xil_defaultlib.ila_1
 Compiling module xil_defaultlib.mem2seriala(SIZE=16)
-Compiling module xil_defaultlib.ila_0
 Compiling module xil_defaultlib.systolicControlUnitTop
 Compiling module xil_defaultlib.ila_3
 Compiling module xil_defaultlib.SystolicCoreTop(SIZE=16)

@@ -1,6 +1,6 @@
 sdt: hw_artifacts/psu_cortexa53_2_baremetal.dts
 family: ZynqMP
-path: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp
+path: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp
 config: None
 os: freertos
 os_info:
@@ -97,7 +97,7 @@ os_config:
       name: freertos_minimal_stack_size
       permission: read_write
       type: integer
-      value: '200'
+      value: '1024'
       default: '200'
       options: []
       description: The size of the stack allocated to the Idle task. Also used by
@@ -231,7 +231,7 @@ os_config:
       name: freertos_total_heap_size
       permission: read_write
       type: integer
-      value: '65536'
+      value: '524288'
       default: '65536'
       options: []
       description: Sets the amount of RAM reserved for use by FreeRTOS - used when

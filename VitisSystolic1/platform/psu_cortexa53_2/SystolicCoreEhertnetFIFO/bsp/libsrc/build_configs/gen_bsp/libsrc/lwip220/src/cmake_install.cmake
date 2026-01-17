@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/lwip220/src
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/lwip220/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,31 +39,31 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/lib/liblwip220.a")
+   "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/lib/liblwip220.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/liblwip220.a")
+  file(INSTALL DESTINATION "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/liblwip220.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/include/../include")
+   "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/include/../include")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/include")
+  file(INSTALL DESTINATION "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/include")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/cmake_install.cmake")
+  include("/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/cmake_install.cmake")
 
 endif()
 

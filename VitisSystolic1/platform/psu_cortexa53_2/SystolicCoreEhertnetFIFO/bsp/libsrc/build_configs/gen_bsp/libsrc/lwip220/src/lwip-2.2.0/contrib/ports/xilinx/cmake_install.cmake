@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif/cmake_install.cmake")
+  include("/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif/cmake_install.cmake")
 
 endif()
 

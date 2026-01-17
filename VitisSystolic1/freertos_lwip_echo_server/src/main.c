@@ -60,7 +60,7 @@ err_t dhcp_start(struct netif *netif);
 #endif
 #endif
 
-#define THREAD_STACKSIZE 1024
+#define THREAD_STACKSIZE 1024*8
 
 static struct netif server_netif;
 struct netif *echo_netif;

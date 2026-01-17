@@ -17,12 +17,12 @@
         "C_BASEADDR": [ { "value": "0xA0000000", "value_src": "propagated", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "C_USE_TX_CUT_THROUGH": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_DATA_INTERFACE_TYPE": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_RX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_RX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_TX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_TX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_RX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_TX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_PE_THRESHOLD": [ { "value": "5", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_PF_THRESHOLD": [ { "value": "507", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_PE_THRESHOLD": [ { "value": "5", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_PF_THRESHOLD": [ { "value": "10", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_DEPTH": [ { "value": "512", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_DEPTH": [ { "value": "1024", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_HIGHADDR": [ { "value": "0xA000FFFF", "value_src": "propagated", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_S_AXI4_DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -58,11 +58,11 @@
         "C_S_AXI_ADDR_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S_AXI4_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_TX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_DEPTH": [ { "value": "1024", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_RX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_TX_CASCADE_HEIGHT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_RX_CASCADE_HEIGHT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_TX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_PF_THRESHOLD": [ { "value": "10", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_TX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_RX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_RX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -998,5 +998,5 @@
       }
     }
   },
-  "checksum": "604b19a0"
+  "checksum": "60956620"
 }

@@ -62,7 +62,7 @@ set_param xicom.use_bs_reader 1
 set_param tcl.collectionResultDisplayLimit 0
 set_param general.usePosixSpawnForFork 1
 set_param physdb.placeDBImplUsesPlaceStorage 0
-set_param bd.open.in_stealth_mode 2
+set_param bd.open.in_stealth_mode 1
 set_param power.enableUnconnectedCarry8PinPower 1
 set_param power.enableCarry8RouteBelPower 1
 set_param power.enableLutRouteBelPower 1

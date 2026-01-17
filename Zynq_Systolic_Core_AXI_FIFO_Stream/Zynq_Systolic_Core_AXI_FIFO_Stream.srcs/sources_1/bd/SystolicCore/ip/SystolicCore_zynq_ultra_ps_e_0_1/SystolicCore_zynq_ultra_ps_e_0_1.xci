@@ -1234,7 +1234,7 @@
         "PSU__CRL_APB__CAN1_REF_CTRL__DIVISOR0": [ { "value": "15", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "PSU__CRL_APB__CAN1_REF_CTRL__DIVISOR1": [ { "value": "1", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "PSU__CRL_APB__DEBUG_R5_ATCLK_CTRL__DIVISOR0": [ { "value": "6", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "PSU__CRL_APB__CPU_R5_CTRL__DIVISOR0": [ { "value": "5", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
+        "PSU__CRL_APB__CPU_R5_CTRL__DIVISOR0": [ { "value": "3", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "PSU__CRL_APB__OCM_MAIN_CTRL__DIVISOR0": [ { "value": "3", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "PSU__CRL_APB__IOU_SWITCH_CTRL__DIVISOR0": [ { "value": "6", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "PSU__CRL_APB__CSU_PLL_CTRL__DIVISOR0": [ { "value": "3", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -1390,7 +1390,7 @@
         "PSU__CRL_APB__CAN0_REF_CTRL__ACT_FREQMHZ": [ { "value": "100", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__CAN1_REF_CTRL__ACT_FREQMHZ": [ { "value": "99.990005", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__DEBUG_R5_ATCLK_CTRL__ACT_FREQMHZ": [ { "value": "1000", "resolve_type": "user", "format": "float", "usage": "all" } ],
-        "PSU__CRL_APB__CPU_R5_CTRL__ACT_FREQMHZ": [ { "value": "299.970032", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
+        "PSU__CRL_APB__CPU_R5_CTRL__ACT_FREQMHZ": [ { "value": "499.950043", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__OCM_MAIN_CTRL__ACT_FREQMHZ": [ { "value": "500", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__IOU_SWITCH_CTRL__ACT_FREQMHZ": [ { "value": "249.975021", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__CSU_PLL_CTRL__ACT_FREQMHZ": [ { "value": "180", "resolve_type": "user", "format": "float", "usage": "all" } ],
@@ -1422,7 +1422,7 @@
         "PSU__CRF_APB__AFI5_REF_CTRL__FREQMHZ": [ { "value": "667", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRF_APB__SATA_REF_CTRL__FREQMHZ": [ { "value": "250", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRF_APB__PCIE_REF_CTRL__FREQMHZ": [ { "value": "250", "resolve_type": "user", "format": "float", "enabled": false, "usage": "all" } ],
-        "PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ": [ { "value": "300", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
+        "PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ": [ { "value": "333", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__PL1_REF_CTRL__FREQMHZ": [ { "value": "100", "resolve_type": "user", "format": "float", "enabled": false, "usage": "all" } ],
         "PSU__CRL_APB__PL2_REF_CTRL__FREQMHZ": [ { "value": "100", "resolve_type": "user", "format": "float", "enabled": false, "usage": "all" } ],
         "PSU__CRL_APB__PL3_REF_CTRL__FREQMHZ": [ { "value": "100", "resolve_type": "user", "format": "float", "enabled": false, "usage": "all" } ],
@@ -1451,7 +1451,7 @@
         "PSU__CRL_APB__CAN0_REF_CTRL__FREQMHZ": [ { "value": "100", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__CAN1_REF_CTRL__FREQMHZ": [ { "value": "100", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__DEBUG_R5_ATCLK_CTRL__FREQMHZ": [ { "value": "1000", "resolve_type": "user", "format": "float", "usage": "all" } ],
-        "PSU__CRL_APB__CPU_R5_CTRL__FREQMHZ": [ { "value": "333", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
+        "PSU__CRL_APB__CPU_R5_CTRL__FREQMHZ": [ { "value": "500", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__OCM_MAIN_CTRL__FREQMHZ": [ { "value": "500", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__IOU_SWITCH_CTRL__FREQMHZ": [ { "value": "250", "value_src": "user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "PSU__CRL_APB__CSU_PLL_CTRL__FREQMHZ": [ { "value": "180", "resolve_type": "user", "format": "float", "enabled": false, "usage": "all" } ],
@@ -2093,5 +2093,5 @@
       }
     }
   },
-  "checksum": "57f15648"
+  "checksum": "eeb0a35e"
 }

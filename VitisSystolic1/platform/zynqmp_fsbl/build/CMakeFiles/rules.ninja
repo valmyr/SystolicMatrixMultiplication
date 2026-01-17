@@ -52,7 +52,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/xmen/Music/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake --regenerate-during-build -S/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl -B/home/xmen/aVitisProjetos/FifoAdaptacao04/platform/zynqmp_fsbl/build
+  command = /home/xmen/Music/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake --regenerate-during-build -S/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/zynqmp_fsbl -B/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/zynqmp_fsbl/build
   description = Re-running CMake...
   generator = 1
 

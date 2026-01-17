@@ -1,4 +1,4 @@
-# Install script for directory: /home/xmen/aVitisProjetos/FifoAdaptacao04/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/standalone/src/arm/ARMv8/64bit/platform/ZynqMP/gcc
+# Install script for directory: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/VitisSystolic1/platform/psu_cortexa53_2/SystolicCoreEhertnetFIFO/bsp/libsrc/standalone/src/arm/ARMv8/64bit/platform/ZynqMP/gcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

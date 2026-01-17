@@ -1,1019 +1,284 @@
-# 2026-01-06T12:35:00.318477208
+# 2026-01-13T00:45:40.272288379
 import vitis
 
 client = vitis.create_client()
-client.set_workspace(path="FifoAdaptacao04")
+client.set_workspace(path="VitisSystolic1")
 
-platform = client.create_platform_component(name = "platform",hw_design = "$COMPONENT_LOCATION/../../../Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/SystolicCore_wrapper.xsa",os = "freertos",cpu = "psu_cortexa53_0",domain_name = "freertos_psu_cortexa53_0",architecture = "64-bit")
+comp = client.get_component(name="freertos_lwip_echo_server")
+comp.build()
+
+comp.build()
 
 platform = client.get_component(name="platform")
 status = platform.build()
 
-comp = client.get_component(name="xllfifo_polling_example")
 comp.build()
 
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
 comp.build()
 
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
 comp.build()
 
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-domain = platform.add_domain(cpu = "psu_cortexa53_2",os = "freertos",name = "SystolicCoreEhertnetFIFO",display_name = "SystolicCoreEhertnetFIFO",support_app = "freertos_lwip_echo_server",generate_dtb = False,hw_boot_bin = "")
-
-comp = client.create_app_component(name="freertos_lwip_echo_server",platform = "$COMPONENT_LOCATION/../platform/export/platform/platform.xpfm",domain = "SystolicCoreEhertnetFIFO",template = "freertos_lwip_echo_server")
-
-status = platform.build()
 
-comp = client.get_component(name="freertos_lwip_echo_server")
 comp.build()
 
 domain = platform.get_domain(name="SystolicCoreEhertnetFIFO")
 
-status = domain.set_config(option = "lib", param = "lwip220_dhcp", value = "false", lib_name="lwip220")
+status = domain.set_config(option = "os", param = "freertos_total_heap_size", value = "524288")
 
-status = domain.set_config(option = "lib", param = "lwip220_dhcp_options", value = "false", lib_name="lwip220")
+comp.build()
 
-status = domain.set_config(option = "lib", param = "lwip220_lwip_dhcp_does_acd_check", value = "false", lib_name="lwip220")
+comp.build()
+
+status = domain.set_config(option = "os", param = "freertos_minimal_stack_size", value = "1024")
 
 status = platform.build()
 
 comp.build()
 
-status = platform.build()
+domain = platform.get_domain(name="freertos_psu_cortexa53_0")
+
+status = domain.set_config(option = "os", param = "freertos_total_heap_size", value = "524288")
+
+status = domain.set_config(option = "os", param = "freertos_minimal_stack_size", value = "1024")
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
 
 comp = client.get_component(name="xllfifo_polling_example")
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
 
 comp = client.get_component(name="freertos_lwip_echo_server")
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
 
 comp = client.get_component(name="xllfifo_polling_example")
 comp.build()
 
-status = platform.build()
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
+
+comp.build()
 
 comp = client.get_component(name="freertos_lwip_echo_server")
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
+comp.build()
 
 comp.build()
 
-status = platform.build()
-
 comp.build()
 
-status = platform.build()
-
 comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
 
 comp = client.get_component(name="xllfifo_polling_example")
 comp.build()
 
-status = platform.build()
-
 comp = client.get_component(name="freertos_lwip_echo_server")
 comp.build()
 
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="xllfifo_polling_example")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="freertos_lwip_echo_server")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="xllfifo_polling_example")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="freertos_lwip_echo_server")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="xllfifo_polling_example")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="freertos_lwip_echo_server")
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="xllfifo_polling_example")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp = client.get_component(name="freertos_lwip_echo_server")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
 comp.build()
 
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
 comp.build()
 
-status = platform.build()
-
-comp.build()
+client.delete_component(name="xllfifo_polling_example")
 
-status = platform.build()
-
-comp.build()
+client.delete_component(name="componentName")
 
 status = platform.build()
 
@@ -1025,12 +290,10 @@ comp.build()
 
 status = platform.build()
 
-comp = client.get_component(name="xllfifo_polling_example")
 comp.build()
 
 status = platform.build()
 
-comp = client.get_component(name="freertos_lwip_echo_server")
 comp.build()
 
 status = platform.build()
@@ -1131,12 +394,10 @@ comp.build()
 
 status = platform.build()
 
-comp = client.get_component(name="xllfifo_polling_example")
 comp.build()
 
 status = platform.build()
 
-comp = client.get_component(name="freertos_lwip_echo_server")
 comp.build()
 
 status = platform.build()

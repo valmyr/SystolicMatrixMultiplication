@@ -57,7 +57,7 @@ dual_porte_ram ram (
 );
 
 */
-ram_dual_port ram (
+ram_dual_port ram_0 (
   .clka       (     single_port_ram_clock          ),  // input wire clka
   .ena        (     single_port_ram_en             ),  // input wire ena
   .wea        (     ~single_port_ram_we            ),  // input wire [0 : 0] wea

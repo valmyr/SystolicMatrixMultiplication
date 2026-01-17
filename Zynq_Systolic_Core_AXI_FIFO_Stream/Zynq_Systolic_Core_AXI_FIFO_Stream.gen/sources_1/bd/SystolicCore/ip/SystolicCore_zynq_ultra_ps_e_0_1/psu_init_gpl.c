@@ -1160,7 +1160,7 @@ unsigned long psu_clock_init_data(void)
     *  PSU_CRL_APB_CPU_R5_CTRL_CLKACT                              0x1
 
     * 6 bit divider
-    *  PSU_CRL_APB_CPU_R5_CTRL_DIVISOR0                            0x5
+    *  PSU_CRL_APB_CPU_R5_CTRL_DIVISOR0                            0x3
 
     * 000 = RPLL; 010 = IOPLL; 011 = DPLL; (This signal may only be toggled af
     * ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
@@ -1168,9 +1168,9 @@ unsigned long psu_clock_init_data(void)
     *  PSU_CRL_APB_CPU_R5_CTRL_SRCSEL                              0x2
 
     * This register controls this reference clock
-    * (OFFSET, MASK, VALUE)      (0XFF5E0090, 0x01003F07U ,0x01000502U)
+    * (OFFSET, MASK, VALUE)      (0XFF5E0090, 0x01003F07U ,0x01000302U)
     */
-	PSU_Mask_Write(CRL_APB_CPU_R5_CTRL_OFFSET, 0x01003F07U, 0x01000502U);
+	PSU_Mask_Write(CRL_APB_CPU_R5_CTRL_OFFSET, 0x01003F07U, 0x01000302U);
 /*##################################################################### */
 
     /*
