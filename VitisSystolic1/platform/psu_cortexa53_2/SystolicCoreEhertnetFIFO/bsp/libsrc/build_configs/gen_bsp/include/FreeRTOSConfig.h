@@ -17,7 +17,7 @@
 #define	configUSE_MUTEXES			  1
 #define	INCLUDE_xSemaphoreGetMutexHolder	  1
 #define	configUSE_RECURSIVE_MUTEXES		  1
-#define	configUSE_COUNTING_SEMAPHORES		  1
+#define	configUSE_COUNTING_SEMAPHORES		 0
 #define	configUSE_TRACE_FACILITY		  1
 #define	configUSE_NEWLIB_REENTRANT		 0
 #define	configUSE_QUEUE_SETS			  1

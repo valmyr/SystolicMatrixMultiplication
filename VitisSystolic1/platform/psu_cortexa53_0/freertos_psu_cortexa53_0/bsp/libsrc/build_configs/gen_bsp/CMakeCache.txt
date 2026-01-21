@@ -441,7 +441,7 @@ freertos_message_buffer:BOOL=OFF
 
 //The size of the stack allocated to the Idle task. Also used by
 // standard demo and test tasks found in the main FreeRTOS download.
-freertos_minimal_stack_size:STRING=1024
+freertos_minimal_stack_size:STRING=2048
 
 //Sets the number of pointers each task has to store thread local
 // values.
@@ -494,7 +494,7 @@ freertos_total_heap_size:STRING=524288
 
 //Set to true to include counting semaphore functionality, or false
 // to exclude recursive mutex functionality.
-freertos_use_counting_semaphores:BOOL=ON
+freertos_use_counting_semaphores:BOOL=true
 
 //Set true for kernel to call vApplicationDaemonTaskStartupHook
 // on first iteration of RTOS daemon task. The application must

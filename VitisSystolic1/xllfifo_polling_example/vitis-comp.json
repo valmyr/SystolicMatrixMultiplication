@@ -1,0 +1,17 @@
+{
+  "name": "xllfifo_polling_example",
+  "type": "HOST",
+  "platform": "platform",
+  "domain": "SystolicCoreEhertnetFIFO",
+  "cpuInstance": "psu_cortexa53_2",
+  "cpuType": "cortex-a53",
+  "os": "freertos",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "SystolicCoreEhertnetFIFO",
+  "useSysrootToolchain": false,
+  "applicationFlow": "EMBEDDED",
+  "templateFlow": "VITIS"
+}

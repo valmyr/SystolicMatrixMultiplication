@@ -97,7 +97,7 @@ os_config:
       name: freertos_minimal_stack_size
       permission: read_write
       type: integer
-      value: '1024'
+      value: '2048'
       default: '200'
       options: []
       description: The size of the stack allocated to the Idle task. Also used by

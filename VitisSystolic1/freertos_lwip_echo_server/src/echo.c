@@ -84,7 +84,7 @@ XLlFifo_Config *Config;
  * The existing implementation does not support closing of an existing telnet.
  * Once a telnet connection is made, it stays for ever.
  */
-#define MAX_CONNECTIONS 100
+#define MAX_CONNECTIONS 1
 int new_sd[MAX_CONNECTIONS];
 int connection_index;
 
@@ -99,55 +99,75 @@ void print_echo_app_header()
 }
 
 /* thread spawned for each connection */
-int RECV_BUF_SIZE =4*1000;
-int SEND_BUF_SIZE =4*256;
+
+#define RECV_BUF_SIZE 4*1000
+#define SEND_BUF_SIZE 4*256
+int recv_buf[1000];//[RECV_BUF_SIZE / sizeof(int)];  // Buffer to store received integer samples
+int send_buf[256];//[RECV_BUF_SIZE / sizeof(int)];  // Buffer to store received integer samples
+
+int code_ca = 0x00;
 volatile int packages_received = 0;
-void process_echo_request(void *p)
-{
+void process_echo_request(void *p){
     int sd = *(int *)p;
-	int recv_buf[RECV_BUF_SIZE/4];//[RECV_BUF_SIZE / sizeof(int)];  // Buffer to store received integer samples
-	int send_buf[SEND_BUF_SIZE/4];//[RECV_BUF_SIZE / sizeof(int)];  // Buffer to store received integer samples
 
     int n = 0, nwrote;
 
 
 
-	
-	xil_printf("\n-------------	SERVER ON	-------------\n\n");
+	if(DEBUG)
+		xil_printf("\n-------------	SERVER ON	-------------\n\n");
     while (1) {
         /* read a max of RECV_BUF_SIZE bytes from socket */
 		if (n < 0) {
         	xil_printf("%s: error reading from socket %d, closing socket\r\n", __FUNCTION__, sd);
         	break;
         }
+		code_ca = 0x00;
 		n = read(sd, recv_buf+packages_received, RECV_BUF_SIZE);
 		packages_received += n / sizeof(int);
 		if(packages_received==1000){
 			if(DEBUG)
 				xil_printf("		Host-to-PS \n");
-			while (XLlFifo_iTxVacancy(&FifoInstance) < 1000){  };
+			while (XLlFifo_iTxVacancy(&FifoInstance) < 1000){xil_printf("		loop1 \n");}
 			XLlFifo_Write(&FifoInstance , recv_buf ,  1000 * 4);
 			XLlFifo_TxSetLen(&FifoInstance, (1000 * 4));
-			while (!XLlFifo_IsTxDone(&FifoInstance)){ };
+			while (!XLlFifo_IsTxDone(&FifoInstance)){xil_printf("		loop2 \n");}
 			packages_received = 0;
 			if(DEBUG)
 				xil_printf("		PS-to-PL \n");
-			//while( !(XLlFifo_IsTxDone(&FifoInstance))){xil_printf("Loop debug\n");}			
 		}
 		if(*(recv_buf) == 0xea && *(recv_buf+1) == 0xea){
 			packages_received = 0;
 			if(DEBUG)
 				xil_printf("		PL-to-PS \n");
-			while (XLlFifo_iTxVacancy(&FifoInstance) < 1){ };
-			XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf));
-			XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
-			while (!XLlFifo_IsTxDone(&FifoInstance)){ };
-			while (XLlFifo_iTxVacancy(&FifoInstance) < 1){ };
-			XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf)) ;
-			XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
-			while (!XLlFifo_IsTxDone(&FifoInstance)){ };
-			while (XLlFifo_iRxOccupancy(&FifoInstance) < 256){ };
-			XLlFifo_Read(&FifoInstance,send_buf,256*sizeof(int));
+			while (XLlFifo_iTxVacancy(&FifoInstance) < 2){xil_printf("		loop3 \n");}
+			XLlFifo_Write(&FifoInstance , recv_buf ,  2 * 4);
+			XLlFifo_TxSetLen(&FifoInstance, (2* 4));
+			while (!XLlFifo_IsTxDone(&FifoInstance)){xil_printf("		loop2 \n");}
+			//XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf));
+			//XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
+			//while (!XLlFifo_IsTxDone(&FifoInstance)){xil_printf("		loop4 \n");}
+			//while (XLlFifo_iTxVacancy(&FifoInstance) < 1){xil_printf("		loop5 \n");}
+			//XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf)) ;
+			//XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
+			//while (!XLlFifo_IsTxDone(&FifoInstance)){xil_printf("		loop6 \n");}
+			//while (XLlFifo_iRxOccupancy(&FifoInstance) < 256){xil_printf("		loop7 \n");}
+			//XLlFifo_Read(&FifoInstance,send_buf,256*sizeof(int));
+			
+			while(XLlFifo_iRxOccupancy(&FifoInstance)) {
+				/* Read Receive Length */
+				///ReceiveLength = (XLlFifo_iRxGetLen(&FifoInstance))/WORD_SIZE;
+				XLlFifo_Read(&FifoInstance,send_buf,256*sizeof(int));
+				///xil_printf("loop+rx\n");
+			}
+			XLlFifo_IsRxDone(&FifoInstance);
+			code_ca = 0xca;
+			if ((nwrote = write(sd, &code_ca, 1 * sizeof(int))) < 0) {
+        		xil_printf("%s: ERROR responding to client signal processing request. received = %d, written = %d\r\n",
+        	    __FUNCTION__, n, nwrote);
+        		xil_printf("Closing socket %d\r\n", sd);
+        		break;
+        	}
 			if(DEBUG)
 				xil_printf("		PS-to-Host \n");
 			if ((nwrote = write(sd, send_buf, 256 * sizeof(int))) < 0) {
@@ -160,10 +180,9 @@ void process_echo_request(void *p)
 		if (n <= 0 || nwrote <= 0 || (*(recv_buf) == 0xea))
             break;
 	}
-	xil_printf("\n-------------	SERVER OFF	-------------\n\n");
-	//int DataRead ;
+	if(DEBUG)
+		xil_printf("\n-------------	SERVER OFF	-------------\n\n");
 
-	vTaskDelay(1);
     close(sd);
     vTaskDelete(NULL);
 }
