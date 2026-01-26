@@ -1,6 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../../../../../../Music/2025.2/data/rsb/busdef" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/ec67/hdl" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/a0fe/hdl" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/f0b6/hdl/verilog" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/00fe/hdl/verilog" --include "/home/xmen/Music/2025.2/data/xilinx_vip/include" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_3/sim/ila_3.v" \
+"../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_0/sim/ila_0.v" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_1/sim/ila_1.v" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_2/sim/ila_2.v" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/sim/ram_dual_port.v" \

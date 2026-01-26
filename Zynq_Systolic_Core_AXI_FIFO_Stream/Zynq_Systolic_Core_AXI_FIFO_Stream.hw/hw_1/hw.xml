@@ -5,7 +5,7 @@
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.        -->
 
 <hwsession version="1" minor="2">
-  <device name="xczu7_0" gui_info="dashboard1=hw_ila_1[xczu7_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_1/Status=ILA_STATUS_1;xczu7_0/hw_ila_1/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_1/Settings=ILA_SETTINGS_1;],dashboard2=hw_ila_4[xczu7_0/hw_ila_4/Status=ILA_STATUS_1;xczu7_0/hw_ila_4/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_4/Settings=ILA_SETTINGS_1;xczu7_0/hw_ila_4/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_4/Trigger Setup=ILA_TRIGGER_1;],dashboard3=hw_ila_2[xczu7_0/hw_ila_2/Settings=ILA_SETTINGS_1;xczu7_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_2/Status=ILA_STATUS_1;xczu7_0/hw_ila_2/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;],dashboard4=dashboard_1[xczu7_0/hw_ila_3/Status=ILA_STATUS_1;xczu7_0/hw_ila_3/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_3/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_3/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_3/Settings=ILA_SETTINGS_1;]"/>
+  <device name="xczu7_0" gui_info="dashboard1=hw_ila_1[xczu7_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_1/Status=ILA_STATUS_1;xczu7_0/hw_ila_1/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_1/Settings=ILA_SETTINGS_1;],dashboard2=hw_ila_4[xczu7_0/hw_ila_4/Status=ILA_STATUS_1;xczu7_0/hw_ila_4/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_4/Settings=ILA_SETTINGS_1;xczu7_0/hw_ila_4/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_4/Trigger Setup=ILA_TRIGGER_1;],dashboard3=hw_ila_2[xczu7_0/hw_ila_2/Settings=ILA_SETTINGS_1;xczu7_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_2/Status=ILA_STATUS_1;xczu7_0/hw_ila_2/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;],dashboard4=dashboard_1[xczu7_0/hw_ila_3/Status=ILA_STATUS_1;xczu7_0/hw_ila_3/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_3/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_3/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_3/Settings=ILA_SETTINGS_1;],dashboard5=hw_ila_5[xczu7_0/hw_ila_5/Settings=ILA_SETTINGS_1;xczu7_0/hw_ila_5/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_5/Status=ILA_STATUS_1;xczu7_0/hw_ila_5/Capture Setup=ILA_CAPTURE_1;xczu7_0/hw_ila_5/Waveform=ILA_WAVE_1;],dashboard6=hw_ila_6[xczu7_0/hw_ila_6/Waveform=ILA_WAVE_1;xczu7_0/hw_ila_6/Trigger Setup=ILA_TRIGGER_1;xczu7_0/hw_ila_6/Status=ILA_STATUS_1;xczu7_0/hw_ila_6/Settings=ILA_SETTINGS_1;xczu7_0/hw_ila_6/Capture Setup=ILA_CAPTURE_1;]"/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xczu7_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/SystolicCore_wrapper.ltx"/>
@@ -58,7 +58,8 @@
   </ObjectList>
   <ObjectList object_type="hw_probe" gui_info="">
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/DUT_MatrixMultiplyM0/ena_mac" gui_info=""/>
-    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/event_send_data" gui_info=""/>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_pmatrix_in[0][0]_511[7:0]" gui_info=""/>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/event_send_data" gui_info="Trigger Setup=0"/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/handshake" gui_info="Trigger Setup=0"/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/uart_valid_tx_in" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/valid_i" gui_info=""/>
@@ -77,7 +78,7 @@
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_en" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_en_1" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_we" gui_info=""/>
-    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/uart_ready_rx_out" gui_info=""/>
+    <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/uart_ready_rx_out" gui_info="Trigger Setup=0"/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/your_instance_name1123_i_1_n_0" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/last_uart_ready_rx" gui_info=""/>
     <Object name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/uart_ready_rx" gui_info="Trigger Setup=0"/>
@@ -85,7 +86,7 @@
     <Object name="SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tready" gui_info=""/>
     <Object name="SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tvalid" gui_info=""/>
     <Object name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tlast" gui_info=""/>
-    <Object name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tready" gui_info=""/>
+    <Object name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tready" gui_info="Trigger Setup=0"/>
     <Object name="SystolicCore_i/system_ila_0/inst/net_slot_1_axis_tvalid" gui_info=""/>
   </ObjectList>
   <probeset name="hw project" active="false">
@@ -3231,7 +3232,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bB"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -3242,7 +3243,7 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bB"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -7313,7 +7314,7 @@
         <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/buf_data[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq5&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq5&apos;hXX"/>
@@ -7338,7 +7339,7 @@
         <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/cnt[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -7362,7 +7363,7 @@
         <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/cnt_shift[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -7519,7 +7520,7 @@
         <net name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
@@ -8171,7 +8172,7 @@
         <net name="SystolicCore_i/system_ila_0/inst/net_slot_0_axis_tvalid"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
@@ -8247,7 +8248,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bF"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -8258,7 +8259,7 @@
         <Option Id="NAME.CUSTOM" value="slot_1 : AXI_Stream_Systolic_0_m_axis : TREADY"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bF"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>

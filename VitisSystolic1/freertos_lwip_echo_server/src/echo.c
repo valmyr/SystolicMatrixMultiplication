@@ -26,7 +26,7 @@
  *
  */
 
-#include <arch/cc.h>
+//#include <arch/cc.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -144,30 +144,21 @@ void process_echo_request(void *p){
 			XLlFifo_Write(&FifoInstance , recv_buf ,  2 * 4);
 			XLlFifo_TxSetLen(&FifoInstance, (2* 4));
 			while (!XLlFifo_IsTxDone(&FifoInstance)){xil_printf("		loop2 \n");}
-			//XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf));
-			//XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
-			//while (!XLlFifo_IsTxDone(&FifoInstance)){xil_printf("		loop4 \n");}
-			//while (XLlFifo_iTxVacancy(&FifoInstance) < 1){xil_printf("		loop5 \n");}
-			//XLlFifo_TxPutWord(&FifoInstance  	, *(recv_buf)) ;
-			//XLlFifo_iTxSetLen(&FifoInstance 	, (1 * 4));
-			//while (!XLlFifo_IsTxDone(&FifoInstance)){xil_printf("		loop6 \n");}
-			//while (XLlFifo_iRxOccupancy(&FifoInstance) < 256){xil_printf("		loop7 \n");}
-			//XLlFifo_Read(&FifoInstance,send_buf,256*sizeof(int));
-			
 			while(XLlFifo_iRxOccupancy(&FifoInstance)) {
 				/* Read Receive Length */
-				///ReceiveLength = (XLlFifo_iRxGetLen(&FifoInstance))/WORD_SIZE;
+				//int ReceiveLength = (XLlFifo_iRxGetLen(&FifoInstance))/WORD_SIZE;
+				//xil_printf("%d\n",ReceiveLength);
 				XLlFifo_Read(&FifoInstance,send_buf,256*sizeof(int));
 				///xil_printf("loop+rx\n");
 			}
 			XLlFifo_IsRxDone(&FifoInstance);
-			code_ca = 0xca;
-			if ((nwrote = write(sd, &code_ca, 1 * sizeof(int))) < 0) {
-        		xil_printf("%s: ERROR responding to client signal processing request. received = %d, written = %d\r\n",
-        	    __FUNCTION__, n, nwrote);
-        		xil_printf("Closing socket %d\r\n", sd);
-        		break;
-        	}
+			//code_ca = 0xca;
+			//if ((nwrote = write(sd, &code_ca, 1 * sizeof(int))) < 0) {
+        	//	xil_printf("%s: ERROR responding to client signal processing request. received = %d, written = %d\r\n",
+        	//    __FUNCTION__, n, nwrote);
+        	//	xil_printf("Closing socket %d\r\n", sd);
+        	//	break;
+        	//}
 			if(DEBUG)
 				xil_printf("		PS-to-Host \n");
 			if ((nwrote = write(sd, send_buf, 256 * sizeof(int))) < 0) {
@@ -177,7 +168,7 @@ void process_echo_request(void *p){
         		break;
         	}	
 		}
-		if (n <= 0 || nwrote <= 0 || (*(recv_buf) == 0xea))
+		if (n <= 0 || nwrote <= 0)
             break;
 	}
 	if(DEBUG)

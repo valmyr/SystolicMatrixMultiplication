@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1768608834" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/SystolicCoreWrapperVerilogGlobal.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="SystolicCore_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="SystolicCore_wrapper.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="SystolicCore_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="SystolicCore_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="SystolicCore_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="SystolicCore_wrapper.vds"/>
   <File Type="REPORTS-TCL" Name="SystolicCore_wrapper_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="SystolicCore_wrapper_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="SystolicCore_wrapper.tcl"/>
+  <File Type="RDS-UTIL" Name="SystolicCore_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="SystolicCore_wrapper_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../testeINPUT_B.mem">
@@ -135,10 +132,10 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ram_dual_port"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_3"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ram_dual_port"/>
 </GenRun>

@@ -7,8 +7,7 @@
       "name": "SystolicCore",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.2",
-      "validated": "true"
+      "tool_version": "2025.2"
     },
     "design_tree": {
       "zynq_ultra_ps_e_0": "",
@@ -16,8 +15,7 @@
       "axi_smc": "",
       "rst_ps8_0_99M": "",
       "AXI_Stream_Systolic_0": "",
-      "system_ila_0": "",
-      "axi_timer_0": ""
+      "system_ila_0": ""
     },
     "components": {
       "zynq_ultra_ps_e_0": {
@@ -1474,14 +1472,6 @@
             "vlnv": "xilinx.com:interface:axis_rtl:1.0"
           }
         }
-      },
-      "axi_timer_0": {
-        "vlnv": "xilinx.com:ip:axi_timer:2.0",
-        "ip_revision": "37",
-        "xci_name": "SystolicCore_axi_timer_0_1",
-        "xci_path": "ip/SystolicCore_axi_timer_0_1/SystolicCore_axi_timer_0_1.xci",
-        "inst_hier_path": "axi_timer_0",
-        "has_run_ip_tcl": "true"
       }
     },
     "interface_nets": {
@@ -1521,12 +1511,6 @@
           "axi_fifo_mm_s_0/S_AXI"
         ]
       },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "axi_timer_0/S_AXI"
-        ]
-      },
       "zynq_ultra_ps_e_0_M_AXI_HPM0_FPD": {
         "interface_ports": [
           "zynq_ultra_ps_e_0/M_AXI_HPM0_FPD",
@@ -1541,8 +1525,7 @@
           "axi_fifo_mm_s_0/s_axi_aresetn",
           "axi_smc/aresetn",
           "system_ila_0/resetn",
-          "AXI_Stream_Systolic_0/resetn",
-          "axi_timer_0/s_axi_aresetn"
+          "AXI_Stream_Systolic_0/resetn"
         ]
       },
       "zynq_ultra_ps_e_0_pl_clk0": {
@@ -1553,8 +1536,7 @@
           "axi_fifo_mm_s_0/s_axi_aclk",
           "rst_ps8_0_99M/slowest_sync_clk",
           "AXI_Stream_Systolic_0/clock",
-          "system_ila_0/clk",
-          "axi_timer_0/s_axi_aclk"
+          "system_ila_0/clk"
         ]
       },
       "zynq_ultra_ps_e_0_pl_resetn0": {
@@ -1574,11 +1556,6 @@
                 "offset": "0x00A0000000",
                 "range": "64K",
                 "offset_high_param": "C_HIGHADDR"
-              },
-              "SEG_axi_timer_0_Reg": {
-                "address_block": "/axi_timer_0/S_AXI/Reg",
-                "offset": "0x00A0010000",
-                "range": "64K"
               }
             }
           }
