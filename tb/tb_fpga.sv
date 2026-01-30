@@ -58,7 +58,8 @@ end
        nreset_arty = 1;
   end
 
-  always #(5)clock=~clock;/*
+  always #(1)clock=~clock;/*
+  always #(1.5)clock=~clock;/*
 
   /*
   
@@ -70,11 +71,12 @@ end
 
        
   */
-  enum {SEND_OP,WAIT_CALC,WAIT_REQUEST} fsm_next_tb, fsm_tb;
+  enum {SEND_OP,WAIT_CALC,WAIT_REQUEST,WAIT_NEW_OP} fsm_next_tb, fsm_tb;
   logic [31:0] cnt3,cnt4;
   logic [31:0] cnt3_next,cnt4_next;
   logic [31:0] cnt1_next,cnt2_next;
   logic inv;
+
   assign clock_tb = (fsm_tb != WAIT_REQUEST) ? tb_uart_ready_tx_out : tb_uart_ready_rx_out;
  // assign clock_tb = tb_uart_ready_tx_out ;
 //
@@ -99,6 +101,7 @@ end
           cnt2               <= 0     ;
           cnt3               <= 0     ;
           cnt4               <= 0     ;
+          cnt5               <= 0     ;
           tb_uart_data_tx_in <= 0     ;
           fsm_tb             <= SEND_OP;
           inv                <= 0;
@@ -109,6 +112,8 @@ end
           cnt3   <= cnt3_next   ;
           cnt4   <= cnt4_next   ;
           inv    <= cnt4 == SIZE_M*SIZE_M -1?   ~inv: inv;
+           cnt5               <= cnt5 == 1312 ? 0 : cnt5+1     ;
+          
         end
       end
      end
@@ -136,7 +141,15 @@ end
         end
         WAIT_CALC:begin
             tb_uart_data_tx_in  =8'hea;
-            fsm_next_tb         =cnt3 == 1 ? WAIT_REQUEST : WAIT_CALC;
+          //  case(cnt3)
+          //      100:tb_uart_data_tx_in = 8'hea;
+          //      101:tb_uart_data_tx_in = 8'hea;//adda_eaea
+          //      102:tb_uart_data_tx_in = 8'had;//adda_eaea
+          //      103:tb_uart_data_tx_in = 8'hda;//adda_eaea
+          //      default:tb_uart_data_tx_in = 8'h00;//adda_eaea
+          //  endcase
+            
+            fsm_next_tb         =cnt3 == 64 ? WAIT_REQUEST : WAIT_CALC;
             cnt3_next                =cnt3 + 1;
             cnt1_next                =0;
             cnt2_next                =0;
@@ -149,7 +162,14 @@ end
             cnt3_next               = 0      ;
             cnt4_next               = cnt4 +1;
             //fsm_next_tb        = WAIT_REQUEST;
-            fsm_next_tb        = cnt4 == SIZE_M*SIZE_M -1? SEND_OP :WAIT_REQUEST;
+            fsm_next_tb        = cnt4 == SIZE_M*SIZE_M -1? WAIT_NEW_OP :WAIT_REQUEST;
+        end
+        WAIT_NEW_OP:begin
+            cnt3_next                =cnt3 + 1;
+            cnt1_next                =0;
+            cnt2_next                =0;
+            cnt4_next                =0;
+            fsm_next_tb        = cnt3 == 256 ? SEND_OP :WAIT_NEW_OP ;
         end
     endcase
   //-------------------------------------------------------------------------------------------------------------------------------
@@ -157,17 +177,31 @@ logic s_axis_tvalid;
 
 assign s_axis_tvalid =1;
 
+logic [31:0] cnt5,dout_mem;
 
-AXI_Stream_Systolic_Core mm (
+always_ff@(posedge clock, negedge nreset)begin
+    if(!nreset) cnt5 <= 0;
+    else cnt5<= cnt5 ==1312 ? cnt5:cnt5+1;
+end 
+matrix_in_memeory your_instance_name (
+  .clka(clock),    // input wire clka
+  .ena(1),      // input wire ena
+  .wea(0),      // input wire [0 : 0] wea
+  .addra(cnt5),  // input wire [9 : 0] addra
+  .dina(0),    // input wire [7 : 0] dina
+  .douta(dout_mem)  // output wire [7 : 0] douta
+);
+
+AXI_Stream_Systolic_Core Core0 (
         // Sinais de sistema
         .clock(clock),
         .resetn(nreset),
 
         // Interface Slave AXI Stream (Entrada)
-        .s_axis_tvalid(s_axis_tvalid),
-        .s_axis_tready(tb_uart_ready_tx_out),
-        .s_axis_tdata(tb_uart_data_tx_in),
-        .s_axis_tlast(1'b1),
+        .s_axis_tvalid(1),
+        .s_axis_tready(),
+        .s_axis_tdata(dout_mem),
+        .s_axis_tlast(1),
         // ... outros sinais opcionais como TUSER
 
         // Interface Master AXI Stream (Saída) 

@@ -1,0 +1,64 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"2.0",
+   "Default View_TopLeft":"-129,-70",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 310 -y 240 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 42 41 43} -defaultsOSRD -pinDir M_AXI_HPM0_FPD right -pinY M_AXI_HPM0_FPD 30R -pinDir maxihpm0_fpd_aclk right -pinY maxihpm0_fpd_aclk 50R -pinBusDir pl_ps_irq0 left -pinBusY pl_ps_irq0 50L -pinDir pl_resetn0 left -pinY pl_resetn0 30L -pinDir pl_clk0 right -pinY pl_clk0 70R
+preplace inst axi_smc -pg 1 -lvl 2 -x 760 -y 130 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 60 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 40 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 81 80} -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 140L -pinDir M00_AXI right -pinY M00_AXI 180R -pinDir M01_AXI right -pinY M01_AXI 20R -pinDir aclk left -pinY aclk 180L -pinDir aresetn left -pinY aresetn 160L
+preplace inst rst_ps8_0_99M -pg 1 -lvl 1 -x 310 -y 40 -swap {9 4 1 2 3 0 5 6 7 8} -defaultsOSRD -pinDir slowest_sync_clk right -pinY slowest_sync_clk 120R -pinDir ext_reset_in left -pinY ext_reset_in 120L -pinDir aux_reset_in left -pinY aux_reset_in 20L -pinDir mb_debug_sys_rst left -pinY mb_debug_sys_rst 40L -pinDir dcm_locked left -pinY dcm_locked 60L -pinDir mb_reset right -pinY mb_reset 20R -pinBusDir bus_struct_reset right -pinBusY bus_struct_reset 40R -pinBusDir peripheral_reset right -pinBusY peripheral_reset 60R -pinBusDir interconnect_aresetn right -pinBusY interconnect_aresetn 80R -pinBusDir peripheral_aresetn right -pinBusY peripheral_aresetn 100R
+preplace inst axi_fifo_mm_s_1 -pg 1 -lvl 3 -x 1090 -y 90 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 23 19 20 21 22 18 24 25 26 27 28 30 29 31 32} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 60L -pinDir AXI_STR_TXD right -pinY AXI_STR_TXD 40R -pinDir AXI_STR_RXD right -pinY AXI_STR_RXD 20R -pinDir interrupt right -pinY interrupt 60R -pinDir s_axi_aclk left -pinY s_axi_aclk 100L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 80L -pinDir mm2s_prmry_reset_out_n right -pinY mm2s_prmry_reset_out_n 80R -pinDir s2mm_prmry_reset_out_n right -pinY s2mm_prmry_reset_out_n 100R
+preplace inst axi_fifo_mm_s_2 -pg 1 -lvl 3 -x 1090 -y 290 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 23 19 20 21 22 18 24 25 26 27 28 30 29 31 32} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 20L -pinDir AXI_STR_TXD right -pinY AXI_STR_TXD 40R -pinDir AXI_STR_RXD right -pinY AXI_STR_RXD 20R -pinDir interrupt right -pinY interrupt 60R -pinDir s_axi_aclk left -pinY s_axi_aclk 60L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L -pinDir mm2s_prmry_reset_out_n right -pinY mm2s_prmry_reset_out_n 80R -pinDir s2mm_prmry_reset_out_n right -pinY s2mm_prmry_reset_out_n 100R
+preplace inst AXI_Stream_Systolic_1 -pg 1 -lvl 4 -x 1390 -y 90 -swap {0 1 2 3 4 5 6 7 8 9 11 10} -defaultsOSRD -pinDir m_axis left -pinY m_axis 20L -pinDir s_axis left -pinY s_axis 40L -pinDir clock left -pinY clock 120L -pinDir resetn left -pinY resetn 100L
+preplace inst AXI_Stream_Systolic_2 -pg 1 -lvl 4 -x 1390 -y 290 -swap {0 1 2 3 4 5 6 7 8 9 11 10} -defaultsOSRD -pinDir m_axis left -pinY m_axis 20L -pinDir s_axis left -pinY s_axis 40L -pinDir clock left -pinY clock 80L -pinDir resetn left -pinY resetn 60L
+preplace inst onlyFPGA_0 -pg 1 -lvl 1 -x 310 -y 420 -swap {1 0} -defaultsOSRD -pinDir nreset right -pinY nreset 40R -pinDir clock right -pinY clock 20R
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 1 3 620 90 900 250 1260
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 1 3 600 370 920 450 1280
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 1 20 160n
+preplace netloc AXI_Stream_Systolic_1_m_axis 1 3 1 N 110
+preplace netloc AXI_Stream_Systolic_2_m_axis 1 3 1 N 310
+preplace netloc axi_fifo_mm_s_1_AXI_STR_TXD 1 3 1 N 130
+preplace netloc axi_fifo_mm_s_2_AXI_STR_TXD 1 3 1 N 330
+preplace netloc axi_smc_M00_AXI 1 2 1 N 310
+preplace netloc axi_smc_M01_AXI 1 2 1 N 150
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 1 N 270
+levelinfo -pg 1 0 310 760 1090 1390 1490
+pagesize -pg 1 -db -bbox -sgen 0 0 1490 520
+",
+   "No Loops_ScaleFactor":"2.0",
+   "No Loops_TopLeft":"-169,-220",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 340 -y 360 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 2 -x 810 -y 350 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 1 -x 340 -y 560 -defaultsOSRD
+preplace inst AXI_Stream_Systolic_0 -pg 1 -lvl 4 -x 1470 -y 180 -defaultsOSRD
+preplace inst axi_fifo_mm_s_0 -pg 1 -lvl 3 -x 1170 -y 350 -defaultsOSRD
+preplace inst axi_fifo_mm_s_1 -pg 1 -lvl 3 -x 1170 -y 510 -defaultsOSRD
+preplace inst axi_fifo_mm_s_2 -pg 1 -lvl 3 -x 1170 -y 90 -defaultsOSRD
+preplace inst axi_fifo_mm_s_3 -pg 1 -lvl 3 -x 1170 -y 670 -defaultsOSRD
+preplace inst AXI_Stream_Systolic_1 -pg 1 -lvl 4 -x 1470 -y 500 -defaultsOSRD
+preplace inst AXI_Stream_Systolic_2 -pg 1 -lvl 2 -x 810 -y 520 -defaultsOSRD
+preplace inst AXI_Stream_Systolic_3 -pg 1 -lvl 4 -x 1470 -y 640 -defaultsOSRD
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 1 2 670 440 980
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 20 450 660 190 970 180 NJ
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 4 30 460 650 200 NJ 200 NJ
+preplace netloc AXI_Stream_Systolic_0_m_axis 1 2 3 990 260 NJ 260 1590
+preplace netloc axi_fifo_mm_s_0_AXI_STR_TXD 1 3 1 1350 160n
+preplace netloc axi_smc_M00_AXI 1 2 1 N 320
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 1 N 340
+preplace netloc axi_smc_M01_AXI 1 2 1 960 340n
+preplace netloc axi_smc_M02_AXI 1 2 1 950 60n
+preplace netloc axi_smc_M03_AXI 1 2 1 950 380n
+preplace netloc axi_fifo_mm_s_1_AXI_STR_TXD 1 3 1 NJ 480
+levelinfo -pg 1 0 340 810 1170 1470 1610
+pagesize -pg 1 -db -bbox -sgen 0 0 1610 760
+"
+}
+{
+   "da_axi4_cnt":"7",
+   "da_clkrst_cnt":"3",
+   "da_zynq_ultra_ps_e_cnt":"1"
+}

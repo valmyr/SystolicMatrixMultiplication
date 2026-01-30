@@ -494,7 +494,7 @@ freertos_total_heap_size:STRING=524288
 
 //Set to true to include counting semaphore functionality, or false
 // to exclude recursive mutex functionality.
-freertos_use_counting_semaphores:BOOL=true
+freertos_use_counting_semaphores:BOOL=ON
 
 //Set true for kernel to call vApplicationDaemonTaskStartupHook
 // on first iteration of RTOS daemon task. The application must

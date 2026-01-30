@@ -21,7 +21,7 @@
 
 
 module SystolicCoreTop#(
-    parameter  BYTESIZES = 8, WIDTHx = 4,SIZE = 8,WIDTH =8
+    parameter  BYTESIZES = 8, WIDTHx = 4,SIZE = 16,WIDTH =8
 )(
     input  logic                    clock                     ,
     input  logic                    nreset                    ,
@@ -33,7 +33,7 @@ module SystolicCoreTop#(
     input logic                    uart_valid_rx_in          ,
 
 
-    output logic                    s_axis_tlast              ,
+    input logic                    s_axis_tlast              ,
     output logic                    m_axis_tlast
 );
 
@@ -131,7 +131,7 @@ logic ref_clock_out_clock_ref                                                   
 //---------------------------------------------------------------------------------------------------------------------------------
 //AXI
 assign uart_ready_rx_out =1;
-assign s_axis_tlast = systolicControlUnit_s_axis_tlast  ;
+//assign s_axis_tlast = systolicControlUnit_s_axis_tlast  ;
 //assign uart_valid_tx_in =1;
 assign m_axis_tlast = mem2serial_m_axis_tlast;
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -313,9 +313,10 @@ systolicControlUnitTop systolicControlUnit_Global(
     .serial2mem_opa_ready_o     (systolicControlUnit_serial2mem_opa_ready_o     )                ,
     .serial2mem_opb_ready_o     (systolicControlUnit_serial2mem_opb_ready_o     )                ,
     .read_done                  (systolicControlUnit_read_done                  )                ,
-    .frame_start                (systolicControlUnit_frame_start                )                ,
-    .s_axis_tlast               (systolicControlUnit_s_axis_tlast               )
+    .frame_start                (systolicControlUnit_frame_start                )                
+   // .s_axis_tlast               (                                                )//systolicControlUnit_s_axis_tlast
 );
+/*
 
 ila_3 your_instance_name (
 	.clk(clock), // input wire clk
@@ -356,7 +357,7 @@ ila_3 your_instance_name (
 
 
 );
-
+*/
 
 /*
 (*dont_touch = "true"*) 

@@ -23,11 +23,11 @@ module systolicControlUnitTop(
     output logic       syst_rready_i                ,
     output logic       uart_valid_tx_in             ,
     output logic       starting_frame_identified    ,
-    output logic [31:0] frame_start                 ,
-    output logic       s_axis_tlast
-);
+    output logic [31:0] frame_start                 
 
-enum {IDLE,IDLE_PC, WRITE_MEMAAA,WRITE_MEMBBB,SYSTOLIC_READ_MEM,WRITE_MEM_OUT,DONE} fsm_unit_control, fsm_unit_control_next;
+);
+logic       s_axis_tlast;
+enum {IDLE,IDLE_PC, WRITE_MEMAAA,WRITE_MEMBBB,SYSTOLIC_READ_MEM,SEND_FPGA2HOST,DONE} fsm_unit_control, fsm_unit_control_next;
 
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
@@ -48,7 +48,7 @@ always_ff@(posedge clock, negedge nreset)begin
 end
 
 
-
+/*
 
 ila_0 your_instance_name (
 	.clk(clock), // input wire clk
@@ -64,7 +64,7 @@ ila_0 your_instance_name (
 	.probe7(uart_valid_rx_in && uart_ready_rx ), // input wire [0:0]  probe7 
 	.probe8(uart_valid_tx_in), // input wire [0:0]  probe8 
 	.probe9(1) // input wire [0:0]  probe9
-);
+);*/
 
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
@@ -198,9 +198,9 @@ always_comb case(fsm_unit_control)
         s_axis_tlast    =1; 
     end
     IDLE_PC:begin
-       if((uart_valid_rx_in && uart_ready_rx)&&{frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
-        //if({frame_start[7:0],uart_data_rx_out} == 16'heaea)begin
-            fsm_unit_control_next   = WRITE_MEM_OUT             ;            
+       //if((uart_valid_rx_in && uart_ready_rx)&&{frame_start[23:0],uart_data_rx_out} == 32'hadda_eaea)begin
+        if((uart_valid_rx_in && uart_ready_rx)&&{frame_start[7:0],uart_data_rx_out} == 16'heaea)begin
+            fsm_unit_control_next   = SEND_FPGA2HOST             ;            
             uart_valid_tx_in        =  1                        ;
             syst_rready_i           =  0                        ;
             mem2serial_valid_i      =  1                        ;
@@ -225,7 +225,7 @@ always_comb case(fsm_unit_control)
         syst_valid_i                  =  0;          
 
     end
-    WRITE_MEM_OUT:begin
+    SEND_FPGA2HOST:begin
         s_axis_tlast= 0;
         serial2mem_opa_valid_i     =  0;
         serial2mem_opb_valid_i     =  0;
@@ -238,7 +238,7 @@ always_comb case(fsm_unit_control)
         syst_valid_i               =  0;
         syst_rready_i              =  0;  
         uart_valid_tx_in           =  1;
-        fsm_unit_control_next      = mem2serial_rvalid_o  ? IDLE: WRITE_MEM_OUT;
+        fsm_unit_control_next      = mem2serial_rvalid_o  ? IDLE: SEND_FPGA2HOST;
         starting_frame_identified  = 0;
     end
     default:begin
@@ -259,12 +259,86 @@ always_comb case(fsm_unit_control)
         s_axis_tlast = 1;
     end
 endcase
-/*
-ila_3 your_instance_name (
+
+logic [32:0]counter_out_idle        ;
+logic [32:0]counter_out_opA         ;
+logic [32:0]counter_out_opB         ;
+logic [32:0]counter_out_systolic_read_mem    ;
+logic [32:0]counter_out_send_fpga2host   ;
+logic [32:0]counter_out_idle_pc ;
+
+counter#(.MAX_COUNTER(32)) counter_idle(
+
+        .clock    (clock                              )                           ,
+        .nreset   (nreset                             )                           ,
+        .ena      (fsm_unit_control==IDLE_PC          )                           ,
+        .counter  (counter_out_idle                   )                           ,
+        .clear    ((uart_valid_rx_in && uart_ready_rx) &&frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o             )
+
+
+);
+
+counter#(.MAX_COUNTER(32)) counter_opA(
+
+        .clock    (clock                               )                           ,
+        .nreset   (nreset                              )                           ,
+        .ena      (fsm_unit_control==WRITE_MEMAAA      )                           ,
+        .counter  (counter_out_opA                     )                           ,
+        .clear((uart_valid_rx_in && uart_ready_rx) &&frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o             )
+);
+
+counter#(.MAX_COUNTER(32)) counter_opB(
+
+        .clock    (clock                                )                           ,
+        .nreset   (nreset                               )                           ,
+        .ena      (fsm_unit_control==WRITE_MEMBBB       )                           ,
+        .counter  (counter_out_opB                      )                           ,
+        .clear((uart_valid_rx_in && uart_ready_rx) &&frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o             )
+);
+
+counter#(.MAX_COUNTER(32)) counter_read_mem(
+
+        .clock    (clock                                )                           ,
+        .nreset   (nreset                               )                           ,
+        .ena      (fsm_unit_control==SYSTOLIC_READ_MEM  )                           ,
+        .counter  (counter_out_systolic_read_mem       )                           ,
+        .clear((uart_valid_rx_in && uart_ready_rx) &&frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o             )
+);
+
+
+counter#(.MAX_COUNTER(32)) counter_write_mem(
+
+        .clock    (clock                                )                           ,
+        .nreset   (nreset                               )                           ,
+        .ena      (fsm_unit_control==SEND_FPGA2HOST     )                           ,
+        .counter  (counter_out_send_fpga2host           ),
+        .clear((uart_valid_rx_in && uart_ready_rx) &&frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o             )
+);
+
+
+counter#(.MAX_COUNTER(32)) counter_idle_pc(
+
+        .clock    (clock                               )                           ,
+        .nreset   (nreset                              )                           ,
+        .ena      (fsm_unit_control==IDLE_PC           )                           ,
+        .counter  (counter_out_idle_pc                 ),
+        .clear((uart_valid_rx_in && uart_ready_rx) &&frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o             )
+);
+
+
+ila_4 contadores_de_ciclo (
 	.clk(clock), // input wire clk
 
 
-	.probe0(mem2serial_valid_i), // input wire [0:0]  probe0  
-	.probe1(uart_valid_tx_in) // input wire [0:0]  probe1
-);*/
+	.probe0(counter_out_idle), // input wire [31:0]  probe0  
+	.probe1(counter_out_opA), // input wire [31:0]  probe1 
+	.probe2(counter_out_opB), // input wire [31:0]  probe2 
+	.probe3(counter_out_systolic_read_mem), // input wire [31:0]  probe3 
+	.probe4(counter_out_send_fpga2host), // input wire [31:0]  probe4 
+	.probe5(counter_out_idle_pc) // input wire [31:0]  probe5
+);
+
+
 endmodule
+
+

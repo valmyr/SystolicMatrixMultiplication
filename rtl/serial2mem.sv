@@ -35,9 +35,9 @@ logic [WIDTH*SIZE-1:0]          next_buf_data                                   
 logic sampling_window_debug;
 logic next_sampling_window_debug;
 
-/*
 
-dual_porte_ram ram (
+/*
+ram_dual_port ram (
   .clka         (   single_port_ram_clock       ),            // input wire clka
   .ena          (   single_port_ram_en          ),              // input wire ena
   .wea          (   ~single_port_ram_we         ),              // input wire [0 : 0] wea
@@ -55,8 +55,9 @@ dual_porte_ram ram (
   .rsta_busy    (                               ),  // output wire rsta_busy
   .rstb_busy    (                               )  // output wire rstb_busy
 );
-
 */
+
+
 ram_dual_port ram_0 (
   .clka       (     single_port_ram_clock          ),  // input wire clka
   .ena        (     single_port_ram_en             ),  // input wire ena
@@ -71,8 +72,6 @@ ram_dual_port ram_0 (
   .rsta_busy  (                                    ), // output wire rsta_busy
   .rstb_busy  (                                    )  // output wire rstb_busy
 );
-
-
 
 
 /*
@@ -112,7 +111,7 @@ ram_single_port mem (
     //        fifo_d <=0;
     //    else fifo_d <=cnt_shift == SIZE-1 ? {fifo_d[(2*WIDTH-1)*SIZE*SIZE-(WIDTH)*SIZE:0],single_port_ram_di}:fifo_d;
     //end
-    
+/*    
     ila_2 your_instance_name1123 (
 	.clk(clock), // input wire clk
 
@@ -128,6 +127,8 @@ ram_single_port mem (
 	.probe8(uart_ready_rx_out), // input wire [0:0]  probe8 
 	.probe9(mem_fsm==WRITE) // input wire [0:0]  probe9
 );
+
+*/
    reg  [WIDTH*SIZE-1:0] single_port_ram_di_reg;
     always_ff@(posedge clock, negedge nreset)begin
         if(!nreset)begin

@@ -11,141 +11,47 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="2,844.001 ns"></ZoomEndTime>
-      <Cursor1Time time="45.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="26.770001 us"></ZoomEndTime>
+      <Cursor1Time time="3.100000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="1286"></NameColumnWidth>
-      <ValueColumnWidth column_width="661"></ValueColumnWidth>
+      <NameColumnWidth column_width="371"></NameColumnWidth>
+      <ValueColumnWidth column_width="321"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/clock">
-      <obj_property name="ElementShortName">clock</obj_property>
-      <obj_property name="ObjectShortName">clock</obj_property>
+   <WVObjectSize size="7" />
+   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/systolicControlUnit_Global/fsm_unit_control">
+      <obj_property name="ElementShortName">fsm_unit_control[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_unit_control[31:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/uart_ready_rx_out">
-      <obj_property name="ElementShortName">uart_ready_rx_out</obj_property>
-      <obj_property name="ObjectShortName">uart_ready_rx_out</obj_property>
+   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/systolicControlUnit_Global/counter_out_idle">
+      <obj_property name="ElementShortName">counter_out_idle[32:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_idle[32:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/nreset">
-      <obj_property name="ElementShortName">nreset</obj_property>
-      <obj_property name="ObjectShortName">nreset</obj_property>
+   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/systolicControlUnit_Global/counter_out_opA">
+      <obj_property name="ElementShortName">counter_out_opA[32:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_opA[32:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/rw">
-      <obj_property name="ElementShortName">rw</obj_property>
-      <obj_property name="ObjectShortName">rw</obj_property>
+   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/systolicControlUnit_Global/counter_out_opB">
+      <obj_property name="ElementShortName">counter_out_opB[32:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_opB[32:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/valid_i">
-      <obj_property name="ElementShortName">valid_i</obj_property>
-      <obj_property name="ObjectShortName">valid_i</obj_property>
+   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem">
+      <obj_property name="ElementShortName">counter_out_systolic_read_mem[32:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_systolic_read_mem[32:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/rready_i">
-      <obj_property name="ElementShortName">rready_i</obj_property>
-      <obj_property name="ObjectShortName">rready_i</obj_property>
+   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host">
+      <obj_property name="ElementShortName">counter_out_send_fpga2host[32:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_send_fpga2host[32:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/rvalid_o">
-      <obj_property name="ElementShortName">rvalid_o</obj_property>
-      <obj_property name="ObjectShortName">rvalid_o</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/ready_o">
-      <obj_property name="ElementShortName">ready_o</obj_property>
-      <obj_property name="ObjectShortName">ready_o</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/in_data">
-      <obj_property name="ElementShortName">in_data[3:0]</obj_property>
-      <obj_property name="ObjectShortName">in_data[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/out_data">
-      <obj_property name="ElementShortName">out_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">out_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_di">
-      <obj_property name="ElementShortName">single_port_ram_di[63:0]</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_di[63:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/cnt">
-      <obj_property name="ElementShortName">cnt[4:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/next_cnt">
-      <obj_property name="ElementShortName">next_cnt[4:0]</obj_property>
-      <obj_property name="ObjectShortName">next_cnt[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/cnt_shift">
-      <obj_property name="ElementShortName">cnt_shift[3:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt_shift[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/next_cnt_shift">
-      <obj_property name="ElementShortName">next_cnt_shift[3:0]</obj_property>
-      <obj_property name="ObjectShortName">next_cnt_shift[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/mem_fsm">
-      <obj_property name="ElementShortName">mem_fsm[31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_fsm[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/next_mem_fsm">
-      <obj_property name="ElementShortName">next_mem_fsm[31:0]</obj_property>
-      <obj_property name="ObjectShortName">next_mem_fsm[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_clock">
-      <obj_property name="ElementShortName">single_port_ram_clock</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_clock</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_clockb">
-      <obj_property name="ElementShortName">single_port_ram_clockb</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_clockb</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_nreset">
-      <obj_property name="ElementShortName">single_port_ram_nreset</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_nreset</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_en">
-      <obj_property name="ElementShortName">single_port_ram_en</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_en</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_we">
-      <obj_property name="ElementShortName">single_port_ram_we</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_we</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_addr">
-      <obj_property name="ElementShortName">single_port_ram_addr[4:0]</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_addr[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_dout">
-      <obj_property name="ElementShortName">single_port_ram_dout[63:0]</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_dout[63:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/buf_data">
-      <obj_property name="ElementShortName">buf_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">buf_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/next_buf_data">
-      <obj_property name="ElementShortName">next_buf_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">next_buf_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/sampling_window_debug">
-      <obj_property name="ElementShortName">sampling_window_debug</obj_property>
-      <obj_property name="ObjectShortName">sampling_window_debug</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/next_sampling_window_debug">
-      <obj_property name="ElementShortName">next_sampling_window_debug</obj_property>
-      <obj_property name="ObjectShortName">next_sampling_window_debug</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/last_uart_ready_rx">
-      <obj_property name="ElementShortName">last_uart_ready_rx</obj_property>
-      <obj_property name="ObjectShortName">last_uart_ready_rx</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/single_port_ram_di_reg">
-      <obj_property name="ElementShortName">single_port_ram_di_reg[63:0]</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_di_reg[63:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/WIDTH">
-      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/serial2mem_opA/SIZE">
-      <obj_property name="ElementShortName">SIZE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SIZE[31:0]</obj_property>
+   <wvobject type="array" fp_name="/tb/mm/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc">
+      <obj_property name="ElementShortName">counter_out_idle_pc[32:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_idle_pc[32:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

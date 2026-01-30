@@ -7,7 +7,7 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Fri Jan 16 21:13:55 2026
+  **** Start of session at: Fri Jan 30 01:08:54 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -27,64 +27,71 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3433005
+INFO: [Synth 8-7075] Helper process launched with PID 411343
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3258.812 ; gain = 148.688 ; free physical = 4371 ; free virtual = 30771
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3214.547 ; gain = 147.688 ; free physical = 7499 ; free virtual = 55108
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'SystolicCore_wrapper' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/hdl/SystolicCore_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'SystolicCore' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:13]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCore_AXI_Stream_Systolic_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_AXI_Stream_Systolic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_AXI_Stream_Systolic_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_AXI_Stream_Systolic_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCore_axi_fifo_mm_s_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_axi_fifo_mm_s_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_axi_fifo_mm_s_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_axi_fifo_mm_s_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'interrupt' of module 'SystolicCore_axi_fifo_mm_s_0_0' is unconnected for instance 'axi_fifo_mm_s_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:113]
-WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'SystolicCore_axi_fifo_mm_s_0_0' is unconnected for instance 'axi_fifo_mm_s_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:113]
-WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'SystolicCore_axi_fifo_mm_s_0_0' is unconnected for instance 'axi_fifo_mm_s_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:113]
-WARNING: [Synth 8-7023] instance 'axi_fifo_mm_s_0' of module 'SystolicCore_axi_fifo_mm_s_0_0' has 30 connections declared, but only 27 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:113]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCore_axi_smc_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_axi_smc_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_axi_smc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:141]
-WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:141]
-WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:141]
-WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:141]
-WARNING: [Synth 8-7023] instance 'axi_smc' of module 'SystolicCore_axi_smc_0' has 79 connections declared, but only 75 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:141]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCore_axi_timer_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_axi_timer_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_axi_timer_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_axi_timer_0_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'generateout0' of module 'SystolicCore_axi_timer_0_1' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:217]
-WARNING: [Synth 8-7071] port 'generateout1' of module 'SystolicCore_axi_timer_0_1' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:217]
-WARNING: [Synth 8-7071] port 'pwm0' of module 'SystolicCore_axi_timer_0_1' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:217]
-WARNING: [Synth 8-7071] port 'interrupt' of module 'SystolicCore_axi_timer_0_1' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:217]
-WARNING: [Synth 8-7023] instance 'axi_timer_0' of module 'SystolicCore_axi_timer_0_1' has 26 connections declared, but only 22 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:217]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCore_rst_ps8_0_99M_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_rst_ps8_0_99M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_rst_ps8_0_99M_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_rst_ps8_0_99M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:240]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:240]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:240]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:240]
-WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'SystolicCore_rst_ps8_0_99M_0' has 10 connections declared, but only 6 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:240]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:247]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCore_system_ila_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_system_ila_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_system_ila_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_system_ila_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'SystolicCore_zynq_ultra_ps_e_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_zynq_ultra_ps_e_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_zynq_ultra_ps_e_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-3432827-VT0144/realtime/SystolicCore_zynq_ultra_ps_e_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_AXI_Stream_Systolic_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_AXI_Stream_Systolic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_AXI_Stream_Systolic_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_AXI_Stream_Systolic_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_AXI_Stream_Systolic_1_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_AXI_Stream_Systolic_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_AXI_Stream_Systolic_1_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_AXI_Stream_Systolic_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_axi_fifo_mm_s_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_fifo_mm_s_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_axi_fifo_mm_s_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_fifo_mm_s_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'interrupt' of module 'SystolicCore_axi_fifo_mm_s_0_0' is unconnected for instance 'axi_fifo_mm_s_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:149]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'SystolicCore_axi_fifo_mm_s_0_0' is unconnected for instance 'axi_fifo_mm_s_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:149]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'SystolicCore_axi_fifo_mm_s_0_0' is unconnected for instance 'axi_fifo_mm_s_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:149]
+WARNING: [Synth 8-7023] instance 'axi_fifo_mm_s_0' of module 'SystolicCore_axi_fifo_mm_s_0_0' has 30 connections declared, but only 27 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:149]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_axi_fifo_mm_s_1_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_fifo_mm_s_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_axi_fifo_mm_s_1_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_fifo_mm_s_1_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'interrupt' of module 'SystolicCore_axi_fifo_mm_s_1_0' is unconnected for instance 'axi_fifo_mm_s_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:177]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'SystolicCore_axi_fifo_mm_s_1_0' is unconnected for instance 'axi_fifo_mm_s_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:177]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'SystolicCore_axi_fifo_mm_s_1_0' is unconnected for instance 'axi_fifo_mm_s_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:177]
+WARNING: [Synth 8-7023] instance 'axi_fifo_mm_s_1' of module 'SystolicCore_axi_fifo_mm_s_1_0' has 30 connections declared, but only 27 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:177]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_axi_smc_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_axi_smc_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_smc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:205]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:205]
+WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:205]
+WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:205]
+WARNING: [Synth 8-7071] port 'M02_AXI_awprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:205]
+WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'SystolicCore_axi_smc_0' is unconnected for instance 'axi_smc' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:205]
+WARNING: [Synth 8-7023] instance 'axi_smc' of module 'SystolicCore_axi_smc_0' has 98 connections declared, but only 92 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:205]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_axi_timer_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_timer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_axi_timer_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_axi_timer_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'generateout0' of module 'SystolicCore_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:298]
+WARNING: [Synth 8-7071] port 'generateout1' of module 'SystolicCore_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:298]
+WARNING: [Synth 8-7071] port 'pwm0' of module 'SystolicCore_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:298]
+WARNING: [Synth 8-7071] port 'interrupt' of module 'SystolicCore_axi_timer_0_0' is unconnected for instance 'axi_timer_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:298]
+WARNING: [Synth 8-7023] instance 'axi_timer_0' of module 'SystolicCore_axi_timer_0_0' has 26 connections declared, but only 22 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:298]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:321]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_onlyFPGA_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_onlyFPGA_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_onlyFPGA_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_onlyFPGA_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_rst_ps8_0_99M_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_rst_ps8_0_99M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_rst_ps8_0_99M_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_rst_ps8_0_99M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:324]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:324]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:324]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'SystolicCore_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:324]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'SystolicCore_rst_ps8_0_99M_0' has 10 connections declared, but only 6 given [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:324]
+INFO: [Synth 8-6157] synthesizing module 'SystolicCore_zynq_ultra_ps_e_0_1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_zynq_ultra_ps_e_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_zynq_ultra_ps_e_0_1' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/.Xil/Vivado-411138-VT0144/realtime/SystolicCore_zynq_ultra_ps_e_0_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'SystolicCore' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_wrapper' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/hdl/SystolicCore_wrapper.v:13]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'AXI_Stream_Systolic_0'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:102]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'system_ila_0'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:247]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'axi_fifo_mm_s_0'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/synth/SystolicCore.v:113]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3351.750 ; gain = 241.625 ; free physical = 6096 ; free virtual = 32497
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3306.516 ; gain = 239.656 ; free physical = 7399 ; free virtual = 55010
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3351.750 ; gain = 241.625 ; free physical = 6097 ; free virtual = 32498
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3306.516 ; gain = 239.656 ; free physical = 7399 ; free virtual = 55009
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3351.750 ; gain = 241.625 ; free physical = 6097 ; free virtual = 32498
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3306.516 ; gain = 239.656 ; free physical = 7399 ; free virtual = 55009
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3351.750 ; gain = 0.000 ; free physical = 6097 ; free virtual = 32498
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3306.516 ; gain = 0.000 ; free physical = 7400 ; free virtual = 55010
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -99,23 +106,27 @@ Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Syst
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_rst_ps8_0_99M_0/SystolicCore_rst_ps8_0_99M_0/SystolicCore_rst_ps8_0_99M_0_in_context.xdc] for cell 'SystolicCore_i/rst_ps8_0_99M'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_AXI_Stream_Systolic_0_0/SystolicCore_AXI_Stream_Systolic_0_0/SystolicCore_AXI_Stream_Systolic_0_0_in_context.xdc] for cell 'SystolicCore_i/AXI_Stream_Systolic_0'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_AXI_Stream_Systolic_0_0/SystolicCore_AXI_Stream_Systolic_0_0/SystolicCore_AXI_Stream_Systolic_0_0_in_context.xdc] for cell 'SystolicCore_i/AXI_Stream_Systolic_0'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_system_ila_0_0/SystolicCore_system_ila_0_0/SystolicCore_system_ila_0_0_in_context.xdc] for cell 'SystolicCore_i/system_ila_0'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_system_ila_0_0/SystolicCore_system_ila_0_0/SystolicCore_system_ila_0_0_in_context.xdc] for cell 'SystolicCore_i/system_ila_0'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_timer_0_1/SystolicCore_axi_timer_0_1/SystolicCore_axi_timer_0_1_in_context.xdc] for cell 'SystolicCore_i/axi_timer_0'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_timer_0_1/SystolicCore_axi_timer_0_1/SystolicCore_axi_timer_0_1_in_context.xdc] for cell 'SystolicCore_i/axi_timer_0'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_fifo_mm_s_1_0/SystolicCore_axi_fifo_mm_s_1_0/SystolicCore_axi_fifo_mm_s_1_0_in_context.xdc] for cell 'SystolicCore_i/axi_fifo_mm_s_1'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_fifo_mm_s_1_0/SystolicCore_axi_fifo_mm_s_1_0/SystolicCore_axi_fifo_mm_s_1_0_in_context.xdc] for cell 'SystolicCore_i/axi_fifo_mm_s_1'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_AXI_Stream_Systolic_1_0/SystolicCore_AXI_Stream_Systolic_1_0/SystolicCore_AXI_Stream_Systolic_1_0_in_context.xdc] for cell 'SystolicCore_i/AXI_Stream_Systolic_1'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_AXI_Stream_Systolic_1_0/SystolicCore_AXI_Stream_Systolic_1_0/SystolicCore_AXI_Stream_Systolic_1_0_in_context.xdc] for cell 'SystolicCore_i/AXI_Stream_Systolic_1'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_timer_0_0/SystolicCore_axi_timer_0_0/SystolicCore_axi_timer_0_1_in_context.xdc] for cell 'SystolicCore_i/axi_timer_0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_timer_0_0/SystolicCore_axi_timer_0_0/SystolicCore_axi_timer_0_1_in_context.xdc] for cell 'SystolicCore_i/axi_timer_0'
+Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_onlyFPGA_0_0/SystolicCore_onlyFPGA_0_0/SystolicCore_onlyFPGA_0_0_in_context.xdc] for cell 'SystolicCore_i/onlyFPGA_0'
+Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_onlyFPGA_0_0/SystolicCore_onlyFPGA_0_0/SystolicCore_onlyFPGA_0_0_in_context.xdc] for cell 'SystolicCore_i/onlyFPGA_0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3399.402 ; gain = 0.000 ; free physical = 6091 ; free virtual = 32493
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3346.535 ; gain = 0.000 ; free physical = 7664 ; free virtual = 55269
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3399.438 ; gain = 0.000 ; free physical = 6091 ; free virtual = 32493
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3346.570 ; gain = 0.000 ; free physical = 7664 ; free virtual = 55269
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3399.438 ; gain = 289.312 ; free physical = 6088 ; free virtual = 32490
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3346.570 ; gain = 279.711 ; free physical = 7639 ; free virtual = 55244
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -123,16 +134,16 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3407.406 ; gain = 297.281 ; free physical = 6088 ; free virtual = 32490
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3354.539 ; gain = 287.680 ; free physical = 7639 ; free virtual = 55244
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3407.406 ; gain = 297.281 ; free physical = 6088 ; free virtual = 32490
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3354.539 ; gain = 287.680 ; free physical = 7639 ; free virtual = 55244
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3407.406 ; gain = 297.281 ; free physical = 6086 ; free virtual = 32489
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3354.539 ; gain = 287.680 ; free physical = 7638 ; free virtual = 55244
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -154,25 +165,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3407.406 ; gain = 297.281 ; free physical = 6082 ; free virtual = 32489
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3354.539 ; gain = 287.680 ; free physical = 7583 ; free virtual = 55194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 4057.016 ; gain = 946.891 ; free physical = 5519 ; free virtual = 31926
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 4002.180 ; gain = 935.320 ; free physical = 7079 ; free virtual = 54690
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 4057.016 ; gain = 946.891 ; free physical = 5519 ; free virtual = 31926
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 4002.180 ; gain = 935.320 ; free physical = 7079 ; free virtual = 54690
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 4067.031 ; gain = 956.906 ; free physical = 5510 ; free virtual = 31917
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 4012.195 ; gain = 945.336 ; free physical = 7070 ; free virtual = 54681
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -190,37 +201,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5343 ; free virtual = 31750
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6869 ; free virtual = 54480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5343 ; free virtual = 31750
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6869 ; free virtual = 54480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5343 ; free virtual = 31750
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6869 ; free virtual = 54480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5343 ; free virtual = 31750
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6869 ; free virtual = 54480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5343 ; free virtual = 31750
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6869 ; free virtual = 54480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5343 ; free virtual = 31750
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6869 ; free virtual = 54480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -231,12 +242,14 @@ Report BlackBoxes:
 |      |BlackBox name                        |Instances |
 +------+-------------------------------------+----------+
 |1     |SystolicCore_AXI_Stream_Systolic_0_0 |         1|
-|2     |SystolicCore_axi_fifo_mm_s_0_0       |         1|
-|3     |SystolicCore_axi_smc_0               |         1|
-|4     |SystolicCore_axi_timer_0_1           |         1|
-|5     |SystolicCore_rst_ps8_0_99M_0         |         1|
-|6     |SystolicCore_system_ila_0_0          |         1|
-|7     |SystolicCore_zynq_ultra_ps_e_0_1     |         1|
+|2     |SystolicCore_AXI_Stream_Systolic_1_0 |         1|
+|3     |SystolicCore_axi_fifo_mm_s_0_0       |         1|
+|4     |SystolicCore_axi_fifo_mm_s_1_0       |         1|
+|5     |SystolicCore_axi_smc_0               |         1|
+|6     |SystolicCore_axi_timer_0_0           |         1|
+|7     |SystolicCore_onlyFPGA_0_0            |         1|
+|8     |SystolicCore_rst_ps8_0_99M_0         |         1|
+|9     |SystolicCore_zynq_ultra_ps_e_0_1     |         1|
 +------+-------------------------------------+----------+
 
 Report Cell Usage: 
@@ -244,34 +257,36 @@ Report Cell Usage:
 |      |Cell                               |Count |
 +------+-----------------------------------+------+
 |1     |SystolicCore_AXI_Stream_Systolic_0 |     1|
-|2     |SystolicCore_axi_fifo_mm_s_0       |     1|
-|3     |SystolicCore_axi_smc               |     1|
-|4     |SystolicCore_axi_timer_0           |     1|
-|5     |SystolicCore_rst_ps8_0_99M         |     1|
-|6     |SystolicCore_system_ila_0          |     1|
-|7     |SystolicCore_zynq_ultra_ps_e_0     |     1|
+|2     |SystolicCore_AXI_Stream_Systolic_1 |     1|
+|3     |SystolicCore_axi_fifo_mm_s_0       |     1|
+|4     |SystolicCore_axi_fifo_mm_s_1       |     1|
+|5     |SystolicCore_axi_smc               |     1|
+|6     |SystolicCore_axi_timer_0           |     1|
+|7     |SystolicCore_onlyFPGA_0            |     1|
+|8     |SystolicCore_rst_ps8_0_99M         |     1|
+|9     |SystolicCore_zynq_ultra_ps_e_0     |     1|
 +------+-----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5343 ; free virtual = 31750
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6870 ; free virtual = 54480
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 4253.844 ; gain = 1096.031 ; free physical = 5341 ; free virtual = 31749
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 4253.844 ; gain = 1143.719 ; free physical = 5341 ; free virtual = 31749
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 4207.008 ; gain = 1100.094 ; free physical = 6869 ; free virtual = 54480
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 4207.008 ; gain = 1140.148 ; free physical = 6869 ; free virtual = 54480
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4253.844 ; gain = 0.000 ; free physical = 5341 ; free virtual = 31749
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4207.008 ; gain = 0.000 ; free physical = 6869 ; free virtual = 54480
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4253.844 ; gain = 0.000 ; free physical = 5509 ; free virtual = 31916
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4207.008 ; gain = 0.000 ; free physical = 7036 ; free virtual = 54647
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 4794bb3f
+Synth Design complete | Checksum: 2c12c830
 INFO: [Common 17-83] Releasing license: Synthesis
-43 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 4253.844 ; gain = 2328.750 ; free physical = 5508 ; free virtual = 31916
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3112.715; main = 3112.715; forked = 291.402
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5048.422; main = 4180.160; forked = 1641.012
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:23 . Memory (MB): peak = 4207.008 ; gain = 2323.781 ; free physical = 7035 ; free virtual = 54646
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2959.613; main = 2959.613; forked = 260.431
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4995.543; main = 4133.324; forked = 1641.000
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/synth_1/SystolicCore_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file SystolicCore_wrapper_utilization_synth.rpt -pb SystolicCore_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan 16 21:14:22 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 30 01:09:22 2026...

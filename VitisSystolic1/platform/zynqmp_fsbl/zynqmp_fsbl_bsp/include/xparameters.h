@@ -461,7 +461,7 @@
 #define XPAR_XIPIPSU_0_CH6_IPI_BITMASK 0x80000
 #define XPAR_XIPIPSU_0_CH6_IPI_BUF_INDEX 0x7
 
-#define XPAR_XLLFIFO_NUM_INSTANCES 1
+#define XPAR_XLLFIFO_NUM_INSTANCES 2
 
 /* Definitions for peripheral AXI_FIFO_MM_S_0 */
 #define XPAR_AXI_FIFO_MM_S_0_COMPATIBLE "xlnx,axi-fifo-mm-s-4.3"
@@ -474,6 +474,18 @@
 #define XPAR_XLLFIFO_0_HIGHADDR 0xa000ffff
 #define XPAR_XLLFIFO_0_COMPATIBLE "xlnx,axi-fifo-mm-s-4.3"
 #define XPAR_XLLFIFO_0_DATA_INTERFACE_TYPE 0x0
+
+/* Definitions for peripheral AXI_FIFO_MM_S_1 */
+#define XPAR_AXI_FIFO_MM_S_1_COMPATIBLE "xlnx,axi-fifo-mm-s-4.3"
+#define XPAR_AXI_FIFO_MM_S_1_BASEADDR 0xa0010000
+#define XPAR_AXI_FIFO_MM_S_1_HIGHADDR 0xa001ffff
+#define XPAR_AXI_FIFO_MM_S_1_DATA_INTERFACE_TYPE 0x0
+
+/* Canonical definitions for peripheral AXI_FIFO_MM_S_1 */
+#define XPAR_XLLFIFO_1_BASEADDR 0xa0010000
+#define XPAR_XLLFIFO_1_HIGHADDR 0xa001ffff
+#define XPAR_XLLFIFO_1_COMPATIBLE "xlnx,axi-fifo-mm-s-4.3"
+#define XPAR_XLLFIFO_1_DATA_INTERFACE_TYPE 0x0
 
 #define XPAR_XQSPIPSU_NUM_INSTANCES 1
 

@@ -10,81 +10,61 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="8,193"></ZoomEndTime>
-      <Cursor1Time time="0"></Cursor1Time>
+      <ZoomEndTime time="1,025"></ZoomEndTime>
+      <Cursor1Time time="405"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="1286"></NameColumnWidth>
-      <ValueColumnWidth column_width="589"></ValueColumnWidth>
+      <ValueColumnWidth column_width="581"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="6" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/cnt">
+   <wvobject type="array" fp_name="SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_idle">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/cnt[4:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt[4:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_idle[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_idle[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/cnt_shift">
+   <wvobject type="array" fp_name="SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/cnt_shift[3:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt_shift[3:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_idle_pc[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/in_data">
+   <wvobject type="array" fp_name="SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_opA">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/in_data[3:0]</obj_property>
-      <obj_property name="ObjectShortName">in_data[3:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_opA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_opA[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/mem_fsm">
+   <wvobject type="array" fp_name="SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_opB">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/mem_fsm[7:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_fsm[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_opB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_opB[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/sampling_window_debug">
+   <wvobject type="array" fp_name="SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/sampling_window_debug</obj_property>
-      <obj_property name="ObjectShortName">sampling_window_debug</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_send_fpga2host[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di_reg">
+   <wvobject type="array" fp_name="SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_di_reg[63:0]</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_di_reg[63:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_we">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/single_port_ram_we</obj_property>
-      <obj_property name="ObjectShortName">single_port_ram_we</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/uart_ready_rx_out">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/uart_ready_rx_out</obj_property>
-      <obj_property name="ObjectShortName">uart_ready_rx_out</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/your_instance_name1123_i_1_n_0">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/serial2mem_opB/your_instance_name1123_i_1_n_0</obj_property>
-      <obj_property name="ObjectShortName">your_instance_name1123_i_1_n_0</obj_property>
+      <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_out_systolic_read_mem[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

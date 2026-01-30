@@ -1,3 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_4/sim/ila_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ila_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/sim/ram_dual_port.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_dual_port
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AXI_Stream_Systolic_Core
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module systolicControlUnitTop
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv" into library xil_defaultlib
@@ -5,13 +11,17 @@ INFO: [VRFC 10-311] analyzing module SystolicCoreTop
 WARNING: [VRFC 10-8772] attribute 'dont_touch' is already specified; last one will take precedence [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:230]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/accumulator.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module accumulator_cells
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/counter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mem2seriala
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module serial2mem
-WARNING: [VRFC 10-2938] 'single_port_ram_di_reg' is already implicitly declared on line 121 [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:131]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module systolicMatrixMultiply
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb
-WARNING: [VRFC 10-8658] /* is inside a comment [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:63]
+WARNING: [VRFC 10-8658] /* is inside a comment [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:62]
+WARNING: [VRFC 10-8658] /* is inside a comment [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:64]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

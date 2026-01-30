@@ -17,7 +17,7 @@
 #define	configUSE_MUTEXES			  1
 #define	INCLUDE_xSemaphoreGetMutexHolder	  1
 #define	configUSE_RECURSIVE_MUTEXES		  1
-#define	configUSE_COUNTING_SEMAPHORES		 0
+#define	configUSE_COUNTING_SEMAPHORES		  1
 #define	configUSE_TRACE_FACILITY		  1
 #define	configUSE_NEWLIB_REENTRANT		 0
 #define	configUSE_QUEUE_SETS			  1
@@ -33,8 +33,8 @@
 #define	configTICK_RATE_HZ			(100)
 #define	configMAX_API_CALL_INTERRUPT_PRIORITY	18
 #define	configMAX_PRIORITIES			(8)
-#define	configMINIMAL_STACK_SIZE		((unsigned short) 1024)
-#define	configTOTAL_HEAP_SIZE			((size_t)524288)
+#define	configMINIMAL_STACK_SIZE		((unsigned short) 200)
+#define	configTOTAL_HEAP_SIZE			((size_t)65536)
 #define	configMAX_TASK_NAME_LEN			10
 #define	configQUEUE_REGISTRY_SIZE		10
 #define	configCHECK_FOR_STACK_OVERFLOW		2

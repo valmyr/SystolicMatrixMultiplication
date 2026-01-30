@@ -11,7 +11,7 @@ project(${APP_NAME})
 
 find_package(common)
 enable_language(C ASM CXX)
-collect(PROJECT_LIB_DEPS xilstandalone;lwip220;xiltimer)
+collect(PROJECT_LIB_DEPS xilstandalone;lwip220;xiltimer;freertos)
 collect(PROJECT_LIB_DEPS xil)
 collect(PROJECT_LIB_DEPS gcc)
 collect(PROJECT_LIB_DEPS c)

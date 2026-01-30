@@ -33,8 +33,8 @@
 #define	configTICK_RATE_HZ			(100)
 #define	configMAX_API_CALL_INTERRUPT_PRIORITY	18
 #define	configMAX_PRIORITIES			(8)
-#define	configMINIMAL_STACK_SIZE		((unsigned short) 2048)
-#define	configTOTAL_HEAP_SIZE			((size_t)524288)
+#define	configMINIMAL_STACK_SIZE		((unsigned short) 200)
+#define	configTOTAL_HEAP_SIZE			((size_t)65536)
 #define	configMAX_TASK_NAME_LEN			10
 #define	configQUEUE_REGISTRY_SIZE		10
 #define	configCHECK_FOR_STACK_OVERFLOW		2

@@ -152,7 +152,7 @@ always_comb begin
     endcase
 end
 
-
+/*
 ila_1 your_instance_name (
 	.clk(clock), // input wire clk
 
@@ -166,6 +166,6 @@ ila_1 your_instance_name (
 	.probe6(event_send_data), // input wire [0:0]  probe6 
 	.probe7(uart_valid_tx_in) // input wire [0:0]  probe7
 
-);
+);*/
 //assign    smatrix_out     = pmatrix_in[i_counter][j_counter];
 endmodule
