@@ -14,6 +14,14 @@
 <img title="Arquitetura Systolic Core" alt="Alt text" src="images/ZynqZCU106 (7).png" width="75%" height="75%">
 </p>
 
+
+## Ciclos em Escala Real
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/full_scale_cycles.png" width="100%" height="100%">
+</p>
+
+
+
 ## Medições de Tempo -  Gráficos
 
 <p align="center">
@@ -33,9 +41,9 @@
 </p>
 
 
-## Vivado Diagram
+## Vivado Diagrama
 <p align="center">
-<img title="DIagram Zynq+ Systolic Core" alt="Alt text" src="images/VivadoDiagram.png" width="100%" height="100%">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/VivadoDiagram.png" width="100%" height="100%">
 </p>
 
 ## Objetivos
