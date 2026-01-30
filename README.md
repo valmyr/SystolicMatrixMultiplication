@@ -8,6 +8,31 @@
 <img title="Arquitetura Systolic Core" alt="Alt text" src="images/ArquiteturaSystolicCoreBlue.png" width="100%" height="100%">
 </p>
 
+## Medições de Tempo -  Simulação VS Real
+
+<p align="center">
+<img title="Arquitetura Systolic Core" alt="Alt text" src="images/ZynqZCU106 (7).png" width="75%" height="75%">
+</p>
+
+## Medições de Tempo -  Gráficos
+
+<p align="center">
+  <img
+    title="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
+    alt="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
+    src="images/simulacao_e_fpga_sem_fifo.png"
+    width="45%"
+  />
+  &nbsp;&nbsp;&nbsp;
+  <img
+    title="Arquitetura Systolic Core – FPGA com FIFO"
+    alt="Arquitetura Systolic Core – FPGA com FIFO"
+    src="images/fpga_com_fifo.png"
+    width="47%"
+  />
+</p>
+
+
 ## Vivado Diagram
 <p align="center">
 <img title="DIagram Zynq+ Systolic Core" alt="Alt text" src="images/VivadoDiagram.png" width="100%" height="100%">
