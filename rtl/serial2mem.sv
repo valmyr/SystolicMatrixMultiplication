@@ -17,15 +17,15 @@ module serial2mem#(
 );
 
 
-logic [$clog2(2*SIZE)-1:0]      cnt, next_cnt                                   ;
-logic [$clog2(SIZE)-1:0]  cnt_shift, next_cnt_shift                       ;
+logic [(2*SIZE)-1:0]      cnt, next_cnt                                   ;
+logic [(2*SIZE)-1:0]  cnt_shift, next_cnt_shift                       ;
 enum {IDLE, WRITE, READ,DONE}   mem_fsm,next_mem_fsm                            ;
 logic                           single_port_ram_clock                           ;
 logic                           single_port_ram_clockb                           ;
 logic                           single_port_ram_nreset                          ;
 logic                           single_port_ram_en                              ;
 logic                           single_port_ram_we                              ;
-logic [$clog2(2*SIZE)-1:0]    single_port_ram_addr                            ;
+logic [(2*SIZE)-1:0]    single_port_ram_addr                            ;
 //logic [WIDTH*SIZE-1:0]          single_port_ram_di                              ;
 logic [WIDTH*SIZE-1:0]          single_port_ram_dout                            ;
 //logic [WIDTH*SIZE-1:0]          single_port_ram_doutb                            ;
@@ -100,7 +100,7 @@ ram_single_port mem (
     assign single_port_ram_clock    = clock                         ;
     //assign single_port_ram_en       = cnt_shift == SIZE-1 | mem_fsm == READ     ;
     assign single_port_ram_we       = rw                                       ;
-    assign single_port_ram_addr     = cnt                                       ;
+    assign single_port_ram_addr     = cnt_shift                                      ;
     assign single_port_ram_clockb   = clock                                     ;
   ///  assign single_port_ram_di       = cnt_shift == SIZE-1 ? buf_data : single_port_ram_di   ;
     //assign out_data                 = mem_fsm == READ && cnt != 0 ? single_port_ram_dout : out_data;
@@ -149,10 +149,11 @@ ram_single_port mem (
             single_port_ram_di_reg <= single_port_ram_di ;
             //single_port_ram_di <=  single_port_ram_en && uart_ready_rx_out ? buf_data : 0;
             sampling_window_debug <= next_sampling_window_debug;
+            single_port_ram_di <= in_data;
 
         end
     end
-assign single_port_ram_di = uart_ready_rx_out ? buf_data : 0;
+//assign single_port_ram_di = in_data;//uart_ready_rx_out ? buf_data : 0;
     //assign next_buf_data[WIDTH*(cnt_shift+1):WIDTH*cnt_shift] = in_data << WIDTH*cnt_shift;
    // assign next_buf_data = {buf_data,in_data<<WIDTH*cnt_shift};// | in_data << (WIDTH * cnt_shift);
  //   assign next_buf_data =uart_ready_rx_out ? ((mem_fsm == WRITE)  ?  {buf_data[WIDTH*SIZE-WIDTH:0],in_data} : 0):next_buf_data;
@@ -193,7 +194,7 @@ assign single_port_ram_di = uart_ready_rx_out ? buf_data : 0;
             rvalid_o                 = 0                                                         ;
             next_cnt                 = uart_ready_rx_out ? (cnt_shift == SIZE-1 ? cnt + 1: cnt):cnt                        ;
             next_cnt_shift           = uart_ready_rx_out ? cnt_shift + 1: cnt_shift              ;
-            next_mem_fsm             = uart_ready_rx_out ? (cnt!=2*SIZE-1 ? WRITE: DONE):  mem_fsm;    
+            next_mem_fsm             = uart_ready_rx_out ? (cnt_shift != SIZE*SIZE-1 ? WRITE: DONE):  mem_fsm;    
             out_data                 = 0                                                         ;
         //    single_port_ram_di       = (cnt_shift == SIZE-1 ? buf_data : single_port_ram_di)                                ;
             single_port_ram_en       = uart_ready_rx_out                                      ;
@@ -202,10 +203,10 @@ assign single_port_ram_di = uart_ready_rx_out ? buf_data : 0;
         READ:begin
             next_sampling_window_debug =0;
             ready_o        = 0                                                                   ;
-            rvalid_o       = cnt!=2*SIZE-1 ? 0 : 1                                               ;
+            rvalid_o       = cnt!=SIZE*SIZE-1 ? 0 : 1                                               ;
             next_cnt       = cnt + 1                                                             ;
-            next_mem_fsm   = cnt!=2*SIZE-1 ? READ: DONE                                          ;
-            next_cnt_shift = 0                                                                   ; 
+            next_mem_fsm   = cnt!=SIZE*SIZE-1 ? READ: DONE                                          ;
+            next_cnt_shift = cnt                                                                   ; 
             out_data       = cnt !=0  ?  single_port_ram_dout: 0                                 ;
             single_port_ram_en       =1;
 

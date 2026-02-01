@@ -273,10 +273,10 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_axi_fifo_mm_s_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="matrix_in_memeory"/>
   <BlockFileSet Type="BlockSrcs" Name="SystolicCore_onlyFPGA_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_axi_fifo_mm_s_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="matrix_in_memeory"/>
 </GenRun>

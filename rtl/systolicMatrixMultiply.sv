@@ -2,22 +2,22 @@
 // Nome do Bloco    : SystolicMatrixMultiply + Serial + Handshake
 // Versão           : 2.5
 // Autor(a)         : Valmir Ferreira
-// Data de Criação  : --/--/--
-// Última Modificação: 03/10/2025
+// Data de Criação  : 24/10/2024
+// Última Modificação: 01/02/2025
 //
 // Descrição:
 //   Dada duas matrizes de ordem N, M1 e M2 cálcula a multplicação matricial. Serializando às matrizes de entrada;
 //============================================================
 
 module systolicMatrixMultiply#(
-    parameter WIDTH = 8 , SIZE=64, WIDTHx = 4
+    parameter WIDTH = 8 , SIZE=16, WIDTHx = 4
 )(
     input  logic                    clock                                  ,
     input  logic                    nreset                                 ,
     input  logic                    valid_i                                , //Dado válido na entrada
     input  logic                    rready_i                               , //Pronto para receber uma resposta                                                
-    input  logic [WIDTHx*SIZE-1:0]  a_input                         	   ,
-    input  logic [WIDTHx*SIZE-1:0]  b_input                         	   ,
+    input  logic [WIDTHx-1:0]       a_input [SIZE-1:0]                        	   ,
+    input  logic [WIDTHx-1:0]       b_input [SIZE-1:0]                        	   ,
     output logic                    rvalid_o                               , //Resposta Válida(Operação concluida)
     output logic                    ready_o                                , //Pronto para receber um dado valido na entrada
     output logic                    read_done                              ,           
@@ -28,19 +28,21 @@ module systolicMatrixMultiply#(
 logic [$clog2(2*SIZE) :0]       counter_mult        , next_counter_mult                 ;
 logic [$clog2(2*SIZE) :0]       counter_transfer_m  , next_counter_transfer_m           ;
 (*dont_touch = "true"*) logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
-logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]            ;
-logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]            ;
 
-logic [SIZE*WIDTHx-1:0]                 a_load                                          ;
-logic [SIZE*WIDTHx-1:0]                 b_load                                          ;
+
+logic [WIDTHx-1:0]                      a_vec           [SIZE:0][SIZE:0]            ;
+logic [WIDTHx-1:0]                      b_vec           [SIZE:0][SIZE:0]            ;
+
+logic [WIDTHx-1:0]                 a_load[SIZE-1:0]                                          ;
+logic [WIDTHx-1:0]                 b_load[SIZE-1:0]                                          ;
 logic                                   ena_mac, next_ena_mac                           ;
 
 enum {IDLE, LOAD_MULTI_MATRIX ,MULTI_MATRIX, DONE} currentStateSystolicControlUnit, nextStateSystolicControlUnit;
 generate 
     genvar i,j;
         for(i =0; i < SIZE;i++)begin:CELULA_ROWS
-            assign a_vec[0][i] = a_load[(i+1)*WIDTHx-1:(i+1)*WIDTHx-WIDTHx];
-            assign b_vec[0][i] = b_load[(i+1)*WIDTHx-1:(i+1)*WIDTHx-WIDTHx];
+            assign a_vec[0][i] = a_load[i];
+            assign b_vec[0][i] = b_load[i];
             for(j =0; j < SIZE;j++)begin:CELULA_COLUMNS
                 accumulator_cells #(.WIDTH(WIDTH),.WIDTHx(WIDTHx)) MAC(    
                     .clock    (     clock                                              ),
@@ -79,8 +81,8 @@ always_ff@(posedge clock, negedge nreset)begin
         counter_mult                    <=    0;
         counter_transfer_m              <=    0;
         ena_mac                         <=    0;
-        a_load                          <=    0;
-        b_load                          <=    0;
+        a_load                          <= '{default:0};
+        b_load                          <= '{default:0};
         output_produc_a_b               <= '{default:0};
 
     end else begin
@@ -93,8 +95,8 @@ always_ff@(posedge clock, negedge nreset)begin
         currentStateSystolicControlUnit <= nextStateSystolicControlUnit                                        ;
         counter_mult                    <= next_counter_mult                                                   ; 
         ena_mac                         <= next_ena_mac                                                        ;
-        a_load                          <= currentStateSystolicControlUnit == LOAD_MULTI_MATRIX ? a_input: 0   ;
-        b_load                          <= currentStateSystolicControlUnit == LOAD_MULTI_MATRIX ? b_input: 0   ;
+        a_load                          <= currentStateSystolicControlUnit == LOAD_MULTI_MATRIX ? a_input: '{default:0}   ;
+        b_load                          <= currentStateSystolicControlUnit == LOAD_MULTI_MATRIX ? b_input: '{default:0}   ;
     end
 end
 always_comb begin

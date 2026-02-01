@@ -15,6 +15,10 @@ WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 fo
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'm_axis_tready' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:209]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'uart_data_rx_out' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:58]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'uart_data_tx_in' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:60]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'addra' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:65]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 4 for port 'dina' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:66]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'addrb' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:70]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 4 for port 'doutb' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:71]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:275]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:286]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:295]
@@ -31,8 +35,6 @@ WARNING: [VRFC 10-3818] variable 'tb_uart_data_tx_in' is driven by invalid combi
 WARNING: [VRFC 10-2921] 'tb_uart_data_tx_in' driven by this always_comb block should not be driven by any other process [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:121]
 WARNING: [VRFC 10-3818] variable 'cnt5' is driven by invalid combination of procedural drivers [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:180]
 WARNING: [VRFC 10-2921] 'cnt5' driven by this always_ff block should not be driven by any other process [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:182]
-WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv" Line 1. Module systolicControlUnitTop doesn't have a timescale but at least one module in design has a timescale.
@@ -44,7 +46,7 @@ Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_mem_module(C...
 Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12(C_FAMILY="zy...
 Compiling module xil_defaultlib.matrix_in_memeory
 Compiling module xil_defaultlib.accumulator_cells(WIDTH=8)
-Compiling module xil_defaultlib.systolicMatrixMultiply(SIZE=16)
+Compiling module xil_defaultlib.systolicMatrixMultiply_default
 Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_output_stage...
 Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_output_stage...
 Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_softecc_outp...
@@ -56,6 +58,8 @@ Compiling module xil_defaultlib.mem2seriala(SIZE=16)
 Compiling module xil_defaultlib.counter
 Compiling module xil_defaultlib.ila_4
 Compiling module xil_defaultlib.systolicControlUnitTop
+Compiling module xil_defaultlib.ffd(WIDTH=4)
+Compiling module xil_defaultlib.reg_bank(N_LANES=16)
 Compiling module xil_defaultlib.SystolicCoreTop
 Compiling module xil_defaultlib.AXI_Stream_Systolic_Core
 Compiling module xil_defaultlib.tb

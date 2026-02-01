@@ -73,8 +73,8 @@ logic                     syst_clock                                            
 logic                     syst_nreset                                                                           ;
 logic                     syst_valid_i                                                                          ;
 logic                     syst_rready_i                                                                         ;
-logic [SIZE*WIDTHx-1:0]   syst_a_input                                                                          ;
-logic [SIZE*WIDTHx-1:0]   syst_b_input                                                                          ;
+logic [WIDTHx-1:0]   syst_a_input [SIZE-1:0]                                                                    ;
+logic [WIDTHx-1:0]   syst_b_input [SIZE-1:0]                                                                    ;
 logic                     syst_ready_o                                                                          ;
 logic                     syst_rvalid_o                                                                         ;
 (*dont_touch = "true"*) 
@@ -94,6 +94,18 @@ logic [WIDTHx-1:0]      serial2mem_opa_in_data                                  
 logic [SIZE*WIDTHx-1:0] serial2mem_opa_out_data                                                                 ;
 logic [SIZE*WIDTHx-1:0] serial2mem_opa_buf_data                                                                 ;
 //---------------------------------------------------------------------------------------------------
+//-----Pinout Bank Register Flow Data Time Structure---------------------------------------------
+logic [WIDTHx-1:0] flow_data_time_structure_OPA [SIZE-1:0];
+logic [WIDTHx-1:0] flow_data_time_structure_OPB [SIZE-1:0];
+logic [WIDTHx-1:0] flow_data_time_structure_OUTA[SIZE-1:0];
+logic [WIDTHx-1:0] flow_data_time_structure_OUTB[SIZE-1:0];
+
+logic flow_data_time_structure_clock ; 
+logic flow_data_time_structure_nreset;
+
+assign flow_data_time_structure_clock = clock; 
+assign flow_data_time_structure_nreset = nreset;
+
 //--------------------------------------------------------------------------------------------------
 logic                   serial2mem_opb_clock                                                                    ;
 logic                   serial2mem_opb_nreset                                                                   ;
@@ -167,7 +179,8 @@ always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
 
 endcase*/
 assign uart_data_tx_in = mem2serial_smatrix_out;
-
+//assign flow_data_time_structure_OPA = serial2mem_opa_out_data;
+//assign flow_data_time_structure_OPB = serial2mem_opb_out_data;
 
 //---------------------------------------------------------------------------------------------------------------------------------
 
@@ -176,8 +189,8 @@ assign uart_data_tx_in = mem2serial_smatrix_out;
 //assign serial2mem_opb_in_data = (systolicControlUnit_serial2mem_opb_valid_i & !systolicControlUnit_serial2mem_opb_rw) ? uart_data_rx_out: 0             ;
 assign serial2mem_opa_in_data = uart_data_rx_out;//: 0            ;
 assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;
-assign syst_a_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opa_rw) ? serial2mem_opa_out_data :0                           ;
-assign syst_b_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opb_rw) ? serial2mem_opb_out_data :0                           ;
+assign syst_a_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opa_rw) ? flow_data_time_structure_OUTA :'{default:0}                           ;
+assign syst_b_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opb_rw) ? flow_data_time_structure_OUTB :'{default:0}                           ;
 (*dont_touch = "true"*) 
 assign mem2serial_pmatrix_in = syst_output_produc_a_b;
 //assign mem2serial_pmatrix_in[0][0] = 8'd11;
@@ -316,6 +329,22 @@ systolicControlUnitTop systolicControlUnit_Global(
     .frame_start                (systolicControlUnit_frame_start                )                
    // .s_axis_tlast               (                                                )//systolicControlUnit_s_axis_tlast
 );
+
+
+reg_bank #(.DATA_W(WIDTHx),.N_LANES(SIZE))opa_flow_data_time_structure(
+    .clock  (flow_data_time_structure_clock  ),
+    .nreset (flow_data_time_structure_nreset ),
+    .OP     (flow_data_time_structure_OPA    ),
+    .OUT    (flow_data_time_structure_OUTA   )
+);
+
+reg_bank #(.DATA_W(WIDTHx),.N_LANES(SIZE))opb_flow_data_time_structure(
+    .clock  (flow_data_time_structure_clock  ),
+    .nreset (flow_data_time_structure_nreset ),
+    .OP     (flow_data_time_structure_OPB    ),
+    .OUT    (flow_data_time_structure_OUTB   )
+);
+
 /*
 
 ila_3 your_instance_name (
@@ -354,6 +383,7 @@ ila_3 your_instance_name (
 	.probe29(syst_output_produc_a_b[1][13]), // input wire [7:0]  probe29 
 	.probe30(syst_output_produc_a_b[1][14]), // input wire [7:0]  probe30 
     .probe31(syst_output_produc_a_b[1][15]) // input wire [7:0]  probe31
+[USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.sim/sim_1/behav/xsim/xvlog.log' file for more information.
 
 
 );
