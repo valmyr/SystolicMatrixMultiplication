@@ -40,6 +40,11 @@
   />
 </p>
 
+##  Diagrama do Estruturador Temporal de Fluxo de Dados
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/EstruturadorTemporalDeFluxoDeDados.png" width="100%" height="100%">
+</p>
+
 
 ## Vivado Diagrama
 <p align="center">

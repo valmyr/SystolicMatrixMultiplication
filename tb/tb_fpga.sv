@@ -58,7 +58,9 @@ end
        nreset_arty = 1;
   end
 
-  always #(1501ps)clock=~clock;/*
+  always #(1501ps)clock=~clock;
+  
+  /*
   always #(1.5)clock=~clock;/*
 
   /*

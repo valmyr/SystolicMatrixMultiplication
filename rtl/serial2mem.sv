@@ -11,7 +11,7 @@ module serial2mem#(
     output logic                  rvalid_o                                   , //Resposta Válida(Operação concluida)
     output logic                  ready_o                                    , //Pronto para receber um dado valido na entrada
     input  logic [WIDTH-1:0]      in_data                                    ,
-    output logic [SIZE*WIDTH-1:0] out_data                                   ,
+    output logic [WIDTH-1:0] out_data[SIZE-1:0][SIZE-1:0]                                   ,
     output logic [WIDTH*SIZE-1:0] single_port_ram_di                        
    // output logic [(2*WIDTH-1)*SIZE*SIZE-1:0]    fifo_d                          
 );
@@ -35,7 +35,8 @@ logic [WIDTH*SIZE-1:0]          next_buf_data                                   
 logic sampling_window_debug;
 logic next_sampling_window_debug;
 
-
+logic [$clog2(SIZE)-1:0] i_counter, j_counter;
+logic [$clog2(SIZE)-1:0] next_i_counter, next_j_counter;
 /*
 ram_dual_port ram (
   .clka         (   single_port_ram_clock       ),            // input wire clka
@@ -57,14 +58,14 @@ ram_dual_port ram (
 );
 */
 
-
+/* USE este
 ram_dual_port ram_0 (
   .clka       (     single_port_ram_clock          ),  // input wire clka
   .ena        (     single_port_ram_en             ),  // input wire ena
   .wea        (     ~single_port_ram_we            ),  // input wire [0 : 0] wea
   .addra      (     single_port_ram_addr           ),  // input wire [2 : 0] addra
   .dina       (     single_port_ram_di             ),  // input wire [15 : 0] dina
-  .clkb       (     single_port_ram_clockb         ),  // input wire clkb
+  .clkb       (     single_port_ram_clockb         ),  // inpin_dataut wire clkb
   .rstb       (     ~single_port_ram_nreset        ),  // input wire rstb
   .enb        (     single_port_ram_we             ),  // input wire enb
   .addrb      (     single_port_ram_addr           ),  // input wire [2 : 0] addrb
@@ -73,7 +74,7 @@ ram_dual_port ram_0 (
   .rstb_busy  (                                    )  // output wire rstb_busy
 );
 
-
+*/
 /*
 ram_single_port #(.WIDTH(WIDTH*SIZE),.SIZE(2*(SIZE)-1))mem(
     .clock (single_port_ram_clock   )                        ,  
@@ -129,15 +130,18 @@ ram_single_port mem (
 );
 
 */
+
+//logic [WIDTH-1:0] data_out_lin[SIZE-1:0][SIZE-1:0];
    reg  [WIDTH*SIZE-1:0] single_port_ram_di_reg;
     always_ff@(posedge clock, negedge nreset)begin
         if(!nreset)begin
             cnt                 <= 0                                                                                                           ;
             cnt_shift           <= 0                                                                                                           ;
             buf_data            <= 0                                                                                                           ;
-            //single_port_ram_di <= 0;
+            single_port_ram_di <= 0;
             sampling_window_debug <= 0;
             single_port_ram_di_reg <=0;
+            out_data <= '{default:0};
             mem_fsm <= IDLE;
         end else begin        
             //buf_data           <= single_port_ram_en ? next_buf_data    :   buf_data    
@@ -146,10 +150,14 @@ ram_single_port mem (
             mem_fsm            <= next_mem_fsm                                                                                                 ;
             cnt                <= mem_fsm != DONE ? next_cnt         :    0                                                                    ;
             cnt_shift          <= mem_fsm != DONE ? next_cnt_shift   :    0                                                                    ;
-            single_port_ram_di_reg <= single_port_ram_di ;
+            single_port_ram_di_reg <= in_data ;
+            out_data[i_counter][j_counter] <=(mem_fsm == WRITE?  single_port_ram_di_reg:out_data[i_counter][j_counter]);
             //single_port_ram_di <=  single_port_ram_en && uart_ready_rx_out ? buf_data : 0;
             sampling_window_debug <= next_sampling_window_debug;
-            single_port_ram_di <= in_data;
+            single_port_ram_di <= mem_fsm == WRITE ? single_port_ram_di_reg: single_port_ram_di;
+
+            i_counter               <=  mem_fsm == WRITE? next_i_counter: 0;                                           ; 
+            j_counter               <=  mem_fsm == WRITE? next_j_counter: 0;
 
         end
     end
@@ -185,8 +193,10 @@ ram_single_port mem (
                         single_port_ram_en   = 0            ;
 
             end
-            out_data                 =  0                    ;
+          //  out_data                 =  0                    ;
          //   single_port_ram_di       =  0                    ;
+         next_j_counter = 0;
+         next_i_counter = 0; 
         end
         WRITE:begin
             next_sampling_window_debug =1;
@@ -195,9 +205,11 @@ ram_single_port mem (
             next_cnt                 = uart_ready_rx_out ? (cnt_shift == SIZE-1 ? cnt + 1: cnt):cnt                        ;
             next_cnt_shift           = uart_ready_rx_out ? cnt_shift + 1: cnt_shift              ;
             next_mem_fsm             = uart_ready_rx_out ? (cnt_shift != SIZE*SIZE-1 ? WRITE: DONE):  mem_fsm;    
-            out_data                 = 0                                                         ;
+        //    out_data                 = 0                                                         ;
         //    single_port_ram_di       = (cnt_shift == SIZE-1 ? buf_data : single_port_ram_di)                                ;
             single_port_ram_en       = uart_ready_rx_out                                      ;
+            next_j_counter         =    (j_counter < SIZE   )   ? j_counter +1 : 0;
+            next_i_counter         =    (j_counter < SIZE -1)   ? i_counter:i_counter+1  ;
 
         end
         READ:begin
@@ -207,8 +219,10 @@ ram_single_port mem (
             next_cnt       = cnt + 1                                                             ;
             next_mem_fsm   = cnt!=SIZE*SIZE-1 ? READ: DONE                                          ;
             next_cnt_shift = cnt                                                                   ; 
-            out_data       = cnt !=0  ?  single_port_ram_dout: 0                                 ;
+           // out_data       = cnt !=0  ?  single_port_ram_dout: 0                                 ;
             single_port_ram_en       =1;
+            next_j_counter = 0;
+            next_i_counter = 0; 
 
         end
         DONE:begin  
@@ -218,10 +232,11 @@ ram_single_port mem (
             next_cnt                 = 0                                                         ;
             next_mem_fsm             = rready_i ? IDLE : DONE                                    ;
             next_cnt_shift           = 0                                                         ;
-            out_data                 = 0                                                         ;
+        //    out_data                 = 0                                                         ;
             //single_port_ram_di       = 0                                                         ;
             single_port_ram_en       =0 ;
-
+            next_j_counter = 0;
+            next_i_counter = 0; 
 
         end
         default:begin
@@ -231,10 +246,11 @@ ram_single_port mem (
             rvalid_o        = 0                     ;
             next_cnt        = 0                     ;
             next_cnt_shift =  0                     ;
-            out_data       =  0                     ;
+          //  out_data       =  0                     ;
            // single_port_ram_di       = 0  ;
             single_port_ram_en       = 0;
-
+            next_j_counter = 0;
+            next_i_counter = 0; 
 
         end
     endcase

@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Fri Jan 30 01:07:38 2026
-# Process ID         : 408582
+# Start of session at: Mon Feb  2 02:10:40 2026
+# Process ID         : 3297344
 # Current directory  : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1
 # Command line       : vivado -log SystolicCore_onlyFPGA_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SystolicCore_onlyFPGA_0_0.tcl
 # Log file           : /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/SystolicCore_onlyFPGA_0_0.vds
@@ -13,13 +13,13 @@
 # Platform           : Rocky
 # Operating System   : Rocky Linux release 8.10 (Green Obsidian)
 # Processor Detail   : Intel(R) Core(TM) i9-14900F
-# CPU Frequency      : 4841.903 MHz
+# CPU Frequency      : 5226.843 MHz
 # CPU Physical cores : 24
 # CPU Logical cores  : 32
 # Host memory        : 67075 MB
 # Swap memory        : 14727 MB
 # Total Virtual      : 81802 MB
-# Available Virtual  : 58893 MB
+# Available Virtual  : 39555 MB
 #-----------------------------------------------------------
 source SystolicCore_onlyFPGA_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -32,18 +32,18 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev
 INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 409001
+INFO: [Synth 8-7075] Helper process launched with PID 3297419
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3178.684 ; gain = 147.688 ; free physical = 2064 ; free virtual = 51181
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3179.281 ; gain = 148.688 ; free physical = 2449 ; free virtual = 35604
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'uart_clock', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:142]
-INFO: [Synth 8-11241] undeclared symbol 'uart_nreset', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:151]
-WARNING: [Synth 8-10507] attribute 'dont_touch' is already specified; last one will take precedence [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:230]
+INFO: [Synth 8-11241] undeclared symbol 'uart_clock', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:154]
+INFO: [Synth 8-11241] undeclared symbol 'uart_nreset', assumed default net type 'wire' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:163]
+WARNING: [Synth 8-10507] attribute 'dont_touch' is already specified; last one will take precedence [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:243]
 INFO: [Synth 8-6157] synthesizing module 'SystolicCore_onlyFPGA_0_0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_onlyFPGA_0_0/synth/SystolicCore_onlyFPGA_0_0.v:53]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_onlyFPGA_0_0/synth/SystolicCore_onlyFPGA_0_0.v:69]
 INFO: [Synth 8-6157] synthesizing module 'onlyFPGA' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/onlyFPGA.v:23]
-INFO: [Synth 8-6157] synthesizing module 'matrix_in_memeory' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-408582-VT0144/realtime/matrix_in_memeory_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'matrix_in_memeory' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-408582-VT0144/realtime/matrix_in_memeory_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'matrix_in_memeory' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-3297344-VT0144/realtime/matrix_in_memeory_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_in_memeory' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-3297344-VT0144/realtime/matrix_in_memeory_stub.v:6]
 WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (11) of module 'matrix_in_memeory' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/onlyFPGA.v:38]
 WARNING: [Synth 8-689] width (32) of port connection 'douta' does not match port width (8) of module 'matrix_in_memeory' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/onlyFPGA.v:40]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/onlyFPGA.v:43]
@@ -61,44 +61,10 @@ INFO: [Synth 8-6157] synthesizing module 'accumulator_cells' [/home/xmen/Videos/
 	Parameter WIDTH bound to: 8 - type: integer 
 	Parameter WIDTHx bound to: 4 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'accumulator_cells' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/accumulator.sv:13]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:51]
-WARNING: [Synth 8-324] index 16 out of range [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:52]
 INFO: [Synth 8-6155] done synthesizing module 'systolicMatrixMultiply' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:12]
 INFO: [Synth 8-6157] synthesizing module 'serial2mem' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
 	Parameter WIDTH bound to: 4 - type: integer 
 	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ram_dual_port' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-408582-VT0144/realtime/ram_dual_port_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ram_dual_port' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-408582-VT0144/realtime/ram_dual_port_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'serial2mem' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'mem2seriala' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/mem2serial.sv:1]
 	Parameter SIZE bound to: 16 - type: integer 
@@ -116,8 +82,8 @@ WARNING: [Synth 8-689] width (33) of port connection 'counter' does not match po
 WARNING: [Synth 8-689] width (33) of port connection 'counter' does not match port width (32) of module 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:314]
 WARNING: [Synth 8-689] width (33) of port connection 'counter' does not match port width (32) of module 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:324]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:329]
-INFO: [Synth 8-6157] synthesizing module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-408582-VT0144/realtime/ila_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_4' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-408582-VT0144/realtime/ila_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-3297344-VT0144/realtime/ila_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_4' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/.Xil/Vivado-3297344-VT0144/realtime/ila_4_stub.v:6]
 WARNING: [Synth 8-689] width (33) of port connection 'probe0' does not match port width (32) of module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:333]
 WARNING: [Synth 8-689] width (33) of port connection 'probe1' does not match port width (32) of module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:334]
 WARNING: [Synth 8-689] width (33) of port connection 'probe2' does not match port width (32) of module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:335]
@@ -125,15 +91,121 @@ WARNING: [Synth 8-689] width (33) of port connection 'probe3' does not match por
 WARNING: [Synth 8-689] width (33) of port connection 'probe4' does not match port width (32) of module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:337]
 WARNING: [Synth 8-689] width (33) of port connection 'probe5' does not match port width (32) of module 'ila_4' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:338]
 INFO: [Synth 8-6155] done synthesizing module 'systolicControlUnitTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'reg_bank' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/bank_reg.sv:2]
+	Parameter DATA_W bound to: 4 - type: integer 
+	Parameter N_LANES bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ffd' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/ffd.sv:1]
+	Parameter WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ffd' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/ffd.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'reg_bank' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/bank_reg.sv:2]
 INFO: [Synth 8-6155] done synthesizing module 'SystolicCoreTop' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:23]
 WARNING: [Synth 8-689] width (32) of port connection 'uart_data_rx_out' does not match port width (8) of module 'SystolicCoreTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:58]
 WARNING: [Synth 8-689] width (32) of port connection 'uart_data_tx_in' does not match port width (8) of module 'SystolicCoreTop' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'AXI_Stream_Systolic_Core' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'onlyFPGA' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/onlyFPGA.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'SystolicCore_onlyFPGA_0_0' (0#1) [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_onlyFPGA_0_0/synth/SystolicCore_onlyFPGA_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element sampling_window_debug_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:139]
-WARNING: [Synth 8-6014] Unused sequential element single_port_ram_di_reg_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:140]
-WARNING: [Synth 8-7137] Register next_buf_data_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:144]
+WARNING: [Synth 8-6014] Unused sequential element sampling_window_debug_reg was removed.  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:142]
+WARNING: [Synth 8-7137] Register next_buf_data_reg in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:147]
+WARNING: [Synth 8-7137] Register out_data_reg[15][15] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][14] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][13] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][12] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][11] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][10] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][9] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][8] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][7] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][6] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][5] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][4] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][3] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][2] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][1] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[15][0] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][15] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][14] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][13] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][12] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][11] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][10] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][9] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][8] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][7] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][6] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][5] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][4] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][3] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][2] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][1] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[14][0] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][15] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][14] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][13] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][12] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][11] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][10] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][9] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][8] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][7] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][6] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][5] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][4] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][3] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][2] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][1] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[13][0] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][15] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][14] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][13] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][12] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][11] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][10] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][9] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][8] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][7] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][6] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][5] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][4] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][3] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][2] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][1] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[12][0] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][15] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][14] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][13] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][12] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][11] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][10] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][9] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][8] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][7] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][6] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][5] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][4] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][3] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][2] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][1] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[11][0] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][15] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][14] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][13] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][12] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][11] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][10] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][9] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][8] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][7] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][6] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][5] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][4] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][3] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][2] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][1] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[10][0] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[9][15] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[9][14] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+WARNING: [Synth 8-7137] Register out_data_reg[9][13] in module serial2mem has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/serial2mem.sv:153]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'counter_idle'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:270]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'contadores_de_ciclo'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:329]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'counter_opA'. This will prevent further optimization [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:281]
@@ -174,18 +246,18 @@ INFO: [Synth 8-7129] Port s_axis_tdata[10] in module AXI_Stream_Systolic_Core is
 INFO: [Synth 8-7129] Port s_axis_tdata[9] in module AXI_Stream_Systolic_Core is either unconnected or has no load
 INFO: [Synth 8-7129] Port s_axis_tdata[8] in module AXI_Stream_Systolic_Core is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3322.652 ; gain = 291.656 ; free physical = 1435 ; free virtual = 50558
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3350.250 ; gain = 319.656 ; free physical = 1599 ; free virtual = 34688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3322.652 ; gain = 291.656 ; free physical = 1415 ; free virtual = 50538
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3350.250 ; gain = 319.656 ; free physical = 1557 ; free virtual = 34647
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3322.652 ; gain = 291.656 ; free physical = 1415 ; free virtual = 50538
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3350.250 ; gain = 319.656 ; free physical = 1557 ; free virtual = 34647
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3322.652 ; gain = 0.000 ; free physical = 1343 ; free virtual = 50466
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3350.250 ; gain = 0.000 ; free physical = 1266 ; free virtual = 34354
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -194,24 +266,20 @@ Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Syst
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_4/ila_4/ila_4_in_context.xdc] for cell 'inst/Core0/SystolicCore0/systolicControlUnit_Global/contadores_de_ciclo'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/matrix_in_memeory/matrix_in_memeory/matrix_in_memeory_in_context.xdc] for cell 'inst/your_instance_name'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/matrix_in_memeory/matrix_in_memeory/matrix_in_memeory_in_context.xdc] for cell 'inst/your_instance_name'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'inst/Core0/SystolicCore0/serial2mem_opA/ram_0'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'inst/Core0/SystolicCore0/serial2mem_opA/ram_0'
-Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'inst/Core0/SystolicCore0/serial2mem_opB/ram_0'
-Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/ram_dual_port/ram_dual_port_in_context.xdc] for cell 'inst/Core0/SystolicCore0/serial2mem_opB/ram_0'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_onlyFPGA_0_0/SystolicCore_onlyFPGA_0_0_ooc.xdc] for cell 'inst'
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_onlyFPGA_0_0/SystolicCore_onlyFPGA_0_0_ooc.xdc] for cell 'inst'
 Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3404.484 ; gain = 0.000 ; free physical = 457 ; free virtual = 48555
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3443.488 ; gain = 0.000 ; free physical = 461 ; free virtual = 32263
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3404.520 ; gain = 0.000 ; free physical = 1047 ; free virtual = 48905
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3443.523 ; gain = 0.000 ; free physical = 774 ; free virtual = 32584
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3404.520 ; gain = 373.523 ; free physical = 2224 ; free virtual = 50201
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3443.523 ; gain = 412.930 ; free physical = 1341 ; free virtual = 32963
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -219,16 +287,15 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3412.488 ; gain = 381.492 ; free physical = 2223 ; free virtual = 50201
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3451.492 ; gain = 420.898 ; free physical = 1341 ; free virtual = 32963
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3412.488 ; gain = 381.492 ; free physical = 2220 ; free virtual = 50202
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3451.492 ; gain = 420.898 ; free physical = 1341 ; free virtual = 32963
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'currentStateSystolicControlUnit_reg' in module 'systolicMatrixMultiply'
-INFO: [Synth 8-802] inferred FSM for state register 'mem_fsm_reg' in module 'serial2mem__xdcDup__1'
 INFO: [Synth 8-802] inferred FSM for state register 'mem_fsm_reg' in module 'serial2mem'
 INFO: [Synth 8-802] inferred FSM for state register 'mem2seriala_fsm_reg' in module 'mem2seriala'
 ---------------------------------------------------------------------------------------------------
@@ -240,15 +307,6 @@ INFO: [Synth 8-802] inferred FSM for state register 'mem2seriala_fsm_reg' in mod
                     DONE |                               11 | 00000000000000000000000000000011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'currentStateSystolicControlUnit_reg' using encoding 'sequential' in module 'systolicMatrixMultiply'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    IDLE |                               00 | 00000000000000000000000000000000
-                    READ |                               01 | 00000000000000000000000000000010
-                   WRITE |                               10 | 00000000000000000000000000000001
-                    DONE |                               11 | 00000000000000000000000000000011
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'mem_fsm_reg' using encoding 'sequential' in module 'serial2mem__xdcDup__1'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -270,45 +328,41 @@ WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rw_reg' [/ho
 WARNING: [Synth 8-327] inferring latch for variable 'serial2mem_opa_rready_i_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:81]
 WARNING: [Synth 8-327] inferring latch for variable 'starting_frame_identified_reg' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:89]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3412.488 ; gain = 381.492 ; free physical = 2418 ; free virtual = 50205
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3451.492 ; gain = 420.898 ; free physical = 1324 ; free virtual = 32949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 6     
+	   2 Input   32 Bit       Adders := 10    
 	   2 Input    8 Bit       Adders := 1     
 	   2 Input    6 Bit       Adders := 2     
-	   2 Input    5 Bit       Adders := 2     
-	   2 Input    4 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 6     
 +---Registers : 
 	               64 Bit    Registers := 6     
-	               32 Bit    Registers := 7     
+	               32 Bit    Registers := 11    
 	               16 Bit    Registers := 256   
 	                8 Bit    Registers := 257   
 	                6 Bit    Registers := 2     
-	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 516   
+	                4 Bit    Registers := 2020  
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input   64 Bit        Muxes := 14    
-	   4 Input   64 Bit        Muxes := 2     
-	   4 Input   32 Bit        Muxes := 6     
+	   2 Input   64 Bit        Muxes := 8     
+	   2 Input   32 Bit        Muxes := 4     
+	   4 Input   32 Bit        Muxes := 10    
 	   2 Input    8 Bit        Muxes := 257   
 	   3 Input    8 Bit        Muxes := 2     
 	   4 Input    6 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 3     
-	   4 Input    5 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 4     
-	   4 Input    4 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 102   
 	   3 Input    4 Bit        Muxes := 3     
 	   3 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 5     
 	   4 Input    2 Bit        Muxes := 3     
 	   2 Input    2 Bit        Muxes := 16    
-	   4 Input    1 Bit        Muxes := 20    
-	   2 Input    1 Bit        Muxes := 21    
+	   4 Input    1 Bit        Muxes := 18    
+	   2 Input    1 Bit        Muxes := 567   
 	   3 Input    1 Bit        Muxes := 1     
 	   7 Input    1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
@@ -326,28 +380,26 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-7129] Port serial2mem_opb_rvalid_o in module systolicControlUnitTop is either unconnected or has no load
-INFO: [Synth 8-7129] Port serial2mem_opa_ready_o in module systolicControlUnitTop is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 3680.441 ; gain = 649.445 ; free physical = 2195 ; free virtual = 49980
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 3645.711 ; gain = 615.117 ; free physical = 1880 ; free virtual = 33591
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 4041.207 ; gain = 1010.211 ; free physical = 1241 ; free virtual = 49028
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 4082.250 ; gain = 1051.656 ; free physical = 1556 ; free virtual = 33284
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 4074.223 ; gain = 1043.227 ; free physical = 1044 ; free virtual = 48831
+Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 4519.656 ; gain = 1489.062 ; free physical = 4759 ; free virtual = 36732
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 473 ; free virtual = 48164
+Finished Technology Mapping : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 4417 ; free virtual = 36692
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -365,37 +417,74 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 502 ; free virtual = 48192
+Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 4711 ; free virtual = 37345
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 502 ; free virtual = 48192
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 4711 ; free virtual = 37345
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 445 ; free virtual = 48092
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 4697 ; free virtual = 37341
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 445 ; free virtual = 48092
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 5604 ; free virtual = 38249
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 445 ; free virtual = 48093
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 5603 ; free virtual = 38248
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 445 ; free virtual = 48093
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 5603 ; free virtual = 38248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[0].genblk1[14].ffds/data_out_reg[3] | 15     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[1].genblk1[13].ffds/data_out_reg[3] | 14     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[2].genblk1[12].ffds/data_out_reg[3] | 13     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[3].genblk1[11].ffds/data_out_reg[3] | 12     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[4].genblk1[10].ffds/data_out_reg[3] | 11     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[5].genblk1[9].ffds/data_out_reg[3]  | 10     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[6].genblk1[8].ffds/data_out_reg[3]  | 9      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[7].genblk1[7].ffds/data_out_reg[3]  | 8      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[8].genblk1[6].ffds/data_out_reg[3]  | 7      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[9].genblk1[5].ffds/data_out_reg[3]  | 6      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[10].genblk1[4].ffds/data_out_reg[3] | 5      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opa_flow_data_time_structure/genblk1[11].genblk1[3].ffds/data_out_reg[3] | 4      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[0].genblk1[14].ffds/data_out_reg[3] | 15     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[1].genblk1[13].ffds/data_out_reg[3] | 14     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[2].genblk1[12].ffds/data_out_reg[3] | 13     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[3].genblk1[11].ffds/data_out_reg[3] | 12     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[4].genblk1[10].ffds/data_out_reg[3] | 11     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[5].genblk1[9].ffds/data_out_reg[3]  | 10     | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[6].genblk1[8].ffds/data_out_reg[3]  | 9      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[7].genblk1[7].ffds/data_out_reg[3]  | 8      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[8].genblk1[6].ffds/data_out_reg[3]  | 7      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[9].genblk1[5].ffds/data_out_reg[3]  | 6      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[10].genblk1[4].ffds/data_out_reg[3] | 5      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|onlyFPGA    | Core0/SystolicCore0/opb_flow_data_time_structure/genblk1[11].genblk1[3].ffds/data_out_reg[3] | 4      | 4     | YES          | NO                 | YES               | 4      | 0       | 
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -406,8 +495,7 @@ Report BlackBoxes:
 |      |BlackBox name     |Instances |
 +------+------------------+----------+
 |1     |matrix_in_memeory |         1|
-|2     |ram_dual_port     |         2|
-|3     |ila_4             |         1|
+|2     |ila_4             |         1|
 +------+------------------+----------+
 
 Report Cell Usage: 
@@ -416,47 +504,47 @@ Report Cell Usage:
 +------+------------------+------+
 |1     |ila               |     1|
 |2     |matrix_in_memeory |     1|
-|3     |ram_dual_port     |     2|
-|5     |CARRY8            |   284|
-|6     |LUT1              |  2076|
-|7     |LUT2              |  2913|
-|8     |LUT3              |   555|
-|9     |LUT4              |   929|
-|10    |LUT5              |  1051|
-|11    |LUT6              |  4957|
-|12    |MUXF7             |   272|
-|13    |MUXF8             |   136|
-|14    |FDCE              |  6605|
-|15    |FDPE              |     1|
-|16    |FDRE              |   128|
-|17    |LD                |     3|
+|3     |CARRY8            |   308|
+|4     |LUT1              |  2075|
+|5     |LUT2              |  2820|
+|6     |LUT3              |   426|
+|7     |LUT4              |  1031|
+|8     |LUT5              |  1004|
+|9     |LUT6              |  6151|
+|10    |MUXF7             |   400|
+|11    |MUXF8             |   136|
+|12    |SRL16E            |    96|
+|13    |FDCE              |  7076|
+|14    |FDPE              |     1|
+|15    |FDRE              |  2314|
+|16    |LD                |     3|
 +------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 445 ; free virtual = 48093
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 5601 ; free virtual = 38248
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 4325.832 ; gain = 1212.969 ; free physical = 445 ; free virtual = 48092
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 4325.832 ; gain = 1294.836 ; free physical = 445 ; free virtual = 48092
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 4556.656 ; gain = 1432.789 ; free physical = 5602 ; free virtual = 38247
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 4556.656 ; gain = 1526.062 ; free physical = 5602 ; free virtual = 38247
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4325.832 ; gain = 0.000 ; free physical = 613 ; free virtual = 48260
-INFO: [Netlist 29-17] Analyzing 695 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4556.656 ; gain = 0.000 ; free physical = 6376 ; free virtual = 39021
+INFO: [Netlist 29-17] Analyzing 847 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4325.832 ; gain = 0.000 ; free physical = 727 ; free virtual = 48373
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4556.656 ; gain = 0.000 ; free physical = 5968 ; free virtual = 38626
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   LD => LDCE: 3 instances
 
-Synth Design complete | Checksum: 4db09fbe
+Synth Design complete | Checksum: ef9cdc7e
 INFO: [Common 17-83] Releasing license: Synthesis
-92 Infos, 63 Warnings, 0 Critical Warnings and 0 Errors encountered.
+91 Infos, 129 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:43 . Memory (MB): peak = 4325.832 ; gain = 2451.422 ; free physical = 725 ; free virtual = 48371
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2987.372; main = 2987.372; forked = 214.932
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5705.219; main = 4308.176; forked = 1641.008
-INFO: [Coretcl 2-1174] Renamed 273 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4332.184 ; gain = 0.000 ; free physical = 724 ; free virtual = 48372
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:12 . Memory (MB): peak = 4556.656 ; gain = 2681.680 ; free physical = 5917 ; free virtual = 38580
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3629.037; main = 3417.808; forked = 286.218
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 6160.668; main = 4539.000; forked = 1641.008
+INFO: [Coretcl 2-1174] Renamed 358 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4563.008 ; gain = 0.000 ; free physical = 5911 ; free virtual = 38576
 INFO: [Common 17-1381] The checkpoint '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.runs/SystolicCore_onlyFPGA_0_0_synth_1/SystolicCore_onlyFPGA_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file SystolicCore_onlyFPGA_0_0_utilization_synth.rpt -pb SystolicCore_onlyFPGA_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan 30 01:08:26 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Feb  2 02:11:57 2026...

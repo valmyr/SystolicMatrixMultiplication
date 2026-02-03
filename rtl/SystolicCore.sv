@@ -91,8 +91,8 @@ logic                   serial2mem_opa_rready_i                                 
 logic                   serial2mem_opa_rvalid_o                                                                 ;
 logic                   serial2mem_opa_ready_o                                                                  ;
 logic [WIDTHx-1:0]      serial2mem_opa_in_data                                                                  ;
-logic [SIZE*WIDTHx-1:0] serial2mem_opa_out_data                                                                 ;
-logic [SIZE*WIDTHx-1:0] serial2mem_opa_buf_data                                                                 ;
+logic [WIDTHx-1:0] serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                                               ;
+logic [WIDTHx-1:0] serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                                               ;
 //---------------------------------------------------------------------------------------------------
 //-----Pinout Bank Register Flow Data Time Structure---------------------------------------------
 logic [WIDTHx-1:0] flow_data_time_structure_OPA [SIZE-1:0];
@@ -115,8 +115,8 @@ logic                   serial2mem_opb_rready_i                                 
 logic                   serial2mem_opb_ready_o                                                                  ;
 logic                   serial2mem_opb_rvalid_o                                                                 ;
 logic [WIDTHx-1:0]      serial2mem_opb_in_data                                                                  ;
-logic [SIZE*WIDTHx-1:0] serial2mem_opb_out_data                                                                 ;
-logic [SIZE*WIDTHx-1:0] serial2mem_opb_buf_data                                                                 ;
+logic [WIDTHx-1:0] serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                                                ;
+logic [WIDTHx-1:0] serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                                                ;
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
@@ -241,6 +241,7 @@ assign systolicControlUnit_uart_valid_rx_in = uart_valid_rx_in;
 //logic [111:0]fifo_d_a;
 //logic [111:0]fifo_d_b;
 (*dont_touch = "true"*) 
+logic syst_ena_mac;
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
     .nreset                     (syst_nreset                                )                  ,
     .valid_i                    (syst_valid_i                               )                  ,
@@ -251,7 +252,8 @@ systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixM
     .rvalid_o                   (syst_rvalid_o                              )                  ,
     .clock                      (syst_clock                                 )                  ,
     .output_produc_a_b          (syst_output_produc_a_b                     )                  ,
-    .read_done                  (syst_read_done                             )
+    .read_done                  (syst_read_done                             )                  ,
+    .ena_mac                    (syst_ena_mac                               )
 );
 (*dont_touch = "true"*) 
 serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
@@ -264,7 +266,7 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
     .ready_o                    (serial2mem_opa_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opa_in_data                     )                 ,
     .out_data                   (serial2mem_opa_out_data                    )                 ,
-    .single_port_ram_di         (serial2mem_opa_buf_data                    )                 ,
+    .single_port_ram_di         (                    )                 ,
     .uart_ready_rx_out          (uart_ready_rx_out && uart_valid_rx_in      )                 
     //.fifo_d(fifo_d_a)
 
@@ -280,7 +282,7 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
     .ready_o                    (serial2mem_opb_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opb_in_data                     )                 ,
     .out_data                   (serial2mem_opb_out_data                    )                 ,
-    .single_port_ram_di         (serial2mem_opb_buf_data                    )                 ,
+    .single_port_ram_di         (                    )                 ,
     .uart_ready_rx_out          (uart_ready_rx_out && uart_valid_rx_in      )
     //.fifo_d(fifo_d_b)
 );
@@ -330,20 +332,52 @@ systolicControlUnitTop systolicControlUnit_Global(
    // .s_axis_tlast               (                                                )//systolicControlUnit_s_axis_tlast
 );
 
+logic [31:0] counter;
+logic [31:0] counter_next;
+logic [31:0] counter1;
+
+assign counter_next=counter+1;
+always_ff@(posedge clock,negedge nreset)begin
+    if(!nreset)begin
+        counter <= 0;
+        counter1 <= 0;
+        flow_data_time_structure_OPA <= '{default:0};
+        flow_data_time_structure_OPB <= '{default:0};
+
+    end else begin
+        counter1 <= counter1 +1;
+        if(syst_ena_mac)begin
+            for(int l =0; l < SIZE; l++)begin
+                flow_data_time_structure_OPA[l] <= counter >15 ?'{default:0}: serial2mem_opa_out_data[l][counter];//counter > SIZE-1 ? 0 : A1[l][counter];
+                flow_data_time_structure_OPB[l] <= counter >15 ?'{default:0}: serial2mem_opb_out_data[l][counter];//counter > SIZE-1 ? 0 : A2_t[l][counter];
+            end
+            counter <=counter_next;
+        end else begin 
+            counter <= 0;
+            flow_data_time_structure_OPA <= '{default:0};
+            flow_data_time_structure_OPB <= '{default:0};
+        end
+    end
+end
 
 reg_bank #(.DATA_W(WIDTHx),.N_LANES(SIZE))opa_flow_data_time_structure(
     .clock  (flow_data_time_structure_clock  ),
     .nreset (flow_data_time_structure_nreset ),
     .OP     (flow_data_time_structure_OPA    ),
-    .OUT    (flow_data_time_structure_OUTA   )
+    .OUT    (flow_data_time_structure_OUTA   ),
+    .ena    (syst_ena_mac                    )
+
 );
 
 reg_bank #(.DATA_W(WIDTHx),.N_LANES(SIZE))opb_flow_data_time_structure(
     .clock  (flow_data_time_structure_clock  ),
     .nreset (flow_data_time_structure_nreset ),
     .OP     (flow_data_time_structure_OPB    ),
-    .OUT    (flow_data_time_structure_OUTB   )
+    .OUT    (flow_data_time_structure_OUTB   ),
+    .ena    (syst_ena_mac                    )
 );
+
+
 
 /*
 

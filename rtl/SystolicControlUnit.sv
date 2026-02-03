@@ -111,7 +111,7 @@ always_comb case(fsm_unit_control)
          end
         */
          //casex({uart_valid_rx_in,frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start[15:0] ==16'haaaa})
-        casex({(uart_valid_rx_in && uart_ready_rx),frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,frame_start ==32'hadda_ffff})
+        casex({(uart_valid_rx_in && uart_ready_rx),frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o,{frame_start[23:0],uart_data_rx_out[7:0]} ==32'hadda_ffff})
             3'b11x:begin
                 fsm_unit_control_next =  WRITE_MEMAAA;
                 serial2mem_opb_valid_i        =0;

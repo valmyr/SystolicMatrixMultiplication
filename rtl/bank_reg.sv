@@ -6,8 +6,9 @@ module reg_bank#(
     parameter N_LANES  = 3   // quantidade de regL*
 
 )(
-    input  logic clock       ,
-    input  logic nreset      ,
+    input  logic clock              ,
+    input  logic nreset             ,
+    input  logic              ena   ,
 
     input  logic [DATA_W-1:0] OP [N_LANES-1:0],
     output logic [DATA_W-1:0] OUT[N_LANES-1:0]
@@ -18,7 +19,7 @@ module reg_bank#(
         genvar i,j;
         for(j = 0; j < N_LANES; j++)begin
             for(i = 0; i < 2*(N_LANES-1)-1; i++)begin
-                ffd #(.WIDTH(DATA_W)) ffds (.clock(clock),.nreset(nreset),.data_in(mem[j][i]),.data_out(mem[j][i+1]));
+                ffd #(.WIDTH(DATA_W)) ffds (.clock(clock),.nreset(nreset),.ena(ena),.data_in(mem[j][i]),.data_out(mem[j][i+1]));
             end  
             assign mem[j][0] = OP[j];
             assign OUT[j] = mem[N_LANES-j-1][j];

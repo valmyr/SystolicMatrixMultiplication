@@ -60,7 +60,7 @@ module matrix_in_memeory_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [0:0] wea,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [10:0] addra,
+  input wire [9:0] addra,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [7:0] dina,
   (* X_INTERFACE_IGNORE = "true" *)
