@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "SystolicCore_AXI_Stream_Systolic_1_0_synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 8
 set_param power.BramSDPPropagationFix 1
 set_param general.usePosixSpawnForFork 1
 set_param physdb.placeDBImplUsesPlaceStorage 0

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Mon Feb  2 23:57:20 2026
+| Date         : Tue Feb  3 18:38:07 2026
 | Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_utilization -file matrix_in_memeory_utilization_synth.rpt -pb matrix_in_memeory_utilization_synth.pb
 | Design       : matrix_in_memeory
@@ -75,10 +75,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |  0.5 |     0 |          0 |       312 |  0.16 |
-|   RAMB36/FIFO*    |    0 |     0 |          0 |       312 |  0.00 |
-|   RAMB18          |    1 |     0 |          0 |       624 |  0.16 |
-|     RAMB18E2 only |    1 |       |            |           |       |
+| Block RAM Tile    |    1 |     0 |          0 |       312 |  0.32 |
+|   RAMB36/FIFO*    |    1 |     0 |          0 |       312 |  0.32 |
+|     RAMB36E2 only |    1 |       |            |           |       |
+|   RAMB18          |    0 |     0 |          0 |       624 |  0.00 |
 | URAM              |    0 |     0 |          0 |        96 |  0.00 |
 +-------------------+------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E2 or one FIFO18E2. However, if a FIFO18E2 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E2
@@ -172,7 +172,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| RAMB18E2 |    1 |            BLOCKRAM |
+| RAMB36E2 |    1 |            BLOCKRAM |
 +----------+------+---------------------+
 
 

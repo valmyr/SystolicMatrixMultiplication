@@ -1,4 +1,4 @@
-# Implementação em Hardware de um Acelerador de Multiplicação de Matrizes de Ordem N Systólica
+# Implementação em Hardware de um Acelerador com Arranjo Sistólico para Multiplicação de Matrizes de Ordem N
 
 
 ## Arquitetura Systolic Core
@@ -20,6 +20,10 @@
 <img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/full_scale_cycles.png" width="100%" height="100%">
 </p>
 
+## Ciclos em Escala Real com o Novo Fluxo de Dados
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/full_scale_cycles_fluxo_novo.png" width="100%" height="100%">
+</p>
 
 
 ## Medições de Tempo -  Gráficos
@@ -29,20 +33,26 @@
     title="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
     alt="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
     src="images/simulacao_e_fpga_sem_fifo.png"
-    width="45%"
+    width="25%"
   />
-  &nbsp;&nbsp;&nbsp;
   <img
     title="Arquitetura Systolic Core – FPGA com FIFO"
     alt="Arquitetura Systolic Core – FPGA com FIFO"
     src="images/fpga_com_fifo.png"
-    width="47%"
+    width="26%"
   />
+  <img
+    title="Arquitetura Systolic Core – FPGA com FIFO"
+    alt="Arquitetura Systolic Core – FPGA com FIFO"
+    src="images/simu_sem_fifo.png"
+    width="23%"
+  />
+    &nbsp;&nbsp;&nbsp;
 </p>
 
 ##  Diagrama do Estruturador Temporal de Fluxo de Dados
 <p align="center">
-<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/EstruturadorTemporalDeFluxoDeDados.png" width="100%" height="100%">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/EstruturadorTemporalDeFluxoDeDados.png" width="50%" height="50%">
 </p>
 
 

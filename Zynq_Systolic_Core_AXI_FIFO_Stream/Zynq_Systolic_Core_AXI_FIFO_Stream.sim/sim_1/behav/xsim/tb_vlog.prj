@@ -1,7 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../../../../../../Music/2025.2/data/rsb/busdef" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/ec67/hdl" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/a0fe/hdl" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/f0b6/hdl/verilog" --include "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/00fe/hdl/verilog" --include "/home/xmen/Music/2025.2/data/xilinx_vip/include" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ila_4/sim/ila_4.v" \
-"../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/ram_dual_port/sim/ram_dual_port.v" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/ip/matrix_in_memeory/sim/matrix_in_memeory.v" \
 "../../../../../rtl/AXI_Stream_Systolic_Core.v" \
 
@@ -15,7 +14,6 @@ sv xil_defaultlib  --include "../../../../../../../../../Music/2025.2/data/rsb/b
 "../../../../../rtl/mem2serial.sv" \
 "../../../../../rtl/serial2mem.sv" \
 "../../../../../rtl/systolicMatrixMultiply.sv" \
-"../../../../../rtl/unflatten.sv" \
 "../../../../../tb/tb_fpga.sv" \
 
 # compile glbl module

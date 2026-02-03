@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1769746132">
+<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1770096488">
   <File Type="NOC_SOLUTION_FILE" Name="SystolicCore_wrapper.ncr"/>
   <File Type="NOC_TRAFFIC_SPEC_FILE" Name="SystolicCore_wrapper.nts"/>
   <File Type="PL_UNMASK_RCDO_FILE" Name="SystolicCore_wrapper_pld_unmask.rcdo"/>
@@ -151,13 +151,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/ram_dual_port/ram_dual_port.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../rtl/SystolicControlUnit.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -179,7 +172,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../rtl/bank_reg.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../rtl/counter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ffd.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -201,6 +208,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../rtl/systolicMatrixMultiply.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/unflatten.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -273,10 +287,11 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="matrix_in_memeory"/>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_onlyFPGA_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ram_dual_port"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_onlyFPGA_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="SystolicCore_axi_fifo_mm_s_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="matrix_in_memeory"/>
 </GenRun>

@@ -59,19 +59,19 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="zcu106"/>
-    <Option Name="WTXSimLaunchSim" Val="183"/>
+    <Option Name="WTXSimLaunchSim" Val="231"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="218"/>
-    <Option Name="WTModelSimExportSim" Val="218"/>
-    <Option Name="WTQuestaExportSim" Val="218"/>
+    <Option Name="WTXSimExportSim" Val="223"/>
+    <Option Name="WTModelSimExportSim" Val="223"/>
+    <Option Name="WTQuestaExportSim" Val="223"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="218"/>
-    <Option Name="WTRivieraExportSim" Val="218"/>
+    <Option Name="WTVcsExportSim" Val="223"/>
+    <Option Name="WTRivieraExportSim" Val="223"/>
     <Option Name="WTActivehdlExportSim" Val="0"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
@@ -144,6 +144,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../rtl/unflatten.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../rtl/SystolicControlUnit.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -201,13 +209,6 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../rtl/systolicMatrixMultiply.sv">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../rtl/unflatten.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -403,6 +404,7 @@
     <FileSet Name="ram_dual_port" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ram_dual_port" RelGenDir="$PGENDIR/ram_dual_port">
       <File Path="$PSRCDIR/sources_1/ip/ram_dual_port/ram_dual_port.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -506,11 +508,12 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="SystolicCore_AXI_Stream_Systolic_0_0_synth_1" Type="Ft3:Synth" SrcSet="SystolicCore_AXI_Stream_Systolic_0_0" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="SystolicCore_AXI_Stream_Systolic_0_0_synth_1" Type="Ft3:Synth" SrcSet="SystolicCore_AXI_Stream_Systolic_0_0" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>

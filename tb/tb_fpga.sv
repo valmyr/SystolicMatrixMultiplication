@@ -179,11 +179,11 @@ logic s_axis_tvalid;
 
 assign s_axis_tvalid =1;
 
-logic [31:0] cnt5,dout_mem;
+logic [63:0] cnt5,dout_mem;
 
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset) cnt5 <= 0;
-    else cnt5<= cnt5 ==1312 ? cnt5:cnt5+1;
+    else cnt5<= cnt5 ==351 ? cnt5:cnt5+1;
 end 
 matrix_in_memeory your_instance_name (
   .clka(clock),    // input wire clka

@@ -90,7 +90,7 @@ logic                   serial2mem_opa_valid_i                                  
 logic                   serial2mem_opa_rready_i                                                                 ;
 logic                   serial2mem_opa_rvalid_o                                                                 ;
 logic                   serial2mem_opa_ready_o                                                                  ;
-logic [WIDTHx-1:0]      serial2mem_opa_in_data                                                                  ;
+logic [BYTESIZES-1:0]      serial2mem_opa_in_data                                                                  ;
 logic [WIDTHx-1:0] serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                                               ;
 logic [WIDTHx-1:0] serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                                               ;
 //---------------------------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ logic                   serial2mem_opb_valid_i                                  
 logic                   serial2mem_opb_rready_i                                                                 ;
 logic                   serial2mem_opb_ready_o                                                                  ;
 logic                   serial2mem_opb_rvalid_o                                                                 ;
-logic [WIDTHx-1:0]      serial2mem_opb_in_data                                                                  ;
+logic [BYTESIZES-1:0]      serial2mem_opb_in_data                                                                  ;
 logic [WIDTHx-1:0] serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                                                ;
 logic [WIDTHx-1:0] serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                                                ;
 
@@ -130,7 +130,7 @@ logic                   mem2serial_valid_i                                      
 logic                   mem2serial_rready_i                                                                     ;
 logic                   mem2serial_rvalid_o                                                                     ;
 logic                   mem2serial_ready_o                                                                      ;
-logic  [WIDTH-1:0]      mem2serial_smatrix_out                                                                  ;
+logic  [BYTESIZES-1:0]      mem2serial_smatrix_out                                                                  ;
 logic                   mem2serial_m_axis_tlast                                                                 ;
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
@@ -287,7 +287,7 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
     //.fifo_d(fifo_d_b)
 );
 (*dont_touch = "true"*) 
-mem2seriala #(.SIZE(SIZE),.WIDTH(BYTESIZES))mem2serial_transfer_pc(
+mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH))mem2serial_transfer_pc(
     .clock                      (mem2serial_clock                           )                 ,
     .nreset                     (mem2serial_nreset                          )                 ,
     .pmatrix_in                 (mem2serial_pmatrix_in                      )                 ,
@@ -349,7 +349,7 @@ always_ff@(posedge clock,negedge nreset)begin
         if(syst_ena_mac)begin
             for(int l =0; l < SIZE; l++)begin
                 flow_data_time_structure_OPA[l] <= counter >15 ?'{default:0}: serial2mem_opa_out_data[l][counter];//counter > SIZE-1 ? 0 : A1[l][counter];
-                flow_data_time_structure_OPB[l] <= counter >15 ?'{default:0}: serial2mem_opb_out_data[l][counter];//counter > SIZE-1 ? 0 : A2_t[l][counter];
+                flow_data_time_structure_OPB[l] <= counter >15 ?'{default:0}: serial2mem_opb_out_data[counter][l];//counter > SIZE-1 ? 0 : A2_t[l][counter];
             end
             counter <=counter_next;
         end else begin 

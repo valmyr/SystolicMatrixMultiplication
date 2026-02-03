@@ -1,4 +1,4 @@
-module mem2seriala#(parameter SIZE=128,WIDTH=8)(
+module mem2seriala#(parameter SIZE=128,WIDTH=8,BYTESIZES =128)(
     input  logic             clock                           ,
     input  logic             nreset                          ,
     (*dont_touch = "true"*) 
@@ -8,14 +8,14 @@ module mem2seriala#(parameter SIZE=128,WIDTH=8)(
     output logic rvalid_o                                    , //Resposta Válida(Operação concluida)
     output logic ready_o                                     , //Pronto para receber um dado valido na entrada
     (*dont_touch = "true"*) 
-    output logic [WIDTH-1:0]      smatrix_out                ,
+    output logic [BYTESIZES-1:0]      smatrix_out                ,
     input logic event_send_data                              ,
     output logic m_axis_tlast ,
     output logic uart_valid_tx_in
 );
 
 
-logic [WIDTH-1:0]      smatrix_out1                ;
+logic [BYTESIZES-1:0]      smatrix_out1                ;
 enum {IDLE_INDEX,COUNTER_INDEX,DONE_INDEX} mem2seriala_fsm,next_mem2seriala_fsm;
 logic [$clog2(SIZE)-1:0] i_counter, j_counter;
 logic [$clog2(SIZE*SIZE)-1:0] k_counter_clock_base;
@@ -117,9 +117,9 @@ always_comb begin
            // m_axis_tlast = 0;
             next_j_counter         =    (j_counter < SIZE   )   ? j_counter +1 : 0;
             next_i_counter         =    (j_counter < SIZE -1)   ? i_counter:i_counter+1  ;
-            next_mem2seriala_fsm   =    (i_counter >= SIZE -1 & j_counter >= SIZE-1) ? DONE_INDEX: COUNTER_INDEX;
-            (*dont_touch = "true"*) 
-            smatrix_out1     = pmatrix_in[i_counter][j_counter];
+            next_mem2seriala_fsm   =    ( j_counter >= SIZE-1) ? DONE_INDEX: COUNTER_INDEX;
+            //(*dont_touch = "true"*) 
+            smatrix_out1     = {>>8{pmatrix_in[j_counter]}};
             //uart_valid_tx_in =1;
           //  m_axis_tlast =1;
         

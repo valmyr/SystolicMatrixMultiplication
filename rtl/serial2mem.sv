@@ -10,7 +10,7 @@ module serial2mem#(
     input  logic                  rready_i                                   , //Pronto para receber uma resposta
     output logic                  rvalid_o                                   , //Resposta Válida(Operação concluida)
     output logic                  ready_o                                    , //Pronto para receber um dado valido na entrada
-    input  logic [WIDTH-1:0]      in_data                                    ,
+    input  logic [64-1:0]      in_data                                    ,
     output logic [WIDTH-1:0] out_data[SIZE-1:0][SIZE-1:0]                                   ,
     output logic [WIDTH*SIZE-1:0] single_port_ram_di                        
    // output logic [(2*WIDTH-1)*SIZE*SIZE-1:0]    fifo_d                          
@@ -131,6 +131,8 @@ ram_single_port mem (
 
 */
 
+logic [63:0] temp;
+ 
 //logic [WIDTH-1:0] data_out_lin[SIZE-1:0][SIZE-1:0];
    reg  [WIDTH*SIZE-1:0] single_port_ram_di_reg;
     always_ff@(posedge clock, negedge nreset)begin
@@ -151,7 +153,9 @@ ram_single_port mem (
             cnt                <= mem_fsm != DONE ? next_cnt         :    0                                                                    ;
             cnt_shift          <= mem_fsm != DONE ? next_cnt_shift   :    0                                                                    ;
             single_port_ram_di_reg <= in_data ;
-            out_data[i_counter][j_counter] <=(mem_fsm == WRITE?  single_port_ram_di_reg:out_data[i_counter][j_counter]);
+            //out_data[i_counter][j_counter] <=(mem_fsm == WRITE?  single_port_ram_di_reg:out_data[i_counter][j_counter]);
+            temp <= {<<4{out_data[0]}};
+            {<<4{out_data[j_counter]}} <= mem_fsm == WRITE ? single_port_ram_di_reg: temp;
             //single_port_ram_di <=  single_port_ram_en && uart_ready_rx_out ? buf_data : 0;
             sampling_window_debug <= next_sampling_window_debug;
             single_port_ram_di <= mem_fsm == WRITE ? single_port_ram_di_reg: single_port_ram_di;
@@ -204,7 +208,7 @@ ram_single_port mem (
             rvalid_o                 = 0                                                         ;
             next_cnt                 = uart_ready_rx_out ? (cnt_shift == SIZE-1 ? cnt + 1: cnt):cnt                        ;
             next_cnt_shift           = uart_ready_rx_out ? cnt_shift + 1: cnt_shift              ;
-            next_mem_fsm             = uart_ready_rx_out ? (cnt_shift != SIZE*SIZE-1 ? WRITE: DONE):  mem_fsm;    
+            next_mem_fsm             = uart_ready_rx_out ? (cnt_shift != SIZE-1 ? WRITE: DONE):  mem_fsm;    
         //    out_data                 = 0                                                         ;
         //    single_port_ram_di       = (cnt_shift == SIZE-1 ? buf_data : single_port_ram_di)                                ;
             single_port_ram_en       = uart_ready_rx_out                                      ;
@@ -215,9 +219,9 @@ ram_single_port mem (
         READ:begin
             next_sampling_window_debug =0;
             ready_o        = 0                                                                   ;
-            rvalid_o       = cnt!=SIZE*SIZE-1 ? 0 : 1                                               ;
+            rvalid_o       = cnt!=SIZE-1 ? 0 : 1                                               ;
             next_cnt       = cnt + 1                                                             ;
-            next_mem_fsm   = cnt!=SIZE*SIZE-1 ? READ: DONE                                          ;
+            next_mem_fsm   = cnt!=SIZE-1 ? READ: DONE                                          ;
             next_cnt_shift = cnt                                                                   ; 
            // out_data       = cnt !=0  ?  single_port_ram_dout: 0                                 ;
             single_port_ram_en       =1;

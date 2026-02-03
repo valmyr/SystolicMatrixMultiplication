@@ -10,19 +10,21 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="20"></ZoomEndTime>
+      <ZoomEndTime time="1,025"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="1286"></NameColumnWidth>
-      <ValueColumnWidth column_width="573"></ValueColumnWidth>
+      <ValueColumnWidth column_width="440"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="6" />
+   <wave_markers>
+   </wave_markers>
    <wvobject type="array" fp_name="SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_idle">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_idle[31:0]</obj_property>
       <obj_property name="ObjectShortName">counter_out_idle[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -46,7 +48,7 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_opB[31:0]</obj_property>
       <obj_property name="ObjectShortName">counter_out_opB[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -54,7 +56,7 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">SystolicCore_i/onlyFPGA_0/inst/Core0/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host[31:0]</obj_property>
       <obj_property name="ObjectShortName">counter_out_send_fpga2host[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

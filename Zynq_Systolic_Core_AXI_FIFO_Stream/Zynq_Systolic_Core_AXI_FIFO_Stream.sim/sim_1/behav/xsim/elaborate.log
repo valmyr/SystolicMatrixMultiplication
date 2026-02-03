@@ -7,19 +7,19 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ena' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:190]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'wea' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:191]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 10 for port 'addra' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:192]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'dina' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:193]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'douta' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:194]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 7 for port 'addra' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:192]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'dina' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:193]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 's_axis_tvalid' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:203]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 's_axis_tlast' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:206]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'm_axis_tready' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/tb/tb_fpga.sv:211]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'uart_data_rx_out' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:58]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'uart_data_tx_in' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/AXI_Stream_Systolic_Core.v:60]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 128 for port 'smatrix_out' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:299]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 8 for port 'uart_data_rx_out' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicCore.sv:325]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:275]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:286]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:295]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:304]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:314]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'clear' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:315]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'counter' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:324]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'probe0' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:333]
 WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'probe1' [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv:334]
@@ -34,26 +34,4 @@ WARNING: [VRFC 10-2921] 'cnt5' driven by this always_ff block should not be driv
 WARNING: [VRFC 10-10063] index 16 into 'b_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:55]
 WARNING: [VRFC 10-10063] index 16 into 'a_vec' is out of bounds [/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/systolicMatrixMultiply.sv:54]
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/rtl/SystolicControlUnit.sv" Line 1. Module systolicControlUnitTop doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_output_stage...
-Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_softecc_outp...
-Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_mem_module(C...
-Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12(C_FAMILY="zy...
-Compiling module xil_defaultlib.matrix_in_memeory
-Compiling module xil_defaultlib.accumulator_cells(WIDTH=8)
-Compiling module xil_defaultlib.systolicMatrixMultiply_default
-Compiling module xil_defaultlib.serial2mem(SIZE=16)
-Compiling module xil_defaultlib.mem2seriala(SIZE=16)
-Compiling module xil_defaultlib.counter
-Compiling module xil_defaultlib.ila_4
-Compiling module xil_defaultlib.systolicControlUnitTop
-Compiling module xil_defaultlib.ffd(WIDTH=4)
-Compiling module xil_defaultlib.reg_bank(N_LANES=16)
-Compiling module xil_defaultlib.SystolicCoreTop
-Compiling module xil_defaultlib.AXI_Stream_Systolic_Core
-Compiling module xil_defaultlib.tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

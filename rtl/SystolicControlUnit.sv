@@ -161,7 +161,7 @@ always_comb case(fsm_unit_control)
         syst_rready_i                 = 0;  
         
         
-        if(frame_start[15:0]  == 16'hadda)begin
+        if({frame_start[7:0],uart_data_rx_out[7:0]}  == 16'hadda)begin
             fsm_unit_control_next         =  SYSTOLIC_READ_MEM;
             serial2mem_opa_rw             =  1;  
             serial2mem_opb_rw             =  1; 
@@ -312,7 +312,7 @@ counter#(.MAX_COUNTER(32)) counter_write_mem(
         .nreset   (nreset                               )                           ,
         .ena      (fsm_unit_control==SEND_FPGA2HOST     )                           ,
         .counter  (counter_out_send_fpga2host           ),
-        .clear((uart_valid_rx_in && uart_ready_rx) &&frame_start[15:0] == 16'hffff & !serial2mem_opa_rvalid_o             )
+        .clear(0   )
 );
 
 
