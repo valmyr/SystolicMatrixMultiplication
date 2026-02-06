@@ -44,7 +44,7 @@
   <img
     title="Arquitetura Systolic Core – FPGA com FIFO"
     alt="Arquitetura Systolic Core – FPGA com FIFO"
-    src="images/Analysis/Testbench – Versão Base (Ciclos_Clock).png"
+    src="images/Analysis/Testbench – Versão 2 Otimizada  (Ciclos_Clock).png"
     width="30%"
   />
     &nbsp;&nbsp;&nbsp;
