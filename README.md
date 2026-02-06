@@ -5,7 +5,7 @@
 
 
 <p align="center">
-<img title="Arquitetura Systolic Core" alt="Alt text" src="images/ArquiteturaSystolicCoreBlue.png" width="100%" height="100%">
+<img title="Arquitetura Systolic Core" alt="Alt text" src="images/ArquiteturaSystolicCoreBlueDataShifit.png" width="100%" height="100%">
 </p>
 
 ## Medições de Tempo -  Simulação VS Real
@@ -101,7 +101,6 @@
 <img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis//Hold vs Systolic Array Size @ 200 MHz.png" width="100%" height="100%">
 </p>
 
-##  Análise de Tempo
 
 <p align="center">
 <img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis//Hold vs Systolic Array Size @ 200 MHz.png" width="100%" height="100%">
