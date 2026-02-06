@@ -59,19 +59,19 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="zcu106"/>
-    <Option Name="WTXSimLaunchSim" Val="231"/>
+    <Option Name="WTXSimLaunchSim" Val="248"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="223"/>
-    <Option Name="WTModelSimExportSim" Val="223"/>
-    <Option Name="WTQuestaExportSim" Val="223"/>
+    <Option Name="WTXSimExportSim" Val="231"/>
+    <Option Name="WTModelSimExportSim" Val="231"/>
+    <Option Name="WTQuestaExportSim" Val="231"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="223"/>
-    <Option Name="WTRivieraExportSim" Val="223"/>
+    <Option Name="WTVcsExportSim" Val="231"/>
+    <Option Name="WTRivieraExportSim" Val="231"/>
     <Option Name="WTActivehdlExportSim" Val="0"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
@@ -216,6 +216,13 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../rtl/AXI_Stream_Systolic_Core.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/matrix_in_memeory/matrix_in_memeory.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -370,37 +377,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="SystolicCore_AXI_Stream_Systolic_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/SystolicCore_AXI_Stream_Systolic_1_0" RelGenDir="$PGENDIR/SystolicCore_AXI_Stream_Systolic_1_0">
-      <Config>
-        <Option Name="TopModule" Val="SystolicCore_AXI_Stream_Systolic_1_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="SystolicCore_AXI_Stream_Systolic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/SystolicCore_AXI_Stream_Systolic_0_0" RelGenDir="$PGENDIR/SystolicCore_AXI_Stream_Systolic_0_0">
-      <Config>
-        <Option Name="TopModule" Val="SystolicCore_AXI_Stream_Systolic_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="matrix_in_memeory" Type="BlockSrcs" RelSrcDir="$PSRCDIR/matrix_in_memeory" RelGenDir="$PGENDIR/matrix_in_memeory">
-      <File Path="$PSRCDIR/sources_1/ip/matrix_in_memeory/matrix_in_memeory.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="matrix_in_memeory"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="SystolicCore_onlyFPGA_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/SystolicCore_onlyFPGA_0_0" RelGenDir="$PGENDIR/SystolicCore_onlyFPGA_0_0">
-      <Config>
-        <Option Name="TopModule" Val="SystolicCore_onlyFPGA_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="ram_dual_port" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ram_dual_port" RelGenDir="$PGENDIR/ram_dual_port">
       <File Path="$PSRCDIR/sources_1/ip/ram_dual_port/ram_dual_port.xci">
         <FileInfo>
@@ -412,6 +388,24 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="ram_dual_port"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="SystolicCore_AXI_Stream_Systolic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/SystolicCore_AXI_Stream_Systolic_0_0" RelGenDir="$PGENDIR/SystolicCore_AXI_Stream_Systolic_0_0">
+      <Config>
+        <Option Name="TopModule" Val="SystolicCore_AXI_Stream_Systolic_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="SystolicCore_AXI_Stream_Systolic_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/SystolicCore_AXI_Stream_Systolic_1_0" RelGenDir="$PGENDIR/SystolicCore_AXI_Stream_Systolic_1_0">
+      <Config>
+        <Option Name="TopModule" Val="SystolicCore_AXI_Stream_Systolic_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="SystolicCore_onlyFPGA_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/SystolicCore_onlyFPGA_0_0" RelGenDir="$PGENDIR/SystolicCore_onlyFPGA_0_0">
+      <Config>
+        <Option Name="TopModule" Val="SystolicCore_onlyFPGA_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -498,7 +492,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="SystolicCore_AXI_Stream_Systolic_1_0_synth_1" Type="Ft3:Synth" SrcSet="SystolicCore_AXI_Stream_Systolic_1_0" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/SystolicCore_AXI_Stream_Systolic_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_synth_1" ParallelReportGen="true">
+    <Run Id="ram_dual_port_synth_1" Type="Ft3:Synth" SrcSet="ram_dual_port" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="ram_dual_port" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ram_dual_port_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ram_dual_port_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ram_dual_port_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
         <Step Id="synth_design"/>
@@ -510,7 +504,9 @@
     </Run>
     <Run Id="SystolicCore_AXI_Stream_Systolic_0_0_synth_1" Type="Ft3:Synth" SrcSet="SystolicCore_AXI_Stream_Systolic_0_0" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -518,9 +514,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="matrix_in_memeory_synth_1" Type="Ft3:Synth" SrcSet="matrix_in_memeory" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="matrix_in_memeory" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/matrix_in_memeory_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/matrix_in_memeory_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/matrix_in_memeory_synth_1" ParallelReportGen="true">
+    <Run Id="SystolicCore_AXI_Stream_Systolic_1_0_synth_1" Type="Ft3:Synth" SrcSet="SystolicCore_AXI_Stream_Systolic_1_0" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/SystolicCore_AXI_Stream_Systolic_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -530,17 +528,9 @@
     </Run>
     <Run Id="SystolicCore_onlyFPGA_0_0_synth_1" Type="Ft3:Synth" SrcSet="SystolicCore_onlyFPGA_0_0" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_onlyFPGA_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/SystolicCore_onlyFPGA_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_onlyFPGA_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_onlyFPGA_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="ram_dual_port_synth_1" Type="Ft3:Synth" SrcSet="ram_dual_port" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="ram_dual_port" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ram_dual_port_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ram_dual_port_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ram_dual_port_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -651,7 +641,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="SystolicCore_AXI_Stream_Systolic_1_0_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="SystolicCore_AXI_Stream_Systolic_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_impl_1" ParallelReportGen="true">
+    <Run Id="ram_dual_port_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="ram_dual_port" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ram_dual_port_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ram_dual_port_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ram_dual_port_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
@@ -670,7 +660,9 @@
     </Run>
     <Run Id="SystolicCore_AXI_Stream_Systolic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="SystolicCore_AXI_Stream_Systolic_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -685,9 +677,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="matrix_in_memeory_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="matrix_in_memeory" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="matrix_in_memeory_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/matrix_in_memeory_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/matrix_in_memeory_impl_1" ParallelReportGen="true">
+    <Run Id="SystolicCore_AXI_Stream_Systolic_1_0_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_AXI_Stream_Systolic_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="SystolicCore_AXI_Stream_Systolic_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_AXI_Stream_Systolic_1_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -704,24 +698,9 @@
     </Run>
     <Run Id="SystolicCore_onlyFPGA_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="SystolicCore_onlyFPGA_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="SystolicCore_onlyFPGA_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/SystolicCore_onlyFPGA_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/SystolicCore_onlyFPGA_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="ram_dual_port_impl_1" Type="Ft2:EntireDesign" Part="xczu7ev-ffvc1156-2-e" ConstrsSet="ram_dual_port" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ram_dual_port_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ram_dual_port_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ram_dual_port_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Fri Jan 30 00:50:40 2026
+//Date        : Wed Feb  4 00:48:46 2026
 //Host        : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 //Command     : generate_target SystolicCore.bd
 //Design      : SystolicCore
@@ -14,11 +14,11 @@
 module SystolicCore
    ();
 
-  wire [31:0]AXI_Stream_Systolic_0_m_axis_TDATA;
+  wire [63:0]AXI_Stream_Systolic_0_m_axis_TDATA;
   wire AXI_Stream_Systolic_0_m_axis_TLAST;
   wire AXI_Stream_Systolic_0_m_axis_TREADY;
   wire AXI_Stream_Systolic_0_m_axis_TVALID;
-  wire [31:0]AXI_Stream_Systolic_1_m_axis_TDATA;
+  wire [63:0]AXI_Stream_Systolic_1_m_axis_TDATA;
   wire AXI_Stream_Systolic_1_m_axis_TLAST;
   wire AXI_Stream_Systolic_1_m_axis_TREADY;
   wire AXI_Stream_Systolic_1_m_axis_TVALID;
@@ -131,7 +131,7 @@ module SystolicCore
         .m_axis_tready(AXI_Stream_Systolic_0_m_axis_TREADY),
         .m_axis_tvalid(AXI_Stream_Systolic_0_m_axis_TVALID),
         .resetn(rst_ps8_0_99M_peripheral_aresetn),
-        .s_axis_tdata(axi_fifo_mm_s_0_AXI_STR_TXD_TDATA),
+        .s_axis_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_fifo_mm_s_0_AXI_STR_TXD_TDATA}),
         .s_axis_tlast(axi_fifo_mm_s_0_AXI_STR_TXD_TLAST),
         .s_axis_tready(axi_fifo_mm_s_0_AXI_STR_TXD_TREADY),
         .s_axis_tvalid(axi_fifo_mm_s_0_AXI_STR_TXD_TVALID));
@@ -142,12 +142,12 @@ module SystolicCore
         .m_axis_tready(AXI_Stream_Systolic_1_m_axis_TREADY),
         .m_axis_tvalid(AXI_Stream_Systolic_1_m_axis_TVALID),
         .resetn(rst_ps8_0_99M_peripheral_aresetn),
-        .s_axis_tdata(axi_fifo_mm_s_1_AXI_STR_TXD_TDATA),
+        .s_axis_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_fifo_mm_s_1_AXI_STR_TXD_TDATA}),
         .s_axis_tlast(axi_fifo_mm_s_1_AXI_STR_TXD_TLAST),
         .s_axis_tready(axi_fifo_mm_s_1_AXI_STR_TXD_TREADY),
         .s_axis_tvalid(axi_fifo_mm_s_1_AXI_STR_TXD_TVALID));
   SystolicCore_axi_fifo_mm_s_0_0 axi_fifo_mm_s_0
-       (.axi_str_rxd_tdata(AXI_Stream_Systolic_0_m_axis_TDATA),
+       (.axi_str_rxd_tdata(AXI_Stream_Systolic_0_m_axis_TDATA[31:0]),
         .axi_str_rxd_tlast(AXI_Stream_Systolic_0_m_axis_TLAST),
         .axi_str_rxd_tready(AXI_Stream_Systolic_0_m_axis_TREADY),
         .axi_str_rxd_tvalid(AXI_Stream_Systolic_0_m_axis_TVALID),
@@ -175,7 +175,7 @@ module SystolicCore
         .s_axi_wstrb(axi_smc_M00_AXI_WSTRB),
         .s_axi_wvalid(axi_smc_M00_AXI_WVALID));
   SystolicCore_axi_fifo_mm_s_1_0 axi_fifo_mm_s_1
-       (.axi_str_rxd_tdata(AXI_Stream_Systolic_1_m_axis_TDATA),
+       (.axi_str_rxd_tdata(AXI_Stream_Systolic_1_m_axis_TDATA[31:0]),
         .axi_str_rxd_tlast(AXI_Stream_Systolic_1_m_axis_TLAST),
         .axi_str_rxd_tready(AXI_Stream_Systolic_1_m_axis_TREADY),
         .axi_str_rxd_tvalid(AXI_Stream_Systolic_1_m_axis_TVALID),

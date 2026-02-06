@@ -417,8 +417,6 @@ ila_3 your_instance_name (
 	.probe29(syst_output_produc_a_b[1][13]), // input wire [7:0]  probe29 
 	.probe30(syst_output_produc_a_b[1][14]), // input wire [7:0]  probe30 
     .probe31(syst_output_produc_a_b[1][15]) // input wire [7:0]  probe31
-[USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-
 
 );
 */

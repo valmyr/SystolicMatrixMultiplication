@@ -7,9 +7,6 @@
 # IP: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_4/ila_4.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_4 || ORIG_REF_NAME==ila_4} -quiet] -quiet
 
-# IP: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ram_dual_port/ram_dual_port.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ram_dual_port || ORIG_REF_NAME==ram_dual_port} -quiet] -quiet
-
 # IP: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/matrix_in_memeory/matrix_in_memeory.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==matrix_in_memeory || ORIG_REF_NAME==matrix_in_memeory} -quiet] -quiet
 
@@ -22,9 +19,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells inst -quiet] -quiet
 
 # IP: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ila_4/ila_4.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ila_4 || ORIG_REF_NAME==ila_4} -quiet] -quiet
-
-# IP: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/ram_dual_port/ram_dual_port.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ram_dual_port || ORIG_REF_NAME==ram_dual_port} -quiet] -quiet
 
 # IP: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.srcs/sources_1/ip/matrix_in_memeory/matrix_in_memeory.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==matrix_in_memeory || ORIG_REF_NAME==matrix_in_memeory} -quiet] -quiet

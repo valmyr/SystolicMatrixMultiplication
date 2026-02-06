@@ -132,6 +132,17 @@ ram_single_port mem (
 */
 
 logic [63:0] temp;
+logic clock_sample;
+
+always_ff@(posedge clock, negedge nreset)begin
+    if(!nreset)begin
+        clock_sample <= 0;
+    end else begin
+        clock_sample <= ~clock_sample;
+    
+    end 
+    
+end
  
 //logic [WIDTH-1:0] data_out_lin[SIZE-1:0][SIZE-1:0];
    reg  [WIDTH*SIZE-1:0] single_port_ram_di_reg;

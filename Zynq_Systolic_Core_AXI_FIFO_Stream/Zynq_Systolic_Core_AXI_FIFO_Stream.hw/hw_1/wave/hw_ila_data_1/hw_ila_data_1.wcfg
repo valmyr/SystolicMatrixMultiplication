@@ -1,71 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <wave_config>
-   <wave_state>
-   </wave_state>
-   <db_ref_list>
-      <db_ref path="/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
-         <top_modules>
-         </top_modules>
-      </db_ref>
-   </db_ref_list>
-   <zoom_setting>
-      <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="1,025"></ZoomEndTime>
-      <Cursor1Time time="0"></Cursor1Time>
-   </zoom_setting>
-   <column_width_setting>
-      <NameColumnWidth column_width="837"></NameColumnWidth>
-      <ValueColumnWidth column_width="889"></ValueColumnWidth>
-   </column_width_setting>
-   <WVObjectSize size="6" />
-   <wave_markers>
-   </wave_markers>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_out_idle[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_out_idle_pc[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opA">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_out_opA[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opB">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_out_opB[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_out_send_fpga2host[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_out_systolic_read_mem[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
+	<wave_state>
+	</wave_state>
+	<db_ref_list>
+		<db_ref path="/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream/Zynq_Systolic_Core_AXI_FIFO_Stream.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1" type="auto">
+			<top_modules>
+				<top_module name="top">
+				</top_module>
+			</top_modules>
+		</db_ref>
+	</db_ref_list>
+	<WVObjectSize size="6">
+	</WVObjectSize>
+	<wvobject fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle[31:0]</obj_property>
+		<obj_property name="ObjectShortName">counter_out_idle[31:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">HEXRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opA" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opA[31:0]</obj_property>
+		<obj_property name="ObjectShortName">counter_out_opA[31:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opB" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opB[31:0]</obj_property>
+		<obj_property name="ObjectShortName">counter_out_opB[31:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem[31:0]</obj_property>
+		<obj_property name="ObjectShortName">counter_out_systolic_read_mem[31:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host[31:0]</obj_property>
+		<obj_property name="ObjectShortName">counter_out_send_fpga2host[31:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">SystolicCore_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc[31:0]</obj_property>
+		<obj_property name="ObjectShortName">counter_out_idle_pc[31:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">HEXRADIX</obj_property>
+	</wvobject>
 </wave_config>
+

@@ -183,7 +183,7 @@ logic [63:0] cnt5,dout_mem;
 
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset) cnt5 <= 0;
-    else cnt5<= cnt5 ==351 ? cnt5:cnt5+1;
+    else cnt5<= cnt5 ==111 ? 0:cnt5+1;
 end 
 matrix_in_memeory your_instance_name (
   .clka(clock),    // input wire clka

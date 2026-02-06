@@ -26,31 +26,92 @@
 </p>
 
 
-## Medições de Tempo -  Gráficos
+## Comparação de Quantidade de Ciclos no Testbench
 
 <p align="center">
   <img
     title="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
     alt="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
-    src="images/simulacao_e_fpga_sem_fifo.png"
-    width="25%"
+    src="images/Analysis/Testbench – Versão Base (Ciclos_Clock).png"
+    width="30%"
   />
   <img
     title="Arquitetura Systolic Core – FPGA com FIFO"
     alt="Arquitetura Systolic Core – FPGA com FIFO"
-    src="images/fpga_com_fifo.png"
-    width="26%"
+    src="images/Analysis/Testbench – Versão 1 Otimizada  (Ciclos_Clock).png"
+    width="30%"
   />
   <img
     title="Arquitetura Systolic Core – FPGA com FIFO"
     alt="Arquitetura Systolic Core – FPGA com FIFO"
-    src="images/simu_sem_fifo.png"
-    width="23%"
+    src="images/Analysis/Testbench – Versão Base (Ciclos_Clock).png"
+    width="30%"
   />
     &nbsp;&nbsp;&nbsp;
 </p>
 
+## Comparação de Quantidade de Ciclos na FPGA
+<p align="center">
+  <img
+    title="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
+    alt="Arquitetura Systolic Core – simulação e FPGA sem FIFO"
+    src="images/Analysis/FPGA – Versão Base (Ciclos_Clock).png"
+    width="30%"
+  />
+  <img
+    title="Arquitetura Systolic Core – FPGA com FIFO"
+    alt="Arquitetura Systolic Core – FPGA com FIFO"
+    src="images/Analysis/FPGA – Versão 1 Otimizada (Ciclos_Clock).png"
+    width="30%"
+  />
+  <img
+    title="Arquitetura Systolic Core – FPGA com FIFO"
+    alt="Arquitetura Systolic Core – FPGA com FIFO"
+    src="images/Analysis/FPGA – Versão 2 Otimizada(Ciclos_Clock).png"
+    width="30%"
+  />
+    &nbsp;&nbsp;&nbsp;
+</p>
+
+
+
+##  Estimativa de Potência
+
+
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis/Power estimated for Programmable Logic (PL) vs Systolic Array Size @ 200 MHz.png" width="100%" height="100%">
+</p>
+
+##  Porcentagem de Utilização da FPGA Zynq UltraScale+ (ZCU106)
+
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis/CLB LUTs vs Systolic Arrays Size @ 200 MHz.png" width="100%" height="100%">
+</p>
+
+
+##  Porcentagem de Utilização da FPGA Zynq UltraScale+ (ZCU106) Logarítmica
+
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis/Log CLB LUTs vs Systolic Arrays Size @ 200MHz.png" width="100%" height="100%">
+</p>
+
+##  Análise de Tempo
+
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis//Hold vs Systolic Array Size @ 200 MHz.png" width="100%" height="100%">
+</p>
+
+##  Análise de Tempo
+
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis//Hold vs Systolic Array Size @ 200 MHz.png" width="100%" height="100%">
+</p>
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/Analysis/Setup  Slack vs Systolic Array Size @ 200 MHz.png" width="100%" height="100%">
+</p>
+
 ##  Diagrama do Estruturador Temporal de Fluxo de Dados
+
 <p align="center">
 <img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/EstruturadorTemporalDeFluxoDeDados.png" width="50%" height="50%">
 </p>

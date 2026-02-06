@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1770096488" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/SystolicCoreWrapperVerilogGlobal.dcp">
+<GenRun Id="synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1770209471" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/SystolicCoreWrapperVerilogGlobal.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="SystolicCore_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="SystolicCore_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="SystolicCore_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="SystolicCore_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="SystolicCore_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="SystolicCore_wrapper.vds"/>
   <File Type="REPORTS-TCL" Name="SystolicCore_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="SystolicCore_wrapper_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="SystolicCore_wrapper.tcl"/>
-  <File Type="RDS-UTIL" Name="SystolicCore_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="SystolicCore_wrapper_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../testeINPUT_B.mem">
@@ -55,6 +58,14 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/unflatten.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -125,14 +136,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../rtl/unflatten.sv">
+    <File Path="$PPRDIR/../rtl/AXI_Stream_Systolic_Core.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../rtl/AXI_Stream_Systolic_Core.v">
+    <File Path="$PSRCDIR/sources_1/ip/matrix_in_memeory/matrix_in_memeory.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -189,11 +200,9 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ram_dual_port"/>
   <BlockFileSet Type="BlockSrcs" Name="SystolicCore_onlyFPGA_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_axi_fifo_mm_s_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_4"/>
-  <BlockFileSet Type="BlockSrcs" Name="matrix_in_memeory"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_AXI_Stream_Systolic_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="SystolicCore_axi_fifo_mm_s_1_0"/>
 </GenRun>

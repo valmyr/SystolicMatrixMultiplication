@@ -70,6 +70,9 @@ vcom -work axi_fifo_mm_s_v4_3_7 -93  -incr \
 vcom -work xil_defaultlib -93  -incr \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_fifo_mm_s_0_0/sim/SystolicCore_axi_fifo_mm_s_0_0.vhd" \
 
+vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/ec67/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/a0fe/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/f0b6/hdl/verilog" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../Music/2025.2/data/rsb/busdef" "+incdir+/home/xmen/Music/2025.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_22 -l zynq_ultra_ps_e_vip_v1_0_22 -l xil_defaultlib -l axi_lite_ipif_v3_0_4 -l axi_fifo_mm_s_v4_3_7 -l proc_sys_reset_v5_0_17 -l smartconnect_v1_0 -l axi_register_slice_v2_1_36 -l axi_timer_v2_0_37 \
+"../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/sim/bd_3e58.v" \
+
 vcom -work proc_sys_reset_v5_0_17 -93  -incr \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
 
@@ -161,9 +164,6 @@ vlog -work xil_defaultlib  -incr "+incdir+../../../../Zynq_Systolic_Core_AXI_FIF
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/ip/ip_44/sim/bd_3e58_m02wn_0.sv" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/ip/ip_45/sim/bd_3e58_m02bn_0.sv" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/ip/ip_46/sim/bd_3e58_m02e_0.sv" \
-
-vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/ec67/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/a0fe/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/f0b6/hdl/verilog" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../Music/2025.2/data/rsb/busdef" "+incdir+/home/xmen/Music/2025.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_22 -l zynq_ultra_ps_e_vip_v1_0_22 -l xil_defaultlib -l axi_lite_ipif_v3_0_4 -l axi_fifo_mm_s_v4_3_7 -l proc_sys_reset_v5_0_17 -l smartconnect_v1_0 -l axi_register_slice_v2_1_36 -l axi_timer_v2_0_37 \
-"../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/sim/bd_3e58.v" \
 
 vcom -work smartconnect_v1_0 -93  -incr \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/cb42/hdl/sc_ultralite_v1_0_rfs.vhd" \

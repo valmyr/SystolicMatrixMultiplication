@@ -67,6 +67,9 @@ vcom -work axi_fifo_mm_s_v4_3_7 -64 -93  \
 vcom -work xil_defaultlib -64 -93  \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_fifo_mm_s_0_0/sim/SystolicCore_axi_fifo_mm_s_0_0.vhd" \
 
+vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/ec67/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/a0fe/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/f0b6/hdl/verilog" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../Music/2025.2/data/rsb/busdef" "+incdir+/home/xmen/Music/2025.2/data/xilinx_vip/include" \
+"../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/sim/bd_3e58.v" \
+
 vcom -work proc_sys_reset_v5_0_17 -64 -93  \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
 
@@ -158,9 +161,6 @@ vlog -work xil_defaultlib -64 -incr -mfcu  -sv -L smartconnect_v1_0 -L axi_vip_v
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/ip/ip_44/sim/bd_3e58_m02wn_0.sv" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/ip/ip_45/sim/bd_3e58_m02bn_0.sv" \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/ip/ip_46/sim/bd_3e58_m02e_0.sv" \
-
-vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/ec67/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/a0fe/hdl" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/f0b6/hdl/verilog" "+incdir+../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../Music/2025.2/data/rsb/busdef" "+incdir+/home/xmen/Music/2025.2/data/xilinx_vip/include" \
-"../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ip/SystolicCore_axi_smc_0/bd_0/sim/bd_3e58.v" \
 
 vcom -work smartconnect_v1_0 -64 -93  \
 "../../../../Zynq_Systolic_Core_AXI_FIFO_Stream.gen/sources_1/bd/SystolicCore/ipshared/cb42/hdl/sc_ultralite_v1_0_rfs.vhd" \
