@@ -148,7 +148,7 @@ Este algoritmo leva tempo O(n) , para   matrizes n xn .
 <img title="Entrada da Rede" alt="Alt text" src="images/RefFig2.png" width="90%" height="90%">
 </p>
 
-## SystolicArrayImplementation
+:## SystolicArrayImplementation
 
 <p align="center">
 <img title="Entrada da Rede" alt="Alt text" src="images/SystolicArrayImplementation.png" width="90%" height="90%">
