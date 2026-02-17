@@ -91,6 +91,20 @@
         "qemuArgsFile": "resources/SystolicCoreEhertnetFIFO/qemu/qemu_args.txt",
         "pmcQemuArgsFile": "resources/SystolicCoreEhertnetFIFO/qemu/pmu_args.txt",
         "isBSPGenReq": false
+      },
+      {
+        "name": "fsbl",
+        "displayName": "fsbl",
+        "processor": "psu_cortexa53_2",
+        "cpuType": "cortex-a53",
+        "cpuInstance": "psu_cortexa53_2",
+        "os": "standalone",
+        "appTemplate": "zynqmp_fsbl",
+        "isBootDomain": false,
+        "qemuData": "resources/fsbl/qemu",
+        "qemuArgsFile": "resources/fsbl/qemu/qemu_args.txt",
+        "pmcQemuArgsFile": "resources/fsbl/qemu/pmu_args.txt",
+        "isBSPGenReq": false
       }
     ],
     "emptyToolchainConfiguration": []

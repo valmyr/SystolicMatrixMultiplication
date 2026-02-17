@@ -121,6 +121,38 @@
 <img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/VivadoDiagram.png" width="100%" height="100%">
 </p>
 
+
+#  Systolic Array Accelerator 16x16 — Performance Results
+
+##  Speedup vs Software (Python)
+
+| Implementation | Intel Core i9-14900K | ARM Cortex-A53 |
+|----------------|----------------------|----------------|
+| **Software (Python)** | 1.00× (baseline) | 1.00× (baseline) |
+| **AXI FIFO Stream Versions** | | |
+| Systolic Core v1.0.0 | 0.91× | 18.13× |
+| Systolic Core v1.0.1 | 1.73× | 34.81× |
+| Systolic Core v1.0.2 | 24.58× | 495.79× |
+| **Direct Access Versions** | | |
+| Systolic Core v1.0.0 | 55.02× | 1108.62× |
+| Systolic Core v1.0.1 | 55.63× | 1762.98× |
+| Systolic Core v1.0.2 | 712.98× | 14,207.62× |
+
+---
+
+## Clock Cycles
+
+| Implementation | Intel Core i9-14900K | ARM Cortex-A53 |
+|----------------|----------------------|----------------|
+| **Software (Python)** | 941,046.82 | 5,393,028.25 |
+| **AXI FIFO Stream Versions** | | |
+| Systolic Core v1.0.0 | 15,234 | 15,234 |
+| Systolic Core v1.0.1 | 8,002 | 8,002 |
+| Systolic Core v1.0.2 | 562 | 562 |
+| **Direct Access Versions** | | |
+| Systolic Core v1.0.0 | 1,306 | 1,306 |
+| Systolic Core v1.0.1 | 822 | 822 |
+| Systolic Core v1.0.2 | 102 | 102 |
 ## Objetivos
 
 A multiplicação de matrizes é uma operação muito comum em problemas científicos e de engenharia. A implementação sequencial dessa operação consome muito tempo para matrizes grandes; a solução de força bruta resulta em um tempo computacional O(n^3) , para matrizes nxn.
