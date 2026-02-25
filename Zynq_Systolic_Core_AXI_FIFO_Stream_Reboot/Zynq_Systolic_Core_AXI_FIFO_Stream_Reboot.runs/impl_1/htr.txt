@@ -7,4 +7,4 @@
 # Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log SystolicCore_wrapper_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SystolicCore_wrapper_wrapper.tcl -notrace
+vivado -log teste_dma_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source teste_dma_wrapper.tcl -notrace

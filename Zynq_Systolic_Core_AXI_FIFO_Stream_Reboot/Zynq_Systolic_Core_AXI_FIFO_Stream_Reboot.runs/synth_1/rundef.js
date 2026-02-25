@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log SystolicCore_wrapper_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SystolicCore_wrapper_wrapper.tcl" );
+         "-log teste_dma_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source teste_dma_wrapper.tcl" );
 
 
 

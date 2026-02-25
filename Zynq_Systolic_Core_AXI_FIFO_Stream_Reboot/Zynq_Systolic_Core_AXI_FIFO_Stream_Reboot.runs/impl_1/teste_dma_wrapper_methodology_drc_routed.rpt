@@ -1,0 +1,1428 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Feb 25 18:00:52 2026
+| Host         : VT0144 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
+| Command      : report_methodology -file teste_dma_wrapper_methodology_drc_routed.rpt -pb teste_dma_wrapper_methodology_drc_routed.pb -rpx teste_dma_wrapper_methodology_drc_routed.rpx
+| Design       : teste_dma_wrapper
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 273
++-----------+----------+---------------------------------------------+--------+
+| Rule      | Severity | Description                                 | Checks |
++-----------+----------+---------------------------------------------+--------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                | 5      |
+| TIMING-20 | Warning  | Non-clocked latch                           | 259    |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects | 8      |
+| LATCH-1   | Advisory | Existing latches in the design              | 1      |
++-----------+----------+---------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/ngwrdrst.grst.g7serrst.wr_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/ngwrdrst.grst.g7serrst.wr_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_sel[0]_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[10]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[11]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[13]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[14]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[15]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[6]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[7]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[8]/CLR
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[9]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[0] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[100] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[100]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[101] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[101]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[102] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[102]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[103] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[103]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[104] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[104]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[105] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[105]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[106] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[106]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[107] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[107]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[108] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[108]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[109] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[109]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[10] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[110] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[110]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[111] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[111]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[112] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[112]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[113] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[113]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[114] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[114]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[115] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[115]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[116] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[116]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[117] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[117]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[118] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[118]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[119] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[119]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[11] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[120] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[120]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[121] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[121]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[122] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[122]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[123] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[123]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[124] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[124]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[125] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[125]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[126] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[126]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[127] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[127]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[128] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[128]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[129] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[129]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[12] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[130] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[130]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[131] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[131]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[132] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[132]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[133] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[133]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[134] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[134]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[135] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[135]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[136] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[136]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[137] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[137]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[138] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[138]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[139] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[139]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[13] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[140] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[140]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#47 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[141] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[141]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#48 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[142] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[142]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#49 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[143] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[143]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[144] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[144]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[145] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[145]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[146] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[146]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[147] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[147]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[148] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[148]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[149] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[149]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[14] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#57 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[150] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[150]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#58 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[151] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[151]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#59 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[152] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[152]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[153] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[153]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[154] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[154]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[155] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[155]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[156] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[156]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[157] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[157]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[158] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[158]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[159] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[159]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#67 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[15] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#68 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[160] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[160]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#69 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[161] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[161]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#70 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[162] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[162]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[163] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[163]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#72 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[164] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[164]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#73 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[165] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[165]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#74 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[166] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[166]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[167] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[167]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[168] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[168]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#77 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[169] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[169]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#78 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[16] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[16]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#79 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[170] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[170]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#80 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[171] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[171]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#81 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[172] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[172]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#82 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[173] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[173]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#83 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[174] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[174]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#84 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[175] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[175]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#85 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[176] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[176]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#86 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[177] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[177]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#87 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[178] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[178]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#88 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[179] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[179]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#89 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[17] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[17]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#90 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[180] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[180]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#91 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[181] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[181]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#92 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[182] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[182]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#93 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[183] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[183]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#94 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[184] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[184]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#95 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[185] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[185]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#96 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[186] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[186]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#97 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[187] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[187]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#98 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[188] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[188]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#99 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[189] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[189]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#100 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[18] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[18]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#101 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[190] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[190]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#102 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[191] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[191]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#103 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[192] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[192]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#104 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[193] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[193]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#105 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[194] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[194]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#106 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[195] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[195]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#107 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[196] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[196]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#108 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[197] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[197]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#109 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[198] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[198]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#110 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[199] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[199]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#111 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[19] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[19]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#112 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[1] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#113 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[200] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[200]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#114 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[201] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[201]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#115 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[202] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[202]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#116 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[203] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[203]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#117 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[204] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[204]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#118 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[205] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[205]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#119 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[206] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[206]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#120 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[207] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[207]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#121 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[208] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[208]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#122 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[209] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[209]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#123 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[20] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[20]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#124 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[210] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[210]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#125 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[211] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[211]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#126 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[212] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[212]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#127 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[213] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[213]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#128 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[214] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[214]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#129 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[215] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[215]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#130 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[216] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[216]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#131 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[217] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[217]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#132 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[218] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[218]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#133 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[219] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[219]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#134 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[21] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[21]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#135 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[220] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[220]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#136 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[221] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[221]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#137 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[222] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[222]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#138 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[223] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[223]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#139 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[224] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[224]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#140 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[225] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[225]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#141 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[226] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[226]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#142 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[227] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[227]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#143 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[228] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[228]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#144 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[229] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[229]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#145 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[22] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[22]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#146 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[230] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[230]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#147 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[231] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[231]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#148 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[232] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[232]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#149 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[233] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[233]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#150 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[234] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[234]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#151 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[235] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[235]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#152 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[236] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[236]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#153 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[237] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[237]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#154 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[238] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[238]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#155 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[239] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[239]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#156 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[23] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[23]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#157 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[240] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[240]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#158 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[241] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[241]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#159 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[242] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[242]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#160 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[243] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[243]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#161 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[244] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[244]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#162 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[245] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[245]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#163 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[246] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[246]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#164 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[247] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[247]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#165 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[248] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[248]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#166 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[249] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[249]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#167 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[24] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[24]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#168 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[250] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[250]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#169 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[251] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[251]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#170 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[252] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[252]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#171 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[253] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[253]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#172 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[254] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[254]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#173 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[255] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[255]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#174 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[25] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[25]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#175 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[26] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[26]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#176 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[27] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[27]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#177 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[28] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[28]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#178 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[29] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[29]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#179 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[2] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#180 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[30] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[30]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#181 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[31] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[31]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#182 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[32] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[32]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#183 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[33] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[33]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#184 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[34] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[34]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#185 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[35] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[35]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#186 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[36] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[36]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#187 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[37] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[37]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#188 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[38] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[38]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#189 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[39] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[39]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#190 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[3] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#191 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[40] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[40]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#192 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[41] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[41]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#193 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[42] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[42]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#194 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[43] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[43]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#195 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[44] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[44]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#196 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[45] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[45]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#197 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[46] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[46]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#198 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[47] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[47]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#199 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[48] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[48]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#200 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[49] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[49]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#201 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[4] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#202 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[50] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[50]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#203 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[51] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[51]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#204 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[52] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[52]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#205 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[53] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[53]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#206 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[54] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[54]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#207 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[55] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[55]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#208 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[56] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[56]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#209 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[57] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[57]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#210 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[58] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[58]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#211 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[59] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[59]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#212 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[5] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#213 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[60] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[60]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#214 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[61] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[61]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#215 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[62] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[62]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#216 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[63] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[63]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#217 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[64] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[64]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#218 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[65] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[65]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#219 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[66] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[66]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#220 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[67] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[67]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#221 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[68] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[68]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#222 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[69] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[69]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#223 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[6] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#224 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[70] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[70]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#225 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[71] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[71]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#226 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[72] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[72]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#227 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[73] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[73]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#228 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[74] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[74]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#229 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[75] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[75]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#230 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[76] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[76]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#231 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[77] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[77]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#232 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[78] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[78]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#233 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[79] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[79]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#234 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[7] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#235 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[80] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[80]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#236 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[81] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[81]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#237 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[82] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[82]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#238 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[83] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[83]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#239 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[84] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[84]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#240 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[85] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[85]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#241 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[86] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[86]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#242 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[87] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[87]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#243 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[88] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[88]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#244 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[89] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[89]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#245 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[8] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#246 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[90] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[90]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#247 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[91] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[91]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#248 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[92] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[92]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#249 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[93] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[93]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#250 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[94] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[94]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#251 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[95] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[95]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#252 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[96] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[96]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#253 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[97] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[97]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#254 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[98] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[98]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#255 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[99] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[99]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#256 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[9] cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/mem2serial_transfer_pc/smatrix_out1_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#257 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rready_i_reg cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rready_i_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#258 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/serial2mem_opa_rw_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#259 Warning
+Non-clocked latch  
+The latch teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/starting_frame_identified_reg cannot be properly analyzed as its control pin teste_dma_i/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/starting_frame_identified_reg/G is not reached by a timing clock
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '153' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.srcs/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+XDCB-5#2 Warning
+Runtime inefficient way to find pin objects  
+The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '208' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.srcs/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+XDCB-5#3 Warning
+Runtime inefficient way to find pin objects  
+The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '43' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.gen/sources_1/bd/teste_dma/ip/teste_dma_system_ila_0_0/bd_1/ip/ip_0/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+XDCB-5#4 Warning
+Runtime inefficient way to find pin objects  
+The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '98' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+XDCB-5#5 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '153' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.srcs/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+XDCB-5#6 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '208' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.srcs/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+XDCB-5#7 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '43' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.gen/sources_1/bd/teste_dma/ip/teste_dma_system_ila_0_0/bd_1/ip/ip_0/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+XDCB-5#8 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '98' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc (Line: 72)
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 259 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+Related violations: <none>
+
+

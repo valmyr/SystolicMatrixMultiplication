@@ -30,7 +30,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log SystolicCore_wrapper_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SystolicCore_wrapper_wrapper.tcl -notrace" );
+         "-log teste_dma_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source teste_dma_wrapper.tcl -notrace" );
 
 
 

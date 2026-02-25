@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.runs/synth_1'
+HD_PWD='/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log SystolicCore_wrapper_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SystolicCore_wrapper_wrapper.tcl
+EAStep vivado -log teste_dma_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source teste_dma_wrapper.tcl

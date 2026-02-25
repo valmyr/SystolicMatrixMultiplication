@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.runs/impl_1'
+HD_PWD='/home/xmen/Videos/RustDesk/SystolicCore/SystolicCore_Metricas/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot/Zynq_Systolic_Core_AXI_FIFO_Stream_Reboot.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -39,6 +39,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log SystolicCore_wrapper_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SystolicCore_wrapper_wrapper.tcl -notrace
+EAStep vivado -log teste_dma_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source teste_dma_wrapper.tcl -notrace
 
 
