@@ -328,7 +328,7 @@ counter#(.MAX_COUNTER(32)) counter_idle_pc(
 );
 
 
-ila_0 contadores_de_ciclo (
+ila_1 contadores_de_ciclo (
 	.clk(clock), // input wire clk
 
 
@@ -341,6 +341,7 @@ ila_0 contadores_de_ciclo (
 );
 
 
+/*
 ila_2 your_instance_name2 (
 	.clk(clock), // input wire clk
 
@@ -354,7 +355,7 @@ ila_2 your_instance_name2 (
 	.probe6(serial2mem_opb_ready_o ), // input wire [0:0]  probe6 
 	.probe7((uart_valid_rx_in && uart_ready_rx)           ) ,// input wire [0:0]  probe7
 	.probe8(axi_debug          ) // input wire [0:0]  probe7
-);     
+);     */
 
 
 endmodule

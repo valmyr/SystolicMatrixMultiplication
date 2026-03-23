@@ -98,7 +98,7 @@ always_ff@(posedge clock, negedge nreset)begin
 end
 
 
-assign m_axis_tlast = mem2seriala_fsm !=COUNTER_INDEX; //j_counter == 0 || j_counter == 32;
+assign m_axis_tlast = j_counter == SIZE -1;
 
 
 always_comb begin
@@ -123,7 +123,7 @@ always_comb begin
             ready_o = 0;
             rvalid_o = 0;
            // m_axis_tlast = 0;
-            next_j_counter         =    (j_counter < SIZE   )   ? j_counter +1 : 0;
+            next_j_counter         =    handshake ? ((j_counter < SIZE   )   ? j_counter +1 : 0) : j_counter;
             next_i_counter         =    (j_counter < SIZE -1)   ? i_counter:i_counter+1  ;
             next_mem2seriala_fsm   =    ( j_counter >= SIZE-1) ? DONE_INDEX: COUNTER_INDEX;
             //(*dont_touch = "true"*) 
@@ -137,6 +137,7 @@ always_comb begin
         DONE_INDEX:begin
          //   m_axis_tlast =1;
             uart_valid_tx_in =0;
+            smatrix_out1  = '{default:8'hff};
             //smatrix_out1 = !rready_i ?  8'hff:0;
             ready_o = 0;
             rvalid_o = 1;
@@ -180,31 +181,31 @@ ila_1 your_instance_name (
 
 
 
-ila_3 your_instance_name (
+ila_0 your_instance_name (
 	.clk(clock), // input wire clk
 
 
-	.probe0(pmatrix_in[0][0]), // input wire [7:0]  probe0  
-	.probe1(pmatrix_in[0][1]), // input wire [7:0]  probe1 
-	.probe2(pmatrix_in[0][2]), // input wire [7:0]  probe2 
-	.probe3(pmatrix_in[0][3]), // input wire [7:0]  probe3 
-	.probe4(pmatrix_in[0][4]), // input wire [7:0]  probe4 
-	.probe5(pmatrix_in[0][5]), // input wire [7:0]  probe5 
-	.probe6(pmatrix_in[0][6]), // input wire [7:0]  probe6 
-	.probe7(pmatrix_in[0][7]), // input wire [7:0]  probe7 
-	.probe8(pmatrix_in[0][8]), // input wire [7:0]  probe8 
-	.probe9(pmatrix_in[0][9]), // input wire [7:0]  probe9 
-	.probe10(pmatrix_in[31][0]), // input wire [7:0]  probe10 
-	.probe11(pmatrix_in[30][0]), // input wire [7:0]  probe11 
-	.probe12(pmatrix_in[29][0]), // input wire [7:0]  probe12 
-	.probe13(pmatrix_in[28][0]), // input wire [7:0]  probe13 
-	.probe14(pmatrix_in[27][0]), // input wire [7:0]  probe14 
-	.probe15(pmatrix_in[26][0]), // input wire [7:0]  probe15 
-	.probe16(pmatrix_in[25][0]), // input wire [7:0]  probe16 
-	.probe17(pmatrix_in[24][0]), // input wire [7:0]  probe17 
-	.probe18(pmatrix_in[23][0]), // input wire [7:0]  probe18 
-	.probe19(pmatrix_in[22][0]), // input wire [7:0]  probe19 
-	.probe20(pmatrix_in[21][0]), // input wire [7:0]  probe20 
+	.probe0 (pmatrix_in[0][0]), // input wire [7:0]  probe0  
+	.probe1 (pmatrix_in[0][1]), // input wire [7:0]  probe1 
+	.probe2 (pmatrix_in[0][2]), // input wire [7:0]  probe2 
+	.probe3 (pmatrix_in[0][3]), // input wire [7:0]  probe3 
+	.probe4 (pmatrix_in[0][4]), // input wire [7:0]  probe4 
+	.probe5 (pmatrix_in[0][5]), // input wire [7:0]  probe5 
+	.probe6 (pmatrix_in[0][6]), // input wire [7:0]  probe6 
+	.probe7 (pmatrix_in[0][7]), // input wire [7:0]  probe7 
+	.probe8 (pmatrix_in[0][8]), // input wire [7:0]  probe8 
+	.probe9 (pmatrix_in[0][9]), // input wire [7:0]  probe9 
+	.probe10(pmatrix_in[0][0]), // input wire [7:0]  probe10 
+	.probe11(pmatrix_in[1][0]), // input wire [7:0]  probe11 
+	.probe12(pmatrix_in[2][0]), // input wire [7:0]  probe12 
+	.probe13(pmatrix_in[3][0]), // input wire [7:0]  probe13 
+	.probe14(pmatrix_in[4][0]), // input wire [7:0]  probe14 
+	.probe15(pmatrix_in[5][0]), // input wire [7:0]  probe15 
+	.probe16(pmatrix_in[6][0]), // input wire [7:0]  probe16 
+	.probe17(pmatrix_in[7][0]), // input wire [7:0]  probe17 
+	.probe18(pmatrix_in[8][0]), // input wire [7:0]  probe18 
+	.probe19(pmatrix_in[9][0]), // input wire [7:0]  probe19 
+	.probe20(pmatrix_in[9][0]), // input wire [7:0]  probe20 
 	.probe21(j_counter), // input wire [7:0]  probe21 
 	.probe22(k_counter_clock_base), // input wire [7:0]  probe22 
 	.probe23(mem2seriala_fsm), // input wire [7:0]  probe23 
@@ -223,5 +224,6 @@ ila_3 your_instance_name (
 	.probe36(m_axis_tlast), // input wire [0:0]  probe36 
 	.probe37(m_axis_tlast) // input wire [0:0]  probe37
 );
+
 
 endmodule

@@ -287,7 +287,7 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
     //.fifo_d(fifo_d_b)
 );
 (*dont_touch = "true"*) 
-mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH))mem2serial_transfer_pc(
+mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))mem2serial_transfer_pc(
     .clock                      (mem2serial_clock                           )                 ,
     .nreset                     (mem2serial_nreset                          )                 ,
     .pmatrix_in                 (mem2serial_pmatrix_in                      )                 ,

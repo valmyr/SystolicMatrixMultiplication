@@ -21,32 +21,31 @@
 
 
 module onlyFPGA(
+
+        //input wire clock
         input wire clk_125mhz_p,
-        input wire clk_125mhz_n
+        input wire clk_125mhz_n,
+        input wire nreset
     );
- 
- 
- wire nreset;
- assign nreset = 1;
- wire clock;   
+    
+  wire clock;
   IBUFDS #(
   .DIFF_TERM("TRUE"),
   .IBUF_LOW_PWR("FALSE")) ibufds_clk (
   .I (clk_125mhz_p),
   .IB(clk_125mhz_n),
   .O (clock)
-  ); 
-reg [63:0] cnt5;
-wire [63:0] cnt5_next;
-wire [127:0] dout_mem;
+); 
+    
+
+parameter WIDTHxSS = 4, SIZES = 32;
+parameter BYTESIZESS = 2*WIDTHxSS *SIZES;
+reg [31:0] cnt5;
+wire [BYTESIZESS-1:0] dout_mem;
 always@(posedge clock, negedge nreset)begin
     if(!nreset) cnt5 <= 0;
-    else cnt5<= cnt5 ==111 ? cnt5:cnt5_next;
+    else cnt5<= cnt5 ==15+6*SIZES-1 ? 1:cnt5+1;
 end 
-
-assign cnt5_next = cnt5 +1;
-
-
 matrix_in_memeory your_instance_name (
   .clka(clock),    // input wire clka
   .ena(1),      // input wire ena
@@ -58,7 +57,7 @@ matrix_in_memeory your_instance_name (
 
 
 
-AXI_Stream_Systolic_Core Core0 (
+AXI_Stream_Systolic_Core #(.BYTESIZES(BYTESIZESS), .WIDTHx(WIDTHxSS),.SIZE(SIZES),.WIDTH(2*WIDTHxSS))Core0 (
         // Sinais de sistema
         .clock(clock),
         .resetn(nreset),
