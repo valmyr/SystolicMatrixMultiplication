@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1774034239">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="onlyFPGA_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="onlyFPGA_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="onlyFPGA.vdi"/>
+  <File Type="BG-DRC" Name="onlyFPGA.drc"/>
+  <File Type="BG-BGN" Name="onlyFPGA.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="onlyFPGA.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="onlyFPGA.ltx"/>
+  <File Type="PL-LTX-FILE" Name="onlyFPGA_pld.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="onlyFPGA_boot.ltx"/>
+  <File Type="LTX-FILE" Name="onlyFPGA.ltx"/>
+  <File Type="PL-BIF-FILE" Name="onlyFPGA_pld.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="onlyFPGA_boot.bif"/>
+  <File Type="BIF-FILE" Name="onlyFPGA.bif"/>
+  <File Type="MMI-FILE" Name="onlyFPGA.mmi"/>
+  <File Type="RBD_FILE" Name="onlyFPGA.rbd"/>
+  <File Type="NPI_FILE" Name="onlyFPGA.npi"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="onlyFPGA_pld_unmask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="onlyFPGA_pld_unmask_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="onlyFPGA_pld_mask.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="onlyFPGA_pld_markers.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="onlyFPGA_pld_clear.rcdo"/>
+  <File Type="PL-RCDO-FILE" Name="onlyFPGA_pld.rcdo"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="onlyFPGA_pld_unmask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="onlyFPGA_pld_shutdown.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="onlyFPGA_pld_mask.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="onlyFPGA_pld_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="onlyFPGA_pld.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="onlyFPGA_boot_markers.rnpi"/>
+  <File Type="BOOT_RNPI_FILE" Name="onlyFPGA_boot.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="onlyFPGA_markers.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="onlyFPGA_markers.rnpi"/>
+  <File Type="RCDO-FILE" Name="onlyFPGA.rcdo"/>
+  <File Type="RNPI_FILE" Name="onlyFPGA.rnpi"/>
+  <File Type="CFI_FILE" Name="onlyFPGA.cfi"/>
+  <File Type="RCFI_FILE" Name="onlyFPGA.rcfi"/>
+  <File Type="PL-PDI-FILE" Name="onlyFPGA_pld.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="onlyFPGA_boot.pdi"/>
+  <File Type="PDI-FILE" Name="onlyFPGA.pdi"/>
+  <File Type="BITSTR-MMI" Name="onlyFPGA.mmi"/>
+  <File Type="BITSTR-BMM" Name="onlyFPGA_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="onlyFPGA.nky"/>
+  <File Type="BITSTR-RBT" Name="onlyFPGA.rbt"/>
+  <File Type="BITSTR-MSK" Name="onlyFPGA.msk"/>
+  <File Type="BG-BIN" Name="onlyFPGA.bin"/>
+  <File Type="BG-BIT" Name="onlyFPGA.bit"/>
+  <File Type="NOC_SOLUTION_FILE" Name="onlyFPGA.ncr"/>
+  <File Type="NOC_TRAFFIC_SPEC_FILE" Name="onlyFPGA.nts"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Arty7_top_sim_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Arty7_top_sim_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Arty7_top_sim_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Arty7_top_sim_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Arty7_top_sim_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Arty7_top_sim_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="onlyFPGA_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="onlyFPGA_postroute_physopt.dcp"/>
+  <File Type="ROUTE-RQS-PB" Name="onlyFPGA_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="onlyFPGA_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="onlyFPGA_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="onlyFPGA_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="onlyFPGA_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="onlyFPGA_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="onlyFPGA_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="onlyFPGA_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="onlyFPGA_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="onlyFPGA_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="onlyFPGA_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="onlyFPGA_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="onlyFPGA_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="onlyFPGA_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="onlyFPGA_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="onlyFPGA_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="onlyFPGA_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="onlyFPGA_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="onlyFPGA_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="onlyFPGA_drc_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="onlyFPGA_utilization_routed.pb"/>
+  <File Type="ROUTE-UTIL" Name="onlyFPGA_utilization_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="onlyFPGA_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="onlyFPGA_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="onlyFPGA_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="onlyFPGA_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="onlyFPGA_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="onlyFPGA_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="onlyFPGA_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="onlyFPGA_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="onlyFPGA_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="onlyFPGA_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="onlyFPGA_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="onlyFPGA_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="onlyFPGA_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="onlyFPGA_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="onlyFPGA_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="onlyFPGA_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="onlyFPGA_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="onlyFPGA_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="onlyFPGA_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="onlyFPGA_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="onlyFPGA_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="onlyFPGA_rqa_opted.pb"/>
+  <File Type="OPT-TIMING" Name="onlyFPGA_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="onlyFPGA.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="onlyFPGA_methodology_drc_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="onlyFPGA_utilization_opted.pb"/>
+  <File Type="OPT-UTIL" Name="onlyFPGA_utilization_opted.rpt"/>
+  <File Type="OPT-DRC" Name="onlyFPGA_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="onlyFPGA_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="onlyFPGA_timing_summary_init.rpt"/>
+  <File Type="REPORTS-TCL" Name="onlyFPGA_reports.tcl"/>
+  <File Type="PA-TCL" Name="onlyFPGA.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../mem.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/serial2mem_backup.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/GPIOinput.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/GPIOoutput.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/design_1_wrapper.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ShiftMatrix.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ram.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/unflatten.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/Arty7_top_sim.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/row_major_axi_convert.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/Systolic_DMA_AXI_Stream/hdl/Systolic_DMA_AXI_Stream_wrapper.v">
+      <FileInfo>
+        <Attr Name="IsGlobalInclude" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/AXI_Stream_Systolic_Core.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/SystolicControlUnit.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/SystolicCore.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/accumulator.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/bank_reg.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/counter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ffd.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/mem2serial.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/serial2mem.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/systolicMatrixMultiply.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/onlyFPGA.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="onlyFPGA"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../zynqZCU106.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/onlyFPGA.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Systolic_DMA_AXI_Stream_AXI_Stream_Systolic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Systolic_DMA_AXI_Stream_row_major_axi_convert_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="matrix_in_memeory"/>
+</GenRun>

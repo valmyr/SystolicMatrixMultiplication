@@ -1,0 +1,35 @@
+$date
+        2026-Mar-20 15:44:06
+$end
+$version
+        Vivado v2025.2 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 16 " Systolic_DMA_AXI_Stream_i/SystolicCore_DMA/SystolicCore_Wrapper/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle [15:0] $end
+$var reg 16 2 Systolic_DMA_AXI_Stream_i/SystolicCore_DMA/SystolicCore_Wrapper/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opA [15:0] $end
+$var reg 16 B Systolic_DMA_AXI_Stream_i/SystolicCore_DMA/SystolicCore_Wrapper/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_opB [15:0] $end
+$var reg 16 R Systolic_DMA_AXI_Stream_i/SystolicCore_DMA/SystolicCore_Wrapper/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_systolic_read_mem [15:0] $end
+$var reg 16 b Systolic_DMA_AXI_Stream_i/SystolicCore_DMA/SystolicCore_Wrapper/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_send_fpga2host [15:0] $end
+$var reg 16 r Systolic_DMA_AXI_Stream_i/SystolicCore_DMA/SystolicCore_Wrapper/AXI_Stream_Systolic_0/inst/SystolicCore0/systolicControlUnit_Global/counter_out_idle_pc [15:0] $end
+$var reg 1 $" _TRIGGER $end
+$var reg 1 %" _WINDOW $end
+$var reg 1 &" _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 "
+b0 2
+b0 B
+b0 R
+b0 b
+b0 r
+0$"
+1%"
+0&"
+$end
+#512
+1$"

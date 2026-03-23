@@ -1,0 +1,381 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Mar 11 16:31:58 2026
+# Process ID         : 2479739
+# Current directory  : /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST
+# Command line       : vivado Zynq_Systolic_AXI_FIFO_DMA.xpr
+# Log file           : /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/vivado.log
+# Journal file       : /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/vivado.jou
+# Running On         : VT0144
+# Platform           : Rocky
+# Operating System   : Rocky Linux release 8.10 (Green Obsidian)
+# Processor Detail   : Intel(R) Core(TM) i9-14900F
+# CPU Frequency      : 2000.000 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 67075 MB
+# Swap memory        : 14727 MB
+# Total Virtual      : 81802 MB
+# Available Virtual  : 50455 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.1/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385_1:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385_2/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vrk160/1.0/board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vrk160/1.1/board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project Zynq_Systolic_AXI_FIFO_DMA.xpr
+INFO: [Project 1-313] Project file moved from '/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.1/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385_1:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385_2/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vrk160/1.0/board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vrk160:part0:1.1 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vrk160/1.1/board.xml as part xcvr1602-vsva2488-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/xmen/Music/2025.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xmen/Music/2025.2/data/ip'.
+update_compile_order -fileset sources_1
+set_property top Systolic_DMA_AXI_Stream_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+set_property needs_refresh false [get_runs synth_1]
+set_property needs_refresh false [get_runs impl_1]
+set_property needs_refresh false [get_runs matrix_in_memeory_synth_1]
+set_property needs_refresh false [get_runs Systolic_DMA_AXI_Stream_AXI_Stream_Systolic_0_1_synth_1]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 32
+[Wed Mar 11 16:33:06 2026] Launched impl_1...
+Run output will be captured here: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/impl_1/runme.log
+open_bd_design {/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd}
+Reading block design file </TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd>...
+Adding component instance block -- xilinx.com:module_ref:AXI_Stream_Systolic_Core:1.0 - AXI_Stream_Systolic_0
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc_1
+Adding component instance block -- xilinx.com:ip:axis_data_fifo:2.0 - axis_data_fifo_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps8_0_99M
+Adding component instance block -- xilinx.com:ip:system_ila:1.1 - system_ila_0
+Adding component instance block -- xilinx.com:ip:zynq_ultra_ps_e:3.5 - zynq_ultra_ps_e_0
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Successfully read diagram <Systolic_DMA_AXI_Stream> from block design file </TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd>
+startgroup
+set_property -dict [list \
+  CONFIG.BYTESIZES {8} \
+  CONFIG.SIZE {2} \
+] [get_bd_cells AXI_Stream_Systolic_0]
+endgroup
+startgroup
+set_property -dict [list \
+  CONFIG.c_m_axi_mm2s_data_width {32} \
+  CONFIG.c_m_axi_s2mm_data_width {32} \
+  CONFIG.c_m_axis_mm2s_tdata_width {8} \
+  CONFIG.c_mm2s_burst_size {256} \
+  CONFIG.c_s_axis_s2mm_tdata_width {8} \
+] [get_bd_cells axi_dma_0]
+endgroup
+INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
+INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+regenerate_bd_layout
+generate_target all [get_files  /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd]
+WARNING: [BD 41-1629] Slave segment </zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM> is excluded from all addressing paths.
+WARNING: [BD 41-1629] Slave segment </zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH> is excluded from all addressing paths.
+WARNING: [BD 41-3281] Instance '/axi_dma_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
+WARNING: [BD 41-3281] Instance '/zynq_ultra_ps_e_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
+WARNING: [BD 41-1781] Updates have been made to one or more nets/interface connections marked for debug.
+Debug nets, which are already connected to any ILA IP core in the block-design, will be automatically available for debug in Hardware Manager.
+For unconnected Debug nets, please open synthesized design and use 'Set Up Debug' wizard to insert, modify or delete Debug Cores. 
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/axi_smc_1/S00_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0xC000_0000 [ 512M ]> from slave interface '/axi_smc_1/S00_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/axi_smc_1/S01_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0xC000_0000 [ 512M ]> from slave interface '/axi_smc_1/S01_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/axi_smc_1/S00_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0xC000_0000 [ 512M ]> from slave interface '/axi_smc_1/S00_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/axi_smc_1/S01_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0xC000_0000 [ 512M ]> from slave interface '/axi_smc_1/S01_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] Systolic_DMA_AXI_Stream_axi_smc_1_0: SmartConnect Systolic_DMA_AXI_Stream_axi_smc_1_0 is in High-performance Mode.
+INFO: [BD 5-943] Reserving offset range <0xB000_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0xB000_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] Systolic_DMA_AXI_Stream_axi_smc_1: SmartConnect Systolic_DMA_AXI_Stream_axi_smc_1 is in Low-Area Mode.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_MM2S.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc_1/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc_1/M00_AXI(0)
+WARNING: [BD 41-2671] The dangling interface net <m00_aw_node_M_AXIS_ARB> will not be written out to the BD file.
+Wrote  : </TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd> 
+Wrote  : </TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/ui/bd_580564b5.ui> 
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net AXI_Stream_Systolic_0_m_axis_TVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net AXI_Stream_Systolic_0_m_axis_TREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net AXI_Stream_Systolic_0_m_axis_TLAST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net AXI_Stream_Systolic_0_m_axis_TDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_RRESP as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_RREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_RVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARLEN as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARBURST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARCACHE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARADDR as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARPROT as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARSIZE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_RDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_ARVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_dma_0_M_AXI_MM2S_RLAST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARPROT as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_RREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARCACHE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARLOCK as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWSIZE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_BRESP as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWLOCK as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWPROT as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_RLAST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_RRESP as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWADDR as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARBURST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_RDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWLEN as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWQOS as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_BREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARLEN as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWBURST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_WLAST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_WDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_WSTRB as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWCACHE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_WREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARQOS as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_WVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_RVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_AWREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARADDR as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_BVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_1_M00_AXI_ARSIZE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_RREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_ARREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_RDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_ARVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_RVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_BREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_AWVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_AWREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_BVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_AWADDR as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_BRESP as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_RRESP as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_WDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_ARADDR as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_WVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_WREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_ARPROT as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_AWPROT as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axi_smc_M00_AXI_WSTRB as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS_TVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS_TDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS_TLAST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS_TREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS_TKEEP as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS1_TVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS1_TDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS1_TLAST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net axis_data_fifo_0_M_AXIS1_TREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWQOS as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_RID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARUSER as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARPROT as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_RREADY as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARCACHE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARLOCK as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARSIZE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARLEN as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWUSER as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWLOCK as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARVALID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWPROT as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWID as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWSIZE as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_BRESP as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWBURST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_WLAST as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_RDATA as it is marked for debug
+WARNING: [BD 41-3257] Drive strength cannot be preserved for ports connected to net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_AWLEN as it is marked for debug
+INFO: [Common 17-14] Message 'BD 41-3257' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Verilog Output written to : /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/synth/Systolic_DMA_AXI_Stream.v
+Verilog Output written to : /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/sim/Systolic_DMA_AXI_Stream.v
+Verilog Output written to : /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/hdl/Systolic_DMA_AXI_Stream_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Stream_Systolic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+Exporting to file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/ip/Systolic_DMA_AXI_Stream_axi_smc_1/bd_0/hw_handoff/Systolic_DMA_AXI_Stream_axi_smc_1.hwh
+Generated Hardware Definition File /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/ip/Systolic_DMA_AXI_Stream_axi_smc_1/bd_0/synth/Systolic_DMA_AXI_Stream_axi_smc_1.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+Exporting to file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/ip/Systolic_DMA_AXI_Stream_axi_smc_1_0/bd_0/hw_handoff/Systolic_DMA_AXI_Stream_axi_smc_1_0.hwh
+Generated Hardware Definition File /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/ip/Systolic_DMA_AXI_Stream_axi_smc_1_0/bd_0/synth/Systolic_DMA_AXI_Stream_axi_smc_1_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_data_fifo_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/ip/Systolic_DMA_AXI_Stream_system_ila_0_0/Systolic_DMA_AXI_Stream_system_ila_0_0_ooc.xdc'
+Exporting to file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/ip/Systolic_DMA_AXI_Stream_system_ila_0_0/bd_0/hw_handoff/Systolic_DMA_AXI_Stream_system_ila_0_0.hwh
+Generated Hardware Definition File /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/ip/Systolic_DMA_AXI_Stream_system_ila_0_0/bd_0/synth/Systolic_DMA_AXI_Stream_system_ila_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block system_ila_0 .
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_HPM0_FPD'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_HPM1_FPD'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI_HPC0_FPD'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+Exporting to file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/hw_handoff/Systolic_DMA_AXI_Stream.hwh
+Generated Hardware Definition File /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/synth/Systolic_DMA_AXI_Stream.hwdef
+INFO: [BD 41-3262] Generated VHDL Instantiation Template file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.vho
+INFO: [BD 41-3262] Generated Verilog Instantiation Template file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.veo
+INFO: [BD 41-3262] Generated System Verilog Instantiation Template file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.gen/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream_sv.sveo
+generate_target: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 11095.395 ; gain = 0.000 ; free physical = 11450 ; free virtual = 45504
+catch { config_ip_cache -export [get_ips -all Systolic_DMA_AXI_Stream_axi_dma_0_1] }
+catch { config_ip_cache -export [get_ips -all Systolic_DMA_AXI_Stream_axi_smc_1] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Systolic_DMA_AXI_Stream_axi_smc_1, cache-ID = 6bbf3b677a74195a; cache size = 89.218 MB.
+catch { config_ip_cache -export [get_ips -all Systolic_DMA_AXI_Stream_axi_smc_1_0] }
+catch { config_ip_cache -export [get_ips -all Systolic_DMA_AXI_Stream_axis_data_fifo_0_1] }
+catch { config_ip_cache -export [get_ips -all Systolic_DMA_AXI_Stream_system_ila_0_0] }
+export_ip_user_files -of_objects [get_files /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd]
+launch_runs Systolic_DMA_AXI_Stream_AXI_Stream_Systolic_0_1_synth_1 Systolic_DMA_AXI_Stream_axi_dma_0_1_synth_1 Systolic_DMA_AXI_Stream_axi_smc_1_0_synth_1 Systolic_DMA_AXI_Stream_axis_data_fifo_0_1_synth_1 Systolic_DMA_AXI_Stream_system_ila_0_0_synth_1 -jobs 32
+[Wed Mar 11 16:35:45 2026] Launched Systolic_DMA_AXI_Stream_AXI_Stream_Systolic_0_1_synth_1, Systolic_DMA_AXI_Stream_axi_dma_0_1_synth_1, Systolic_DMA_AXI_Stream_axi_smc_1_0_synth_1, Systolic_DMA_AXI_Stream_axis_data_fifo_0_1_synth_1, Systolic_DMA_AXI_Stream_system_ila_0_0_synth_1...
+Run output will be captured here:
+Systolic_DMA_AXI_Stream_AXI_Stream_Systolic_0_1_synth_1: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/Systolic_DMA_AXI_Stream_AXI_Stream_Systolic_0_1_synth_1/runme.log
+Systolic_DMA_AXI_Stream_axi_dma_0_1_synth_1: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/Systolic_DMA_AXI_Stream_axi_dma_0_1_synth_1/runme.log
+Systolic_DMA_AXI_Stream_axi_smc_1_0_synth_1: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/Systolic_DMA_AXI_Stream_axi_smc_1_0_synth_1/runme.log
+Systolic_DMA_AXI_Stream_axis_data_fifo_0_1_synth_1: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/Systolic_DMA_AXI_Stream_axis_data_fifo_0_1_synth_1/runme.log
+Systolic_DMA_AXI_Stream_system_ila_0_0_synth_1: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/Systolic_DMA_AXI_Stream_system_ila_0_0_synth_1/runme.log
+export_simulation -lib_map_path [list {modelsim=/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.cache/compile_simlib/modelsim} {questa=/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.cache/compile_simlib/questa} {xcelium=/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.cache/compile_simlib/xcelium} {vcs=/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.cache/compile_simlib/vcs} {riviera=/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.cache/compile_simlib/riviera}] -of_objects [get_files /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/sources_1/bd/Systolic_DMA_AXI_Stream/Systolic_DMA_AXI_Stream.bd] -directory /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.ip_user_files/sim_scripts -ip_user_files_dir /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.ip_user_files -ipstatic_source_dir /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+set_property needs_refresh false [get_runs synth_1]
+set_property needs_refresh false [get_runs impl_1]
+set_property needs_refresh false [get_runs matrix_in_memeory_synth_1]
+set_property needs_refresh false [get_runs Systolic_DMA_AXI_Stream_AXI_Stream_Systolic_0_1_synth_1]
+set_property needs_refresh false [get_runs Systolic_DMA_AXI_Stream_axi_dma_0_1_synth_1]
+set_property needs_refresh false [get_runs Systolic_DMA_AXI_Stream_axi_smc_1_0_synth_1]
+set_property needs_refresh false [get_runs Systolic_DMA_AXI_Stream_axis_data_fifo_0_1_synth_1]
+set_property needs_refresh false [get_runs Systolic_DMA_AXI_Stream_system_ila_0_0_synth_1]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.srcs/utils_1/imports/synth_1/onlyFPGA.dcp with file /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/synth_1/onlyFPGA.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 32
+[Wed Mar 11 17:04:23 2026] Launched synth_1...
+Run output will be captured here: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/synth_1/runme.log
+[Wed Mar 11 17:04:23 2026] Launched impl_1...
+Run output will be captured here: /TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/impl_1/runme.log
+CRITICAL WARNING: [Common 17-1649] The Vivado message database '/TCC/SystolicCore_Metricas/Zynq_Systolic_AXI_FIFO_DMA_Vitis_TEST/Zynq_Systolic_AXI_FIFO_DMA.runs/impl_1/place_design.pb' contains 23495 messages. Restoring all messages from this message database will impact Vivado performance, so only WARNING, CRITICAL WARNING, and ERROR messages will be restored. To restore all messages from this file use the tcl command 'set_param messaging.loadPbLimit 23496' and re-open the project.
