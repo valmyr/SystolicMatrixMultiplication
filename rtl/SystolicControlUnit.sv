@@ -77,7 +77,7 @@ always_ff@(posedge clock, negedge nreset)begin
 end
 always_comb case(fsm_unit_control)
     IDLE:begin
-        serial2mem_opa_valid_i        = 0;
+       
         serial2mem_opa_rw             = 0;
         serial2mem_opb_rw             = 0;
         serial2mem_opa_rready_i       = 0;
@@ -117,21 +117,25 @@ always_comb case(fsm_unit_control)
             3'b11x:begin
                 fsm_unit_control_next =  WRITE_MEMAAA;
                 serial2mem_opb_valid_i        =0;
+                serial2mem_opa_valid_i =1;
                 s_axis_tlast    =1;
             end
             3'b1x1:begin
                 fsm_unit_control_next = (serial2mem_opb_ready_o) ? WRITE_MEMBBB : IDLE;
                 serial2mem_opb_valid_i        = 0;
                 s_axis_tlast    =1;
+                serial2mem_opa_valid_i =0;
             end
             3'bxxx:begin
                 fsm_unit_control_next = IDLE;
                 serial2mem_opb_valid_i        = 0;
+                serial2mem_opa_valid_i =0;
                 s_axis_tlast    =1;
             end
             default:begin
                 serial2mem_opb_valid_i        =0;
                 fsm_unit_control_next = IDLE;
+                serial2mem_opa_valid_i =0;
                 s_axis_tlast    =1;
             end
          endcase

@@ -155,6 +155,7 @@ logic [WIDTH*SIZE-1:0] delay_1_cyclo;
             out_data <= '{default:0};
             single_port_ram_di_reg_0 <= '{default:0};
             mem_fsm <= IDLE;
+            j_counter <= 0;
         end else begin        
             mem_fsm            <= next_mem_fsm                                                                                                 ;
             cnt                <= mem_fsm != DONE ? next_cnt         :    0                                                                    ;
@@ -184,6 +185,7 @@ assign             temp = {<<(WIDTH){out_data[j_counter]}};
                         next_cnt                 = 0           ;
                         next_cnt_shift           = 0           ;
                         single_port_ram_en       = 1           ;
+                        next_j_counter = 0;
 
 
                 end else  begin
@@ -191,6 +193,7 @@ assign             temp = {<<(WIDTH){out_data[j_counter]}};
                         next_cnt              = 0                                                               ;
                         next_cnt_shift        = 0                                                               ;
                         single_port_ram_en    = 1                                                               ;
+                        next_j_counter = j_counter +1 ;
 
                 end
             end else begin                          
@@ -215,7 +218,7 @@ assign             temp = {<<(WIDTH){out_data[j_counter]}};
         //    out_data                 = 0                                                         ;
         //    single_port_ram_di       = (cnt_shift == SIZE-1 ? buf_data : single_port_ram_di)                                ;
             single_port_ram_en       = uart_ready_rx_out | j_counter < SIZE                                     ;
-            next_j_counter         =    (j_counter < SIZE   )   ? j_counter +1 : 0;
+            next_j_counter         =    (j_counter < SIZE  -1 )   ? j_counter +1 : j_counter;
             next_i_counter         =    (j_counter < SIZE -1)   ? i_counter:i_counter+1  ;
             single_port_ram_di_reg = in_data;
 

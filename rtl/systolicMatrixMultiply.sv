@@ -30,21 +30,28 @@ logic [$clog2(2*SIZE) :0]       counter_mult        , next_counter_mult         
 logic [$clog2(2*SIZE) :0]       counter_transfer_m  , next_counter_transfer_m           ;
 (*dont_touch = "true"*) logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
 
-
+(*dont_touch = "true"*) 
 logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]            ;
+(*dont_touch = "true"*) 
 logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]            ;
+(*dont_touch = "true"*) 
 
 logic [WIDTHx-1:0]                 a_load[SIZE-1:0]                                          ;
+(*dont_touch = "true"*) 
 logic [WIDTHx-1:0]                 b_load[SIZE-1:0]                                          ;
 logic                                    next_ena_mac                           ;
 
+(*dont_touch = "true"*) 
 enum {IDLE, LOAD_MULTI_MATRIX ,MULTI_MATRIX, DONE} currentStateSystolicControlUnit, nextStateSystolicControlUnit;
 generate 
     genvar i,j;
         for(i =0; i < SIZE;i++)begin:CELULA_ROWS
+            (*dont_touch = "true"*) 
             assign a_vec[0][i] = a_load[i];
+            (*dont_touch = "true"*) 
             assign b_vec[0][i] = b_load[i];
             for(j =0; j < SIZE;j++)begin:CELULA_COLUMNS
+               (*dont_touch = "true"*) 
                 accumulator_cells #(.WIDTH(WIDTH),.WIDTHx(WIDTHx)) MAC(    
                     .clock    (     clock                                              ),
                     .nreset   (     nreset                                             ),

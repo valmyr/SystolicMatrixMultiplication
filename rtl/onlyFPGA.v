@@ -38,7 +38,7 @@ module onlyFPGA(
 ); 
     
 
-parameter WIDTHxSS = 4, SIZES = 32;
+parameter WIDTHxSS = 4, SIZES = 8;
 parameter BYTESIZESS = 2*WIDTHxSS *SIZES;
 reg [31:0] cnt5;
 wire [BYTESIZESS-1:0] dout_mem;
