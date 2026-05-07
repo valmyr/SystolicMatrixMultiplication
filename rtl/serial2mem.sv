@@ -16,7 +16,7 @@ module serial2mem#(
    // output logic [(2*WIDTH-1)*SIZE*SIZE-1:0]    fifo_d                          
 );
 
-
+logic [WIDTH-1:0] out_data_reg[SIZE-1:0][SIZE-1:0]  ;
 logic [(2*SIZE)-1:0]      cnt, next_cnt                                   ;
 logic [(2*SIZE)-1:0]  cnt_shift, next_cnt_shift                       ;
 enum {IDLE, WRITE, READ,DONE}   mem_fsm,next_mem_fsm                            ;
@@ -134,8 +134,10 @@ logic clock_sample;
 always_ff@(posedge clock, negedge nreset)begin
     if(!nreset)begin
         clock_sample <= 0;
+        out_data <='{default:0};
     end else begin
         clock_sample <= ~clock_sample;
+        out_data <=(cnt_shift == SIZE) ? out_data_reg: out_data ;
     
     end 
     
@@ -152,7 +154,7 @@ logic [WIDTH*SIZE-1:0] delay_1_cyclo;
             single_port_ram_di <= 0;
 
            // single_port_ram_di_reg <=0;
-            out_data <= '{default:0};
+            out_data_reg <= '{default:0};
             single_port_ram_di_reg_0 <= '{default:0};
             mem_fsm <= IDLE;
             j_counter <= 0;
@@ -160,15 +162,15 @@ logic [WIDTH*SIZE-1:0] delay_1_cyclo;
             mem_fsm            <= next_mem_fsm                                                                                                 ;
             cnt                <= mem_fsm != DONE ? next_cnt         :    0                                                                    ;
             cnt_shift          <= mem_fsm != DONE ? next_cnt_shift   :    0                                                                    ;
-            single_port_ram_di_reg_0 <= in_data;
-            {<<(WIDTH){out_data[j_counter]}} <= mem_fsm != WRITE ?  temp:single_port_ram_di_reg_0;
+            single_port_ram_di_reg_0 <=   in_data;
+            {<<(WIDTH){out_data_reg[j_counter]}} <= mem_fsm != WRITE ?  temp:single_port_ram_di_reg_0;
             i_counter               <=  mem_fsm == WRITE? next_i_counter: 0;                                           ; 
             j_counter               <=  mem_fsm == WRITE? next_j_counter: 0;
 
         end
     end
             
-assign             temp = {<<(WIDTH){out_data[j_counter]}};
+assign             temp = {<<(WIDTH){out_data_reg[j_counter]}};
 //assign single_port_ram_di = in_data;//uart_ready_rx_out ? buf_data : 0;
     //assign next_buf_data[WIDTH*(cnt_shift+1):WIDTH*cnt_shift] = in_data << WIDTH*cnt_shift;
    // assign next_buf_data = {buf_data,in_data<<WIDTH*cnt_shift};// | in_data << (WIDTH * cnt_shift);
@@ -192,7 +194,8 @@ assign             temp = {<<(WIDTH){out_data[j_counter]}};
                         next_mem_fsm          =  WRITE        ;
                         next_cnt              = 0                                                               ;
                         next_cnt_shift        = 0                                                               ;
-                        single_port_ram_en    = 1                                                               ;
+                        single_port_ram_en    = 0                                                               ;
+                        //next_j_counter = j_counter +1 ;
                         next_j_counter = j_counter +1 ;
 
                 end
@@ -217,7 +220,7 @@ assign             temp = {<<(WIDTH){out_data[j_counter]}};
             next_mem_fsm             = uart_ready_rx_out ? (cnt_shift != SIZE-1 ? WRITE: DONE):  mem_fsm;    
         //    out_data                 = 0                                                         ;
         //    single_port_ram_di       = (cnt_shift == SIZE-1 ? buf_data : single_port_ram_di)                                ;
-            single_port_ram_en       = uart_ready_rx_out | j_counter < SIZE                                     ;
+            single_port_ram_en       = 1                                     ;
             next_j_counter         =    (j_counter < SIZE  -1 )   ? j_counter +1 : j_counter;
             next_i_counter         =    (j_counter < SIZE -1)   ? i_counter:i_counter+1  ;
             single_port_ram_di_reg = in_data;
@@ -283,6 +286,11 @@ assign             temp = {<<(WIDTH){out_data[j_counter]}};
 	.probe10(single_port_ram_di_reg) // input wire [63:0]  probe10
 );*/
 
+enum {IDLE_PIPELINE,WRITE_PIPELINE} fsm_pipeline, fsm_pipeline_next;
 
+always_ff@(posedge clock, negedge nreset)begin
+    if(!nreset)fsm_pipeline <= IDLE_PIPELINE;
+    else fsm_pipeline <= mem_fsm == IDLE   ?   IDLE_PIPELINE: WRITE_PIPELINE;
+end
 
 endmodule

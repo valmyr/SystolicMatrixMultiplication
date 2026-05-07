@@ -180,7 +180,7 @@ ila_1 your_instance_name (
 //assign    smatrix_out     = pmatrix_in[i_counter][j_counter];
 
 
-
+/*
 ila_0 your_instance_name (
 	.clk(clock), // input wire clk
 
@@ -225,5 +225,5 @@ ila_0 your_instance_name (
 	.probe37(m_axis_tlast) // input wire [0:0]  probe37
 );
 
-
+*/
 endmodule

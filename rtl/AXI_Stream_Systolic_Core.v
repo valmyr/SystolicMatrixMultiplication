@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module AXI_Stream_Systolic_Core#(parameter  BYTESIZES = 256, WIDTHx = 4,SIZE = 8,WIDTH =8)(
+module AXI_Stream_Systolic_Core#(parameter  BYTESIZES = 256, WIDTHx = 4,SIZE = 32,WIDTH =8)(
         // Sinais de sistema
         input wire          clock,
         input wire          resetn,

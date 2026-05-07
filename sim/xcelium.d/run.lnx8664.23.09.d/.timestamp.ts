@@ -1,0 +1,13 @@
+1778121820 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/SystolicControlUnit.sv
+1778116855 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/onlyFPGA.v
+1778119933 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/row_major_axi_convert.v
+1778119991 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/mem2serial.sv
+1778116855 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/bank_reg.sv
+1778116521 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/accumulator.sv
+1778120940 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/serial2mem.sv
+1778122011 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/SystolicCore.sv
+1778117491 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/im2col/rtl/im2col.sv
+1778121968 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/AXI_Stream_Systolic_Core.v
+1778121058 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/systolicMatrixMultiply.sv
+1778116521 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/counter.sv
+1778116521 /home/valmir.silva/Desktop/im2col/git/SystolicCore/rtl/ffd.sv

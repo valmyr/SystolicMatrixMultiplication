@@ -90,7 +90,7 @@ logic                   serial2mem_opa_valid_i                                  
 logic                   serial2mem_opa_rready_i                                                                 ;
 logic                   serial2mem_opa_rvalid_o                                                                 ;
 logic                   serial2mem_opa_ready_o                                                                  ;
-logic [BYTESIZES-1:0]      serial2mem_opa_in_data                                                                  ;
+logic [WIDTHx*SIZE-1:0]      serial2mem_opa_in_data                                                                  ;
 logic [WIDTHx-1:0] serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                                               ;
 logic [WIDTHx-1:0] serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                                               ;
 //---------------------------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ logic                   serial2mem_opb_valid_i                                  
 logic                   serial2mem_opb_rready_i                                                                 ;
 logic                   serial2mem_opb_ready_o                                                                  ;
 logic                   serial2mem_opb_rvalid_o                                                                 ;
-logic [BYTESIZES-1:0]      serial2mem_opb_in_data                                                                  ;
+logic [WIDTHx*SIZE-1:0]      serial2mem_opb_in_data                                                                  ;
 logic [WIDTHx-1:0] serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                                                ;
 logic [WIDTHx-1:0] serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                                                ;
 
@@ -189,8 +189,8 @@ assign uart_data_tx_in = mem2serial_smatrix_out;
 //assign serial2mem_opb_in_data = (systolicControlUnit_serial2mem_opb_valid_i & !systolicControlUnit_serial2mem_opb_rw) ? uart_data_rx_out: 0             ;
 assign serial2mem_opa_in_data = uart_data_rx_out;//: 0            ;
 assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;
-assign syst_a_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opa_rw) ? flow_data_time_structure_OUTA :'{default:0}                           ;
-assign syst_b_input = (systolicControlUnit_syst_valid_i & systolicControlUnit_serial2mem_opb_rw) ? flow_data_time_structure_OUTB :'{default:0}                           ;
+assign syst_a_input =  flow_data_time_structure_OUTA                            ;
+assign syst_b_input =  flow_data_time_structure_OUTB ;
 (*dont_touch = "true"*) 
 assign mem2serial_pmatrix_in = syst_output_produc_a_b;
 //assign mem2serial_pmatrix_in[0][0] = 8'd11;
@@ -240,7 +240,7 @@ assign systolicControlUnit_uart_valid_rx_in = uart_valid_rx_in;
 
 //logic [111:0]fifo_d_a;
 //logic [111:0]fifo_d_b;
-(*dont_touch = "true"*) 
+
 logic syst_ena_mac;
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
     .nreset                     (syst_nreset                                )                  ,
@@ -303,7 +303,7 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))mem2serial_transfe
 );
 
 (*dont_touch = "true"*) 
-systolicControlUnitTop systolicControlUnit_Global(
+systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))systolicControlUnit_Global(
     .clock                      (systolicControlUnit_clock                      )                ,
     .nreset                     (systolicControlUnit_nreset                     )                ,
     .uart_valid_rx_in           (systolicControlUnit_uart_valid_rx_in           )                ,
@@ -322,7 +322,7 @@ systolicControlUnitTop systolicControlUnit_Global(
     .uart_valid_tx_in           (systolicControlUnit_uart_valid_tx_in           )                ,    
     .syst_valid_i               (systolicControlUnit_syst_valid_i               )                ,    
     .syst_rready_i              (systolicControlUnit_syst_rready_i              )                ,
-    .uart_data_rx_out           (uart_data_rx_out                               )                ,
+    .uart_data_rx_out           (uart_data_rx_out[7:0]                               )                ,
     .starting_frame_identified  (systolicControlUnit_starting_frame_identified  )                ,
     .uart_ready_rx              (systolicControlUnit_uart_ready_rx              )                ,
     .serial2mem_opa_ready_o     (systolicControlUnit_serial2mem_opa_ready_o     )                ,

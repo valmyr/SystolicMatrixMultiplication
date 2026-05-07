@@ -31,9 +31,9 @@ logic [$clog2(2*SIZE) :0]       counter_transfer_m  , next_counter_transfer_m   
 (*dont_touch = "true"*) logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
 
 (*dont_touch = "true"*) 
-logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]            ;
+logic [WIDTHx-1:0]                      a_vec           [SIZE:0][SIZE:0]            ;
 (*dont_touch = "true"*) 
-logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]            ;
+logic [WIDTHx-1:0]                      b_vec           [SIZE:0][SIZE:0]            ;
 (*dont_touch = "true"*) 
 
 logic [WIDTHx-1:0]                 a_load[SIZE-1:0]                                          ;
@@ -58,8 +58,8 @@ generate
                     .ena      (     ena_mac                                            ),
                     .a        (     a_vec[i][j]                                        ),
                     .b        (     b_vec[j][i]                                        ),
-                    .x        (     a_vec[i+1][j]                                      ), //Ajuda de Ewerton
-                    .y        (     b_vec[j+1][i]                                      ), //Ajuda de Ewerton
+                    .x        (     a_vec[i+1][j]                                      ), 
+                    .y        (     b_vec[j+1][i]                                      ),
                     .z        (   produc_a_b[SIZE-j-1][SIZE-i-1]                       )
                 );
             end
