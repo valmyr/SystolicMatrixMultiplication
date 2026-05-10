@@ -11,7 +11,7 @@
 // Tool Versions: 
 // Description: 
 // 
-// Dependencies: SYSTOLICMATRIXMILTIPLY, SERIAL2MEM, SYSTOLICCONTROLUNIT,CLOCKHATE
+// Dependencies: 
 // 
 // Revision:
 // Revision 0.01 - File Created
@@ -30,10 +30,8 @@ module SystolicCoreTop#(
     output logic                    uart_ready_rx_out         ,
     input  logic                    uart_ready_tx_out         ,
     output logic                    uart_valid_tx_in          ,
-    input logic                    uart_valid_rx_in          ,
-
-
-    input logic                    s_axis_tlast              ,
+    input logic                    uart_valid_rx_in           ,
+    input logic                    s_axis_tlast               ,
     output logic                    m_axis_tlast
 );
 
@@ -78,7 +76,7 @@ logic [WIDTHx-1:0]   syst_b_input [SIZE-1:0]                                    
 logic                     syst_ready_o                                                                          ;
 logic                     syst_rvalid_o                                                                         ;
 (*dont_touch = "true"*) 
-logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                   ;
+logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                                           ;
 
 logic                     syst_read_done                                                                        ;
 //--------------------------------------------------------------------------------------------------
@@ -90,9 +88,9 @@ logic                   serial2mem_opa_valid_i                                  
 logic                   serial2mem_opa_rready_i                                                                 ;
 logic                   serial2mem_opa_rvalid_o                                                                 ;
 logic                   serial2mem_opa_ready_o                                                                  ;
-logic [WIDTHx*SIZE-1:0]      serial2mem_opa_in_data                                                                  ;
-logic [WIDTHx-1:0] serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                                               ;
-logic [WIDTHx-1:0] serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                                               ;
+logic [WIDTHx*SIZE-1:0]      serial2mem_opa_in_data                                                             ;
+logic [WIDTHx-1:0] serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                                 ;
+logic [WIDTHx-1:0] serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                                 ;
 //---------------------------------------------------------------------------------------------------
 //-----Pinout Bank Register Flow Data Time Structure---------------------------------------------
 logic [WIDTHx-1:0] flow_data_time_structure_OPA [SIZE-1:0];
@@ -100,11 +98,14 @@ logic [WIDTHx-1:0] flow_data_time_structure_OPB [SIZE-1:0];
 logic [WIDTHx-1:0] flow_data_time_structure_OUTA[SIZE-1:0];
 logic [WIDTHx-1:0] flow_data_time_structure_OUTB[SIZE-1:0];
 
-logic flow_data_time_structure_clock ; 
+logic shiftdata_clock;
+logic shiftdata_nreset;
+logic img2row_clock;
+logic img2row_rst_n_sync;
+
+
 logic flow_data_time_structure_nreset;
 
-assign flow_data_time_structure_clock = clock; 
-assign flow_data_time_structure_nreset = nreset;
 
 //--------------------------------------------------------------------------------------------------
 logic                   serial2mem_opb_clock                                                                    ;
@@ -114,9 +115,9 @@ logic                   serial2mem_opb_valid_i                                  
 logic                   serial2mem_opb_rready_i                                                                 ;
 logic                   serial2mem_opb_ready_o                                                                  ;
 logic                   serial2mem_opb_rvalid_o                                                                 ;
-logic [WIDTHx*SIZE-1:0]      serial2mem_opb_in_data                                                                  ;
-logic [WIDTHx-1:0] serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                                                ;
-logic [WIDTHx-1:0] serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                                                ;
+logic [WIDTHx*SIZE-1:0] serial2mem_opb_in_data                                                                  ;
+logic [WIDTHx-1:0]      serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                                                ;
+logic [WIDTHx-1:0]      serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                                                ;
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
@@ -140,6 +141,26 @@ logic ref_clock_nreset                                                          
 logic ref_clock_out_clock_ref                                                                                   ;
 //---------------------------------------------------------------------------------------------------
 
+
+//---------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
+//Pinout img2row
+localparam SIZE_WINDOW = 6;
+localparam SIZE_KER = 3;
+localparam OUT_SIZE = SIZE_WINDOW - SIZE_KER + 1;
+localparam OUT_SIZE_NORM = $clog2(2**((OUT_SIZE)*(OUT_SIZE)));
+
+logic u_im2row_clock;
+logic u_im2row_rst_n_sync;
+logic u_im2row_data_valid;
+logic u_im2row_module_ready;
+logic u_im2row_result_valid;
+logic u_im2row_downstream_ready;
+logic [WIDTHx-1:0] u_im2row_input_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
+logic [WIDTHx-1:0] u_im2row_col_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
+
+//---------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------------
 //AXI
 assign uart_ready_rx_out =1;
@@ -152,11 +173,13 @@ assign m_axis_tlast = mem2serial_m_axis_tlast;
 //Atribuição de clocks
 assign syst_clock                = clock                                                                        ;
 assign uart_clock                = clock                                                                        ;
-assign mem2serial_clock          = clock                                     ;//A definir 5kHz
-assign serial2mem_opa_clock      = clock           ;
-assign serial2mem_opb_clock      = clock           ;
+assign mem2serial_clock          = clock                                                                        ;//A definir 5kHz
+assign serial2mem_opa_clock      = clock                                                                        ;
+assign serial2mem_opb_clock      = clock                                                                        ;
 assign systolicControlUnit_clock = clock                                                                        ;
 assign ref_clock_in_clock        = clock                                                                        ;
+assign shiftdata_clock = clock;
+assign img2row_clock = clock;
 //Atribuição de nreset
 
 assign syst_nreset                = nreset                                                                      ;
@@ -165,10 +188,13 @@ assign serial2mem_opa_nreset      = nreset                                      
 assign serial2mem_opb_nreset      = nreset                                                                      ;
 assign mem2serial_nreset          = nreset                                                                      ;
 assign ref_clock_nreset           = nreset                                                                      ; 
-assign systolicControlUnit_nreset = nreset                                                                      ;
-
+assign systolicControlUnit_nreset = nreset     ;
+assign shiftdata_nreset           = nreset;
+assign img2row_rst_n_sync         = nreset;
+                                                                 
 // assign uart_data_tx_in = systolicControlUnit_mem2serial_valid_i?  mem2serial_smatrix_out : 8'haf;                                                                 ;
-(*dont_touch = "true"*) /*
+/*
+
 always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
     2'b10:
         uart_data_tx_in = mem2serial_smatrix_out;
@@ -322,7 +348,7 @@ systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))systoli
     .uart_valid_tx_in           (systolicControlUnit_uart_valid_tx_in           )                ,    
     .syst_valid_i               (systolicControlUnit_syst_valid_i               )                ,    
     .syst_rready_i              (systolicControlUnit_syst_rready_i              )                ,
-    .uart_data_rx_out           (uart_data_rx_out[7:0]                               )                ,
+    .uart_data_rx_out           (uart_data_rx_out[7:0]                          )                ,
     .starting_frame_identified  (systolicControlUnit_starting_frame_identified  )                ,
     .uart_ready_rx              (systolicControlUnit_uart_ready_rx              )                ,
     .serial2mem_opa_ready_o     (systolicControlUnit_serial2mem_opa_ready_o     )                ,
@@ -330,55 +356,33 @@ systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))systoli
     .read_done                  (systolicControlUnit_read_done                  )                ,
     .frame_start                (systolicControlUnit_frame_start                )                ,
     .axi_debug                  (uart_data_rx_out                               )
-   // .s_axis_tlast               (                                                )//systolicControlUnit_s_axis_tlast
 );
 
-logic [31:0] counter;
-logic [31:0] counter_next;
-logic [31:0] counter1;
-
-assign counter_next=counter+1;
-always_ff@(posedge clock,negedge nreset)begin
-    if(!nreset)begin
-        counter <= 0;
-        counter1 <= 0;
-        flow_data_time_structure_OPA <= '{default:0};
-        flow_data_time_structure_OPB <= '{default:0};
-
-    end else begin
-        counter1 <= counter1 +1;
-        if(syst_ena_mac)begin
-            for(int l =0; l < SIZE; l++)begin
-                flow_data_time_structure_OPA[l] <= counter >SIZE-1 ?'{default:0}: serial2mem_opa_out_data[l][counter];//counter > SIZE-1 ? 0 : A1[l][counter];
-                flow_data_time_structure_OPB[l] <= counter >SIZE-1 ?'{default:0}: serial2mem_opb_out_data[counter][l];//counter > SIZE-1 ? 0 : A2_t[l][counter];
-            end
-            counter <=counter_next;
-        end else begin 
-            counter <= 0;
-            flow_data_time_structure_OPA <= '{default:0};
-            flow_data_time_structure_OPB <= '{default:0};
-        end
-    end
-end
-
-reg_bank #(.DATA_W(WIDTHx),.N_LANES(SIZE))opa_flow_data_time_structure(
-    .clock  (flow_data_time_structure_clock  ),
-    .nreset (flow_data_time_structure_nreset ),
-    .OP     (flow_data_time_structure_OPA    ),
-    .OUT    (flow_data_time_structure_OUTA   ),
-    .ena    (syst_ena_mac                    )
-
-);
-
-reg_bank #(.DATA_W(WIDTHx),.N_LANES(SIZE))opb_flow_data_time_structure(
-    .clock  (flow_data_time_structure_clock  ),
-    .nreset (flow_data_time_structure_nreset ),
-    .OP     (flow_data_time_structure_OPB    ),
-    .OUT    (flow_data_time_structure_OUTB   ),
-    .ena    (syst_ena_mac                    )
+shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shifdata(
+    .clock(shiftdata_clock),
+    .nreset(shiftdata_nreset),
+    .ena_shift(syst_ena_mac),
+    .opa_out_data(serial2mem_opa_out_data),
+    .opb_out_data(serial2mem_opb_out_data),
+    .flow_data_time_structure_OUTA(flow_data_time_structure_OUTA),
+    .flow_data_time_structure_OUTB(flow_data_time_structure_OUTB) 
 );
 
 
+img2row #(
+    .WIDTH      (WIDTHx),
+    .SIZE_KER   (SIZE_KER),
+    .SIZE_WINDOW(SIZE_WINDOW)
+) u_img2row (
+    .clk         (u_im2row_clock),
+    .rst_n_sync  (u_im2row_rst_n_sync),
+    .valid_i     (u_im2row_data_valid),
+    .ready_o     (u_im2row_module_ready),
+    .rvalid_o    (u_im2row_result_valid),
+    .rready_i    (u_im2row_downstream_ready),
+    .img         (u_im2row_input_image),
+    .colout      (u_im2row_col_matrix)
+);
 
 /*
 

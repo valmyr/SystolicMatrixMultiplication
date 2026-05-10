@@ -1,0 +1,32 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on May 10, 2026 at 20:26:58 -03
+xrun
+	-timescale 1ns/1ps
+	-F ../rtl.lst
+		rtl/accumulator.sv
+		rtl/counter.sv
+		rtl/ffd.sv
+		rtl/AXI_Stream_Systolic_Core.v
+		rtl/SystolicControlUnit.sv
+		rtl/SystolicCore.sv
+		rtl/bank_reg.sv
+		rtl/mem2serial.sv
+		rtl/onlyFPGA.v
+		rtl/row_major_axi_convert.v
+		rtl/serial2mem.sv
+		rtl/systolicMatrixMultiply.sv
+		rtl/im2col/rtl/im2col.sv
+		rtl/shiftdata.sv
+	-top AXI_Stream_Systolic_Core
+	-access +rwc
+	-gui
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> ^C
+xcelium> exit
+xmsim: *W,NORUNCMD: No 'run' command issued.
+TOOL:	xrun(64)	23.09-s003: Exiting on May 10, 2026 at 20:27:59 -03  (total: 00:01:01)

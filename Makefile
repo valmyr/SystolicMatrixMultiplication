@@ -5,6 +5,9 @@ dir = ./sim/
 
 simi:
 	cd ${dir} &&\
+	xrun -timescale 1ns/1ps -F ../rtl.lst -top AXI_Stream_Systolic_Core -access +rwc 
+simi_gui:
+	cd ${dir} &&\
 	xrun -timescale 1ns/1ps -F ../rtl.lst -top AXI_Stream_Systolic_Core -access +rwc -gui
 clean:
 	cd ${dir} &&\

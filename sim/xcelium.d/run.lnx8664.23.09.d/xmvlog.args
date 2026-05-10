@@ -1,0 +1,32 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.23.09.d
+-RUNMODE
+../rtl/accumulator.sv
+../rtl/counter.sv
+../rtl/ffd.sv
+../rtl/AXI_Stream_Systolic_Core.v
+../rtl/SystolicControlUnit.sv
+../rtl/SystolicCore.sv
+../rtl/bank_reg.sv
+../rtl/mem2serial.sv
+../rtl/onlyFPGA.v
+../rtl/row_major_axi_convert.v
+../rtl/serial2mem.sv
+../rtl/systolicMatrixMultiply.sv
+../rtl/im2col/rtl/im2col.sv
+../rtl/shiftdata.sv
+-CDSLIB
+./xcelium.d/run.lnx8664.23.09.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.23.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.23.09.d/xllibs
+-ALLOWUNBOUND
+-hastop
