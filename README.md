@@ -118,9 +118,13 @@
 
 ## Vivado Diagrama
 <p align="center">
-<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/VivadoDiagram.png" width="100%" height="100%">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/zynq_dma.png" width="100%" height="100%">
 </p>
 
+## Vivado Diagrama
+<p align="center">
+<img title="Diagrama Zynq+ Systolic Core" alt="Alt text" src="images/systolic_wrapper.png" width="100%" height="100%">
+</p>
 
 
 ## Objetivos
