@@ -152,10 +152,10 @@ localparam OUT_SIZE_NORM = $clog2(2**((OUT_SIZE)*(OUT_SIZE)));
 
 logic u_im2row_clock;
 logic u_im2row_rst_n_sync;
-logic u_im2row_data_valid;
-logic u_im2row_module_ready;
-logic u_im2row_result_valid;
-logic u_im2row_downstream_ready;
+logic u_im2row_data_valid_i;
+logic u_im2row_module_ready_o;
+logic u_im2row_result_rvalid_o;
+logic u_im2row_downstream_ready_i;
 logic [WIDTHx-1:0] u_im2row_input_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
 logic [WIDTHx-1:0] u_im2row_col_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
 
@@ -190,52 +190,19 @@ assign mem2serial_nreset          = nreset                                      
 assign ref_clock_nreset           = nreset                                                                      ; 
 assign systolicControlUnit_nreset = nreset     ;
 assign shiftdata_nreset           = nreset;
-assign img2row_rst_n_sync         = nreset;
-                                                                 
-// assign uart_data_tx_in = systolicControlUnit_mem2serial_valid_i?  mem2serial_smatrix_out : 8'haf;                                                                 ;
-/*
-
-always_comb casex({systolicControlUnit_mem2serial_valid_i,mem2serial_rvalid_o})
-    2'b10:
-        uart_data_tx_in = mem2serial_smatrix_out;
-    2'b01:
-        uart_data_tx_in = 8'hef;
-    default:
-        uart_data_tx_in = 8'hef;
-
-endcase*/
+assign img2row_rst_n_sync         = nreset;                                                                
 assign uart_data_tx_in = mem2serial_smatrix_out;
-//assign flow_data_time_structure_OPA = serial2mem_opa_out_data;
-//assign flow_data_time_structure_OPB = serial2mem_opb_out_data;
+
 
 //---------------------------------------------------------------------------------------------------------------------------------
 
-// ATRIBUIÇÂO MEMORIA A/B
-//assign serial2mem_opa_in_data = (systolicControlUnit_serial2mem_opa_valid_i & !systolicControlUnit_serial2mem_opa_rw) ? uart_data_rx_out: 0             ;
-//assign serial2mem_opb_in_data = (systolicControlUnit_serial2mem_opb_valid_i & !systolicControlUnit_serial2mem_opb_rw) ? uart_data_rx_out: 0             ;
+// ATRIBUIÇÂO MEMORIA A/B           
 assign serial2mem_opa_in_data = uart_data_rx_out;//: 0            ;
 assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;
 assign syst_a_input =  flow_data_time_structure_OUTA                            ;
 assign syst_b_input =  flow_data_time_structure_OUTB ;
 (*dont_touch = "true"*) 
 assign mem2serial_pmatrix_in = syst_output_produc_a_b;
-//assign mem2serial_pmatrix_in[0][0] = 8'd11;
-//assign mem2serial_pmatrix_in[0][1] = 8'd12;
-//assign mem2serial_pmatrix_in[0][2] = 8'd13;
-//assign mem2serial_pmatrix_in[0][3] = 8'd14;
-//assign mem2serial_pmatrix_in[1][0] = 8'd15;
-//assign mem2serial_pmatrix_in[1][1] = 8'd16;
-//assign mem2serial_pmatrix_in[1][2] = 8'd17;
-//assign mem2serial_pmatrix_in[1][3] = 8'd118;
-//assign mem2serial_pmatrix_in[2][0] = 8'd119;
-//assign mem2serial_pmatrix_in[2][1] = 8'd111;
-//assign mem2serial_pmatrix_in[2][2] = 8'd112;
-//assign mem2serial_pmatrix_in[2][3] = 8'd113;
-//assign mem2serial_pmatrix_in[3][0] = 8'd114;
-//assign mem2serial_pmatrix_in[3][1] = 8'd115;
-//assign mem2serial_pmatrix_in[3][2] = 8'd116;
-//assign mem2serial_pmatrix_in[3][3] = 8'd117;
-//[[1,2,3,4],[4,3,2,1],[9,8,7,6],[7,8,9,0]];
 assign systolicControlUnit_serial2mem_opa_ready_o = serial2mem_opa_ready_o ;
 assign systolicControlUnit_serial2mem_opb_ready_o = serial2mem_opb_ready_o ;
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -259,13 +226,10 @@ assign mem2serial_valid_i                          =  systolicControlUnit_mem2se
 assign mem2serial_rready_i                         =  systolicControlUnit_mem2serial_rready_i                   ;
 assign syst_valid_i                                =  systolicControlUnit_syst_valid_i                          ;
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
-//assign uart_valid_tx_in                            =  systolicControlUnit_uart_valid_tx_in                      ; //Avaliação 1.1
+//assign uart_valid_tx_in                          =  systolicControlUnit_uart_valid_tx_in                      ; //Avaliação 1.1
 assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
-assign systolicControlUnit_uart_valid_rx_in = uart_valid_rx_in;
-(*dont_touch = "true"*) 
+assign systolicControlUnit_uart_valid_rx_in        = uart_valid_rx_in;
 
-//logic [111:0]fifo_d_a;
-//logic [111:0]fifo_d_b;
 
 logic syst_ena_mac;
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
@@ -292,9 +256,8 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
     .ready_o                    (serial2mem_opa_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opa_in_data                     )                 ,
     .out_data                   (serial2mem_opa_out_data                    )                 ,
-    .single_port_ram_di         (                    )                 ,
+    .single_port_ram_di         (                                           )                 ,
     .uart_ready_rx_out          (uart_ready_rx_out && uart_valid_rx_in      )                 
-    //.fifo_d(fifo_d_a)
 
 );
 (*dont_touch = "true"*) 
@@ -355,7 +318,11 @@ systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))systoli
     .serial2mem_opb_ready_o     (systolicControlUnit_serial2mem_opb_ready_o     )                ,
     .read_done                  (systolicControlUnit_read_done                  )                ,
     .frame_start                (systolicControlUnit_frame_start                )                ,
-    .axi_debug                  (uart_data_rx_out                               )
+    .axi_debug                  (uart_data_rx_out                               )                ,
+    .u_im2row_data_valid_i      (u_im2row_data_valid_i                          )                , 
+    .u_im2row_module_ready_o    (u_im2row_module_ready_o                        )                ,
+    .u_im2row_result_rvalid_o   (u_im2row_result_rvalid_o                       )                ,
+    .u_im2row_downstream_ready_i(u_im2row_downstream_ready_i                    )                
 );
 
 shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shifdata(
@@ -376,124 +343,14 @@ img2row #(
 ) u_img2row (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
-    .valid_i     (u_im2row_data_valid),
-    .ready_o     (u_im2row_module_ready),
-    .rvalid_o    (u_im2row_result_valid),
-    .rready_i    (u_im2row_downstream_ready),
+    .valid_i     (u_im2row_data_valid_i),
+    .ready_o     (u_im2row_module_ready_o),
+    .rvalid_o    (u_im2row_result_rvalid_o),
+    .rready_i    (u_im2row_downstream_ready_i),
     .img         (u_im2row_input_image),
     .colout      (u_im2row_col_matrix)
 );
-
-/*
-
-ila_3 your_instance_name (
-	.clk(clock), // input wire clk
-
-      
-     .probe0(syst_output_produc_a_b[0][31]), // input wire [7:0]  probe0  
-     .probe1(syst_output_produc_a_b[0][30]), // input wire [7:0]  probe1 
-     .probe2(syst_output_produc_a_b[0][29]), // input wire [7:0]  probe2 
-     .probe3(syst_output_produc_a_b[0][28]), // input wire [7:0]  probe3 
-     .probe4(syst_output_produc_a_b[0][27]), // input wire [7:0]  probe4 
-     .probe5(syst_output_produc_a_b[0][26]), // input wire [7:0]  probe5 
-     .probe6(syst_output_produc_a_b[0][25]), // input wire [7:0]  probe6 
-     .probe7(syst_output_produc_a_b[0][24]), // input wire [7:0]  probe7 
-     .probe8(syst_output_produc_a_b[0][23]), // input wire [7:0]  probe8 
-     .probe9(syst_output_produc_a_b[0][9]), // input wire [7:0]  probe9 
-	.probe10(syst_output_produc_a_b[0][10]), // input wire [7:0]  probe10 
-	.probe11(syst_output_produc_a_b[0][11]), // input wire [7:0]  probe11 
-	.probe12(syst_output_produc_a_b[0][12]), // input wire [7:0]  probe12 
-	.probe13(syst_output_produc_a_b[0][13]), // input wire [7:0]  probe13 
-	.probe14(syst_output_produc_a_b[0][14]), // input wire [7:0]  probe14 
-	.probe15(syst_output_produc_a_b[0][15]), // input wire [7:0]  probe15 
-	.probe16(syst_output_produc_a_b[0][0]), // input wire [7:0]  probe16 
-	.probe17(syst_output_produc_a_b[0][1]), // input wire [7:0]  probe17 
-	.probe18(syst_output_produc_a_b[0][2]), // input wire [7:0]  probe18 
-	.probe19(syst_output_produc_a_b[0][3]), // input wire [7:0]  probe19 
-	.probe20(syst_output_produc_a_b[0][4]), // input wire [7:0]  probe20 
-	.probe21(syst_output_produc_a_b[0][5]), // input wire [7:0]  probe21 
-	.probe22(syst_output_produc_a_b[0][6]), // input wire [7:0]  probe22 
-	.probe23(syst_output_produc_a_b[0][7]), // input wire [7:0]  probe23 
-	.probe24(syst_output_produc_a_b[0][8]), // input wire [7:0]  probe24 
-	.probe25(syst_output_produc_a_b[0][9]), // input wire [7:0]  probe25 
-	.probe26(syst_output_produc_a_b[0][10]), // input wire [7:0]  probe26 
-	.probe27(syst_output_produc_a_b[0][11]), // input wire [7:0]  probe27 
-	.probe28(syst_output_produc_a_b[0][12]), // input wire [7:0]  probe28 
-	.probe29(syst_output_produc_a_b[0][13]), // input wire [7:0]  probe29 
-	.probe30(syst_output_produc_a_b[0][14]), // input wire [7:0]  probe30 
-    .probe31(syst_output_produc_a_b[0][15]) // input wire [7:0]  probe31
-
-);
-*/
-
-/*
-(*dont_touch = "true"*) 
-ref_clock #(.CLOCK_REF(1000),.CLOCK_INPUT(100_000_000))clock_rate_pc(
-    .in_clock     (ref_clock_in_clock                                   )                ,
-    .nreset       (ref_clock_nreset                                     )                ,
-    .out_clock_ref(ref_clock_out_clock_ref                              )                
-);
-*/
-
-/*
-ila_3 your_instance_name (
-	.clk(clock), // input wire clk
-
-
-	.probe0(probe0), // input wire [0:0]  probe0  
-	.probe1(probe1) // input wire [0:0]  probe1
-);*/
-/*
-(*dont_touch = "true"*) 
-ila_0 ILA (
-	.clk(clock                                              ), // input wire clk
-    .probe0 (serial2mem_opa_buf_data                        ), // input wire [7:0]  probe0  
-	.probe1 (serial2mem_opb_buf_data                        ), // input wire [7:0]  probe1 
-	.probe2 (serial2mem_opa_out_data                        ), // input wire [7:0]  probe2 
-	.probe3 (serial2mem_opb_out_data                        ), // input wire [7:0]  probe3 
-	.probe4 (uart_data_rx_out                               ), // input wire [7:0]  probe4 
-	.probe5 (syst_output_produc_a_b[01][01]                 ), // input wire [7:0]  probe5 
-	.probe6 (syst_output_produc_a_b[01][02]                 ), // input wire [7:0]  probe6 
-	.probe7 (syst_output_produc_a_b[01][03]                 ), // input wire [7:0]  probe7 
-	.probe8 (syst_output_produc_a_b[02][00]                 ), // input wire [0:0]  probe8 
-	.probe9 (syst_output_produc_a_b[02][01]                 ), // input wire [0:0]  probe9 
-	.probe10(syst_output_produc_a_b[02][02]                 ), // input wire [0:0]  probe10 
-	.probe11(syst_output_produc_a_b[02][03]                 ), // input wire [0:0]  probe11 
-	.probe12(syst_output_produc_a_b[03][00]                 ), // input wire [0:0]  probe12 
-	.probe13(systolicControlUnit_frame_start[07:00]         ), // input wire [0:0]  probe13 
-	.probe14(systolicControlUnit_frame_start[15:08]         ), // input wire [0:0]  probe14 
-	.probe15(systolicControlUnit_frame_start[23:16]         ), // input wire [0:0]  probe15
-	.probe16(systolicControlUnit_frame_start[31:24]         ),
-	.probe17(uart_sdata_rx_in                               ),
-	.probe18(serial2mem_opa_clock                        )
-	
-);*/
-/*
-clk_wiz_0  clock_pll
- (
-  // Clock out ports
-  .clk_out1(clock_sync_data),
-  // Status and control signals
-  .reset(~nreset),
-  .locked(),
- // Clock in ports
-  .clk_in1(uart_ready_rx_out)
- );*/
- /*
- 
- ila_0 your_instance_name (
-	.clk(clock), // input wire clk
-
-
-	.probe0(serial2mem_opa_buf_data), // input wire [15:0]  probe0  
-	.probe1(serial2mem_opb_buf_data), // input wire [15:0]  probe1 
-	.probe2(fifo_d_a), // input wire [15:0]  probe2 
-	.probe3(fifo_d_b), // input wire [7:0]  probe3 
-	.probe4(serial2mem_opa_ready_o), // input wire [7:0]  probe4 
-	.probe5(serial2mem_opb_ready_o), // input wire [0:0]  probe5 
-	.probe6(serial2mem_opa_rvalid_o), // input wire [0:0]  probe6 
-	.probe7(serial2mem_opb_rvalid_o), // input wire [0:0]  probe7 
-	.probe8(uart_data_rx_out), // input wire [0:0]  probe8 
-	.probe9(systolicControlUnit_clock) // input wire [0:0]  probe9
-);*/
 endmodule
+
+
+
