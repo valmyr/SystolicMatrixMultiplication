@@ -25,7 +25,7 @@ module onlyFPGA(
         //input wire clock
         input wire clk_125mhz_p,
         input wire clk_125mhz_n,
-        input wire nreset
+        input wire rst_n_async
     );
     
   wire clock;
@@ -42,8 +42,8 @@ parameter WIDTHxSS = 4, SIZES = 8;
 parameter BYTESIZESS = 2*WIDTHxSS *SIZES;
 reg [31:0] cnt5;
 wire [BYTESIZESS-1:0] dout_mem;
-always@(posedge clock, negedge nreset)begin
-    if(!nreset) cnt5 <= 0;
+always@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async) cnt5 <= 0;
     else cnt5<= cnt5 ==15+6*SIZES-1 ? 1:cnt5+1;
 end 
 matrix_in_memeory your_instance_name (
@@ -60,7 +60,7 @@ matrix_in_memeory your_instance_name (
 AXI_Stream_Systolic_Core #(.BYTESIZES(BYTESIZESS), .WIDTHx(WIDTHxSS),.SIZE(SIZES),.WIDTH(2*WIDTHxSS))Core0 (
         // Sinais de sistema
         .clock(clock),
-        .resetn(nreset),
+        .resetn(rst_n_async),
 
         // Interface Slave AXI Stream (Entrada)
         .s_axis_tvalid(1),

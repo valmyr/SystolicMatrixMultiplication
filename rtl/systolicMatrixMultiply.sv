@@ -13,7 +13,7 @@ module systolicMatrixMultiply#(
     parameter WIDTH = 8 , SIZE=16, WIDTHx = 4
 )(
     input  logic                    clock                                  ,
-    input  logic                    nreset                                 ,
+    input  logic                    rst_n_async                                 ,
     input  logic                    valid_i                                , //Dado válido na entrada
     input  logic                    rready_i                               , //Pronto para receber uma resposta                                                
     input  logic [WIDTHx-1:0]       a_input [SIZE-1:0]                        	   ,
@@ -54,7 +54,7 @@ generate
                (*dont_touch = "true"*) 
                 accumulator_cells #(.WIDTH(WIDTH),.WIDTHx(WIDTHx)) MAC(    
                     .clock    (     clock                                              ),
-                    .nreset   (     nreset                                             ),
+                    .rst_n_async   (     rst_n_async                                             ),
                     .ena      (     ena_mac                                            ),
                     .a        (     a_vec[i][j]                                        ),
                     .b        (     b_vec[j][i]                                        ),
@@ -83,8 +83,8 @@ endgenerate
 	.probe9(0) // input wire [0:0]  probe9
 );
 */
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         currentStateSystolicControlUnit <= IDLE;
         counter_mult                    <=    0;
         counter_transfer_m              <=    0;

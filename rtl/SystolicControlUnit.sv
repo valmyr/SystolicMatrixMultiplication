@@ -1,6 +1,6 @@
 module systolicControlUnitTop#(parameter SIZE=32,WIDTH=8,BYTESIZES =256)(
     input  logic       clock                        ,
-    input  logic       nreset                       ,
+    input  logic       rst_n_async                       ,
     input  logic       uart_valid_rx_in             ,
     input  logic       uart_ready_rx                ,
     input  logic       u_im2row_module_ready_o      ,        
@@ -59,8 +59,8 @@ logic handsheak;
 logic clock_sample;
 
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         clock_sample <= 0;
     end else begin
         clock_sample <= ~clock_sample;
@@ -70,8 +70,8 @@ always_ff@(posedge clock, negedge nreset)begin
 end
 
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         frame_start        <= 0;
         handsheak <= 0;
 
@@ -86,8 +86,8 @@ end
 
 
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         fsm_unit_control <= IDLE;
     end else begin
         fsm_unit_control <= fsm_unit_control_next;
@@ -221,29 +221,29 @@ endcase
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_opA(
 
         .clock    (clock                               )                           ,
-        .nreset   (nreset                              )                           ,
+        .rst_n_async   (rst_n_async                              )                           ,
         .ena      (ena_mem_write_counter      )                           ,
         .counter  (counter_out_opA                     )                           ,
-        .clear(1'b0            )
+        .clean(1'b0            )
 );
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_read_mem(
 
         .clock    (clock                                )                           ,
-        .nreset   (nreset                               )                           ,
+        .rst_n_async   (rst_n_async                               )                           ,
         .ena      (ena_mem_read_systolic_counter )                           ,
         .counter  (counter_out_systolic_read_mem       )                           ,
-        .clear(1'b0            )
+        .clean(1'b0            )
 );
 
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_write_mem(
 
         .clock    (clock                                )                           ,
-        .nreset   (nreset                               )                           ,
+        .rst_n_async   (rst_n_async                               )                           ,
         .ena      (ena_send2host_counter     )                           ,
         .counter  (counter_out_send_fpga2host           ),
-        .clear(counter_out_send_fpga2host >= 3*SIZE-1+6   )
+        .clean(counter_out_send_fpga2host >= 3*SIZE-1+6   )
 );
 
 
@@ -251,8 +251,8 @@ counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_write_mem(
 
 
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         fsm_pipeline_s3 <=IDLE_S;
         fsm_pipeline_s2 <=IDLE_E;
         fsm_pipeline_s1 <=IDLE_W;   

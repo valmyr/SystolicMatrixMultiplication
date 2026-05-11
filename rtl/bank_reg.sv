@@ -7,7 +7,7 @@ module reg_bank#(
 
 )(
     input  logic clock              ,
-    input  logic nreset             ,
+    input  logic rst_n_async             ,
     input  logic              ena   ,
 
     input  logic [DATA_W-1:0] OP [N_LANES-1:0],
@@ -20,7 +20,7 @@ module reg_bank#(
         for(j = 0; j < N_LANES; j++)begin
             for(i = 0; i < 2*(N_LANES-1)-1; i++)begin
             (*dont_touch = "true"*)
-                ffd #(.WIDTH(DATA_W)) ffds (.clock(clock),.nreset(nreset),.ena(ena),.data_in(mem[j][i]),.data_out(mem[j][i+1]));
+                ffd #(.WIDTH(DATA_W)) ffds (.clock(clock),.rst_n_async(rst_n_async),.ena(ena),.data_in(mem[j][i]),.data_out(mem[j][i+1]));
             end  
             (*dont_touch = "true"*)
             assign mem[j][0] = OP[j];

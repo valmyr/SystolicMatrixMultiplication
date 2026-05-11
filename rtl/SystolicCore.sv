@@ -24,21 +24,21 @@ module SystolicCoreTop#(
     parameter  BYTESIZES = 8, WIDTHx = 4,SIZE = 16,WIDTH =8
 )(
     input  logic                    clock                     ,
-    input  logic                    nreset                    ,
+    input  logic                    rst_n_async               ,
     input  logic [BYTESIZES-1:0]    uart_data_rx_out          ,
     output logic [BYTESIZES-1:0]    uart_data_tx_in           ,
     output logic                    uart_ready_rx_out         ,
     input  logic                    uart_ready_tx_out         ,
     output logic                    uart_valid_tx_in          ,
-    input logic                    uart_valid_rx_in           ,
-    input logic                    s_axis_tlast               ,
+    input logic                     uart_valid_rx_in          ,
+    input logic                     s_axis_tlast              ,
     output logic                    m_axis_tlast
 );
 
 //Pinout Unidade de Controle.
 //-------------------------------------------------------------------------------------------------
 logic                   systolicControlUnit_clock                                                               ;
-logic                   systolicControlUnit_nreset                                                              ;
+logic                   systolicControlUnit_rst_n_async                                                         ;
 (*dont_touch = "true"*)
 logic                   systolicControlUnit_uart_valid_rx_in                                                    ;
 logic                   systolicControlUnit_serial2mem_opa_rvalid_o                                             ;
@@ -68,7 +68,7 @@ logic                   systolicControlUnit_s_axis_tlast                        
 //Pinout Systolic
 //--------------------------------------------------------------------------------------------------
 logic                     syst_clock                                                                            ;
-logic                     syst_nreset                                                                           ;
+logic                     syst_rst_n_async                                                                      ;
 logic                     syst_valid_i                                                                          ;
 logic                     syst_rready_i                                                                         ;
 logic [WIDTHx-1:0]   syst_a_input [SIZE-1:0]                                                                    ;
@@ -77,20 +77,20 @@ logic                     syst_ready_o                                          
 logic                     syst_rvalid_o                                                                         ;
 (*dont_touch = "true"*) 
 logic [WIDTH-1:0]         syst_output_produc_a_b [SIZE-1:0][SIZE-1:0]                                           ;
-
 logic                     syst_read_done                                                                        ;
 //--------------------------------------------------------------------------------------------------
 //Pinout MEMA
 logic                   serial2mem_opa_clock                                                                    ;
-logic                   serial2mem_opa_nreset                                                                   ;
+logic                   serial2mem_opa_rst_n_async                                                              ;
 logic                   serial2mem_opa_rw                                                                       ;
 logic                   serial2mem_opa_valid_i                                                                  ;
 logic                   serial2mem_opa_rready_i                                                                 ;
 logic                   serial2mem_opa_rvalid_o                                                                 ;
 logic                   serial2mem_opa_ready_o                                                                  ;
-logic [WIDTHx*SIZE-1:0]      serial2mem_opa_in_data                                                             ;
-logic [WIDTHx-1:0] serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                                 ;
-logic [WIDTHx-1:0] serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                                 ;
+logic [WIDTHx*SIZE-1:0] serial2mem_opa_in_data                                                                  ;
+logic [WIDTHx-1:0]      serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                            ;
+logic [WIDTHx-1:0]      serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                            ;
+logic                   syst_ena_mac                                                                            ;
 //---------------------------------------------------------------------------------------------------
 //-----Pinout Bank Register Flow Data Time Structure---------------------------------------------
 logic [WIDTHx-1:0] flow_data_time_structure_OPA [SIZE-1:0];
@@ -99,45 +99,43 @@ logic [WIDTHx-1:0] flow_data_time_structure_OUTA[SIZE-1:0];
 logic [WIDTHx-1:0] flow_data_time_structure_OUTB[SIZE-1:0];
 
 logic shiftdata_clock;
-logic shiftdata_nreset;
+logic shiftdata_rst_n_async;
 logic img2row_clock;
 logic img2row_rst_n_sync;
-
-
-logic flow_data_time_structure_nreset;
+logic flow_data_time_structure_rst_n_async;
 
 
 //--------------------------------------------------------------------------------------------------
 logic                   serial2mem_opb_clock                                                                    ;
-logic                   serial2mem_opb_nreset                                                                   ;
+logic                   serial2mem_opb_rst_n_async                                                              ;
 logic                   serial2mem_opb_rw                                                                       ;
 logic                   serial2mem_opb_valid_i                                                                  ;
 logic                   serial2mem_opb_rready_i                                                                 ;
 logic                   serial2mem_opb_ready_o                                                                  ;
 logic                   serial2mem_opb_rvalid_o                                                                 ;
 logic [WIDTHx*SIZE-1:0] serial2mem_opb_in_data                                                                  ;
-logic [WIDTHx-1:0]      serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                                                ;
-logic [WIDTHx-1:0]      serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                                                ;
+logic [WIDTHx-1:0]      serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                            ;
+logic [WIDTHx-1:0]      serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                            ;
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout MEM2SERIAL
 logic                   mem2serial_clock                                                                        ;
-logic                   mem2serial_nreset                                                                       ;
+logic                   mem2serial_rst_n_async                                                                  ;
 (*dont_touch = "true"*) 
 logic [WIDTH-1:0]       mem2serial_pmatrix_in [SIZE-1:0][SIZE-1:0]                                              ;
 logic                   mem2serial_valid_i                                                                      ;
 logic                   mem2serial_rready_i                                                                     ;
 logic                   mem2serial_rvalid_o                                                                     ;
 logic                   mem2serial_ready_o                                                                      ;
-logic  [BYTESIZES-1:0]      mem2serial_smatrix_out                                                                  ;
+logic  [BYTESIZES-1:0]  mem2serial_smatrix_out                                                                  ;
 logic                   mem2serial_m_axis_tlast                                                                 ;
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout SampleHatePC
 logic ref_clock_in_clock                                                                                        ;
-logic ref_clock_nreset                                                                                          ;
+logic ref_clock_rst_n_async                                                                                     ;
 logic ref_clock_out_clock_ref                                                                                   ;
 //---------------------------------------------------------------------------------------------------
 
@@ -164,8 +162,6 @@ logic [WIDTHx-1:0] u_im2row_col_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
 //---------------------------------------------------------------------------------------------------------------------------------
 //AXI
 assign uart_ready_rx_out =1;
-//assign s_axis_tlast = systolicControlUnit_s_axis_tlast  ;
-//assign uart_valid_tx_in =1;
 assign m_axis_tlast = mem2serial_m_axis_tlast;
 //---------------------------------------------------------------------------------------------------------------------------------
 
@@ -179,19 +175,20 @@ assign serial2mem_opb_clock      = clock                                        
 assign systolicControlUnit_clock = clock                                                                        ;
 assign ref_clock_in_clock        = clock                                                                        ;
 assign shiftdata_clock = clock;
-assign img2row_clock = clock;
-//Atribuição de nreset
+assign u_im2row_clock =clock;
+assign u_im2row_rst_n_sync=rst_n_async;
+//Atribuição de rst_n_async
 
-assign syst_nreset                = nreset                                                                      ;
-assign uart_nreset                = nreset                                                                      ;
-assign serial2mem_opa_nreset      = nreset                                                                      ;
-assign serial2mem_opb_nreset      = nreset                                                                      ;
-assign mem2serial_nreset          = nreset                                                                      ;
-assign ref_clock_nreset           = nreset                                                                      ; 
-assign systolicControlUnit_nreset = nreset     ;
-assign shiftdata_nreset           = nreset;
-assign img2row_rst_n_sync         = nreset;                                                                
-assign uart_data_tx_in = mem2serial_smatrix_out;
+assign syst_rst_n_async                = rst_n_async                                                                      ;
+assign uart_rst_n_async                = rst_n_async                                                                      ;
+assign serial2mem_opa_rst_n_async      = rst_n_async                                                                      ;
+assign serial2mem_opb_rst_n_async      = rst_n_async                                                                      ;
+assign mem2serial_rst_n_async          = rst_n_async                                                                      ;
+assign ref_clock_rst_n_async           = rst_n_async                                                                      ; 
+assign systolicControlUnit_rst_n_async = rst_n_async                                                                      ;
+assign shiftdata_rst_n_async           = rst_n_async                                                                      ;
+assign img2row_rst_n_sync              = rst_n_async                                                                      ;                                                                
+assign uart_data_tx_in                 = mem2serial_smatrix_out                                                           ;
 
 
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -214,8 +211,7 @@ assign systolicControlUnit_serial2mem_opa_rvalid_o =  serial2mem_opa_rvalid_o   
 assign systolicControlUnit_serial2mem_opb_rvalid_o =  serial2mem_opb_rvalid_o                                   ;
 assign systolicControlUnit_syst_rvalid_o           =  syst_rvalid_o                                             ;
 assign systolicControlUnit_mem2serial_rvalid_o     =  mem2serial_rvalid_o                                       ;
-assign systolicControlUnit_read_done               = syst_read_done                                             ;
-
+assign systolicControlUnit_read_done               =  syst_read_done                                            ;
 assign serial2mem_opa_valid_i                      =  systolicControlUnit_serial2mem_opa_valid_i                ;
 assign serial2mem_opb_valid_i                      =  systolicControlUnit_serial2mem_opb_valid_i                ;
 assign serial2mem_opa_rw                           =  systolicControlUnit_serial2mem_opa_rw                     ;
@@ -226,14 +222,10 @@ assign mem2serial_valid_i                          =  systolicControlUnit_mem2se
 assign mem2serial_rready_i                         =  systolicControlUnit_mem2serial_rready_i                   ;
 assign syst_valid_i                                =  systolicControlUnit_syst_valid_i                          ;
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
-//assign uart_valid_tx_in                          =  systolicControlUnit_uart_valid_tx_in                      ; //Avaliação 1.1
-assign systolicControlUnit_uart_ready_rx           = uart_ready_rx_out;
-assign systolicControlUnit_uart_valid_rx_in        = uart_valid_rx_in;
-
-
-logic syst_ena_mac;
-systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixMultiplyM0(
-    .nreset                     (syst_nreset                                )                  ,
+assign systolicControlUnit_uart_ready_rx           =  uart_ready_rx_out;
+assign systolicControlUnit_uart_valid_rx_in        =  uart_valid_rx_in;
+systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) u_systolic_matrix_mul_unit(
+    .rst_n_async                (syst_rst_n_async                           )                  ,
     .valid_i                    (syst_valid_i                               )                  ,
     .rready_i                   (syst_rready_i                              )                  ,
     .a_input                    (syst_a_input                               )                  ,
@@ -246,9 +238,9 @@ systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) DUT_MatrixM
     .ena_mac                    (syst_ena_mac                               )
 );
 (*dont_touch = "true"*) 
-serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
+serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))u_serial2mem_opa_unit(
     .clock                      (serial2mem_opa_clock                       )                 ,  
-    .nreset                     (serial2mem_opa_nreset                      )                 ,// r=1,w=0
+    .rst_n_async                (serial2mem_opa_rst_n_async                 )                 ,// r=1,w=0
     .rw                         (serial2mem_opa_rw                          )                 , //Dado válido na entrada
     .valid_i                    (serial2mem_opa_valid_i                     )                 , //Dado válido na entrada
     .rready_i                   (serial2mem_opa_rready_i                    )                 , //Pronto para receber uma resposta
@@ -261,9 +253,9 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opA(
 
 );
 (*dont_touch = "true"*) 
-serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
+serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))u_serial2mem_opb_unit(
     .clock                      (serial2mem_opb_clock                       )                 ,  
-    .nreset                     (serial2mem_opb_nreset                      )                 ,// r=1,w=0
+    .rst_n_async                (serial2mem_opb_rst_n_async                 )                 ,// r=1,w=0
     .rw                         (serial2mem_opb_rw                          )                 , //Dado válido na entrada
     .valid_i                    (serial2mem_opb_valid_i                     )                 , //Dado válido na entrada
     .rready_i                   (serial2mem_opb_rready_i                    )                 , //Pronto para receber uma resposta
@@ -271,14 +263,14 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))serial2mem_opB(
     .ready_o                    (serial2mem_opb_ready_o                     )                 , //Pronto para receber um dado valido na entrada
     .in_data                    (serial2mem_opb_in_data                     )                 ,
     .out_data                   (serial2mem_opb_out_data                    )                 ,
-    .single_port_ram_di         (                    )                 ,
+    .single_port_ram_di         (                                           )                 ,
     .uart_ready_rx_out          (uart_ready_rx_out && uart_valid_rx_in      )
     //.fifo_d(fifo_d_b)
 );
 (*dont_touch = "true"*) 
-mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))mem2serial_transfer_pc(
+mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES)) u_mem2serial_unit(
     .clock                      (mem2serial_clock                           )                 ,
-    .nreset                     (mem2serial_nreset                          )                 ,
+    .rst_n_async                (mem2serial_rst_n_async                     )                 ,
     .pmatrix_in                 (mem2serial_pmatrix_in                      )                 ,
     .valid_i                    (mem2serial_valid_i                         )                 , //Dado válido na entrada
     .rready_i                   (mem2serial_rready_i                        )                 , //Pronto para receber uma resposta
@@ -287,14 +279,14 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))mem2serial_transfe
     (*dont_touch = "true"*) 
     .smatrix_out                (mem2serial_smatrix_out                     )                 ,
     .m_axis_tlast               (mem2serial_m_axis_tlast                    )                 ,
-    .event_send_data            (uart_ready_tx_out                          )                ,    //Avaliação 1.1
+    .event_send_data            (uart_ready_tx_out                          )                 ,    //Avaliação 1.1
     .uart_valid_tx_in           (uart_valid_tx_in)
 );
 
 (*dont_touch = "true"*) 
-systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))systolicControlUnit_Global(
+systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))u_systolic_control_unit(
     .clock                      (systolicControlUnit_clock                      )                ,
-    .nreset                     (systolicControlUnit_nreset                     )                ,
+    .rst_n_async                (systolicControlUnit_rst_n_async                )                ,
     .uart_valid_rx_in           (systolicControlUnit_uart_valid_rx_in           )                ,
     .serial2mem_opa_rvalid_o    (systolicControlUnit_serial2mem_opa_rvalid_o    )                ,
     .serial2mem_opb_rvalid_o    (systolicControlUnit_serial2mem_opb_rvalid_o    )                ,
@@ -325,9 +317,9 @@ systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))systoli
     .u_im2row_downstream_ready_i(u_im2row_downstream_ready_i                    )                
 );
 
-shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shifdata(
+shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shiftdata_unit(
     .clock(shiftdata_clock),
-    .nreset(shiftdata_nreset),
+    .rst_n_async(shiftdata_rst_n_async),
     .ena_shift(syst_ena_mac),
     .opa_out_data(serial2mem_opa_out_data),
     .opb_out_data(serial2mem_opb_out_data),
@@ -336,11 +328,7 @@ shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shifdata(
 );
 
 
-img2row #(
-    .WIDTH      (WIDTHx),
-    .SIZE_KER   (SIZE_KER),
-    .SIZE_WINDOW(SIZE_WINDOW)
-) u_img2row (
+img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW))u_img2row_unit (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
     .valid_i     (u_im2row_data_valid_i),
@@ -350,6 +338,8 @@ img2row #(
     .img         (u_im2row_input_image),
     .colout      (u_im2row_col_matrix)
 );
+
+
 endmodule
 
 

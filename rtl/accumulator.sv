@@ -15,7 +15,7 @@ module accumulator_cells#(
 )(
 
     input  logic             clock   ,
-    input  logic             nreset  ,
+    input  logic             rst_n_async  ,
     input  logic             ena     ,
     input  logic [WIDTHx-1:0] a       ,
     input  logic [WIDTHx-1:0] b       ,
@@ -26,8 +26,8 @@ module accumulator_cells#(
     logic [2*WIDTH-1:0] accumulator, product, sum_product;
     assign product      = ena ? (a * b) : 0                   ;
     assign sum_product  = ena ? (product + accumulator) : 0   ;
-    always_ff@(negedge nreset, posedge clock)begin
-        if(!nreset)begin
+    always_ff@(negedge rst_n_async, posedge clock)begin
+        if(!rst_n_async)begin
             x           <= 0;
             y           <= 0;
             accumulator <= 0;

@@ -22,47 +22,32 @@
 
 module AXI_Stream_Systolic_Core#(parameter  BYTESIZES = 256, WIDTHx = 4,SIZE = 32,WIDTH =8)(
         // Sinais de sistema
-        input wire          clock,
-        input wire          resetn,
+        input wire                    clock,
+        input wire                    resetn,
 
         // Interface Slave AXI Stream (Entrada)
-        input wire          s_axis_tvalid,
-        output wire         s_axis_tready,
+        input wire                   s_axis_tvalid,
+        output wire                  s_axis_tready,
         input wire [BYTESIZES-1:0]   s_axis_tdata,
-        input wire          s_axis_tlast,
+        input wire                   s_axis_tlast,
         // ... outros sinais opcionais como TUSER
-
         // Interface Master AXI Stream (Saída) 
-        output wire          m_axis_tvalid,
-        input wire          m_axis_tready,
-        output wire [BYTESIZES-1:0]   m_axis_tdata,
-        output wire          m_axis_tlast
+        output wire                  m_axis_tvalid,
+        input wire                   m_axis_tready,
+        output wire [BYTESIZES-1:0]  m_axis_tdata,
+        output wire                  m_axis_tlast
         // ... outros sinais opcionais
 );
-//Update 66
 
-//assign m_axis_tdata =6764553;
-//assign m_axis_tvalid  =1;
-//assign  m_axis_tlast = m_axis_tvalid && m_axis_tready;
-
-wire [BYTESIZES-1:0]s_axis_tdata_big_endian_little_endian;
-
-/*
-
-assign {<<(WIDTHx){s_axis_tdata_big_endian_little_endian}} = s_axis_tdata;
-*/
 SystolicCoreTop #(
    .BYTESIZES(BYTESIZES),.WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH)
-)   SystolicCore0(
+)   u_SystolicCore0_unit(
         .clock               (clock                                                                           )      ,// input
-        .nreset              (resetn                                                                          )      ,// input 
-
-
+        .rst_n_async         (resetn                                                                          )      ,// input 
         .uart_valid_rx_in    (s_axis_tvalid                                                                   )      ,//  input
         .uart_ready_rx_out   (s_axis_tready                                                                   )      , // output
         .s_axis_tlast        (s_axis_tlast                                                                    )      ,//  output
-        .uart_data_rx_out    (s_axis_tdata                      )      ,//  input 8 Bits / 1 Byte ATENÇÂO AJUSTE PARA SIZE
-        
+        .uart_data_rx_out    (s_axis_tdata                                                                    )      ,//  input 8 Bits / 1 Byte ATENÇÂO AJUSTE PARA SIZE       
         .uart_data_tx_in     (m_axis_tdata                                                                    )      ,// output 8 Bits
         .uart_valid_tx_in    (m_axis_tvalid                                                                   )      ,// output
         .uart_ready_tx_out   (m_axis_tready                                                                   )      ,// input

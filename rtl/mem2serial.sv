@@ -1,6 +1,6 @@
 module mem2seriala#(parameter SIZE=32,WIDTH=8,BYTESIZES =256)(
     input  logic             clock                           ,
-    input  logic             nreset                          ,
+    input  logic             rst_n_async                          ,
     (*dont_touch = "true"*) 
     input  logic [WIDTH-1:0] pmatrix_in  [SIZE-1:0][SIZE-1:0]    ,
     input  logic valid_i                                     , //Dado válido na entrada
@@ -30,7 +30,7 @@ logic [$clog2(SIZE)-1:0] next_i_counter, next_j_counter;
 /*
 ref_clock #(.CLOCK_REF(500),.CLOCK_INPUT(100_000_000))clock_rate_pc(
     .in_clock     (clock                                   )                ,
-    .nreset       (nreset                                  )                ,
+    .rst_n_async       (rst_n_async                                  )                ,
     .out_clock_ref(clockk                                  )                
 );
 */
@@ -41,8 +41,8 @@ assign handshake = uart_valid_tx_in && event_send_data;
 logic [WIDTH-1:0]      smatrix_out2                ;
 
 /*
-always @(posedge clock or negedge nreset) begin
-    if (!nreset) begin
+always @(posedge clock or negedge rst_n_async) begin
+    if (!rst_n_async) begin
         //smatrix_out  <= 32'd0;
         m_axis_tlast <= 0;
     end else begin
@@ -77,8 +77,8 @@ ila_1 your_instance_name2 (
 );
 */
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         i_counter        <=0; 
         j_counter        <=0;
         mem2seriala_fsm <= IDLE_INDEX;

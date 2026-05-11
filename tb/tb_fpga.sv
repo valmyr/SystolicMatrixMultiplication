@@ -1,9 +1,9 @@
 /// Lembre-se altere o clock da uart
 `timescale 1ns / 100ps
 module tb;    
-  logic clock   , nreset;
+  logic clock   , rst_n_async;
   logic clock_tb;
-  logic  nreset_arty;
+  logic  rst_n_async_arty;
   parameter SIZE_M = 16;
   parameter FRAME_START = 4;
   parameter SIZE_INPUT_SERIAL = (2*SIZE_M-1)*SIZE_M + FRAME_START;
@@ -19,7 +19,7 @@ module tb;
   //--------------------------------------------------------------------------------------------------
   //Pinout UART
   logic                   tb_uart_clock                                      ;
-  logic                   tb_uart_nreset                                     ;
+  logic                   tb_uart_rst_n_async                                     ;
  //pinout RX              tb_                                         ;
   logic                   tb_uart_sdata_rx_in                                ;
   logic                   tb_uart_valid_rx_in                                ;
@@ -37,25 +37,25 @@ initial begin
 end
 
   assign tb_uart_clock = clock;
-  assign tb_uart_nreset = nreset;
-  assign serial2mem_nreset =nreset;
+  assign tb_uart_rst_n_async = rst_n_async;
+  assign serial2mem_rst_n_async =rst_n_async;
   assign serial2mem_clock =clock;
   assign serial2mem_valid_i = 1;
 
   initial begin
     clock = 0;
-    nreset = 1;
-    nreset_arty = 1;
+    rst_n_async = 1;
+    rst_n_async_arty = 1;
   inv_r = 0;
 
     $readmemh("testeINPUT_A1.mem",INPUT_A);
     $readmemh("testeINPUT_B1.mem",INPUT_B);
     $readmemh("testeINPUT_A.mem",INPUT_A1);
     $readmemh("testeINPUT_B.mem",INPUT_B1);
-    #1 nreset =0;
-       nreset_arty = 0;
-    #1 nreset = 1;
-       nreset_arty = 1;
+    #1 rst_n_async =0;
+       rst_n_async_arty = 0;
+    #1 rst_n_async = 1;
+       rst_n_async_arty = 1;
   end
 
   always #(1501ps)clock=~clock;
@@ -96,9 +96,9 @@ end
   //-------------------------------------------------------------------------------------------------------------------------------
    initial 
      forever begin
-      @(posedge clock, negedge nreset)
+      @(posedge clock, negedge rst_n_async)
       begin
-        if(!nreset)begin
+        if(!rst_n_async)begin
           cnt1               <= 0     ;
           cnt2               <= 0     ;
           cnt3               <= 0     ;
@@ -181,8 +181,8 @@ assign s_axis_tvalid =1;
 
 logic [127:0] cnt5,dout_mem;
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset) cnt5 <= 0;
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async) cnt5 <= 0;
     else cnt5<= cnt5 ==141 ? 0:cnt5+1;
 end 
 matrix_in_memeory your_instance_name (
@@ -197,7 +197,7 @@ matrix_in_memeory your_instance_name (
 AXI_Stream_Systolic_Core Core0 (
         // Sinais de sistema
         .clock(clock),
-        .resetn(nreset),
+        .resetn(rst_n_async),
 
         // Interface Slave AXI Stream (Entrada)
         .s_axis_tvalid(1),

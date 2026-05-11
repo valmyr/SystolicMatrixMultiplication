@@ -4,7 +4,7 @@ module serial2mem#(
 )(
     input  logic                  clock                                      ,
     input  logic                  uart_ready_rx_out                          ,  
-    input  logic                  nreset                                     ,// r=1,w=0
+    input  logic                  rst_n_async                                     ,// r=1,w=0
     input  logic                  rw                                         , //Dado válido na entrada
     input  logic                  valid_i                                    , //Dado válido na entrada
     input  logic                  rready_i                                   , //Pronto para receber uma resposta
@@ -22,7 +22,7 @@ logic [(2*SIZE)-1:0]  cnt_shift, next_cnt_shift                       ;
 enum {IDLE, WRITE, READ,DONE}   mem_fsm,next_mem_fsm                            ;
 logic                           single_port_ram_clock                           ;
 logic                           single_port_ram_clockb                           ;
-logic                           single_port_ram_nreset                          ;
+logic                           single_port_ram_rst_n_async                          ;
 logic                           single_port_ram_en                              ;
 logic                           single_port_ram_we                              ;
 logic [(2*SIZE)-1:0]    single_port_ram_addr                            ;
@@ -44,8 +44,8 @@ ram_dual_port ram (
   .dina         (   single_port_ram_di          ),            // input wire [15 : 0] dina
   .douta        (                               ),
   .clkb         (   single_port_ram_clockb      ),            // input wire clkb
-  .rsta         (  ~single_port_ram_nreset      ),            // input wire rstb
-  .rstb         (  ~single_port_ram_nreset      ),            // input wire rstb
+  .rsta         (  ~single_port_ram_rst_n_async      ),            // input wire rstb
+  .rstb         (  ~single_port_ram_rst_n_async      ),            // input wire rstb
   .enb          (   single_port_ram_en          ),              // input wire enb
   .addrb        (   single_port_ram_addr        ),          // input wire [2 : 0] addrb
   .doutb        (   single_port_ram_doutb       ),          // output wire [15 : 0] doutb
@@ -63,7 +63,7 @@ ram_dual_port ram_0 (
   .addra      (     single_port_ram_addr           ),  // input wire [2 : 0] addra
   .dina       (     single_port_ram_di             ),  // input wire [15 : 0] dina
   .clkb       (     single_port_ram_clockb         ),  // inpin_dataut wire clkb
-  .rstb       (     ~single_port_ram_nreset        ),  // input wire rstb
+  .rstb       (     ~single_port_ram_rst_n_async        ),  // input wire rstb
   .enb        (     single_port_ram_we             ),  // input wire enb
   .addrb      (     single_port_ram_addr           ),  // input wire [2 : 0] addrb
   .doutb      (     single_port_ram_dout           ),  // output wire [15 : 0] doutb
@@ -75,7 +75,7 @@ ram_dual_port ram_0 (
 /*
 ram_single_port #(.WIDTH(WIDTH*SIZE),.SIZE(2*(SIZE)-1))mem(
     .clock (single_port_ram_clock   )                        ,  
-    .nreset(single_port_ram_nreset  )                        ,  
+    .rst_n_async(single_port_ram_rst_n_async  )                        ,  
     .en    (single_port_ram_en      )                        ,
     .we    (single_port_ram_we      )                        ,
     .addr  (single_port_ram_addr    )                        ,
@@ -85,7 +85,7 @@ ram_single_port #(.WIDTH(WIDTH*SIZE),.SIZE(2*(SIZE)-1))mem(
 /*
 ram_single_port mem (
    .clka     (single_port_ram_clock     ),              // input wire clka
-   .rsta     (~single_port_ram_nreset   ),              // input wire rsta
+   .rsta     (~single_port_ram_rst_n_async   ),              // input wire rsta
    .ena      (single_port_ram_en        ),              // input wire ena
    .wea      (single_port_ram_we        ),              // input wire [0 : 0] wea
    .addra    (single_port_ram_addr      ),              // input wire [6 : 0] addra
@@ -93,7 +93,7 @@ ram_single_port mem (
    .douta    (single_port_ram_dout      ),              // output wire [31 : 0] douta
    .rsta_busy(                          )  // output wire rsta_busy
 );*/
-    assign single_port_ram_nreset   = nreset                                    ;
+    assign single_port_ram_rst_n_async   = rst_n_async                                    ;
     assign single_port_ram_clock    = clock                         ;
     //assign single_port_ram_en       = cnt_shift == SIZE-1 | mem_fsm == READ     ;
     assign single_port_ram_we       = rw                                       ;
@@ -103,8 +103,8 @@ ram_single_port mem (
     //assign out_data                 = mem_fsm == READ && cnt != 0 ? single_port_ram_dout : out_data;
 
 
-    //always_ff@(posedge single_port_ram_clock, negedge nreset)begin
-    //    if(!nreset)
+    //always_ff@(posedge single_port_ram_clock, negedge rst_n_async)begin
+    //    if(!rst_n_async)
     //        fifo_d <=0;
     //    else fifo_d <=cnt_shift == SIZE-1 ? {fifo_d[(2*WIDTH-1)*SIZE*SIZE-(WIDTH)*SIZE:0],single_port_ram_di}:fifo_d;
     //end
@@ -131,8 +131,8 @@ logic [WIDTH*SIZE-1:0] temp;
 logic clock_sample;
 
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)begin
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         clock_sample <= 0;
         out_data <='{default:0};
     end else begin
@@ -147,8 +147,8 @@ end
 logic [WIDTH*SIZE-1:0] delay_1_cyclo;
    logic  [WIDTH*SIZE-1:0] single_port_ram_di_reg;
    logic  [WIDTH*SIZE-1:0] single_port_ram_di_reg_0;
-    always_ff@(posedge clock, negedge nreset)begin
-        if(!nreset)begin
+    always_ff@(posedge clock, negedge rst_n_async)begin
+        if(!rst_n_async)begin
             cnt                 <= 0                                                                                                           ;
             cnt_shift           <= 0                                                                                                           ;
             single_port_ram_di <= 0;
@@ -274,7 +274,7 @@ assign             temp = {<<(WIDTH){out_data_reg[j_counter]}};
 
 
 	.probe0(uart_ready_rx_out), // input wire [0:0]  probe0  
-	.probe1(nreset), // input wire [0:0]  probe1 
+	.probe1(rst_n_async), // input wire [0:0]  probe1 
 	.probe2(rw), // input wire [0:0]  probe2 
 	.probe3(valid_i), // input wire [0:0]  probe3 
 	.probe4(rready_i), // input wire [0:0]  probe4 
@@ -288,8 +288,8 @@ assign             temp = {<<(WIDTH){out_data_reg[j_counter]}};
 
 enum {IDLE_PIPELINE,WRITE_PIPELINE} fsm_pipeline, fsm_pipeline_next;
 
-always_ff@(posedge clock, negedge nreset)begin
-    if(!nreset)fsm_pipeline <= IDLE_PIPELINE;
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)fsm_pipeline <= IDLE_PIPELINE;
     else fsm_pipeline <= mem_fsm == IDLE   ?   IDLE_PIPELINE: WRITE_PIPELINE;
 end
 

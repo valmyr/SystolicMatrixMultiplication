@@ -208,7 +208,7 @@ $$
 ```verilog
 
 module shiftMatrix#(parameter WIDTH, SIZE)(
-    input  logic nreset                                 , 
+    input  logic rst_n_async                                 , 
     input  logic clock                                  ,
     input  logic [WIDTH-1:0] Min[SIZE-1:0][SIZE-1:0]    ,
     output logic [SIZE*WIDTH-1:0] shiftMatrixOut 
@@ -219,7 +219,7 @@ SIZE : Dimensão da matriz
 
 Entradas:
     clock
-    nreset -> Reset síncrono
+    rst_n_async -> Reset síncrono
     Min    -> Matriz de Entrada
 Sáida 
     ShiftMatrixOut -> Matriz de sáida da forma Coluna_j de M
@@ -247,7 +247,7 @@ module accumulator_cells#(
 )(
 
     input  logic             clock   ,
-    input  logic             nreset  ,
+    input  logic             rst_n_async  ,
     input  logic [WIDTH-1:0] a       ,
     input  logic [WIDTH-1:0] b       ,
     output logic [WIDTH-1:0] x       ,
@@ -258,7 +258,7 @@ module accumulator_cells#(
 WIDTH: Quantidade de bits do acumulador
 Entradas:
     clock
-    nreset -> Reset síncrono
+    rst_n_async -> Reset síncrono
     a      -> operando 1
     b      -> operando 2
 Sáida 
@@ -292,7 +292,7 @@ module systolicMatrixMultiply#(
     parameter WIDTH = 16, SIZE=3, WIDTHx = 4
 )(
     input  logic                  clock                                  ,
-    input  logic                  nreset                                 ,
+    input  logic                  rst_n_async                                 ,
     input  logic [WIDTHx-1:0]     a_input [SIZE-1:0][SIZE-1:0]           ,
     input  logic [WIDTHx-1:0]     b_input [SIZE-1:0][SIZE-1:0]           ,
     output logic [WIDTH-1:0]      output_produc_a_b [SIZE-1:0][SIZE-1:0]
@@ -303,7 +303,7 @@ SIZE  : Dimensão da matriz
 
 Entradas:
     clock
-    nreset  -> Reset síncrono
+    rst_n_async  -> Reset síncrono
     a_input -> Operando 1
     b_input -> Operando 2
 Sáida 

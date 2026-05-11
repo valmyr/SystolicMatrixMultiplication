@@ -34,8 +34,8 @@ input clk_125mhz_p;
 input clk_125mhz_n;
 input reset;
 wire clk;
-wire nreset;
-assign nreset = ~reset;
+wire rst_n_async;
+assign rst_n_async = ~reset;
 wire [15:0]GPIO_0_tri_o;
 wire [15:0]GPIO_1_tri_i;
 
@@ -51,8 +51,8 @@ reg [7:0]data;
 reg [63:0] d;
 reg [3:0]counter ;
 //assign valid_data = enable_write && !last_enable_write;
-always@(posedge clk, negedge nreset)begin
-    if(!nreset)begin
+always@(posedge clk, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         counter <= 0;
         last_enable_write <= 0;
         reg_valid_data <= 0;
@@ -86,7 +86,7 @@ end
      .BYTESIZES(BYTESIZES),.WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH)
   )   SystolicCore0(
           .clock               (clk               )      ,// input
-          .nreset              (nreset            )      ,// input 
+          .rst_n_async              (rst_n_async            )      ,// input 
           .uart_data_rx_out    (data              )      ,// input 8 Bits / 1 Byte
           .uart_data_tx_in     (                  )      ,// output 8 Bits
           .uart_valid_rx_in    (                  )      ,// input

@@ -13,20 +13,20 @@
 module counter#(parameter MAX_COUNTER = 32)(
 
         input  logic clock           ,
-        input  logic nreset          ,
+        input  logic rst_n_async          ,
         input  logic ena             ,
-        input  logic clear           ,
+        input  logic clean           ,
         output logic [(MAX_COUNTER)-1:0] counter
 
 );
     logic [(MAX_COUNTER)-1:0]  next_counter;
-    always_ff@(posedge clock, negedge nreset)begin
-        if(!nreset)counter <=0;
+    always_ff@(posedge clock, negedge rst_n_async)begin
+        if(!rst_n_async)counter <=0;
         else       counter <=next_counter;
     end
 
     always_comb begin
-        case({ena,clear})
+        case({ena,clean})
             2'b00: next_counter = counter           ;
             2'b10: next_counter = counter + 1       ;
             2'b01: next_counter = 0;

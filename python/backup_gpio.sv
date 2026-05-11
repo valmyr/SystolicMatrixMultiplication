@@ -19,8 +19,8 @@ input clk_125mhz_p;
 input clk_125mhz_n;
 input reset;
 wire clk;
-wire nreset;
-assign nreset = ~reset;
+wire rst_n_async;
+assign rst_n_async = ~reset;
 wire [7:0]GPIO_0_tri_o;
 
   design_1 design_1_i
@@ -42,8 +42,8 @@ assign data_input = GPIO_0_tri_o[8:1];
 assign enable_write =GPIO_0_tri_o[0];
 reg last_enable_write;
 reg [127:0]data;
-always@(posedge clk, negedge nreset)begin
-    if(!nreset)begin
+always@(posedge clk, negedge rst_n_async)begin
+    if(!rst_n_async)begin
         last_enable_write <= 0;
     end else begin
         last_enable_write <= enable_write;
