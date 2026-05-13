@@ -28,25 +28,27 @@ module onlyFPGA(
         input wire rst_n_async
     );
     
-  wire clock;
-  IBUFDS #(
-  .DIFF_TERM("TRUE"),
-  .IBUF_LOW_PWR("FALSE")) ibufds_clk (
-  .I (clk_125mhz_p),
-  .IB(clk_125mhz_n),
-  .O (clock)
-); 
-    
+ wire clock;
+ /*IBUFDS #(
+ .DIFF_TERM("TRUE"),
+ .IBUF_LOW_PWR("FALSE")) ibufds_clk (
+ .I (clk_125mhz_p),
+ .IB(clk_125mhz_n),
+ .O (clock))
+ */
+ 
+IBUFDS u2 (.I(clk_125mhz_p), .IB(clk_125mhz_n), .O(clock));
+   
 
-parameter WIDTHxSS = 4, SIZES = 8;
+parameter WIDTHxSS = 4, SIZES = 16;
 parameter BYTESIZESS = 2*WIDTHxSS *SIZES;
 reg [31:0] cnt5;
 wire [BYTESIZESS-1:0] dout_mem;
 always@(posedge clock, negedge rst_n_async)begin
     if(!rst_n_async) cnt5 <= 0;
-    else cnt5<= cnt5 ==15+6*SIZES-1 ? 1:cnt5+1;
+    else cnt5<= cnt5 ==61 ? cnt5:cnt5+1;
 end 
-matrix_in_memeory your_instance_name (
+matrix_in_memory u_mem_block (
   .clka(clock),    // input wire clka
   .ena(1),      // input wire ena
   .wea(0),      // input wire [0 : 0] wea
@@ -55,6 +57,12 @@ matrix_in_memeory your_instance_name (
   .douta(dout_mem)  // output wire [7 : 0] douta
 );
 
+ila_0 your_instance_name (
+	.clk(clock), // input wire clk
+
+
+	.probe0(dout_mem) // input wire [0:0] probe0
+);
 
 
 AXI_Stream_Systolic_Core #(.BYTESIZES(BYTESIZESS), .WIDTHx(WIDTHxSS),.SIZE(SIZES),.WIDTH(2*WIDTHxSS))Core0 (
@@ -76,7 +84,6 @@ AXI_Stream_Systolic_Core #(.BYTESIZES(BYTESIZESS), .WIDTHx(WIDTHxSS),.SIZE(SIZES
         .m_axis_tlast()
         // ... outros sinais opcionais
 );
-
     
     
     

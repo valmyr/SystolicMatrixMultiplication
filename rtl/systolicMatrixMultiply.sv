@@ -31,9 +31,9 @@ logic [$clog2(2*SIZE) :0]       counter_transfer_m  , next_counter_transfer_m   
 (*dont_touch = "true"*) logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
 
 (*dont_touch = "true"*) 
-logic [WIDTHx-1:0]                      a_vec           [SIZE:0][SIZE:0]            ;
+logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]            ;
 (*dont_touch = "true"*) 
-logic [WIDTHx-1:0]                      b_vec           [SIZE:0][SIZE:0]            ;
+logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]            ;
 (*dont_touch = "true"*) 
 
 logic [WIDTHx-1:0]                 a_load[SIZE-1:0]                                          ;
@@ -48,41 +48,26 @@ generate
         for(i =0; i < SIZE;i++)begin:CELULA_ROWS
             (*dont_touch = "true"*) 
             assign a_vec[0][i] = a_load[i];
+           
             (*dont_touch = "true"*) 
             assign b_vec[0][i] = b_load[i];
             for(j =0; j < SIZE;j++)begin:CELULA_COLUMNS
                (*dont_touch = "true"*) 
                 accumulator_cells #(.WIDTH(WIDTH),.WIDTHx(WIDTHx)) MAC(    
-                    .clock    (     clock                                              ),
-                    .rst_n_async   (     rst_n_async                                             ),
-                    .ena      (     ena_mac                                            ),
-                    .a        (     a_vec[i][j]                                        ),
-                    .b        (     b_vec[j][i]                                        ),
-                    .x        (     a_vec[i+1][j]                                      ), 
-                    .y        (     b_vec[j+1][i]                                      ),
-                    .z        (   produc_a_b[SIZE-j-1][SIZE-i-1]                       )
+                    .clock         (     clock                                              ),
+                    .rst_n_async   (     rst_n_async                                        ),
+                    .ena           (     ena_mac                                            ),
+                    .a             (     a_vec[i][j]                                        ),
+                    .b             (     b_vec[j][i]                                        ),
+                    .x             (     a_vec[i+1][j]                                      ), 
+                    .y             (     b_vec[j+1][i]                                      ),
+                    .z             (     produc_a_b[SIZE-j-1][SIZE-i-1]                     )
                 );
             end
         end
 
 endgenerate
-/*
-    ila_2 your_instance_name1123 (
-	.clk(clock), // input wire clk
 
-
-	.probe0(a_load), // input wire [63:0]  probe0  
-	.probe1(b_load), // input wire [63:0]  probe1 
-	.probe2(counter_mult), // input wire [63:0]  probe2 
-	.probe3(counter_transfer_m), // input wire [7:0]  probe3 
-	.probe4(currentStateSystolicControlUnit), // input wire [7:0]  probe4 
-	.probe5(0), // input wire [7:0]  probe5 
-	.probe6(ena_mac), // input wire [0:0]  probe6 
-	.probe7(read_done), // input wire [0:0]  probe7 
-	.probe8(0), // input wire [0:0]  probe8 
-	.probe9(0) // input wire [0:0]  probe9
-);
-*/
 always_ff@(posedge clock, negedge rst_n_async)begin
     if(!rst_n_async)begin
         currentStateSystolicControlUnit <= IDLE;

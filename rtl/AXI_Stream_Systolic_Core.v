@@ -42,16 +42,16 @@ module AXI_Stream_Systolic_Core#(parameter  BYTESIZES = 256, WIDTHx = 4,SIZE = 3
 SystolicCoreTop #(
    .BYTESIZES(BYTESIZES),.WIDTHx(WIDTHx),.SIZE(SIZE),.WIDTH(WIDTH)
 )   u_SystolicCore0_unit(
-        .clock               (clock                                                                           )      ,// input
-        .rst_n_async         (resetn                                                                          )      ,// input 
-        .uart_valid_rx_in    (s_axis_tvalid                                                                   )      ,//  input
-        .uart_ready_rx_out   (s_axis_tready                                                                   )      , // output
-        .s_axis_tlast        (s_axis_tlast                                                                    )      ,//  output
-        .uart_data_rx_out    (s_axis_tdata                                                                    )      ,//  input 8 Bits / 1 Byte ATENÇÂO AJUSTE PARA SIZE       
-        .uart_data_tx_in     (m_axis_tdata                                                                    )      ,// output 8 Bits
-        .uart_valid_tx_in    (m_axis_tvalid                                                                   )      ,// output
-        .uart_ready_tx_out   (m_axis_tready                                                                   )      ,// input
-        .m_axis_tlast        (m_axis_tlast                                                                    )       // output
+        .clock               (clock                                                                           ),// input
+        .rst_n_async         (resetn                                                                          ),// input 
+        .uart_valid_rx_in    (s_axis_tvalid                                                                   ),//  input
+        .uart_ready_rx_out   (s_axis_tready                                                                   ), // output
+        .s_axis_tlast        (s_axis_tlast                                                                    ),//  output
+        .uart_data_rx_out    (s_axis_tdata                                                                    ),//  input 8 Bits / 1 Byte ATENÇÂO AJUSTE PARA SIZE       
+        .uart_data_tx_in     (m_axis_tdata                                                                    ),// output 8 Bits
+        .uart_valid_tx_in    (m_axis_tvalid                                                                   ),// output
+        .uart_ready_tx_out   (m_axis_tready                                                                   ),// input
+        .m_axis_tlast        (m_axis_tlast                                                                    ) // output
   
 );
 

@@ -185,7 +185,7 @@ always_ff@(posedge clock, negedge rst_n_async)begin
     if(!rst_n_async) cnt5 <= 0;
     else cnt5<= cnt5 ==141 ? 0:cnt5+1;
 end 
-matrix_in_memeory your_instance_name (
+matrix_in_memory u_mem_block (
   .clka(clock),    // input wire clka
   .ena(1),      // input wire ena
   .wea(0),      // input wire [0 : 0] wea
@@ -193,7 +193,7 @@ matrix_in_memeory your_instance_name (
   .dina(0),    // input wire [7 : 0] dina
   .douta(dout_mem)  // output wire [7 : 0] douta
 );
-
+/*
 AXI_Stream_Systolic_Core Core0 (
         // Sinais de sistema
         .clock(clock),
@@ -213,7 +213,13 @@ AXI_Stream_Systolic_Core Core0 (
         .m_axis_tlast()
         // ... outros sinais opcionais
 );
+*/
+onlyFPGA fm(
 
-
+        //input wire clock
+         .clk_125mhz_p(clock),
+         .clk_125mhz_n(~clock),
+         .rst_n_async(rst_n_async)
+    );
 
 endmodule

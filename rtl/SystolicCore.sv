@@ -35,6 +35,11 @@ module SystolicCoreTop#(
     output logic                    m_axis_tlast
 );
 
+localparam SIZE_WINDOW = 6;
+localparam SIZE_KER = 3;
+localparam OUT_SIZE = SIZE_WINDOW - SIZE_KER + 1;
+localparam OUT_SIZE_NORM = 16;
+
 //Pinout Unidade de Controle.
 //-------------------------------------------------------------------------------------------------
 logic                   systolicControlUnit_clock                                                               ;
@@ -88,8 +93,8 @@ logic                   serial2mem_opa_rready_i                                 
 logic                   serial2mem_opa_rvalid_o                                                                 ;
 logic                   serial2mem_opa_ready_o                                                                  ;
 logic [WIDTHx*SIZE-1:0] serial2mem_opa_in_data                                                                  ;
-logic [WIDTHx-1:0]      serial2mem_opa_out_data [SIZE-1:0][SIZE-1:0]                                            ;
-logic [WIDTHx-1:0]      serial2mem_opa_buf_data [SIZE-1:0][SIZE-1:0]                                            ;
+logic [WIDTHx-1:0]      serial2mem_opa_out_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                                            ;
+logic [WIDTHx-1:0]      serial2mem_opa_buf_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                                            ;
 logic                   syst_ena_mac                                                                            ;
 //---------------------------------------------------------------------------------------------------
 //-----Pinout Bank Register Flow Data Time Structure---------------------------------------------
@@ -114,8 +119,8 @@ logic                   serial2mem_opb_rready_i                                 
 logic                   serial2mem_opb_ready_o                                                                  ;
 logic                   serial2mem_opb_rvalid_o                                                                 ;
 logic [WIDTHx*SIZE-1:0] serial2mem_opb_in_data                                                                  ;
-logic [WIDTHx-1:0]      serial2mem_opb_out_data [SIZE-1:0][SIZE-1:0]                                            ;
-logic [WIDTHx-1:0]      serial2mem_opb_buf_data [SIZE-1:0][SIZE-1:0]                                            ;
+logic [WIDTHx-1:0]      serial2mem_opb_out_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                                            ;
+logic [WIDTHx-1:0]      serial2mem_opb_buf_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                                            ;
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
@@ -143,10 +148,7 @@ logic ref_clock_out_clock_ref                                                   
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //Pinout img2row
-localparam SIZE_WINDOW = 6;
-localparam SIZE_KER = 3;
-localparam OUT_SIZE = SIZE_WINDOW - SIZE_KER + 1;
-localparam OUT_SIZE_NORM = $clog2(2**((OUT_SIZE)*(OUT_SIZE)));
+
 
 logic u_im2row_clock;
 logic u_im2row_rst_n_sync;
@@ -154,8 +156,10 @@ logic u_im2row_data_valid_i;
 logic u_im2row_module_ready_o;
 logic u_im2row_result_rvalid_o;
 logic u_im2row_downstream_ready_i;
-logic [WIDTHx-1:0] u_im2row_input_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
-logic [WIDTHx-1:0] u_im2row_col_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
+logic [WIDTHx-1:0] u_im2row_input_a_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
+logic [WIDTHx-1:0] u_im2row_input_b_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
+logic [WIDTHx-1:0] u_im2row_col_a_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
+logic [WIDTHx-1:0] u_im2row_col_b_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
@@ -238,7 +242,7 @@ systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) u_systolic_
     .ena_mac                    (syst_ena_mac                               )
 );
 (*dont_touch = "true"*) 
-serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))u_serial2mem_opa_unit(
+serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE_WINDOW))u_serial2mem_opa_unit(
     .clock                      (serial2mem_opa_clock                       )                 ,  
     .rst_n_async                (serial2mem_opa_rst_n_async                 )                 ,// r=1,w=0
     .rw                         (serial2mem_opa_rw                          )                 , //Dado válido na entrada
@@ -253,7 +257,7 @@ serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))u_serial2mem_opa_unit(
 
 );
 (*dont_touch = "true"*) 
-serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE))u_serial2mem_opb_unit(
+serial2mem #(.WIDTH(WIDTHx), .SIZE(SIZE_WINDOW))u_serial2mem_opb_unit(
     .clock                      (serial2mem_opb_clock                       )                 ,  
     .rst_n_async                (serial2mem_opb_rst_n_async                 )                 ,// r=1,w=0
     .rw                         (serial2mem_opb_rw                          )                 , //Dado válido na entrada
@@ -321,24 +325,36 @@ shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shiftdata_unit(
     .clock(shiftdata_clock),
     .rst_n_async(shiftdata_rst_n_async),
     .ena_shift(syst_ena_mac),
-    .opa_out_data(serial2mem_opa_out_data),
-    .opb_out_data(serial2mem_opb_out_data),
+    .opa_out_data(u_im2row_col_a_matrix),
+    .opb_out_data(u_im2row_col_b_matrix),
     .flow_data_time_structure_OUTA(flow_data_time_structure_OUTA),
     .flow_data_time_structure_OUTB(flow_data_time_structure_OUTB) 
 );
 
+assign u_im2row_input_a_image = serial2mem_opa_out_data;
+assign u_im2row_input_b_image = serial2mem_opb_out_data;
 
-img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW))u_img2row_unit (
+img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3))u_img2row_b_unit (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
     .valid_i     (u_im2row_data_valid_i),
     .ready_o     (u_im2row_module_ready_o),
     .rvalid_o    (u_im2row_result_rvalid_o),
     .rready_i    (u_im2row_downstream_ready_i),
-    .img         (u_im2row_input_image),
-    .colout      (u_im2row_col_matrix)
+    .img         (u_im2row_input_a_image),
+    .colout      (u_im2row_col_a_matrix)
 );
 
+img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1))u_ker2col_a_unit (
+    .clk         (u_im2row_clock),
+    .rst_n_sync  (u_im2row_rst_n_sync),
+    .valid_i     (u_im2row_data_valid_i),
+    .ready_o     (                     ),
+    .rvalid_o    (                      ),
+    .rready_i    (u_im2row_downstream_ready_i),
+    .img         (u_im2row_input_b_image),
+    .colout      (u_im2row_col_b_matrix)
+);
 
 endmodule
 
