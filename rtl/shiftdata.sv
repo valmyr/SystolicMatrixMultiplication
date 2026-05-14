@@ -16,7 +16,6 @@ logic [$clog2(SIZE)-1:0] counter_next;
 logic [$clog2(SIZE)-1:0] counter1;
 logic [WIDTHx-1:0] opa_out_data_reg  [SIZE-1:0][SIZE-1:0];
 logic [WIDTHx-1:0] opb_out_data_reg  [SIZE-1:0][SIZE-1:0];
-logic [WIDTHx-1:0] opa_out_data_transpose  [SIZE-1:0][SIZE-1:0];
 
 
 

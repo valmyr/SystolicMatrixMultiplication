@@ -281,7 +281,6 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES)) u_mem2serial_unit
     .rready_i                   (mem2serial_rready_i                        )                 , //Pronto para receber uma resposta
     .rvalid_o                   (mem2serial_rvalid_o                        )                 , //Resposta Válida(Operação concluida)
     .ready_o                    (mem2serial_ready_o                         )                 , //Pronto para receber um dado valido na entrada
-    (*dont_touch = "true"*) 
     .smatrix_out                (mem2serial_smatrix_out                     )                 ,
     .m_axis_tlast               (mem2serial_m_axis_tlast                    )                 ,
     .event_send_data            (uart_ready_tx_out                          )                 ,    //Avaliação 1.1
