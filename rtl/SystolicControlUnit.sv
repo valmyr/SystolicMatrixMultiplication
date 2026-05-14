@@ -28,7 +28,11 @@ module systolicControlUnitTop#(parameter SIZE=32,WIDTH=8,BYTESIZES =256)(
     output logic [31:0] frame_start                 ,
     input  logic [SIZE*WIDTH-1:0] axi_debug         ,
     output logic u_im2row_data_valid_i              ,      
-    output logic u_im2row_downstream_ready_i        
+    output logic u_im2row_downstream_ready_i        ,
+    output logic sampling_pipeline_stage_1_mem_write,
+    output logic sampling_pipeline_stage_2_img2row  ,
+    output logic sampling_pipeline_stage_3_systolic ,
+    output logic sampling_pipeline_stage_4_send2host
 
 );
 
@@ -43,7 +47,10 @@ logic [MAX_COUNTER_STAGES-1:0]counter_out_opA ;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_systolic_read_mem;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_send_fpga2host;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_img2row;
-
+logic sampling_pipeline_stage_1_mem_write_reg;
+logic sampling_pipeline_stage_2_img2row_reg;
+logic sampling_pipeline_stage_3_systolic_reg;
+logic sampling_pipeline_stage_4_send2host_reg;
 
 
 
@@ -349,18 +356,32 @@ counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_img2row(
 
 always_ff@(posedge clock, negedge rst_n_async)begin
     if(!rst_n_async)begin
-        fsm_pipeline_s4 <=IDLE_I;
-        fsm_pipeline_s3 <=IDLE_S;
-        fsm_pipeline_s2 <=IDLE_E;
-        fsm_pipeline_s1 <=IDLE_W;   
+        fsm_pipeline_s4                         <=IDLE_I;
+        fsm_pipeline_s3                         <=IDLE_S;
+        fsm_pipeline_s2                         <=IDLE_E;
+        fsm_pipeline_s1                         <=IDLE_W; 
+        sampling_pipeline_stage_1_mem_write_reg <= 0;
+        sampling_pipeline_stage_2_img2row_reg   <= 0;
+        sampling_pipeline_stage_3_systolic_reg  <= 0;
+        sampling_pipeline_stage_4_send2host_reg <= 0;  
     end else begin
-        fsm_pipeline_s4 <=fsm_pipeline_next_s4;      
-        fsm_pipeline_s3 <=fsm_pipeline_next_s3;      
-        fsm_pipeline_s2 <=fsm_pipeline_next_s2;      
-        fsm_pipeline_s1 <=fsm_pipeline_next_s1;  
+        fsm_pipeline_s4                         <=fsm_pipeline_next_s4;      
+        fsm_pipeline_s3                         <=fsm_pipeline_next_s3;      
+        fsm_pipeline_s2                         <=fsm_pipeline_next_s2;      
+        fsm_pipeline_s1                         <=fsm_pipeline_next_s1;
+        sampling_pipeline_stage_1_mem_write_reg <= counter_out_opA == 3*SIZE-1+3;
+        sampling_pipeline_stage_2_img2row_reg   <= counter_out_img2row == 3*SIZE-1+3;
+        sampling_pipeline_stage_3_systolic_reg  <= counter_out_systolic_read_mem == 3*SIZE-1+3;
+        sampling_pipeline_stage_4_send2host_reg <= counter_out_send_fpga2host == 3*SIZE-1+3; 
     end
     
 end
+
+assign sampling_pipeline_stage_1_mem_write = sampling_pipeline_stage_1_mem_write_reg;
+assign sampling_pipeline_stage_2_img2row = sampling_pipeline_stage_2_img2row_reg;
+assign sampling_pipeline_stage_3_systolic = sampling_pipeline_stage_3_systolic_reg;
+assign sampling_pipeline_stage_4_send2host = sampling_pipeline_stage_4_send2host_reg;
+
 
 endmodule
 

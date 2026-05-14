@@ -93,8 +93,8 @@ logic                   serial2mem_opa_rready_i                                 
 logic                   serial2mem_opa_rvalid_o                                                                 ;
 logic                   serial2mem_opa_ready_o                                                                  ;
 logic [WIDTHx*SIZE-1:0] serial2mem_opa_in_data                                                                  ;
-logic [WIDTHx-1:0]      serial2mem_opa_out_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                                            ;
-logic [WIDTHx-1:0]      serial2mem_opa_buf_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                                            ;
+logic [WIDTHx-1:0]      serial2mem_opa_out_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                              ;
+logic [WIDTHx-1:0]      serial2mem_opa_buf_data [SIZE_WINDOW-1:0][SIZE_WINDOW-1:0]                              ;
 logic                   syst_ena_mac                                                                            ;
 //---------------------------------------------------------------------------------------------------
 //-----Pinout Bank Register Flow Data Time Structure---------------------------------------------
@@ -161,9 +161,28 @@ logic [WIDTHx-1:0] u_im2row_input_b_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
 logic [WIDTHx-1:0] u_im2row_col_a_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
 logic [WIDTHx-1:0] u_im2row_col_b_matrix_transpose[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
 logic [WIDTHx-1:0] u_im2row_col_b_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
+//---------------------------------------------------------------------------------------------------
+//Registradores para o tratamento de harzards entre estágios do pipeline da unidade de controle
+//---------------------------------------------------------------------------------------------------
+logic [WIDTHx-1:0]      pipeline_serial2mem_opa_out_data[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
+logic [WIDTHx-1:0]      pipeline_serial2mem_opb_out_data[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
+logic [WIDTHx-1:0]      pipeline_u_im2row_col_a_matrix  [OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];           
+logic [WIDTHx-1:0]      pipeline_u_im2row_col_b_matrix  [OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];         
+logic [WIDTH-1:0]       pipeline_syst_output_produc_a_b  [SIZE-1:0][SIZE-1:0];
+
+logic sampling_pipeline_stage_1_mem_write;
+logic sampling_pipeline_stage_2_img2row  ;
+logic sampling_pipeline_stage_3_systolic ;
+logic sampling_pipeline_stage_4_send2host;
+
 
 //---------------------------------------------------------------------------------------------------
+//Shiftdata
 //---------------------------------------------------------------------------------------------------
+
+logic [WIDTHx-1:0] shift_opa_out_data[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
+logic [WIDTHx-1:0] shift_opb_out_data[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
+
 //---------------------------------------------------------------------------------------------------------------------------------
 //AXI
 assign uart_ready_rx_out =1;
@@ -204,7 +223,7 @@ assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;
 assign syst_a_input =  flow_data_time_structure_OUTA                            ;
 assign syst_b_input =  flow_data_time_structure_OUTB ;
 (*dont_touch = "true"*) 
-assign mem2serial_pmatrix_in = syst_output_produc_a_b;
+
 assign systolicControlUnit_serial2mem_opa_ready_o = serial2mem_opa_ready_o ;
 assign systolicControlUnit_serial2mem_opb_ready_o = serial2mem_opb_ready_o ;
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -229,6 +248,10 @@ assign syst_valid_i                                =  systolicControlUnit_syst_v
 assign syst_rready_i                               =  systolicControlUnit_syst_rready_i                         ;  
 assign systolicControlUnit_uart_ready_rx           =  uart_ready_rx_out;
 assign systolicControlUnit_uart_valid_rx_in        =  uart_valid_rx_in;
+
+
+//---------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------
 systolicMatrixMultiply  #(.WIDTH(WIDTH),.WIDTHx(WIDTHx),.SIZE(SIZE)) u_systolic_matrix_mul_unit(
     .rst_n_async                (syst_rst_n_async                           )                  ,
     .valid_i                    (syst_valid_i                               )                  ,
@@ -289,50 +312,51 @@ mem2seriala #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES)) u_mem2serial_unit
 
 (*dont_touch = "true"*) 
 systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))u_systolic_control_unit(
-    .clock                      (systolicControlUnit_clock                      )                ,
-    .rst_n_async                (systolicControlUnit_rst_n_async                )                ,
-    .uart_valid_rx_in           (systolicControlUnit_uart_valid_rx_in           )                ,
-    .serial2mem_opa_rvalid_o    (systolicControlUnit_serial2mem_opa_rvalid_o    )                ,
-    .serial2mem_opb_rvalid_o    (systolicControlUnit_serial2mem_opb_rvalid_o    )                ,
-    .syst_rvalid_o              (systolicControlUnit_syst_rvalid_o              )                ,
-    .mem2serial_rvalid_o        (systolicControlUnit_mem2serial_rvalid_o        )                ,
-    .serial2mem_opa_valid_i     (systolicControlUnit_serial2mem_opa_valid_i     )                ,    
-    .serial2mem_opb_valid_i     (systolicControlUnit_serial2mem_opb_valid_i     )                ,    
-    .serial2mem_opa_rw          (systolicControlUnit_serial2mem_opa_rw          )                ,    
-    .serial2mem_opb_rw          (systolicControlUnit_serial2mem_opb_rw          )                ,    
-    .serial2mem_opa_rready_i    (systolicControlUnit_serial2mem_opa_rready_i    )                ,    
-    .serial2mem_opb_rready_i    (systolicControlUnit_serial2mem_opb_rready_i    )                ,    
-    .mem2serial_valid_i         (systolicControlUnit_mem2serial_valid_i         )                ,    
-    .mem2serial_rready_i        (systolicControlUnit_mem2serial_rready_i        )                ,    
-    .uart_valid_tx_in           (systolicControlUnit_uart_valid_tx_in           )                ,    
-    .syst_valid_i               (systolicControlUnit_syst_valid_i               )                ,    
-    .syst_rready_i              (systolicControlUnit_syst_rready_i              )                ,
-    .uart_data_rx_out           (uart_data_rx_out[7:0]                          )                ,
-    .starting_frame_identified  (systolicControlUnit_starting_frame_identified  )                ,
-    .uart_ready_rx              (systolicControlUnit_uart_ready_rx              )                ,
-    .serial2mem_opa_ready_o     (systolicControlUnit_serial2mem_opa_ready_o     )                ,
-    .serial2mem_opb_ready_o     (systolicControlUnit_serial2mem_opb_ready_o     )                ,
-    .read_done                  (systolicControlUnit_read_done                  )                ,
-    .frame_start                (systolicControlUnit_frame_start                )                ,
-    .axi_debug                  (uart_data_rx_out                               )                ,
-    .u_im2row_data_valid_i      (u_im2row_data_valid_i                          )                , 
-    .u_im2row_module_ready_o    (u_im2row_module_ready_o                        )                ,
-    .u_im2row_result_rvalid_o   (u_im2row_result_rvalid_o                       )                ,
-    .u_im2row_downstream_ready_i(u_im2row_downstream_ready_i                    )                
+    .clock                              (systolicControlUnit_clock                      )                ,
+    .rst_n_async                        (systolicControlUnit_rst_n_async                )                ,
+    .uart_valid_rx_in                   (systolicControlUnit_uart_valid_rx_in           )                ,
+    .serial2mem_opa_rvalid_o            (systolicControlUnit_serial2mem_opa_rvalid_o    )                ,
+    .serial2mem_opb_rvalid_o            (systolicControlUnit_serial2mem_opb_rvalid_o    )                ,
+    .syst_rvalid_o                      (systolicControlUnit_syst_rvalid_o              )                ,
+    .mem2serial_rvalid_o                (systolicControlUnit_mem2serial_rvalid_o        )                ,
+    .serial2mem_opa_valid_i             (systolicControlUnit_serial2mem_opa_valid_i     )                ,    
+    .serial2mem_opb_valid_i             (systolicControlUnit_serial2mem_opb_valid_i     )                ,    
+    .serial2mem_opa_rw                  (systolicControlUnit_serial2mem_opa_rw          )                ,    
+    .serial2mem_opb_rw                  (systolicControlUnit_serial2mem_opb_rw          )                ,    
+    .serial2mem_opa_rready_i            (systolicControlUnit_serial2mem_opa_rready_i    )                ,    
+    .serial2mem_opb_rready_i            (systolicControlUnit_serial2mem_opb_rready_i    )                ,    
+    .mem2serial_valid_i                 (systolicControlUnit_mem2serial_valid_i         )                ,    
+    .mem2serial_rready_i                (systolicControlUnit_mem2serial_rready_i        )                ,    
+    .uart_valid_tx_in                   (systolicControlUnit_uart_valid_tx_in           )                ,    
+    .syst_valid_i                       (systolicControlUnit_syst_valid_i               )                ,    
+    .syst_rready_i                      (systolicControlUnit_syst_rready_i              )                ,
+    .uart_data_rx_out                   (uart_data_rx_out[7:0]                          )                ,
+    .starting_frame_identified          (systolicControlUnit_starting_frame_identified  )                ,
+    .uart_ready_rx                      (systolicControlUnit_uart_ready_rx              )                ,
+    .serial2mem_opa_ready_o             (systolicControlUnit_serial2mem_opa_ready_o     )                ,
+    .serial2mem_opb_ready_o             (systolicControlUnit_serial2mem_opb_ready_o     )                ,
+    .read_done                          (systolicControlUnit_read_done                  )                ,
+    .frame_start                        (systolicControlUnit_frame_start                )                ,
+    .axi_debug                          (uart_data_rx_out                               )                ,
+    .u_im2row_data_valid_i              (u_im2row_data_valid_i                          )                , 
+    .u_im2row_module_ready_o            (u_im2row_module_ready_o                        )                ,
+    .u_im2row_result_rvalid_o           (u_im2row_result_rvalid_o                       )                ,
+    .u_im2row_downstream_ready_i        (u_im2row_downstream_ready_i                    )                ,        
+    .sampling_pipeline_stage_1_mem_write(sampling_pipeline_stage_1_mem_write            )                ,
+    .sampling_pipeline_stage_2_img2row  (sampling_pipeline_stage_2_img2row              )                ,
+    .sampling_pipeline_stage_3_systolic (sampling_pipeline_stage_3_systolic             )                ,
+    .sampling_pipeline_stage_4_send2host(sampling_pipeline_stage_4_send2host            )        
 );
 
 shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shiftdata_unit(
     .clock(shiftdata_clock),
     .rst_n_async(shiftdata_rst_n_async),
     .ena_shift(syst_ena_mac),
-    .opa_out_data(u_im2row_col_a_matrix),
-    .opb_out_data(u_im2row_col_b_matrix),
+    .opa_out_data(shift_opa_out_data),
+    .opb_out_data(shift_opb_out_data),
     .flow_data_time_structure_OUTA(flow_data_time_structure_OUTA),
     .flow_data_time_structure_OUTB(flow_data_time_structure_OUTB) 
 );
-
-assign u_im2row_input_a_image = serial2mem_opb_out_data;
-assign u_im2row_input_b_image = serial2mem_opa_out_data;
 
 img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1))u_img2col_b_unit (
     .clk         (u_im2row_clock),
@@ -347,6 +371,8 @@ img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1
 );
 
 
+
+
 img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3))u_ker2col_a_unit (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
@@ -359,6 +385,33 @@ img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3
     .colout_tsnp (u_im2row_col_b_matrix)
 
 );
+//---------------------------------------------------------------------------------------------------
+//Registradores para o tratamento de harzards entre estágios do pipeline da unidade de controle     
+//---------------------------------------------------------------------------------------------------
+
+always_ff@(posedge clock, negedge rst_n_async)begin
+    if(!rst_n_async)begin
+        pipeline_serial2mem_opa_out_data <= '{default:0};
+        pipeline_serial2mem_opb_out_data <= '{default:0};
+        pipeline_u_im2row_col_a_matrix   <= '{default:0};           
+        pipeline_u_im2row_col_b_matrix   <= '{default:0};         
+        pipeline_syst_output_produc_a_b   <= '{default:0};  
+    end else begin
+        pipeline_serial2mem_opa_out_data <= (sampling_pipeline_stage_1_mem_write) ? serial2mem_opa_out_data : pipeline_serial2mem_opa_out_data;
+        pipeline_serial2mem_opb_out_data <= (sampling_pipeline_stage_1_mem_write) ? serial2mem_opb_out_data : pipeline_serial2mem_opb_out_data;
+        pipeline_u_im2row_col_a_matrix   <= (sampling_pipeline_stage_2_img2row)   ? u_im2row_col_a_matrix   : pipeline_u_im2row_col_a_matrix;
+        pipeline_u_im2row_col_b_matrix   <= (sampling_pipeline_stage_2_img2row)   ? u_im2row_col_b_matrix   : pipeline_u_im2row_col_b_matrix;
+        pipeline_syst_output_produc_a_b  <= (sampling_pipeline_stage_3_systolic)  ? mem2serial_pmatrix_in   : pipeline_syst_output_produc_a_b;
+    end
+end
+
+
+assign u_im2row_input_a_image = pipeline_serial2mem_opa_out_data;
+assign u_im2row_input_b_image = pipeline_serial2mem_opb_out_data;
+assign shift_opa_out_data     = pipeline_u_im2row_col_a_matrix;
+assign shift_opb_out_data     = pipeline_u_im2row_col_b_matrix;
+assign mem2serial_pmatrix_in  = pipeline_syst_output_produc_a_b;
+
 
 endmodule
 

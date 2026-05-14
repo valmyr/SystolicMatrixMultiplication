@@ -1,12 +1,21 @@
 # Implementação em Hardware de um Acelerador com Arranjo Sistólico para Multiplicação de Matrizes de Ordem N
 
 
-## Arquitetura Systolic Core
+## Diagrama Systolic Core
 
 
 <p align="center">
 <img title="Arquitetura Systolic Core" alt="Alt text" src="images/ArquiteturaSystolicCoreBlueDataShifit.png" width="100%" height="100%">
 </p>
+
+
+## Arquitetura em Pipeline do Systolic Core
+
+
+<p align="center">
+<img title="Arquitetura Systolic Core" alt="Alt text" src="images/DataFlowArchitecturePipelineforGEMM.png" width="100%" height="100%">
+</p>
+
 
 ## Medições de Tempo -  Simulação VS Real
 
