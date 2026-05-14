@@ -159,6 +159,7 @@ logic u_im2row_downstream_ready_i;
 logic [WIDTHx-1:0] u_im2row_input_a_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
 logic [WIDTHx-1:0] u_im2row_input_b_image[SIZE_WINDOW-1:0][SIZE_WINDOW-1:0];
 logic [WIDTHx-1:0] u_im2row_col_a_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
+logic [WIDTHx-1:0] u_im2row_col_b_matrix_transpose[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
 logic [WIDTHx-1:0] u_im2row_col_b_matrix[OUT_SIZE_NORM-1:0][OUT_SIZE_NORM-1:0];
 
 //---------------------------------------------------------------------------------------------------
@@ -331,10 +332,10 @@ shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shiftdata_unit(
     .flow_data_time_structure_OUTB(flow_data_time_structure_OUTB) 
 );
 
-assign u_im2row_input_a_image = serial2mem_opa_out_data;
-assign u_im2row_input_b_image = serial2mem_opb_out_data;
+assign u_im2row_input_a_image = serial2mem_opb_out_data;
+assign u_im2row_input_b_image = serial2mem_opa_out_data;
 
-img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3))u_img2row_b_unit (
+img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1))u_img2col_b_unit (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
     .valid_i     (u_im2row_data_valid_i),
@@ -342,10 +343,12 @@ img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3
     .rvalid_o    (u_im2row_result_rvalid_o),
     .rready_i    (u_im2row_downstream_ready_i),
     .img         (u_im2row_input_a_image),
-    .colout      (u_im2row_col_a_matrix)
+    .colout      (),
+    .colout_tsnp (u_im2row_col_a_matrix)
 );
 
-img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1))u_ker2col_a_unit (
+
+img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3))u_ker2col_a_unit (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
     .valid_i     (u_im2row_data_valid_i),
@@ -353,7 +356,9 @@ img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1
     .rvalid_o    (                      ),
     .rready_i    (u_im2row_downstream_ready_i),
     .img         (u_im2row_input_b_image),
-    .colout      (u_im2row_col_b_matrix)
+    .colout      (),
+    .colout_tsnp (u_im2row_col_b_matrix)
+
 );
 
 endmodule
