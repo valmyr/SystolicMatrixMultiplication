@@ -115,7 +115,7 @@ always_comb case(fsm_unit_control)
        
         starting_frame_identified     = 1;
         s_axis_tlast =0;
-        if(uart_valid_rx_in && uart_ready_rx && frame_start[15:0] == 16'hffff) begin
+        if(uart_valid_rx_in && uart_ready_rx && {frame_start[15:0],uart_data_rx_out} == 16'hffff) begin
                 fsm_unit_control_next    =WRITE_MEM;
                 serial2mem_opb_valid_i   =0;
                 serial2mem_opa_valid_i   =0;
@@ -148,7 +148,7 @@ always_comb case(fsm_unit_control)
     WRITE_MEM:begin
         syst_valid_i                  = 0;          
         mem2serial_valid_i            = 0;
-        serial2mem_opa_valid_i        = !serial2mem_opa_rvalid_o;
+        serial2mem_opa_valid_i        = counter_out_opA != 0 && counter_out_opA < SIZE+1;
         serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_opA == SIZE;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0; 
@@ -187,12 +187,12 @@ always_comb case(fsm_unit_control)
     IMG2ROW:begin
         syst_valid_i                  = 0;
         u_im2row_data_valid_i         = 1;
-        serial2mem_opa_valid_i        = !serial2mem_opa_rvalid_o;
-        serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_systolic_read_mem == SIZE+1;
+        serial2mem_opa_valid_i        = counter_out_img2row < SIZE+1;
+        serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_img2row == SIZE+1;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0;
-        serial2mem_opa_rready_i       = counter_out_systolic_read_mem==0;
-        serial2mem_opb_rready_i       = counter_out_systolic_read_mem==0;
+        serial2mem_opa_rready_i       = counter_out_img2row==0;
+        serial2mem_opb_rready_i       = counter_out_img2row==0;
         u_im2row_downstream_ready_i   = 0;
         syst_rready_i                 = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o; 
 
@@ -220,7 +220,7 @@ always_comb case(fsm_unit_control)
     SYSTOLIC_READ_MEM:begin
         syst_valid_i                  = 1; 
         mem2serial_valid_i            = 0;
-        serial2mem_opa_valid_i        = !serial2mem_opa_rvalid_o;
+        serial2mem_opa_valid_i        = counter_out_systolic_read_mem < SIZE+1;
         serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_systolic_read_mem == SIZE+1;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0;  

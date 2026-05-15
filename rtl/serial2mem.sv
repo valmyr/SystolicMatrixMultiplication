@@ -27,7 +27,7 @@ logic                           single_port_ram_en                              
 logic                           single_port_ram_we                              ;
 logic [(2*SIZE)-1:0]    single_port_ram_addr                            ;
 //logic [WIDTH*SIZE-1:0]          single_port_ram_di                              ;
-logic [WIDTH*SIZE-1:0]          single_port_ram_dout                            ;
+//logic [WIDTH*SIZE-1:0]          single_port_ram_dout                            ;
 //logic [WIDTH*SIZE-1:0]          single_port_ram_doutb                            ;
 (*dont_touch = "true"*)
 logic next_sampling_window_debug;
@@ -144,7 +144,7 @@ always_ff@(posedge clock, negedge rst_n_async)begin
 end
  
 //logic [WIDTH-1:0] data_out_lin[SIZE-1:0][SIZE-1:0];
-logic [WIDTH*SIZE-1:0] delay_1_cyclo;
+//logic [WIDTH*SIZE-1:0] delay_1_cyclo;
    logic  [WIDTH*SIZE-1:0] single_port_ram_di_reg;
    logic  [WIDTH*SIZE-1:0] single_port_ram_di_reg_0;
     always_ff@(posedge clock, negedge rst_n_async)begin
@@ -153,7 +153,7 @@ logic [WIDTH*SIZE-1:0] delay_1_cyclo;
             cnt_shift           <= 0                                                                                                           ;
             single_port_ram_di <= 0;
 
-           // single_port_ram_di_reg <=0;
+            single_port_ram_di_reg <='{default:0};
             out_data_reg <= '{default:0};
             single_port_ram_di_reg_0 <= '{default:0};
             mem_fsm <= IDLE;
