@@ -11,9 +11,9 @@ module shiftdata#(parameter SIZE=16, WIDTHx=4)(
 
 logic [WIDTHx-1:0] flow_data_time_structure_OPA [SIZE-1:0];
 logic [WIDTHx-1:0] flow_data_time_structure_OPB [SIZE-1:0];
-logic [$clog2(SIZE)-1:0] counter;
-logic [$clog2(SIZE)-1:0] counter_next;
-logic [$clog2(SIZE)-1:0] counter1;
+logic [$clog2(SIZE)-0:0] counter;
+logic [$clog2(SIZE)-0:0] counter_next;
+logic [$clog2(SIZE)-0:0] counter1;
 logic [WIDTHx-1:0] opa_out_data_reg  [SIZE-1:0][SIZE-1:0];
 logic [WIDTHx-1:0] opb_out_data_reg  [SIZE-1:0][SIZE-1:0];
 
@@ -28,7 +28,6 @@ always_ff@(posedge clock,negedge rst_n_async)begin
         flow_data_time_structure_OPB <= '{default:0};
 
     end else begin
-        counter1 <= counter1 +1;
         if(ena_shift && counter == 0)begin
             opa_out_data_reg <= opa_out_data;
             opb_out_data_reg <= opb_out_data;
@@ -36,14 +35,15 @@ always_ff@(posedge clock,negedge rst_n_async)begin
             opa_out_data_reg <= opa_out_data; 
             opb_out_data_reg <= opb_out_data;        
         end
-        if(ena_shift)begin
+        if(ena_shift && counter < SIZE)begin
             counter <=counter_next;
+            counter1 <= counter1 +1;
             for(int l =0; l < SIZE; l++)begin
                 flow_data_time_structure_OPA[l] <= counter >SIZE-1 ?'{default:0}: opa_out_data_reg[l][counter];//counter > SIZE-1 ? 0 : A1[l][counter];
                 flow_data_time_structure_OPB[l] <= counter >SIZE-1 ?'{default:0}: opb_out_data_reg[counter][l];//counter > SIZE-1 ? 0 : A2_t[l][counter];
             end
         end else begin 
-            counter <= 0;
+            counter <= counter;
             flow_data_time_structure_OPA <= '{default:0};
             flow_data_time_structure_OPB <= '{default:0};
         end

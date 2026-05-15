@@ -369,10 +369,10 @@ always_ff@(posedge clock, negedge rst_n_async)begin
         fsm_pipeline_s3                         <=fsm_pipeline_next_s3;      
         fsm_pipeline_s2                         <=fsm_pipeline_next_s2;      
         fsm_pipeline_s1                         <=fsm_pipeline_next_s1;
-        sampling_pipeline_stage_1_mem_write_reg <= counter_out_opA == 3*SIZE-1+3;
-        sampling_pipeline_stage_2_img2row_reg   <= counter_out_img2row == 3*SIZE-1+3;
-        sampling_pipeline_stage_3_systolic_reg  <= counter_out_systolic_read_mem == 3*SIZE-1+3;
-        sampling_pipeline_stage_4_send2host_reg <= counter_out_send_fpga2host == 3*SIZE-1+3; 
+        sampling_pipeline_stage_1_mem_write_reg <= counter_out_opA == 3*SIZE-1+5;
+        sampling_pipeline_stage_2_img2row_reg   <= counter_out_img2row == 3*SIZE-1+5;
+        sampling_pipeline_stage_3_systolic_reg  <= counter_out_systolic_read_mem == 3*SIZE-1+5;
+        sampling_pipeline_stage_4_send2host_reg <= counter_out_send_fpga2host == 3*SIZE-1+5; 
     end
     
 end

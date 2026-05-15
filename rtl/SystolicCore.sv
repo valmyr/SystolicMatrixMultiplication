@@ -401,13 +401,13 @@ always_ff@(posedge clock, negedge rst_n_async)begin
         pipeline_serial2mem_opb_out_data <= (sampling_pipeline_stage_1_mem_write) ? serial2mem_opb_out_data : pipeline_serial2mem_opb_out_data;
         pipeline_u_im2row_col_a_matrix   <= (sampling_pipeline_stage_2_img2row)   ? u_im2row_col_a_matrix   : pipeline_u_im2row_col_a_matrix;
         pipeline_u_im2row_col_b_matrix   <= (sampling_pipeline_stage_2_img2row)   ? u_im2row_col_b_matrix   : pipeline_u_im2row_col_b_matrix;
-        pipeline_syst_output_produc_a_b  <= (sampling_pipeline_stage_3_systolic)  ? mem2serial_pmatrix_in   : pipeline_syst_output_produc_a_b;
+        pipeline_syst_output_produc_a_b  <= (sampling_pipeline_stage_3_systolic)  ? syst_output_produc_a_b   : pipeline_syst_output_produc_a_b;
     end
 end
 
 
-assign u_im2row_input_a_image = pipeline_serial2mem_opa_out_data;
-assign u_im2row_input_b_image = pipeline_serial2mem_opb_out_data;
+assign u_im2row_input_a_image = pipeline_serial2mem_opb_out_data;
+assign u_im2row_input_b_image = pipeline_serial2mem_opa_out_data;
 assign shift_opa_out_data     = pipeline_u_im2row_col_a_matrix;
 assign shift_opb_out_data     = pipeline_u_im2row_col_b_matrix;
 assign mem2serial_pmatrix_in  = pipeline_syst_output_produc_a_b;
