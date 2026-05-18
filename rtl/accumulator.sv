@@ -10,6 +10,7 @@
     
 //============================================================
 
+(* use_dsp = "yes" *)
 module accumulator_cells#(
     parameter WIDTH = 16, WIDTHx=4
 )(
@@ -24,8 +25,10 @@ module accumulator_cells#(
     output logic [WIDTH-1:0] z       
 );
     logic [2*WIDTH-1:0] accumulator, product, sum_product;
-    assign product      = ena ? (a * b) : 0                   ;
-    assign sum_product  = ena ? (product + accumulator) : 0   ;
+    (* use_dsp = "yes" *) 
+    assign product      =  (a * b)                   ;
+    (* use_dsp = "yes" *) 
+    assign sum_product  = (product + accumulator)  ;
     always_ff@(negedge rst_n_async, posedge clock)begin
         if(!rst_n_async)begin
             x           <= 0;
@@ -34,7 +37,7 @@ module accumulator_cells#(
         end else begin
             x           <= a;
             y           <= b;
-            accumulator <= sum_product;
+            accumulator <= ena ?   sum_product : 0;
         end
     end
     assign z = accumulator;

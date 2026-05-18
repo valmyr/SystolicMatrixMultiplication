@@ -254,3 +254,6 @@ set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
 connect_debug_port dbg_hub/clk_125mhz [get_nets clock_BUFG]
+#set_property USE_DSP yes [get_cells inst_multiplicador]
+
+set_property use_dsp48 yes [get_nets sum*]

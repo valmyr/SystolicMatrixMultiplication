@@ -1,4 +1,4 @@
-module systolicControlUnitTop#(parameter SIZE=32,WIDTH=8,BYTESIZES =256)(
+module systolicControlUnitTop#(parameter SIZE=32,WINDOW =6,WIDTH=8,BYTESIZES =256)(
     input  logic       clock                        ,
     input  logic       rst_n_async                  ,
     input  logic       uart_valid_rx_in             ,
@@ -32,7 +32,8 @@ module systolicControlUnitTop#(parameter SIZE=32,WIDTH=8,BYTESIZES =256)(
     output logic sampling_pipeline_stage_1_mem_write,
     output logic sampling_pipeline_stage_2_img2row  ,
     output logic sampling_pipeline_stage_3_systolic ,
-    output logic sampling_pipeline_stage_4_send2host
+    output logic sampling_pipeline_stage_4_send2host,
+    output logic [BYTESIZES-1:0]serial2mem_ops_in_data
 
 );
 
@@ -42,7 +43,7 @@ module systolicControlUnitTop#(parameter SIZE=32,WIDTH=8,BYTESIZES =256)(
 localparam MAX_COUNTER_STAGES=31;
 logic       s_axis_tlast;
 logic ena_mem_write_counter, ena_mem_read_systolic_counter, ena_send2host_counter,ena_out_img2row;
-
+logic clear_counter_all;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_opA ;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_systolic_read_mem;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_send_fpga2host;
@@ -116,6 +117,7 @@ always_comb case(fsm_unit_control)
         starting_frame_identified     = 1;
         s_axis_tlast =0;
         if(uart_valid_rx_in && uart_ready_rx && {frame_start[15:0],uart_data_rx_out} == 16'hffff) begin
+        //if(uart_valid_rx_in && uart_ready_rx && frame_start[15:0] == 16'hffff) begin
                 fsm_unit_control_next    =WRITE_MEM;
                 serial2mem_opb_valid_i   =0;
                 serial2mem_opa_valid_i   =0;
@@ -143,13 +145,13 @@ always_comb case(fsm_unit_control)
 
         u_im2row_data_valid_i           =0;  
 
-        
+        serial2mem_ops_in_data = 0;
     end
     WRITE_MEM:begin
         syst_valid_i                  = 0;          
         mem2serial_valid_i            = 0;
-        serial2mem_opa_valid_i        = counter_out_opA != 0 && counter_out_opA < SIZE+1;
-        serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_opA == SIZE;
+        serial2mem_opa_valid_i        =  counter_out_opA < WINDOW;
+        serial2mem_opb_valid_i        =  counter_out_opA  >=  WINDOW;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0; 
         serial2mem_opa_rready_i       = 0;
@@ -169,7 +171,7 @@ always_comb case(fsm_unit_control)
         ena_out_img2row               = 0;
         ena_mem_read_systolic_counter = 0;
         ena_send2host_counter         = 0;
-
+        serial2mem_ops_in_data = axi_debug;
         
          
          
@@ -187,8 +189,8 @@ always_comb case(fsm_unit_control)
     IMG2ROW:begin
         syst_valid_i                  = 0;
         u_im2row_data_valid_i         = 1;
-        serial2mem_opa_valid_i        = counter_out_img2row < SIZE+1;
-        serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_img2row == SIZE+1;
+        serial2mem_opa_valid_i        =  counter_out_opA < WINDOW+1;
+        serial2mem_opb_valid_i        =  counter_out_opA  >=  WINDOW+1;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0;
         serial2mem_opa_rready_i       = counter_out_img2row==0;
@@ -214,21 +216,22 @@ always_comb case(fsm_unit_control)
         fsm_pipeline_next_s2          = IDLE_E;
         fsm_pipeline_next_s3          = IDLE_S;
         fsm_pipeline_next_s4          = EXEC_I;
+        serial2mem_ops_in_data = axi_debug;
 
     
     end
     SYSTOLIC_READ_MEM:begin
         syst_valid_i                  = 1; 
         mem2serial_valid_i            = 0;
-        serial2mem_opa_valid_i        = counter_out_systolic_read_mem < SIZE+1;
-        serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_systolic_read_mem == SIZE+1;
+        serial2mem_opa_valid_i        =  counter_out_opA < WINDOW+1;
+        serial2mem_opb_valid_i        =  counter_out_opA  >=  WINDOW+1;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0;  
         serial2mem_opa_rready_i       = counter_out_systolic_read_mem==0;
         serial2mem_opb_rready_i       = counter_out_systolic_read_mem==0;
         u_im2row_downstream_ready_i   = counter_out_img2row == 0;
         mem2serial_rready_i           = 0;
-        syst_rready_i                 = syst_rvalid_o &&  counter_out_systolic_read_mem >= 3*SIZE-1+5;
+        syst_rready_i                 = serial2mem_opa_rvalid_o && serial2mem_opb_rvalid_o;
          
         uart_valid_tx_in              = 0;
 
@@ -250,11 +253,12 @@ always_comb case(fsm_unit_control)
         fsm_pipeline_next_s3          = IDLE_S;
         fsm_pipeline_next_s4          = EXEC_I;  
         ena_out_img2row               = 1;
+        serial2mem_ops_in_data = axi_debug;
     end
     SEND_FPGA2DMA:begin
         s_axis_tlast= 0;
-        serial2mem_opa_valid_i        = !serial2mem_opa_rvalid_o;
-        serial2mem_opb_valid_i        = serial2mem_opa_rvalid_o | counter_out_send_fpga2host == SIZE+1;
+        serial2mem_opa_valid_i        =  counter_out_opA < WINDOW+1;
+        serial2mem_opb_valid_i        =  counter_out_opA  >=  WINDOW+1;
         serial2mem_opa_rw             = 0;  
         serial2mem_opb_rw             = 0;
         mem2serial_rready_i           = mem2serial_rvalid_o && counter_out_send_fpga2host >= 3*SIZE-1 +5;    
@@ -278,7 +282,7 @@ always_comb case(fsm_unit_control)
         fsm_pipeline_next_s2          = EXEC_P;
         fsm_pipeline_next_s3          = SEND2HOST_P;
         fsm_pipeline_next_s4          = EXEC_I;
-
+        serial2mem_ops_in_data = uart_valid_rx_in && uart_ready_rx && frame_start[15:0] == 16'heaea ? 0 : axi_debug ;
         ena_out_img2row               = 1;
     end
     default:begin
@@ -309,18 +313,21 @@ always_comb case(fsm_unit_control)
         fsm_pipeline_next_s3          = IDLE_S;    
         fsm_pipeline_next_s2          = IDLE_E;    
         fsm_pipeline_next_s1          = IDLE_W; 
+        serial2mem_ops_in_data = 0;
+        
 
     end
 endcase
 
 
+assign clear_counter_all = fsm_unit_control == IDLE;
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_opA(
 
         .clock          (clock                                          )                           ,
         .rst_n_async    (rst_n_async                                    )                           ,
         .ena            (ena_mem_write_counter                          )                           ,
         .counter        (counter_out_opA                                )                           ,
-        .clean          (counter_out_opA >= 3*SIZE-1+5                  )
+        .clean          (counter_out_opA >= 3*SIZE-1+5 || clear_counter_all                  )
 );
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_read_mem(
@@ -329,25 +336,25 @@ counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_read_mem(
         .rst_n_async    (rst_n_async                                    )                           ,
         .ena            (ena_mem_read_systolic_counter                  )                           ,
         .counter        (counter_out_systolic_read_mem                  )                           ,
-        .clean          (counter_out_systolic_read_mem >= 3*SIZE-1+5    )
+        .clean          (counter_out_systolic_read_mem >= 3*SIZE-1+5 || clear_counter_all    )
 );
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_write_mem(
 
-        .clock          (clock                                          )                           ,
-        .rst_n_async    (rst_n_async                                    )                           ,
-        .ena            (ena_send2host_counter                          )                           ,
-        .counter        (counter_out_send_fpga2host                     )                           ,
-        .clean          (counter_out_send_fpga2host >= 3*SIZE-1+5       )
+        .clock          (clock                                                              )                           ,
+        .rst_n_async    (rst_n_async                                                        )                           ,
+        .ena            (ena_send2host_counter                                              )                           ,
+        .counter        (counter_out_send_fpga2host                                         )                           ,
+        .clean          (counter_out_send_fpga2host >= 3*SIZE-1+5 || clear_counter_all      )
 );
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_img2row(
 
-        .clock          (clock                                )                                     ,
-        .rst_n_async    (rst_n_async                          )                                     ,
-        .ena            (ena_out_img2row                      )                                     ,
-        .counter        (counter_out_img2row                  )                                     ,
-        .clean          (counter_out_img2row >= 3*SIZE-1+5    )
+        .clock          (clock                                                     )                                     ,
+        .rst_n_async    (rst_n_async                                               )                                     ,
+        .ena            (ena_out_img2row                                           )                                     ,
+        .counter        (counter_out_img2row                                       )                                     ,
+        .clean          (counter_out_img2row >= 3*SIZE-1+5 || clear_counter_all    )
 );
 
 

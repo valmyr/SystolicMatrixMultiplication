@@ -46,7 +46,7 @@ reg [31:0] cnt5;
 wire [BYTESIZESS-1:0] dout_mem;
 always@(posedge clock, negedge rst_n_async)begin
     if(!rst_n_async) cnt5 <= 0;
-    else cnt5<= cnt5 ==52 ? 0:cnt5+1;
+    else cnt5<= cnt5 ==102 ? 0:cnt5+1; //reinicio após o head
 end 
 matrix_in_memory u_mem_block (
   .clka(clock),    // input wire clka

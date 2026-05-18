@@ -216,10 +216,13 @@ assign uart_data_tx_in                 = mem2serial_smatrix_out                 
 
 
 //---------------------------------------------------------------------------------------------------------------------------------
-
+logic [BYTESIZES-1:0]serial2mem_ops_in_data;
 // ATRIBUIÇÂO MEMORIA A/B           
 assign serial2mem_opa_in_data = uart_data_rx_out;//: 0            ;
-assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;
+assign serial2mem_opb_in_data = uart_data_rx_out;//: 0            ;uart_data_rx_out
+
+//assign serial2mem_opa_in_data = serial2mem_ops_in_data;//: 0            ;
+//assign serial2mem_opb_in_data = serial2mem_ops_in_data;//: 0            ;uart_data_rx_out
 assign syst_a_input =  flow_data_time_structure_OUTA                            ;
 assign syst_b_input =  flow_data_time_structure_OUTB ;
 (*dont_touch = "true"*) 
@@ -345,7 +348,8 @@ systolicControlUnitTop #(.SIZE(SIZE),.WIDTH(WIDTH),.BYTESIZES(BYTESIZES))u_systo
     .sampling_pipeline_stage_1_mem_write(sampling_pipeline_stage_1_mem_write            )                ,
     .sampling_pipeline_stage_2_img2row  (sampling_pipeline_stage_2_img2row              )                ,
     .sampling_pipeline_stage_3_systolic (sampling_pipeline_stage_3_systolic             )                ,
-    .sampling_pipeline_stage_4_send2host(sampling_pipeline_stage_4_send2host            )        
+    .sampling_pipeline_stage_4_send2host(sampling_pipeline_stage_4_send2host            )                ,
+    .serial2mem_ops_in_data              (serial2mem_ops_in_data                        )                      
 );
 
 shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shiftdata_unit(

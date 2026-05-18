@@ -28,7 +28,7 @@ module tb_cadence();
 logic clock;
 logic rst_n_async;
 
-parameter WIDTHxSS = 4, SIZES = 8;
+parameter WIDTHxSS = 4, SIZES = 16;
 parameter BYTESIZESS = 2*WIDTHxSS *SIZES;
 reg [31:0] cnt5;
 logic  [BYTESIZESS/2-1:0]dout_mem[211:0];
