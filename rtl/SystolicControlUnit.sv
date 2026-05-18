@@ -43,7 +43,7 @@ module systolicControlUnitTop#(parameter SIZE=32,WINDOW =6,WIDTH=8,BYTESIZES =25
 localparam MAX_COUNTER_STAGES=31;
 logic       s_axis_tlast;
 logic ena_mem_write_counter, ena_mem_read_systolic_counter, ena_send2host_counter,ena_out_img2row;
-logic clear_counter_all;
+logic clean_counter_all;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_opA ;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_systolic_read_mem;
 logic [MAX_COUNTER_STAGES-1:0]counter_out_send_fpga2host;
@@ -320,14 +320,14 @@ always_comb case(fsm_unit_control)
 endcase
 
 
-assign clear_counter_all = fsm_unit_control == IDLE;
+assign clean_counter_all = fsm_unit_control == IDLE;
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_opA(
 
         .clock          (clock                                          )                           ,
         .rst_n_async    (rst_n_async                                    )                           ,
         .ena            (ena_mem_write_counter                          )                           ,
         .counter        (counter_out_opA                                )                           ,
-        .clean          (counter_out_opA >= 3*SIZE-1+5 || clear_counter_all                  )
+        .clean          (counter_out_opA >= 3*SIZE-1+5 || clean_counter_all                  )
 );
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_read_mem(
@@ -336,7 +336,7 @@ counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_read_mem(
         .rst_n_async    (rst_n_async                                    )                           ,
         .ena            (ena_mem_read_systolic_counter                  )                           ,
         .counter        (counter_out_systolic_read_mem                  )                           ,
-        .clean          (counter_out_systolic_read_mem >= 3*SIZE-1+5 || clear_counter_all    )
+        .clean          (counter_out_systolic_read_mem >= 3*SIZE-1+5 || clean_counter_all    )
 );
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_write_mem(
@@ -345,7 +345,7 @@ counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_write_mem(
         .rst_n_async    (rst_n_async                                                        )                           ,
         .ena            (ena_send2host_counter                                              )                           ,
         .counter        (counter_out_send_fpga2host                                         )                           ,
-        .clean          (counter_out_send_fpga2host >= 3*SIZE-1+5 || clear_counter_all      )
+        .clean          (counter_out_send_fpga2host >= 3*SIZE-1+5 || clean_counter_all      )
 );
 
 counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_img2row(
@@ -354,7 +354,7 @@ counter#(.MAX_COUNTER(MAX_COUNTER_STAGES)) counter_img2row(
         .rst_n_async    (rst_n_async                                               )                                     ,
         .ena            (ena_out_img2row                                           )                                     ,
         .counter        (counter_out_img2row                                       )                                     ,
-        .clean          (counter_out_img2row >= 3*SIZE-1+5 || clear_counter_all    )
+        .clean          (counter_out_img2row >= 3*SIZE-1+5 || clean_counter_all    )
 );
 
 
