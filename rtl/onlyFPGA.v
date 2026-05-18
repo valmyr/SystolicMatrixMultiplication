@@ -40,7 +40,7 @@ module onlyFPGA(
 IBUFDS u2 (.I(clk_125mhz_p), .IB(clk_125mhz_n), .O(clock));
    
 
-parameter WIDTHxSS = 4, SIZES = 16;
+parameter WIDTHxSS = 4, SIZES = 64;
 parameter BYTESIZESS = 2*WIDTHxSS *SIZES;
 reg [31:0] cnt5;
 wire [BYTESIZESS-1:0] dout_mem;

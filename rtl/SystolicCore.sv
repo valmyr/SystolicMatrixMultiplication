@@ -38,7 +38,7 @@ module SystolicCoreTop#(
 localparam SIZE_WINDOW = 6;
 localparam SIZE_KER = 3;
 localparam OUT_SIZE = SIZE_WINDOW - SIZE_KER + 1;
-localparam OUT_SIZE_NORM = 16;
+localparam OUT_SIZE_NORM = SIZE;
 
 //Pinout Unidade de Controle.
 //-------------------------------------------------------------------------------------------------
@@ -362,7 +362,7 @@ shiftdata #(.WIDTHx(WIDTHx),.SIZE(SIZE)) u_shiftdata_unit(
     .flow_data_time_structure_OUTB(flow_data_time_structure_OUTB) 
 );
 
-img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1))u_img2col_b_unit (
+img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1),.OUT_SIZE_NORM(SIZE))u_img2col_b_unit (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
     .valid_i     (u_im2row_data_valid_i),
@@ -377,7 +377,7 @@ img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(1
 
 
 
-img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3))u_ker2col_a_unit (
+img2row #(.WIDTH(WIDTHx),.SIZE_KER(SIZE_KER),.SIZE_WINDOW(SIZE_WINDOW),.STRIDE(3),.OUT_SIZE_NORM(SIZE))u_ker2col_a_unit (
     .clk         (u_im2row_clock),
     .rst_n_sync  (u_im2row_rst_n_sync),
     .valid_i     (u_im2row_data_valid_i),
