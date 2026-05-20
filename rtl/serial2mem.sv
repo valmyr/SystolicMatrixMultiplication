@@ -15,7 +15,7 @@ module serial2mem#(
     output logic [WIDTH*SIZE-1:0] single_port_ram_di                        
    // output logic [(2*WIDTH-1)*SIZE*SIZE-1:0]    fifo_d                          
 );
-
+(* ram_style = "distributed" *)
 logic [WIDTH-1:0] out_data_reg[SIZE-1:0][SIZE-1:0]  ;
 logic [(2*SIZE)-1:0]      cnt, next_cnt                                   ;
 logic [(2*SIZE)-1:0]  cnt_shift, next_cnt_shift                       ;

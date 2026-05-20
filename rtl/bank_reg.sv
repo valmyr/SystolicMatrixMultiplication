@@ -13,7 +13,8 @@ module reg_bank#(
     input  logic [DATA_W-1:0] OP [N_LANES-1:0],
     output logic [DATA_W-1:0] OUT[N_LANES-1:0]
 );
-    logic [DATA_W-1:0] mem [N_LANES-1:0][2*(N_LANES-1)-1:0];
+(* ram_style = "distributed" *)
+logic [DATA_W-1:0] mem [N_LANES-1:0][2*(N_LANES-1)-1:0];
 
     generate 
         genvar i,j;

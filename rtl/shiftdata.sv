@@ -13,7 +13,9 @@ logic [WIDTHx-1:0] flow_data_time_structure_OPA [SIZE-1:0];
 logic [WIDTHx-1:0] flow_data_time_structure_OPB [SIZE-1:0];
 logic [SIZE-1:0] counter;
 logic [SIZE-1:0] counter_next;
+(* ram_style = "distributed" *)
 logic [WIDTHx-1:0] opa_out_data_reg  [SIZE-1:0][SIZE-1:0];
+(* ram_style = "distributed" *)
 logic [WIDTHx-1:0] opb_out_data_reg  [SIZE-1:0][SIZE-1:0];
 
 

@@ -28,13 +28,14 @@ module systolicMatrixMultiply#(
 
 logic [$clog2(2*SIZE) :0]       counter_mult        , next_counter_mult                 ;
 logic [$clog2(2*SIZE) :0]       counter_transfer_m  , next_counter_transfer_m           ;
-(*dont_touch = "true"*) logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
+(* ram_style = "distributed" *)
+logic [WIDTH-1:0]                       produc_a_b      [SIZE-1:0][SIZE-1:0]            ;
 
-(*dont_touch = "true"*) 
+(* ram_style = "distributed" *) 
 logic [WIDTHx-1:0]                      a_vec           [SIZE-1:0][SIZE-1:0]            ;
-(*dont_touch = "true"*) 
+(* ram_style = "distributed" *) 
 logic [WIDTHx-1:0]                      b_vec           [SIZE-1:0][SIZE-1:0]            ;
-(*dont_touch = "true"*) 
+(* ram_style = "distributed" *) 
 
 logic [WIDTHx-1:0]                 a_load[SIZE-1:0]                                          ;
 (*dont_touch = "true"*) 

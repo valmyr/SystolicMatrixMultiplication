@@ -25,9 +25,9 @@ module accumulator_cells#(
     output logic [WIDTH-1:0] z       
 );
     logic [2*WIDTH-1:0] accumulator, product, sum_product;
-    (* use_dsp = "yes" *) 
+    //(* use_dsp = "yes" *) 
     assign product      =  (a * b)                   ;
-    (* use_dsp = "yes" *) 
+   // (* use_dsp = "yes" *) 
     assign sum_product  = (product + accumulator)  ;
     always_ff@(negedge rst_n_async, posedge clock)begin
         if(!rst_n_async)begin
