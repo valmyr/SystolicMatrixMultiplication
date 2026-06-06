@@ -13,8 +13,9 @@ instituição: "Universidade Federal de Campina Grande — UFCG · Engenharia El
 **Avaliador:** Prof. Marcos Ricardo Alcantara Morais, D.Sc.  
 **Instituição:** Universidade Federal de Campina Grande — UFCG · Engenharia Elétrica
 
-![Logo UFCG](images/figures/ufcg.png)
-
+<div align="center">
+<img src="images/figures/ufcg.png" width="100" height="100" />
+</div>
 ---
 
 ## 1. Contexto, Fundamentação e Objetivos
